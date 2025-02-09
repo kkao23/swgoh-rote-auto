@@ -228,6 +228,15 @@ const revaP3 = [
     }
 ]
 
+const mixedP3Ships = [
+    {
+        lead: 'Executor',
+        others: 'HT, XB, Punishing One, IG2000',
+        notes: 'auto, use other BH ships if not platooned',
+        link: 'https://youtu.be/rcqIa6VlXHs'
+    }
+]
+
 const dsEmpireP3 = [
     {
         lead: 'Lord Vader',
@@ -294,6 +303,15 @@ const lsGenericP4 = [
         notes: 'other two can be whoever GR',
         link: 'https://youtu.be/6YzDrnBGFvw'
     }
+]
+
+const jediLSP4 = [
+    {
+        lead: 'JMK',
+        others: 'GAS, Ahsoka, Ezra Exile, GK',
+        notes: 'auto',
+        link: 'https://youtu.be/nVtmzJh4xlk0',
+    },
 ]
 
 const mixedGenericP4 = [
@@ -460,6 +478,7 @@ export const data = {
         mixed: {
             boKatan: boKatanP3,
             reva: revaP3,
+            fleet: mixedP3Ships,
         },
         zeffo: {
             fleets: zeffoFleets,
@@ -479,6 +498,7 @@ export const data = {
         ls: {
             ships: lsShipsP4,
             generic: lsGenericP4,
+            jedi: jediLSP4,
         },
         mandalore: {
             fleets: mandaloreFleets,

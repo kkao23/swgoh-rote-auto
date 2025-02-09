@@ -6,16 +6,18 @@ const data = rawData.phase3;
 defineProps({
     data: Array<dataType>,
 });
+
+const phase = 'Zeffo';
 </script>
 
 <template>
     <tr>
-        <MissionTableFragment :position="`Jedi`" :data="data.zeffo.jedi"></MissionTableFragment>
+        <MissionTableFragment :position="`Jedi`" :data="data.zeffo.jedi" :phase="phase"></MissionTableFragment>
     </tr>
     <tr>
-        <MissionTableFragment :position="`Clones`" :data="data.zeffo.clones"></MissionTableFragment>
+        <MissionTableFragment :position="`Clones`" :data="data.zeffo.clones" :phase="phase"></MissionTableFragment>
     </tr>
     <tr>
-        <MissionTableFragment :position="`Fleet`" :data="data.zeffo.fleets"></MissionTableFragment>
+        <MissionTableFragment :position="`Fleet`" :data="data.zeffo.fleets" :phase="phase"></MissionTableFragment>
     </tr>
 </template>

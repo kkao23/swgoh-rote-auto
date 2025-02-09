@@ -6,19 +6,22 @@ const data = rawData.phase2;
 defineProps({
     data: Array<dataType>,
 });
+
+const phase = 'P2';
+const alignment = 'LS';
 </script>
 
 <template>
     <tr>
-        <MissionTableFragment :position="`Left`" :data="data.ls.left"></MissionTableFragment>
+        <MissionTableFragment :position="`Left`" :data="data.ls.left" :phase="phase" :alignment="alignment"></MissionTableFragment>
     </tr>
     <tr>
-        <MissionTableFragment :position="`Zeffo Unlock`" :data="data.ls.zeffo"></MissionTableFragment>
+        <MissionTableFragment :position="`Zeffo Unlock`" :data="data.ls.zeffo" :phase="phase" :alignment="alignment"></MissionTableFragment>
     </tr>
     <tr>
-        <MissionTableFragment :position="`Jedi`" :data="data.ls.jedi"></MissionTableFragment>
+        <MissionTableFragment :position="`Jedi`" :data="data.ls.jedi" :phase="phase" :alignment="alignment"></MissionTableFragment>
     </tr>
     <tr>
-        <MissionTableFragment :position="`Fleet`" :data="data.ls.ships"></MissionTableFragment>
+        <MissionTableFragment :position="`Fleet`" :data="data.ls.ships" :phase="phase" :alignment="alignment"></MissionTableFragment>
     </tr>
 </template>

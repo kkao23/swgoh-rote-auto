@@ -16,56 +16,107 @@ import P5Mixed from './components/p5/P5Mixed.vue';
 import Zeffo from './components/zeffo/Zeffo.vue';
 import Mandalore from './components/mandalore/Mandalore.vue';
 
+const modalStore = useModalStore();
+console.log(modalStore.isModalOpen);
+const phases = [
+  {
+    label: 'Phase 1',
+    slot: 'phase-1-slot', // Define a slot name
+    disabled: modalStore.isModalOpen,
+  },
+  {
+    label: 'Phase 2',
+    slot: 'phase-2-slot', // Define a slot name
+    disabled: modalStore.isModalOpen,
+  },
+  {
+    label: 'Phase 3',
+    slot: 'phase-3-slot', // Define a slot name
+    disabled: modalStore.isModalOpen,
+  },
+  {
+    label: 'Phase 4',
+    slot: 'phase-4-slot', // Define a slot name
+    disabled: modalStore.isModalOpen,
+  },
+  {
+    label: 'Phase 5',
+    slot: 'phase-5-slot', // Define a slot name
+    disabled: modalStore.isModalOpen,
+  }, {
+    label: 'Zeffo',
+    slot: 'zeffo-slot', // Define a slot name
+    disabled: modalStore.isModalOpen,
+  },
+  {
+    label: 'Mandalore',
+    slot: 'mandalore-slot', // Define a slot name
+    disabled: modalStore.isModalOpen,
+  },
+];
+
 </script>
 
 <template>
-  <UContainer>
-    <UCard class="mt-10">
-      <template #header>
-        <div class="flex justify-between">
-          <h1>Welcome to SWGOH RoTE Auto Guide</h1>
-          <ColorScheme>
-            <USelect v-model="$colorMode.preference" :options="['system', 'light', 'dark']" />
-          </ColorScheme>
-        </div>
-      </template>
-      <!-- <UButton icon="i-heroicons-book-open" to="https://ui.nuxt.com" target="_blank">Open Nuxt UI Documentation
-      </UButton>
-      <SampleButton /> -->
-    </UCard>
-    <div class="w-full overflow-x-auto">
-      <table class="w-full border-collapse border border-gray-300">
-        <tbody>
-          <tr class="border-b border-gray-300">
-            <th>Phase</th>
-          </tr>
-          <tr class="border-b border-gray-300">
+  <div class="bg-color min-h-screen">
+    <UContainer>
+      <UCard class="mt-8 mb-8 bg-gradient-to-r from-blue-400 via-indigo-500 to-red-600 text-white shadow-lg rounded-xl p-6">
+        <template #header>
+          <div class="flex justify-between items-center">
+            <h1 class="text-2xl font-bold">SWGOH RoTE Auto Guide</h1>
+          </div>
+        </template>
+      </UCard>
+      <div class="w-full overflow-x-auto">
+        <UAccordion :items="phases" color="primary">
+          <template #phase-1-slot>
+            <!-- <UIcon 
+          v-if="!modalStore.isModalOpen"
+          :name="index ? 'i-heroicons-chevron-up' : 'i-heroicons-chevron-down'"
+          class="w-5 h-5 text-gray-500"
+        /> -->
             <PhaseWrapper phase-number="1" :ds-component="P1DS" :ls-component="P1LS" :mixed-component="P1Mixed">
             </PhaseWrapper>
-          </tr>
-          <tr class="border-b border-gray-300">
+          </template>
+          <template #phase-2-slot>
             <PhaseWrapper phase-number="2" :ds-component="P2DS" :ls-component="P2LS" :mixed-component="P2Mixed">
             </PhaseWrapper>
-          </tr>
-          <tr class="border-b border-gray-300">
+          </template>
+          <template #phase-3-slot>
             <PhaseWrapper phase-number="3" :ds-component="P3DS" :ls-component="P3LS" :mixed-component="P3Mixed">
             </PhaseWrapper>
-          </tr>
-          <tr class="border-b border-gray-300">
+          </template>
+          <template #phase-4-slot>
             <PhaseWrapper phase-number="4" :ds-component="P4DS" :ls-component="P4LS" :mixed-component="P4Mixed">
             </PhaseWrapper>
-          </tr>
-          <tr class="border-b border-gray-300">
+          </template>
+          <template #phase-5-slot>
             <PhaseWrapper phase-number="5" :mixed-component="P5Mixed"></PhaseWrapper>
-          </tr>
-          <tr class="border-b border-gray-300">
+          </template>
+          <template #zeffo-slot>
             <PhaseWrapper phase-number="Zeffo" :ls-component="Zeffo"></PhaseWrapper>
-          </tr>
-          <tr class="border-b border-gray-300">
+          </template>
+          <template #mandalore-slot>
             <PhaseWrapper phase-number="Mandalore" :mixed-component="Mandalore"></PhaseWrapper>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </UContainer>
+          </template>
+          <!-- <template #default="{ open }">
+          <template>
+            <UIcon
+            v-if="!modalStore.isModalOpen"
+            name="i-heroicons-chevron-right-20-solid"
+            class="w-5 h-5 ms-auto transform transition-transform duration-200"
+            :class="[open && 'rotate-90']"
+          />
+          </template>
+        </template> -->
+        </UAccordion>
+      </div>
+    </UContainer>
+  </div>
 </template>
+
+<style>
+.bg-color {
+  background-color: #0D0D2B;
+}
+</style>

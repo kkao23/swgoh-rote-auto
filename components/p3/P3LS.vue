@@ -6,10 +6,13 @@ const data = rawData.phase3;
 defineProps({
     data: Array<dataType>,
 });
+
+const phase = 'P3';
+const alignment = 'LS';
 </script>
 
 <template>
     <tr>
-        <MissionTableFragment :position="`Saw`" :data="data.ls.saw"></MissionTableFragment>
+        <MissionTableFragment :position="`Saw`" :data="data.ls.saw" :phase="phase" :alignment="alignment"></MissionTableFragment>
     </tr>
 </template>

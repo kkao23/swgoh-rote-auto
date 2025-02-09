@@ -6,11 +6,14 @@ const data = rawData.phase1;
 defineProps({
     data: Array<dataType>,
 });
+
+const phase = 'P1';
+const alignment = 'Mixed';
 </script>
 
 <template>
     <tr>
-        <MissionTableFragment :position="`Qira`" :data="data.mixed.qira">
+        <MissionTableFragment :position="`Qira`" :data="data.mixed.qira" :phase="phase" :alignment="alignment">
         </MissionTableFragment>
     </tr>
 </template>

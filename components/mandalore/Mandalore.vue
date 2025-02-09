@@ -6,13 +6,15 @@ const data = rawData.phase4;
 defineProps({
     data: Array<dataType>,
 });
+
+const phase = 'Mandalore';
 </script>
 
 <template>
     <tr>
-        <MissionTableFragment :position="`Generic`" :data="data.mandalore.generic"></MissionTableFragment>
+        <MissionTableFragment :position="`Generic`" :data="data.mandalore.generic" :phase="phase"></MissionTableFragment>
     </tr>
     <tr>
-        <MissionTableFragment :position="`Fleet`" :data="data.mandalore.fleets"></MissionTableFragment>
+        <MissionTableFragment :position="`Fleet`" :data="data.mandalore.fleets" :phase="phase"></MissionTableFragment>
     </tr>
 </template>

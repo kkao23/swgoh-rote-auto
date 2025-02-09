@@ -6,22 +6,25 @@ const data = rawData.phase2;
 defineProps({
     data: Array<dataType>,
 });
+
+const phase = 'P2';
+const alignment = 'Mixed';
 </script>
 
 <template>
     <tr>
-        <MissionTableFragment :position="`Hondo`" :data="data.mixed.hondo"></MissionTableFragment>
+        <MissionTableFragment :position="`Hondo`" :data="data.mixed.hondo" :phase="phase" :alignment="alignment"></MissionTableFragment>
     </tr>
     <tr>
-        <MissionTableFragment :position="`Young Lando`" :data="data.mixed.youngLando"></MissionTableFragment>
+        <MissionTableFragment :position="`Young Lando`" :data="data.mixed.youngLando" :phase="phase" :alignment="alignment"></MissionTableFragment>
     </tr>
     <tr>
-        <MissionTableFragment :position="`Jabba`" :data="data.mixed.jabba"></MissionTableFragment>
+        <MissionTableFragment :position="`Jabba`" :data="data.mixed.jabba" :phase="phase" :alignment="alignment"></MissionTableFragment>
     </tr>
     <tr>
-        <MissionTableFragment :position="`Combat`" :data="data.mixed.combat"></MissionTableFragment>
+        <MissionTableFragment :position="`Combat`" :data="data.mixed.combat" :phase="phase" :alignment="alignment"></MissionTableFragment>
     </tr>
     <tr>
-        <MissionTableFragment :position="`Fleet`" :data="data.mixed.ships"></MissionTableFragment>
+        <MissionTableFragment :position="`Fleet`" :data="data.mixed.ships" :phase="phase" :alignment="alignment"></MissionTableFragment>
     </tr>
 </template>

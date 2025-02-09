@@ -3,8 +3,4 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ["@nuxt/ui", '@pinia/nuxt'],
   compatibilityDate: "2025-02-07",
-  ssr: false,
-  nitro: {
-    preset: 'static',
-  }
 })

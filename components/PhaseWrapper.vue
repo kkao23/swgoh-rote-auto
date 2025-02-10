@@ -13,7 +13,7 @@ const handleToggleExpanded = (expanded: boolean) => {
 const isExpanded = ref(false);
 </script>
 <template>
-    <table class="w-full">
+    <table class="w-full text-amber-200">
         <tbody>
             <tr>
                 <td style="vertical-align: top;">

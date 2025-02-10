@@ -59,11 +59,12 @@ const phases = [
 
 <template>
   <div class="bg-color min-h-screen">
+    <div class="h-8"></div>
     <UContainer>
-      <UCard class="mt-8 mb-8 bg-gradient-to-r from-blue-400 via-indigo-500 to-red-600 text-white shadow-lg rounded-xl p-6">
+      <UCard class="mb-8 bg-gradient-to-r from-blue-400 via-indigo-500 to-red-600 text-white shadow-lg rounded-xl p-6">
         <template #header>
           <div class="flex justify-between items-center">
-            <h1 class="text-2xl font-bold">SWGOH RoTE Auto Guide</h1>
+            <h1 class="text-xl font-[Orbitron]">SWGOH RoTE Auto Guide</h1>
           </div>
         </template>
       </UCard>

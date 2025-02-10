@@ -173,6 +173,15 @@ const leftLSP2 = [
     },
 ]
 
+const rightLSP2 = [
+    {
+        lead: 'Leia',
+        others: 'Drogan, R2, Baze, Capt Rex',
+        notes: 'auto, last two replaceable',
+        link: 'https://youtu.be/Od4-cr8woO8'
+    }
+]
+
 const zeffoUnlock = [
     {
         lead: 'Cere',
@@ -234,6 +243,15 @@ const mixedP3Ships = [
         others: 'HT, XB, Punishing One, IG2000',
         notes: 'auto, use other BH ships if not platooned',
         link: 'https://youtu.be/rcqIa6VlXHs'
+    }
+]
+
+const dsMidP3 = [
+    {
+        lead: 'Baylan',
+        others: 'Marrok, Shin, Jango, Zam',
+        notes: 'omi Marrok, auto, last two are flexible',
+        link: 'https://youtu.be/WcYP7j8ooos'
     }
 ]
 
@@ -463,11 +481,13 @@ export const data = {
             ships: shipsLSP2,
             jedi: jediLSP2,
             left: leftLSP2,
+            right: rightLSP2,
             zeffo: zeffoUnlock
         },
     },
     phase3: {
         ds: {
+            mid: dsMidP3,
             empire: dsEmpireP3,
             aphra: drAphraP3,
             merrin: merrinP3,

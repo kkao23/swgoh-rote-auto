@@ -46,7 +46,7 @@ const columns = [{
         <div class="text-center">
             <div class="flex items-center space-x-1">
                 <span>{{ position }}</span> <button @click="localIsModalOpen = !localIsModalOpen"
-                    class="w-8 h-8 text-blue-500 cursor-pointer hover:text-blue-700 transition duration-200"
+                    class="w-8 h-8 text-zinc-200 cursor-pointer hover:text-zinc-50 transition duration-200"
                     v-show="!modalStore.isModalOpen" style="padding-top: 5px;">
                     <UIcon name="i-heroicons-plus-circle" v-if="!localIsModalOpen" class="w-6 h-6" />
                     <UIcon name="i-heroicons-minus-circle" v-else class="w-6 h-6" />

@@ -57,7 +57,7 @@ const phases = [
 </script>
 
 <template>
-  <div class="bg-color min-h-screen">
+  <div class="bg-color min-h-screen flex flex-col">
     <div class="h-8"></div>
     <UContainer>
       <UCard class="mb-8 bg-gradient-to-r from-blue-400 via-indigo-500 to-red-600 text-white shadow-lg rounded-xl p-6">
@@ -96,22 +96,21 @@ const phases = [
           </template>
         </UAccordion>
       </div>
-      <div style="position:fixed; bottom:0; width:100%;">
-        <div class="footer flex items-center justify-between text-white px-4 py-2 rounded-b-xl mt-auto pr-8">
+    </UContainer>
+    <div class="flex items-center text-white px-4 py-2 rounded-b-xl mt-auto">
         <p class="text-xs font-semibold">Questions? Comments?</p>
-        <div class="flex space-x-2">
+        <!-- Wrapper for icons -->
+        <div class="flex-grow flex justify-end space-x-2">
           <!-- YouTube Link -->
           <a href="https://www.youtube.com/channel/UCUDT-IWDuCUwQIqXshV9aQw" target="_blank" class="hover:opacity-80">
             <img src="/icons8-youtube.svg" alt="YouTube" class="h-8 w-8" />
           </a>
-          <!-- Discord Link -->
+          <!-- Reddit Link -->
           <a href="https://www.reddit.com/user/captsolo23/" target="_blank" class="hover:opacity-80">
             <img src="/icons8-reddit.svg" alt="Reddit" class="h-8 w-8" />
           </a>
         </div>
       </div>
-      </div>
-    </UContainer>
   </div>
 </template>
 

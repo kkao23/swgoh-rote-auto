@@ -6,7 +6,8 @@ export default defineNuxtConfig({
   app: {
     head: {
       link: [
-        { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" }
+        { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" },
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
       ]
     }
   }

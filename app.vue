@@ -17,7 +17,6 @@ import Zeffo from './components/zeffo/Zeffo.vue';
 import Mandalore from './components/mandalore/Mandalore.vue';
 
 const modalStore = useModalStore();
-console.log(modalStore.isModalOpen);
 const phases = [
   {
     label: 'Phase 1',
@@ -63,19 +62,14 @@ const phases = [
     <UContainer>
       <UCard class="mb-8 bg-gradient-to-r from-blue-400 via-indigo-500 to-red-600 text-white shadow-lg rounded-xl p-6">
         <template #header>
-          <div class="flex justify-between items-center">
-            <h1 class="text-xl font-[Orbitron]">SWGOH RoTE Auto Guide</h1>
+          <div class="flex justify-center items-center">
+            <h1 class="text-l font-[Orbitron]">SWGOH RoTE Auto Guide</h1>
           </div>
         </template>
       </UCard>
-      <div class="w-full overflow-x-auto">
+      <div class="flex-grow w-full overflow-x-auto">
         <UAccordion :items="phases" color="primary">
           <template #phase-1-slot>
-            <!-- <UIcon 
-          v-if="!modalStore.isModalOpen"
-          :name="index ? 'i-heroicons-chevron-up' : 'i-heroicons-chevron-down'"
-          class="w-5 h-5 text-gray-500"
-        /> -->
             <PhaseWrapper phase-number="1" :ds-component="P1DS" :ls-component="P1LS" :mixed-component="P1Mixed">
             </PhaseWrapper>
           </template>
@@ -100,17 +94,22 @@ const phases = [
           <template #mandalore-slot>
             <PhaseWrapper phase-number="Mandalore" :mixed-component="Mandalore"></PhaseWrapper>
           </template>
-          <!-- <template #default="{ open }">
-          <template>
-            <UIcon
-            v-if="!modalStore.isModalOpen"
-            name="i-heroicons-chevron-right-20-solid"
-            class="w-5 h-5 ms-auto transform transition-transform duration-200"
-            :class="[open && 'rotate-90']"
-          />
-          </template>
-        </template> -->
         </UAccordion>
+      </div>
+      <div style="position:fixed; bottom:0; width:100%;">
+        <div class="footer flex items-center justify-between text-white px-4 py-2 rounded-b-xl mt-auto pr-8">
+        <p class="text-xs font-semibold">Questions? Comments?</p>
+        <div class="flex space-x-2">
+          <!-- YouTube Link -->
+          <a href="https://www.youtube.com/channel/UCUDT-IWDuCUwQIqXshV9aQw" target="_blank" class="hover:opacity-80">
+            <img src="/icons8-youtube.svg" alt="YouTube" class="h-8 w-8" />
+          </a>
+          <!-- Discord Link -->
+          <a href="https://www.reddit.com/user/captsolo23/" target="_blank" class="hover:opacity-80">
+            <img src="/icons8-reddit.svg" alt="Reddit" class="h-8 w-8" />
+          </a>
+        </div>
+      </div>
       </div>
     </UContainer>
   </div>

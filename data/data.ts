@@ -5,6 +5,12 @@ const leftDSP1 = [{
     others: 'Wat, Jango, Nute, Dooku',
     notes: 'Open with Tank Tech on Jango, target droideka, hit auto',
     link: 'https://youtu.be/zLFGIuSzFW0'
+},
+{
+    lead: 'SLKR',
+    others: 'DRey',
+    notes: 'Any other FO, Auto',
+    link: 'https://youtu.be/AsoKUJ0UIik'
 }];
 
 const bottomDSP1 = [{
@@ -18,6 +24,12 @@ const bottomDSP1 = [{
     others: 'GI, 7S, 5B, 8B',
     notes: 'Target Droideka, hit auto',
     link: 'https://youtu.be/Pk9v02K5wwc'
+},
+{
+    lead: 'SEE',
+    others: 'Wat, Malak, Bane, Malgus',
+    notes: 'only 1/2 on auto',
+    link: 'https://youtu.be/CjxSQ88mlMk'
 }
 ];
 
@@ -27,6 +39,12 @@ const topDSP1 = [
         others: 'Hux, KRU, Sith Trooper, any 5th',
         notes: 'Stun droideka first, second phase poke brute, otherwise auto',
         link: 'https://youtu.be/QGui7hJ4ZrQ'
+    },
+    {
+        lead: 'Baylan',
+        others: 'Marrok, Shin, any 2 mercs',
+        notes: 'auto, Marrok Omi',
+        link: 'https://youtu.be/y2_S73szIS0'
     }
 ];
 
@@ -45,6 +63,12 @@ const maceKitP1 = [
         others: 'JMK, GAS, Ahsoka, Kit',
         notes: 'Full auto',
         link: 'https://youtu.be/sC8Srr7-ziM'
+    },
+    {
+        lead: 'JKCK',
+        others: 'JKCK, GAS, Ahsoka, Kit',
+        notes: 'Only 1/2 on auto',
+        link: 'https://youtu.be/AE5XinIdzPE'
     }
 ]
 
@@ -63,6 +87,12 @@ const shipsLSP1 = [
         others: 'HMF, Outrider, Y wing',
         notes: 'easy auto',
         link: 'https://youtu.be/eInUd3NBMQU'
+    },
+    {
+        lead: 'Home One',
+        others: 'HMF, Outrider, Y wing, Biggs, Wedge',
+        notes: 'Outrider 2nd special, auto, biggs then wedge reinf',
+        link: 'https://youtu.be/zxW5IOe_w_o'
     }
 ]
 
@@ -72,6 +102,12 @@ const middleLSP1 = [
         others: 'Drogan, R2, Ben, Baze',
         notes: 'auto, last two can be any rebels',
         link: 'https://youtu.be/2qBtZzE3ZPU'
+    },
+    {
+        lead: 'Hunter (OG)',
+        others: 'Echo, Wrecker, Tech, Shaak',
+        notes: 'only 1/2',
+        link: 'https://youtu.be/uVCIpd5pXf4'
     }
 ]
 
@@ -93,9 +129,42 @@ const leftLSP1 = [
 const qiraMixedP1 = [
     {
         lead: 'Qira',
-        others: 'Leia, R2, Drogan, Young han',
+        others: 'Leia, R2, Drogan',
         notes: 'auto',
         link: 'https://youtu.be/iViRHC81yvs'
+    },
+    {
+        lead: 'Qira',
+        others: 'JMK, CAT, GK',
+        notes: 'auto',
+        link: 'https://youtu.be/uYhZJ3qbU9c'
+    }
+]
+
+const mixedP1 = [
+    {
+        lead: 'CLS',
+        others: 'Han, Chewie, 3PO, Chewpio',
+        notes: 'auto',
+        link: 'https://youtu.be/CxIRs8XsEVA'
+    }
+]
+
+const jabbaP1 = [
+    {
+        lead: 'Jabba',
+        others: 'Boba, Krrsantan, Skiff Lando, Booush',
+        notes: 'easy auto',
+        link: 'https://youtu.be/W_GayJRsWy4'
+    }
+]
+
+const drAphraP1 = [
+    {
+        lead: 'Aphra',
+        others: 'Rey, JTR, Ben, BB8',
+        notes: 'auto',
+        link: 'https://youtu.be/dNNTaMIUjD8'
     }
 ]
 
@@ -455,6 +524,9 @@ export const data = {
         },
         mixed: {
             qira: qiraMixedP1,
+            mixed: mixedP1,
+            jabba: jabbaP1,
+            aphra: drAphraP1,
         },
         ls: {
             ships: shipsLSP1,

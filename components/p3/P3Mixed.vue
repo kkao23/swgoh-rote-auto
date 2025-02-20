@@ -18,4 +18,16 @@ const alignment = 'Mixed';
     <tr>
         <MissionTableFragment :position="`Reva Unlock`" :data="data.mixed.reva" :phase="phase" :alignment="alignment"></MissionTableFragment>
     </tr>
+    <tr>
+        <MissionTableFragment :position="`Top Left`" :data="data.mixed.topLeft" :phase="phase" :alignment="alignment"></MissionTableFragment>
+    </tr>
+    <tr>
+        <MissionTableFragment :position="`Fennec`" :data="data.mixed.fennec" :phase="phase" :alignment="alignment"></MissionTableFragment>
+    </tr>
+    <tr>
+        <MissionTableFragment :position="`Jabba`" :data="data.mixed.jabba" :phase="phase" :alignment="alignment"></MissionTableFragment>
+    </tr>
+    <tr>
+        <MissionTableFragment :position="`Ships (Exec)`" :data="data.mixed.fleet" :phase="phase" :alignment="alignment"></MissionTableFragment>
+    </tr>
 </template>

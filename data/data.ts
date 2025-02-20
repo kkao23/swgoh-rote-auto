@@ -78,6 +78,12 @@ const jediP1 = [
         others: 'Jedi Luke, HYoda, JKA, GMY',
         notes: 'auto, Almost any other jedi work',
         link: 'https://youtu.be/9l_PmvdNH1U'
+    },
+    {
+        lead: 'JKL',
+        others: 'Ezra GMY Hyoda Bastila',
+        notes: 'auto, if no JML',
+        link: 'https://youtu.be/N3weS_bW_Js'
     }
 ]
 
@@ -123,6 +129,12 @@ const leftLSP1 = [
         others: 'Capt Rex, Luthen, Cassian, Baze',
         notes: 'auto, last two can vary',
         link: 'https://youtu.be/Utm6eFHyntU'
+    },
+    {
+        lead: 'Mon Mothma',
+        others: 'Luthen, Kyle (o), Capt Rex, Cassian',
+        notes: 'auto',
+        link: 'https://youtu.be/IbBy_vDW6xc'
     }
 ]
 
@@ -168,6 +180,15 @@ const drAphraP1 = [
     }
 ]
 
+const shipsP1 = [
+    {
+        lead: 'Executor',
+        others: 'HT, P1, XB, Slave 1, IG2000',
+        notes: 'auto, use RC if not platooned',
+        link: 'https://youtu.be/Qzduxv0BJx8'
+    }
+]
+
 // P2
 
 const hondoMixedP2 = [
@@ -176,6 +197,12 @@ const hondoMixedP2 = [
         others: 'Hondo, Shin, Marrok, Jango',
         notes: 'Fifth can be any mercenary, omi marrok, auto',
         link: 'https://youtu.be/9FarHhCvPb8'
+    },
+    {
+        lead: 'Rey',
+        others: 'JTR, BB8, 3PO',
+        notes: 'auto, not consistent 2/2',
+        link: 'https://youtu.be/Pws01j8kXn0'
     }
 ]
 
@@ -230,16 +257,28 @@ const jediLSP2 = [
         others: 'Ezra exile, JKL, Kyle Katarn, Shaak Ti',
         notes: 'auto with KK omi',
         link: 'https://youtu.be/wom3RZrx9VQ'
+    },
+    {
+        lead: 'JMK',
+        others: 'Shaak, Ahsoka, Ezra exile, GK',
+        notes: 'auto, long, not reliable 2/2',
+        link: 'https://youtu.be/_0J9LtUwj4U'
     }
 ]
 
 const leftLSP2 = [
     {
-        lead: 'Bo Katan Mandalore',
+        lead: 'BK Mandalore',
         others: 'Rey, Paz, Beskar Mando, IG12',
         notes: 'not reliable on auto, only 1/2',
         link: 'https://youtu.be/W_AfGpB5RxY'
     },
+    {
+        lead: 'Boss Nass',
+        others: 'Gungans',
+        notes: 'easy auto with Tarpals Omi',
+        link: 'https://youtu.be/2epBiIcFaG0'
+    }
 ]
 
 const rightLSP2 = [
@@ -248,6 +287,12 @@ const rightLSP2 = [
         others: 'Drogan, R2, Baze, Capt Rex',
         notes: 'auto, last two replaceable',
         link: 'https://youtu.be/Od4-cr8woO8'
+    },
+    {
+        lead: 'Saw',
+        others: 'Luthen, Kyle (o), Cassian, Capt Rex',
+        notes: 'only 1/2 auto',
+        link: 'https://youtu.be/jX-X3SfQGUI'
     }
 ]
 
@@ -266,6 +311,12 @@ const acklayDSP2 = [
         others: 'Wat, any 3 empire',
         notes: 'Health/Prot tech on LV, hit auto',
         link: 'https://youtu.be/IfeFkchU5fA'
+    },
+    {
+        lead: 'Reva',
+        others: 'GI, 7S, 5B, 8B',
+        notes: 'auto',
+        link: 'https://youtu.be/EYvM-YOI6Zk'
     }
 ]
 
@@ -275,6 +326,12 @@ const reekDSP2 = [
         others: 'Darth Vader, Bane, Malak, any 5th',
         notes: 'auto, Vader and malak are nice, others dont matter',
         link: 'https://youtu.be/ZSa1T0vsPYE'
+    },
+    {
+        lead: 'Great Mothers',
+        others: 'Morgan, Merrin, Night Trooper, Death Trooper',
+        notes: 'easy auto',
+        link: 'https://youtu.be/H4r1Qyq-cr0'
     }
 ]
 
@@ -284,6 +341,12 @@ const nexuDSP2 = [
         others: 'GI, 7S, 5B, 8B',
         notes: '2nd special, Auto',
         link: 'https://youtu.be/x3lQbmRbC0U'
+    },
+    {
+        lead: 'SLKR',
+        others: 'Hux, KRU, Sith Trooper, D Rey',
+        notes: 'Poke, auto, DRey makes it easier',
+        link: 'https://youtu.be/FW60H6-v6wM'
     }
 ]
 
@@ -306,12 +369,45 @@ const revaP3 = [
     }
 ]
 
+const jabbaP3 = [
+    {
+        lead: 'Jabba',
+        others: 'Any',
+        notes: 'auto basic if no R7 Hutt Cartel',
+        link: 'https://youtu.be/NpWgXSXi9pw'
+    }
+]
+
+const fennecP3 = [
+    {
+        lead: 'Rey',
+        others: 'Fennec, any 3 resistance',
+        notes: 'easy auto',
+        link: 'https://youtu.be/ydm8T8Jvpyc'
+    }
+]
+
+const mixedTopLeftP3 = [
+    {
+        lead: 'GAS',
+        others: '501st Clones',
+        notes: 'auto',
+        link: 'https://youtu.be/R3LzrCTN_SU'
+    }
+]
+
 const mixedP3Ships = [
     {
         lead: 'Executor',
         others: 'HT, XB, Punishing One, IG2000',
         notes: 'auto, use other BH ships if not platooned',
         link: 'https://youtu.be/rcqIa6VlXHs'
+    },
+    {
+        lead: 'Executor',
+        others: 'RC, HT, XB, Slave 1',
+        notes: 'If no Punishing One, auto',
+        link: 'https://youtu.be/MoaMRXXAMqw'
     }
 ]
 
@@ -321,8 +417,24 @@ const dsMidP3 = [
         others: 'Marrok, Shin, Jango, Zam',
         notes: 'omi Marrok, auto, last two are flexible',
         link: 'https://youtu.be/WcYP7j8ooos'
+    },
+    {
+        lead: 'Emp Palpatine',
+        others: 'Wat, SEE, Malak, Bane',
+        notes: 'Doable without Wat but slower, weapon tech on SEE, auto',
+        link: 'https://youtu.be/eXq1LcioaFE'
     }
 ]
+
+const dsRightP3 = [
+    {
+        lead: 'SLKR',
+        others: 'DRey, KRU, Kylo Ren, Sith Trooper',
+        notes: 'Poke once in each round, inconsistent without DRey',
+        link: 'https://youtu.be/grmLuLr-XG0'
+    }
+]
+
 
 const dsEmpireP3 = [
     {
@@ -351,12 +463,36 @@ const merrinP3 = [
     }
 ]
 
+const lsLeftP3 = [
+    {
+        lead: 'JMK',
+        others: 'CAT, Snips, Padme, GK',
+        notes: 'auto, not consistent 2/2',
+        link: 'https://youtu.be/DiSqzfNlNww'
+    }
+]
+
+const lsRightP3 = [
+    {
+        lead: 'Leia',
+        others: 'R2, Drogan +2',
+        notes: 'auto, focus mara wave 2',
+        link: 'https://youtu.be/xrl2EVOFLxQ'
+    }
+]
+
 const sawP3 = [
     {
         lead: 'Saw',
         others: 'Capt Rex, Luthen, Cassian, Drogan',
         notes: 'auto, Can use kyle instead of drogan, do first moves manually',
         link: 'https://youtu.be/K4HObnZm0TU'
+    },
+    {
+        lead: 'Saw',
+        others: 'Capt Rex, Luthen, Cassian, Kyle (o)',
+        notes: 'auto, kyle instead of drogan, do first moves manually',
+        link: 'https://youtu.be/FCEEsGXMtOA'
     }
 ]
 
@@ -527,6 +663,7 @@ export const data = {
             mixed: mixedP1,
             jabba: jabbaP1,
             aphra: drAphraP1,
+            ships: shipsP1,
         },
         ls: {
             ships: shipsLSP1,
@@ -560,16 +697,22 @@ export const data = {
     phase3: {
         ds: {
             mid: dsMidP3,
+            right: dsRightP3,
             empire: dsEmpireP3,
             aphra: drAphraP3,
             merrin: merrinP3,
         },
         ls: {
             saw: sawP3,
+            left: lsLeftP3,
+            right: lsRightP3
         },
         mixed: {
             boKatan: boKatanP3,
             reva: revaP3,
+            topLeft: mixedTopLeftP3,
+            jabba: jabbaP3,
+            fennec: fennecP3,
             fleet: mixedP3Ships,
         },
         zeffo: {

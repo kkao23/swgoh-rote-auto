@@ -16,6 +16,9 @@ const alignment = 'DS';
         <MissionTableFragment :position="`Mid`" :data="data.ds.mid" :phase="phase" :alignment="alignment"></MissionTableFragment>
     </tr>
     <tr>
+        <MissionTableFragment :position="`Right`" :data="data.ds.right" :phase="phase" :alignment="alignment"></MissionTableFragment>
+    </tr>
+    <tr>
         <MissionTableFragment :position="`Empire`" :data="data.ds.empire" :phase="phase" :alignment="alignment"></MissionTableFragment>
     </tr>
     <tr>

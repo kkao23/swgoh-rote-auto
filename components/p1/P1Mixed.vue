@@ -28,4 +28,8 @@ const alignment = 'Mixed';
         <MissionTableFragment :position="`Aphra`" :data="data.mixed.aphra" :phase="phase" :alignment="alignment">
         </MissionTableFragment>
     </tr>
+    <tr>
+        <MissionTableFragment :position="`Ships`" :data="data.mixed.ships" :phase="phase" :alignment="alignment">
+        </MissionTableFragment>
+    </tr>
 </template>

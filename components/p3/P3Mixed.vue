@@ -13,10 +13,10 @@ const alignment = 'Mixed';
 
 <template>
     <tr>
-        <MissionTableFragment :position="`Bo Katan (Krayt)`" :data="data.mixed.boKatan" :phase="phase" :alignment="alignment"></MissionTableFragment>
+        <MissionTableFragment :position="`BK (Krayt)`" :data="data.mixed.boKatan" :phase="phase" :alignment="alignment"></MissionTableFragment>
     </tr>
     <tr>
-        <MissionTableFragment :position="`Reva Unlock`" :data="data.mixed.reva" :phase="phase" :alignment="alignment"></MissionTableFragment>
+        <MissionTableFragment :position="`Reva 🔓`" :data="data.mixed.reva" :phase="phase" :alignment="alignment"></MissionTableFragment>
     </tr>
     <tr>
         <MissionTableFragment :position="`Top Left`" :data="data.mixed.topLeft" :phase="phase" :alignment="alignment"></MissionTableFragment>
@@ -28,6 +28,6 @@ const alignment = 'Mixed';
         <MissionTableFragment :position="`Jabba`" :data="data.mixed.jabba" :phase="phase" :alignment="alignment"></MissionTableFragment>
     </tr>
     <tr>
-        <MissionTableFragment :position="`Ships (Exec)`" :data="data.mixed.fleet" :phase="phase" :alignment="alignment"></MissionTableFragment>
+        <MissionTableFragment :position="`Ships`" :data="data.mixed.fleet" :phase="phase" :alignment="alignment"></MissionTableFragment>
     </tr>
 </template>

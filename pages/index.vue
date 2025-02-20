@@ -53,35 +53,11 @@ const phases = [
         disabled: modalStore.isModalOpen,
     },
 ];
-
-definePageMeta({
-    title: 'SWGOH RoTE Auto Guide', // Set the page title
-    meta: [
-        {
-            name: 'description',
-            content: 'A detailed guide for SWGOH Rise of the Empire Territory Battles.'
-        },
-        {
-            name: 'keywords',
-            content: 'SWGOH, Star Wars, Rise of the Empire, Territory Battles, Guide'
-        },
-        {
-            property: 'og:title',
-            content: 'SWGOH RoTE Auto Guide'
-        },
-        {
-            property: 'og:description',
-            content: 'A detailed guide for SWGOH Rise of the Empire Territory Battles.'
-        }
-    ]
-});
-
 </script>
 
 <template>
-    <div class="bg-color">
+    <div class="flex-1 bg-color">
         <UContainer>
-            <div class="flex-grow w-full overflow-x-auto min-h-[calc(100vh-224px)]">
                 <UAccordion :items="phases" color="primary">
                     <template #phase-1-slot>
                         <PhaseWrapper phase-number="1" :ds-component="P1DS" :ls-component="P1LS"
@@ -113,7 +89,6 @@ definePageMeta({
                         <PhaseWrapper phase-number="Mandalore" :mixed-component="Mandalore"></PhaseWrapper>
                     </template>
                 </UAccordion>
-            </div>
         </UContainer>
     </div>
 </template>

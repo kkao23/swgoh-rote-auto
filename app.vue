@@ -9,8 +9,8 @@
         </template>
       </UCard>
     </div>
-    <NuxtPage />
-    <div class="bg-color flex items-center text-white px-4 py-2 rounded-b-xl mt-auto">
+    <NuxtPage class="flex-grow" />
+    <div class="bg-color flex items-center text-white px-4 py-2 rounded-b-xl">
       <p class="text-xs font-semibold">Questions? Comments?</p>
       <!-- Wrapper for icons -->
       <div class="flex-grow flex justify-end space-x-2">

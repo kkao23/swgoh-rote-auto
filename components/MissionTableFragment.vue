@@ -29,19 +29,19 @@ const globalToggleModal = () => modalStore.toggleModal();
 const localIsModalOpen = ref(false);
 
 const columns = [
-{
-    key: 'others',
-    label: 'Others',
-    class: 'px-3',
-}, {
-    key: 'notes',
-    label: 'Notes',
-    class: 'px-3',
-}, {
-    key: 'link',
-    label: 'Video',
-    class: 'px-3',
-}]
+    {
+        key: 'others',
+        label: 'Others',
+        class: 'px-3',
+    }, {
+        key: 'notes',
+        label: 'Notes',
+        class: 'px-3',
+    }, {
+        key: 'link',
+        label: 'Video',
+        class: 'px-3',
+    }]
 </script>
 
 <template>
@@ -62,32 +62,20 @@ const columns = [
 
             <!-- Modal Component -->
             <UModal v-model="localIsModalOpen" prevent-close :transition="false"
-                :ui="{ container: 'flex items-center justify-center min-h-screen' }">
+                :ui="{ container: 'flex items-center justify-center min-h-screen', background: 'bg-gray-900' }">
                 <UCard class="max-h-[80vh] overflow-y-auto"
-                    :ui="{ ring: '', divide: 'divide-y divide-gray-100 dark:divide-gray-800' }">
+                    :ui="{ ring: '', divide: 'divide-y divide-gray-100 dark:divide-gray-800', background: 'bg-gray-700'
+                     }">
                     <template #header>
                         <div class="flex items-center justify-between">
                             <h3 class="text-base font-semibold leading-6 text-gray-900 dark:text-white">
-                                <span>{{ phase }} {{ alignment }} {{ position }}</span>
+                                <span class="text-stone-50">{{ phase }} {{ alignment }} {{ position }}</span>
                             </h3>
-                            <UButton color="gray" variant="ghost" icon="i-heroicons-x-mark-20-solid" class="-my-1"
+                            <UButton color="white" variant="ghost" icon="i-heroicons-x-mark-20-solid" 
+                                class="-my-1 text-white border-2 border-white p-2 rounded-full"
                                 @click="localIsModalOpen = false" />
                         </div>
                     </template>
-
-                    <!-- <UTable :rows="data" :columns="columns">
-                        <template #link-data="{ row }">
-                            <a :href="row.link" class="text-blue-500 underline" target="_blank">
-                                Video
-                            </a>
-                        </template>
-                        <template #others-data="{ row }">
-                            <span class="whitespace-normal break-words max-w-[40vw]">{{ row.others }}</span>
-                        </template>
-                        <template #notes-data="{ row }">
-                            <span class="whitespace-normal break-words max-w-[60vw]">{{ row.notes }}</span>
-                        </template>
-                    </UTable> -->
                     <UAccordion :items="data.map(d => {
                         return {
                             label: d.lead, content: {
@@ -98,7 +86,8 @@ const columns = [
                         }
                     })">
                         <template #item="{ item }">
-                            <UTable :rows="[item.content]" :columns="columns">
+                            <UTable :rows="[item.content]" :columns="columns" :ui="{th: {color: 'text-stone-50'},
+                                td: {color: 'text-gray-200'}}">
                                 <template #others-data="{ row }">
                                     <span class="whitespace-normal break-words max-w-[40vw]">{{ row.others }}</span>
                                 </template>
@@ -106,7 +95,7 @@ const columns = [
                                     <span class="whitespace-normal break-words max-w-[60vw]">{{ row.notes }}</span>
                                 </template>
                                 <template #link-data="{ row }">
-                                    <a class="text-blue-500 underline" :href="row.link" target="_blank">Video</a>
+                                    <a class="text-blue-200 underline" :href="row.link" target="_blank">Video</a>
                                 </template>
                             </UTable>
                         </template>

@@ -59,13 +59,13 @@ const lvP1 = [
 
 const maceKitP1 = [
     {
-        lead: 'Mace',
+        lead: 'Mace (JMK)',
         others: 'JMK, GAS, Ahsoka, Kit',
         notes: 'Full auto',
         link: 'https://youtu.be/sC8Srr7-ziM'
     },
     {
-        lead: 'JKCK',
+        lead: 'Mace (JKCK)',
         others: 'JKCK, GAS, Ahsoka, Kit',
         notes: 'Only 1/2 on auto',
         link: 'https://youtu.be/AE5XinIdzPE'
@@ -137,13 +137,13 @@ const genericLSP1 = [
 
 const qiraMixedP1 = [
     {
-        lead: 'Qira',
+        lead: 'Qira (Leia)',
         others: 'Leia, R2, Drogan',
         notes: 'auto',
         link: 'https://youtu.be/iViRHC81yvs'
     },
     {
-        lead: 'Qira',
+        lead: 'Qira (JMK)',
         others: 'JMK, CAT, GK',
         notes: 'auto',
         link: 'https://youtu.be/uYhZJ3qbU9c'
@@ -395,13 +395,13 @@ const mixedTopLeftP3 = [
 
 const mixedP3Ships = [
     {
-        lead: 'Executor',
+        lead: 'Executor (P1)',
         others: 'HT, XB, Punishing One, IG2000',
         notes: 'auto, use other BH ships if not platooned',
         link: 'https://youtu.be/rcqIa6VlXHs'
     },
     {
-        lead: 'Executor',
+        lead: 'Executor (no P1)',
         others: 'RC, HT, XB, Slave 1',
         notes: 'If no Punishing One, auto',
         link: 'https://youtu.be/MoaMRXXAMqw'
@@ -476,13 +476,13 @@ const lsRightP3 = [
 
 const sawP3 = [
     {
-        lead: 'Saw',
+        lead: 'Saw (Drogan)',
         others: 'Capt Rex, Luthen, Cassian, Drogan',
         notes: 'auto, target purge troopers',
         link: 'https://youtu.be/K4HObnZm0TU'
     },
     {
-        lead: 'Saw',
+        lead: 'Saw (Kyle)',
         others: 'Capt Rex, Luthen, Cassian, Kyle (o)',
         notes: 'auto, target purge troopers',
         link: 'https://youtu.be/FCEEsGXMtOA'
@@ -664,20 +664,20 @@ const zeffoFleets = [
 
 const zeffoJedi = [
     {
-        lead: 'JKCK',
+        lead: 'JKCK (JMK)',
         others: 'JMK, Jedi Knight Luke, Ezra Exile, Kyle',
         notes: 'Omi Kyle, auto',
         link: 'https://youtu.be/bBgHB0q5hmo'
     },
     {
-        lead: 'JKCK',
+        lead: 'JKCK (GLAT)',
         others: 'GLAT, Sabine, Hera, Huyang',
         notes: 'Use ezra if possible, auto',
         link: 'https://youtu.be/V_u2XK-W8mA'
     },
     {
-        lead: 'JKCK',
-        others: 'JMK, Ezra Exile, JKL, Shaak',
+        lead: 'JKCK (JML)',
+        others: 'JML, Ezra Exile, JKL, Shaak',
         notes: 'auto, target purge trooper wave 1 then 2S wave 2',
         link: 'https://youtu.be/LqJsWBb5S88'
     }

@@ -9,7 +9,7 @@ const leftDSP1 = [{
 {
     lead: 'SLKR',
     others: 'DRey',
-    notes: 'Any other FO, Auto',
+    notes: 'Any other FO, Poke Droideka, Auto',
     link: 'https://youtu.be/AsoKUJ0UIik'
 }];
 
@@ -116,7 +116,7 @@ const genericLSP1 = [
         link: 'https://youtu.be/Utm6eFHyntU'
     },
     {
-        lead: 'Mon Mothma',
+        lead: 'M Mothma',
         others: 'Luthen, Kyle (o), Capt Rex, Cassian',
         notes: 'auto',
         link: 'https://youtu.be/IbBy_vDW6xc'

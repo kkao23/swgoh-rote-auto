@@ -10,6 +10,7 @@ type data = {
 defineProps({
     special: Boolean,
     shard: Boolean,
+    unlock: Boolean,
     phase: String,
     alignment: String,
     position: String,
@@ -49,7 +50,7 @@ const columns = [{
             <div class="flex items-center space-x-1">
                 <img v-if="special" src="/GET.png" alt="Guild Event Token Icon" class="w-6 h-6">
                 <img v-if="shard" src="/sst.png" alt="Shard Icon" class="w-6 h-6">
-                <span>{{ position }}</span> <button @click="localIsModalOpen = !localIsModalOpen"
+                <span>{{ position }}</span> <UIcon v-if="unlock" name="i-heroicons-lock-open" class="pl-2 w-6 h-6" /><button @click="localIsModalOpen = !localIsModalOpen"
                     class="w-8 h-8 text-zinc-200 cursor-pointer hover:text-zinc-50 transition duration-200"
                     v-show="!modalStore.isModalOpen" style="padding-top: 5px;">
                     <UIcon name="i-heroicons-plus-circle" v-if="!localIsModalOpen" class="w-6 h-6" />

@@ -13,7 +13,7 @@ const alignment = 'Mixed';
 
 <template>
     <tr>
-        <MissionTableFragment :position="`BK (Krayt) 🔓`" :data="data.mixed.boKatan" :phase="phase" :alignment="alignment" :special="true"></MissionTableFragment>
+        <MissionTableFragment :position="`BK`" :data="data.mixed.boKatan" :phase="phase" :alignment="alignment" :special="true" :unlock="true"></MissionTableFragment>
     </tr>
     <tr>
         <MissionTableFragment :position="`Reva`" :data="data.mixed.reva" :phase="phase" :alignment="alignment" :shard="true"></MissionTableFragment>

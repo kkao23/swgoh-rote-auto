@@ -5,6 +5,7 @@ defineProps({
     dsComponent: Object,
     lsComponent: Object,
     mixedComponent: Object,
+    specialComponent: Object,
 });
 
 const handleToggleExpanded = (expanded: boolean) => {
@@ -43,6 +44,16 @@ const isExpanded = ref(false);
                                 <th>Light Side</th>
                             </tr>
                             <component :is="lsComponent" />
+                        </tbody>
+                    </table>
+                </td>
+                <td style="vertical-align: top;">
+                    <table v-if="specialComponent">
+                        <tbody class="divide-y divide-gray-200">
+                            <tr>
+                                <th>All</th>
+                            </tr>
+                            <component :is="specialComponent" />
                         </tbody>
                     </table>
                 </td>

@@ -15,6 +15,7 @@ import P4Mixed from '../components/p4/P4Mixed.vue';
 import P5Mixed from '../components/p5/P5Mixed.vue';
 import Zeffo from '../components/zeffo/Zeffo.vue';
 import Mandalore from '../components/mandalore/Mandalore.vue';
+import SpecialMissions from '../components/special/Special.vue';
 
 const modalStore = useModalStore();
 const phases = [
@@ -52,6 +53,11 @@ const phases = [
         slot: 'mandalore-slot', // Define a slot name
         disabled: modalStore.isModalOpen,
     },
+    {
+        label: 'Special Missions',
+        slot: 'sm-slot', // Define a slot name
+        disabled: modalStore.isModalOpen,
+    },
 ];
 </script>
 
@@ -87,6 +93,9 @@ const phases = [
                     </template>
                     <template #mandalore-slot>
                         <PhaseWrapper phase-number="Mandalore" :mixed-component="Mandalore"></PhaseWrapper>
+                    </template>
+                    <template #sm-slot>
+                        <PhaseWrapper phase-number="Special Missions" :special-component="SpecialMissions"></PhaseWrapper>
                     </template>
                 </UAccordion>
         </UContainer>

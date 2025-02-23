@@ -832,4 +832,16 @@ export const data = {
             fleet: mixedFleetP5
         },
     },
+    special: {
+        all: {
+            qiraP1: qiraMixedP1,
+            zeffo: zeffoUnlock,
+            clones: clonesSM,
+            boKatan: boKatanP3,
+            merrin: merrinP3,
+            saw: sawP3,
+            inqs: dsInqP4,
+            qiraP4: mixedQiraP4,
+        }
+    }
 }

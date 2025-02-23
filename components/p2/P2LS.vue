@@ -19,7 +19,7 @@ const alignment = 'LS';
         <MissionTableFragment :position="`Right (2S)`" :data="data.ls.right" :phase="phase" :alignment="alignment"></MissionTableFragment>
     </tr>
     <tr>
-        <MissionTableFragment :position="`Zeffo 🔓`" :data="data.ls.zeffo" :phase="phase" :alignment="alignment" :special="true"></MissionTableFragment>
+        <MissionTableFragment :position="`Zeffo`" :data="data.ls.zeffo" :phase="phase" :alignment="alignment" :special="true" :unlock="true"></MissionTableFragment>
     </tr>
     <tr>
         <MissionTableFragment :position="`Jedi`" :data="data.ls.jedi" :phase="phase" :alignment="alignment"></MissionTableFragment>

@@ -13,13 +13,13 @@ const alignment = 'DS';
 
 <template>
     <tr>
-        <MissionTableFragment :position="`Left`" :data="data.ds.left" :phase="phase" :alignment="alignment"></MissionTableFragment>
+        <MissionTableFragment :position="`Left (Nute)`" :data="data.ds.left" :phase="phase" :alignment="alignment"></MissionTableFragment>
     </tr>
     <tr>
-        <MissionTableFragment :position="`Bottom`" :data="data.ds.bottom" :phase="phase" :alignment="alignment"></MissionTableFragment>
+        <MissionTableFragment :position="`Bot (Wat)`" :data="data.ds.bottom" :phase="phase" :alignment="alignment"></MissionTableFragment>
     </tr>
     <tr>
-        <MissionTableFragment :position="`Top`" :data="data.ds.top" :phase="phase" :alignment="alignment"></MissionTableFragment>
+        <MissionTableFragment :position="`Top (Geo)`" :data="data.ds.top" :phase="phase" :alignment="alignment"></MissionTableFragment>
     </tr>
     <tr>
         <MissionTableFragment :position="`LV`" :data="data.ds.lv" :phase="phase" :alignment="alignment"></MissionTableFragment>

@@ -13,13 +13,13 @@ const alignment = 'LS';
 
 <template>
     <tr>
-        <MissionTableFragment :position="`Left`" :data="data.ls.left" :phase="phase" :alignment="alignment"></MissionTableFragment>
+        <MissionTableFragment :position="`Left (CH)`" :data="data.ls.left" :phase="phase" :alignment="alignment"></MissionTableFragment>
     </tr>
     <tr>
-        <MissionTableFragment :position="`Right`" :data="data.ls.right" :phase="phase" :alignment="alignment"></MissionTableFragment>
+        <MissionTableFragment :position="`Right (2S)`" :data="data.ls.right" :phase="phase" :alignment="alignment"></MissionTableFragment>
     </tr>
     <tr>
-        <MissionTableFragment :position="`Zeffo 🔓`" :data="data.ls.zeffo" :phase="phase" :alignment="alignment"></MissionTableFragment>
+        <MissionTableFragment :position="`Zeffo 🔓`" :data="data.ls.zeffo" :phase="phase" :alignment="alignment" :special="true"></MissionTableFragment>
     </tr>
     <tr>
         <MissionTableFragment :position="`Jedi`" :data="data.ls.jedi" :phase="phase" :alignment="alignment"></MissionTableFragment>

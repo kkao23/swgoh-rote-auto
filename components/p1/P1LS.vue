@@ -13,10 +13,7 @@ const alignment = 'LS';
 
 <template>
     <tr>
-        <MissionTableFragment :position="`Left`" :data="data.ls.left" :phase="phase" :alignment="alignment"></MissionTableFragment>
-    </tr>
-    <tr>
-        <MissionTableFragment :position="`Middle`" :data="data.ls.middle" :phase="phase" :alignment="alignment"></MissionTableFragment>
+        <MissionTableFragment :position="`Combat`" :data="data.ls.generic" :phase="phase" :alignment="alignment"></MissionTableFragment>
     </tr>
     <tr>
         <MissionTableFragment :position="`Mace/Kit`" :data="data.ls.maceKitP1" :phase="phase" :alignment="alignment"></MissionTableFragment>

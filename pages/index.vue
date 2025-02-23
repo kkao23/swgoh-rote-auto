@@ -7,7 +7,7 @@ import P2DS from '../components/p2/P2DS.vue';
 import P2LS from '../components/p2/P2LS.vue';
 import P2Mixed from '../components/p2/P2Mixed.vue';
 import P3DS from '../components/p3/P3DS.vue';
-import P3LS from '../components/p3/P3DS.vue';
+import P3LS from '../components/p3/P3LS.vue';
 import P3Mixed from '../components/p3/P3Mixed.vue';
 import P4DS from '../components/p4/P4DS.vue';
 import P4LS from '../components/p4/P4LS.vue';

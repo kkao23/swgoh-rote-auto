@@ -8,6 +8,8 @@ type data = {
 }
 
 defineProps({
+    special: Boolean,
+    shard: Boolean,
     phase: String,
     alignment: String,
     position: String,
@@ -45,6 +47,8 @@ const columns = [{
     <td>
         <div class="text-center">
             <div class="flex items-center space-x-1">
+                <img v-if="special" src="/GET.png" alt="Guild Event Token Icon" class="w-6 h-6">
+                <img v-if="shard" src="/sst.png" alt="Shard Icon" class="w-6 h-6">
                 <span>{{ position }}</span> <button @click="localIsModalOpen = !localIsModalOpen"
                     class="w-8 h-8 text-zinc-200 cursor-pointer hover:text-zinc-50 transition duration-200"
                     v-show="!modalStore.isModalOpen" style="padding-top: 5px;">

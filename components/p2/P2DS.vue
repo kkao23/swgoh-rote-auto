@@ -13,12 +13,12 @@ const alignment = 'DS';
 
 <template>
     <tr>
-        <MissionTableFragment :position="`Right`" :data="data.ds.nexu" :phase="phase" :alignment="alignment"></MissionTableFragment>
+        <MissionTableFragment :position="`➡️ (Nexu)`" :data="data.ds.nexu" :phase="phase" :alignment="alignment"></MissionTableFragment>
     </tr>
     <tr>
-        <MissionTableFragment :position="`Bottom`" :data="data.ds.acklay" :phase="phase" :alignment="alignment"></MissionTableFragment>
+        <MissionTableFragment :position="`⬇️ (Acklay)`" :data="data.ds.acklay" :phase="phase" :alignment="alignment"></MissionTableFragment>
     </tr>
     <tr>
-        <MissionTableFragment :position="`Left`" :data="data.ds.reek" :phase="phase" :alignment="alignment"></MissionTableFragment>
+        <MissionTableFragment :position="`⬅️ (Reek)`" :data="data.ds.reek" :phase="phase" :alignment="alignment"></MissionTableFragment>
     </tr>
 </template>

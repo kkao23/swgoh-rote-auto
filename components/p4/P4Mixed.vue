@@ -13,7 +13,10 @@ const alignment = 'Mixed';
 
 <template>
     <tr>
-        <MissionTableFragment :position="`Generic`" :data="data.mixed.generic" :phase="phase" :alignment="alignment"></MissionTableFragment>
+        <MissionTableFragment :position="`Qira/L3`" :data="data.mixed.qira" :phase="phase" :alignment="alignment" :special="true"></MissionTableFragment>
+    </tr>
+    <tr>
+        <MissionTableFragment :position="`Combat`" :data="data.mixed.generic" :phase="phase" :alignment="alignment"></MissionTableFragment>
     </tr>
     <tr>
         <MissionTableFragment :position="`Fleet`" :data="data.mixed.fleet" :phase="phase" :alignment="alignment"></MissionTableFragment>

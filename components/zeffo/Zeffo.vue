@@ -15,7 +15,10 @@ const phase = 'Zeffo';
         <MissionTableFragment :position="`Jedi`" :data="data.zeffo.jedi" :phase="phase"></MissionTableFragment>
     </tr>
     <tr>
-        <MissionTableFragment :position="`Clones`" :data="data.zeffo.clones" :phase="phase"></MissionTableFragment>
+        <MissionTableFragment :position="`Clones`" :data="data.zeffo.clones" :phase="phase" :special="true"></MissionTableFragment>
+    </tr>
+    <tr>
+        <MissionTableFragment :position="`UFU`" :data="data.zeffo.ufu" :phase="phase"></MissionTableFragment>
     </tr>
     <tr>
         <MissionTableFragment :position="`Fleet`" :data="data.zeffo.fleets" :phase="phase"></MissionTableFragment>

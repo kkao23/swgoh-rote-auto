@@ -1,7 +1,6 @@
 <template>
-  <div class="bg-color flex flex-col min-h-screen">
+  <div class="bg-color flex flex-col min-h-screen pt-8">
     <div class="px-4">
-      <div class="h-8"></div>
       <UCard class="mb-8 bg-gradient-to-r from-blue-400 via-indigo-500 to-red-600 text-white shadow-lg rounded-xl p-6">
         <template #header>
           <div class="flex justify-center items-center">

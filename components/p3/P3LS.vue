@@ -13,12 +13,12 @@ const alignment = 'LS';
 
 <template>
     <tr>
-        <MissionTableFragment :position="`Saw`" :data="data.ls.saw" :phase="phase" :alignment="alignment"></MissionTableFragment>
+        <MissionTableFragment :position="`Saw`" :data="data.ls.saw" :phase="phase" :alignment="alignment" :special="true"></MissionTableFragment>
     </tr>
     <tr>
-        <MissionTableFragment :position="`Left`" :data="data.ls.right" :phase="phase" :alignment="alignment"></MissionTableFragment>
+        <MissionTableFragment :position="`Left`" :data="data.ls.left" :phase="phase" :alignment="alignment"></MissionTableFragment>
     </tr>
     <tr>
-        <MissionTableFragment :position="`Right`" :data="data.ls.right" :phase="phase" :alignment="alignment"></MissionTableFragment>
+        <MissionTableFragment :position="`Right (Mara)`" :data="data.ls.right" :phase="phase" :alignment="alignment"></MissionTableFragment>
     </tr>
 </template>

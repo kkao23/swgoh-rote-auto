@@ -26,6 +26,10 @@ export default defineNuxtConfig({
           {
               property: 'og:description',
               content: 'A detailed guide for SWGOH Rise of the Empire Territory Battles.'
+          },
+          {
+              property: 'og:image',
+              content: 'https://swgoh-rote.s3.us-east-2.amazonaws.com/rote.png'
           }
       ]
     }

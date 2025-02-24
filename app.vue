@@ -16,11 +16,11 @@
       <div class="flex-grow flex justify-end space-x-2">
         <!-- YouTube Link -->
         <a href="https://www.youtube.com/channel/UCUDT-IWDuCUwQIqXshV9aQw" target="_blank" class="hover:opacity-80">
-          <img src="/icons8-youtube.svg" alt="YouTube" class="h-8 w-8" />
+          <img src="/icons/icons8-youtube.svg" alt="YouTube" class="h-8 w-8" />
         </a>
         <!-- Reddit Link -->
         <a href="https://www.reddit.com/user/captsolo23/" target="_blank" class="hover:opacity-80">
-          <img src="/icons8-reddit.svg" alt="Reddit" class="h-8 w-8" />
+          <img src="/icons/icons8-reddit.svg" alt="Reddit" class="h-8 w-8" />
         </a>
       </div>
     </div>

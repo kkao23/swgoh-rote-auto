@@ -48,8 +48,8 @@ const columns = [
     <td>
         <div class="text-center">
             <div class="flex items-center space-x-1">
-                <img v-if="special" src="/GET.png" alt="Guild Event Token Icon" class="w-6 h-6">
-                <img v-if="shard" src="/sst.png" alt="Shard Icon" class="w-6 h-6">
+                <img v-if="special" src="/icons/GET.png" alt="Guild Event Token Icon" class="w-6 h-6">
+                <img v-if="shard" src="/icons/sst.png" alt="Shard Icon" class="w-6 h-6">
                 <span>{{ position }}</span>
                 <UIcon v-if="unlock" name="i-heroicons-lock-open" class="pl-2 w-6 h-6" /><button
                     @click="localIsModalOpen = !localIsModalOpen"

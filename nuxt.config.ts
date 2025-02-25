@@ -13,7 +13,7 @@ export default defineNuxtConfig({
       meta: [
           {
               name: 'description',
-              content: 'A detailed guide for SWGOH Rise of the Empire Territory Battles.'
+              content: 'A guide to help you auto missions in SWGOH Rise of the Empire Territory Battles.'
           },
           {
               name: 'keywords',

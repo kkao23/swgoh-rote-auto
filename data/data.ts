@@ -53,7 +53,8 @@ const topDSP1 = [
         others: 'Marrok, Shin, any 2 mercs',
         notes: 'auto, Marrok Omi',
         link: 'https://youtu.be/y2_S73szIS0',
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.VERY_EASY,
+        omi: true,
     }
 ];
 
@@ -138,7 +139,8 @@ const genericLSP1 = [
         others: 'Luthen, Kyle (o), Capt Rex, Cassian',
         notes: 'auto',
         link: 'https://youtu.be/IbBy_vDW6xc',
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.VERY_EASY,
+        omi: true
     },
     {
         lead: 'Leia',
@@ -221,7 +223,8 @@ const hondoMixedP2 = [
         others: 'Hondo, Shin, Marrok, Jango',
         notes: 'Fifth can be any mercenary, omi marrok, auto, can get unlucky if marrok gets killed',
         link: 'https://youtu.be/9FarHhCvPb8',
-        difficulty: difficulty.EASY
+        difficulty: difficulty.EASY,
+        omi: true
     },
     {
         lead: 'Rey',
@@ -255,7 +258,7 @@ const mixedP2 = [
 const jabbaP2 = [
     {
         lead: 'Jabba',
-        others: 'Boba, Krrsantan, SKiff Lando, Booush',
+        others: 'Boba, Krrsantan, Skiff Lando, Booush',
         notes: 'Boba can be any hutt cartel, easy auto',
         link: 'https://youtu.be/1Cu754InVBc',
         difficulty: difficulty.VERY_EASY
@@ -312,7 +315,8 @@ const leftLSP2 = [
         others: 'Gungans',
         notes: 'easy auto with Tarpals Omi',
         link: 'https://youtu.be/2epBiIcFaG0',
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.VERY_EASY,
+        omi: true
     }
 ]
 
@@ -329,7 +333,8 @@ const rightLSP2 = [
         others: 'Luthen, Kyle (o), Cassian, Capt Rex',
         notes: 'only 1/2 auto',
         link: 'https://youtu.be/jX-X3SfQGUI',
-        difficulty: difficulty.HARD
+        difficulty: difficulty.HARD,
+        omi: true
     }
 ]
 
@@ -339,7 +344,8 @@ const zeffoUnlock = [
         others: 'JKCK',
         notes: 'Two non lead omis on Cal',
         link: 'https://youtu.be/Ad_cJiVLLY0',
-        difficulty: difficulty.NO_AUTO
+        difficulty: difficulty.NO_AUTO,
+        omi: true
     }
 ]
 
@@ -468,7 +474,8 @@ const dsGenericP3 = [
         others: 'Marrok, Shin, Jango, Zam',
         notes: 'omi Marrok, auto, last two are flexible',
         link: 'https://youtu.be/WcYP7j8ooos',
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.VERY_EASY,
+        omi: true
     },
     {
         lead: 'Emp Palpatine',
@@ -549,7 +556,8 @@ const sawP3 = [
         others: 'Capt Rex, Luthen, Cassian, Kyle (o)',
         notes: 'auto, target purge troopers',
         link: 'https://youtu.be/FCEEsGXMtOA',
-        difficulty: difficulty.CAUTION
+        difficulty: difficulty.CAUTION,
+        omi: true
     }
 ]
 
@@ -606,7 +614,8 @@ const lsGenericP4 = [
         others: 'Gungans',
         notes: 'Tarpals omi, auto',
         link: 'https://youtu.be/xCacWaNrwto',
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.VERY_EASY,
+        omi: true
     },
     {
         lead: 'Ahsoka Tano',
@@ -684,7 +693,8 @@ const dsInqP4 = [
         others: 'Marrok, GI, 7S, 5B',
         notes: 'marrok omi, auto',
         link: 'https://youtu.be/2q1SguWa54Y',
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.VERY_EASY,
+        omi: true
     }
 ]
 
@@ -754,7 +764,8 @@ const zeffoJedi = [
         others: 'JMK, Jedi Knight Luke, Ezra Exile, Kyle',
         notes: 'Omi Kyle, auto',
         link: 'https://youtu.be/bBgHB0q5hmo', 
-        difficulty: difficulty.EASY
+        difficulty: difficulty.EASY,
+        omi: true
     },
     {
         lead: 'JKCK (GLAT)',
@@ -807,21 +818,24 @@ const mandaloreGeneric = [
         others: 'The other gungans',
         notes: 'easy auto with Tarpal Omi',
         link: 'https://youtu.be/fLPilo3n-gw',
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.VERY_EASY,
+        omi: true
     },
     {
         lead: 'Reva',
         others: 'GI, 7S, 5B, Marrok',
         notes: 'Marrok Omi, easy auto',
         link: 'https://youtu.be/ke-l_Xxu0p4',
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.VERY_EASY,
+        omi: true
     },
     {
         lead: 'Baylan',
         others: 'Marrok (o), Shin, Han, Boba',
         notes: '1/2 if Marrok gets popped, use Merc instead of Boba if possible',
         link: 'https://youtu.be/h8_04P6rr8Q',
-        difficulty: difficulty.HARD
+        difficulty: difficulty.HARD,
+        omi: true
     },
     {
         lead: 'Leia',

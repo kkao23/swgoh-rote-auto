@@ -4,6 +4,7 @@ export type data = {
     notes: string,
     link: string,
     difficulty: difficulty,
+    omi: boolean,
 }
 
 export enum difficulty {

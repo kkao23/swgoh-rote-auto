@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["@nuxt/ui", '@pinia/nuxt', '@nuxtjs/google-gtag'],
+  modules: ["@nuxt/ui", '@pinia/nuxt', 'nuxt-gtag'],
   compatibilityDate: "2025-02-07",
   app: {
     head: {
@@ -34,9 +34,7 @@ export default defineNuxtConfig({
       ]
     }
   },
-  runtimeConfig: {
-    public: {
-      gtag: 'G-12Z9F2YGVE'
-    }
+  gtag: {
+    id: 'G-12Z9F2YGVE'
   }
 })

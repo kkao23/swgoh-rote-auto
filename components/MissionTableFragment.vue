@@ -14,10 +14,6 @@ defineProps({
         type: Array<dataType>,
         required: true
     },
-    columns: Array<{
-        key: string,
-        label: string
-    }>,
 });
 
 const modalStore = useModalStore();
@@ -31,6 +27,17 @@ const difficultyColor = (item: dataType) => {
         case difficulty.CAUTION: return 'text-yellow-600';
         case difficulty.HARD: return 'text-orange-600';
         case difficulty.NO_AUTO: return 'text-red-900';
+        default: return 'hidden';
+    }
+}
+
+const difficultyIcon = (item: dataType) => {
+    switch (item.difficulty) {
+        case difficulty.VERY_EASY: return 'i-heroicons-check-circle-solid';
+        case difficulty.EASY: return 'i-heroicons-hand-thumb-up-solid';
+        case difficulty.CAUTION: return 'i-heroicons-exclamation-triangle-solid';
+        case difficulty.HARD: return 'i-heroicons-shield-exclamation-solid';
+        case difficulty.NO_AUTO: return 'i-heroicons-x-circle-solid';
         default: return 'hidden';
     }
 }
@@ -74,6 +81,7 @@ const difficultyColor = (item: dataType) => {
                             notes: d.notes,
                             link: d.link,
                             difficulty: d.difficulty,
+                            omi: d.omi,
                         },
                         defaultOpen: data.length === 1,
                     }
@@ -84,11 +92,12 @@ const difficultyColor = (item: dataType) => {
                             :ui="{ padding: { sm: 'p-3' } }">
                             <template #leading>
                                 <div class="w-6 h-6 flex items-center justify-center -my-1">
-                                    <UIcon name="i-heroicons-information-circle-solid" class="w-8 h-8"
+                                    <UIcon :name="difficultyIcon(item.content)" class="w-8 h-8"
                                         :class="difficultyColor(item.content)"></UIcon>
                                 </div>
                             </template>
                             <span>{{ item.label }}</span>
+                            <img v-if="item.content.omi" src="/icons/omi.png" alt="omicron" class="h-4 w-4" />
                             <template #trailing>
                                 <UIcon name="i-heroicons-chevron-down-20-solid"
                                     class="w-5 h-5 ms-auto transform transition-transform duration-200 flex-shrink-0"
@@ -111,35 +120,7 @@ const difficultyColor = (item: dataType) => {
                     </template>
                 </UAccordion>
                 <template #footer>
-                    <div class="bg-gray-800 p-2 rounded-lg">
-                        <div class="flex flex-col space-y-1">
-                            <!-- Very Easy Color -->
-                            <div class="flex items-center space-x-2">
-                                <div class="w-4 h-4 bg-green-500 rounded-full flex-shrink-0"></div>
-                                <span class="text-gray-200 text-sm">Very Easy, literally just press auto</span>
-                            </div>
-                            <!-- Easy Color -->
-                            <div class="flex items-center space-x-2">
-                                <div class="w-4 h-4 bg-blue-400 rounded-full flex-shrink-0"></div>
-                                <span class="text-gray-200 text-xs">Easy, may have to do some opening moves, or can occasionally get unlucky</span>
-                            </div>
-                            <!-- Caution Color -->
-                            <div class="flex items-center space-x-2">
-                                <div class="w-4 h-4 bg-yellow-600 rounded-full flex-shrink-0"></div>
-                                <span class="text-gray-200 text-xs">Caution, can auto but may require targeting/pausing</span>
-                            </div>
-                            <!-- Hard Color -->
-                            <div class="flex items-center space-x-2">
-                                <div class="w-4 h-4 bg-orange-600 rounded-full flex-shrink-0"></div>
-                                <span class="text-gray-200 text-sm">Hard, can often only get 1/2 on auto</span>
-                            </div>
-                            <!-- No Auto Color -->
-                            <div class="flex items-center space-x-2">
-                                <div class="w-4 h-4 bg-red-900 rounded-full flex-shrink-0"></div>
-                                <span class="text-gray-200 text-sm">No Auto, must play most of the battle</span>
-                            </div>
-                        </div>
-                    </div>
+                    <MissionModalFooter></MissionModalFooter>
                 </template>
             </UCard>
         </UModal>

@@ -11,7 +11,7 @@
     </div>
     <NuxtPage class="flex-grow" />
     <div class="bg-color flex items-center text-white px-4 py-2 rounded-b-xl">
-      <p class="text-xs font-semibold">Questions? Comments?</p>
+      <p class="text-xs font-semibold">A Jedi craves knowledge - share yours!</p>
       <!-- Wrapper for icons -->
       <div class="flex-grow flex justify-end space-x-2">
         <!-- YouTube Link -->

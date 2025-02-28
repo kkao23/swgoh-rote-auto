@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["@nuxt/ui", '@pinia/nuxt'],
+  modules: ["@nuxt/ui", '@pinia/nuxt', '@nuxtjs/google-gtag'],
   compatibilityDate: "2025-02-07",
   app: {
     head: {
@@ -25,13 +25,18 @@ export default defineNuxtConfig({
           },
           {
               property: 'og:description',
-              content: 'A detailed guide for SWGOH Rise of the Empire Territory Battles.'
+              content: 'A pocket guide for SWGOH Rise of the Empire Territory Battles.'
           },
           {
               property: 'og:image',
               content: 'https://swgoh-rote.s3.us-east-2.amazonaws.com/rote.png'
           }
       ]
+    }
+  },
+  runtimeConfig: {
+    public: {
+      gtag: 'G-12Z9F2YGVE'
     }
   }
 })

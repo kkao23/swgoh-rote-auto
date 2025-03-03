@@ -15,6 +15,13 @@ const leftDSP1 = [{
     notes: 'Any other FO, Poke Droideka, Auto',
     link: 'https://youtu.be/AsoKUJ0UIik',
     difficulty: difficulty.EASY
+},
+{
+    lead: 'SEE',
+    others: 'Wat, Malak, +2 Sith',
+    notes: 'auto',
+    link: 'https://youtu.be/pGSL9U-0rPs',
+    difficulty: difficulty.VERY_EASY
 }];
 
 const bottomDSP1 = [{
@@ -37,7 +44,20 @@ const bottomDSP1 = [{
     notes: 'only 1/2 on auto',
     link: 'https://youtu.be/CjxSQ88mlMk',
     difficulty: difficulty.HARD
-}
+},
+{
+    lead: 'E Palpatine',
+    others: 'Mara, +3 Empire',
+    notes: 'only 1/2 on auto',
+    link: 'https://youtu.be/AU0_LBntv9o',
+    difficulty: difficulty.HARD
+},{
+    lead: 'Great Mothers',
+    others: 'Morgan, Night Trooper, Death Trooper, Merrin',
+    notes: 'Doom droideka, bless Morgan, hit auto',
+    link: 'https://youtu.be/zjxxsvQos5Y',
+    difficulty: difficulty.EASY
+},
 ];
 
 const topDSP1 = [
@@ -77,6 +97,13 @@ const maceKitP1 = [
         difficulty: difficulty.VERY_EASY
     },
     {
+        lead: 'Mace (Boys)',
+        others: 'Padawan Obi Wan, Master Qui Gon, KAM',
+        notes: 'not sure if KAM is necessary. auto',
+        link: 'https://youtu.be/bvOjNuJlhVk',
+        difficulty: difficulty.VERY_EASY
+    },
+    {
         lead: 'Mace (JKCK)',
         others: 'JKCK, GAS, Ahsoka, Kit',
         notes: 'Only 1/2 on auto',
@@ -99,7 +126,13 @@ const jediP1 = [
         notes: 'auto, if no JML',
         link: 'https://youtu.be/N3weS_bW_Js',
         difficulty: difficulty.EASY
-    }
+    },{
+        lead: 'JMK',
+        others: 'Snips, GK, Shaak Ti, +1 GR',
+        notes: 'auto',
+        link: 'https://youtu.be/tBhtvOG7WAU',
+        difficulty: difficulty.VERY_EASY
+    },
 ]
 
 const shipsLSP1 = [
@@ -108,6 +141,13 @@ const shipsLSP1 = [
         others: 'HMF, Outrider, Y wing',
         notes: 'easy auto',
         link: 'https://youtu.be/eInUd3NBMQU',
+        difficulty: difficulty.VERY_EASY
+    },
+    {
+        lead: 'Raddus',
+        others: 'Rey MF, Outrider, Res Bomber, Poes Xwing, Comeuppance, Res Xwing',
+        notes: 'easy auto',
+        link: 'https://youtu.be/xPIzAX3WqIs',
         difficulty: difficulty.VERY_EASY
     },
     {
@@ -155,6 +195,14 @@ const genericLSP1 = [
         notes: 'only 1/2 on auto',
         link: 'https://youtu.be/uVCIpd5pXf4',
         difficulty: difficulty.HARD
+    },
+    {
+        lead: 'Boss Nass',
+        others: 'other gungans (tarpal omi)',
+        notes: 'auto',
+        link: 'https://youtu.be/EHYdwMQeFiE',
+        difficulty: difficulty.VERY_EASY,
+        omi: true,
     }
 ]
 
@@ -172,6 +220,14 @@ const qiraMixedP1 = [
         notes: 'auto, got a bit dicey at the end',
         link: 'https://youtu.be/uYhZJ3qbU9c',
         difficulty: difficulty.EASY
+    },
+    {
+        lead: 'Qira (Baylan)',
+        others: 'Baylan, Marrok (o), Shin',
+        notes: 'auto, hope they dont focus Marrok',
+        link: 'https://youtu.be/srzybGeCGjw',
+        difficulty: difficulty.EASY,
+        omi: true
     }
 ]
 
@@ -182,6 +238,13 @@ const mixedP1 = [
         notes: 'auto, may need to target damage dealers',
         link: 'https://youtu.be/CxIRs8XsEVA',
         difficulty: difficulty.CAUTION
+    },
+    {
+        lead: 'GAS',
+        others: 'Fives, Rex, Echo, Capt Rex',
+        notes: 'auto, may need to target damage dealers',
+        link: 'https://youtu.be/HQBzpbVvYD0',
+        difficulty: difficulty.VERY_EASY
     }
 ]
 
@@ -197,12 +260,19 @@ const jabbaP1 = [
 
 const drAphraP1 = [
     {
-        lead: 'Aphra',
+        lead: 'Aphra (Rey)',
         others: 'Rey, JTR, Ben, BB8',
         notes: 'auto',
         link: 'https://youtu.be/dNNTaMIUjD8',
         difficulty: difficulty.VERY_EASY
-    }
+    },
+    {
+        lead: 'Aphra (Droids)',
+        others: 'BT1, 000, Darth Vader, IG-88',
+        notes: 'auto, can get unlucky if they focus down aphra',
+        link: 'https://youtu.be/36sojaFa4uA',
+        difficulty: difficulty.EASY
+    },
 ]
 
 const shipsP1 = [

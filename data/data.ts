@@ -51,12 +51,6 @@ const bottomDSP1 = [{
     notes: 'only 1/2 on auto',
     link: 'https://youtu.be/AU0_LBntv9o',
     difficulty: difficulty.HARD
-},{
-    lead: 'Great Mothers',
-    others: 'Morgan, Night Trooper, Death Trooper, Merrin',
-    notes: 'Doom droideka, bless Morgan, hit auto',
-    link: 'https://youtu.be/zjxxsvQos5Y',
-    difficulty: difficulty.EASY
 },
 ];
 
@@ -75,7 +69,13 @@ const topDSP1 = [
         link: 'https://youtu.be/y2_S73szIS0',
         difficulty: difficulty.VERY_EASY,
         omi: true,
-    }
+    },{
+        lead: 'Great Mothers',
+        others: 'Morgan, Night Trooper, Death Trooper, Merrin',
+        notes: 'Doom droideka, bless Morgan, hit auto',
+        link: 'https://youtu.be/zjxxsvQos5Y',
+        difficulty: difficulty.EASY
+    },
 ];
 
 const lvP1 = [
@@ -85,6 +85,16 @@ const lvP1 = [
         notes: 'Easy full auto',
         link: 'https://youtu.be/YIOTKDpWtRM',
         difficulty: difficulty.VERY_EASY
+    }
+]
+
+const shipsDSP1 = [
+    {
+        lead: 'Leviathan',
+        others: 'Sith Bomber, MK6 Interceptor, Sith Fighter, Tie Adv, Scimitar',
+        notes: 'Not consistent',
+        link: 'https://youtu.be/xCuGwcVtd98',
+        difficulty: difficulty.HARD
     }
 ]
 
@@ -242,7 +252,7 @@ const mixedP1 = [
     {
         lead: 'GAS',
         others: 'Fives, Rex, Echo, Capt Rex',
-        notes: 'auto, may need to target damage dealers',
+        notes: 'auto',
         link: 'https://youtu.be/HQBzpbVvYD0',
         difficulty: difficulty.VERY_EASY
     }
@@ -301,8 +311,14 @@ const hondoMixedP2 = [
         others: 'JTR, BB8, 3PO',
         notes: 'auto, not consistent 2/2',
         link: 'https://youtu.be/Pws01j8kXn0',
-        difficulty: difficulty.HARD
-    }
+        difficulty: difficulty.CAUTION
+    }{
+        lead: 'JMK',
+        others: 'CAT, GK, Snips',
+        notes: 'can get unlucky if they focus CAT',
+        link: 'https://youtu.be/nClssdqkjb0',
+        difficulty: difficulty.EASY,
+    },
 ]
 
 const shipsMixedP2 = [
@@ -321,6 +337,13 @@ const mixedP2 = [
         others: 'CAT, Ahsoka, Padme, GK',
         notes: 'easy auto',
         link: 'https://youtu.be/EaX496Y45Vc',
+        difficulty: difficulty.VERY_EASY
+    },
+    {
+        lead: 'GAS',
+        others: 'Fives, Rex, Echo, Capt Rex',
+        notes: 'auto',
+        link: 'https://youtu.be/kxJYqcbYgDQ',
         difficulty: difficulty.VERY_EASY
     }
 ]
@@ -342,7 +365,14 @@ const youngLandoP2 = [
         notes: 'only 1/2 on auto',
         link: 'https://youtu.be/_nNRPjVgX9U',
         difficulty: difficulty.HARD
-    }
+    },{
+        lead: 'Baylan',
+        others: 'Shin, Marrok, +1 Merc',
+        notes: '2nd wave very hard, only 1/2 on auto',
+        link: 'https://youtu.be/pfpK6MA_uRM',
+        difficulty: difficulty.HARD,
+        omi: true
+    },
 ]
 
 const shipsLSP2 = [
@@ -361,7 +391,8 @@ const jediLSP2 = [
         others: 'Ezra exile, JKL, Kyle Katarn, Shaak Ti',
         notes: 'auto with KK omi',
         link: 'https://youtu.be/wom3RZrx9VQ',
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.VERY_EASY,
+        omi: true,
     },
     {
         lead: 'JMK',
@@ -387,7 +418,14 @@ const leftLSP2 = [
         link: 'https://youtu.be/2epBiIcFaG0',
         difficulty: difficulty.VERY_EASY,
         omi: true
-    }
+    },
+    {
+        lead: 'Leia',
+        others: 'Drogan, R2, Han, Chewie',
+        notes: 'auto, last two replaceable, can occasionally get unlucky if Leia < R8',
+        link: 'https://youtu.be/fFO75yKREfA',
+        difficulty: difficulty.EASY
+    },
 ]
 
 const rightLSP2 = [
@@ -405,7 +443,13 @@ const rightLSP2 = [
         link: 'https://youtu.be/jX-X3SfQGUI',
         difficulty: difficulty.HARD,
         omi: true
-    }
+    },{
+        lead: 'Ahsoka Tano',
+        others: 'Padawan Sabine, Huyang, Fulcrum, +any',
+        notes: 'auto, use Ezra and or Hera if available',
+        link: 'https://youtu.be/aP8-BIqw0jk',
+        difficulty: difficulty.VERY_EASY
+    },
 ]
 
 const zeffoUnlock = [
@@ -433,6 +477,13 @@ const acklayDSP2 = [
         notes: 'auto',
         link: 'https://youtu.be/EYvM-YOI6Zk',
         difficulty: difficulty.VERY_EASY
+    },
+    {
+        lead: 'Great Mothers',
+        others: 'Morgan, Merrin, Night Trooper, Death Trooper',
+        notes: 'bless morgan, easy auto',
+        link: 'https://youtu.be/EssSASzT2qo',
+        difficulty: difficulty.EASY
     }
 ]
 
@@ -450,7 +501,14 @@ const reekDSP2 = [
         notes: 'easy auto',
         link: 'https://youtu.be/H4r1Qyq-cr0',
         difficulty: difficulty.VERY_EASY
-    }
+    },
+    {
+        lead: 'SLKR',
+        others: 'D Rey, KRU, +2 First Order',
+        notes: 'auto',
+        link: 'https://youtu.be/Ynmm55msvFo',
+        difficulty: difficulty.VERY_EASY
+    },
 ]
 
 const nexuDSP2 = [
@@ -467,7 +525,14 @@ const nexuDSP2 = [
         notes: 'Poke, auto, DRey makes it easier',
         link: 'https://youtu.be/FW60H6-v6wM',
         difficulty: difficulty.EASY
-    }
+    },
+    {
+        lead: 'LV',
+        others: 'Darth Vader, +3 Empire',
+        notes: 'I had Piett Tarkin Thrawn',
+        link: 'https://youtu.be/x19YcfeL9_4',
+        difficulty: difficulty.VERY_EASY
+    },
 ]
 
 // P3
@@ -923,6 +988,7 @@ export const data = {
             bottom: bottomDSP1,
             top: topDSP1,
             lv: lvP1,
+            ships: shipsDSP1,
         },
         mixed: {
             qira: qiraMixedP1,

@@ -312,7 +312,7 @@ const hondoMixedP2 = [
         notes: 'auto, not consistent 2/2',
         link: 'https://youtu.be/Pws01j8kXn0',
         difficulty: difficulty.CAUTION
-    }{
+    },{
         lead: 'JMK',
         others: 'CAT, GK, Snips',
         notes: 'can get unlucky if they focus CAT',

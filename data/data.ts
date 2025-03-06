@@ -540,8 +540,8 @@ const boKatanP3 = [
     {
         lead: 'Bo Katan',
         others: 'IG12',
-        notes: 'Paz can work here too, can sometimes auto',
-        link: 'https://youtu.be/A0KDY0_411o',
+        notes: 'IG call bo to assist, BAM birds, auto. pause to use ballista if Bo gets eaten',
+        link: 'https://youtu.be/x2D1hwUiHjw',
         difficulty: difficulty.CAUTION
     }
 ]
@@ -553,7 +553,15 @@ const revaP3 = [
         notes: 'basics until you get 6 stacks of purge, hit Auto',
         link: 'https://youtu.be/q1lYPCfhpUA',
         difficulty: difficulty.EASY
-    }
+    },
+    {
+        lead: 'GI',
+        others: 'Marrok (omi), +3',
+        notes: 'if no Reva. easy auto with omi',
+        link: 'https://youtu.be/fpPe_Damg9I',
+        difficulty: difficulty.VERY_EASY,
+        omi: true
+    },
 ]
 
 const jabbaP3 = [
@@ -573,6 +581,13 @@ const fennecP3 = [
         notes: 'easy auto',
         link: 'https://youtu.be/ydm8T8Jvpyc',
         difficulty: difficulty.VERY_EASY
+    },
+    {
+        lead: 'JMK',
+        others: 'GK, Shaak Ti, Padme',
+        notes: 'easy auto',
+        link: 'https://youtu.be/6CN70UAKHSU',
+        difficulty: difficulty.VERY_EASY
     }
 ]
 
@@ -582,6 +597,13 @@ const mixedTopLeftP3 = [
         others: '501st Clones',
         notes: 'auto',
         link: 'https://youtu.be/R3LzrCTN_SU',
+        difficulty: difficulty.VERY_EASY
+    },
+    {
+        lead: 'CLS',
+        others: 'Han, Chewie, Chewpio, Admiral Raddus',
+        notes: 'auto',
+        link: 'https://youtu.be/GEsQiDuewto',
         difficulty: difficulty.VERY_EASY
     }
 ]
@@ -625,7 +647,14 @@ const dsGenericP3 = [
         notes: 'Poke once in each round, auto, inconsistent without DRey',
         link: 'https://youtu.be/grmLuLr-XG0',
         difficulty: difficulty.EASY
-    }
+    },
+    {
+        lead: 'General Grievous',
+        others: 'Wat, Dooku, Nute, Jango',
+        notes: '2/2 is hard on auto',
+        link: 'https://youtu.be/uILyRLFQv-o',
+        difficulty: difficulty.HARD
+    },
 ]
 
 const dsEmpireP3 = [
@@ -640,10 +669,17 @@ const dsEmpireP3 = [
 
 const drAphraP3 = [
     {
-        lead: 'Aphra',
+        lead: 'Aphra (Droids)',
         others: 'BT1, GG, HK47, Darth Vader',
         notes: 'auto, Use 0-0-0 if you have him, can occasionally 1/2',
         link: 'https://youtu.be/_cLW8lg0kB4',
+        difficulty: difficulty.EASY
+    },
+    {
+        lead: 'Aphra (Sith)',
+        others: 'Darth Vader, Malak, Bane, Malgus',
+        notes: 'if no droids, auto, can occasionally 1/2',
+        link: 'https://youtu.be/IsnUq7nxcBU',
         difficulty: difficulty.EASY
     }
 ]
@@ -665,6 +701,13 @@ const lsLeftP3 = [
         notes: 'auto, not consistent 2/2',
         link: 'https://youtu.be/DiSqzfNlNww',
         difficulty: difficulty.EASY
+    },
+    {
+        lead: 'JML',
+        others: 'Ezra Exile, JKL, +2 Jedi',
+        notes: 'auto, JKCK is good if available, Ezra mandatory',
+        link: 'https://youtu.be/R_3rOQK49XQ',
+        difficulty: difficulty.VERY_EASY
     }
 ]
 
@@ -675,6 +718,13 @@ const lsRightP3 = [
         notes: 'auto, focus mara wave 2',
         link: 'https://youtu.be/xrl2EVOFLxQ',
         difficulty: difficulty.CAUTION
+    },
+    {
+        lead: 'Ahsoka Tano',
+        others: 'Padawan Sabine, Huyang, Fulcrum, +1',
+        notes: 'auto, use Ezra and Hera if available',
+        link: 'https://youtu.be/3T8M7wuyTuI',
+        difficulty: difficulty.EASY
     }
 ]
 

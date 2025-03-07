@@ -655,6 +655,13 @@ const dsGenericP3 = [
         link: 'https://youtu.be/uILyRLFQv-o',
         difficulty: difficulty.HARD
     },
+    {
+        lead: 'Darth Revan',
+        others: 'SEE, Malak, Bane, Malgus',
+        notes: 'auto, use tanky sith',
+        link: 'https://youtu.be/E3O_nxMHj8A',
+        difficulty: difficulty.EASY
+    },
 ]
 
 const dsEmpireP3 = [
@@ -664,6 +671,13 @@ const dsEmpireP3 = [
         notes: 'auto, Dont use Piett',
         link: 'https://youtu.be/Ap_rIhILZBM',
         difficulty: difficulty.VERY_EASY
+    },
+    {
+        lead: 'Grand Inquisitor',
+        others: 'Reva, 5B, 8B, 7S',
+        notes: 'auto, takes forever',
+        link: 'https://youtu.be/_hwmbHfEj_M',
+        difficulty: difficulty.EASY
     }
 ]
 
@@ -842,6 +856,14 @@ const mixedQiraP4 = [
         notes: 'auto',
         link: 'https://youtu.be/rnj73wSUTrE',
         difficulty: difficulty.VERY_EASY
+    },
+    {
+        lead: 'Baylan',
+        others: 'Shin, Marrok (omi), Qira, L3',
+        notes: 'auto',
+        link: 'https://youtu.be/nBP08l-0Lj4',
+        difficulty: difficulty.VERY_EASY,
+        omi: true
     }
 ]
 
@@ -859,7 +881,21 @@ const mixedGenericP4 = [
         notes: 'auto, use sith instead of Malicos if possible',
         link: 'https://youtu.be/1LnWy0zcAWA',
         difficulty: difficulty.EASY
-    }
+    },
+    {
+        lead: 'Ahsoka Tano',
+        others: 'Fulcrum +3',
+        notes: 'auto, Ezra or spectre speeds things up',
+        link: 'https://youtu.be/t6bxMOvhWdY',
+        difficulty: difficulty.VERY_EASY
+    },
+    {
+        lead: 'SLKR',
+        others: 'DRey, Starkiller, Malicos',
+        notes: 'auto, use FO if possible',
+        link: 'https://youtu.be/cggvycdd5iI',
+        difficulty: difficulty.EASY
+    },
 ]
 
 const mixedFleetP4 = [
@@ -936,7 +972,7 @@ const clonesSM = [
 const zeffoFleets = [
     {
         lead: 'Negotiator',
-        others: 'JKA, Marauder, Y wing, Plo, Ahsoka, Fives, Rex',
+        others: 'JKA, Marauder, Y wing, Ahsoka, Fives, Rex',
         notes: 'Auto',
         link: 'https://youtu.be/h4nS7Flp4Zk', 
         difficulty: difficulty.VERY_EASY
@@ -1027,6 +1063,13 @@ const mandaloreGeneric = [
         others: 'R2, Drogan, +2 Rebels',
         notes: '1/2 on auto',
         link: 'https://youtu.be/5VAQS5EqLGE',
+        difficulty: difficulty.HARD
+    },
+    {
+        lead: 'QA',
+        others: 'MQJ, POW, Padme, GMY',
+        notes: '1/2 on auto',
+        link: 'https://youtu.be/inP-FwCeOn0',
         difficulty: difficulty.HARD
     },
 ]

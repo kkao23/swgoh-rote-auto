@@ -21,6 +21,9 @@ const phase = 'Zeffo';
         <MissionTableFragment :position="`UFU`" :data="data.zeffo.ufu" :phase="phase"></MissionTableFragment>
     </tr>
     <tr>
+        <MissionTableFragment :position="`Combat`" :data="data.zeffo.combat" :phase="phase"></MissionTableFragment>
+    </tr>
+    <tr>
         <MissionTableFragment :position="`Fleet`" :data="data.zeffo.fleets" :phase="phase"></MissionTableFragment>
     </tr>
 </template>

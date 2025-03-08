@@ -783,7 +783,14 @@ const lsShipsP4 = [
         notes: 'Only if no Prof/Neg, cannot auto until Comeuppance comes in',
         link: 'https://youtu.be/aCzlG6jGH0M',
         difficulty: difficulty.NO_AUTO
-    }
+    },
+    {
+        lead: 'Home One',
+        others: 'MF, Y Wing, Ravens Claw, Outrider, Phantom, Ghost, Cassian',
+        notes: 'auto, Dont use Ghost if required in Mixed',
+        link: 'https://youtu.be/67erqo3zyvA',
+        difficulty: difficulty.VERY_EASY
+    },
 ]
 
 const lsGenericP4 = [
@@ -846,6 +853,13 @@ const jediLSP4 = [
         notes: 'auto, only 1/2',
         link: 'https://youtu.be/nzJ8oUrygqc',
         difficulty: difficulty.HARD
+    },
+    {
+        lead: 'JML (no Ezra)',
+        others: 'GAS, GMY, POW, MQG',
+        notes: 'auto',
+        link: 'https://youtu.be/5tJavs7rly4',
+        difficulty: difficulty.VERY_EASY
     },
 ]
 
@@ -945,6 +959,13 @@ const mixedFleetP5 = [
         notes: 'auto',
         link: 'https://youtu.be/7cTPzAAqRa4',
         difficulty: difficulty.VERY_EASY
+    },
+    {
+        lead: 'Executor (no RC)',
+        others: 'HT, Punishing One, XB, Slave 1, IG2000',
+        notes: 'auto, untarget HT',
+        link: 'https://youtu.be/uDfsGkP-cXM',
+        difficulty: difficulty.VERY_EASY
     }
 ]
 
@@ -1001,7 +1022,15 @@ const zeffoJedi = [
         notes: 'auto, target purge trooper wave 1 then 2S wave 2',
         link: 'https://youtu.be/LqJsWBb5S88', 
         difficulty: difficulty.CAUTION
-    }
+    },
+    {
+        lead: 'JKCK (Rey)',
+        others: 'Rey, Ezra Exile, JKL, Kyle (omi)',
+        notes: 'auto',
+        link: 'https://youtu.be/ixnkyhqL5G0', 
+        difficulty: difficulty.EASY,
+        omi: true
+    } 
 ]
 
 const zeffoUFU = [
@@ -1012,6 +1041,23 @@ const zeffoUFU = [
         link: 'https://youtu.be/LQbMxA3Oqcs', 
         difficulty: difficulty.EASY
     },
+    {
+        lead: 'Ahsoka Tano',
+        others: 'Cere, Padawan Sabine, Fulcrum +1',
+        notes: 'auto, only 1/2. maybe 2/2 with CAT?',
+        link: 'https://youtu.be/H4xzXPPNV8Y', 
+        difficulty: difficulty.HARD
+    },
+]
+
+const zeffoCombat = [
+    {
+        lead: 'Boss Nass',
+        others: 'other gungans (tarpals omi)',
+        notes: 'auto, target humanoids first',
+        link: 'https://youtu.be/zR1ZBzkfELU', 
+        difficulty: difficulty.EASY
+    }
 ]
 
 // mandalore
@@ -1070,6 +1116,13 @@ const mandaloreGeneric = [
         others: 'MQJ, POW, Padme, GMY',
         notes: '1/2 on auto',
         link: 'https://youtu.be/inP-FwCeOn0',
+        difficulty: difficulty.HARD
+    },
+    {
+        lead: 'JMK',
+        others: 'CAT, Snips, GK, Padme',
+        notes: '1/2 on auto',
+        link: 'https://youtu.be/oMmbs2FA16Y',
         difficulty: difficulty.HARD
     },
 ]
@@ -1143,6 +1196,7 @@ export const data = {
             jedi: zeffoJedi,
             clones: clonesSM,
             ufu: zeffoUFU,
+            combat: zeffoCombat,
         }
     },
     phase4: {

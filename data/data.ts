@@ -717,7 +717,7 @@ const lsLeftP3 = [
         difficulty: difficulty.EASY
     },
     {
-        lead: 'JML',
+        lead: 'JML (Ezra)',
         others: 'Ezra Exile, JKL, +2 Jedi',
         notes: 'auto, JKCK is good if available, Ezra mandatory',
         link: 'https://youtu.be/R_3rOQK49XQ',
@@ -834,31 +834,38 @@ const lsGenericP4 = [
 
 const jediLSP4 = [
     {
-        lead: 'JMK',
+        lead: 'JMK (Ezra)',
         others: 'GAS, Ahsoka, Ezra Exile, GK',
         notes: 'auto',
         link: 'https://youtu.be/nVtmzJh4xlk0',
         difficulty: difficulty.VERY_EASY
     },
     {
-        lead: 'JML',
+        lead: 'JML (Ezra)',
         others: 'Ezra Exile, GAS, GMY, Plo',
         notes: 'auto, replace Plo if possible',
         link: 'https://youtu.be/OcVbpC8FHmE',
         difficulty: difficulty.VERY_EASY
     },
     {
-        lead: 'JMK (no Ezra)',
+        lead: 'JMK (no Ezra, no bros)',
         others: 'GAS, Ahsoka, GK, Plo',
         notes: 'auto, only 1/2',
         link: 'https://youtu.be/nzJ8oUrygqc',
         difficulty: difficulty.HARD
     },
     {
-        lead: 'JML (no Ezra)',
+        lead: 'JML (bros, no Ezra)',
         others: 'GAS, GMY, POW, MQG',
         notes: 'auto',
         link: 'https://youtu.be/5tJavs7rly4',
+        difficulty: difficulty.VERY_EASY
+    },
+    {
+        lead: 'JMK (bros, no Ezra)',
+        others: 'GAS, GK, POW, MQG',
+        notes: 'auto',
+        link: 'https://youtu.be/9ZKHdxBljyc',
         difficulty: difficulty.VERY_EASY
     },
 ]
@@ -984,7 +991,7 @@ const clonesSM = [
     {
         lead: 'Rex',
         others: 'Capt Rex, Echo, Arc Trooper, Fives',
-        notes: 'Auto, Reticule on Consular in P2',
+        notes: 'Auto, unselect reticule, Reticule on Consular in P2',
         link: 'https://youtu.be/SvUzVopG8a4', 
         difficulty: difficulty.CAUTION
     }
@@ -1002,7 +1009,7 @@ const zeffoFleets = [
 
 const zeffoJedi = [
     {
-        lead: 'JKCK (JMK)',
+        lead: 'JKCK (JMK Ezra)',
         others: 'JMK, Jedi Knight Luke, Ezra Exile, Kyle',
         notes: 'Omi Kyle, auto',
         link: 'https://youtu.be/bBgHB0q5hmo', 
@@ -1017,14 +1024,14 @@ const zeffoJedi = [
         difficulty: difficulty.EASY
     },
     {
-        lead: 'JKCK (JML)',
+        lead: 'JKCK (JML Ezra)',
         others: 'JML, Ezra Exile, JKL, Shaak',
         notes: 'auto, target purge trooper wave 1 then 2S wave 2',
         link: 'https://youtu.be/LqJsWBb5S88', 
         difficulty: difficulty.CAUTION
     },
     {
-        lead: 'JKCK (Rey)',
+        lead: 'JKCK (Rey Ezra)',
         others: 'Rey, Ezra Exile, JKL, Kyle (omi)',
         notes: 'auto',
         link: 'https://youtu.be/ixnkyhqL5G0', 
@@ -1056,7 +1063,8 @@ const zeffoCombat = [
         others: 'other gungans (tarpals omi)',
         notes: 'auto, target humanoids first',
         link: 'https://youtu.be/zR1ZBzkfELU', 
-        difficulty: difficulty.EASY
+        difficulty: difficulty.EASY,
+        omi: true,
     }
 ]
 
@@ -1123,6 +1131,13 @@ const mandaloreGeneric = [
         others: 'CAT, Snips, GK, Padme',
         notes: '1/2 on auto',
         link: 'https://youtu.be/oMmbs2FA16Y',
+        difficulty: difficulty.HARD
+    },
+    {
+        lead: 'Ahsoka Tano',
+        others: 'Ezra Exile, +3',
+        notes: 'auto, use spectre if possible, ezra required',
+        link: 'https://youtu.be/G8X9wesq-xg',
         difficulty: difficulty.HARD
     },
 ]

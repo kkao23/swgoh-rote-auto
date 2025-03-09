@@ -1,8 +1,8 @@
 import { difficulty } from "~/models/data";
-
+import { type data as dataType } from "~/models/data";
 // P1
 
-const leftDSP1 = [{
+const leftDSP1:dataType[] = [{
     lead: 'Trench',
     others: 'Wat, Jango, Nute, Dooku',
     notes: 'Open with Tank Tech on Jango, target droideka, hit auto',
@@ -18,13 +18,14 @@ const leftDSP1 = [{
 },
 {
     lead: 'SEE',
+        leadFull: 'Sith Eternal Emperor',
     others: 'Wat, Malak, +2 Sith',
     notes: 'auto',
     link: 'https://youtu.be/pGSL9U-0rPs',
     difficulty: difficulty.VERY_EASY
 }];
 
-const bottomDSP1 = [{
+const bottomDSP1:dataType[] = [{
     lead: 'Great Mothers',
     others: 'Morgan, Night Trooper, Death Trooper, Merrin',
     notes: 'Doom droideka, bless Morgan, hit auto',
@@ -40,6 +41,7 @@ const bottomDSP1 = [{
 },
 {
     lead: 'SEE',
+        leadFull: 'Sith Eternal Emperor',
     others: 'Wat, Malak, Bane, Malgus',
     notes: 'only 1/2 on auto',
     link: 'https://youtu.be/CjxSQ88mlMk',
@@ -47,6 +49,7 @@ const bottomDSP1 = [{
 },
 {
     lead: 'E Palpatine',
+    leadFull: 'Emperor Palpatine',
     others: 'Mara, +3 Empire',
     notes: 'only 1/2 on auto',
     link: 'https://youtu.be/AU0_LBntv9o',
@@ -54,7 +57,7 @@ const bottomDSP1 = [{
 },
 ];
 
-const topDSP1 = [
+const topDSP1:dataType[] = [
     {
         lead: 'SLKR',
         others: 'Hux, KRU, Sith Trooper, any 5th',
@@ -78,9 +81,10 @@ const topDSP1 = [
     },
 ];
 
-const lvP1 = [
+const lvP1:dataType[] = [
     {
         lead: 'LV',
+        leadFull: 'Lord Vader',
         others: '',
         notes: 'Easy full auto',
         link: 'https://youtu.be/YIOTKDpWtRM',
@@ -108,6 +112,7 @@ const maceKitP1 = [
     },
     {
         lead: 'Mace (Boys)',
+        leadFull: 'Mace with Padawan Obi Wan and Master Qui Gon',
         others: 'Padawan Obi Wan, Master Qui Gon, KAM',
         notes: 'not sure if KAM is necessary. auto',
         link: 'https://youtu.be/bvOjNuJlhVk',
@@ -115,6 +120,7 @@ const maceKitP1 = [
     },
     {
         lead: 'Mace (JKCK)',
+        leadFull: 'Mace with Jedi Knight Cal Kestis',
         others: 'JKCK, GAS, Ahsoka, Kit',
         notes: 'Only 1/2 on auto',
         link: 'https://youtu.be/AE5XinIdzPE',
@@ -122,22 +128,25 @@ const maceKitP1 = [
     }
 ]
 
-const jediP1 = [
+const jediP1:dataType[] = [
     {
         lead: 'JML',
+        leadFull: 'Jedi Master Luke',
         others: 'Jedi Luke, HYoda, JKA, GMY',
         notes: 'auto, Almost any other jedi work',
         link: 'https://youtu.be/9l_PmvdNH1U',
         difficulty: difficulty.VERY_EASY
     },
     {
-        lead: 'JKL',
+        lead: 'JKL (Ezra)',
+        leadFull: 'Jedi Knight Luke with Ezra Exile',
         others: 'Ezra GMY Hyoda Bastila',
         notes: 'auto, if no JML',
         link: 'https://youtu.be/N3weS_bW_Js',
         difficulty: difficulty.EASY
     },{
         lead: 'JMK',
+        leadFull: 'Jedi Master Kenobi',
         others: 'Snips, GK, Shaak Ti, +1 GR',
         notes: 'auto',
         link: 'https://youtu.be/tBhtvOG7WAU',
@@ -145,7 +154,7 @@ const jediP1 = [
     },
 ]
 
-const shipsLSP1 = [
+const shipsLSP1:dataType[] = [
     {
         lead: 'Profundity',
         others: 'HMF, Outrider, Y wing',
@@ -169,9 +178,10 @@ const shipsLSP1 = [
     }
 ]
 
-const genericLSP1 = [
+const genericLSP1:dataType[] = [
     {
         lead: 'QA',
+        leadFull: 'Queen Amidala',
         others: 'POW, MQJ, Echo, Tech',
         notes: 'auto, last two can vary',
         link: 'https://youtu.be/C-2WLaE8Irs',
@@ -186,6 +196,7 @@ const genericLSP1 = [
     },
     {
         lead: 'M Mothma',
+        leadFull: 'Mon Mothman',
         others: 'Luthen, Kyle (o), Capt Rex, Cassian',
         notes: 'auto',
         link: 'https://youtu.be/IbBy_vDW6xc',
@@ -216,7 +227,7 @@ const genericLSP1 = [
     }
 ]
 
-const qiraMixedP1 = [
+const qiraMixedP1:dataType[] = [
     {
         lead: 'Qira (Leia)',
         others: 'Leia, R2, Drogan',
@@ -241,9 +252,10 @@ const qiraMixedP1 = [
     }
 ]
 
-const mixedP1 = [
+const mixedP1:dataType[] = [
     {
         lead: 'CLS',
+        leadFull: 'Commander Luke Skywalker',
         others: 'Han, Chewie, 3PO, Chewpio',
         notes: 'auto, may need to target damage dealers',
         link: 'https://youtu.be/CxIRs8XsEVA',
@@ -251,6 +263,7 @@ const mixedP1 = [
     },
     {
         lead: 'GAS',
+        leadFull: 'General Anakin Skywalker',
         others: 'Fives, Rex, Echo, Capt Rex',
         notes: 'auto',
         link: 'https://youtu.be/HQBzpbVvYD0',
@@ -258,7 +271,7 @@ const mixedP1 = [
     }
 ]
 
-const jabbaP1 = [
+const jabbaP1:dataType[] = [
     {
         lead: 'Jabba',
         others: 'Boba, Krrsantan, Skiff Lando, Booush',
@@ -268,7 +281,7 @@ const jabbaP1 = [
     }
 ]
 
-const drAphraP1 = [
+const drAphraP1:dataType[] = [
     {
         lead: 'Aphra (Rey)',
         others: 'Rey, JTR, Ben, BB8',
@@ -285,7 +298,7 @@ const drAphraP1 = [
     },
 ]
 
-const shipsP1 = [
+const shipsP1:dataType[] = [
     {
         lead: 'Executor',
         others: 'HT, P1, XB, Slave 1, IG2000',
@@ -297,7 +310,7 @@ const shipsP1 = [
 
 // P2
 
-const hondoMixedP2 = [
+const hondoMixedP2:dataType[] = [
     {
         lead: 'Baylan',
         others: 'Hondo, Shin, Marrok, Jango',
@@ -314,6 +327,7 @@ const hondoMixedP2 = [
         difficulty: difficulty.CAUTION
     },{
         lead: 'JMK',
+        leadFull: 'Jedi Master Kenobi',
         others: 'CAT, GK, Snips',
         notes: 'can get unlucky if they focus CAT',
         link: 'https://youtu.be/nClssdqkjb0',
@@ -321,7 +335,7 @@ const hondoMixedP2 = [
     },
 ]
 
-const shipsMixedP2 = [
+const shipsMixedP2:dataType[] = [
     {
         lead: 'Malevolence',
         others: 'Vulture, Hyena, Sun Fac, Spy, Soldier',
@@ -331,9 +345,10 @@ const shipsMixedP2 = [
     }
 ]
 
-const mixedP2 = [
+const mixedP2:dataType[] = [
     {
         lead: 'JMK',
+        leadFull: 'Jedi Master Kenobi',
         others: 'CAT, Ahsoka, Padme, GK',
         notes: 'easy auto',
         link: 'https://youtu.be/EaX496Y45Vc',
@@ -341,6 +356,7 @@ const mixedP2 = [
     },
     {
         lead: 'GAS',
+        leadFull: 'General Anakin Skywalker',
         others: 'Fives, Rex, Echo, Capt Rex',
         notes: 'auto',
         link: 'https://youtu.be/kxJYqcbYgDQ',
@@ -348,7 +364,7 @@ const mixedP2 = [
     }
 ]
 
-const jabbaP2 = [
+const jabbaP2:dataType[] = [
     {
         lead: 'Jabba',
         others: 'Boba, Krrsantan, Skiff Lando, Booush',
@@ -358,7 +374,7 @@ const jabbaP2 = [
     }
 ]
 
-const youngLandoP2 = [
+const youngLandoP2:dataType[] = [
     {
         lead: 'Rey',
         others: 'Ben, JTR, BB8',
@@ -375,7 +391,7 @@ const youngLandoP2 = [
     },
 ]
 
-const shipsLSP2 = [
+const shipsLSP2:dataType[] = [
     {
         lead: 'Profundity',
         others: 'HMF, Outrider, Y wing, Phantom, Ghost, Biggs, Wedge',
@@ -385,9 +401,10 @@ const shipsLSP2 = [
     }
 ]
 
-const jediLSP2 = [
+const jediLSP2:dataType[] = [
     {
-        lead: 'JML',
+        lead: 'JML (Ezra)',
+        leadFull: 'Jedi Master Luke with Ezra',
         others: 'Ezra exile, JKL, Kyle Katarn, Shaak Ti',
         notes: 'auto with KK omi',
         link: 'https://youtu.be/wom3RZrx9VQ',
@@ -395,7 +412,8 @@ const jediLSP2 = [
         omi: true,
     },
     {
-        lead: 'JMK',
+        lead: 'JMK (Ezra)',
+        leadFull: 'Jedi Master Kenobi with Ezra',
         others: 'Shaak, Ahsoka, Ezra exile, GK',
         notes: 'auto, long, not reliable 2/2',
         link: 'https://youtu.be/_0J9LtUwj4U',
@@ -403,9 +421,10 @@ const jediLSP2 = [
     }
 ]
 
-const leftLSP2 = [
+const leftLSP2:dataType[] = [
     {
         lead: 'BK Mandalore',
+        leadFull: 'Bo Katan Mandalore',
         others: 'Rey, Paz, Beskar Mando, IG12',
         notes: 'not reliable on auto, only 1/2',
         link: 'https://youtu.be/W_AfGpB5RxY',
@@ -428,7 +447,7 @@ const leftLSP2 = [
     },
 ]
 
-const rightLSP2 = [
+const rightLSP2:dataType[] = [
     {
         lead: 'Leia',
         others: 'Drogan, R2, Baze, Capt Rex',
@@ -452,7 +471,7 @@ const rightLSP2 = [
     },
 ]
 
-const zeffoUnlock = [
+const zeffoUnlock:dataType[] = [
     {
         lead: 'Cere',
         others: 'JKCK',
@@ -463,7 +482,7 @@ const zeffoUnlock = [
     }
 ]
 
-const acklayDSP2 = [
+const acklayDSP2:dataType[] = [
     {
         lead: 'Lord Vader',
         others: 'Wat, any 3 empire',
@@ -487,9 +506,10 @@ const acklayDSP2 = [
     }
 ]
 
-const reekDSP2 = [
+const reekDSP2:dataType[] = [
     {
         lead: 'SEE',
+        leadFull: 'Sith Eternal Emperor',
         others: 'Darth Vader, Bane, Malak, any 5th',
         notes: 'auto, Vader and malak are nice, others dont matter',
         link: 'https://youtu.be/ZSa1T0vsPYE',
@@ -511,7 +531,7 @@ const reekDSP2 = [
     },
 ]
 
-const nexuDSP2 = [
+const nexuDSP2:dataType[] = [
     {
         lead: 'Reva',
         others: 'GI, 7S, 5B, 8B',
@@ -536,9 +556,10 @@ const nexuDSP2 = [
 ]
 
 // P3
-const boKatanP3 = [
+const boKatanP3:dataType[] = [
     {
-        lead: 'Bo Katan',
+        lead: 'BK Mandalore',
+        leadFull: 'Bo Katan Mandalore',
         others: 'IG12',
         notes: 'IG call bo to assist, BAM birds, auto. pause to use ballista if Bo gets eaten',
         link: 'https://youtu.be/x2D1hwUiHjw',
@@ -546,7 +567,7 @@ const boKatanP3 = [
     }
 ]
 
-const revaP3 = [
+const revaP3:dataType[] = [
     {
         lead: 'Reva',
         others: 'GI, 7S, 5B, 8B',
@@ -556,6 +577,7 @@ const revaP3 = [
     },
     {
         lead: 'GI',
+        leadFull: 'Grand Inquisitor',
         others: 'Marrok (omi), +3',
         notes: 'if no Reva. easy auto with omi',
         link: 'https://youtu.be/fpPe_Damg9I',
@@ -564,7 +586,7 @@ const revaP3 = [
     },
 ]
 
-const jabbaP3 = [
+const jabbaP3:dataType[] = [
     {
         lead: 'Jabba',
         others: 'Any',
@@ -574,7 +596,7 @@ const jabbaP3 = [
     }
 ]
 
-const fennecP3 = [
+const fennecP3:dataType[] = [
     {
         lead: 'Rey',
         others: 'Fennec, any 3 resistance',
@@ -584,6 +606,7 @@ const fennecP3 = [
     },
     {
         lead: 'JMK',
+        leadFull: 'Jedi Master Kenobi',
         others: 'GK, Shaak Ti, Padme',
         notes: 'easy auto',
         link: 'https://youtu.be/6CN70UAKHSU',
@@ -591,9 +614,10 @@ const fennecP3 = [
     }
 ]
 
-const mixedTopLeftP3 = [
+const mixedTopLeftP3:dataType[] = [
     {
         lead: 'GAS',
+        leadFull: 'General Anakin Skywalker',
         others: '501st Clones',
         notes: 'auto',
         link: 'https://youtu.be/R3LzrCTN_SU',
@@ -601,6 +625,7 @@ const mixedTopLeftP3 = [
     },
     {
         lead: 'CLS',
+        leadFull: 'Commander Luke Skywalker',
         others: 'Han, Chewie, Chewpio, Admiral Raddus',
         notes: 'auto',
         link: 'https://youtu.be/GEsQiDuewto',
@@ -608,9 +633,10 @@ const mixedTopLeftP3 = [
     }
 ]
 
-const mixedP3Ships = [
+const mixedP3Ships:dataType[] = [
     {
         lead: 'Executor (P1)',
+        leadFull: 'Executor with Punishing One',
         others: 'HT, XB, Punishing One, IG2000',
         notes: 'auto, use other BH ships if not platooned',
         link: 'https://youtu.be/rcqIa6VlXHs',
@@ -618,6 +644,7 @@ const mixedP3Ships = [
     },
     {
         lead: 'Executor (no P1)',
+        leadFull: 'Executor without Punishing One',
         others: 'RC, HT, XB, Slave 1',
         notes: 'If no Punishing One, auto',
         link: 'https://youtu.be/MoaMRXXAMqw',
@@ -625,7 +652,7 @@ const mixedP3Ships = [
     }
 ]
 
-const dsGenericP3 = [
+const dsGenericP3:dataType[] = [
     {
         lead: 'Baylan',
         others: 'Marrok, Shin, Jango, Zam',
@@ -636,6 +663,7 @@ const dsGenericP3 = [
     },
     {
         lead: 'Emp Palpatine',
+        leadFull: 'Emperor Palpatine',
         others: 'Wat, SEE, Malak, Bane',
         notes: 'Doable without Wat but slower, weapon tech on SEE, auto',
         link: 'https://youtu.be/eXq1LcioaFE',
@@ -664,7 +692,7 @@ const dsGenericP3 = [
     },
 ]
 
-const dsEmpireP3 = [
+const dsEmpireP3:dataType[] = [
     {
         lead: 'Lord Vader',
         others: 'Any',
@@ -681,7 +709,7 @@ const dsEmpireP3 = [
     }
 ]
 
-const drAphraP3 = [
+const drAphraP3:dataType[] = [
     {
         lead: 'Aphra (Droids)',
         others: 'BT1, GG, HK47, Darth Vader',
@@ -698,7 +726,7 @@ const drAphraP3 = [
     }
 ]
 
-const merrinP3 = [
+const merrinP3:dataType[] = [
     {
         lead: 'Great Mothers',
         others: 'Morgan, Death Trooper, Night Trooper, Merrin',
@@ -708,9 +736,10 @@ const merrinP3 = [
     }
 ]
 
-const lsLeftP3 = [
+const lsLeftP3:dataType[] = [
     {
         lead: 'JMK',
+        leadFull: 'Jedi Master Kenobi',
         others: 'CAT, Snips, Padme, GK',
         notes: 'auto, not consistent 2/2',
         link: 'https://youtu.be/DiSqzfNlNww',
@@ -718,6 +747,7 @@ const lsLeftP3 = [
     },
     {
         lead: 'JML (Ezra)',
+        leadFull: 'Jedi Master Luke with Ezra Exile',
         others: 'Ezra Exile, JKL, +2 Jedi',
         notes: 'auto, JKCK is good if available, Ezra mandatory',
         link: 'https://youtu.be/R_3rOQK49XQ',
@@ -725,7 +755,7 @@ const lsLeftP3 = [
     }
 ]
 
-const lsRightP3 = [
+const lsRightP3:dataType[] = [
     {
         lead: 'Leia',
         others: 'R2, Drogan +2',
@@ -742,9 +772,10 @@ const lsRightP3 = [
     }
 ]
 
-const sawP3 = [
+const sawP3:dataType[] = [
     {
         lead: 'Saw (Drogan)',
+        leadFull: 'Saw with Drogan',
         others: 'Capt Rex, Luthen, Cassian, Drogan',
         notes: 'auto, target purge troopers',
         link: 'https://youtu.be/K4HObnZm0TU',
@@ -752,6 +783,7 @@ const sawP3 = [
     },
     {
         lead: 'Saw (Kyle)',
+        leadFull: 'Saw with Kyle Katarn',
         others: 'Capt Rex, Luthen, Cassian, Kyle (o)',
         notes: 'auto, target purge troopers',
         link: 'https://youtu.be/FCEEsGXMtOA',
@@ -762,7 +794,7 @@ const sawP3 = [
 
 // P4
 
-const lsShipsP4 = [
+const lsShipsP4:dataType[] = [
     {
         lead: 'Profundity',
         others: 'MF, Outrider, Y Wing, Wedge, Biggs, Phantom, Ghost',
@@ -793,7 +825,7 @@ const lsShipsP4 = [
     },
 ]
 
-const lsGenericP4 = [
+const lsGenericP4:dataType[] = [
     {
         lead: 'Leia',
         others: 'Han, Cassian, Raddus, R2-D2',
@@ -803,6 +835,7 @@ const lsGenericP4 = [
     },
     {
         lead: 'QA',
+        leadFull: 'Queen Amidala',
         others: 'POW, MQG, Yoda, Padme',
         notes: 'auto, other two can be any GR',
         link: 'https://youtu.be/6YzDrnBGFvw',
@@ -810,6 +843,7 @@ const lsGenericP4 = [
     },
     {
         lead: 'JMK',
+        leadFull: 'Jedi Master Kenobi',
         others: 'Padme, Snips, GK, CAT',
         notes: 'auto',
         link: 'https://youtu.be/qPc-UJDjAt0',
@@ -832,9 +866,10 @@ const lsGenericP4 = [
     }
 ]
 
-const jediLSP4 = [
+const jediLSP4:dataType[] = [
     {
         lead: 'JMK (Ezra)',
+        leadFull: 'Jedi Master Kenobi with Ezra Exile',
         others: 'GAS, Ahsoka, Ezra Exile, GK',
         notes: 'auto',
         link: 'https://youtu.be/nVtmzJh4xlk0',
@@ -842,6 +877,7 @@ const jediLSP4 = [
     },
     {
         lead: 'JML (Ezra)',
+        leadFull: 'Jedi Master Luke with Ezra Exile',
         others: 'Ezra Exile, GAS, GMY, Plo',
         notes: 'auto, replace Plo if possible',
         link: 'https://youtu.be/OcVbpC8FHmE',
@@ -849,6 +885,7 @@ const jediLSP4 = [
     },
     {
         lead: 'JMK (no Ezra, no bros)',
+        leadFull: 'Jedi Master Kenobi without Ezra Exile or POW/MQJ',
         others: 'GAS, Ahsoka, GK, Plo',
         notes: 'auto, only 1/2',
         link: 'https://youtu.be/nzJ8oUrygqc',
@@ -856,6 +893,7 @@ const jediLSP4 = [
     },
     {
         lead: 'JML (bros, no Ezra)',
+        leadFull: 'Jedi Master Luke without Ezra Exile with POW/MQJ',
         others: 'GAS, GMY, POW, MQG',
         notes: 'auto',
         link: 'https://youtu.be/5tJavs7rly4',
@@ -863,6 +901,7 @@ const jediLSP4 = [
     },
     {
         lead: 'JMK (bros, no Ezra)',
+        leadFull: 'Jedi Master Kenobi without Ezra Exile with POW/MQJ',
         others: 'GAS, GK, POW, MQG',
         notes: 'auto',
         link: 'https://youtu.be/9ZKHdxBljyc',
@@ -870,7 +909,7 @@ const jediLSP4 = [
     },
 ]
 
-const mixedQiraP4 = [
+const mixedQiraP4:dataType[] = [
     {
         lead: 'Leia',
         others: 'R2, Drogan, Qira, L3',
@@ -888,9 +927,10 @@ const mixedQiraP4 = [
     }
 ]
 
-const mixedGenericP4 = [
+const mixedGenericP4:dataType[] = [
     {
         lead: 'QA',
+        leadFull: 'Queen Amidala',
         others: 'MQG, POW, GMY, Ahsoka',
         notes: 'auto, Last two are flexible',
         link: 'https://youtu.be/LpchaAwpVuk',
@@ -898,6 +938,7 @@ const mixedGenericP4 = [
     },
     {
         lead: 'SEE',
+        leadFull: 'Sith Eternal Emperor',
         others: 'Malak, Malgus, DR, Malicos',
         notes: 'auto, use sith instead of Malicos if possible',
         link: 'https://youtu.be/1LnWy0zcAWA',
@@ -919,7 +960,7 @@ const mixedGenericP4 = [
     },
 ]
 
-const mixedFleetP4 = [
+const mixedFleetP4:dataType[] = [
     {
         lead: 'Leviathan',
         others: 'FCI, Bomber, Dorito, Assassin, MK6 Interceptor, Scimitar, Emp Shuttle',
@@ -929,7 +970,7 @@ const mixedFleetP4 = [
     }
 ]
 
-const dsInqP4 = [
+const dsInqP4:dataType[] = [
     {
         lead: 'Reva',
         others: 'Marrok, GI, 7S, 5B',
@@ -940,9 +981,10 @@ const dsInqP4 = [
     }
 ]
 
-const dsRightP4 = [
+const dsRightP4:dataType[] = [
     {
         lead: 'SEE',
+        leadFull: 'Sith Eternal Emperor',
         others: 'Malak, Dooku, DR, Bane',
         notes: 'auto, Only 1/2',
         link: 'https://youtu.be/JZT1-k2EDIo',
@@ -952,7 +994,7 @@ const dsRightP4 = [
 
 // P5
 
-const mixedFleetP5 = [
+const mixedFleetP5:dataType[] = [
     {
         lead: 'Leviathan',
         others: 'FCI, Bomber, Dorito, Assassin, MK6 Interceptor, Scimitar',
@@ -976,7 +1018,7 @@ const mixedFleetP5 = [
     }
 ]
 
-const mixedGenericP5 = [
+const mixedGenericP5:dataType[] = [
     {
         lead: 'Ahsoka Tano',
         others: 'Any R9s',
@@ -987,7 +1029,7 @@ const mixedGenericP5 = [
 ]
 
 // zeffo
-const clonesSM = [
+const clonesSM:dataType[] = [
     {
         lead: 'Rex',
         others: 'Capt Rex, Echo, Arc Trooper, Fives',
@@ -997,7 +1039,7 @@ const clonesSM = [
     }
 ]
 
-const zeffoFleets = [
+const zeffoFleets:dataType[] = [
     {
         lead: 'Negotiator',
         others: 'JKA, Marauder, Y wing, Ahsoka, Fives, Rex',
@@ -1007,7 +1049,7 @@ const zeffoFleets = [
     },
 ]
 
-const zeffoJedi = [
+const zeffoJedi:dataType[] = [
     {
         lead: 'JKCK (JMK Ezra)',
         others: 'JMK, Jedi Knight Luke, Ezra Exile, Kyle',
@@ -1040,7 +1082,7 @@ const zeffoJedi = [
     } 
 ]
 
-const zeffoUFU = [
+const zeffoUFU:dataType[] = [
     {
         lead: 'Rey',
         others: 'CAT, Ben, Cere, JTR',
@@ -1057,7 +1099,7 @@ const zeffoUFU = [
     },
 ]
 
-const zeffoCombat = [
+const zeffoCombat:dataType[] = [
     {
         lead: 'Boss Nass',
         others: 'other gungans (tarpals omi)',
@@ -1070,7 +1112,7 @@ const zeffoCombat = [
 
 // mandalore
 
-const mandaloreFleets = [
+const mandaloreFleets:dataType[] = [
     {
         lead: 'Chimera',
         others: 'Scythe, Tie Adv start, Tie interceptor, Tie Defender, Tie Fighter, Emp Shuttle',
@@ -1087,7 +1129,7 @@ const mandaloreFleets = [
     }
 ]
 
-const mandaloreGeneric = [
+const mandaloreGeneric:dataType[] = [
     {
         lead: 'Boss Nass',
         others: 'The other gungans',
@@ -1121,6 +1163,7 @@ const mandaloreGeneric = [
     },
     {
         lead: 'QA',
+        leadFull: 'Queen Amidala',
         others: 'MQJ, POW, Padme, GMY',
         notes: '1/2 on auto',
         link: 'https://youtu.be/inP-FwCeOn0',
@@ -1128,6 +1171,7 @@ const mandaloreGeneric = [
     },
     {
         lead: 'JMK',
+        leadFull: 'Jedi Master Kenobi',
         others: 'CAT, Snips, GK, Padme',
         notes: '1/2 on auto',
         link: 'https://youtu.be/oMmbs2FA16Y',

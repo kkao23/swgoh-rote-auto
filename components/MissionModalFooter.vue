@@ -17,12 +17,12 @@ const legend = [
                     <!-- Very Easy Color -->
                     <div class="flex items-center space-x-2">
                         <UIcon name="i-heroicons-check-circle-solid" class="text-green-500"></UIcon>
-                        <span class="text-gray-200 text-sm">Very Easy, literally just press auto</span>
+                        <span class="text-gray-200 text-sm md:text-base">Very Easy, literally just press auto</span>
                     </div>
                     <!-- Easy Color -->
                     <div class="flex items-center space-x-2">
                         <UIcon name="i-heroicons-hand-thumb-up-solid" class="text-blue-400"></UIcon>
-                        <span class="text-gray-200 text-xs">Easy, may have to do some opening moves, or
+                        <span class="text-gray-200 text-xs md:text-base">Easy, may have to do some opening moves, or
                             can
                             occasionally get
                             unlucky</span>
@@ -31,22 +31,22 @@ const legend = [
                     <div class="flex items-center space-x-2">
                         <UIcon name="i-heroicons-exclamation-triangle-solid" class="text-yellow-600">
                         </UIcon>
-                        <span class="text-gray-200 text-xs">Caution, can auto but may require
+                        <span class="text-gray-200 text-xs md:text-base">Caution, can auto but may require
                             targeting/pausing</span>
                     </div>
                     <!-- Hard Color -->
                     <div class="flex items-center space-x-2">
                         <UIcon name="i-heroicons-shield-exclamation-solid" class="text-orange-600"></UIcon>
-                        <span class="text-gray-200 text-sm">Hard, can often only get 1/2 on auto</span>
+                        <span class="text-gray-200 text-sm md:text-base">Hard, can often only get 1/2 on auto</span>
                     </div>
                     <!-- No Auto Color -->
                     <div class="flex items-center space-x-2">
                         <UIcon name="i-heroicons-x-circle-solid" class="text-red-900"></UIcon>
-                        <span class="text-gray-200 text-sm">No Auto, must play most of the battle</span>
+                        <span class="text-gray-200 text-sm md:text-base">No Auto, must play most of the battle</span>
                     </div>
                     <div class="flex items-center space-x-2">
                         <img src="/icons/omi.png" alt="omicron" class="h-4 w-4" />
-                        <span class="text-gray-200 text-xs">I had an omicron applied, auto may not be
+                        <span class="text-gray-200 text-xs md:text-base">I had an omicron applied, auto may not be
                             guaranteed
                             without it</span>
                     </div>

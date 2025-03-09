@@ -1,5 +1,6 @@
 export type data = {
     lead: string,
+    leadFull?: string,
     others: string,
     notes: string,
     link: string,

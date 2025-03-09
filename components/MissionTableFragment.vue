@@ -1,9 +1,10 @@
 <script setup lang="ts">
 
+import { useMediaQuery } from '@vueuse/core';
 import { type data as dataType } from './../models/data';
 import { difficulty } from './../models/data';
 
-defineProps({
+const props = defineProps({
     special: Boolean,
     shard: Boolean,
     unlock: Boolean,
@@ -41,6 +42,21 @@ const difficultyIcon = (item: dataType) => {
         default: return 'hidden';
     }
 }
+
+const isMobile = useMediaQuery('(max-width: 768px)');
+
+const accordionItems = props.data.sort((a, b) => a.difficulty - b.difficulty).map((d, index) => {
+                    return {
+                        label: !isMobile && d.leadFull ? d.leadFull : d.lead, content: {
+                            others: d.others,
+                            notes: d.notes,
+                            link: d.link,
+                            difficulty: d.difficulty,
+                            omi: d.omi,
+                        },
+                        defaultOpen: index == 0,
+                    }
+                })
 </script>
 
 <template>
@@ -48,10 +64,10 @@ const difficultyIcon = (item: dataType) => {
         <div class="flex items-center space-x-1">
             <img v-if="special" src="/icons/GET.png" alt="Guild Event Token Icon" class="w-6 h-6">
             <img v-if="shard" src="/icons/sst.png" alt="Shard Icon" class="w-6 h-6">
-            <span>{{ position }}</span>
+            <span class="flex-1 text-left">{{ position }}</span>
             <UIcon v-if="unlock" name="i-heroicons-lock-open" class="pl-2 w-6 h-6" /><button
                 @click="localIsModalOpen = !localIsModalOpen"
-                class="w-8 h-8 text-zinc-200 cursor-pointer hover:text-zinc-50 transition duration-200"
+                class="w-8 h-8 ml-auto text-zinc-200 cursor-pointer hover:text-zinc-50 transition duration-200"
                 v-show="!modalStore.isModalOpen" style="padding-top: 5px;">
                 <UIcon name="i-heroicons-plus-circle" v-if="!localIsModalOpen" class="w-6 h-6" />
                 <UIcon name="i-heroicons-minus-circle" v-else class="w-6 h-6" />
@@ -74,18 +90,7 @@ const difficultyIcon = (item: dataType) => {
                             @click="localIsModalOpen = false" />
                     </div>
                 </template>
-                <UAccordion :items="data.sort((a, b) => a.difficulty - b.difficulty).map(d => {
-                    return {
-                        label: d.lead, content: {
-                            others: d.others,
-                            notes: d.notes,
-                            link: d.link,
-                            difficulty: d.difficulty,
-                            omi: d.omi,
-                        },
-                        defaultOpen: data.length === 1,
-                    }
-                })">
+                <UAccordion :items="accordionItems">
                     <template #default="{ item, index, open }">
                         <UButton
                             class="focus:outline-none focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 flex-shrink-0 font-medium rounded-md text-sm gap-x-1.5 px-2.5 py-1.5 text-primary-500 dark:text-primary-400 bg-primary-50 hover:bg-primary-100 disabled:bg-primary-50 aria-disabled:bg-primary-50 dark:bg-primary-950 dark:hover:bg-primary-900 dark:disabled:bg-primary-950 dark:aria-disabled:bg-primary-950 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400 inline-flex items-center mb-1.5 w-full"

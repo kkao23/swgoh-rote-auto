@@ -121,7 +121,7 @@ const shipsDSP1 = [
         lead: 'Chimera',
         others: 'Scythe, Mk6, Tie Adv, Defender, Interceptor, Sith Fighter, TIE Fighter',
         notes: 'cant auto',
-        videos: [{ url: 'https://youtu.be/xCuGwcVtd98' },
+        videos: [
         { url: 'https://www.youtube.com/watch?v=4skhcZSGAoQ', creator: creators.kahzgul },
         ],
         difficulty: difficulty.NO_AUTO

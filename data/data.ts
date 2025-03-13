@@ -1295,15 +1295,23 @@ const zeffoJedi: dataType[] = [
         videos: [{ url: 'https://youtu.be/ixnkyhqL5G0' }],
         difficulty: difficulty.EASY,
         omi: true
-    }
+    },
+    {
+        lead: 'JKCK (Lead Omi, JML)',
+        others: 'JML, JKL, GMY, Shaak Ti',
+        notes: 'auto, lead omi mandatory',
+        videos: [{ url: 'https://www.youtube.com/watch?v=rhEhxaGzODI', creator: creators.egnards }],
+        difficulty: difficulty.VERY_EASY,
+        omi: true
+    },
 ]
 
 const zeffoUFU: dataType[] = [
     {
         lead: 'Rey',
         others: 'CAT, Ben, Cere, JTR',
-        notes: 'auto, not consistent 2/2',
-        videos: [{ url: 'https://youtu.be/LQbMxA3Oqcs' }],
+        notes: 'auto, CAT mandatory',
+        videos: [{ url: 'https://youtu.be/LQbMxA3Oqcs' }, { url: 'https://www.youtube.com/watch?v=weXoe5KzFaY', creator: creators.egnards }],
         difficulty: difficulty.EASY
     },
     {

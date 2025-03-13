@@ -14,16 +14,12 @@
     </div>
     <NuxtPage class="flex-grow" />
     <div class="bg-color flex items-center text-white px-4 py-2 rounded-b-xl">
-      <p class="text-xs font-semibold">A Jedi craves knowledge - share yours!</p>
+      <p class="text-xs font-semibold">Created by captsolo in conjunction with the Slice of Otoh Gunga TB Library. Join us:</p>
       <!-- Wrapper for icons -->
       <div class="flex-grow flex justify-end space-x-2">
         <!-- YouTube Link -->
-        <a href="https://www.youtube.com/channel/UCUDT-IWDuCUwQIqXshV9aQw" target="_blank" class="hover:opacity-80">
-          <img src="/icons/icons8-youtube.svg" alt="YouTube" class="h-8 w-8" />
-        </a>
-        <!-- Reddit Link -->
-        <a href="https://www.reddit.com/user/captsolo23/" target="_blank" class="hover:opacity-80">
-          <img src="/icons/icons8-reddit.svg" alt="Reddit" class="h-8 w-8" />
+        <a href="https://discord.gg/rhrWK39XJH" target="_blank" class="hover:opacity-80">
+          <img src="/icons/discord.svg" alt="Discord" class="h-8 w-8" />
         </a>
       </div>
     </div>

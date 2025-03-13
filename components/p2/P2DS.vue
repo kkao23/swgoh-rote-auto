@@ -21,4 +21,7 @@ const alignment = 'DS';
     <tr>
         <MissionTableFragment :position="`L (Reek)`" :data="data.ds.reek" :phase="phase" :alignment="alignment"></MissionTableFragment>
     </tr>
+    <tr>
+        <MissionTableFragment :position="`Fleet`" :data="data.ds.ships" :phase="phase" :alignment="alignment"></MissionTableFragment>
+    </tr>
 </template>

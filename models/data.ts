@@ -1,9 +1,16 @@
+import { creators } from "./creators"
+
+type videos = {
+    url: string,
+    creator?: creators,
+}
+
 export type data = {
     lead: string,
     leadFull?: string,
     others: string,
     notes: string,
-    link: string,
+    videos: videos[],
     difficulty: difficulty,
     omi?: boolean,
 }

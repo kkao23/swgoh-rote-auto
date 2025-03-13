@@ -3,6 +3,7 @@
 import { useMediaQuery } from '@vueuse/core';
 import { type data as dataType } from './../models/data';
 import { difficulty } from './../models/data';
+import { creatorMap } from '~/models/creators';
 
 const props = defineProps({
     special: Boolean,
@@ -50,13 +51,15 @@ const accordionItems = props.data.sort((a, b) => a.difficulty - b.difficulty).ma
                         label: !isMobile && d.leadFull ? d.leadFull : d.lead, content: {
                             others: d.others,
                             notes: d.notes,
-                            link: d.link,
+                            videos: d.videos,
                             difficulty: d.difficulty,
                             omi: d.omi,
                         },
                         defaultOpen: index == 0,
                     }
-                })
+                });
+
+const creatorMapLocal: { [key: string]: string } = creatorMap;
 </script>
 
 <template>
@@ -119,9 +122,15 @@ const accordionItems = props.data.sort((a, b) => a.difficulty - b.difficulty).ma
                             <dt class="text-gray-200 font-semibold">Notes</dt>
                             <dd class="text-gray-300 mb-2">{{ item.content.notes }}</dd>
                         </dl>
-                        <a class="text-blue-200 underline flex items-center space-x-2" :href="item.content.link"
-                            target="_blank">
-                            <img src="/icons/icons8-youtube.svg" alt="YouTube" class="h-6 w-6" /><span>Video</span></a>
+                        <div v-for="(video, index) in item.content.videos" class="flex items-center space-x-2">
+                            <a 
+                            class="text-blue-200 underline flex items-center space-x-2"
+                            :href="video.url" target="_blank">
+                            <img src="/icons/icons8-youtube.svg" alt="YouTube" class="h-6 w-6" />
+                            <span>Video</span>
+                            </a>
+                            <span v-if="video.creator" class="text-gray-300"> by </span><img v-if="video.creator" :src="creatorMapLocal[video.creator as string]" class="h-12 w-12" />
+                        </div>
                     </template>
                 </UAccordion>
                 <template #footer>

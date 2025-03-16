@@ -69,6 +69,14 @@ const bottomDSP1: dataType[] = [{
     notes: 'auto',
     videos: [{ url: 'https://www.youtube.com/watch?v=WNhnP7qjZgQ', creator: creators.egnards }],
     difficulty: difficulty.EASY
+},
+{
+    lead: 'Captain Enoch (omi)',
+    others: 'Death Trooper Peridia, Tie Fighter Pilot, Night Trooper, Stormtrooper',
+    notes: 'target B2, auto',
+    videos: [{url: 'https://youtu.be/V75J-k6i40s?si=6pWLh-5BQIDC5fJ-&t=264', creator: creators.pico}],
+    difficulty: difficulty.VERY_EASY,
+    omi: true,
 }
 ];
 
@@ -93,7 +101,14 @@ const topDSP1: dataType[] = [
         notes: 'Doom droideka, bless Morgan, hit auto',
         videos: [{ url: 'https://youtu.be/zjxxsvQos5Y' }],
         difficulty: difficulty.EASY
-    }
+    },
+    {
+        lead: 'Reva',
+        others: 'GI, 7S, 2S, 8B',
+        notes: 'Target B2, hit auto',
+        videos: [{ url: 'https://youtu.be/V75J-k6i40s?si=uX_YUqMZEuQr7VIN&t=145', creator: creators.pico }],
+        difficulty: difficulty.EASY
+    },
 ];
 
 const lvP1: dataType[] = [
@@ -290,6 +305,13 @@ const qiraMixedP1: dataType[] = [
         videos: [{ url: 'https://youtu.be/srzybGeCGjw' }],
         difficulty: difficulty.EASY,
         omi: true
+    },
+    {
+        lead: 'Qira (Rey/CAT)',
+        others: 'Rey, CAT, Dash',
+        notes: 'auto',
+        videos: [{url: 'https://youtu.be/9ZoFbJLgMeQ?si=52LjaRA6F8zWoIIE&t=334', creator: creators.pico}],
+        difficulty: difficulty.VERY_EASY
     }
 ]
 
@@ -331,6 +353,14 @@ const mixedP1: dataType[] = [
         notes: 'auto',
         videos: [{ url: 'https://www.youtube.com/watch?v=BuRRMRfocoo', creator: creators.egnards }],
         difficulty: difficulty.VERY_EASY
+    },
+    {
+        lead: 'Finn (omi)',
+        others: 'Rose, Poe, RH Finn, Zorii',
+        notes: 'auto',
+        videos: [{url: 'https://youtu.be/9ZoFbJLgMeQ?si=OsvnQRT7eJTYF4EQ&t=264', creator: creators.pico}],
+        difficulty: difficulty.VERY_EASY,
+        omi: true,
     }
 ]
 
@@ -451,7 +481,15 @@ const mixedP2: dataType[] = [
         notes: 'auto',
         videos: [{ url: 'https://www.youtube.com/watch?v=Hf_-_PGj3rk', creator: creators.egnards }],
         difficulty: difficulty.VERY_EASY
-    }
+    },
+    {
+        lead: 'Boss Nass',
+        others: 'Gungans',
+        notes: 'easy auto with Tarpals Omi',
+        videos: [{ url: 'https://youtu.be/j6c_GgoPyws?si=Hx1_pMIyDumR1mIX', creator: creators.pico }],
+        difficulty: difficulty.VERY_EASY,
+        omi: true
+    },
 ]
 
 const jabbaP2: dataType[] = [
@@ -479,6 +517,13 @@ const youngLandoP2: dataType[] = [
         difficulty: difficulty.HARD,
         omi: true
     },
+    {
+        lead: 'Ahsoka Tano',
+        others: 'Ezra Exile, Huyang, Hera',
+        notes: 'May be able to sub Hera for Sabine?',
+        videos: [{url: 'https://youtu.be/j6c_GgoPyws?si=Hxm-IELtfWIbZqQH&t=470', creator: creators.pico}],
+        difficulty: difficulty.VERY_EASY,
+    }
 ]
 
 const shipsLSP2: dataType[] = [
@@ -535,6 +580,14 @@ const leftLSP2: dataType[] = [
         videos: [{ url: 'https://youtu.be/fFO75yKREfA' }],
         difficulty: difficulty.EASY
     },
+    {
+        lead: 'Finn (omi)',
+        others: 'Poe, Zorii, RH Finn, Rose',
+        notes: 'auto',
+        videos: [{url: 'https://youtu.be/-T5DUTDHm6Y?si=enslsLffHD2qyfnW&t=381', creator: creators.pico}],
+        difficulty: difficulty.VERY_EASY,
+        omi: true,
+    }
 ]
 
 const rightLSP2: dataType[] = [
@@ -733,6 +786,13 @@ const fennecP3: dataType[] = [
         notes: 'easy auto',
         videos: [{ url: 'https://youtu.be/6CN70UAKHSU' }],
         difficulty: difficulty.VERY_EASY
+    },
+    {
+        lead: 'Bossk',
+        others: 'Boba, Greef, Mando',
+        notes: 'auto',
+        videos: [{url: 'https://youtu.be/R7zqN2V0kQo?si=JDJovWknr8nAx7_t&t=267', creator: creators.pico}],
+        difficulty: difficulty.VERY_EASY,
     }
 ]
 
@@ -766,6 +826,14 @@ const mixedTopLeftP3: dataType[] = [
         notes: 'auto',
         videos: [{ url: 'https://www.youtube.com/watch?v=TK71MGKC2Ho', creator: creators.egnards }],
         difficulty: difficulty.VERY_EASY
+    },
+    {
+        lead: 'Finn (omi)',
+        others: 'Poe, Zorii, RH Finn, Resistance Pilot',
+        notes: 'auto, i imagine Resistance Pilot is replaceable',
+        videos: [{url: 'https://youtu.be/R7zqN2V0kQo?si=urjbrnVAjSeaOTHa&t=387', creator: creators.pico}],
+        difficulty: difficulty.VERY_EASY,
+        omi: true,
     }
 ]
 
@@ -832,6 +900,13 @@ const dsGenericP3: dataType[] = [
         notes: 'Torture, auto, I personally have not gotten this team to work under 10 minutes',
         videos: [{ url: 'https://www.youtube.com/watch?v=7wqarjgb6x8', creator: creators.egnards }],
         difficulty: difficulty.EASY
+    },
+    {
+        lead: 'Trench',
+        others: 'Dooku, Wat, Jango, Nute',
+        notes: 'auto',
+        videos: [{url: 'https://youtu.be/KBeqsI-Xkd0?si=TdjNlW5XNg03AkcP&t=110', creator: creators.pico}],
+        difficulty: difficulty.VERY_EASY,
     }
 ]
 
@@ -911,6 +986,14 @@ const lsLeftP3: dataType[] = [
         videos: [{ url: 'https://youtu.be/R_3rOQK49XQ' }],
         difficulty: difficulty.VERY_EASY,
         omi: true,
+    },
+    {
+        lead: 'Boss Nass',
+        others: 'Other gungans (tarpal omi)',
+        notes: 'auto',
+        videos: [{url: 'https://youtu.be/TY97HzhePAg?si=zo9rbCRZ-_JOfg8N&t=231', creator: creators.pico}],
+        difficulty: difficulty.VERY_EASY,
+        omi: true,
     }
 ]
 
@@ -956,6 +1039,16 @@ const sawP3: dataType[] = [
         videos: [{ url: 'https://youtu.be/FCEEsGXMtOA' }],
         difficulty: difficulty.CAUTION,
         omi: true
+    }
+]
+
+const wookies: dataType[] = [
+    {
+        lead: 'Tarfull',
+        others: 'Chewbacca, Chewpio, Zaalbaar, Clone Wars Chewie',
+        notes: 'Pico has them all R8, not sure if possible at R7. Looked safe though',
+        videos: [{url: 'https://youtu.be/TY97HzhePAg?si=ewaYO47t0fspuZwl&t=463', creator: creators.pico}],
+        difficulty: difficulty.EASY,
     }
 ]
 
@@ -1147,6 +1240,14 @@ const mixedGenericP4: dataType[] = [
         videos: [{ url: 'https://www.youtube.com/watch?v=na9zOBWrZF8', creator: creators.egnards }],
         difficulty: difficulty.VERY_EASY,
     },
+    {
+        lead: 'JMK',
+        leadFull: 'Jedi Master Kenobi',
+        others: 'Padme, Snips, GK, Cody',
+        notes: 'Imagine Cody is a flex here and you can likely 4 man this',
+        videos: [{ url: 'https://youtu.be/K7yZyrvCObI?si=zgFyWI6C0mjYh_zE&t=3', creator: creators.pico }],
+        difficulty: difficulty.VERY_EASY,
+    },
 ]
 
 const jabbaP4: dataType[] = [
@@ -1198,6 +1299,17 @@ const dsRightP4: dataType[] = [
     }
 ]
 
+const dsMidP4:dataType[] = [
+    {
+        lead: 'SEE',
+        leadFull: 'Sith Eternal Emperor',
+        others: 'Traya, Malgus, Nihilus',
+        notes: 'Pico has R9 on SEE, Traya and Sion. Not sure if this is reliable with R8',
+        videos: [{url: 'https://youtu.be/ecgbRYyLYn8?si=vXiCr9uxLr9M5eJi', creator: creators.pico}],
+        difficulty: difficulty.EASY,
+    }
+]
+
 // P5
 
 const mixedFleetP5: dataType[] = [
@@ -1231,6 +1343,24 @@ const mixedGenericP5: dataType[] = [
         notes: 'Auto',
         videos: [{ url: 'https://youtu.be/OCGLZm1SJiM' }],
         difficulty: difficulty.VERY_EASY
+    },
+    {
+        lead: 'Lord Vader',
+        others: 'Maul, RG, 9S, Darth Vader',
+        notes: 'Auto, only 1/2',
+        videos: [{url: 'https://youtu.be/1t_aEW7O9Zk?si=th-cDggFM7cPamGZ&t=14', creator: creators.pico}],
+        difficulty: difficulty.HARD
+    }
+]
+
+const jabbaP5:dataType[] = [
+    {
+        lead: 'Jabba',
+        others: 'Boosh, Krrsantan, Gam Guard (omi), Bossk',
+        notes: 'auto, replace Bossk with Hutt Cartel if possible',
+        videos: [{url: 'https://youtu.be/1t_aEW7O9Zk?si=FZVN2wEADXdQHkT2&t=156', creator: creators.pico}],
+        difficulty: difficulty.VERY_EASY,
+        omi: true,
     }
 ]
 
@@ -1408,8 +1538,27 @@ const mandaloreGeneric: dataType[] = [
         videos: [{ url: 'https://youtu.be/G8X9wesq-xg' }],
         difficulty: difficulty.HARD
     },
+    {
+        lead: 'Finn (omi)',
+        others: 'RH Finn, Rose, Zorii, Poe',
+        notes: 'auto',
+        videos: [{ url: 'https://www.youtube.com/watch?v=3OXMLd1e7PI', creator: creators.pico }],
+        difficulty: difficulty.VERY_EASY,
+        omi: true,
+    },
 ]
 
+const mandaloreDTMG: dataType[] = [
+    {
+        lead: 'DTMG',
+        leadFull: 'Dark Trooper Moff Gideon',
+        others: 'Scout Trooper, Moff Gideon, Death Trooper, Captain Enoch (omi)',
+        notes: 'auto',
+        videos: [{url: 'https://youtu.be/NR8m5BfsnSs?si=VuJv_SnHvQIKPFd2&t=87', creator: creators.pico}],
+        difficulty: difficulty.VERY_EASY,
+        omi: true,
+    }
+]
 export const data = {
     phase1: {
         ds: {
@@ -1465,7 +1614,8 @@ export const data = {
         ls: {
             saw: sawP3,
             left: lsLeftP3,
-            right: lsRightP3
+            right: lsRightP3,
+            wookies: wookies,
         },
         mixed: {
             boKatan: boKatanP3,
@@ -1486,6 +1636,7 @@ export const data = {
     phase4: {
         ds: {
             inqs: dsInqP4,
+            mid: dsMidP4,
             right: dsRightP4
         },
         mixed: {
@@ -1501,12 +1652,14 @@ export const data = {
         },
         mandalore: {
             fleets: mandaloreFleets,
-            generic: mandaloreGeneric
+            generic: mandaloreGeneric,
+            dtmg: mandaloreDTMG,
         }
     },
     phase5: {
         mixed: {
             generic: mixedGenericP5,
+            jabba: jabbaP5,
             fleet: mixedFleetP5
         },
         ls: {

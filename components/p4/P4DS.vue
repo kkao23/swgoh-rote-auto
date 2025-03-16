@@ -16,6 +16,9 @@ const alignment = 'DS';
         <MissionTableFragment :position="`Inquisitors`" :data="data.ds.inqs" :phase="phase" :alignment="alignment" :special="true"></MissionTableFragment>
     </tr>
     <tr>
+        <MissionTableFragment :position="`Middle`" :data="data.ds.mid" :phase="phase" :alignment="alignment"></MissionTableFragment>
+    </tr>
+    <tr>
         <MissionTableFragment :position="`Right`" :data="data.ds.right" :phase="phase" :alignment="alignment"></MissionTableFragment>
     </tr>
 </template>

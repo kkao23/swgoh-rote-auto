@@ -21,4 +21,7 @@ const alignment = 'LS';
     <tr>
         <MissionTableFragment :position="`Right (Mara)`" :data="data.ls.right" :phase="phase" :alignment="alignment"></MissionTableFragment>
     </tr>
+    <tr>
+        <MissionTableFragment :position="`Wookies`" :data="data.ls.wookies" :phase="phase" :alignment="alignment" :special="true"></MissionTableFragment>
+    </tr>
 </template>

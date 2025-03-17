@@ -31,7 +31,13 @@ const leftDSP1: dataType[] = [{
     notes: 'auto',
     videos: [{ url: 'https://www.youtube.com/watch?v=yPPfk6jXukU', creator: creators.egnards }],
     difficulty: difficulty.EASY
-}];
+}, {
+    lead: 'Great Mothers',
+    others: 'Morgan, Night Trooper, Death Trooper, Merrin',
+    notes: 'Auto, can bless morgan manually if you want to be totally safe',
+    videos: [{ url: 'https://youtu.be/YUMJjeD6k5A' }],
+    difficulty: difficulty.VERY_EASY
+},];
 
 const bottomDSP1: dataType[] = [{
     lead: 'Great Mothers',
@@ -77,7 +83,14 @@ const bottomDSP1: dataType[] = [{
     videos: [{url: 'https://youtu.be/V75J-k6i40s?si=6pWLh-5BQIDC5fJ-&t=264', creator: creators.pico}],
     difficulty: difficulty.VERY_EASY,
     omi: true,
-}
+},
+{
+    lead: 'SLKR',
+    others: 'DRey, Hux, KRU, Sith Trooper',
+    notes: 'Auto',
+    videos: [{ url: 'https://youtu.be/BTWI-B8Oc-Q' }],
+    difficulty: difficulty.EASY
+},
 ];
 
 const topDSP1: dataType[] = [
@@ -107,6 +120,14 @@ const topDSP1: dataType[] = [
         others: 'GI, 7S, 2S, 8B',
         notes: 'Target B2, hit auto',
         videos: [{ url: 'https://youtu.be/V75J-k6i40s?si=uX_YUqMZEuQr7VIN&t=145', creator: creators.pico }],
+        difficulty: difficulty.EASY
+    },
+    {
+        lead: 'SEE',
+        leadFull: 'Sith Eternal Emperor',
+        others: 'Wat, Malak, Bane, Darth Revan',
+        notes: 'Tank Tech on SEE, auto',
+        videos: [{ url: 'https://youtu.be/usKjKU8tLHo' }],
         difficulty: difficulty.EASY
     },
 ];
@@ -221,7 +242,7 @@ const shipsLSP1: dataType[] = [
     {
         lead: 'Home One',
         others: 'HMF, Outrider, Y wing, Biggs, Wedge',
-        notes: 'Outrider 2nd special, auto, biggs then wedge reinf',
+        notes: 'Outrider 2nd special, auto, biggs then wedge reinf. wont work without Home One',
         videos: [{ url: 'https://youtu.be/zxW5IOe_w_o' }],
         difficulty: difficulty.CAUTION
     }
@@ -280,6 +301,20 @@ const genericLSP1: dataType[] = [
         notes: 'auto, can get unlucky in 2nd wave',
         videos: [{ url: 'https://www.youtube.com/watch?v=TT9Au4z9hcs', creator: creators.egnards }],
         difficulty: difficulty.CAUTION,
+    },
+    {
+        lead: 'Ahsoka Tano',
+        others: 'Any spectre',
+        notes: 'auto, dont need ezra',
+        videos: [{url: 'https://youtu.be/lGY7TLSTCMA'}],
+        difficulty: difficulty.VERY_EASY,
+    },
+    {
+        lead: 'Padme (CAT)',
+        others: 'Snips, JKA, CAT, Mace',
+        notes: 'auto, can swap mace for GK',
+        videos: [{url: 'https://youtu.be/zwCGO6aeGNY'}],
+        difficulty: difficulty.EASY,
     }
 ]
 
@@ -312,6 +347,13 @@ const qiraMixedP1: dataType[] = [
         notes: 'auto',
         videos: [{url: 'https://youtu.be/9ZoFbJLgMeQ?si=52LjaRA6F8zWoIIE&t=334', creator: creators.pico}],
         difficulty: difficulty.VERY_EASY
+    },
+    {
+        lead: 'Qira (Rey no CAT)',
+        others: 'Rey, L3, Hondo',
+        notes: 'lifeblood L3, auto, this got scary, I would sub out Hondo',
+        videos: [{url: 'https://youtu.be/Vj9WEoCV4Io'}],
+        difficulty: difficulty.CAUTION
     }
 ]
 
@@ -361,7 +403,15 @@ const mixedP1: dataType[] = [
         videos: [{url: 'https://youtu.be/9ZoFbJLgMeQ?si=OsvnQRT7eJTYF4EQ&t=264', creator: creators.pico}],
         difficulty: difficulty.VERY_EASY,
         omi: true,
-    }
+    },
+    {
+        lead: 'BK Mandalore',
+        leadFull: 'Bo Katan Mandalore',
+        others: 'Paz, Beskar Mando, IG12/Grogu, Regular Bo Katan',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/DEytmo8fFC0' }],
+        difficulty: difficulty.VERY_EASY
+    },
 ]
 
 const jabbaP1: dataType[] = [
@@ -398,6 +448,13 @@ const shipsP1: dataType[] = [
         notes: 'auto, use RC if not platooned',
         videos: [{ url: 'https://youtu.be/Qzduxv0BJx8' }],
         difficulty: difficulty.VERY_EASY
+    },
+    {
+        lead: 'Malevolence',
+        others: 'Vulture, Hyena, Spy, Soldier',
+        notes: 'auto, do not bring Sun Fac or any other reinforcements. not sure if totally reliable',
+        videos: [{url: 'https://youtu.be/VaQSNWNpfVU'}],
+        difficulty: difficulty.EASY,
     }
 ]
 

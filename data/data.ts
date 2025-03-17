@@ -1728,6 +1728,7 @@ export const data = {
             qiraP1: qiraMixedP1,
             zeffo: zeffoUnlock,
             clones: clonesSM,
+            reva: revaP3,
             boKatan: boKatanP3,
             merrin: merrinP3,
             saw: sawP3,

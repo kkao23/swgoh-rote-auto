@@ -24,6 +24,9 @@ const phase = 'Special Mission';
         <MissionTableFragment :data="data.boKatan" :position="`Bo Katan (Krayt) (P3 Mixed)`"></MissionTableFragment>
     </tr>
     <tr>
+        <MissionTableFragment :data="data.reva" :position="`Reva (P3 Mixed)`" :shard="true"></MissionTableFragment>
+    </tr>
+    <tr>
         <MissionTableFragment :data="data.merrin" :position="`Merrin (P3 DS)`"></MissionTableFragment>
     </tr>
     <tr>

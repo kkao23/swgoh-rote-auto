@@ -67,23 +67,34 @@ const phases = [
 <template>
     <UAccordion class="acc" :items="phases" :size="isMobile ? 'sm' : 'xl'">
         <template #phase-1-slot>
-            <PhaseWrapper phase-number="1" :ds-component="P1DS" :ls-component="P1LS" :mixed-component="P1Mixed">
+            <PhaseWrapper phase-number="1" :ds-component="P1DS" :ls-component="P1LS" :mixed-component="P1Mixed" 
+                :ls-planet-name="'Coruscant'" :ds-planet-name="'Mustafar'" :mixed-planet-name="'Corellia'">
             </PhaseWrapper>
         </template>
         <template #phase-2-slot>
-            <PhaseWrapper phase-number="2" :ds-component="P2DS" :ls-component="P2LS" :mixed-component="P2Mixed">
+            <PhaseWrapper phase-number="2" :ds-component="P2DS" :ls-component="P2LS" :mixed-component="P2Mixed"
+                :ls-planet-name="'Bracca'" :ds-planet-name="'Geonosis'" :mixed-planet-name="'Felucia'">
             </PhaseWrapper>
         </template>
         <template #phase-3-slot>
-            <PhaseWrapper phase-number="3" :ds-component="P3DS" :ls-component="P3LS" :mixed-component="P3Mixed">
+            <PhaseWrapper phase-number="3" :ds-component="P3DS" :ls-component="P3LS" :mixed-component="P3Mixed"
+                :ls-planet-name="'Kashyyyk'" :ds-planet-name="'Dathomir'" :mixed-planet-name="'Tatooine'">
             </PhaseWrapper>
         </template>
         <template #phase-4-slot>
-            <PhaseWrapper phase-number="4" :ds-component="P4DS" :ls-component="P4LS" :mixed-component="P4Mixed">
+            <PhaseWrapper phase-number="4" :ds-component="P4DS" :ls-component="P4LS" :mixed-component="P4Mixed"
+                :ls-planet-name="'Lothal'" :ds-planet-name="'Haven'" :mixed-planet-name="'Kessel'">
             </PhaseWrapper>
         </template>
         <template #phase-5-slot>
-            <PhaseWrapper phase-number="5" :ls-component="P5LS" :mixed-component="P5Mixed"></PhaseWrapper>
+            <PhaseWrapper phase-number="5" :ls-component="P5LS" :mixed-component="P5Mixed"
+                :ls-planet-name="'Kafrene'" :ds-planet-name="'Malachor'" :mixed-planet-name="'Vandor'">
+            </PhaseWrapper>
+        </template>
+        <template #phase-6-slot>
+            <PhaseWrapper phase-number="6"
+                :ls-planet-name="'Scarif'" :ds-planet-name="'Death Star'" :mixed-planet-name="'Hoth'">
+            </PhaseWrapper>
         </template>
         <template #zeffo-slot>
             <PhaseWrapper phase-number="Zeffo" :ls-component="Zeffo"></PhaseWrapper>

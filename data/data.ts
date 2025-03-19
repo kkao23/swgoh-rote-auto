@@ -482,6 +482,12 @@ const hondoMixedP2: dataType[] = [
         notes: 'can get unlucky if they focus CAT',
         videos: [{ url: 'https://youtu.be/nClssdqkjb0' }],
         difficulty: difficulty.EASY,
+    },{
+        lead: 'Ahsoka Tano',
+        others: 'Padawan Sabine, Huyang, Fulcrum',
+        notes: 'auto, can save Ezra for Jedi mission',
+        videos: [{ url: 'https://youtu.be/otXD7ulJ7rY' }],
+        difficulty: difficulty.VERY_EASY
     },
 ]
 
@@ -547,6 +553,14 @@ const mixedP2: dataType[] = [
         difficulty: difficulty.VERY_EASY,
         omi: true
     },
+    {
+        lead: 'BK Mandalore (Rey)',
+        leadFull: 'Bo Katan Mandalore',
+        others: 'Paz, Beskar Mando, IG12/Grogu, Rey',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/raru9eDGYqk' }],
+        difficulty: difficulty.VERY_EASY
+    },
 ]
 
 const jabbaP2: dataType[] = [
@@ -577,17 +591,24 @@ const youngLandoP2: dataType[] = [
     {
         lead: 'Ahsoka Tano',
         others: 'Ezra Exile, Huyang, Hera',
-        notes: 'May be able to sub Hera for Sabine?',
+        notes: 'Ezra mandatory. May be able to sub Hera for Sabine?',
         videos: [{url: 'https://youtu.be/j6c_GgoPyws?si=Hxm-IELtfWIbZqQH&t=470', creator: creators.pico}],
         difficulty: difficulty.VERY_EASY,
-    }
+    },
+    {
+        lead: 'Leia',
+        others: 'Drogan, R2, Admiral Raddus',
+        notes: 'only 1/2 on auto',
+        videos: [{ url: 'https://youtu.be/hbifGXqcEB0' }],
+        difficulty: difficulty.HARD
+    },
 ]
 
 const shipsLSP2: dataType[] = [
     {
         lead: 'Profundity',
         others: 'HMF, Outrider, Y wing, Phantom, Ghost, Biggs, Wedge',
-        notes: 'auto',
+        notes: 'target scythe, auto',
         videos: [{ url: 'https://youtu.be/dD9Eey116EY' }],
         difficulty: difficulty.VERY_EASY
     }
@@ -610,7 +631,15 @@ const jediLSP2: dataType[] = [
         notes: 'auto, long, not reliable 2/2',
         videos: [{ url: 'https://youtu.be/_0J9LtUwj4U' }],
         difficulty: difficulty.CAUTION
-    }
+    },
+    {
+        lead: 'JML (Ezra)',
+        leadFull: 'Jedi Master Luke with Ezra',
+        others: 'Ezra exile, any 3 jedi',
+        notes: 'auto, I had Bastila, JKA and Plo and it was close at the end. Use better jedi for more consistency',
+        videos: [{ url: 'https://youtu.be/d5uJfXLjlvc' }],
+        difficulty: difficulty.EASY,
+    },
 ]
 
 const leftLSP2: dataType[] = [
@@ -644,7 +673,15 @@ const leftLSP2: dataType[] = [
         videos: [{url: 'https://youtu.be/-T5DUTDHm6Y?si=enslsLffHD2qyfnW&t=381', creator: creators.pico}],
         difficulty: difficulty.VERY_EASY,
         omi: true,
-    }
+    },
+    {
+        lead: 'QA',
+        leadFull: 'Queen Amidala',
+        others: 'POW, MQG, GMY, Shaak Ti',
+        notes: 'auto, deselect targeting reticule, need good mods on QA to get decoy out first',
+        videos: [{ url: 'https://youtu.be/-4mjKaoesMs' }],
+        difficulty: difficulty.EASY
+    },
 ]
 
 const rightLSP2: dataType[] = [
@@ -665,9 +702,17 @@ const rightLSP2: dataType[] = [
     }, {
         lead: 'Ahsoka Tano',
         others: 'Padawan Sabine, Huyang, Fulcrum, +any',
-        notes: 'auto, use Ezra and or Hera if available',
+        notes: 'auto, use Hera if available, can save Ezra for Jedi mission',
         videos: [{ url: 'https://youtu.be/aP8-BIqw0jk' }],
         difficulty: difficulty.VERY_EASY
+    },
+    {
+        lead: 'JMK',
+        leadFull: 'Jedi Master Kenobi',
+        others: 'Snips, GK, Padme, CAT',
+        notes: 'only 1/2 on auto. Deselect reticule',
+        videos: [{ url: 'https://youtu.be/pYalwvB22qo' }],
+        difficulty: difficulty.HARD
     },
 ]
 
@@ -712,6 +757,14 @@ const acklayDSP2: dataType[] = [
         videos: [{ url: 'https://www.youtube.com/watch?v=vvGaQA5SWYQ&ab_channel=Egnards', creator: creators.egnards }],
         difficulty: difficulty.VERY_EASY,
     },
+    {
+        lead: 'Baylan',
+        others: 'Marrok, Shin, Jango, Zam',
+        notes: 'omi Marrok, auto, last two any Mercenaries',
+        videos: [{ url: 'https://youtu.be/oiaA3D00Efw' }],
+        difficulty: difficulty.VERY_EASY,
+        omi: true
+    },
 ]
 
 const reekDSP2: dataType[] = [
@@ -751,6 +804,13 @@ const reekDSP2: dataType[] = [
         videos: [{ url: 'https://www.youtube.com/watch?v=Qz5O-GoAKkk', creator: creators.egnards }],
         difficulty: difficulty.VERY_EASY
     },
+    {
+        lead: 'Dr Aphra',
+        others: 'BT1, Darth Vader, HK47, General Grievous',
+        notes: 'auto, 0-0-0 if you have him',
+        videos: [{ url: 'https://youtu.be/Dspj8Z4Q2bA'}],
+        difficulty: difficulty.VERY_EASY
+    },
 ]
 
 const nexuDSP2: dataType[] = [
@@ -763,6 +823,7 @@ const nexuDSP2: dataType[] = [
     },
     {
         lead: 'SLKR',
+        leadFull: 'Supreme Leader Kylo Ren',
         others: 'Hux, KRU, Sith Trooper, D Rey',
         notes: 'Poke, auto, DRey makes it easier',
         videos: [{ url: 'https://youtu.be/FW60H6-v6wM' }],
@@ -770,10 +831,19 @@ const nexuDSP2: dataType[] = [
     },
     {
         lead: 'LV',
+        leadFull: 'Lord Vader',
         others: 'Darth Vader, +3 Empire',
         notes: 'I had Piett Tarkin Thrawn',
         videos: [{ url: 'https://youtu.be/x19YcfeL9_4' }],
         difficulty: difficulty.VERY_EASY
+    },
+    {
+        lead: 'SEE',
+        leadFull: 'Sith Eternal Emperor',
+        others: 'Wat, Bane, Malak, Darth Revan',
+        notes: 'only 1/2. Use him elsewhere if you can',
+        videos: [{ url: 'https://youtu.be/ysRNg9QnwAg' }],
+        difficulty: difficulty.HARD
     },
 ]
 

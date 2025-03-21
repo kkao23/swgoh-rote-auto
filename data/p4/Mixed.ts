@@ -17,6 +17,14 @@ export const mixedQiraP4: dataType[] = [
         videos: [{ url: 'https://youtu.be/nBP08l-0Lj4' }],
         difficulty: difficulty.VERY_EASY,
         omi: true
+    },
+    {
+        lead: 'SLKR',
+        leadFull: 'Supreme Leader Kylo Ren',
+        others: 'DRey, Malak, Qira, L3',
+        notes: 'poke, auto',
+        videos: [{url: 'https://youtu.be/kmFHKrKTX1c'}],
+        difficulty: difficulty.EASY
     }
 ]
 
@@ -73,6 +81,21 @@ export const mixedGenericP4: dataType[] = [
         videos: [{ url: 'https://youtu.be/K7yZyrvCObI?si=zgFyWI6C0mjYh_zE&t=3', creator: creators.pico }],
         difficulty: difficulty.VERY_EASY,
     },
+    {
+        lead: 'Reva',
+        others: 'Marrok (omi), GI, 5B, 7S',
+        notes: 'auto',
+        videos: [{url: 'https://youtu.be/bwZHmRAFWOA'}],
+        difficulty: difficulty.VERY_EASY,
+        omi: true,
+    },
+    {
+        lead: 'Lord Vader',
+        others: 'Piett, Dooku, Malicos',
+        notes: 'auto, I imagine there are better teammates. I had no other options',
+        videos: [{url: 'https://youtu.be/TpgdflmfBxo'}],
+        difficulty: difficulty.VERY_EASY,
+    }
 ]
 
 export const jabbaP4: dataType[] = [

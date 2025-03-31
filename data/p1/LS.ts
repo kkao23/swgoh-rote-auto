@@ -83,6 +83,13 @@ export const shipsLSP1: dataType[] = [
         notes: 'Outrider 2nd special, auto, biggs then wedge reinf. wont work without Home One',
         videos: [{ url: 'https://youtu.be/zxW5IOe_w_o' }],
         difficulty: difficulty.CAUTION
+    },
+    {
+        lead: 'Negotiator',
+        others: 'JKA, Marauder, Outrider, Y Wing, Ahsoka, Fives',
+        notes: 'marauder likely mandatory, easy auto',
+        videos: [{ url: 'https://youtu.be/LcxipBi044A' }],
+        difficulty: difficulty.VERY_EASY
     }
 ]
 
@@ -153,5 +160,19 @@ export const genericLSP1: dataType[] = [
         notes: 'auto, can swap mace for GK',
         videos: [{url: 'https://youtu.be/zwCGO6aeGNY'}],
         difficulty: difficulty.EASY,
-    }
+    },
+    {
+        lead: 'Admiral Raddus',
+        others: 'Jyn, K2SO, Cassian, Chirrut',
+        notes: 'only 1/2 on auto',
+        videos: [{url: 'https://youtu.be/-2mnwclkwp0'}],
+        difficulty: difficulty.HARD,
+    },{
+        lead: 'JMK',
+        leadFull: 'Jedi Master Kenobi',
+        others: 'Snips, GK, JKA, Padme',
+        notes: 'auto, can sub CAT in for JKA if you have her available',
+        videos: [{ url: 'https://youtu.be/BJ-vunYNBIg' }],
+        difficulty: difficulty.VERY_EASY
+    },
 ]

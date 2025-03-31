@@ -1,6 +1,3 @@
-import { creators } from "~/models/creators";
-import { difficulty } from "~/models/data";
-import { type data as dataType } from "~/models/data";
 // P1
 import { leftDSP1 } from "./p1/DS";
 import { bottomDSP1 } from "./p1/DS";

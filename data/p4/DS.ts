@@ -36,7 +36,7 @@ export const dsMidP4:dataType[] = [
     {
         lead: 'SEE',
         leadFull: 'Sith Eternal Emperor',
-        others: 'Traya, Malgus, Nihilus',
+        others: 'Traya, Malgus, Nihilus, Sion',
         notes: 'Pico has R9 on SEE, Traya and Sion. Not sure if this is reliable with R8',
         videos: [{url: 'https://youtu.be/ecgbRYyLYn8?si=vXiCr9uxLr9M5eJi', creator: creators.pico}],
         difficulty: difficulty.EASY,

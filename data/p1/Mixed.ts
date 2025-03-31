@@ -38,6 +38,13 @@ export const qiraMixedP1: dataType[] = [
         notes: 'lifeblood L3, auto, this got scary, I would sub out Hondo',
         videos: [{url: 'https://youtu.be/Vj9WEoCV4Io'}],
         difficulty: difficulty.CAUTION
+    },
+    {
+        lead: 'Qira (Ahsoka Tano)',
+        others: 'Ahsoka Tano, Padawan Sabine, Ezra Exile',
+        notes: 'auto, takes awhile',
+        videos: [{ url: 'https://youtu.be/_9kN1TSqgB0' }],
+        difficulty: difficulty.VERY_EASY
     }
 ]
 
@@ -96,6 +103,13 @@ export const mixedP1: dataType[] = [
         videos: [{ url: 'https://youtu.be/DEytmo8fFC0' }],
         difficulty: difficulty.VERY_EASY
     },
+    {
+        lead: 'Queen Amidala',
+        others: 'POW, MQJ, Echo, Tech',
+        notes: 'auto, last two can vary',
+        videos: [{ url: 'https://youtu.be/grMuCEYKaF0' }],
+        difficulty: difficulty.VERY_EASY
+    }
 ]
 
 export const jabbaP1: dataType[] = [
@@ -123,6 +137,13 @@ export const drAphraP1: dataType[] = [
         videos: [{ url: 'https://youtu.be/36sojaFa4uA' }],
         difficulty: difficulty.EASY
     },
+    {
+        lead: 'Aphra (SLKR)',
+        others: 'SLKR, Dark Side Rey, KRU, Sith Trooper',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/H6rzBkYeixY' }],
+        difficulty: difficulty.VERY_EASY
+    }
 ]
 
 export const shipsP1: dataType[] = [
@@ -139,5 +160,12 @@ export const shipsP1: dataType[] = [
         notes: 'auto, do not bring Sun Fac or any other reinforcements. not sure if totally reliable',
         videos: [{url: 'https://youtu.be/VaQSNWNpfVU'}],
         difficulty: difficulty.EASY,
+    },
+    {
+        lead: 'Leviathan',
+        others: 'FCI, Bomber start, Sith Fighter, MK6 Interceptor, Tie Dorito, Scimitar reinforcements',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/e1MRl_z2q60' }],
+        difficulty: difficulty.VERY_EASY
     }
 ]

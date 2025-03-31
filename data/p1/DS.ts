@@ -36,6 +36,12 @@ export const leftDSP1: dataType[] = [{
     notes: 'Auto, can bless morgan manually if you want to be totally safe',
     videos: [{ url: 'https://youtu.be/YUMJjeD6k5A' }],
     difficulty: difficulty.VERY_EASY
+},{
+    lead: 'Reva',
+    others: 'GI, 7S, 5B, 8B',
+    notes: 'auto',
+    videos: [{ url: 'https://youtu.be/kibKGIAfVf4' }],
+    difficulty: difficulty.VERY_EASY
 },];
 
 export const bottomDSP1: dataType[] = [{
@@ -90,6 +96,14 @@ export const bottomDSP1: dataType[] = [{
     videos: [{ url: 'https://youtu.be/BTWI-B8Oc-Q' }],
     difficulty: difficulty.EASY
 },
+{
+    lead: 'GG',
+    leadFull: 'General Grievous',
+    others: 'B1, B2, STAP, Magna Guard',
+    notes: 'Only 1/2 on auto',
+    videos: [{ url: 'https://youtu.be/ZE009t8VImc' }],
+    difficulty: difficulty.HARD
+}
 ];
 
 export const topDSP1: dataType[] = [

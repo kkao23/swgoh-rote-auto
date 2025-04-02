@@ -40,6 +40,14 @@ export const acklayDSP2: dataType[] = [
         difficulty: difficulty.VERY_EASY,
         omi: true
     },
+    {
+        lead: 'GG (Wat)',
+        leadFull: 'General Grievous with Wat',
+        notes: 'auto, got a bit dicey at the end',
+        videos: [{url: 'https://youtu.be/qpJxPdNjDes'}],
+        difficulty: difficulty.CAUTION,
+        others: 'Magnaguard, STAP, B2, Wat'
+    }
 ]
 
 export const reekDSP2: dataType[] = [
@@ -86,6 +94,13 @@ export const reekDSP2: dataType[] = [
         videos: [{ url: 'https://youtu.be/Dspj8Z4Q2bA'}],
         difficulty: difficulty.VERY_EASY
     },
+    {
+        lead: 'Bane',
+        others: 'Any 4 sith',
+        notes: 'auto',
+        videos: [{url: 'https://youtu.be/iUuBF8TLBhw'}],
+        difficulty: difficulty.EASY
+    }
 ]
 
 export const nexuDSP2: dataType[] = [
@@ -119,6 +134,13 @@ export const nexuDSP2: dataType[] = [
         notes: 'only 1/2. Use him elsewhere if you can',
         videos: [{ url: 'https://youtu.be/ysRNg9QnwAg' }],
         difficulty: difficulty.HARD
+    },
+    {
+        lead: 'Great Mothers',
+        others: 'Morgan, Merrin, Night Trooper, Death Trooper',
+        notes: 'bless morgan, auto',
+        videos: [{ url: 'https://youtu.be/HjoqwXNWFNw' }],
+        difficulty: difficulty.EASY
     },
 ]
 

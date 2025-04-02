@@ -31,6 +31,13 @@ export const hondoMixedP2: dataType[] = [
         videos: [{ url: 'https://youtu.be/otXD7ulJ7rY' }],
         difficulty: difficulty.VERY_EASY
     },
+    {
+        lead: 'Leia Organa',
+        others: 'R2, Drogan, Capt Rex',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/Ap-GQ_b3uA4'}],
+        difficulty: difficulty.VERY_EASY
+    }
 ]
 
 export const shipsMixedP2: dataType[] = [
@@ -103,6 +110,13 @@ export const mixedP2: dataType[] = [
         videos: [{ url: 'https://youtu.be/raru9eDGYqk' }],
         difficulty: difficulty.VERY_EASY
     },
+    {
+        lead: 'Queen Amidala (CUP)',
+        others: 'CUP, POW, MQG, JKA',
+        notes: 'auto, 5th flexible',
+        videos: [{url: 'https://youtu.be/YTkdcZLEnaw'}],
+        difficulty: difficulty.VERY_EASY
+    }
 ]
 
 export const jabbaP2: dataType[] = [
@@ -144,4 +158,12 @@ export const youngLandoP2: dataType[] = [
         videos: [{ url: 'https://youtu.be/hbifGXqcEB0' }],
         difficulty: difficulty.HARD
     },
+    {
+        lead: 'Reva',
+        others: 'Marrok (omi), GI, 7S',
+        notes: 'only 1/2 on auto',
+        videos: [{url: 'https://youtu.be/78qD1ZKy2BQ'}],
+        difficulty: difficulty.HARD,
+        omi: true,
+    }
 ]

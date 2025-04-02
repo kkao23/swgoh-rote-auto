@@ -80,6 +80,13 @@ export const leftLSP2: dataType[] = [
         videos: [{ url: 'https://youtu.be/-4mjKaoesMs' }],
         difficulty: difficulty.EASY
     },
+    {
+        lead: 'Ahsoka Tano',
+        others: 'Padawan Sabine, Huyang, Fulcrum, Hera',
+        notes: 'auto, can save Ezra for Jedi mission',
+        videos: [{ url: 'https://youtu.be/5nRShbbHbAI' }],
+        difficulty: difficulty.VERY_EASY
+    },
 ]
 
 export const rightLSP2: dataType[] = [
@@ -111,6 +118,14 @@ export const rightLSP2: dataType[] = [
         notes: 'only 1/2 on auto. Deselect reticule',
         videos: [{ url: 'https://youtu.be/pYalwvB22qo' }],
         difficulty: difficulty.HARD
+    },
+    {
+        lead: 'Boss Nass',
+        others: 'Gungans',
+        notes: 'easy auto with Tarpals Omi',
+        videos: [{ url: 'https://youtu.be/AwPI5dywqAQ' }],
+        difficulty: difficulty.VERY_EASY,
+        omi: true
     },
 ]
 

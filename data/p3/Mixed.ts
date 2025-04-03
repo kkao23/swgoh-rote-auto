@@ -72,6 +72,14 @@ export const fennecP3: dataType[] = [
         notes: 'I had Darth maul, Darth sidious and sith marauder. full auto',
         videos: [{url: 'https://youtu.be/CF5lIXEvEzc'}],
         difficulty: difficulty.VERY_EASY,
+    },
+    {
+        lead: 'Bane',
+        leadFull: 'Darth Bane',
+        others: 'leftover sith',
+        notes: 'I had Darth maul, Darth sidious and sith empire trooper. full auto',
+        videos: [{url: 'https://youtube.com/shorts/EDQDXz6uwnE?feature=share'}],
+        difficulty: difficulty.EASY,
     }
 ]
 
@@ -121,7 +129,15 @@ export const mixedTopLeftP3: dataType[] = [
         notes: 'auto, I had Cere JTR Scav Rey Malicos Starkiller but you can probably use whatever leftover UFUs you have',
         videos: [{ url: 'https://youtu.be/UIaEDFP-jd8' }],
         difficulty: difficulty.VERY_EASY
-    }
+    },
+    {
+        lead: 'QA (CUP)',
+        leadFull: 'Queen Amidala',
+        others: 'POW, MQG, JKA, CUP',
+        notes: 'easy full auto',
+        videos: [{ url: 'https://youtube.com/shorts/yYyHdBfnblc?feature=share' }],
+        difficulty: difficulty.VERY_EASY,
+    },
 ]
 
 export const mixedP3Ships: dataType[] = [

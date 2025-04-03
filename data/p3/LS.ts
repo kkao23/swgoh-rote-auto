@@ -43,6 +43,13 @@ export const lsLeftP3: dataType[] = [
         videos: [{ url: 'https://youtu.be/gC6v0taN3Jw' }],
         difficulty: difficulty.EASY
     },
+    {
+        lead: 'Ahsoka Tano',
+        others: 'Padawan Sabine, Huyang, Fulcrum, Hera',
+        notes: 'auto, can save Ezra for somewher else',
+        videos: [{ url: 'https://youtu.be/SWi--w5QKws' }],
+        difficulty: difficulty.VERY_EASY
+    },
 ]
 
 export const lsRightP3: dataType[] = [
@@ -75,7 +82,15 @@ export const lsRightP3: dataType[] = [
         notes: 'auto, deselect targeting, target mara in wave 2',
         videos: [{ url: 'https://youtu.be/YmLMvgbqW3U' }],
         difficulty: difficulty.CAUTION,
-    }
+    },
+    {
+        lead: 'JMK',
+        leadFull: 'Jedi Master Kenobi',
+        others: 'CAT, Snips, Padme, GK',
+        notes: 'only 1/2 on auto. would need to save force leap for mara in wave 2',
+        videos: [{ url: 'https://youtu.be/F1CGB8sTCA4' }],
+        difficulty: difficulty.HARD
+    },
 ]
 
 export const sawP3: dataType[] = [

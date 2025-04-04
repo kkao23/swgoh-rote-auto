@@ -18,7 +18,7 @@ export const zeffoFleets: dataType[] = [
         others: 'JKA, Marauder, Y wing, Ahsoka, Fives, Rex',
         notes: 'Auto',
         videos: [{ url: 'https://youtu.be/h4nS7Flp4Zk' }],
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.EASY
     },
 ]
 

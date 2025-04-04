@@ -25,7 +25,14 @@ export const mixedQiraP4: dataType[] = [
         notes: 'poke, auto',
         videos: [{url: 'https://youtu.be/kmFHKrKTX1c'}],
         difficulty: difficulty.EASY
-    }
+    },
+    {
+        lead: 'Ahsoka Tano',
+        others: 'Fulcrum, any 5th',
+        notes: 'easy auto',
+        videos: [{ url: 'https://youtu.be/Rmd5Ppxxyfs' }],
+        difficulty: difficulty.VERY_EASY
+    },
 ]
 
 export const mixedGenericP4: dataType[] = [
@@ -95,7 +102,15 @@ export const mixedGenericP4: dataType[] = [
         notes: 'auto, I imagine there are better teammates. I had no other options',
         videos: [{url: 'https://youtu.be/TpgdflmfBxo'}],
         difficulty: difficulty.VERY_EASY,
-    }
+    },
+    {
+        lead: 'QA (CUP)',
+        leadFull: 'Queen Amidala',
+        others: 'MQG, POW, CUP',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/QUmyeBZBCKc' }],
+        difficulty: difficulty.VERY_EASY
+    },
 ]
 
 export const jabbaP4: dataType[] = [

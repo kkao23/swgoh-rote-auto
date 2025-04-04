@@ -74,9 +74,9 @@ export const dsEmpireP3: dataType[] = [
     {
         lead: 'Grand Inquisitor',
         others: 'Reva, 5B, 8B, 7S',
-        notes: 'auto, takes forever',
+        notes: 'auto, takes forever, can sometimes 1/2',
         videos: [{ url: 'https://youtu.be/_hwmbHfEj_M' }],
-        difficulty: difficulty.EASY
+        difficulty: difficulty.CAUTION
     }
 ]
 

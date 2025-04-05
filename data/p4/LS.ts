@@ -20,9 +20,9 @@ export const lsShipsP4: dataType[] = [
     {
         lead: 'Raddus',
         others: 'Rey MF, Poe XWing, Res Bomber, Comeuppance, Res X Wing',
-        notes: 'Only if no Prof/Neg, cannot auto until Comeuppance comes in',
-        videos: [{ url: 'https://youtu.be/aCzlG6jGH0M' }],
-        difficulty: difficulty.NO_AUTO
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/drEhB7NLcZU' }],
+        difficulty: difficulty.VERY_EASY
     },
     {
         lead: 'Home One',

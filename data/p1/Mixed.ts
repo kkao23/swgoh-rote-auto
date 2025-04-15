@@ -109,6 +109,13 @@ export const mixedP1: dataType[] = [
         notes: 'auto, last two can vary',
         videos: [{ url: 'https://youtu.be/grMuCEYKaF0' }],
         difficulty: difficulty.VERY_EASY
+    },
+    {
+        lead: 'Darth Revan',
+        others: 'Malak, BSF, Malgus, Marauder',
+        notes: 'only 1/2 on auto',
+        videos: [{ url: 'https://youtu.be/2nFRrzceFOY' }],
+        difficulty: difficulty.HARD
     }
 ]
 
@@ -142,6 +149,13 @@ export const drAphraP1: dataType[] = [
         others: 'SLKR, Dark Side Rey, KRU, Sith Trooper',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/H6rzBkYeixY' }],
+        difficulty: difficulty.VERY_EASY
+    },
+    {
+        lead: 'Aphra (Ahsoka Tano)',
+        others: 'Hera, Sabine, Huyang',
+        notes: 'auto, dont need ezra here',
+        videos: [{ url: 'https://youtu.be/phkCY2ikmtI' }],
         difficulty: difficulty.VERY_EASY
     }
 ]

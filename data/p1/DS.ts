@@ -42,6 +42,13 @@ export const leftDSP1: dataType[] = [{
     notes: 'auto',
     videos: [{ url: 'https://youtu.be/kibKGIAfVf4' }],
     difficulty: difficulty.VERY_EASY
+},
+{
+    lead: 'General Grievous',
+    others: 'Magna, STAP, B2, B1',
+    notes: 'auto, I have most of them at R7, may be harder at R5',
+    videos: [{ url: 'https://youtu.be/H8crYJOOfd8' }],
+    difficulty: difficulty.EASY
 },];
 
 export const bottomDSP1: dataType[] = [{
@@ -103,6 +110,14 @@ export const bottomDSP1: dataType[] = [{
     notes: 'Only 1/2 on auto',
     videos: [{ url: 'https://youtu.be/ZE009t8VImc' }],
     difficulty: difficulty.HARD
+},
+{
+    lead: 'Baylan',
+    others: 'Marrok, Shin, any 2 mercs',
+    notes: 'auto, Marrok Omi',
+    videos: [{ url: 'https://youtu.be/IgwTIlI2T64' }],
+    difficulty: difficulty.VERY_EASY,
+    omi: true,
 }
 ];
 
@@ -142,6 +157,13 @@ export const topDSP1: dataType[] = [
         notes: 'Tank Tech on SEE, auto',
         videos: [{ url: 'https://youtu.be/usKjKU8tLHo' }],
         difficulty: difficulty.EASY
+    },
+    {
+        lead: 'Trench',
+        others: 'Wat, Jango, Nute, Dooku',
+        notes: 'only 1/2 on auto',
+        videos: [{ url: 'https://youtu.be/Xi75-aTjxmI' }],
+        difficulty: difficulty.HARD
     },
 ];
 

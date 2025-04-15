@@ -14,9 +14,9 @@ export const maceKitP1 = [
         lead: 'Mace (Boys)',
         leadFull: 'Mace with Padawan Obi Wan and Master Qui Gon',
         others: 'Padawan Obi Wan, Master Qui Gon, KAM',
-        notes: 'not sure if KAM is necessary. auto',
+        notes: 'not sure if KAM is necessary. auto. can get unlucky when taunt drops',
         videos: [{ url: 'https://youtu.be/bvOjNuJlhVk' }],
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.EASY
     },
     {
         lead: 'Mace (JKCK)',
@@ -80,7 +80,7 @@ export const shipsLSP1: dataType[] = [
     {
         lead: 'Home One',
         others: 'HMF, Outrider, Y wing, Biggs, Wedge',
-        notes: 'Outrider 2nd special, auto, biggs then wedge reinf. wont work without Home One',
+        notes: 'Outrider 2nd special, auto, biggs then wedge reinf. wont work without MF',
         videos: [{ url: 'https://youtu.be/zxW5IOe_w_o' }],
         difficulty: difficulty.CAUTION
     },
@@ -174,5 +174,20 @@ export const genericLSP1: dataType[] = [
         notes: 'auto, can sub CAT in for JKA if you have her available',
         videos: [{ url: 'https://youtu.be/BJ-vunYNBIg' }],
         difficulty: difficulty.VERY_EASY
+    },
+    {
+        lead: 'Finn (Zorii)',
+        others: 'RH Finn, RH Poe, Poe, Zorii',
+        notes: 'only 1/2 on auto (no omi)',
+        videos: [{ url: 'https://youtu.be/5vdRQTBlVmY' }],
+        difficulty: difficulty.HARD
+    },
+    {
+        lead: 'JTR (Rey)',
+        leadFull: 'Jedi Training Rey with GL Rey',
+        others: 'Rey, Resistance Trooper, BB8, Ben Solo',
+        notes: 'only 1/2 on auto',
+        videos: [{ url: 'https://youtu.be/GfbtAwrGAAI' }],
+        difficulty: difficulty.HARD
     },
 ]

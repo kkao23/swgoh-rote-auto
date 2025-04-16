@@ -47,7 +47,14 @@ export const acklayDSP2: dataType[] = [
         videos: [{url: 'https://youtu.be/qpJxPdNjDes'}],
         difficulty: difficulty.CAUTION,
         others: 'Magnaguard, STAP, B2, Wat'
-    }
+    },
+    {
+        lead: 'Bane',
+        others: 'Sith Empire Trooper + Any 3 sith',
+        notes: 'auto',
+        videos: [{url: 'https://youtu.be/ufHTEnyIUG8'}],
+        difficulty: difficulty.EASY
+    },
 ]
 
 export const reekDSP2: dataType[] = [
@@ -100,6 +107,13 @@ export const reekDSP2: dataType[] = [
         notes: 'auto',
         videos: [{url: 'https://youtu.be/iUuBF8TLBhw'}],
         difficulty: difficulty.EASY
+    },
+    {
+        lead: 'General Grievous',
+        others: 'B2, STAP, Magna, Nute',
+        notes: 'auto',
+        videos: [{url: 'https://youtu.be/Sr96cRiT6r8'}],
+        difficulty: difficulty.EASY
     }
 ]
 
@@ -141,6 +155,14 @@ export const nexuDSP2: dataType[] = [
         notes: 'bless morgan, auto',
         videos: [{ url: 'https://youtu.be/HjoqwXNWFNw' }],
         difficulty: difficulty.EASY
+    },
+    {
+        lead: 'Baylan',
+        others: 'Marrok, Shin, Aurra, Zam',
+        notes: 'omi Marrok, auto, last two any Mercenaries',
+        videos: [{ url: 'https://youtu.be/FoCgJ_A0FNc' }],
+        difficulty: difficulty.EASY,
+        omi: true
     },
 ]
 

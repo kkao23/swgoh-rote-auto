@@ -38,6 +38,15 @@ export const jediLSP2: dataType[] = [
         videos: [{ url: 'https://youtu.be/d5uJfXLjlvc' }],
         difficulty: difficulty.EASY,
     },
+    {
+        lead: 'JKL (Ezra)',
+        leadFull: 'Jedi Master Luke with Ezra',
+        others: 'Ezra exile, Kyle Katarn, +2 (I had Bastila and JKA)',
+        notes: 'deselect reticule, auto with KK omi',
+        videos: [{ url: 'https://youtu.be/eggFQcIom2E' }],
+        difficulty: difficulty.EASY,
+        omi: true,
+    },
 ]
 
 export const leftLSP2: dataType[] = [
@@ -87,6 +96,14 @@ export const leftLSP2: dataType[] = [
         videos: [{ url: 'https://youtu.be/5nRShbbHbAI' }],
         difficulty: difficulty.VERY_EASY
     },
+    {
+        lead: 'JMK',
+        leadFull: 'Jedi Master Kenobi',
+        others: 'Snips, GAS, Padme, CAT',
+        notes: 'Deselect reticule. Need to do targeting. Target same enemy to reduce max health',
+        videos: [{ url: 'https://youtu.be/IuyL502QQJo' }],
+        difficulty: difficulty.CAUTION
+    },
 ]
 
 export const rightLSP2: dataType[] = [
@@ -126,6 +143,14 @@ export const rightLSP2: dataType[] = [
         videos: [{ url: 'https://youtu.be/AwPI5dywqAQ' }],
         difficulty: difficulty.VERY_EASY,
         omi: true
+    },
+    {
+        lead: 'QA (CUP)',
+        leadFull: 'Queen Amidala',
+        others: 'POW, MQG, Shaak Ti, CUP',
+        notes: 'auto, deselect targeting reticule, need good mods on QA to get decoy out first',
+        videos: [{ url: 'https://youtu.be/k1SV2V_ODjc' }],
+        difficulty: difficulty.EASY
     },
 ]
 

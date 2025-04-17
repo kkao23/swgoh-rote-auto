@@ -103,4 +103,12 @@ export const zeffoCombat: dataType[] = [
         videos: [{ url: 'https://youtu.be/TTKvDyv3L1s' }],
         difficulty: difficulty.EASY
     },
+    {
+        lead: 'JKL (JML)',
+        leadFull: 'Jedi Knight Luke with Jedi Master Luke',
+        others: 'GMY, JKA, Shaak ti',
+        notes: 'zero speed on JKL. full auto but target humanoids, then side bots round 1. round 2 full auto',
+        videos: [{ url: 'https://youtu.be/g42DEv89flA' }],
+        difficulty: difficulty.EASY
+    },
 ]

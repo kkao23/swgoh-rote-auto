@@ -33,6 +33,14 @@ export const mixedQiraP4: dataType[] = [
         videos: [{ url: 'https://youtu.be/Rmd5Ppxxyfs' }],
         difficulty: difficulty.VERY_EASY
     },
+    {
+        lead: 'JMK',
+        leadFull: 'Jedi Master Kenobi',
+        others: 'Snips, CAT',
+        notes: 'Wave 2 was a bit dicey, still won on full auto though. May require R9?',
+        videos: [{ url: 'https://youtu.be/VNDsqSv-5hE' }],
+        difficulty: difficulty.EASY,
+    },
 ]
 
 export const mixedGenericP4: dataType[] = [
@@ -110,6 +118,14 @@ export const mixedGenericP4: dataType[] = [
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/QUmyeBZBCKc' }],
         difficulty: difficulty.VERY_EASY
+    },
+    {
+        lead: 'Boss Nass',
+        others: 'other gungans (tarpals omi)',
+        notes: 'aut',
+        videos: [{ url: 'https://youtu.be/PQghgdpTI3o' }],
+        difficulty: difficulty.VERY_EASY,
+        omi: true,
     },
 ]
 

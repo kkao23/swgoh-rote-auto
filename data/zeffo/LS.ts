@@ -72,11 +72,18 @@ export const zeffoUFU: dataType[] = [
         difficulty: difficulty.EASY
     },
     {
-        lead: 'Ahsoka Tano',
+        lead: 'Ahsoka Tano (No CAT)',
         others: 'Cere, Padawan Sabine, Fulcrum +1',
-        notes: 'auto, only 1/2. maybe 2/2 with CAT?',
+        notes: 'auto, only 1/2. 2/2 with CAT?',
         videos: [{ url: 'https://youtu.be/H4xzXPPNV8Y' }],
         difficulty: difficulty.HARD
+    },
+    {
+        lead: 'Ahsoka Tano (CAT)',
+        others: 'Cere, Padawan Sabine, Fulcrum, CAT',
+        notes: 'auto, target purge trooper in wave 1',
+        videos: [{ url: 'https://youtu.be/jTJg8brbeS4' }],
+        difficulty: difficulty.CAUTION
     },
 ]
 

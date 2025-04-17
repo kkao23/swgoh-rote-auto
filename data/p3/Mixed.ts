@@ -80,7 +80,14 @@ export const fennecP3: dataType[] = [
         notes: 'I had Darth maul, Darth sidious and sith empire trooper. full auto',
         videos: [{url: 'https://youtube.com/shorts/EDQDXz6uwnE?feature=share'}],
         difficulty: difficulty.EASY,
-    }
+    },
+    {
+        lead: 'SLKR',
+        others: 'DRey, KRU, Sith Trooper',
+        notes: 'easy full auto',
+        videos: [{ url: 'https://youtu.be/qtWOgArbEX0' }],
+        difficulty: difficulty.VERY_EASY
+    },
 ]
 
 export const mixedTopLeftP3: dataType[] = [
@@ -137,6 +144,13 @@ export const mixedTopLeftP3: dataType[] = [
         notes: 'easy full auto',
         videos: [{ url: 'https://youtube.com/shorts/yYyHdBfnblc?feature=share' }],
         difficulty: difficulty.VERY_EASY,
+    },
+    {
+        lead: 'Rey',
+        others: 'any resistance. I had JTR, Scav Rey, BB8 and 3PO',
+        notes: 'easy auto',
+        videos: [{ url: 'https://youtu.be/jVRGTzX_4Ww' }],
+        difficulty: difficulty.VERY_EASY
     },
 ]
 

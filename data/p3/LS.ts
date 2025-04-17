@@ -50,6 +50,14 @@ export const lsLeftP3: dataType[] = [
         videos: [{ url: 'https://youtu.be/SWi--w5QKws' }],
         difficulty: difficulty.VERY_EASY
     },
+    {
+        lead: 'QA (CUP)',
+        leadFull: 'Queen Amidala',
+        others: 'POW, MQG, Shaak Ti, CUP',
+        notes: 'auto, deselect targeting reticule',
+        videos: [{ url: 'https://youtu.be/rUBUeI9eQQA' }],
+        difficulty: difficulty.EASY,
+    },
 ]
 
 export const lsRightP3: dataType[] = [
@@ -90,6 +98,14 @@ export const lsRightP3: dataType[] = [
         notes: 'only 1/2 on auto. would need to save force leap for mara in wave 2',
         videos: [{ url: 'https://youtu.be/F1CGB8sTCA4' }],
         difficulty: difficulty.HARD
+    },
+    {
+        lead: 'JML (Ezra)',
+        leadFull: 'Jedi Master Luke with Ezra Exile',
+        others: 'Ezra Exile, JKL, +2 Jedi',
+        notes: 'auto, JKCK is good if available, Ezra mandatory. Target Mara wave 2',
+        videos: [{ url: 'https://youtu.be/6LCLkhSg5AY' }],
+        difficulty: difficulty.EASY
     },
 ]
 

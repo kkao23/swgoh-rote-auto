@@ -181,5 +181,12 @@ export const shipsP1: dataType[] = [
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/e1MRl_z2q60' }],
         difficulty: difficulty.VERY_EASY
-    }
+    },
+    {
+        lead: 'Profundity',
+        others: 'HMF, Y wing, Phantom, Ghost, Biggs, Wedge',
+        notes: 'auto, dont use Outrider here',
+        videos: [{ url: 'https://youtu.be/bU0KRWRabAE' }],
+        difficulty: difficulty.VERY_EASY
+    },
 ]

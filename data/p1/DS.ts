@@ -154,9 +154,9 @@ export const topDSP1: dataType[] = [
         lead: 'SEE',
         leadFull: 'Sith Eternal Emperor',
         others: 'Wat, Malak, Bane, Darth Revan',
-        notes: 'Tank Tech on SEE, auto',
+        notes: 'Tank Tech on SEE, auto, may not be totally consistent',
         videos: [{ url: 'https://youtu.be/usKjKU8tLHo' }],
-        difficulty: difficulty.EASY
+        difficulty: difficulty.CAUTION
     },
     {
         lead: 'Trench',

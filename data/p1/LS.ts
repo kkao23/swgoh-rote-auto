@@ -25,6 +25,15 @@ export const maceKitP1 = [
         notes: 'Only 1/2 on auto',
         videos: [{ url: 'https://youtu.be/AE5XinIdzPE' }],
         difficulty: difficulty.HARD
+    },
+    {
+        lead: 'Mace (JML)',
+        leadFull: 'Mace with Jedi Master Luke',
+        others: 'JML, JKCK, Kyle, Kit',
+        notes: 'Two non lead omis on Cal, omi on Kyle',
+        videos: [{ url: 'https://youtu.be/IOnWj4Wt9ws' }],
+        difficulty: difficulty.VERY_EASY,
+        omi: true
     }
 ]
 
@@ -60,6 +69,14 @@ export const jediP1: dataType[] = [
         difficulty: difficulty.VERY_EASY,
         omi: true,
     },
+    {
+        lead: 'Kelleran Beq',
+        leadFull: 'Kelleran Beq',
+        others: 'Jocasta Nu, Shaak Ti, Aayla, Barriss',
+        notes: 'auto, was dicey',
+        videos: [{ url: 'https://youtu.be/06bRESztP-A' }],
+        difficulty: difficulty.CAUTION
+    }
 ]
 
 export const shipsLSP1: dataType[] = [

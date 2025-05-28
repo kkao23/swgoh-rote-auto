@@ -118,6 +118,13 @@ export const bottomDSP1: dataType[] = [{
     videos: [{ url: 'https://youtu.be/IgwTIlI2T64' }],
     difficulty: difficulty.VERY_EASY,
     omi: true,
+},
+{
+    lead: 'Maul',
+    others: 'Jango, ISC, Gar Saxon, Canderous',
+    notes: 'only 1/2 on auto',
+    videos: [{ url: 'https://youtu.be/-Uhr-v_0zdQ' }],
+    difficulty: difficulty.HARD,
 }
 ];
 

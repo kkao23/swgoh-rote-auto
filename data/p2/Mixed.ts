@@ -37,6 +37,14 @@ export const hondoMixedP2: dataType[] = [
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/Ap-GQ_b3uA4'}],
         difficulty: difficulty.VERY_EASY
+    },
+    {
+        lead: 'Boss Nass',
+        others: 'Tarpals (omi), Phalanx, Jar Jar',
+        notes: 'auto, probably want to target Range Trooper ASAP wave 2. I had R8 gungans',
+        videos: [{ url: 'https://youtu.be/gRQCrS9IyeM'}],
+        difficulty: difficulty.CAUTION,
+        omi: true,
     }
 ]
 
@@ -46,12 +54,12 @@ export const shipsMixedP2: dataType[] = [
         others: 'Vulture, Hyena, Sun Fac, Spy, Soldier',
         notes: 'If you had to platoon exec, auto',
         videos: [{ url: 'https://youtu.be/ssTdWAi0jOs' }],
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.EASY
     },
     {
         lead: 'Executor',
         others: 'Hounds Tooth, XB, RC, Slave 1, IG2000',
-        notes: 'auto, you need RC, youll lose if platooned',
+        notes: 'auto, you need RC, youll lose if RC is platooned',
         videos: [{ url: 'https://www.youtube.com/watch?v=TMQZ4iO_V4w', creator: creators.egnards }],
         difficulty: difficulty.VERY_EASY
     },
@@ -146,8 +154,8 @@ export const youngLandoP2: dataType[] = [
     },
     {
         lead: 'Ahsoka Tano',
-        others: 'Ezra Exile, Huyang, Hera',
-        notes: 'Ezra mandatory. May be able to sub Hera for Sabine?',
+        others: 'Ezra Exile, 2 out of 3 of Huyang, Hera, Sabine',
+        notes: 'Ezra mandatory. Sabine speeds things up',
         videos: [{url: 'https://youtu.be/j6c_GgoPyws?si=Hxm-IELtfWIbZqQH&t=470', creator: creators.pico}],
         difficulty: difficulty.VERY_EASY,
     },

@@ -116,6 +116,13 @@ export const mixedP1: dataType[] = [
         notes: 'only 1/2 on auto',
         videos: [{ url: 'https://youtu.be/2nFRrzceFOY' }],
         difficulty: difficulty.HARD
+    },
+    {
+        lead: 'Bossk',
+        others: 'Fennec, Mando, Boba, Greef',
+        notes: 'only 1/2 on auto',
+        videos: [{ url: 'https://youtu.be/6U5e-eqXBvQ' }],
+        difficulty: difficulty.HARD
     }
 ]
 

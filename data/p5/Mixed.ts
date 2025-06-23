@@ -26,7 +26,7 @@ export const mixedFleetP5: dataType[] = [
     }
 ]
 
-export const mixedGenericP5: dataType[] = [
+export const mixedCombatTopRightP5: dataType[] = [
     {
         lead: 'Ahsoka Tano',
         others: 'Any R9s',
@@ -42,6 +42,8 @@ export const mixedGenericP5: dataType[] = [
         difficulty: difficulty.HARD
     }
 ]
+
+export const mixedCombatBottomLeftP5: dataType[] = [];
 
 export const jabbaP5:dataType[] = [
     {

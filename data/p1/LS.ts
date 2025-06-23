@@ -207,4 +207,12 @@ export const genericLSP1: dataType[] = [
         videos: [{ url: 'https://youtu.be/GfbtAwrGAAI' }],
         difficulty: difficulty.HARD
     },
+    {
+        lead: 'Omega (Mercenary)',
+        leadFull: 'Omega with Bad Batch Mercenaries',
+        others: 'Crosshair, Wrecker, Batcher, Hunter',
+        notes: '2/2 on full auto but not super smooth. Marked enemy leader first before auto',
+        videos: [{ url: 'https://youtu.be/wp-v3OwyreQ' }],
+        difficulty: difficulty.CAUTION
+    }
 ]

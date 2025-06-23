@@ -70,7 +70,7 @@ import { dsMidP4 } from "./p4/DS";
 
 import { mixedFleetP5 } from "./p5/Mixed";
 import { jabbaP5 } from "./p5/Mixed";
-import { mixedGenericP5 } from "./p5/Mixed";
+import { mixedCombatTopRightP5 } from "./p5/Mixed";
 
 import { lsGenericP5 } from "./p5/LS";
 
@@ -185,7 +185,7 @@ export const data = {
     },
     phase5: {
         mixed: {
-            generic: mixedGenericP5,
+            topRight: mixedCombatTopRightP5,
             jabba: jabbaP5,
             fleet: mixedFleetP5
         },

@@ -82,6 +82,14 @@ export const mandaloreGeneric: dataType[] = [
         difficulty: difficulty.VERY_EASY,
         omi: true,
     },
+    {
+        lead: 'Omega (omi)',
+        others: 'Bad Batch Mercenaries',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/JuEnsbbFuT4?si=W7cLID0-I95kNy8h', creator: creators.avengerObs }],
+        difficulty: difficulty.VERY_EASY,
+        omi: true,
+    }
 ]
 
 export const mandaloreDTMG: dataType[] = [

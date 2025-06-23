@@ -127,6 +127,14 @@ export const mixedGenericP4: dataType[] = [
         difficulty: difficulty.VERY_EASY,
         omi: true,
     },
+    {
+        lead: 'Omega (omi)',
+        others: 'Bad Batch Mercenaries',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/Kzj93kyiKmM?si=oUrEfxpCHOBw0_bq', creator: creators.avengerObs }],
+        difficulty: difficulty.VERY_EASY,
+        omi: true,
+    }
 ]
 
 export const jabbaP4: dataType[] = [

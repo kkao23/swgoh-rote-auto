@@ -16,16 +16,23 @@ export const mandaloreFleets: dataType[] = [
         notes: 'semi auto, isolate anakin, hold the instakill for Marauder',
         videos: [{ url: 'https://youtu.be/-Xqd1DYrdUA' }],
         difficulty: difficulty.CAUTION
-    }
+    },
+        {
+        lead: 'Profundity',
+        others: 'MF, Outrider start, Phantom, Biggs, Wedge Reinf',
+        notes: 'cant auto but easy win',
+        videos: [{ url: 'https://youtu.be/VcXsUBHgbUs' }],
+        difficulty: difficulty.NO_AUTO
+    },
 ]
 
 export const mandaloreGeneric: dataType[] = [
     {
         lead: 'Boss Nass',
         others: 'The other gungans',
-        notes: 'easy auto with Tarpal Omi',
+        notes: 'easy auto with Tarpal Omi, dont deselect reticule to build up stacks in Wave 1',
         videos: [{ url: 'https://youtu.be/fLPilo3n-gw' }],
-        difficulty: difficulty.VERY_EASY,
+        difficulty: difficulty.EASY,
         omi: true
     },
     {

@@ -69,7 +69,7 @@ export const zeffoUFU: dataType[] = [
         others: 'CAT, Ben, Cere, JTR',
         notes: 'auto, CAT mandatory',
         videos: [{ url: 'https://youtu.be/LQbMxA3Oqcs' }, { url: 'https://www.youtube.com/watch?v=weXoe5KzFaY', creator: creators.egnards }],
-        difficulty: difficulty.EASY
+        difficulty: difficulty.CAUTION
     },
     {
         lead: 'Ahsoka Tano (No CAT)',

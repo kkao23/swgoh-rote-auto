@@ -152,6 +152,13 @@ export const rightLSP2: dataType[] = [
         videos: [{ url: 'https://youtu.be/k1SV2V_ODjc' }],
         difficulty: difficulty.EASY
     },
+            {
+        lead: 'Omega',
+        others: 'other Bad Batch Mercenaries',
+        notes: '1/2 on auto (no omi)',
+        videos: [{ url: 'https://youtu.be/Mnzx15JilpQ' }],
+        difficulty: difficulty.HARD
+    },
 ]
 
 export const zeffoUnlock: dataType[] = [

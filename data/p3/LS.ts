@@ -107,6 +107,13 @@ export const lsRightP3: dataType[] = [
         videos: [{ url: 'https://youtu.be/6LCLkhSg5AY' }],
         difficulty: difficulty.EASY
     },
+        {
+        lead: 'Omega',
+        others: 'other Bad Batch Mercenaries',
+        notes: '1/2 on auto (no omi)',
+        videos: [{ url: 'https://youtu.be/8nRobwqifro' }],
+        difficulty: difficulty.HARD
+    },
 ]
 
 export const sawP3: dataType[] = [

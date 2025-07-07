@@ -123,6 +123,14 @@ export const mixedP1: dataType[] = [
         notes: 'only 1/2 on auto',
         videos: [{ url: 'https://youtu.be/6U5e-eqXBvQ' }],
         difficulty: difficulty.HARD
+    },
+    {
+        lead: 'Omega',
+        others: 'other Bad Batch Mercenaries',
+        notes: 'omi wrecker, easy full auto',
+        videos: [{ url: 'https://youtu.be/GNwcFQnw-xo' }],
+        difficulty: difficulty.VERY_EASY,
+        omi: true,
     }
 ]
 

@@ -87,7 +87,7 @@ export const leftLSP2: dataType[] = [
         others: 'POW, MQG, GMY, Shaak Ti',
         notes: 'auto, deselect targeting reticule, need good mods on QA to get decoy out first',
         videos: [{ url: 'https://youtu.be/-4mjKaoesMs' }],
-        difficulty: difficulty.EASY
+        difficulty: difficulty.CAUTION
     },
     {
         lead: 'Ahsoka Tano',
@@ -150,15 +150,24 @@ export const rightLSP2: dataType[] = [
         others: 'POW, MQG, Shaak Ti, CUP',
         notes: 'auto, deselect targeting reticule, need good mods on QA to get decoy out first',
         videos: [{ url: 'https://youtu.be/k1SV2V_ODjc' }],
-        difficulty: difficulty.EASY
+        difficulty: difficulty.CAUTION
     },
-            {
+    {
         lead: 'Omega',
         others: 'other Bad Batch Mercenaries',
         notes: '1/2 on auto (no omi)',
         videos: [{ url: 'https://youtu.be/Mnzx15JilpQ' }],
         difficulty: difficulty.HARD
     },
+    {
+        lead: 'Omega (Mercenary)',
+        leadFull: 'Omega with Bad Batch Mercenaries',
+        others: 'Crosshair, Wrecker, Batcher, Hunter',
+        notes: 'omi Wrecker, 2/2 on full auto',
+        videos: [{ url: 'https://youtu.be/hssMBkkdQSk' }],
+        difficulty: difficulty.VERY_EASY,
+        omi: true
+    }
 ]
 
 export const zeffoUnlock: dataType[] = [

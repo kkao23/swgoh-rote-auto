@@ -111,4 +111,12 @@ export const zeffoCombat: dataType[] = [
         videos: [{ url: 'https://youtu.be/g42DEv89flA' }],
         difficulty: difficulty.EASY
     },
+    {
+        lead: 'Omega (omi)',
+        others: 'Bad Batch Mercenaries',
+        notes: 'auto but dont mark the big bot in wave 1',
+        videos: [{url: 'https://youtu.be/6kIPMiz3jKE'}],
+        difficulty: difficulty.EASY,
+        omi: true,
+    }
 ]

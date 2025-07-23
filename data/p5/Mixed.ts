@@ -43,7 +43,17 @@ export const mixedCombatTopRightP5: dataType[] = [
     }
 ]
 
-export const mixedCombatBottomLeftP5: dataType[] = [];
+export const mixedCombatBottomLeftP5: dataType[] = [
+    {
+        lead: 'Omega (Mercenary)',
+        leadFull: 'Omega with Bad Batch Mercenaries',
+        others: 'Crosshair, Wrecker, Batcher, Hunter',
+        notes: 'omi Wrecker, only 1/2 on full auto',
+        videos: [{ url: 'https://youtu.be/uX718augk0M' }],
+        difficulty: difficulty.HARD,
+        omi: true
+    }
+];
 
 export const jabbaP5:dataType[] = [
     {

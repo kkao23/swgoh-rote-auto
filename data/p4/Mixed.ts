@@ -151,8 +151,15 @@ export const mixedFleetP4: dataType[] = [
     {
         lead: 'Leviathan',
         others: 'FCI, Bomber, Dorito, Assassin, MK6 Interceptor, Scimitar, Emp Shuttle',
-        notes: 'Tedious, but works, semi auto',
+        notes: 'very difficult',
         videos: [{ url: 'https://youtu.be/5rZYEDKdxCo' }],
         difficulty: difficulty.NO_AUTO,
-    }
+    },
+    {
+        lead: 'Profundity',
+        others: 'Outrider, Y Wing, Ghost starting, Phantom, MF, Biggs, Wedge reinf',
+        notes: 'very difficult',
+        videos: [{ url: 'https://youtu.be/kx9p09Z4DM0' }],
+        difficulty: difficulty.NO_AUTO
+    },
 ]

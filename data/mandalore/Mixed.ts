@@ -30,9 +30,9 @@ export const mandaloreGeneric: dataType[] = [
     {
         lead: 'Boss Nass',
         others: 'The other gungans',
-        notes: 'easy auto with Tarpal Omi, dont deselect reticule to build up stacks in Wave 1',
+        notes: 'auto with Tarpal Omi, dont deselect reticule to build up stacks in Wave 1. can sometimes go wrong',
         videos: [{ url: 'https://youtu.be/fLPilo3n-gw' }],
-        difficulty: difficulty.EASY,
+        difficulty: difficulty.CAUTION,
         omi: true
     },
     {

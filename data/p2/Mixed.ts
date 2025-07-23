@@ -6,43 +6,16 @@ export const hondoMixedP2: dataType[] = [
     {
         lead: 'Baylan',
         others: 'Hondo, Shin, Marrok, Jango',
-        notes: 'Fifth can be any mercenary, omi marrok, auto, can get unlucky if marrok gets killed',
+        notes: 'Tarkin will one shot you wave 2',
         videos: [{ url: 'https://youtu.be/9FarHhCvPb8' }, { url: 'https://www.youtube.com/watch?v=LEEZGJdl1ps', creator: creators.egnards }],
-        difficulty: difficulty.EASY,
+        difficulty: difficulty.HARD,
         omi: true
-    },
-    {
-        lead: 'Rey',
-        others: 'JTR, BB8, 3PO',
-        notes: 'auto, not consistent 2/2',
-        videos: [{ url: 'https://youtu.be/Pws01j8kXn0' }],
-        difficulty: difficulty.CAUTION
-    }, {
-        lead: 'JMK',
-        leadFull: 'Jedi Master Kenobi',
-        others: 'CAT, GK, Snips',
-        notes: 'can get unlucky if they focus CAT',
-        videos: [{ url: 'https://youtu.be/nClssdqkjb0' }],
-        difficulty: difficulty.EASY,
-    },{
-        lead: 'Ahsoka Tano',
-        others: 'Padawan Sabine, Huyang, Fulcrum',
-        notes: 'auto, can save Ezra for Jedi mission',
-        videos: [{ url: 'https://youtu.be/otXD7ulJ7rY' }],
-        difficulty: difficulty.VERY_EASY
-    },
-    {
-        lead: 'Leia Organa',
-        others: 'R2, Drogan, Capt Rex',
-        notes: 'auto',
-        videos: [{ url: 'https://youtu.be/Ap-GQ_b3uA4'}],
-        difficulty: difficulty.VERY_EASY
     },
     {
         lead: 'Boss Nass',
         others: 'Tarpals (omi), Phalanx, Jar Jar',
-        notes: 'auto, probably want to target Range Trooper ASAP wave 2. I had R8 gungans',
-        videos: [{ url: 'https://youtu.be/gRQCrS9IyeM'}],
+        notes: 'post tarkin buff, auto, target range trooper first in both waves, leave Tarkin for last. I had R8 gungans',
+        videos: [{ url: 'https://youtu.be/wnXeT0sUQdA'}],
         difficulty: difficulty.CAUTION,
         omi: true,
     }
@@ -124,7 +97,15 @@ export const mixedP2: dataType[] = [
         notes: 'auto, 5th flexible',
         videos: [{url: 'https://youtu.be/YTkdcZLEnaw'}],
         difficulty: difficulty.VERY_EASY
-    }
+    },
+    {
+        lead: 'Baylan',
+        others: 'Shin, Marrok, Qira, L3',
+        notes: 'L3 for the pretaunt makes this easy, auto',
+        videos: [{ url: 'https://youtu.be/qy4IhX1vf7s' }],
+        difficulty: difficulty.VERY_EASY,
+        omi: true
+    },
 ]
 
 export const jabbaP2: dataType[] = [

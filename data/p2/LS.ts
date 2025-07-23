@@ -104,6 +104,15 @@ export const leftLSP2: dataType[] = [
         videos: [{ url: 'https://youtu.be/IuyL502QQJo' }],
         difficulty: difficulty.CAUTION
     },
+    {
+        lead: 'Omega (Mercenary)',
+        leadFull: 'Omega with Bad Batch Mercenaries',
+        others: 'Crosshair, Wrecker, Batcher, Hunter',
+        notes: 'omi Wrecker, 2/2 on full auto',
+        videos: [{ url: 'https://youtu.be/i6NewbYrjqU' }],
+        difficulty: difficulty.VERY_EASY,
+        omi: true
+    }
 ]
 
 export const rightLSP2: dataType[] = [

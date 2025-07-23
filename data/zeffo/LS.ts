@@ -67,14 +67,14 @@ export const zeffoUFU: dataType[] = [
     {
         lead: 'Rey',
         others: 'CAT, Ben, Cere, JTR',
-        notes: 'auto, CAT mandatory',
+        notes: 'auto, CAT mandatory, maybe like 70% success rate on auto',
         videos: [{ url: 'https://youtu.be/LQbMxA3Oqcs' }, { url: 'https://www.youtube.com/watch?v=weXoe5KzFaY', creator: creators.egnards }],
         difficulty: difficulty.CAUTION
     },
     {
         lead: 'Ahsoka Tano (No CAT)',
         others: 'Cere, Padawan Sabine, Fulcrum +1',
-        notes: 'auto, only 1/2. 2/2 with CAT?',
+        notes: 'auto, only 1/2. Need CAT for 2/2',
         videos: [{ url: 'https://youtu.be/H4xzXPPNV8Y' }],
         difficulty: difficulty.HARD
     },

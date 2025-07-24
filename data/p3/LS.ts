@@ -114,6 +114,14 @@ export const lsRightP3: dataType[] = [
         videos: [{ url: 'https://youtu.be/8nRobwqifro' }],
         difficulty: difficulty.HARD
     },
+            {
+        lead: 'Omega (omicron)',
+        others: 'other Bad Batch Mercenaries',
+        notes: 'easy auto with omi',
+        videos: [{ url: 'https://youtu.be/foOES5g8prg' }],
+        difficulty: difficulty.VERY_EASY,
+        omi: true,
+    },
 ]
 
 export const sawP3: dataType[] = [
@@ -123,7 +131,7 @@ export const sawP3: dataType[] = [
         others: 'Capt Rex, Luthen, Cassian, Drogan',
         notes: 'auto, target purge troopers',
         videos: [{ url: 'https://youtu.be/K4HObnZm0TU' }],
-        difficulty: difficulty.CAUTION
+        difficulty: difficulty.HARD
     },
     {
         lead: 'Saw (Kyle)',

@@ -76,10 +76,10 @@ export const fennecP3: dataType[] = [
     {
         lead: 'Bane',
         leadFull: 'Darth Bane',
-        others: 'leftover sith',
+        others: 'leftover sith, can be dicey',
         notes: 'I had Darth maul, Darth sidious and sith empire trooper. full auto',
         videos: [{url: 'https://youtube.com/shorts/EDQDXz6uwnE?feature=share'}],
-        difficulty: difficulty.EASY,
+        difficulty: difficulty.CAUTION,
     },
     {
         lead: 'SLKR',

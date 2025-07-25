@@ -134,7 +134,14 @@ export const mixedGenericP4: dataType[] = [
         videos: [{ url: 'https://youtu.be/Kzj93kyiKmM?si=oUrEfxpCHOBw0_bq', creator: creators.avengerObs }],
         difficulty: difficulty.VERY_EASY,
         omi: true,
-    }
+    },
+    {
+        lead: 'Reva',
+        others: 'GI, 5B, 7S',
+        notes: 'auto, 4 man, not super smooth without omi',
+        videos: [{url: 'https://youtu.be/Rey9_Rr0mnU'}],
+        difficulty: difficulty.CAUTION,
+    },
 ]
 
 export const jabbaP4: dataType[] = [

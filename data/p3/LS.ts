@@ -114,7 +114,7 @@ export const lsRightP3: dataType[] = [
         videos: [{ url: 'https://youtu.be/8nRobwqifro' }],
         difficulty: difficulty.HARD
     },
-            {
+    {
         lead: 'Omega (omicron)',
         others: 'other Bad Batch Mercenaries',
         notes: 'easy auto with omi',

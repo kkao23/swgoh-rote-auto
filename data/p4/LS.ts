@@ -71,7 +71,15 @@ export const lsGenericP4: dataType[] = [
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/nNTovvlMApI' }],
         difficulty: difficulty.VERY_EASY
-    }
+    },
+    {
+        lead: 'Omega (omicron)',
+        others: 'other Bad Batch Mercenaries',
+        notes: 'easy auto with omi',
+        videos: [{ url: 'https://youtu.be/kjYZ24h5fok' }],
+        difficulty: difficulty.VERY_EASY,
+        omi: true,
+    },
 ]
 
 export const jediLSP4: dataType[] = [

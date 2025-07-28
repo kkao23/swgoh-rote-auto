@@ -6,8 +6,8 @@ export const mixedFleetP5: dataType[] = [
     {
         lead: 'Leviathan',
         others: 'FCI, Bomber, Dorito, Assassin, MK6 Interceptor, Scimitar',
-        notes: 'auto but pause for MK6 Instakill',
-        videos: [{ url: 'https://youtu.be/RnCTLQJblO8' }],
+        notes: 'auto but pause for MK6 Instakill of RC',
+        videos: [{ url: 'https://youtu.be/thD2kZHHTOs' }],
         difficulty: difficulty.CAUTION
     },
     {

@@ -40,5 +40,13 @@ export const dsMidP4:dataType[] = [
         notes: 'Pico has R9 on SEE, Traya and Sion. Not sure if this is reliable with R8',
         videos: [{url: 'https://youtu.be/ecgbRYyLYn8?si=vXiCr9uxLr9M5eJi', creator: creators.pico}],
         difficulty: difficulty.EASY,
+    },
+    {
+        lead: 'Reva',
+        others: 'Marrok, GI, 7S, 5B',
+        notes: 'marrok omi, auto',
+        videos: [{ url: 'https://youtu.be/w8sQ1bMYvew' }],
+        difficulty: difficulty.VERY_EASY,
+        omi: true
     }
 ]

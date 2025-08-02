@@ -13,6 +13,7 @@ export type data = {
     videos: videos[],
     difficulty: difficulty,
     omi?: boolean,
+    path?: string,
 }
 
 export enum difficulty {
@@ -21,4 +22,16 @@ export enum difficulty {
     CAUTION,
     HARD,
     NO_AUTO,
+}
+
+export type DataType = {
+    [phase: string]: PhaseData;
+}
+
+export type PhaseData = {
+    [side: string]: SideData;
+}
+
+export type SideData = {
+    [key: string]: any[];
 }

@@ -16,7 +16,16 @@
             and tips.</p>
         </div>
       </div>
-      <NuxtPage class="flex-grow" />
+              <!-- Navigation Links -->
+        <div class="flex justify-center space-x-4 mb-6">
+          <NuxtLink to="/" class="text-lg text-gray-300 hover:text-white transition-colors duration-200 border border-gray-600 hover:border-white rounded-lg px-4 py-2">
+            Home
+          </NuxtLink>
+          <NuxtLink to="/usage" class="text-lg text-gray-300 hover:text-white transition-colors duration-200 border border-gray-600 hover:border-white rounded-lg px-4 py-2">
+            Search by Lead
+          </NuxtLink>
+        </div>
+      <NuxtPage />
       <div class="bg-color flex items-center text-white px-4 py-2 rounded-b-xl">
         <p class="text-xs font-semibold">Created by captsolo in conjunction with the Slice of Otoh Gunga TB Library.
           Join us:

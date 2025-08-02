@@ -86,7 +86,9 @@ import { mandaloreDTMG } from "./mandalore/Mixed";
 import { mandaloreFleets } from "./mandalore/Mixed";
 import { mandaloreGeneric } from "./mandalore/Mixed";
 
-export const data = {
+import type { DataType } from "~/models/data";
+
+export const data: DataType = {
     phase1: {
         ds: {
             left: leftDSP1,

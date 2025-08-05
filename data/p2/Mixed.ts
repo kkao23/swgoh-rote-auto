@@ -106,6 +106,15 @@ export const mixedP2: dataType[] = [
         difficulty: difficulty.VERY_EASY,
         omi: true
     },
+        {
+        lead: 'Omega (Mercenary)',
+        leadFull: 'Omega with Bad Batch Mercenaries',
+        others: 'Crosshair, Wrecker, Batcher, Hunter',
+        notes: 'omi Wrecker, 2/2 on full auto',
+        videos: [{ url: 'https://youtu.be/SF9oCVi1fuw' }],
+        difficulty: difficulty.VERY_EASY,
+        omi: true
+    }
 ]
 
 export const jabbaP2: dataType[] = [
@@ -135,10 +144,10 @@ export const youngLandoP2: dataType[] = [
     },
     {
         lead: 'Ahsoka Tano',
-        others: 'Ezra Exile, 2 out of 3 of Huyang, Hera, Sabine',
-        notes: 'Ezra mandatory. Sabine speeds things up',
+        others: 'Ezra Exile, Hera, Sabine',
+        notes: 'Ezra mandatory. Need R8 minimum, preferably R9.',
         videos: [{url: 'https://youtu.be/j6c_GgoPyws?si=Hxm-IELtfWIbZqQH&t=470', creator: creators.pico}],
-        difficulty: difficulty.VERY_EASY,
+        difficulty: difficulty.EASY,
     },
     {
         lead: 'Leia',

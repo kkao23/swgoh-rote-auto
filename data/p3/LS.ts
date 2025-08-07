@@ -58,6 +58,14 @@ export const lsLeftP3: dataType[] = [
         videos: [{ url: 'https://youtu.be/rUBUeI9eQQA' }],
         difficulty: difficulty.EASY,
     },
+    {
+        lead: 'GAS with QA',
+        leadFull: 'General Anakin Skywalker with Queen Amidala',
+        others: 'Rex, Echo, Fives',
+        notes: 'auto, but currently theres a bug that makes Fives taunt',
+        videos: [{ url: 'https://youtu.be/DctCHNqsOEg' }],
+        difficulty: difficulty.VERY_EASY
+    },
 ]
 
 export const lsRightP3: dataType[] = [

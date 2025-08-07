@@ -152,6 +152,15 @@ export const mixedTopLeftP3: dataType[] = [
         videos: [{ url: 'https://youtu.be/jVRGTzX_4Ww' }],
         difficulty: difficulty.VERY_EASY
     },
+    {
+        lead: 'Omega (Mercenary)',
+        leadFull: 'Omega with Bad Batch Mercenaries',
+        others: 'Crosshair, Wrecker, Batcher, Hunter',
+        notes: 'omi Wrecker, 2/2 on full auto',
+        videos: [{ url: 'https://youtu.be/-lbUh4kH5cE' }],
+        difficulty: difficulty.VERY_EASY,
+        omi: true
+    }
 ]
 
 export const mixedP3Ships: dataType[] = [

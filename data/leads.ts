@@ -102,7 +102,7 @@ export const leads:lead[] = [
   },
   {
     "id": "deathtroopermoffgideon",
-    "fullName": "Death Trooper Moff Gideon",
+    "fullName": "Dark Trooper Moff Gideon",
     "aliases": ["DTMG"]
   },
   {

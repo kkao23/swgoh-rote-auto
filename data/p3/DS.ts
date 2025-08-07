@@ -61,6 +61,15 @@ export const dsGenericP3: dataType[] = [
         videos: [{ url: 'https://youtu.be/FAunjeobuzM' }],
         difficulty: difficulty.VERY_EASY
     },
+    {
+        lead: 'DTMG (Enoch omi)',
+        leadFull: 'Dark Trooper Moff Gideon',
+        others: 'Scout Trooper, Captain Enoch (omi), Death Trooper, Night Trooper',
+        notes: 'auto',
+        videos: [{url: 'https://youtu.be/hpzwWiwI-dE'}],
+        difficulty: difficulty.VERY_EASY,
+        omi: true,
+    }
 ]
 
 export const dsEmpireP3: dataType[] = [

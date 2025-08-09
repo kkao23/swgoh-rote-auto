@@ -80,7 +80,7 @@ watch(searchQuery, () => {
           </button>
           <div v-if="!collapsedState[path]" class="mt-2">
             <div v-for="(result, index) in group" :key="result.lead + index" class="bg-gray-800 p-4 rounded-lg mb-2 shadow-inner">
-              <h4 class="text-lg font-bold text-blue-400">{{ result.lead }}</h4>
+              <h4 class="text-lg font-bold text-blue-400">Lead: {{ result.lead }}</h4>
               <p class="text-gray-300">Others: {{ result.others }}</p>
               <p class="text-gray-400 text-sm italic">{{ result.notes }}</p>
               <p class="text-sm mt-2">Difficulty: <span :class="{
@@ -90,6 +90,14 @@ watch(searchQuery, () => {
                 'text-red-400': result.difficulty === difficulty.HARD,
                 'text-red-600': result.difficulty === difficulty.NO_AUTO
               }">{{ formatDifficulty(result.difficulty) }}</span></p>
+                        <div v-for="(video, index) in result.videos" class="flex items-center space-x-2">
+                            <a 
+                            class="text-blue-200 underline flex items-center space-x-2"
+                            :href="video.url" target="_blank">
+                            <img src="/icons/icons8-youtube.svg" alt="YouTube" class="h-6 w-6" />
+                            <span>Video</span>
+                            </a>
+                        </div>
             </div>
           </div>
         </div>

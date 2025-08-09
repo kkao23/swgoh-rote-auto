@@ -47,7 +47,7 @@ export const lsGenericP4: dataType[] = [
         others: 'POW, MQG, Yoda, Padme',
         notes: 'auto, other two can be any GR',
         videos: [{ url: 'https://youtu.be/6YzDrnBGFvw' }],
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.EASY
     },
     {
         lead: 'JMK',
@@ -79,6 +79,14 @@ export const lsGenericP4: dataType[] = [
         videos: [{ url: 'https://youtu.be/kjYZ24h5fok' }],
         difficulty: difficulty.VERY_EASY,
         omi: true,
+    },
+    {
+        lead: 'GAS with QA',
+        leadFull: 'General Anakin Skywalker with Queen Amidala',
+        others: 'POW, MQG, Snips',
+        notes: 'auto, faster than QA herself',
+        videos: [{ url: 'https://youtu.be/B6E6XdAYfNQ' }],
+        difficulty: difficulty.EASY
     },
 ]
 

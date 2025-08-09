@@ -274,5 +274,10 @@ export const leads:lead[] = [
     "id": "trench",
     "fullName": "Admiral Trench",
     "aliases": ["Trench", "Admiral Bench"]
-  }
+  },
+    {
+    "id": "tarkin",
+    "fullName": "Tarkin",
+    "aliases": ["Grand Moff Tarkin", "GMT"]
+  },
 ]

@@ -14,7 +14,7 @@ export const dsInqP4: dataType[] = [
     }
 ]
 
-export const dsRightP4: dataType[] = [
+export const dsMidRightP4: dataType[] = [
     {
         lead: 'SEE',
         leadFull: 'Sith Eternal Emperor',
@@ -29,11 +29,8 @@ export const dsRightP4: dataType[] = [
         notes: 'auto',
         videos: [{ url: 'https://www.youtube.com/watch?v=UX67LlXNtBY', creator: creators.egnards }],
         difficulty: difficulty.VERY_EASY
-    }
-]
-
-export const dsMidP4:dataType[] = [
-    {
+    },
+        {
         lead: 'SEE',
         leadFull: 'Sith Eternal Emperor',
         others: 'Traya, Malgus, Nihilus, Sion',
@@ -47,6 +44,24 @@ export const dsMidP4:dataType[] = [
         notes: 'marrok omi, auto',
         videos: [{ url: 'https://youtu.be/w8sQ1bMYvew' }],
         difficulty: difficulty.VERY_EASY,
+        omi: true
+    },
+    {
+        lead: 'Tarkin',
+        leadFull: 'Grand Moff Tarkin',
+        others: 'Appo, CX, Disguised Clone Trooper',
+        notes: 'Scorch makes this easier but Piett works in his place. Need full platoons',
+        videos: [{ url: 'https://youtu.be/zYBou5t9kRI', }],
+        difficulty: difficulty.EASY,
+        omi: true
+    },
+    {
+        lead: 'Baylan',
+        leadFull: 'Baylan Skoll',
+        others: 'Shin, Marrok, Malak, +1',
+        notes: 'Really want an off tank to reduce the chance Marrok gets killed early',
+        videos: [{ url: 'https://youtu.be/p6bhOC6tlEo', }],
+        difficulty: difficulty.EASY,
         omi: true
     }
 ]

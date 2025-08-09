@@ -23,7 +23,14 @@ export const mixedFleetP5: dataType[] = [
         notes: 'auto, untarget HT',
         videos: [{ url: 'https://youtu.be/uDfsGkP-cXM' }],
         difficulty: difficulty.VERY_EASY
-    }
+    },
+    {
+        lead: 'Profundity',
+        others: 'MF, Outrider, Y wing start, Phantom, Ghost, Biggs, Wedge Reinf',
+        notes: 'cant auto until you ult',
+        videos: [{ url: 'https://youtu.be/LqmP7WGf1m0' }],
+        difficulty: difficulty.NO_AUTO
+    },
 ]
 
 export const mixedCombatTopRightP5: dataType[] = [

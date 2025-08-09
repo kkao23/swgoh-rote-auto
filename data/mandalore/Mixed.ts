@@ -11,7 +11,7 @@ export const mandaloreFleets: dataType[] = [
         difficulty: difficulty.NO_AUTO
     },
     {
-        lead: 'Leviathan',
+        lead: 'Leviathan (guided)',
         others: 'Gauntlet (mandatory), Bomber, FCI, Assassin, Dorito, MK6 Interceptor, Scimitar',
         notes: 'semi auto, isolate anakin, hold the instakill for Marauder',
         videos: [{ url: 'https://youtu.be/-Xqd1DYrdUA' }],
@@ -23,6 +23,13 @@ export const mandaloreFleets: dataType[] = [
         notes: 'cant auto but easy win',
         videos: [{ url: 'https://youtu.be/VcXsUBHgbUs' }],
         difficulty: difficulty.NO_AUTO
+    },
+        {
+        lead: 'Leviathan (full auto)',
+        others: 'Gauntlet (mandatory), Bomber, FCI, Dorito, Assassin, MK6 Interceptor, Scimitar',
+        notes: 'seems a bit dicier than guided',
+        videos: [{ url: 'https://youtu.be/kyCQ6JXDJvM' }],
+        difficulty: difficulty.EASY
     },
 ]
 

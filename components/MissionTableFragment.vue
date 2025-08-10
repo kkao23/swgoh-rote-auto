@@ -223,8 +223,8 @@ async function showToast(itemIndex: number) {
             </UCard>
         </UModal>
 
-        <UModal v-model="isHelpModalOpen">
-            <img :src="helpUrl"></img>
+        <UModal v-model="isHelpModalOpen" :ui="{ container: 'flex min-h-full items-center justify-center' }">
+            <img :src="helpUrl" class="object-contain max-h-[90vh] max-w-[90vw]" />
         </UModal>
     </div>
 </template>

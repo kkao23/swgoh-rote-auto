@@ -13,7 +13,7 @@ const alignment = 'DS';
 
 <template>
     <tr>
-        <MissionTableFragment :position="`Combat`" :data="data.ds.generic" :phase="phase" :alignment="alignment"></MissionTableFragment>
+        <MissionTableFragment :position="`Combat`" :data="data.ds.generic" :phase="phase" :alignment="alignment" :helpUrl="`https://swgoh-rote.s3.us-east-2.amazonaws.com/swgoh_help/dathomir_generic.jpg`"></MissionTableFragment>
     </tr>
     <tr>
         <MissionTableFragment :position="`Empire`" :data="data.ds.empire" :phase="phase" :alignment="alignment"></MissionTableFragment>

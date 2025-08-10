@@ -16,10 +16,10 @@ const alignment = 'LS';
         <MissionTableFragment :position="`Saw`" :data="data.ls.saw" :phase="phase" :alignment="alignment" :special="true"></MissionTableFragment>
     </tr>
     <tr>
-        <MissionTableFragment :position="`Left`" :data="data.ls.left" :phase="phase" :alignment="alignment"></MissionTableFragment>
+        <MissionTableFragment :position="`Left`" :data="data.ls.left" :phase="phase" :alignment="alignment" :helpUrl="`https://swgoh-rote.s3.us-east-2.amazonaws.com/swgoh_help/kashyyk_left.jpg`"></MissionTableFragment>
     </tr>
     <tr>
-        <MissionTableFragment :position="`Right (Mara)`" :data="data.ls.right" :phase="phase" :alignment="alignment"></MissionTableFragment>
+        <MissionTableFragment :position="`Right (Mara)`" :data="data.ls.right" :phase="phase" :alignment="alignment" :helpUrl="`https://swgoh-rote.s3.us-east-2.amazonaws.com/swgoh_help/kashyyk_right.jpg`"></MissionTableFragment>
     </tr>
     <tr>
         <MissionTableFragment :position="`Wookies`" :data="data.ls.wookies" :phase="phase" :alignment="alignment"></MissionTableFragment>

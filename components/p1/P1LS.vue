@@ -13,7 +13,7 @@ const alignment = 'LS';
 
 <template>
     <tr>
-        <MissionTableFragment :position="`Combat`" :data="data.ls.generic" :phase="phase" :alignment="alignment"></MissionTableFragment>
+        <MissionTableFragment :position="`Combat`" :data="data.ls.generic" :phase="phase" :alignment="alignment" :helpUrl="`https://swgoh-rote.s3.us-east-2.amazonaws.com/swgoh_help/coruscant_generic.jpg`"></MissionTableFragment>
     </tr>
     <tr>
         <MissionTableFragment :position="`Mace/Kit`" :data="data.ls.maceKitP1" :phase="phase" :alignment="alignment"></MissionTableFragment>

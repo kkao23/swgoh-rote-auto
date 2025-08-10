@@ -13,10 +13,10 @@ const alignment = 'LS';
 
 <template>
     <tr>
-        <MissionTableFragment :position="`Left (CH)`" :data="data.ls.left" :phase="phase" :alignment="alignment"></MissionTableFragment>
+        <MissionTableFragment :position="`Left (CH)`" :data="data.ls.left" :phase="phase" :alignment="alignment" :helpUrl="`https://swgoh-rote.s3.us-east-2.amazonaws.com/swgoh_help/bracca_left.jpg`"></MissionTableFragment>
     </tr>
     <tr>
-        <MissionTableFragment :position="`Right (2S)`" :data="data.ls.right" :phase="phase" :alignment="alignment"></MissionTableFragment>
+        <MissionTableFragment :position="`Right (2S)`" :data="data.ls.right" :phase="phase" :alignment="alignment" :helpUrl="`https://swgoh-rote.s3.us-east-2.amazonaws.com/swgoh_help/bracca_right.jpg`"></MissionTableFragment>
     </tr>
     <tr>
         <MissionTableFragment :position="`Zeffo`" :data="data.ls.zeffo" :phase="phase" :alignment="alignment" :special="true" :unlock="true"></MissionTableFragment>

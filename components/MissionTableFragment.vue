@@ -13,6 +13,7 @@ const props = defineProps({
     phase: String,
     alignment: String,
     position: String,
+    helpUrl: String,
     data: {
         type: Array<dataType>,
         required: true
@@ -22,6 +23,7 @@ const props = defineProps({
 const modalStore = useModalStore();
 const globalToggleModal = () => modalStore.toggleModal();
 const localIsModalOpen = ref(false);
+const isHelpModalOpen = ref(false);
 
 const router = useRouter();
 const route = useRoute();
@@ -146,6 +148,7 @@ async function showToast(itemIndex: number) {
             <img v-if="special" src="/icons/GET.png" alt="Guild Event Token Icon" class="w-6 h-6">
             <img v-if="shard" src="/icons/sst.png" alt="Shard Icon" class="w-6 h-6">
             <span class="flex-1 text-left hover:underline cursor-pointer" @click="localIsModalOpen = !localIsModalOpen">{{ position }}</span>
+            <UIcon v-if="helpUrl" name="i-heroicons-question-mark-circle" @click="isHelpModalOpen = true" class="pl-2 w-6 h-6 text-blue-300 cursor-pointer"></UIcon>
             <UIcon v-if="unlock" name="i-heroicons-lock-open" class="pl-2 w-6 h-6" /><button
                 @click="localIsModalOpen = !localIsModalOpen"
                 class="w-8 h-8 ml-auto text-zinc-200 cursor-pointer hover:text-zinc-50 transition duration-200"
@@ -218,6 +221,10 @@ async function showToast(itemIndex: number) {
                     <MissionModalFooter></MissionModalFooter>
                 </template>
             </UCard>
+        </UModal>
+
+        <UModal v-model="isHelpModalOpen">
+            <img :src="helpUrl"></img>
         </UModal>
     </div>
 </template>

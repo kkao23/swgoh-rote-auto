@@ -13,13 +13,13 @@ const alignment = 'DS';
 
 <template>
     <tr>
-        <MissionTableFragment :position="`Left (Nute)`" :data="data.ds.left" :phase="phase" :alignment="alignment"></MissionTableFragment>
+        <MissionTableFragment :position="`Left (Nute)`" :data="data.ds.left" :phase="phase" :alignment="alignment" :helpUrl="`https://swgoh-rote.s3.us-east-2.amazonaws.com/swgoh_help/mustafar_left.jpg`"></MissionTableFragment>
     </tr>
     <tr>
-        <MissionTableFragment :position="`Bot (Wat)`" :data="data.ds.bottom" :phase="phase" :alignment="alignment"></MissionTableFragment>
+        <MissionTableFragment :position="`Bot (Wat)`" :data="data.ds.bottom" :phase="phase" :alignment="alignment" :helpUrl="`https://swgoh-rote.s3.us-east-2.amazonaws.com/swgoh_help/mustafar_mid.jpg`"></MissionTableFragment>
     </tr>
     <tr>
-        <MissionTableFragment :position="`Top (Geo)`" :data="data.ds.top" :phase="phase" :alignment="alignment"></MissionTableFragment>
+        <MissionTableFragment :position="`Top (Geo)`" :data="data.ds.top" :phase="phase" :alignment="alignment" :helpUrl="`https://swgoh-rote.s3.us-east-2.amazonaws.com/swgoh_help/mustafar_right.jpg`"></MissionTableFragment>
     </tr>
     <tr>
         <MissionTableFragment :position="`LV`" :data="data.ds.lv" :phase="phase" :alignment="alignment"></MissionTableFragment>

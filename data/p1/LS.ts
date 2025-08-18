@@ -72,10 +72,10 @@ export const jediP1: dataType[] = [
     {
         lead: 'Kelleran Beq',
         leadFull: 'Kelleran Beq',
-        others: 'Jocasta Nu, Shaak Ti, Aayla, Barriss',
-        notes: 'auto, was dicey',
-        videos: [{ url: 'https://youtu.be/06bRESztP-A' }],
-        difficulty: difficulty.CAUTION
+        others: 'Jocasta Nu, Shaak Ti, Aayla, Temple Guard',
+        notes: 'auto, really want Temple Guard here to tank',
+        videos: [{ url: 'https://youtu.be/n15kElqRyyc' }],
+        difficulty: difficulty.EASY
     }
 ]
 
@@ -107,6 +107,13 @@ export const shipsLSP1: dataType[] = [
         notes: 'marauder likely mandatory, easy auto',
         videos: [{ url: 'https://youtu.be/LcxipBi044A' }],
         difficulty: difficulty.VERY_EASY
+    },
+    {
+        lead: 'Endurance',
+        others: 'Fives, Marauder, Outrider, Clone Sarge, Y Wing, Ahsoka, Anakin',
+        notes: 'marauder likely mandatory, auto',
+        videos: [{ url: 'https://youtu.be/EEmfeYfr56Y' }],
+        difficulty: difficulty.EASY
     }
 ]
 
@@ -214,5 +221,13 @@ export const genericLSP1: dataType[] = [
         notes: '2/2 on full auto but not super smooth. Marked enemy leader first before auto',
         videos: [{ url: 'https://youtu.be/wp-v3OwyreQ' }],
         difficulty: difficulty.CAUTION
+    },
+    {
+        lead: 'Omega (Mercenary) (Omi)',
+        leadFull: 'Omega with Bad Batch Mercenaries',
+        others: 'Crosshair, Wrecker, Batcher, Hunter',
+        notes: 'easy full auto with Wrecker Omi',
+        videos: [{ url: 'https://youtu.be/2KR762GY7PU' }],
+        difficulty: difficulty.VERY_EASY
     }
 ]

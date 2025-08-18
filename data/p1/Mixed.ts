@@ -212,4 +212,11 @@ export const shipsP1: dataType[] = [
         videos: [{ url: 'https://youtu.be/bU0KRWRabAE' }],
         difficulty: difficulty.VERY_EASY
     },
+    {
+        lead: 'Raddus',
+        others: 'Rey MF, Lando MF, Res Bomber, Comeuppance, Poes Xwing, Res Xwing, Ebon Hawk',
+        notes: 'cant auto. ',
+        videos: [{ url: 'https://youtu.be/d9fdaQRbVkQ' }],
+        difficulty: difficulty.NO_AUTO
+    },
 ]

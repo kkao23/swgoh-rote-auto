@@ -18,7 +18,16 @@ export const hondoMixedP2: dataType[] = [
         videos: [{ url: 'https://youtu.be/wnXeT0sUQdA'}],
         difficulty: difficulty.CAUTION,
         omi: true,
-    }
+    },
+    {
+        lead: 'Omega (Mercenary) (Omi)',
+        leadFull: 'Omega with Bad Batch Mercenaries',
+        others: 'Crosshair, Wrecker, Hunter',
+        notes: 'easy full auto with Wrecker Omi, leave Batcher out, R7+ Recommended',
+        videos: [{ url: 'https://youtu.be/OS-6bEChQHo' }],
+        difficulty: difficulty.VERY_EASY,
+        omi: true,
+    },
 ]
 
 export const shipsMixedP2: dataType[] = [

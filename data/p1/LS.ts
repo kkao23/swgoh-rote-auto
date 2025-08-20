@@ -72,10 +72,10 @@ export const jediP1: dataType[] = [
     {
         lead: 'Kelleran Beq',
         leadFull: 'Kelleran Beq',
-        others: 'Jocasta Nu, Shaak Ti, Aayla, Barriss',
-        notes: 'auto, was dicey',
-        videos: [{ url: 'https://youtu.be/06bRESztP-A' }],
-        difficulty: difficulty.CAUTION
+        others: 'Jocasta Nu, Shaak Ti, Aayla, Temple Guard',
+        notes: 'auto, really want Temple Guard here to tank',
+        videos: [{ url: 'https://youtu.be/n15kElqRyyc' }],
+        difficulty: difficulty.EASY
     }
 ]
 
@@ -107,10 +107,32 @@ export const shipsLSP1: dataType[] = [
         notes: 'marauder likely mandatory, easy auto',
         videos: [{ url: 'https://youtu.be/LcxipBi044A' }],
         difficulty: difficulty.VERY_EASY
+    },
+    {
+        lead: 'Endurance',
+        others: 'Fives, Marauder, Outrider, Clone Sarge, Y Wing, Ahsoka, Anakin',
+        notes: 'marauder likely mandatory, auto',
+        videos: [{ url: 'https://youtu.be/EEmfeYfr56Y' }],
+        difficulty: difficulty.EASY
     }
 ]
 
 export const genericLSP1: dataType[] = [
+    {
+        lead: 'Ahsoka Tano',
+        others: 'Any spectre',
+        notes: 'auto, dont need ezra',
+        videos: [{ url: 'https://youtu.be/lGY7TLSTCMA' }],
+        difficulty: difficulty.VERY_EASY,
+    },
+    {
+        lead: 'JMK',
+        leadFull: 'Jedi Master Kenobi',
+        others: 'Snips, GK, JKA, Padme',
+        notes: 'auto, can sub CAT in for JKA if you have her available',
+        videos: [{ url: 'https://youtu.be/BJ-vunYNBIg' }],
+        difficulty: difficulty.VERY_EASY
+    },
     {
         lead: 'QA',
         leadFull: 'Queen Amidala',
@@ -120,34 +142,11 @@ export const genericLSP1: dataType[] = [
         difficulty: difficulty.VERY_EASY
     },
     {
-        lead: 'Saw',
-        others: 'Capt Rex, Luthen, Cassian, Baze',
-        notes: 'auto, last two can vary',
-        videos: [{ url: 'https://youtu.be/Utm6eFHyntU' }],
-        difficulty: difficulty.VERY_EASY
-    },
-    {
-        lead: 'M Mothma',
-        leadFull: 'Mon Mothma',
-        others: 'Luthen, Kyle (o), Capt Rex, Cassian',
-        notes: 'auto',
-        videos: [{ url: 'https://youtu.be/IbBy_vDW6xc' }],
-        difficulty: difficulty.VERY_EASY,
-        omi: true
-    },
-    {
         lead: 'Leia',
         others: 'Drogan, R2, Ben, Baze',
         notes: 'auto, last two can be any rebels',
         videos: [{ url: 'https://youtu.be/2qBtZzE3ZPU' }],
         difficulty: difficulty.VERY_EASY
-    },
-    {
-        lead: 'Hunter (OG)',
-        others: 'Echo, Wrecker, Tech, Shaak',
-        notes: 'only 1/2 on auto',
-        videos: [{ url: 'https://youtu.be/uVCIpd5pXf4' }],
-        difficulty: difficulty.HARD
     },
     {
         lead: 'Boss Nass',
@@ -158,6 +157,39 @@ export const genericLSP1: dataType[] = [
         omi: true,
     },
     {
+        lead: 'Omega (Mercenary) (Omi)',
+        leadFull: 'Omega with Bad Batch Mercenaries',
+        others: 'Crosshair, Wrecker, Batcher, Hunter',
+        notes: 'easy full auto with Wrecker Omi',
+        videos: [{ url: 'https://youtu.be/2KR762GY7PU' }],
+        difficulty: difficulty.VERY_EASY,
+        omi: true,
+    },
+    {
+        lead: 'Saw',
+        others: 'Capt Rex, Luthen, Cassian, Baze',
+        notes: 'auto, last two can vary',
+        videos: [{ url: 'https://youtu.be/Utm6eFHyntU' }],
+        difficulty: difficulty.EASY
+    },
+    {
+        lead: 'M Mothma',
+        leadFull: 'Mon Mothma',
+        others: 'Luthen, Kyle (o), Capt Rex, Cassian',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/IbBy_vDW6xc' }],
+        difficulty: difficulty.VERY_EASY,
+        omi: true
+    },
+
+    {
+        lead: 'Hunter (OG)',
+        others: 'Echo, Wrecker, Tech, Shaak',
+        notes: 'only 1/2 on auto',
+        videos: [{ url: 'https://youtu.be/uVCIpd5pXf4' }],
+        difficulty: difficulty.HARD
+    },
+    {
         lead: 'Padme (Bad Batch)',
         others: 'Hunter, Wrecker, Tech, Echo',
         notes: 'auto, can get unlucky in 2nd wave',
@@ -165,32 +197,18 @@ export const genericLSP1: dataType[] = [
         difficulty: difficulty.CAUTION,
     },
     {
-        lead: 'Ahsoka Tano',
-        others: 'Any spectre',
-        notes: 'auto, dont need ezra',
-        videos: [{url: 'https://youtu.be/lGY7TLSTCMA'}],
-        difficulty: difficulty.VERY_EASY,
-    },
-    {
         lead: 'Padme (CAT)',
         others: 'Snips, JKA, CAT, Mace',
         notes: 'auto, can swap mace for GK',
-        videos: [{url: 'https://youtu.be/zwCGO6aeGNY'}],
+        videos: [{ url: 'https://youtu.be/zwCGO6aeGNY' }],
         difficulty: difficulty.EASY,
     },
     {
         lead: 'Admiral Raddus',
         others: 'Jyn, K2SO, Cassian, Chirrut',
         notes: 'only 1/2 on auto',
-        videos: [{url: 'https://youtu.be/-2mnwclkwp0'}],
+        videos: [{ url: 'https://youtu.be/-2mnwclkwp0' }],
         difficulty: difficulty.HARD,
-    },{
-        lead: 'JMK',
-        leadFull: 'Jedi Master Kenobi',
-        others: 'Snips, GK, JKA, Padme',
-        notes: 'auto, can sub CAT in for JKA if you have her available',
-        videos: [{ url: 'https://youtu.be/BJ-vunYNBIg' }],
-        difficulty: difficulty.VERY_EASY
     },
     {
         lead: 'Finn (Zorii)',
@@ -214,5 +232,6 @@ export const genericLSP1: dataType[] = [
         notes: '2/2 on full auto but not super smooth. Marked enemy leader first before auto',
         videos: [{ url: 'https://youtu.be/wp-v3OwyreQ' }],
         difficulty: difficulty.CAUTION
-    }
+    },
+
 ]

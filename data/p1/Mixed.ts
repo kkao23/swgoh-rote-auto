@@ -61,7 +61,7 @@ export const mixedP1: dataType[] = [
         lead: 'GAS',
         leadFull: 'General Anakin Skywalker',
         others: 'Fives, Rex, Echo, Capt Rex',
-        notes: 'auto',
+        notes: 'auto, need Capt Rex',
         videos: [{ url: 'https://youtu.be/HQBzpbVvYD0' }],
         difficulty: difficulty.VERY_EASY
     },
@@ -131,7 +131,15 @@ export const mixedP1: dataType[] = [
         videos: [{ url: 'https://youtu.be/GNwcFQnw-xo' }],
         difficulty: difficulty.VERY_EASY,
         omi: true,
-    }
+    },
+    {
+        lead: 'GAS with QA',
+        leadFull: 'General Anakin Skywalker with Queen Amidala',
+        others: 'Rex, Fives, Echo',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/0bAtF2hqBIs' }],
+        difficulty: difficulty.VERY_EASY
+    },
 ]
 
 export const jabbaP1: dataType[] = [
@@ -203,5 +211,12 @@ export const shipsP1: dataType[] = [
         notes: 'auto, dont use Outrider here',
         videos: [{ url: 'https://youtu.be/bU0KRWRabAE' }],
         difficulty: difficulty.VERY_EASY
+    },
+    {
+        lead: 'Raddus',
+        others: 'Rey MF, Lando MF, Res Bomber, Comeuppance, Poes Xwing, Res Xwing, Ebon Hawk',
+        notes: 'cant auto. ',
+        videos: [{ url: 'https://youtu.be/d9fdaQRbVkQ' }],
+        difficulty: difficulty.NO_AUTO
     },
 ]

@@ -172,6 +172,15 @@ export const topDSP1: dataType[] = [
         videos: [{ url: 'https://youtu.be/Xi75-aTjxmI' }],
         difficulty: difficulty.HARD
     },
+    {
+        lead: 'DTMG (Enoch omi)',
+        leadFull: 'Dark Trooper Moff Gideon',
+        others: 'Scout Trooper, Captain Enoch (omi), Moff Gideon, Tie Fighter Pilot',
+        notes: 'auto',
+        videos: [{url: 'https://youtu.be/jbXA0XrS9Bk'}],
+        difficulty: difficulty.EASY,
+        omi: true,
+    },
 ];
 
 export const lvP1: dataType[] = [

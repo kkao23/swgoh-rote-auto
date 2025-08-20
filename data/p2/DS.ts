@@ -55,6 +55,15 @@ export const acklayDSP2: dataType[] = [
         videos: [{url: 'https://youtu.be/ufHTEnyIUG8'}],
         difficulty: difficulty.EASY
     },
+    {
+        lead: 'DTMG (Enoch omi)',
+        leadFull: 'Dark Trooper Moff Gideon',
+        others: 'Scout Trooper, Captain Enoch (omi), Death Trooper, Night Trooper',
+        notes: 'auto',
+        videos: [{url: 'https://youtu.be/ORKuex1uEC0'}],
+        difficulty: difficulty.VERY_EASY,
+        omi: true,
+    }
 ]
 
 export const reekDSP2: dataType[] = [
@@ -114,7 +123,15 @@ export const reekDSP2: dataType[] = [
         notes: 'auto',
         videos: [{url: 'https://youtu.be/Sr96cRiT6r8'}],
         difficulty: difficulty.EASY
-    }
+    },
+    {
+        lead: 'Baylan',
+        others: 'Marrok, Shin, Jango, Zam',
+        notes: 'omi Marrok, auto, last two any Mercenaries, hope Marrok doesnt get targeted first turn',
+        videos: [{ url: 'https://youtu.be/1QqyIDN0yvA' }],
+        difficulty: difficulty.EASY,
+        omi: true
+    },
 ]
 
 export const nexuDSP2: dataType[] = [
@@ -161,6 +178,15 @@ export const nexuDSP2: dataType[] = [
         others: 'Marrok, Shin, Aurra, Zam',
         notes: 'omi Marrok, auto, last two any Mercenaries',
         videos: [{ url: 'https://youtu.be/FoCgJ_A0FNc' }],
+        difficulty: difficulty.EASY,
+        omi: true
+    },
+    {
+        lead: 'Tarkin',
+        leadFull: 'Grand Moff Tarkin',
+        others: 'Appo, CX, Disguised Clone Trooper, +1',
+        notes: 'I had Thrawn as 5th but Scorch is ideal. Not sure if I got lucky with them targeting Nightfall first',
+        videos: [{ url: 'https://youtu.be/fjaJ59NNSmQ', }],
         difficulty: difficulty.EASY,
         omi: true
     },

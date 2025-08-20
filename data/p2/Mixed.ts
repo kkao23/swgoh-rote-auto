@@ -106,7 +106,7 @@ export const mixedP2: dataType[] = [
         difficulty: difficulty.VERY_EASY,
         omi: true
     },
-        {
+    {
         lead: 'Omega (Mercenary)',
         leadFull: 'Omega with Bad Batch Mercenaries',
         others: 'Crosshair, Wrecker, Batcher, Hunter',
@@ -114,6 +114,14 @@ export const mixedP2: dataType[] = [
         videos: [{ url: 'https://youtu.be/SF9oCVi1fuw' }],
         difficulty: difficulty.VERY_EASY,
         omi: true
+    },
+    {
+        lead: 'Kelleran Beq',
+        leadFull: 'Kelleran Beq',
+        others: 'Jocasta Nu, Shaak Ti, Aayla, Temple Guard',
+        notes: 'auto, prob need R8+ on Temple Guard',
+        videos: [{ url: 'https://youtu.be/us8-AXQx2jw' }],
+        difficulty: difficulty.EASY
     }
 ]
 

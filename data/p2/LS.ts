@@ -176,7 +176,15 @@ export const rightLSP2: dataType[] = [
         videos: [{ url: 'https://youtu.be/hssMBkkdQSk' }],
         difficulty: difficulty.VERY_EASY,
         omi: true
-    }
+    },
+    {
+        lead: 'GAS with QA',
+        leadFull: 'General Anakin Skywalker with Queen Amidala',
+        others: 'Fives, Rex, Snips/Echo',
+        notes: 'auto, Echo is better if not platooned. Need Fives as the off tank',
+        videos: [{ url: 'https://youtu.be/eOXu2I5QuII' }],
+        difficulty: difficulty.EASY
+    },
 ]
 
 export const zeffoUnlock: dataType[] = [

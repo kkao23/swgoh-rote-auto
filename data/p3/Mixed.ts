@@ -88,6 +88,14 @@ export const fennecP3: dataType[] = [
         videos: [{ url: 'https://youtu.be/qtWOgArbEX0' }],
         difficulty: difficulty.VERY_EASY
     },
+    {
+        lead: 'Omega (omicron)',
+        others: 'Wrecker (omicron), Hunter, Crosshair, Fennec',
+        notes: 'easy auto with omi',
+        videos: [{ url: 'https://youtu.be/Sv1SbpTmcWI' }],
+        difficulty: difficulty.VERY_EASY,
+        omi: true,
+    },
 ]
 
 export const mixedTopLeftP3: dataType[] = [
@@ -160,7 +168,15 @@ export const mixedTopLeftP3: dataType[] = [
         videos: [{ url: 'https://youtu.be/-lbUh4kH5cE' }],
         difficulty: difficulty.VERY_EASY,
         omi: true
-    }
+    },
+    {
+        lead: 'Baylan',
+        others: 'Marrok, Shin, Qira, L3',
+        notes: 'omi Marrok, auto, last two are flexible',
+        videos: [{ url: 'https://youtu.be/yn70eqOYuIU' }],
+        difficulty: difficulty.VERY_EASY,
+        omi: true
+    },
 ]
 
 export const mixedP3Ships: dataType[] = [

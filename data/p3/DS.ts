@@ -69,7 +69,16 @@ export const dsGenericP3: dataType[] = [
         videos: [{url: 'https://youtu.be/hpzwWiwI-dE'}],
         difficulty: difficulty.VERY_EASY,
         omi: true,
-    }
+    },
+    {
+        lead: 'Tarkin',
+        leadFull: 'Grand Moff Tarkin',
+        others: 'Appo (omicron), CX, Disguised Clone Trooper',
+        notes: 'Scorch makes this easier but Thrawn works in his place',
+        videos: [{ url: 'https://youtu.be/SHb_ZfMj6Bk', }],
+        difficulty: difficulty.VERY_EASY,
+        omi: true
+    },
 ]
 
 export const dsEmpireP3: dataType[] = [

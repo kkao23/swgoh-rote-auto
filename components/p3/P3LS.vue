@@ -24,4 +24,7 @@ const alignment = 'LS';
     <tr>
         <MissionTableFragment :position="`Wookies`" :data="data.ls.wookies" :phase="phase" :alignment="alignment"></MissionTableFragment>
     </tr>
+    <tr>
+        <MissionTableFragment :position="`Fleet`" :data="data.ls.ships" :phase="phase" :alignment="alignment"></MissionTableFragment>
+    </tr>
 </template>

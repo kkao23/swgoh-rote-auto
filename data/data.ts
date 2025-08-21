@@ -51,6 +51,7 @@ import { wookies } from "./p3/LS";
 import { sawP3 } from "./p3/LS"; 
 import { lsRightP3 } from "./p3/LS"; 
 import { lsLeftP3 } from "./p3/LS"; 
+import { shipsLSP3 } from "./p3/LS";
 
 // P4
 import { lsShipsP4 } from "./p4/LS";
@@ -144,6 +145,7 @@ export const data: DataType = {
             left: lsLeftP3,
             right: lsRightP3,
             wookies: wookies,
+            ships: shipsLSP3,
         },
         mixed: {
             boKatan: boKatanP3,

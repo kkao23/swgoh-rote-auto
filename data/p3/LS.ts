@@ -161,3 +161,13 @@ export const wookies: dataType[] = [
         difficulty: difficulty.EASY,
     }
 ]
+
+export const shipsLSP3: dataType[] = [
+    {
+        lead: 'Profundity (no MF)',
+        others: 'Outrider, Y wing, Ghost, Phantom, Cassian, Biggs, Wedge',
+        notes: 'If you have to platoon MF. target scythe, basic to Outrider, built ult. not 100% consistent',
+        videos: [{ url: 'https://youtu.be/El32c9zggjA' }],
+        difficulty: difficulty.NO_AUTO
+    }
+]

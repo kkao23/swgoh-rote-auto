@@ -94,8 +94,17 @@ export const dsEmpireP3: dataType[] = [
         others: 'Reva, 5B, 8B, 7S',
         notes: 'auto, takes forever, can sometimes 1/2',
         videos: [{ url: 'https://youtu.be/_hwmbHfEj_M' }],
-        difficulty: difficulty.CAUTION
-    }
+        difficulty: difficulty.HARD
+    },
+    {
+        lead: 'Tarkin',
+        leadFull: 'Grand Moff Tarkin',
+        others: 'Appo (omicron), CX, Disguised Clone Trooper, +1',
+        notes: 'I had Piett as 5th but Scorch is ideal',
+        videos: [{ url: 'https://youtu.be/ydXVr7yHHyY', }],
+        difficulty: difficulty.EASY,
+        omi: true
+    },
 ]
 
 export const drAphraP3: dataType[] = [

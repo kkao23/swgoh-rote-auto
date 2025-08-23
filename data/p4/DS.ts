@@ -30,8 +30,8 @@ export const dsMidRightP4: dataType[] = [
         videos: [{ url: 'https://www.youtube.com/watch?v=UX67LlXNtBY', creator: creators.egnards }],
         difficulty: difficulty.VERY_EASY
     },
-        {
-        lead: 'SEE',
+    {
+        lead: 'SEE (overrelic Triumvirate)',
         leadFull: 'Sith Eternal Emperor',
         others: 'Traya, Malgus, Nihilus, Sion',
         notes: 'Pico has R9 on SEE, Traya and Sion. Not sure if this is reliable with R8',
@@ -63,5 +63,13 @@ export const dsMidRightP4: dataType[] = [
         videos: [{ url: 'https://youtu.be/p6bhOC6tlEo', }],
         difficulty: difficulty.EASY,
         omi: true
-    }
+    },
+    {
+        lead: 'SEE (requirement chars)',
+        leadFull: 'Sith Eternal Emperor',
+        others: 'Malak, Dooku, DR, Bane',
+        notes: 'need all platoons, auto not consistent',
+        videos: [{url: 'https://youtu.be/oLhPREH3EYs'}],
+        difficulty: difficulty.NO_AUTO,
+    },
 ]

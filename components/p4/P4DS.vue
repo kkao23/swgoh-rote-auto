@@ -16,6 +16,6 @@ const alignment = 'DS';
         <MissionTableFragment :position="`Inquisitors`" :data="data.ds.inqs" :phase="phase" :alignment="alignment" :special="true"></MissionTableFragment>
     </tr>
     <tr>
-        <MissionTableFragment :position="`Mid/Bot/Right`" :data="data.ds.midRight" :phase="phase" :alignment="alignment" :helpUrl="`https://swgoh-rote.s3.us-east-2.amazonaws.com/swgoh_help/haven_generic.jpg`"></MissionTableFragment>
+        <MissionTableFragment :position="`Mid/Bot/Rt`" :data="data.ds.midRight" :phase="phase" :alignment="alignment" :helpUrl="`https://swgoh-rote.s3.us-east-2.amazonaws.com/swgoh_help/haven_generic.jpg`"></MissionTableFragment>
     </tr>
 </template>

@@ -139,4 +139,12 @@ export const jediLSP4: dataType[] = [
         videos: [{ url: 'https://www.youtube.com/watch?v=7N2-JbEer7k', creator: creators.egnards }],
         difficulty: difficulty.EASY
     },
+    {
+        lead: 'Kelleran Beq',
+        leadFull: 'Kelleran Beq',
+        others: 'Jocasta Nu, Shaak Ti, Aayla, Temple Guard',
+        notes: 'auto, all platoons required, Temple Guard required',
+        videos: [{ url: 'https://youtu.be/A5hzdGVrBlY' }],
+        difficulty: difficulty.EASY
+    }
 ]

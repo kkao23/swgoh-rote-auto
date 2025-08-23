@@ -103,7 +103,15 @@ export const mandaloreGeneric: dataType[] = [
         videos: [{url: 'https://youtu.be/oXkwJiE_EGg'}, { url: 'https://youtu.be/JuEnsbbFuT4?si=W7cLID0-I95kNy8h', creator: creators.avengerObs }],
         difficulty: difficulty.EASY,
         omi: true,
-    }
+    },
+    {
+        lead: 'JMK (Ezra)',
+        leadFull: 'Jedi Master Kenobi with Ezra Exile',
+        others: 'Padme, CAT, Ezra Exile, GK',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/UaOt-HO-smQ' }],
+        difficulty: difficulty.EASY
+    },
 ]
 
 export const mandaloreDTMG: dataType[] = [

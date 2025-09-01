@@ -34,6 +34,15 @@ export const maceKitP1 = [
         videos: [{ url: 'https://youtu.be/IOnWj4Wt9ws' }],
         difficulty: difficulty.VERY_EASY,
         omi: true
+    },
+    {
+        lead: 'Mace (Depa Omi)',
+        leadFull: 'Mace with Depa Billaba Omicron',
+        others: 'Depa Billaba (omi), Temple Guard, Kelleran Beq, Kit',
+        notes: 'Omicron on Depa, full auto',
+        videos: [{ url: 'https://youtu.be/iFaam9IXmLU' }],
+        difficulty: difficulty.VERY_EASY,
+        omi: true
     }
 ]
 

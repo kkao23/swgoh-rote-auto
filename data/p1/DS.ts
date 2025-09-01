@@ -36,7 +36,7 @@ export const leftDSP1: dataType[] = [{
     notes: 'Auto, can bless morgan manually if you want to be totally safe',
     videos: [{ url: 'https://youtu.be/YUMJjeD6k5A' }],
     difficulty: difficulty.VERY_EASY
-},{
+}, {
     lead: 'Reva',
     others: 'GI, 7S, 5B, 8B',
     notes: 'auto',
@@ -49,6 +49,15 @@ export const leftDSP1: dataType[] = [{
     notes: 'auto, I have most of them at R7, may be harder at R5',
     videos: [{ url: 'https://youtu.be/H8crYJOOfd8' }],
     difficulty: difficulty.EASY
+},
+{
+    lead: 'DTMG (Enoch omi)',
+    leadFull: 'Dark Trooper Moff Gideon',
+    others: 'Scout Trooper, Captain Enoch (omi), Moff Gideon, Death Trooper',
+    notes: 'auto',
+    videos: [{ url: 'https://youtu.be/qSHFMblMpXs' }],
+    difficulty: difficulty.VERY_EASY,
+    omi: true,
 },];
 
 export const bottomDSP1: dataType[] = [{
@@ -92,7 +101,7 @@ export const bottomDSP1: dataType[] = [{
     lead: 'Captain Enoch (omi)',
     others: 'Death Trooper Peridia, Tie Fighter Pilot, Night Trooper, Stormtrooper',
     notes: 'target B2, auto',
-    videos: [{url: 'https://youtu.be/V75J-k6i40s?si=6pWLh-5BQIDC5fJ-&t=264', creator: creators.pico}],
+    videos: [{ url: 'https://youtu.be/V75J-k6i40s?si=6pWLh-5BQIDC5fJ-&t=264', creator: creators.pico }],
     difficulty: difficulty.VERY_EASY,
     omi: true,
 },
@@ -177,7 +186,7 @@ export const topDSP1: dataType[] = [
         leadFull: 'Dark Trooper Moff Gideon',
         others: 'Scout Trooper, Captain Enoch (omi), Moff Gideon, Tie Fighter Pilot',
         notes: 'auto',
-        videos: [{url: 'https://youtu.be/jbXA0XrS9Bk'}],
+        videos: [{ url: 'https://youtu.be/jbXA0XrS9Bk' }],
         difficulty: difficulty.EASY,
         omi: true,
     },
@@ -209,7 +218,7 @@ export const shipsDSP1 = [
         others: 'Scythe, Mk6, Tie Adv, Defender, Interceptor, Sith Fighter, TIE Fighter',
         notes: 'cant auto',
         videos: [
-        { url: 'https://www.youtube.com/watch?v=4skhcZSGAoQ', creator: creators.kahzgul },
+            { url: 'https://www.youtube.com/watch?v=4skhcZSGAoQ', creator: creators.kahzgul },
         ],
         difficulty: difficulty.NO_AUTO
     }

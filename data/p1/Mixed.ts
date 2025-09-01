@@ -76,9 +76,9 @@ export const mixedP1: dataType[] = [
     {
         lead: 'Hera (Phoenix)',
         others: 'Capt Rex, Kanan, Sabine, Chopper',
-        notes: 'auto',
+        notes: 'I cant get this to work on auto. May require excellent mods',
         videos: [{ url: 'https://www.youtube.com/watch?v=lAw9OrvQzfU', creator: creators.egnards }],
-        difficulty: difficulty.EASY
+        difficulty: difficulty.HARD
     },
     {
         lead: 'Mother Talzin',
@@ -217,6 +217,13 @@ export const shipsP1: dataType[] = [
         others: 'Rey MF, Lando MF, Res Bomber, Comeuppance, Poes Xwing, Res Xwing, Ebon Hawk',
         notes: 'cant auto. ',
         videos: [{ url: 'https://youtu.be/d9fdaQRbVkQ' }],
+        difficulty: difficulty.NO_AUTO
+    },
+    {
+        lead: 'Negotiator',
+        others: 'Marauder, Y Wing start, JKA, Fives, Ahsoka, Plo reinforcements',
+        notes: 'marauder likely mandatory, no auto',
+        videos: [{ url: 'https://youtu.be/DDctMUYgHa0' }],
         difficulty: difficulty.NO_AUTO
     },
 ]

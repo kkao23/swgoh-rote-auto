@@ -118,5 +118,12 @@ export const zeffoCombat: dataType[] = [
         videos: [{url: 'https://youtu.be/6kIPMiz3jKE'}],
         difficulty: difficulty.EASY,
         omi: true,
-    }
+    },
+    {
+        lead: 'Leia',
+        others: 'R2, Drogan, Han, Chewie',
+        notes: 'cant auto, try to spread stuns around',
+        videos: [{ url: 'https://youtu.be/kDauBN0BZ0Y' }],
+        difficulty: difficulty.NO_AUTO
+    },
 ]

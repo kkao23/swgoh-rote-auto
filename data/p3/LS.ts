@@ -66,6 +66,14 @@ export const lsLeftP3: dataType[] = [
         videos: [{ url: 'https://youtu.be/DctCHNqsOEg' }],
         difficulty: difficulty.VERY_EASY
     },
+    {
+        lead: 'Omega (omicron)',
+        others: 'other Bad Batch Mercenaries',
+        notes: 'easy auto with omi',
+        videos: [{ url: 'https://youtu.be/YR4PCMzh0QI' }],
+        difficulty: difficulty.VERY_EASY,
+        omi: true,
+    },
 ]
 
 export const lsRightP3: dataType[] = [
@@ -95,7 +103,7 @@ export const lsRightP3: dataType[] = [
         lead: 'QA',
         leadFull: 'Queen Amidala',
         others: 'POW, MQG, GMY, Shaak Ti',
-        notes: 'auto, deselect targeting, target mara in wave 2',
+        notes: 'auto, deselect targeting, target mara in wave 2, not totally consistent',
         videos: [{ url: 'https://youtu.be/YmLMvgbqW3U' }],
         difficulty: difficulty.CAUTION,
     },
@@ -129,6 +137,14 @@ export const lsRightP3: dataType[] = [
         videos: [{ url: 'https://youtu.be/foOES5g8prg' }],
         difficulty: difficulty.VERY_EASY,
         omi: true,
+    },
+    {
+        lead: 'GAS with QA',
+        leadFull: 'General Anakin Skywalker with Queen Amidala',
+        others: 'Rex, Echo, Fives',
+        notes: 'auto, but target Mara then Purge troopers wave 2',
+        videos: [{ url: 'https://youtu.be/DWqpQlVv0rA' }],
+        difficulty: difficulty.EASY
     },
 ]
 

@@ -76,8 +76,8 @@ export const fennecP3: dataType[] = [
     {
         lead: 'Bane',
         leadFull: 'Darth Bane',
-        others: 'leftover sith, can be dicey',
-        notes: 'I had Darth maul, Darth sidious and sith empire trooper. full auto',
+        others: 'leftover sith',
+        notes: 'I had Darth maul, Darth sidious and sith empire trooper. can be dicey, add malak for guarantee win',
         videos: [{url: 'https://youtube.com/shorts/EDQDXz6uwnE?feature=share'}],
         difficulty: difficulty.CAUTION,
     },
@@ -94,6 +94,15 @@ export const fennecP3: dataType[] = [
         notes: 'easy auto with omi',
         videos: [{ url: 'https://youtu.be/Sv1SbpTmcWI' }],
         difficulty: difficulty.VERY_EASY,
+        omi: true,
+    },
+    {
+        lead: 'DTMG',
+        leadFull: 'Dark Trooper Moff Gideon',
+        others: 'Scout Trooper, Death Trooper, Moff Gideon, Fennec',
+        notes: 'auto. Enoch omi makes it easier but not required',
+        videos: [{url: 'https://youtu.be/2CeDdqWnyIE'}],
+        difficulty: difficulty.EASY,
         omi: true,
     },
 ]
@@ -174,6 +183,14 @@ export const mixedTopLeftP3: dataType[] = [
         others: 'Marrok, Shin, Qira, L3',
         notes: 'omi Marrok, auto, last two are flexible',
         videos: [{ url: 'https://youtu.be/yn70eqOYuIU' }],
+        difficulty: difficulty.VERY_EASY,
+        omi: true
+    },
+    {
+        lead: 'Boss Nass',
+        others: 'Gungans',
+        notes: 'auto, Tarpals Omi',
+        videos: [{ url: 'https://youtu.be/d1odTRywhfc'}],
         difficulty: difficulty.VERY_EASY,
         omi: true
     },

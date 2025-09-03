@@ -5,10 +5,10 @@ import { difficulty } from "~/models/data";
 export const hondoMixedP2: dataType[] = [
     {
         lead: 'Baylan',
-        others: 'Hondo, Shin, Marrok, Jango',
-        notes: 'Tarkin will one shot you wave 2',
-        videos: [{ url: 'https://youtu.be/9FarHhCvPb8' }, { url: 'https://www.youtube.com/watch?v=LEEZGJdl1ps', creator: creators.egnards }],
-        difficulty: difficulty.HARD,
+        others: 'Hondo, Shin, Marrok (omicron), L3',
+        notes: 'Need to pause and target Tarkin wave 2',
+        videos: [{ url: 'https://youtu.be/U09oOAmFQRQ' }],
+        difficulty: difficulty.CAUTION,
         omi: true
     },
     {
@@ -131,7 +131,15 @@ export const mixedP2: dataType[] = [
         notes: 'auto, prob need R8+ on Temple Guard',
         videos: [{ url: 'https://youtu.be/us8-AXQx2jw' }],
         difficulty: difficulty.EASY
-    }
+    },
+    {
+        lead: 'JML',
+        leadFull: 'Jedi Master Luke',
+        others: 'Jedi Knight Luke, Anakin, Bastila, Aayla',
+        notes: 'auto, Use better jedi for more consistency. JKL wants fast mods',
+        videos: [{ url: 'https://youtu.be/tmWmnc0eoPU' }],
+        difficulty: difficulty.EASY,
+    },
 ]
 
 export const jabbaP2: dataType[] = [

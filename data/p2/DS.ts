@@ -63,7 +63,16 @@ export const acklayDSP2: dataType[] = [
         videos: [{url: 'https://youtu.be/ORKuex1uEC0'}],
         difficulty: difficulty.VERY_EASY,
         omi: true,
-    }
+    },
+    {
+        lead: 'Tarkin',
+        leadFull: 'Grand Moff Tarkin',
+        others: 'Appo, CX, Disguised Clone Trooper, Scorch',
+        notes: 'Easy auto',
+        videos: [{ url: 'https://youtu.be/lsNKXGBDoL0', }],
+        difficulty: difficulty.VERY_EASY,
+        omi: true
+    },
 ]
 
 export const reekDSP2: dataType[] = [
@@ -190,6 +199,15 @@ export const nexuDSP2: dataType[] = [
         difficulty: difficulty.EASY,
         omi: true
     },
+    {
+        lead: 'DTMG (Enoch omi)',
+        leadFull: 'Dark Trooper Moff Gideon',
+        others: 'Scout Trooper, Captain Enoch (omi), Death Trooper, Moff Gideon',
+        notes: 'auto',
+        videos: [{url: 'https://youtu.be/9KBjG8jkKFU'}],
+        difficulty: difficulty.VERY_EASY,
+        omi: true,
+    }
 ]
 
 export const shipsDSP2: dataType[] = [

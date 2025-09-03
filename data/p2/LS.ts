@@ -47,6 +47,15 @@ export const jediLSP2: dataType[] = [
         difficulty: difficulty.EASY,
         omi: true,
     },
+    {
+        lead: 'Kelleran Beq',
+        leadFull: 'Kelleran Beq',
+        others: 'Jocasta Nu, Shaak Ti, Temple Guard, Depa Billaba (omicron)',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/SPL5FC0Qdcc' }],
+        difficulty: difficulty.VERY_EASY,
+        omi: true
+    }
 ]
 
 export const leftLSP2: dataType[] = [

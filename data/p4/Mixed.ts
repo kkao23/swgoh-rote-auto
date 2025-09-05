@@ -142,6 +142,15 @@ export const mixedGenericP4: dataType[] = [
         videos: [{url: 'https://youtu.be/Rey9_Rr0mnU'}],
         difficulty: difficulty.CAUTION,
     },
+    {
+        lead: 'Tarkin',
+        leadFull: 'Grand Moff Tarkin',
+        others: 'Appo (omicron), CX, Disguised Clone Trooper, Scorch',
+        notes: 'You do want the full complement of clones here',
+        videos: [{ url: 'https://youtu.be/j1u6kaAtakw', }],
+        difficulty: difficulty.EASY,
+        omi: true
+    }
 ]
 
 export const jabbaP4: dataType[] = [

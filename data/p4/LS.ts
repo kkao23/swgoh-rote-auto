@@ -146,5 +146,14 @@ export const jediLSP4: dataType[] = [
         notes: 'auto, all platoons required, Temple Guard required',
         videos: [{ url: 'https://youtu.be/A5hzdGVrBlY' }],
         difficulty: difficulty.EASY
+    },
+    {
+        lead: 'Kelleran Beq',
+        leadFull: 'Kelleran Beq',
+        others: 'Jocasta Nu, Shaak Ti, Depa Billaba (omicron), Temple Guard',
+        notes: 'auto, dont need platoons, very fast',
+        videos: [{ url: 'https://youtu.be/vH6YIiUsXQ4' }],
+        difficulty: difficulty.VERY_EASY,
+        omi: true
     }
 ]

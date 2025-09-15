@@ -140,6 +140,15 @@ export const mixedP1: dataType[] = [
         videos: [{ url: 'https://youtu.be/0bAtF2hqBIs' }],
         difficulty: difficulty.VERY_EASY
     },
+    {
+        lead: 'Tarkin',
+        leadFull: 'Grand Moff Tarkin',
+        others: 'Appo, CX, Disguised Clone Trooper, Scorch',
+        notes: 'Easy auto',
+        videos: [{ url: 'https://youtu.be/D9qgUFzecK0', }],
+        difficulty: difficulty.VERY_EASY,
+        omi: true
+    },
 ]
 
 export const jabbaP1: dataType[] = [

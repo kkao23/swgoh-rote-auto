@@ -121,6 +121,14 @@ export const drAphraP3: dataType[] = [
         notes: 'if no droids, auto, can occasionally 1/2',
         videos: [{ url: 'https://youtu.be/IsnUq7nxcBU' }],
         difficulty: difficulty.EASY
+    },
+    {
+        lead: 'Aphra (IPD Omicron)',
+        others: 'Darth Vader, BT1, IPD (omicron), 0-0-0',
+        notes: 'auto, expensive',
+        videos: [{ url: 'https://youtu.be/MTkMzJMayUA?si=FfDoECPNw7uALL_n' }],
+        difficulty: difficulty.VERY_EASY,
+        omi: true
     }
 ]
 
@@ -140,3 +148,4 @@ export const merrinP3: dataType[] = [
         difficulty: difficulty.EASY
     }
 ]
+

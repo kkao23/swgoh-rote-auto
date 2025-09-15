@@ -98,10 +98,11 @@ export const bottomDSP1: dataType[] = [{
     difficulty: difficulty.EASY
 },
 {
-    lead: 'Captain Enoch (omi)',
-    others: 'Death Trooper Peridia, Tie Fighter Pilot, Night Trooper, Stormtrooper',
-    notes: 'target B2, auto',
-    videos: [{ url: 'https://youtu.be/V75J-k6i40s?si=6pWLh-5BQIDC5fJ-&t=264', creator: creators.pico }],
+    lead: 'DTMG (Enoch omi)',
+    leadFull: 'Dark Trooper Moff Gideon',
+    others: 'Scout Trooper, Captain Enoch (omi), Moff Gideon, Death Trooper',
+    notes: 'auto',
+    videos: [{ url: 'https://youtu.be/I6J9XHpBIrc' }],
     difficulty: difficulty.VERY_EASY,
     omi: true,
 },

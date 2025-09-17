@@ -140,6 +140,15 @@ export const mixedP2: dataType[] = [
         videos: [{ url: 'https://youtu.be/tmWmnc0eoPU' }],
         difficulty: difficulty.EASY,
     },
+    {
+        lead: 'Tarkin',
+        leadFull: 'Grand Moff Tarkin',
+        others: 'Appo, CX, Disguised Clone Trooper, Scorch',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/XlSEmf82fu4', }],
+        difficulty: difficulty.VERY_EASY,
+        omi: true
+    },
 ]
 
 export const jabbaP2: dataType[] = [
@@ -188,5 +197,13 @@ export const youngLandoP2: dataType[] = [
         videos: [{url: 'https://youtu.be/78qD1ZKy2BQ'}],
         difficulty: difficulty.HARD,
         omi: true,
-    }
+    },
+    {
+        lead: 'Baylan (Kyle & Marrok omis)',
+        others: 'Shin, Marrok, Kyle, Young Lando',
+        notes: 'auto, pause at the end of wave 1, target iden wave 2 and auto. hope they don\'t target Marrok',
+        videos: [{ url: 'https://youtu.be/qy4IhX1vf7s' }],
+        difficulty: difficulty.NO_AUTO,
+        omi: true
+    },
 ]

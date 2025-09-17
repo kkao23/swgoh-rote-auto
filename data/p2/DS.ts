@@ -141,6 +141,15 @@ export const reekDSP2: dataType[] = [
         difficulty: difficulty.EASY,
         omi: true
     },
+    {
+        lead: 'DTMG (Enoch omi)',
+        leadFull: 'Dark Trooper Moff Gideon',
+        others: 'Scout Trooper, Captain Enoch (omi), Death Trooper, Moff Gideon',
+        notes: 'auto',
+        videos: [{url: 'https://youtu.be/NHvqhjH4klk'}],
+        difficulty: difficulty.VERY_EASY,
+        omi: true,
+    }
 ]
 
 export const nexuDSP2: dataType[] = [

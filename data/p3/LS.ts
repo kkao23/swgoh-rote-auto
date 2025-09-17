@@ -56,16 +56,16 @@ export const lsLeftP3: dataType[] = [
         others: 'POW, MQG, Shaak Ti, CUP',
         notes: 'auto, deselect targeting reticule',
         videos: [{ url: 'https://youtu.be/rUBUeI9eQQA' }],
-        difficulty: difficulty.EASY,
+        difficulty: difficulty.CAUTION,
     },
-    {
-        lead: 'GAS with QA',
-        leadFull: 'General Anakin Skywalker with Queen Amidala',
-        others: 'Rex, Echo, Fives',
-        notes: 'auto, but currently theres a bug that makes Fives taunt',
-        videos: [{ url: 'https://youtu.be/DctCHNqsOEg' }],
-        difficulty: difficulty.VERY_EASY
-    },
+    // {
+    //     lead: 'GAS with QA',
+    //     leadFull: 'General Anakin Skywalker with Queen Amidala',
+    //     others: 'Rex, Echo, Fives',
+    //     notes: 'auto, but currently theres a bug that makes Fives taunt',
+    //     videos: [{ url: 'https://youtu.be/DctCHNqsOEg' }],
+    //     difficulty: difficulty.VERY_EASY
+    // },
     {
         lead: 'Omega (omicron)',
         others: 'other Bad Batch Mercenaries',
@@ -138,14 +138,14 @@ export const lsRightP3: dataType[] = [
         difficulty: difficulty.VERY_EASY,
         omi: true,
     },
-    {
-        lead: 'GAS with QA',
-        leadFull: 'General Anakin Skywalker with Queen Amidala',
-        others: 'Rex, Echo, Fives',
-        notes: 'auto, but target Mara then Purge troopers wave 2',
-        videos: [{ url: 'https://youtu.be/DWqpQlVv0rA' }],
-        difficulty: difficulty.EASY
-    },
+    // {
+    //     lead: 'GAS with QA',
+    //     leadFull: 'General Anakin Skywalker with Queen Amidala',
+    //     others: 'Rex, Echo, Fives',
+    //     notes: 'auto, but target Mara then Purge troopers wave 2',
+    //     videos: [{ url: 'https://youtu.be/DWqpQlVv0rA' }],
+    //     difficulty: difficulty.EASY
+    // },
 ]
 
 export const sawP3: dataType[] = [

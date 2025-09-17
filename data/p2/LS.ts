@@ -181,19 +181,19 @@ export const rightLSP2: dataType[] = [
         lead: 'Omega (Mercenary)',
         leadFull: 'Omega with Bad Batch Mercenaries',
         others: 'Crosshair, Wrecker, Batcher, Hunter',
-        notes: 'omi Wrecker, 2/2 on full auto',
+        notes: 'omi Wrecker, auto but more consistent if you manually target wave 2',
         videos: [{ url: 'https://youtu.be/hssMBkkdQSk' }],
-        difficulty: difficulty.VERY_EASY,
+        difficulty: difficulty.EASY,
         omi: true
     },
-    {
-        lead: 'GAS with QA',
-        leadFull: 'General Anakin Skywalker with Queen Amidala',
-        others: 'Fives, Rex, Snips/Echo',
-        notes: 'auto, Echo is better if not platooned. Need Fives as the off tank',
-        videos: [{ url: 'https://youtu.be/eOXu2I5QuII' }],
-        difficulty: difficulty.EASY
-    },
+    // {
+    //     lead: 'GAS with QA',
+    //     leadFull: 'General Anakin Skywalker with Queen Amidala',
+    //     others: 'Fives, Rex, Snips/Echo',
+    //     notes: 'auto, Echo is better if not platooned. Need Fives as the off tank',
+    //     videos: [{ url: 'https://youtu.be/eOXu2I5QuII' }],
+    //     difficulty: difficulty.EASY
+    // },
 ]
 
 export const zeffoUnlock: dataType[] = [

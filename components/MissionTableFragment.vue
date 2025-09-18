@@ -102,18 +102,14 @@ const difficultyIcon = (item: dataType) => {
 const isMobile = useMediaQuery('(max-width: 768px)');
 
 const accordionItems = computed(() => {
-    // First, sort videos in each item: videos with creator go to the end
-    const sortedData = props.data.map(item => ({
-        ...item,
-        videos: item.videos
-            ? [...item.videos].sort((v1, v2) => {
-                const hasCreator1 = !!v1.creator;
-                const hasCreator2 = !!v2.creator;
-                if (hasCreator1 === hasCreator2) return 0;
-                return hasCreator1 ? 1 : -1;
-            })
-            : []
-    })).sort((a, b) => a.difficulty - b.difficulty);
+    // First, sort items: items with any video having a creator go to the end
+    const sortedData = [...props.data].sort((a, b) => {
+        const aHasCreatorVideo = a.videos?.some(video => video.creator);
+        const bHasCreatorVideo = b.videos?.some(video => video.creator);
+        if (aHasCreatorVideo === bHasCreatorVideo) return 0;
+        return aHasCreatorVideo ? 1 : -1;
+    }).sort((a, b) => a.difficulty - b.difficulty); // Then sort by difficulty
+
     return sortedData.map((d, index) => {
         return {
             label: !isMobile.value && d.leadFull ? d.leadFull : d.lead,

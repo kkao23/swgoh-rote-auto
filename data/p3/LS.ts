@@ -74,6 +74,15 @@ export const lsLeftP3: dataType[] = [
         difficulty: difficulty.VERY_EASY,
         omi: true,
     },
+    {
+        lead: 'Kelleran Beq',
+        leadFull: 'Kelleran Beq',
+        others: 'Jocasta Nu, Shaak Ti, Temple Guard, Depa Billaba (omicron)',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/Ez1HYwJ8aZY' }],
+        difficulty: difficulty.VERY_EASY,
+        omi: true
+    }
 ]
 
 export const lsRightP3: dataType[] = [

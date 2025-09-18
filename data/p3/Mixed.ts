@@ -194,6 +194,15 @@ export const mixedTopLeftP3: dataType[] = [
         difficulty: difficulty.VERY_EASY,
         omi: true
     },
+    {
+        lead: 'Tarkin',
+        leadFull: 'Grand Moff Tarkin',
+        others: 'Appo (omicron), CX, Disguised Clone Trooper, Scorch',
+        notes: 'Looked a bit dicey but super quick',
+        videos: [{ url: 'https://youtu.be/3ZbDFkDzkSc', }],
+        difficulty: difficulty.EASY,
+        omi: true
+    },
 ]
 
 export const mixedP3Ships: dataType[] = [

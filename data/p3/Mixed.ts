@@ -114,7 +114,7 @@ export const mixedTopLeftP3: dataType[] = [
         others: '501st Clones',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/R3LzrCTN_SU' }],
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.EASY
     },
     {
         lead: 'CLS',

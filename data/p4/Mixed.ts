@@ -45,6 +45,13 @@ export const mixedQiraP4: dataType[] = [
 
 export const mixedGenericP4: dataType[] = [
     {
+        lead: 'Leia',
+        others: 'R2, Drogan, Admiral Raddus',
+        notes: 'auto, can add a 5th rebel if you\'d like but unnecessary',
+        videos: [{ url: 'https://youtu.be/QLoZOYsI6h0' }],
+        difficulty: difficulty.VERY_EASY,
+    },
+    {
         lead: 'QA',
         leadFull: 'Queen Amidala',
         others: 'MQG, POW, GMY, Ahsoka',
@@ -80,13 +87,6 @@ export const mixedGenericP4: dataType[] = [
         notes: 'auto, can add Asajj',
         videos: [{ url: 'https://www.youtube.com/watch?v=QxQHAEs1kHs', creator: creators.egnards }],
         difficulty: difficulty.VERY_EASY
-    },
-    {
-        lead: 'Leia',
-        others: 'R2, Drogan, Han, SRP',
-        notes: 'auto, last two likely replaceable',
-        videos: [{ url: 'https://www.youtube.com/watch?v=na9zOBWrZF8', creator: creators.egnards }],
-        difficulty: difficulty.VERY_EASY,
     },
     {
         lead: 'JMK',

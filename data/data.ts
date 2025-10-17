@@ -73,7 +73,6 @@ import { jabbaP5 } from "./p5/Mixed";
 import { mixedCombatTopRightP5 } from "./p5/Mixed";
 
 import { lsGenericP5 } from "./p5/LS";
-import { lsNestP5 } from "./p5/LS";
 
 // zeffo
 import { zeffoCombat } from "./zeffo/LS";
@@ -194,7 +193,6 @@ export const data: DataType = {
         },
         ls: {
             generic: lsGenericP5,
-            nest: lsNestP5,
         }
     },
     special: {

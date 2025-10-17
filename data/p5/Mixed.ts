@@ -36,8 +36,8 @@ export const mixedFleetP5: dataType[] = [
 export const mixedCombatTopRightP5: dataType[] = [
     {
         lead: 'Ahsoka Tano',
-        others: 'Any R9s',
-        notes: 'Auto',
+        others: 'Any R9s, Fulcrum and Ezra really speed this up',
+        notes: 'Auto, target TFP then Stormtrooper Commander, leave Range Troopers for last to speed things up',
         videos: [{ url: 'https://youtu.be/OCGLZm1SJiM' }],
         difficulty: difficulty.VERY_EASY
     },
@@ -59,6 +59,13 @@ export const mixedCombatBottomLeftP5: dataType[] = [
         videos: [{ url: 'https://youtu.be/uX718augk0M' }],
         difficulty: difficulty.HARD,
         omi: true
+    },
+    {
+        lead: 'JMK',
+        others: 'GK, CAT, Snips, GAS',
+        notes: 'Auto P1 until only one enemy is left, hit box, save CAT instakill for nest in Wave 2',
+        videos: [{ url: 'https://youtu.be/3zJzzLSbT1w' }],
+        difficulty: difficulty.HARD
     }
 ];
 

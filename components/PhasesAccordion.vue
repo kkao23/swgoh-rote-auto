@@ -13,6 +13,7 @@ import P4DS from '../components/p4/P4DS.vue';
 import P4LS from '../components/p4/P4LS.vue';
 import P4Mixed from '../components/p4/P4Mixed.vue';
 import P5LS from '../components/p5/P5LS.vue';
+import P5DS from '../components/p5/P5DS.vue';
 import P5Mixed from '../components/p5/P5Mixed.vue';
 import Zeffo from '../components/zeffo/Zeffo.vue';
 import Mandalore from '../components/mandalore/Mandalore.vue';
@@ -87,7 +88,7 @@ const phases = [
             </PhaseWrapper>
         </template>
         <template #phase-5-slot>
-            <PhaseWrapper phase-number="5" :ls-component="P5LS" :mixed-component="P5Mixed"
+            <PhaseWrapper phase-number="5" :ds-component="P5DS" :ls-component="P5LS" :mixed-component="P5Mixed"
                 :ls-planet-name="'Kafrene'" :ds-planet-name="'Malachor'" :mixed-planet-name="'Vandor'">
             </PhaseWrapper>
         </template>

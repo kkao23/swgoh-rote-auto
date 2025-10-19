@@ -16,6 +16,9 @@ const alignment = 'Mixed';
         <MissionTableFragment :position="`Top Right`" :data="data.mixed.topRight" :phase="phase" :alignment="alignment" :helpUrl="`https://swgoh-rote.s3.us-east-2.amazonaws.com/swgoh_help/vandor_top_right.jpg`"></MissionTableFragment>
     </tr>
     <tr>
+        <MissionTableFragment :position="`Bottom Left`" :data="data.mixed.bottomLeft" :phase="phase" :alignment="alignment" :helpUrl="`https://swgoh-rote.s3.us-east-2.amazonaws.com/swgoh_help/vandor_bottom_left.jpg`"></MissionTableFragment>
+    </tr>
+    <tr>
         <MissionTableFragment :position="`Jabba`" :data="data.mixed.jabba" :phase="phase" :alignment="alignment"></MissionTableFragment>
     </tr>
     <tr>

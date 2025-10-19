@@ -65,7 +65,7 @@ export const mixedCombatBottomLeftP5: dataType[] = [
         others: 'GK, CAT, Snips, GAS',
         notes: 'Auto P1 until only one enemy is left, hit box, save CAT instakill for nest in Wave 2',
         videos: [{ url: 'https://youtu.be/3zJzzLSbT1w' }],
-        difficulty: difficulty.HARD
+        difficulty: difficulty.CAUTION
     }
 ];
 

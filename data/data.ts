@@ -69,10 +69,14 @@ import { dsMidRightP4 } from "./p4/DS";
 // P5
 
 import { mixedFleetP5 } from "./p5/Mixed";
+import { mixedCombatBottomLeftP5 } from "./p5/Mixed";
 import { jabbaP5 } from "./p5/Mixed";
 import { mixedCombatTopRightP5 } from "./p5/Mixed";
 
-import { lsGenericP5 } from "./p5/LS";
+import { lsBottomP5 } from "./p5/LS";
+import { lsTopLeftP5 } from "./p5/LS";
+
+import { dsBottomRightP5 } from "./p5/DS";
 
 // zeffo
 import { zeffoCombat } from "./zeffo/LS";
@@ -188,11 +192,16 @@ export const data: DataType = {
     phase5: {
         mixed: {
             topRight: mixedCombatTopRightP5,
+            bottomLeft: mixedCombatBottomLeftP5,
             jabba: jabbaP5,
             fleet: mixedFleetP5
         },
         ls: {
-            generic: lsGenericP5,
+            topLeft: lsTopLeftP5,
+            bottom: lsBottomP5,
+        },
+        ds: {
+            bottomRight: dsBottomRightP5,
         }
     },
     special: {

@@ -13,6 +13,9 @@ const alignment = 'LS';
 
 <template>
     <tr>
-        <MissionTableFragment :position="`Top Right`" :data="data.ls.generic" :phase="phase" :alignment="alignment"></MissionTableFragment>
-    </tr>
+        <MissionTableFragment :position="`Top Left`" :data="data.ls.topLeft" :phase="phase" :alignment="alignment"></MissionTableFragment>
+        </tr>
+        <tr>
+        <MissionTableFragment :position="`Bottom`" :data="data.ls.bottom" :phase="phase" :alignment="alignment"></MissionTableFragment>
+        </tr>
 </template>

@@ -28,6 +28,14 @@ export const hondoMixedP2: dataType[] = [
         difficulty: difficulty.VERY_EASY,
         omi: true,
     },
+    {
+        lead: 'Pirate King Hondo',
+        leadFull: 'Pirate King Hondo Onaka',
+        others: 'Hondo, Brutus, Vane, Silvo',
+        notes: 'easy full auto, R7+ Recommended',
+        videos: [{ url: 'https://youtu.be/M9r_x_gJlr0' }],
+        difficulty: difficulty.VERY_EASY,
+    },
 ]
 
 export const shipsMixedP2: dataType[] = [

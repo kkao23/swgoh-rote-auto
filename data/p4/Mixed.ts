@@ -150,7 +150,15 @@ export const mixedGenericP4: dataType[] = [
         videos: [{ url: 'https://youtu.be/j1u6kaAtakw', }],
         difficulty: difficulty.EASY,
         omi: true
-    }
+    },
+    {
+        lead: 'Pirate King Hondo',
+        leadFull: 'Pirate King Hondo Onaka',
+        others: 'SM-33, Hondo, Vane',
+        notes: 'easy full auto, Brutus and Silvo are good if you have them R8+',
+        videos: [{ url: 'https://youtu.be/8JaAe5LrTzE' }],
+        difficulty: difficulty.VERY_EASY,
+    },
 ]
 
 export const jabbaP4: dataType[] = [

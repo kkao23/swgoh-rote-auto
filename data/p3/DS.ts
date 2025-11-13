@@ -79,6 +79,14 @@ export const dsGenericP3: dataType[] = [
         difficulty: difficulty.VERY_EASY,
         omi: true
     },
+    {
+        lead: 'Pirate King Hondo',
+        leadFull: 'Pirate King Hondo Onaka',
+        others: 'SM-33, Brutus, Vane, Silvo',
+        notes: 'easy full auto',
+        videos: [{ url: 'https://youtu.be/40THp58CUfI' }],
+        difficulty: difficulty.VERY_EASY,
+    },
 ]
 
 export const dsEmpireP3: dataType[] = [

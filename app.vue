@@ -23,8 +23,8 @@
           variant="solid"
           title="Relic Delta Alert"
         > <template #description>
-          With the imminent release of <a class="text-blue-800 underline" href="https://forums.ea.com/blog/swgoh-game-info-hub-en/design-fireside-chat-edition/12686659">Relic Delta</a> the teams and recommendations on this page will no longer be up to date.
-          I expect the teams listed will still work, but your experiences may differ from those in the videos. Relic 5, 6 and 7 planets will no longer be updated with new teams.
+          With the release of <a class="text-blue-800 underline" href="https://forums.ea.com/blog/swgoh-game-info-hub-en/design-fireside-chat-edition/12686659">Relic Delta</a> on 11/18 some of the teams and recommendations on this page will no longer be up to date.
+          I expect the teams listed will still work, but your experiences may differ from those in the videos depending on your team's relic levels. Relic 5 and 6 planets will no longer be updated with new teams.
           </template>
       </UAlert>
       </div>

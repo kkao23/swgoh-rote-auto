@@ -10,6 +10,25 @@ export const lsTopLeftP5: dataType[] = [
         videos: [{ url: 'https://youtu.be/ofMJ0SXjdCU' }],
         difficulty: difficulty.HARD
     },
+    {
+        lead: 'Omega (Mercenary) (Omi)',
+        leadFull: 'Omega with Bad Batch Mercenaries',
+        others: 'Crosshair, Wrecker, Batcher, Hunter',
+        notes: 'easy auto with Wrecker Omi, pause auto at the beginning of wave 2. Full platoon required',
+        videos: [{ url: 'https://youtu.be/BeYMQVqnVV0' }],
+        difficulty: difficulty.EASY,
+        omi: true,
+    },
+]
+
+export const lsTopMidP5: dataType[] = [
+    {
+        lead: 'Queen Amidala',
+        others: 'POW, MQJ, Snips, CUP',
+        notes: 'auto, hope they dont kill MQG/POW',
+        videos: [{ url: 'https://youtu.be/2eC85m5HXOA' }],
+        difficulty: difficulty.EASY
+    },
 ]
 
 export const lsBottomP5: dataType[] = [

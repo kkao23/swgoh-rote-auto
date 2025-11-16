@@ -12,3 +12,15 @@ export const dsBottomRightP5: dataType[] = [
         omi: true
     },
 ]
+
+export const dsTopMidP5: dataType[] = [
+    {
+        lead: 'Tarkin',
+        leadFull: 'Grand Moff Tarkin',
+        others: 'Appo (omicron), CX, Disguised Clone Trooper, Scorch',
+        notes: 'auto, may want to target Sabine wave 2',
+        videos: [{ url: 'https://youtu.be/w23Nh5aFKJs', }],
+        difficulty: difficulty.EASY,
+        omi: true
+    },
+]

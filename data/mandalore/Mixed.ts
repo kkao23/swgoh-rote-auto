@@ -52,10 +52,10 @@ export const mandaloreGeneric: dataType[] = [
     },
     {
         lead: 'Baylan',
-        others: 'Marrok (o), Shin, Han, Boba',
-        notes: '1/2 if Marrok gets popped, use Merc instead of Boba if possible',
-        videos: [{ url: 'https://youtu.be/h8_04P6rr8Q' }],
-        difficulty: difficulty.HARD,
+        others: 'Marrok (o), Shin, L3, Qira',
+        notes: 'L3s pretaunt is good here. Pause auto to target Moff Gideon in wave 2.',
+        videos: [{ url: 'https://youtu.be/rF6NV7kLMpA' }],
+        difficulty: difficulty.CAUTION,
         omi: true
     },
     {

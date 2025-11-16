@@ -13,9 +13,18 @@ const alignment = 'LS';
 
 <template>
     <tr>
-        <MissionTableFragment :position="`Top Left`" :data="data.ls.topLeft" :phase="phase" :alignment="alignment"></MissionTableFragment>
-        </tr>
-        <tr>
-        <MissionTableFragment :position="`Bottom`" :data="data.ls.bottom" :phase="phase" :alignment="alignment"></MissionTableFragment>
-        </tr>
+        <MissionTableFragment :position="`Top Left`" :data="data.ls.topLeft" :phase="phase" :alignment="alignment"
+            :helpUrl="`https://swgoh-rote.s3.us-east-2.amazonaws.com/swgoh_help/kafrene_left.png`">
+        </MissionTableFragment>
+    </tr>
+    <tr>
+        <MissionTableFragment :position="`Top Mid`" :data="data.ls.topMid" :phase="phase" :alignment="alignment"
+            :helpUrl="`https://swgoh-rote.s3.us-east-2.amazonaws.com/swgoh_help/kafrene_top.png`">
+        </MissionTableFragment>
+    </tr>
+    <tr>
+        <MissionTableFragment :position="`Bottom`" :data="data.ls.bottom" :phase="phase" :alignment="alignment"
+            :helpUrl="`https://swgoh-rote.s3.us-east-2.amazonaws.com/swgoh_help/kafrene_bottom.png`">
+        </MissionTableFragment>
+    </tr>
 </template>

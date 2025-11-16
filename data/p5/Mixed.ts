@@ -66,7 +66,15 @@ export const mixedCombatBottomLeftP5: dataType[] = [
         notes: 'Auto P1 until only one enemy is left, hit box, save CAT instakill for nest in Wave 2',
         videos: [{ url: 'https://youtu.be/3zJzzLSbT1w' }],
         difficulty: difficulty.CAUTION
-    }
+    },
+    {
+        lead: 'Pirate King Hondo',
+        leadFull: 'Pirate King Hondo Onaka',
+        others: 'Hondo, Vane, +2',
+        notes: 'auto, the more pirates you have R9, the easier it is. You need Vane though',
+        videos: [{ url: 'https://youtu.be/zZhDqdw3PUI' }],
+        difficulty: difficulty.EASY,
+    },
 ];
 
 export const jabbaP5:dataType[] = [

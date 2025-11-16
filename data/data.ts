@@ -75,8 +75,10 @@ import { mixedCombatTopRightP5 } from "./p5/Mixed";
 
 import { lsBottomP5 } from "./p5/LS";
 import { lsTopLeftP5 } from "./p5/LS";
+import { lsTopMidP5 } from "./p5/LS";
 
 import { dsBottomRightP5 } from "./p5/DS";
+import { dsTopMidP5 } from "./p5/DS";
 
 // zeffo
 import { zeffoCombat } from "./zeffo/LS";
@@ -199,9 +201,11 @@ export const data: DataType = {
         ls: {
             topLeft: lsTopLeftP5,
             bottom: lsBottomP5,
+            topMid: lsTopMidP5,
         },
         ds: {
             bottomRight: dsBottomRightP5,
+            topMid: dsTopMidP5,
         }
     },
     special: {

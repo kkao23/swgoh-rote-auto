@@ -13,7 +13,7 @@ const alignment = 'DS';
 
 <template>
     <tr>
-        <MissionTableFragment :position="`Top Mid`" :data="data.ds.bottomRight" :phase="phase" :alignment="alignment"
+        <MissionTableFragment :position="`Top Mid`" :data="data.ds.topMid" :phase="phase" :alignment="alignment"
         :helpUrl="`https://swgoh-rote.s3.us-east-2.amazonaws.com/swgoh_help/malachor_top.png`"></MissionTableFragment>
     </tr>
     <tr>

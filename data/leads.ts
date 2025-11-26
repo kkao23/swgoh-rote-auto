@@ -285,4 +285,14 @@ export const leads:lead[] = [
     "fullName": "Pirate King Hondo Onaka",
     "aliases": ["Hondo", "PK Hondo", "GL Hondo"]
   },
+      {
+    "id": "hondo",
+    "fullName": "Pirate King Hondo Onaka",
+    "aliases": ["Hondo", "PK Hondo", "GL Hondo"]
+  },
+      {
+    "id": "maz",
+    "fullName": "Maz Kanata",
+    "aliases": ["Maz"]
+  },
 ]

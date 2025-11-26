@@ -203,6 +203,13 @@ export const mixedTopLeftP3: dataType[] = [
         difficulty: difficulty.EASY,
         omi: true
     },
+    {
+        lead: 'Maz Kanata',
+        others: 'Ithano, Quiggold, Kix, SM-33',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/NS5C8WNMKxs' }],
+        difficulty: difficulty.VERY_EASY
+    },
 ]
 
 export const mixedP3Ships: dataType[] = [

@@ -45,14 +45,14 @@ export const dsGenericP3: dataType[] = [
         others: 'GI, 7S, 5B, 8B',
         notes: 'Torture, auto, I personally have not gotten this team to work under 10 minutes',
         videos: [{ url: 'https://www.youtube.com/watch?v=7wqarjgb6x8', creator: creators.egnards }],
-        difficulty: difficulty.EASY
+        difficulty: difficulty.HARD
     },
     {
         lead: 'Trench',
         others: 'Dooku, Wat, Jango, Nute',
-        notes: 'auto',
-        videos: [{url: 'https://youtu.be/KBeqsI-Xkd0?si=TdjNlW5XNg03AkcP&t=110', creator: creators.pico}],
-        difficulty: difficulty.VERY_EASY,
+        notes: 'auto, dicey',
+        videos: [{url: 'https://youtu.be/9MoHoNzgNYw'}],
+        difficulty: difficulty.CAUTION,
     },
     {
         lead: 'Lord Vader',

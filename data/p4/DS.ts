@@ -73,3 +73,14 @@ export const dsMidRightP4: dataType[] = [
         difficulty: difficulty.NO_AUTO,
     },
 ]
+
+export const dsSortie: dataType[] = [
+        {
+        lead: 'Pirate King Hondo',
+        leadFull: 'Pirate King Hondo Onaka',
+        others: 'SM-33, Vane, Brutus, Silvo',
+        notes: 'auto, need ult and full platoons',
+        videos: [{ url: 'https://youtu.be/8HvKDJaolEU' }],
+        difficulty: difficulty.EASY,
+    },
+]

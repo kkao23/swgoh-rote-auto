@@ -65,6 +65,7 @@ import { mixedQiraP4 } from "./p4/Mixed";
 
 import { dsInqP4 } from "./p4/DS";
 import { dsMidRightP4 } from "./p4/DS";
+import { dsSortie } from "./p4/DS";
 
 // P5
 
@@ -173,6 +174,7 @@ export const data: DataType = {
         ds: {
             inqs: dsInqP4,
             midRight: dsMidRightP4,
+            sortie: dsSortie,
         },
         mixed: {
             fleet: mixedFleetP4,

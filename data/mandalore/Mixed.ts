@@ -93,7 +93,7 @@ export const mandaloreGeneric: dataType[] = [
         others: 'RH Finn, Rose, Zorii, Poe',
         notes: 'auto',
         videos: [{ url: 'https://www.youtube.com/watch?v=3OXMLd1e7PI', creator: creators.pico }],
-        difficulty: difficulty.VERY_EASY,
+        difficulty: difficulty.EASY,
         omi: true,
     },
     {
@@ -111,6 +111,14 @@ export const mandaloreGeneric: dataType[] = [
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/UaOt-HO-smQ' }],
         difficulty: difficulty.EASY
+    },
+    {
+        lead: 'Pirate King Hondo',
+        leadFull: 'Pirate King Hondo Onaka',
+        others: 'Vane, SM-33, Silvo, Brutus',
+        notes: 'auto, target Moff Gideon wave 2 to make things a bit faster',
+        videos: [{ url: 'https://youtu.be/iXiC7WhOI8U' }],
+        difficulty: difficulty.VERY_EASY,
     },
 ]
 

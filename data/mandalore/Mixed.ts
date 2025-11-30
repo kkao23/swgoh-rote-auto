@@ -120,6 +120,14 @@ export const mandaloreGeneric: dataType[] = [
         videos: [{ url: 'https://youtu.be/iXiC7WhOI8U' }],
         difficulty: difficulty.VERY_EASY,
     },
+    {
+        lead: 'SEE',
+        leadFull: 'Sith Eternal Emperor',
+        others: 'Malgus, Dooku, Bane, +1',
+        notes: 'auto, Only 1/2',
+        videos: [{ url: 'https://youtu.be/4ptGfbJBAvw' }],
+        difficulty: difficulty.HARD
+    },
 ]
 
 export const mandaloreDTMG: dataType[] = [

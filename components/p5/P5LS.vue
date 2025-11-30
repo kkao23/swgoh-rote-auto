@@ -27,4 +27,9 @@ const alignment = 'LS';
             :helpUrl="`https://swgoh-rote.s3.us-east-2.amazonaws.com/swgoh_help/kafrene_bottom.png`">
         </MissionTableFragment>
     </tr>
+    <tr>
+        <MissionTableFragment :position="`Ships`" :data="data.ls.ships" :phase="phase" :alignment="alignment"
+            >
+        </MissionTableFragment>
+    </tr>
 </template>

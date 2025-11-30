@@ -19,6 +19,13 @@ export const lsTopLeftP5: dataType[] = [
         difficulty: difficulty.EASY,
         omi: true,
     },
+    {
+        lead: 'Ahsoka Tano',
+        others: 'Ezra, Fulcrum, +2',
+        notes: '2/2 on auto, the more Spectres the better',
+        videos: [{ url: 'https://youtu.be/rKrNwQrNHw4' }],
+        difficulty: difficulty.EASY
+    }
 ]
 
 export const lsTopMidP5: dataType[] = [
@@ -28,6 +35,15 @@ export const lsTopMidP5: dataType[] = [
         notes: 'auto, hope they dont kill MQG/POW',
         videos: [{ url: 'https://youtu.be/2eC85m5HXOA' }],
         difficulty: difficulty.EASY
+    },
+    {
+        lead: 'Omega (Mercenary) (Omi)',
+        leadFull: 'Omega with Bad Batch Mercenaries',
+        others: 'Crosshair, Wrecker, Batcher, Hunter',
+        notes: 'easy auto with Wrecker Omi. Full platoon required',
+        videos: [{ url: 'https://youtu.be/GbS9hvNfB3k' }],
+        difficulty: difficulty.VERY_EASY,
+        omi: true,
     },
 ]
 
@@ -55,4 +71,14 @@ export const lsBottomP5: dataType[] = [
         videos: [{ url: 'https://youtu.be/xruQGASpTP4' }],
         difficulty: difficulty.HARD
     }
+]
+
+export const lsShipsP5: dataType[] = [
+    {
+        lead: 'Profundity',
+        others: 'MF, Outrider, Y Wing, Wedge, Biggs, Phantom, Ghost',
+        notes: 'can\'t auto. Go after Scythe, Phantom first reinforcement',
+        videos: [{ url: 'https://youtu.be/9HiGycdlf4E' }],
+        difficulty: difficulty.NO_AUTO
+    },
 ]

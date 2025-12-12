@@ -65,6 +65,7 @@ import { mixedQiraP4 } from "./p4/Mixed";
 
 import { dsInqP4 } from "./p4/DS";
 import { dsMidRightP4 } from "./p4/DS";
+import { dsSortie } from "./p4/DS";
 
 // P5
 
@@ -76,6 +77,7 @@ import { mixedCombatTopRightP5 } from "./p5/Mixed";
 import { lsBottomP5 } from "./p5/LS";
 import { lsTopLeftP5 } from "./p5/LS";
 import { lsTopMidP5 } from "./p5/LS";
+import { lsShipsP5 } from "./p5/LS";
 
 import { dsBottomRightP5 } from "./p5/DS";
 import { dsTopMidP5 } from "./p5/DS";
@@ -173,6 +175,7 @@ export const data: DataType = {
         ds: {
             inqs: dsInqP4,
             midRight: dsMidRightP4,
+            sortie: dsSortie,
         },
         mixed: {
             fleet: mixedFleetP4,
@@ -202,6 +205,7 @@ export const data: DataType = {
             topLeft: lsTopLeftP5,
             bottom: lsBottomP5,
             topMid: lsTopMidP5,
+            ships: lsShipsP5,
         },
         ds: {
             bottomRight: dsBottomRightP5,

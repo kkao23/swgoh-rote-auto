@@ -18,4 +18,7 @@ const alignment = 'DS';
     <tr>
         <MissionTableFragment :position="`Mid/Bot/Rt`" :data="data.ds.midRight" :phase="phase" :alignment="alignment" :helpUrl="`https://swgoh-rote.s3.us-east-2.amazonaws.com/swgoh_help/haven_generic.jpg`"></MissionTableFragment>
     </tr>
+    <tr>
+        <MissionTableFragment :position="`Top Left`" :data="data.ds.sortie" :phase="phase" :alignment="alignment" :helpUrl="`https://swgoh-rote.s3.us-east-2.amazonaws.com/swgoh_help/haven_sortie.jpg`"></MissionTableFragment>
+    </tr>
 </template>

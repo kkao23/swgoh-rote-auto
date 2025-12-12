@@ -72,6 +72,22 @@ export const dsMidRightP4: dataType[] = [
         videos: [{url: 'https://youtu.be/oLhPREH3EYs'}],
         difficulty: difficulty.NO_AUTO,
     },
+    {
+        lead: 'Jabba',
+        others: 'Boba Fett, Krrsantan, Bossk, +1',
+        notes: 'auto, replace Bossk and +1 with Hutt Cartel if possible',
+        videos: [{url: 'https://youtu.be/62v2RzJYplw'}],
+        difficulty: difficulty.EASY
+    },
+    {
+        lead: 'DTMG',
+        leadFull: 'Dark Trooper Moff Gideon',
+        others: 'Scout Trooper, Night Trooper, Death Trooper Peridia, Captain Enoch (omi)',
+        notes: 'auto',
+        videos: [{url: 'https://youtu.be/T8HbZSubWtI'}],
+        difficulty: difficulty.VERY_EASY,
+        omi: true,
+    }
 ]
 
 export const dsSortie: dataType[] = [

@@ -42,6 +42,13 @@ export const mixedCombatTopRightP5: dataType[] = [
         difficulty: difficulty.VERY_EASY
     },
     {
+        lead: 'Leia',
+        others: 'Drogan, R2-D2, Fulcrum, Admiral Raddus',
+        notes: 'auto, pause at the end of wave 1 to hit the box with drogan',
+        videos: [{ url: 'https://youtu.be/GdepqEwdaqw' }],
+        difficulty: difficulty.CAUTION
+    },
+    {
         lead: 'Lord Vader',
         others: 'Maul, RG, 9S, Darth Vader',
         notes: 'Auto, only 1/2',

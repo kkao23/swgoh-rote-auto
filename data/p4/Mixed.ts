@@ -41,6 +41,14 @@ export const mixedQiraP4: dataType[] = [
         videos: [{ url: 'https://youtu.be/VNDsqSv-5hE' }],
         difficulty: difficulty.EASY,
     },
+    {
+        lead: 'Pirate King Hondo',
+        leadFull: 'Pirate King Hondo Onaka',
+        others: 'Hondo, Vane',
+        notes: 'easy full auto',
+        videos: [{ url: 'https://youtu.be/lzHXRa2FHKU' }],
+        difficulty: difficulty.VERY_EASY,
+    },
 ]
 
 export const mixedGenericP4: dataType[] = [
@@ -164,9 +172,9 @@ export const mixedGenericP4: dataType[] = [
 export const jabbaP4: dataType[] = [
     {
         lead: 'Jabba',
-        others: 'Boba, Krrsantan, Skiff Lando, Booush',
-        notes: 'easy auto',
-        videos: [{ url: 'https://www.youtube.com/watch?v=HkAhZSIkrLo', creator: creators.egnards }],
+        others: 'Boba, Krrsantan, +2',
+        notes: 'Need Krrsantan, the more Hutt Cartel the better. Auto',
+        videos: [{ url: 'https://youtu.be/pljI9oJdJEo' }],
         difficulty: difficulty.VERY_EASY
     }
 ]

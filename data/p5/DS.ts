@@ -24,3 +24,14 @@ export const dsTopMidP5: dataType[] = [
         omi: true
     },
 ]
+
+export const dsLeftP5: dataType[] = [
+    {
+        lead: 'Pirate King Hondo',
+        leadFull: 'Pirate King Hondo Onaka',
+        others: 'SM-33, Vane, Hondo +1',
+        notes: 'auto, but take out fulcrum and zeb in wave 2 once they\'re down to 1 HP',
+        videos: [{ url: 'https://youtu.be/LbL5zyS8uno' }],
+        difficulty: difficulty.CAUTION,
+    },
+]

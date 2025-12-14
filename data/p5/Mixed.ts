@@ -44,9 +44,9 @@ export const mixedCombatTopRightP5: dataType[] = [
     {
         lead: 'Leia',
         others: 'Drogan, R2-D2, Fulcrum, Admiral Raddus',
-        notes: 'auto, pause at the end of wave 1 to hit the box with drogan',
+        notes: 'auto, pause at the end of wave 1 to hit the box if poss',
         videos: [{ url: 'https://youtu.be/GdepqEwdaqw' }],
-        difficulty: difficulty.CAUTION
+        difficulty: difficulty.EASY
     },
     {
         lead: 'Lord Vader',
@@ -81,6 +81,13 @@ export const mixedCombatBottomLeftP5: dataType[] = [
         notes: 'auto, the more pirates you have R9, the easier it is. You need Vane though',
         videos: [{ url: 'https://youtu.be/zZhDqdw3PUI' }],
         difficulty: difficulty.EASY,
+    },
+    {
+        lead: 'Leia',
+        others: 'Drogan, R2-D2, Fulcrum, Admiral Raddus',
+        notes: 'auto, pause at the end of wave 1 to hit the box if possible',
+        videos: [{ url: 'https://youtu.be/2_pnO482ksw' }],
+        difficulty: difficulty.EASY
     },
 ];
 

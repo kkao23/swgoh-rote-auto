@@ -81,6 +81,7 @@ import { lsShipsP5 } from "./p5/LS";
 
 import { dsBottomRightP5 } from "./p5/DS";
 import { dsTopMidP5 } from "./p5/DS";
+import { dsLeftP5 } from "./p5/DS";
 
 // zeffo
 import { zeffoCombat } from "./zeffo/LS";
@@ -210,6 +211,7 @@ export const data: DataType = {
         ds: {
             bottomRight: dsBottomRightP5,
             topMid: dsTopMidP5,
+            left: dsLeftP5,
         }
     },
     special: {

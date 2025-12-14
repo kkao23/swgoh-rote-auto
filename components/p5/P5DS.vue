@@ -20,4 +20,8 @@ const alignment = 'DS';
         <MissionTableFragment :position="`Right`" :data="data.ds.bottomRight" :phase="phase" :alignment="alignment"
         :helpUrl="`https://swgoh-rote.s3.us-east-2.amazonaws.com/swgoh_help/malachor_right.png`"></MissionTableFragment>
     </tr>
+    <tr>
+        <MissionTableFragment :position="`Left`" :data="data.ds.left" :phase="phase" :alignment="alignment"
+        :helpUrl="`https://swgoh-rote.s3.us-east-2.amazonaws.com/swgoh_help/malachor_left.png`"></MissionTableFragment>
+    </tr>
 </template>

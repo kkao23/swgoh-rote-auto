@@ -134,9 +134,9 @@ export const mandaloreDTMG: dataType[] = [
     {
         lead: 'DTMG',
         leadFull: 'Dark Trooper Moff Gideon',
-        others: 'Scout Trooper, Moff Gideon, Death Trooper, Captain Enoch (omi)',
+        others: 'Scout Trooper, Night Trooper, Death Trooper Peridea, Captain Enoch (omi)',
         notes: 'auto',
-        videos: [{url: 'https://youtu.be/NR8m5BfsnSs?si=VuJv_SnHvQIKPFd2&t=87', creator: creators.pico}],
+        videos: [{url: 'https://youtu.be/SLiK2dv_sSw'}],
         difficulty: difficulty.VERY_EASY,
         omi: true,
     }

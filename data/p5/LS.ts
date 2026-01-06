@@ -25,7 +25,14 @@ export const lsTopLeftP5: dataType[] = [
         notes: '2/2 on auto, the more Spectres the better',
         videos: [{ url: 'https://youtu.be/rKrNwQrNHw4' }],
         difficulty: difficulty.EASY
-    }
+    },
+    {
+        lead: 'JMK',
+        others: 'GK, CAT, Snips, Clone Wars Chewie',
+        notes: 'Auto, CWC Replaceable',
+        videos: [{ url: 'https://youtu.be/225Hr3xBRok' }],
+        difficulty: difficulty.EASY
+    },
 ]
 
 export const lsTopMidP5: dataType[] = [

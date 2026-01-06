@@ -54,7 +54,14 @@ export const mixedCombatTopRightP5: dataType[] = [
         notes: 'Auto, only 1/2',
         videos: [{url: 'https://youtu.be/1t_aEW7O9Zk?si=th-cDggFM7cPamGZ&t=14', creator: creators.pico}],
         difficulty: difficulty.HARD
-    }
+    },
+    {
+        lead: 'JMK',
+        others: 'GK, CAT, Snips, GAS',
+        notes: '1/2 on auto',
+        videos: [{ url: 'https://youtu.be/XNcU95MEEIs' }],
+        difficulty: difficulty.HARD
+    },
 ]
 
 export const mixedCombatBottomLeftP5: dataType[] = [

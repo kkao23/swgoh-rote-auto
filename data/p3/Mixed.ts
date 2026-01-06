@@ -105,6 +105,14 @@ export const fennecP3: dataType[] = [
         difficulty: difficulty.EASY,
         omi: true,
     },
+    {
+        lead: 'Pirate King Hondo',
+        leadFull: 'Pirate King Hondo Onaka',
+        others: 'Silvo, Hondo, Vane',
+        notes: 'easy full auto',
+        videos: [{ url: 'https://youtu.be/D6P6TlN3oic' }],
+        difficulty: difficulty.VERY_EASY,
+    },
 ]
 
 export const mixedTopLeftP3: dataType[] = [

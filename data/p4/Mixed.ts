@@ -167,6 +167,24 @@ export const mixedGenericP4: dataType[] = [
         videos: [{ url: 'https://youtu.be/8JaAe5LrTzE' }],
         difficulty: difficulty.VERY_EASY,
     },
+    {
+        lead: 'DTMG',
+        leadFull: 'Dark Trooper Moff Gideon',
+        others: 'Scout Trooper, Night Trooper, Death Trooper Peridia, Captain Enoch (omi)',
+        notes: 'auto',
+        videos: [{url: 'https://youtu.be/IvIIY5iBdbI'}],
+        difficulty: difficulty.VERY_EASY,
+        omi: true,
+    },
+    {
+        lead: 'Kelleran Beq',
+        leadFull: 'Kelleran Beq',
+        others: 'Jocasta Nu, Shaak Ti, Depa Billaba (omicron), Temple Guard',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/vH6YIiUsXQ4' }],
+        difficulty: difficulty.VERY_EASY,
+        omi: true
+    }
 ]
 
 export const jabbaP4: dataType[] = [

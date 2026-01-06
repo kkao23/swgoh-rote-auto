@@ -23,6 +23,14 @@ export const dsTopMidP5: dataType[] = [
         difficulty: difficulty.EASY,
         omi: true
     },
+    {
+        lead: 'Pirate King Hondo',
+        leadFull: 'Pirate King Hondo Onaka',
+        others: 'SM-33, Vane, Hondo +1',
+        notes: 'auto, but take out fulcrum and zeb in wave 2 once they\'re down to 1 HP',
+        videos: [{ url: 'https://youtu.be/LbL5zyS8uno' }],
+        difficulty: difficulty.VERY_EASY,
+    },
 ]
 
 export const dsLeftP5: dataType[] = [
@@ -33,5 +41,14 @@ export const dsLeftP5: dataType[] = [
         notes: 'auto, but take out fulcrum and zeb in wave 2 once they\'re down to 1 HP',
         videos: [{ url: 'https://youtu.be/LbL5zyS8uno' }],
         difficulty: difficulty.CAUTION,
+    },
+    {
+        lead: 'Tarkin',
+        leadFull: 'Grand Moff Tarkin',
+        others: 'Appo, CX, Disguised Clone Trooper, Scorch',
+        notes: '1/2 on auto',
+        videos: [{ url: 'https://youtu.be/DgJ-xZk7ttA', }],
+        difficulty: difficulty.HARD,
+        omi: true
     },
 ]

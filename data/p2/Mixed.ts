@@ -157,6 +157,14 @@ export const mixedP2: dataType[] = [
         difficulty: difficulty.VERY_EASY,
         omi: true
     },
+    {
+        lead: 'The Stranger',
+        leadFull: 'The Stranger',
+        others: 'Starkiller, Malicos, Scavenger Rey, Plo Koon',
+        notes: 'full auto, last two replaceable',
+        videos: [{ url: 'https://youtu.be/jlF8EHzwTck' }],
+        difficulty: difficulty.VERY_EASY,
+    },
 ]
 
 export const jabbaP2: dataType[] = [

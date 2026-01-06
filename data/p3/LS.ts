@@ -147,6 +147,15 @@ export const lsRightP3: dataType[] = [
         difficulty: difficulty.VERY_EASY,
         omi: true,
     },
+    {
+        lead: 'JMMW',
+        leadFull: 'Jedi Master Mace Windu',
+        others: 'Jocasta Nu, Kelleran Beq, Depa Billaba (omicron), Temple Guard',
+        notes: 'auto, may want to focus down mara wave 2',
+        videos: [{ url: 'https://youtu.be/OKNAs62Omco' }],
+        difficulty: difficulty.EASY,
+        omi: true
+    },
     // {
     //     lead: 'GAS with QA',
     //     leadFull: 'General Anakin Skywalker with Queen Amidala',

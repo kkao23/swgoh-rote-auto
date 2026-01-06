@@ -128,6 +128,15 @@ export const mandaloreGeneric: dataType[] = [
         videos: [{ url: 'https://youtu.be/4ptGfbJBAvw' }],
         difficulty: difficulty.HARD
     },
+    {
+        lead: 'JMMW',
+        leadFull: 'Jedi Master Mace Windu',
+        others: 'Jocasta Nu, Kelleran Beq, Depa Billaba (omicron), Temple Guard',
+        notes: 'auto with all platoons',
+        videos: [{ url: 'https://youtu.be/X8s6QTd1LMY' }],
+        difficulty: difficulty.EASY,
+        omi: true
+    },
 ]
 
 export const mandaloreDTMG: dataType[] = [

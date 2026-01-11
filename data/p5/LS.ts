@@ -28,9 +28,9 @@ export const lsTopLeftP5: dataType[] = [
     },
     {
         lead: 'JMK',
-        others: 'GK, CAT, Snips, Clone Wars Chewie',
+        others: 'GK, CAT, Snips, +1 Galactic Republic',
         notes: 'Auto, CWC Replaceable',
-        videos: [{ url: 'https://youtu.be/225Hr3xBRok' }],
+        videos: [{ url: 'https://youtu.be/225Hr3xBRok' }, { url: 'https://youtu.be/8YPqRLYrLZM' }],
         difficulty: difficulty.EASY
     },
 ]
@@ -51,6 +51,13 @@ export const lsTopMidP5: dataType[] = [
         videos: [{ url: 'https://youtu.be/GbS9hvNfB3k' }],
         difficulty: difficulty.VERY_EASY,
         omi: true,
+    },
+    {
+        lead: 'Leia',
+        others: 'Drogan, R2-D2, Admiral Raddus, +1',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/czbZV5oFunQ' }],
+        difficulty: difficulty.VERY_EASY
     },
 ]
 
@@ -74,9 +81,16 @@ export const lsBottomP5: dataType[] = [
     {
         lead: 'Ahsoka Tano (randoms)',
         others: 'Ezra, random R9',
-        notes: '1/2 on auto, prob need more Spectres',
+        notes: '1/2 on auto, need more Spectres to 2/2',
         videos: [{ url: 'https://youtu.be/xruQGASpTP4' }],
         difficulty: difficulty.HARD
+    },
+    {
+        lead: 'Ahsoka Tano (spectres)',
+        others: 'Ezra, Sabine, Hera, Fulcrum',
+        notes: 'auto but need some luck on who takes the opening mass assist',
+        videos: [{ url: 'https://youtu.be/Q9fG6WCUjE4' }],
+        difficulty: difficulty.CAUTION
     }
 ]
 

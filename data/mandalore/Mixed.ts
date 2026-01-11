@@ -31,6 +31,13 @@ export const mandaloreFleets: dataType[] = [
         videos: [{ url: 'https://youtu.be/kyCQ6JXDJvM' }],
         difficulty: difficulty.EASY
     },
+    {
+        lead: 'Executrix',
+        others: 'Scythe, Tie Adv start, Tie interceptor, Tie Defender, Tie Fighter/Bomber, Emp Shuttle',
+        notes: 'no auto until Anakin and Marauder are down, go after Anakin first and bring out Defender first then go after Marauder',
+        videos: [{ url: 'https://youtu.be/RKTzZS5tjR8' }],
+        difficulty: difficulty.NO_AUTO
+    },
 ]
 
 export const mandaloreGeneric: dataType[] = [

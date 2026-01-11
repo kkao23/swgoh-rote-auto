@@ -11,6 +11,14 @@ export const dsBottomRightP5: dataType[] = [
         difficulty: difficulty.HARD,
         omi: true
     },
+    {
+        lead: 'Pirate King Hondo',
+        leadFull: 'Pirate King Hondo Onaka',
+        others: 'SM-33, Vane, Hondo +1',
+        notes: '1/2 on auto',
+        videos: [{ url: 'https://youtu.be/yALIZ_CCXhc' }],
+        difficulty: difficulty.HARD,
+    },
 ]
 
 export const dsTopMidP5: dataType[] = [

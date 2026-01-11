@@ -218,6 +218,14 @@ export const mixedTopLeftP3: dataType[] = [
         videos: [{ url: 'https://youtu.be/NS5C8WNMKxs' }],
         difficulty: difficulty.VERY_EASY
     },
+    {
+        lead: 'The Stranger',
+        leadFull: 'The Stranger',
+        others: 'Starkiller, Malicos, Scavenger Rey, Plo Koon',
+        notes: 'full auto, last two replaceable',
+        videos: [{ url: 'https://youtu.be/f7t81oDKdu0' }],
+        difficulty: difficulty.VERY_EASY,
+    },
 ]
 
 export const mixedP3Ships: dataType[] = [

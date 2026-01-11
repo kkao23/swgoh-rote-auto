@@ -91,7 +91,7 @@ export const dsMidRightP4: dataType[] = [
 ]
 
 export const dsSortie: dataType[] = [
-        {
+    {
         lead: 'Pirate King Hondo',
         leadFull: 'Pirate King Hondo Onaka',
         others: 'SM-33, Vane, Brutus, Silvo',
@@ -99,4 +99,13 @@ export const dsSortie: dataType[] = [
         videos: [{ url: 'https://youtu.be/8HvKDJaolEU' }],
         difficulty: difficulty.EASY,
     },
+    {
+        lead: 'DTMG',
+        leadFull: 'Dark Trooper Moff Gideon',
+        others: 'Scout Trooper, Night Trooper, Death Trooper Peridia, Captain Enoch (omi)',
+        notes: 'auto',
+        videos: [{url: 'https://youtu.be/MAYTTRm1l-c'}],
+        difficulty: difficulty.VERY_EASY,
+        omi: true,
+    }
 ]

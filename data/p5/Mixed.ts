@@ -62,6 +62,14 @@ export const mixedCombatTopRightP5: dataType[] = [
         videos: [{ url: 'https://youtu.be/XNcU95MEEIs' }],
         difficulty: difficulty.HARD
     },
+    {
+        lead: 'Pirate King Hondo',
+        leadFull: 'Pirate King Hondo Onaka',
+        others: 'Hondo, Vane, +2',
+        notes: 'auto, the more pirates you have R9, the easier it is. You need Vane though. Very laggy',
+        videos: [{ url: 'https://youtu.be/gXpYAR1XrUQ' }],
+        difficulty: difficulty.EASY,
+    },
 ]
 
 export const mixedCombatBottomLeftP5: dataType[] = [
@@ -96,6 +104,15 @@ export const mixedCombatBottomLeftP5: dataType[] = [
         videos: [{ url: 'https://youtu.be/2_pnO482ksw' }],
         difficulty: difficulty.EASY
     },
+    {
+        lead: 'LV',
+        leadFull: 'Lord Vader',
+        others: 'Appo (omicron), DCT, CX-2, Scorch',
+        notes: 'Easy full auto',
+        videos: [{ url: 'https://youtu.be/uKpZmmIcmT4' }],
+        difficulty: difficulty.EASY,
+        omi: true,
+    }
 ];
 
 export const jabbaP5:dataType[] = [

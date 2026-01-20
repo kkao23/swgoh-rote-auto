@@ -7,8 +7,15 @@ export const shipsLSP2: dataType[] = [
         lead: 'Profundity',
         others: 'HMF, Outrider, Y wing, Phantom, Ghost, Biggs, Wedge',
         notes: 'target scythe, auto',
-        videos: [{ url: 'https://youtu.be/dD9Eey116EY' }],
+        videos: [{ url: 'https://youtu.be/CkHBVQJmZtk' }],
         difficulty: difficulty.VERY_EASY
+    },
+    {
+        lead: 'Profundity (R1, No MF)',
+        others: 'Outrider, Y wing, Ghost, Rogue 1, Phantom',
+        notes: 'target scythe, auto',
+        videos: [{ url: 'https://youtu.be/dD9Eey116EY' }],
+        difficulty: difficulty.EASY
     }
 ]
 

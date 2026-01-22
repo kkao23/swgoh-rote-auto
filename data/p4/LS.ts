@@ -22,7 +22,7 @@ export const lsShipsP4: dataType[] = [
         others: 'Rey MF, Poe XWing, Res Bomber, Comeuppance, Res X Wing',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/drEhB7NLcZU' }],
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.EASY
     },
     {
         lead: 'Home One',

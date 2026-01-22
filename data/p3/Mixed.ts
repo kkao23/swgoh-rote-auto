@@ -226,6 +226,14 @@ export const mixedTopLeftP3: dataType[] = [
         videos: [{ url: 'https://youtu.be/f7t81oDKdu0' }],
         difficulty: difficulty.VERY_EASY,
     },
+    {
+        lead: 'Pirate King Hondo',
+        leadFull: 'Pirate King Hondo Onaka',
+        others: 'Silvo, Hondo, Vane, Brutus',
+        notes: 'easy full auto',
+        videos: [{ url: 'https://youtu.be/XnWuowuHdZY' }],
+        difficulty: difficulty.VERY_EASY,
+    },
 ]
 
 export const mixedP3Ships: dataType[] = [

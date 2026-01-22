@@ -25,7 +25,7 @@ const isAlertOpen = ref(false)
           icon="i-heroicons-information-circle"
           color="blue"
           variant="soft"
-          label="Relic Delta Alert"
+          label="Relic Delta Notice"
           block
           @click="isAlertOpen = true"
         />
@@ -34,7 +34,7 @@ const isAlertOpen = ref(false)
           icon="i-heroicons-information-circle"
           color="blue"
           variant="soft"
-          title="Relic Delta Alert"
+          title="Relic Delta Notice"
           :close-button="{ icon: 'i-heroicons-chevron-up', color: 'gray', variant: 'link', padded: false }"
           @close="isAlertOpen = false"
         > <template #description>

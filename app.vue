@@ -1,3 +1,6 @@
+<script setup lang="ts">
+const isAlertOpen = ref(false)
+</script>
 <template>
   <UApp>
     <div class="bg-color flex flex-col min-h-[100dvh] pt-8">
@@ -17,14 +20,27 @@
         </div>
       </div>
       <div class="mx-4 mb-6">
+        <UButton
+          v-if="!isAlertOpen"
+          icon="i-heroicons-information-circle"
+          color="blue"
+          variant="soft"
+          label="Relic Delta Alert"
+          block
+          @click="isAlertOpen = true"
+        />
         <UAlert
-          icon="i-heroicons-exclamation-triangle"
-          color="red"
-          variant="solid"
+          v-else
+          icon="i-heroicons-information-circle"
+          color="blue"
+          variant="soft"
           title="Relic Delta Alert"
+          :close-button="{ icon: 'i-heroicons-chevron-up', color: 'gray', variant: 'link', padded: false }"
+          @close="isAlertOpen = false"
         > <template #description>
-          With the release of <a class="text-blue-800 underline" href="https://forums.ea.com/blog/swgoh-game-info-hub-en/design-fireside-chat-edition/12686659">Relic Delta</a> on 11/18 some of the teams and recommendations on this page will no longer be up to date.
-          I expect the teams listed will still work, but your experiences may differ from those in the videos depending on your team's relic levels. Relic 5 and 6 planets will no longer be updated with new teams.
+          <span class="text-gray-900">
+            With the release of <a class="text-blue-800 underline" href="https://forums.ea.com/blog/swgoh-game-info-hub-en/design-fireside-chat-edition/12686659">Relic Delta</a> on 11/18 your experiences may differ from those in the videos depending on your team's relic levels. Relic 5 and 6 planets will no longer be updated with new teams for ground battles, as a Relic delta of 3+ provides too much variance in results between rosters.
+          </span>
           </template>
       </UAlert>
       </div>

@@ -184,7 +184,15 @@ export const mixedGenericP4: dataType[] = [
         videos: [{ url: 'https://youtu.be/vH6YIiUsXQ4' }],
         difficulty: difficulty.VERY_EASY,
         omi: true
-    }
+    },
+    {
+        lead: 'The Stranger',
+        leadFull: 'The Stranger',
+        others: 'Starkiller, Malicos, Scavenger Rey, Plo Koon',
+        notes: 'full auto, last two replaceable, a bit dicey',
+        videos: [{ url: 'https://youtu.be/DeCVAVWrbR8' }],
+        difficulty: difficulty.EASY,
+    },
 ]
 
 export const jabbaP4: dataType[] = [
@@ -211,5 +219,12 @@ export const mixedFleetP4: dataType[] = [
         notes: 'very difficult',
         videos: [{ url: 'https://youtu.be/kx9p09Z4DM0' }],
         difficulty: difficulty.NO_AUTO
+    },
+    {
+        lead: 'Profundity (Rogue One)',
+        others: 'Outrider, Ghost, Y wing starting, Rogue one, Phantom in reinforcements. Millennium Falcon is good if you have it',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/czrI8wjl3UY' }],
+        difficulty: difficulty.VERY_EASY
     },
 ]

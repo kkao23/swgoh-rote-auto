@@ -25,11 +25,18 @@ export const lsShipsP4: dataType[] = [
         difficulty: difficulty.EASY
     },
     {
-        lead: 'Home One',
+        lead: 'Home One (MF)',
         others: 'MF, Y Wing, Ravens Claw, Outrider, Phantom, Ghost, Cassian',
         notes: 'auto, Dont use Ghost if required in Mixed',
         videos: [{ url: 'https://youtu.be/67erqo3zyvA' }],
         difficulty: difficulty.VERY_EASY
+    },
+    {
+        lead: 'Home One (B wing)',
+        others: 'Biggs, Bistan and Ravens Claw starting, B wing, Cassian and Wedge in reinforcements',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/0PAH1s4Umfs' }],
+        difficulty: difficulty.EASY
     },
 ]
 

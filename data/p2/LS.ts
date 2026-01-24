@@ -1,6 +1,6 @@
 import { type data as dataType } from "~/models/data";
 import { creators } from "~/models/creators";
-import { difficulty } from "~/models/data";
+import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const shipsLSP2: dataType[] = [
     {
@@ -9,6 +9,8 @@ export const shipsLSP2: dataType[] = [
         notes: 'target scythe, auto',
         videos: [{ url: 'https://youtu.be/CkHBVQJmZtk' }],
         difficulty: difficulty.CAUTION,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.TARGET_START],
         targeted: true
     },
     {
@@ -17,6 +19,8 @@ export const shipsLSP2: dataType[] = [
         notes: 'target scythe, auto',
         videos: [{ url: 'https://youtu.be/dD9Eey116EY' }],
         difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.TARGET_START],
         targeted: true
     }
 ]
@@ -27,8 +31,10 @@ export const jediLSP2: dataType[] = [
         leadFull: 'Jedi Master Luke with Ezra',
         others: 'Ezra exile, JKL, Kyle Katarn, Shaak Ti',
         notes: 'auto with KK omi',
-        videos: [{ url: 'https://youtu.be/wom3RZrx9VQ' }, { url: 'https://www.youtube.com/watch?v=KzqvGPmEMqI', creator: creators.egnards }],
+        videos: [{ url: 'https://youtu.be/wom3RZrx9VQ' }],
         difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
         omi: true,
     },
     {
@@ -37,7 +43,9 @@ export const jediLSP2: dataType[] = [
         others: 'Shaak, Ahsoka, Ezra exile, GK',
         notes: 'auto, long, not reliable 2/2',
         videos: [{ url: 'https://youtu.be/_0J9LtUwj4U' }],
-        difficulty: difficulty.CAUTION
+        difficulty: difficulty.CAUTION,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'JML (Ezra)',
@@ -46,6 +54,8 @@ export const jediLSP2: dataType[] = [
         notes: 'auto, I had Bastila, JKA and Plo and it was close at the end. Use better jedi for more consistency',
         videos: [{ url: 'https://youtu.be/d5uJfXLjlvc' }],
         difficulty: difficulty.EASY,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.AUTO],
     },
     {
         lead: 'JKL (Ezra)',
@@ -54,6 +64,8 @@ export const jediLSP2: dataType[] = [
         notes: 'deselect reticule, auto with KK omi',
         videos: [{ url: 'https://youtu.be/eggFQcIom2E' }],
         difficulty: difficulty.EASY,
+        successRate: successRate.NINETY_PERCENT,
+        interactionType: [interactionType.TARGET_START],
         omi: true,
     },
     {
@@ -63,6 +75,8 @@ export const jediLSP2: dataType[] = [
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/SPL5FC0Qdcc' }],
         difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
         omi: true
     }
 ]
@@ -74,7 +88,9 @@ export const leftLSP2: dataType[] = [
         others: 'Rey, Paz, Beskar Mando, IG12',
         notes: 'not reliable on auto, only 1/2',
         videos: [{ url: 'https://youtu.be/W_AfGpB5RxY' }],
-        difficulty: difficulty.HARD
+        difficulty: difficulty.HARD,
+        successRate: successRate.FIFTY_FIFTY,
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Boss Nass',
@@ -82,6 +98,8 @@ export const leftLSP2: dataType[] = [
         notes: 'easy auto with Tarpals Omi',
         videos: [{ url: 'https://youtu.be/2epBiIcFaG0' }],
         difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
         omi: true
     },
     {
@@ -89,7 +107,9 @@ export const leftLSP2: dataType[] = [
         others: 'Drogan, R2, Han, Chewie',
         notes: 'auto, last two replaceable, can occasionally get unlucky if Leia < R8',
         videos: [{ url: 'https://youtu.be/fFO75yKREfA' }],
-        difficulty: difficulty.EASY
+        difficulty: difficulty.EASY,
+        successRate: successRate.NINETY_PERCENT,
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Finn (omi)',
@@ -97,6 +117,8 @@ export const leftLSP2: dataType[] = [
         notes: 'auto',
         videos: [{url: 'https://youtu.be/-T5DUTDHm6Y?si=enslsLffHD2qyfnW&t=381', creator: creators.pico}],
         difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
         omi: true,
     },
     {
@@ -106,6 +128,8 @@ export const leftLSP2: dataType[] = [
         notes: 'auto, deselect targeting reticule, need good mods on QA to get decoy out first',
         videos: [{ url: 'https://youtu.be/-4mjKaoesMs' }],
         difficulty: difficulty.CAUTION,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.TARGET_START],
         targeted: true
     },
     {
@@ -113,7 +137,9 @@ export const leftLSP2: dataType[] = [
         others: 'Padawan Sabine, Huyang, Fulcrum, Hera',
         notes: 'auto, can save Ezra for Jedi mission',
         videos: [{ url: 'https://youtu.be/5nRShbbHbAI' }],
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'JMK',
@@ -122,6 +148,8 @@ export const leftLSP2: dataType[] = [
         notes: 'Deselect reticule. Need to do targeting. Target same enemy to reduce max health',
         videos: [{ url: 'https://youtu.be/IuyL502QQJo' }],
         difficulty: difficulty.CAUTION,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.TARGET_START],
         targeted: true
     },
     {
@@ -131,6 +159,8 @@ export const leftLSP2: dataType[] = [
         notes: 'omi Wrecker, 2/2 on full auto',
         videos: [{ url: 'https://youtu.be/i6NewbYrjqU' }],
         difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
         omi: true
     }
 ]
@@ -141,7 +171,9 @@ export const rightLSP2: dataType[] = [
         others: 'Drogan, R2, Baze, Capt Rex',
         notes: 'auto, last two replaceable, can occasionally get unlucky',
         videos: [{ url: 'https://youtu.be/Od4-cr8woO8' }],
-        difficulty: difficulty.EASY
+        difficulty: difficulty.EASY,
+        successRate: successRate.NINETY_PERCENT,
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Saw',
@@ -149,13 +181,17 @@ export const rightLSP2: dataType[] = [
         notes: 'only 1/2 auto',
         videos: [{ url: 'https://youtu.be/jX-X3SfQGUI' }],
         difficulty: difficulty.HARD,
+        successRate: successRate.FIFTY_FIFTY,
+        interactionType: [interactionType.AUTO],
         omi: true
     }, {
         lead: 'Ahsoka Tano',
         others: 'Padawan Sabine, Huyang, Fulcrum, +any',
         notes: 'auto, use Hera if available, can save Ezra for Jedi mission',
         videos: [{ url: 'https://youtu.be/aP8-BIqw0jk' }],
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'JMK',
@@ -163,7 +199,9 @@ export const rightLSP2: dataType[] = [
         others: 'Snips, GK, Padme, CAT',
         notes: 'only 1/2 on auto. Deselect reticule',
         videos: [{ url: 'https://youtu.be/pYalwvB22qo' }],
-        difficulty: difficulty.HARD
+        difficulty: difficulty.HARD,
+        successRate: successRate.FIFTY_FIFTY,
+        interactionType: [interactionType.TARGET_START]
     },
     {
         lead: 'Boss Nass',
@@ -171,6 +209,8 @@ export const rightLSP2: dataType[] = [
         notes: 'easy auto with Tarpals Omi',
         videos: [{ url: 'https://youtu.be/AwPI5dywqAQ' }],
         difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
         omi: true
     },
     {
@@ -180,6 +220,8 @@ export const rightLSP2: dataType[] = [
         notes: 'auto, deselect targeting reticule, need good mods on QA to get decoy out first',
         videos: [{ url: 'https://youtu.be/k1SV2V_ODjc' }],
         difficulty: difficulty.CAUTION,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.TARGET_START],
         targeted: true
     },
     {
@@ -187,7 +229,9 @@ export const rightLSP2: dataType[] = [
         others: 'other Bad Batch Mercenaries',
         notes: '1/2 on auto (no omi)',
         videos: [{ url: 'https://youtu.be/Mnzx15JilpQ' }],
-        difficulty: difficulty.HARD
+        difficulty: difficulty.HARD,
+        successRate: successRate.FIFTY_FIFTY,
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Omega (Mercenary)',
@@ -196,6 +240,8 @@ export const rightLSP2: dataType[] = [
         notes: 'omi Wrecker, auto but more consistent if you manually target wave 2',
         videos: [{ url: 'https://youtu.be/hssMBkkdQSk' }],
         difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.PAUSE_WAVE2],
         omi: true,
         targeted: true
     },
@@ -216,6 +262,8 @@ export const zeffoUnlock: dataType[] = [
         notes: 'Two non lead omis on Cal. The white whale of auto',
         videos: [{ url: 'https://youtu.be/Ad_cJiVLLY0' }],
         difficulty: difficulty.NO_AUTO,
+        successRate: successRate.NINETY_PERCENT,
+        interactionType: [interactionType.MANUAL],
         omi: true
     }
 ]

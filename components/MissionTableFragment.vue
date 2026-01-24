@@ -1,10 +1,10 @@
 <script setup lang="ts">
 import { useMediaQuery } from '@vueuse/core';
 import { type data as dataType } from './../models/data';
-import { difficulty } from './../models/data';
+import { difficulty, successRate, interactionType } from './../models/data';
 import { creatorMap } from '~/models/creators';
 import { useRouter, useRoute } from 'vue-router';
-import { nextTick, watch, computed } from 'vue'; // Ensure computed is imported
+import { nextTick, watch, computed } from 'vue';
 
 const props = defineProps({
     special: Boolean,
@@ -28,14 +28,9 @@ const isHelpModalOpen = ref(false);
 const router = useRouter();
 const route = useRoute();
 
-// Reactive variable to store the indices of currently open accordion items
-// This will still be used for user interaction with the accordion after initial load
 const openAccordionIndices = ref<number[]>([]); 
-
-// Reactive variable to store the dataIndex from the URL for initial open state
 const initialDataIndexFromUrl = ref<number | null>(null);
 
-// Watch for changes in route query parameters to trigger modal open and set initialDataIndex
 watchEffect(() => {
     if (route.query.phase === props.phase &&
         route.query.alignment === props.alignment &&
@@ -43,39 +38,30 @@ watchEffect(() => {
         const dataIndex = parseInt(route.query.dataIndex as string);
         if (!isNaN(dataIndex) && dataIndex >= 0 && props.data && dataIndex < props.data.length) {
             localIsModalOpen.value = true;
-            initialDataIndexFromUrl.value = dataIndex; // Set the index from URL
+            initialDataIndexFromUrl.value = dataIndex;
         } else {
-            // If no valid dataIndex in URL, set to null, which will trigger defaultOpen for index 0
             initialDataIndexFromUrl.value = null; 
         }
     } else {
-        // If props don't match, reset initialDataIndexFromUrl to null
         initialDataIndexFromUrl.value = null; 
     }
 });
 
-// Watch for localIsModalOpen to become true and initialDataIndexFromUrl to be set
-// This ensures the accordion is opened after the modal is rendered.
 watch(localIsModalOpen, (isOpen) => {
     if (isOpen && initialDataIndexFromUrl.value !== null) {
         nextTick(() => {
-            // Set openAccordionIndices to trigger the v-model update for UAccordion
-            // This is still useful for programmatic control after initial load.
             openAccordionIndices.value = [initialDataIndexFromUrl.value as number];
         });
     } else if (isOpen && initialDataIndexFromUrl.value === null) {
-        // If modal opens and no specific index is requested, open the first item by default
         nextTick(() => {
             openAccordionIndices.value = [0];
         });
     }
     else if (!isOpen) {
-        // Optionally clear openAccordionIndices when modal closes
         openAccordionIndices.value = [];
-        initialDataIndexFromUrl.value = null; // Also clear the initial index
+        initialDataIndexFromUrl.value = null;
     }
 });
-
 
 const difficultyColor = (item: dataType) => {
     switch (item.difficulty) {
@@ -99,16 +85,106 @@ const difficultyIcon = (item: dataType) => {
     }
 }
 
+// Success Rate Badge Config
+const successRateBadge = (rate?: string) => {
+    switch (rate) {
+        case successRate.CONSISTENT:
+            return { icon: 'i-heroicons-check-circle-solid', color: 'text-green-500', tooltip: 'Consistent 2/2 waves (100%)' };
+        case successRate.NINETY_PERCENT:
+            return { icon: 'i-heroicons-hand-thumb-up-solid', color: 'text-blue-400', tooltip: 'Very reliable (~90%)' };
+        case successRate.USUALLY:
+            return { icon: 'i-heroicons-exclamation-triangle-solid', color: 'text-yellow-500', tooltip: 'Usually works (60-80%)' };
+        case successRate.FIFTY_FIFTY:
+            return { icon: 'i-heroicons-minus-circle-solid', color: 'text-orange-500', tooltip: '50/50 - Consistent 1/2, sometimes 2/2' };
+        case successRate.UNRELIABLE:
+            return { icon: 'i-heroicons-x-circle-solid', color: 'text-red-500', tooltip: 'Unreliable or cannot auto' };
+        default:
+            return null;
+    }
+}
+
+// Interaction Type Badge Config (single type)
+const interactionBadge = (type: string) => {
+    switch (type) {
+        case interactionType.TARGET_START:
+            return { icon: 'i-heroicons-cursor-arrow-rays', color: 'text-blue-400', tooltip: 'Target at battle start' };
+        case interactionType.PAUSE_WAVE2:
+            return { icon: 'i-heroicons-pause-circle', color: 'text-purple-400', tooltip: 'Pause at wave 2' };
+        case interactionType.MANUAL:
+            return { icon: 'i-heroicons-hand-raised', color: 'text-red-400', tooltip: 'Manual play required' };
+        case interactionType.AUTO:
+        default:
+            return null; // Pure auto, no badge needed
+    }
+}
+
+// Get all interaction badges for an array of types
+const interactionBadges = (types?: string[]) => {
+    if (!types || types.length === 0) return [];
+    return types.map(type => interactionBadge(type)).filter(badge => badge !== null);
+}
+
+// Get numeric value for success rate (for sorting)
+const successRateValue = (rate?: string): number => {
+    switch (rate) {
+        case successRate.CONSISTENT: return 0;
+        case successRate.NINETY_PERCENT: return 1;
+        case successRate.USUALLY: return 2;
+        case successRate.FIFTY_FIFTY: return 3;
+        case successRate.UNRELIABLE: return 4;
+        default: return 5; // Fallback for missions without successRate
+    }
+}
+
+// Get interaction complexity score (for sorting)
+const interactionComplexity = (types?: string[]): number => {
+    if (!types || types.length === 0) return 0;
+    
+    // Count non-auto interactions
+    const nonAutoCount = types.filter(t => t !== interactionType.AUTO).length;
+    
+    // Weight by type: manual is most complex, then pause, then target
+    let complexity = 0;
+    types.forEach(type => {
+        switch (type) {
+            case interactionType.MANUAL: complexity += 10; break;
+            case interactionType.PAUSE_WAVE2: complexity += 5; break;
+            case interactionType.TARGET_START: complexity += 3; break;
+            case interactionType.AUTO: complexity += 0; break;
+        }
+    });
+    
+    return complexity;
+}
+
 const isMobile = useMediaQuery('(max-width: 768px)');
 
 const accordionItems = computed(() => {
-    // First, sort items: items with any video having a creator go to the end
     const sortedData = [...props.data].sort((a, b) => {
+        // First: Sort by creator videos (non-creator first)
         const aHasCreatorVideo = a.videos?.some(video => video.creator);
         const bHasCreatorVideo = b.videos?.some(video => video.creator);
-        if (aHasCreatorVideo === bHasCreatorVideo) return 0;
-        return aHasCreatorVideo ? 1 : -1;
-    }).sort((a, b) => a.difficulty - b.difficulty); // Then sort by difficulty
+        if (aHasCreatorVideo !== bHasCreatorVideo) {
+            return aHasCreatorVideo ? 1 : -1;
+        }
+        
+        // Second: Sort by success rate (better success first)
+        const aSuccessValue = successRateValue(a.successRate);
+        const bSuccessValue = successRateValue(b.successRate);
+        if (aSuccessValue !== bSuccessValue) {
+            return aSuccessValue - bSuccessValue;
+        }
+        
+        // Third: Sort by interaction complexity (simpler first)
+        const aComplexity = interactionComplexity(a.interactionType);
+        const bComplexity = interactionComplexity(b.interactionType);
+        if (aComplexity !== bComplexity) {
+            return aComplexity - bComplexity;
+        }
+        
+        // Fourth: Fallback to old difficulty for missions without badges
+        return a.difficulty - b.difficulty;
+    });
 
     return sortedData.map((d, index) => {
         return {
@@ -120,14 +196,13 @@ const accordionItems = computed(() => {
                 difficulty: d.difficulty,
                 omi: d.omi,
                 targeted: d.targeted,
+                successRate: d.successRate,
+                interactionType: d.interactionType,
             },
-            // Set defaultOpen based on initialDataIndexFromUrl for initial page load
-            // If initialDataIndexFromUrl is null, default to opening the first item (index 0)
             defaultOpen: initialDataIndexFromUrl.value !== null ? initialDataIndexFromUrl.value === index : index === 0,
         }
     });
 });
-
 
 const creatorMapLocal: { [key: string]: string } = creatorMap;
 
@@ -182,23 +257,61 @@ async function showToast(itemIndex: number) {
                             @click="localIsModalOpen = false" />
                     </div>
                 </template>
-                <!-- Bind v-model to openAccordionIndices to track open items -->
                 <UAccordion :items="accordionItems" v-model="openAccordionIndices">
                     <template #default="{ item, index, open }">
                         <UButton
                             class="focus:outline-none focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 flex-shrink-0 font-medium rounded-md text-sm gap-x-1.5 px-2.5 py-1.5 text-primary-500 dark:text-primary-400 bg-primary-50 hover:bg-primary-100 disabled:bg-primary-50 aria-disabled:bg-primary-50 dark:bg-primary-950 dark:hover:bg-primary-900 dark:disabled:bg-primary-950 dark:aria-disabled:bg-primary-950 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400 inline-flex items-center mb-1.5 w-full"
                             :ui="{ padding: { sm: 'p-3' } }">
                             <template #leading>
-                                <div class="w-6 h-6 flex items-center justify-center -my-1">
-                                    <UIcon :name="difficultyIcon(item.content)" class="w-8 h-8"
-                                        :class="difficultyColor(item.content)"></UIcon>
+                                <!-- Badge Cluster -->
+                                <div class="flex items-center gap-1 -my-1">
+                                    <!-- Success Rate Badge -->
+                                    <UTooltip v-if="successRateBadge(item.content.successRate)" 
+                                        :text="successRateBadge(item.content.successRate)!.tooltip"
+                                        :popper="{ placement: 'top' }">
+                                        <div class="w-5 h-5 flex items-center justify-center">
+                                            <UIcon 
+                                                :name="successRateBadge(item.content.successRate)!.icon" 
+                                                class="w-5 h-5"
+                                                :class="successRateBadge(item.content.successRate)!.color">
+                                            </UIcon>
+                                        </div>
+                                    </UTooltip>
+                                    
+                                    <!-- Fallback to old difficulty icon if no successRate -->
+                                    <div v-else class="w-6 h-6 flex items-center justify-center">
+                                        <UIcon :name="difficultyIcon(item.content)" class="w-8 h-8"
+                                            :class="difficultyColor(item.content)"></UIcon>
+                                    </div>
+
+                                    <!-- Interaction Type Badges (array) -->
+                                    <template v-if="item.content.interactionType && item.content.interactionType.length > 0">
+                                        <UTooltip 
+                                            v-for="(badge, badgeIndex) in interactionBadges(item.content.interactionType)" 
+                                            :key="badgeIndex"
+                                            :text="badge!.tooltip"
+                                            :popper="{ placement: 'top' }">
+                                            <div class="w-5 h-5 flex items-center justify-center">
+                                                <UIcon 
+                                                    :name="badge!.icon" 
+                                                    class="w-5 h-5"
+                                                    :class="badge!.color">
+                                                </UIcon>
+                                            </div>
+                                        </UTooltip>
+                                    </template>
+
+                                    <!-- Legacy Targeted Badge (for backward compatibility) -->
+                                    <UTooltip v-else-if="item.content.targeted" 
+                                        :popper="{ placement: 'top' }">
+                                        <template #text>
+                                            <div class="text-center max-w-xs">
+                                                Manual targeting or pausing<br>recommended - see Notes
+                                            </div>
+                                        </template>
+                                        <span class="text-xl cursor-help">🎯</span>
+                                    </UTooltip>
                                 </div>
-                                <!-- Target emoji with tooltip for missions with targeted field set to true -->
-                                <UTooltip v-if="item.content.targeted" 
-                                    text="Targeting or pausing auto at start of battle or wave recommended, see Notes"
-                                    :popper="{ placement: 'top' }">
-                                    <span class="text-2xl ml-1 cursor-help">🎯</span>
-                                </UTooltip>
                             </template>
                             <span>{{ item.label }}</span>
                             <img v-if="item.content.omi" src="/icons/omi.png" alt="omicron" class="h-4 w-4" />

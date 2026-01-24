@@ -31,7 +31,7 @@ export const jediLSP2: dataType[] = [
         leadFull: 'Jedi Master Luke with Ezra',
         others: 'Ezra exile, JKL, Kyle Katarn, Shaak Ti',
         notes: 'auto with KK omi',
-        videos: [{ url: 'https://youtu.be/wom3RZrx9VQ' }, { url: 'https://www.youtube.com/watch?v=KzqvGPmEMqI', creator: creators.egnards }],
+        videos: [{ url: 'https://youtu.be/wom3RZrx9VQ' }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],

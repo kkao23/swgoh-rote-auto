@@ -124,15 +124,67 @@ const interactionBadges = (types?: string[]) => {
     return types.map(type => interactionBadge(type)).filter(badge => badge !== null);
 }
 
+// Get numeric value for success rate (for sorting)
+const successRateValue = (rate?: string): number => {
+    switch (rate) {
+        case successRate.CONSISTENT: return 0;
+        case successRate.NINETY_PERCENT: return 1;
+        case successRate.USUALLY: return 2;
+        case successRate.FIFTY_FIFTY: return 3;
+        case successRate.UNRELIABLE: return 4;
+        default: return 5; // Fallback for missions without successRate
+    }
+}
+
+// Get interaction complexity score (for sorting)
+const interactionComplexity = (types?: string[]): number => {
+    if (!types || types.length === 0) return 0;
+    
+    // Count non-auto interactions
+    const nonAutoCount = types.filter(t => t !== interactionType.AUTO).length;
+    
+    // Weight by type: manual is most complex, then pause, then target
+    let complexity = 0;
+    types.forEach(type => {
+        switch (type) {
+            case interactionType.MANUAL: complexity += 10; break;
+            case interactionType.PAUSE_WAVE2: complexity += 5; break;
+            case interactionType.TARGET_START: complexity += 3; break;
+            case interactionType.AUTO: complexity += 0; break;
+        }
+    });
+    
+    return complexity;
+}
+
 const isMobile = useMediaQuery('(max-width: 768px)');
 
 const accordionItems = computed(() => {
     const sortedData = [...props.data].sort((a, b) => {
+        // First: Sort by creator videos (non-creator first)
         const aHasCreatorVideo = a.videos?.some(video => video.creator);
         const bHasCreatorVideo = b.videos?.some(video => video.creator);
-        if (aHasCreatorVideo === bHasCreatorVideo) return 0;
-        return aHasCreatorVideo ? 1 : -1;
-    }).sort((a, b) => a.difficulty - b.difficulty);
+        if (aHasCreatorVideo !== bHasCreatorVideo) {
+            return aHasCreatorVideo ? 1 : -1;
+        }
+        
+        // Second: Sort by success rate (better success first)
+        const aSuccessValue = successRateValue(a.successRate);
+        const bSuccessValue = successRateValue(b.successRate);
+        if (aSuccessValue !== bSuccessValue) {
+            return aSuccessValue - bSuccessValue;
+        }
+        
+        // Third: Sort by interaction complexity (simpler first)
+        const aComplexity = interactionComplexity(a.interactionType);
+        const bComplexity = interactionComplexity(b.interactionType);
+        if (aComplexity !== bComplexity) {
+            return aComplexity - bComplexity;
+        }
+        
+        // Fourth: Fallback to old difficulty for missions without badges
+        return a.difficulty - b.difficulty;
+    });
 
     return sortedData.map((d, index) => {
         return {

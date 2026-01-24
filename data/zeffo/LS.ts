@@ -43,7 +43,8 @@ export const zeffoJedi: dataType[] = [
         others: 'JML, Ezra Exile, JKL, Shaak',
         notes: 'auto, target purge trooper wave 1 then 2S wave 2',
         videos: [{ url: 'https://youtu.be/LqJsWBb5S88' }],
-        difficulty: difficulty.CAUTION
+        difficulty: difficulty.CAUTION,
+        targeted: true
     },
     {
         lead: 'JKCK (Rey Ezra)',
@@ -83,7 +84,8 @@ export const zeffoUFU: dataType[] = [
         others: 'Cere, Padawan Sabine, Fulcrum, CAT',
         notes: 'auto, target purge trooper in wave 1',
         videos: [{ url: 'https://youtu.be/jTJg8brbeS4' }],
-        difficulty: difficulty.CAUTION
+        difficulty: difficulty.CAUTION,
+        targeted: true
     },
 ]
 
@@ -94,6 +96,7 @@ export const zeffoCombat: dataType[] = [
         notes: 'auto, target humanoids first',
         videos: [{ url: 'https://youtu.be/zR1ZBzkfELU' }],
         difficulty: difficulty.EASY,
+        targeted: true,
         omi: true,
     },
     {

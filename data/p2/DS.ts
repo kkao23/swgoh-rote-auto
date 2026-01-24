@@ -139,6 +139,7 @@ export const reekDSP2: dataType[] = [
         notes: 'omi Marrok, auto, last two any Mercenaries, hope Marrok doesnt get targeted first turn',
         videos: [{ url: 'https://youtu.be/1QqyIDN0yvA' }],
         difficulty: difficulty.EASY,
+        targeted: true,
         omi: true
     },
     {
@@ -206,6 +207,7 @@ export const nexuDSP2: dataType[] = [
         notes: 'I had Thrawn as 5th but Scorch is ideal. Not sure if I got lucky with them targeting Nightfall first',
         videos: [{ url: 'https://youtu.be/fjaJ59NNSmQ', }],
         difficulty: difficulty.EASY,
+        targeted: true,
         omi: true
     },
     {

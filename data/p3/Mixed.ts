@@ -9,7 +9,8 @@ export const boKatanP3: dataType[] = [
         others: 'IG12',
         notes: 'IG call bo to assist, BAM birds, auto. pause to use ballista if Bo gets eaten',
         videos: [{ url: 'https://youtu.be/x2D1hwUiHjw' }],
-        difficulty: difficulty.CAUTION
+        difficulty: difficulty.CAUTION,
+        targeted: true
     }
 ]
 

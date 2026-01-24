@@ -29,6 +29,7 @@ export const dsTopMidP5: dataType[] = [
         notes: 'auto, may want to target Sabine wave 2',
         videos: [{ url: 'https://youtu.be/w23Nh5aFKJs', }],
         difficulty: difficulty.EASY,
+        targeted: true,
         omi: true
     },
     {

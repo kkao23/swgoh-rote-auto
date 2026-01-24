@@ -8,7 +8,8 @@ export const mixedFleetP5: dataType[] = [
         others: 'FCI, Bomber, Dorito, Assassin, MK6 Interceptor, Scimitar',
         notes: 'auto but pause for MK6 Instakill of RC',
         videos: [{ url: 'https://youtu.be/thD2kZHHTOs' }],
-        difficulty: difficulty.CAUTION
+        difficulty: difficulty.CAUTION,
+        targeted: true
     },
     {
         lead: 'Executor',
@@ -22,7 +23,8 @@ export const mixedFleetP5: dataType[] = [
         others: 'HT, Punishing One, XB, Slave 1, IG2000',
         notes: 'auto, untarget HT',
         videos: [{ url: 'https://youtu.be/uDfsGkP-cXM' }],
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.VERY_EASY,
+        targeted: true
     },
     {
         lead: 'Profundity',
@@ -46,7 +48,8 @@ export const mixedCombatTopRightP5: dataType[] = [
         others: 'Drogan, R2-D2, Fulcrum, Admiral Raddus',
         notes: 'auto, pause at the end of wave 1 to hit the box if poss',
         videos: [{ url: 'https://youtu.be/GdepqEwdaqw' }],
-        difficulty: difficulty.EASY
+        difficulty: difficulty.EASY,
+        targeted: true
     },
     {
         lead: 'Lord Vader',
@@ -102,7 +105,8 @@ export const mixedCombatBottomLeftP5: dataType[] = [
         others: 'Drogan, R2-D2, Fulcrum, Admiral Raddus',
         notes: 'auto, pause at the end of wave 1 to hit the box if possible',
         videos: [{ url: 'https://youtu.be/2_pnO482ksw' }],
-        difficulty: difficulty.EASY
+        difficulty: difficulty.EASY,
+        targeted: true
     },
     {
         lead: 'LV',

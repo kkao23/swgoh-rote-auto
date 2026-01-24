@@ -10,7 +10,7 @@ export const acklayDSP2: dataType[] = [
         videos: [{ url: 'https://youtu.be/IfeFkchU5fA' }],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Reva',
@@ -19,7 +19,7 @@ export const acklayDSP2: dataType[] = [
         videos: [{ url: 'https://youtu.be/EYvM-YOI6Zk' }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Great Mothers',
@@ -28,7 +28,7 @@ export const acklayDSP2: dataType[] = [
         videos: [{ url: 'https://youtu.be/EssSASzT2qo' }],
         difficulty: difficulty.EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'SLKR',
@@ -38,7 +38,7 @@ export const acklayDSP2: dataType[] = [
         videos: [{ url: 'https://www.youtube.com/watch?v=vvGaQA5SWYQ&ab_channel=Egnards', creator: creators.egnards }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO,
+        interactionType: [interactionType.AUTO],
     },
     {
         lead: 'Baylan',
@@ -47,7 +47,7 @@ export const acklayDSP2: dataType[] = [
         videos: [{ url: 'https://youtu.be/oiaA3D00Efw' }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO,
+        interactionType: [interactionType.AUTO],
         omi: true
     },
     {
@@ -57,7 +57,7 @@ export const acklayDSP2: dataType[] = [
         videos: [{url: 'https://youtu.be/qpJxPdNjDes'}],
         difficulty: difficulty.CAUTION,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO,
+        interactionType: [interactionType.AUTO],
         others: 'Magnaguard, STAP, B2, Wat'
     },
     {
@@ -67,7 +67,7 @@ export const acklayDSP2: dataType[] = [
         videos: [{url: 'https://youtu.be/ufHTEnyIUG8'}],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'DTMG (Enoch omi)',
@@ -77,7 +77,7 @@ export const acklayDSP2: dataType[] = [
         videos: [{url: 'https://youtu.be/ORKuex1uEC0'}],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO,
+        interactionType: [interactionType.AUTO],
         omi: true,
     },
     {
@@ -88,7 +88,7 @@ export const acklayDSP2: dataType[] = [
         videos: [{ url: 'https://youtu.be/lsNKXGBDoL0', }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO,
+        interactionType: [interactionType.AUTO],
         omi: true
     },
 ]
@@ -102,7 +102,7 @@ export const reekDSP2: dataType[] = [
         videos: [{ url: 'https://youtu.be/ZSa1T0vsPYE' }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Great Mothers',
@@ -111,7 +111,7 @@ export const reekDSP2: dataType[] = [
         videos: [{ url: 'https://youtu.be/H4r1Qyq-cr0' }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'SLKR',
@@ -120,7 +120,7 @@ export const reekDSP2: dataType[] = [
         videos: [{ url: 'https://youtu.be/Ynmm55msvFo' }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Reva',
@@ -129,7 +129,7 @@ export const reekDSP2: dataType[] = [
         videos: [{ url: 'https://www.youtube.com/watch?v=c6IZXe1YtHc', creator: creators.egnards }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Lord Vader',
@@ -138,7 +138,7 @@ export const reekDSP2: dataType[] = [
         videos: [{ url: 'https://www.youtube.com/watch?v=Qz5O-GoAKkk', creator: creators.egnards }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Dr Aphra',
@@ -147,7 +147,7 @@ export const reekDSP2: dataType[] = [
         videos: [{ url: 'https://youtu.be/Dspj8Z4Q2bA'}],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Bane',
@@ -156,7 +156,7 @@ export const reekDSP2: dataType[] = [
         videos: [{url: 'https://youtu.be/iUuBF8TLBhw'}],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'General Grievous',
@@ -165,7 +165,7 @@ export const reekDSP2: dataType[] = [
         videos: [{url: 'https://youtu.be/Sr96cRiT6r8'}],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Baylan',
@@ -174,7 +174,7 @@ export const reekDSP2: dataType[] = [
         videos: [{ url: 'https://youtu.be/1QqyIDN0yvA' }],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.TARGET_START,
+        interactionType: [interactionType.TARGET_START],
         targeted: true,
         omi: true
     },
@@ -186,7 +186,7 @@ export const reekDSP2: dataType[] = [
         videos: [{url: 'https://youtu.be/NHvqhjH4klk'}],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO,
+        interactionType: [interactionType.AUTO],
         omi: true,
     }
 ]
@@ -199,7 +199,7 @@ export const nexuDSP2: dataType[] = [
         videos: [{ url: 'https://youtu.be/x3lQbmRbC0U' }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'SLKR',
@@ -209,7 +209,7 @@ export const nexuDSP2: dataType[] = [
         videos: [{ url: 'https://youtu.be/FW60H6-v6wM' }],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'LV',
@@ -236,7 +236,7 @@ export const nexuDSP2: dataType[] = [
         videos: [{ url: 'https://youtu.be/HjoqwXNWFNw' }],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Baylan',
@@ -245,7 +245,7 @@ export const nexuDSP2: dataType[] = [
         videos: [{ url: 'https://youtu.be/FoCgJ_A0FNc' }],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO,
+        interactionType: [interactionType.AUTO],
         omi: true
     },
     {
@@ -256,7 +256,7 @@ export const nexuDSP2: dataType[] = [
         videos: [{ url: 'https://youtu.be/fjaJ59NNSmQ', }],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.TARGET_START,
+        interactionType: [interactionType.TARGET_START],
         targeted: true,
         omi: true
     },
@@ -268,7 +268,7 @@ export const nexuDSP2: dataType[] = [
         videos: [{url: 'https://youtu.be/9KBjG8jkKFU'}],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO,
+        interactionType: [interactionType.AUTO],
         omi: true,
     }
 ]

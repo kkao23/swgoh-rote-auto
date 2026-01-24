@@ -10,7 +10,7 @@ export const lsShipsP4: dataType[] = [
         videos: [{ url: 'https://youtu.be/-AZjA6D9sK4' }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Negotiator',
@@ -19,7 +19,7 @@ export const lsShipsP4: dataType[] = [
         videos: [{ url: 'https://youtu.be/D30RG8s3HDQ' }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Raddus',
@@ -28,7 +28,7 @@ export const lsShipsP4: dataType[] = [
         videos: [{ url: 'https://youtu.be/drEhB7NLcZU' }],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Home One (MF)',
@@ -37,7 +37,7 @@ export const lsShipsP4: dataType[] = [
         videos: [{ url: 'https://youtu.be/67erqo3zyvA' }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Home One (B wing)',
@@ -46,7 +46,7 @@ export const lsShipsP4: dataType[] = [
         videos: [{ url: 'https://youtu.be/0PAH1s4Umfs' }],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
 ]
 
@@ -58,7 +58,7 @@ export const lsGenericP4: dataType[] = [
         videos: [{ url: 'https://youtu.be/C6F4fIWlP-I' }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'QA',
@@ -68,7 +68,7 @@ export const lsGenericP4: dataType[] = [
         videos: [{ url: 'https://youtu.be/6YzDrnBGFvw' }],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'JMK',
@@ -78,7 +78,7 @@ export const lsGenericP4: dataType[] = [
         videos: [{ url: 'https://youtu.be/qPc-UJDjAt0' }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Boss Nass',
@@ -87,7 +87,7 @@ export const lsGenericP4: dataType[] = [
         videos: [{ url: 'https://youtu.be/xCacWaNrwto' }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO,
+        interactionType: [interactionType.AUTO],
         omi: true
     },
     {
@@ -97,7 +97,7 @@ export const lsGenericP4: dataType[] = [
         videos: [{ url: 'https://youtu.be/nNTovvlMApI' }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Omega (omicron)',
@@ -106,7 +106,7 @@ export const lsGenericP4: dataType[] = [
         videos: [{ url: 'https://youtu.be/kjYZ24h5fok' }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO,
+        interactionType: [interactionType.AUTO],
         omi: true,
     },
     {
@@ -117,7 +117,7 @@ export const lsGenericP4: dataType[] = [
         videos: [{ url: 'https://youtu.be/B6E6XdAYfNQ' }],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
 ]
 
@@ -130,7 +130,7 @@ export const jediLSP4: dataType[] = [
         videos: [{ url: 'https://youtu.be/nVtmzJh4xlk0' }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'JML (Ezra)',
@@ -140,7 +140,7 @@ export const jediLSP4: dataType[] = [
         videos: [{ url: 'https://youtu.be/OcVbpC8FHmE' }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'JMK (no Ezra, no bros)',
@@ -150,7 +150,7 @@ export const jediLSP4: dataType[] = [
         videos: [{ url: 'https://youtu.be/nzJ8oUrygqc' }],
         difficulty: difficulty.HARD,
         successRate: successRate.FIFTY_FIFTY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'JML (bros, no Ezra)',
@@ -160,7 +160,7 @@ export const jediLSP4: dataType[] = [
         videos: [{ url: 'https://youtu.be/5tJavs7rly4' }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'JMK (bros, no Ezra)',
@@ -170,7 +170,7 @@ export const jediLSP4: dataType[] = [
         videos: [{ url: 'https://youtu.be/9ZKHdxBljyc' }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'JML (KK Omi)',
@@ -180,7 +180,7 @@ export const jediLSP4: dataType[] = [
         videos: [{ url: 'https://www.youtube.com/watch?v=7N2-JbEer7k', creator: creators.egnards }],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Kelleran Beq',
@@ -190,7 +190,7 @@ export const jediLSP4: dataType[] = [
         videos: [{ url: 'https://youtu.be/A5hzdGVrBlY' }],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Kelleran Beq',
@@ -200,7 +200,7 @@ export const jediLSP4: dataType[] = [
         videos: [{ url: 'https://youtu.be/vH6YIiUsXQ4' }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO,
+        interactionType: [interactionType.AUTO],
         omi: true
     }
 ]

@@ -20,11 +20,15 @@ const legend = [
                         <div class="flex flex-col space-y-1">
                             <div class="flex items-center space-x-2">
                                 <UIcon name="i-heroicons-check-circle-solid" class="text-green-500 w-5 h-5"></UIcon>
-                                <span class="text-gray-200 text-xs md:text-sm">Consistent 2/2 waves</span>
+                                <span class="text-gray-200 text-xs md:text-sm">Consistent 2/2 waves (100%)</span>
+                            </div>
+                            <div class="flex items-center space-x-2">
+                                <UIcon name="i-heroicons-hand-thumb-up-solid" class="text-blue-400 w-5 h-5"></UIcon>
+                                <span class="text-gray-200 text-xs md:text-sm">Very reliable (~90%)</span>
                             </div>
                             <div class="flex items-center space-x-2">
                                 <UIcon name="i-heroicons-exclamation-triangle-solid" class="text-yellow-500 w-5 h-5"></UIcon>
-                                <span class="text-gray-200 text-xs md:text-sm">Usually works, can fail (60-80%)</span>
+                                <span class="text-gray-200 text-xs md:text-sm">Usually works (60-80%)</span>
                             </div>
                             <div class="flex items-center space-x-2">
                                 <UIcon name="i-heroicons-minus-circle-solid" class="text-orange-500 w-5 h-5"></UIcon>

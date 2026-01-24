@@ -9,7 +9,8 @@ export const leftDSP1: dataType[] = [{
     videos: [{ url: 'https://youtu.be/zLFGIuSzFW0' }],
     difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.TARGET_START,
+        interactionType: [interactionType.TARGET_START],
+    targeted: true
 },
 {
     lead: 'SLKR',
@@ -17,8 +18,8 @@ export const leftDSP1: dataType[] = [{
     notes: 'Any other FO, Poke Droideka, Auto',
     videos: [{ url: 'https://youtu.be/AsoKUJ0UIik' }],
     difficulty: difficulty.EASY,
-        successRate: successRate.NINETY_PERCENT,
-        interactionType: interactionType.TARGET_START,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.AUTO]
 },
 {
     lead: 'SEE',
@@ -27,8 +28,8 @@ export const leftDSP1: dataType[] = [{
     notes: 'auto',
     videos: [{ url: 'https://youtu.be/pGSL9U-0rPs' }],
     difficulty: difficulty.VERY_EASY,
-        successRate: successRate.NINETY_PERCENT,
-        interactionType: interactionType.AUTO
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
 },
 {
     lead: 'Mother Talzin',
@@ -36,8 +37,8 @@ export const leftDSP1: dataType[] = [{
     notes: 'auto',
     videos: [{ url: 'https://www.youtube.com/watch?v=yPPfk6jXukU', creator: creators.egnards }],
     difficulty: difficulty.EASY,
-        successRate: successRate.NINETY_PERCENT,
-        interactionType: interactionType.AUTO
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.AUTO]
 }, {
     lead: 'Great Mothers',
     others: 'Morgan, Night Trooper, Death Trooper, Merrin',
@@ -45,7 +46,7 @@ export const leftDSP1: dataType[] = [{
     videos: [{ url: 'https://youtu.be/YUMJjeD6k5A' }],
     difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
 }, {
     lead: 'Reva',
     others: 'GI, 7S, 5B, 8B',
@@ -53,7 +54,7 @@ export const leftDSP1: dataType[] = [{
     videos: [{ url: 'https://youtu.be/kibKGIAfVf4' }],
     difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
 },
 {
     lead: 'General Grievous',
@@ -62,7 +63,7 @@ export const leftDSP1: dataType[] = [{
     videos: [{ url: 'https://youtu.be/H8crYJOOfd8' }],
     difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
 },
 {
     lead: 'DTMG (Enoch omi)',
@@ -72,7 +73,7 @@ export const leftDSP1: dataType[] = [{
     videos: [{ url: 'https://youtu.be/qSHFMblMpXs' }],
     difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO,
+        interactionType: [interactionType.AUTO],
     omi: true,
 },];
 
@@ -82,8 +83,8 @@ export const bottomDSP1: dataType[] = [{
     notes: 'Doom droideka, bless Morgan, hit auto',
     videos: [{ url: 'https://youtu.be/dVJSaQ_Pwmo' }],
     difficulty: difficulty.EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: interactionType.TARGET_START
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.AUTO]
 },
 {
     lead: 'Reva',
@@ -91,8 +92,8 @@ export const bottomDSP1: dataType[] = [{
     notes: 'Target Droideka, hit auto',
     videos: [{ url: 'https://youtu.be/Pk9v02K5wwc' }],
     difficulty: difficulty.EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: interactionType.TARGET_START,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.TARGET_START],
     targeted: true
 },
 {
@@ -103,7 +104,7 @@ export const bottomDSP1: dataType[] = [{
     videos: [{ url: 'https://youtu.be/CjxSQ88mlMk' }],
     difficulty: difficulty.HARD,
         successRate: successRate.FIFTY_FIFTY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
 },
 {
     lead: 'E Palpatine',
@@ -113,7 +114,7 @@ export const bottomDSP1: dataType[] = [{
     videos: [{ url: 'https://youtu.be/AU0_LBntv9o' }],
     difficulty: difficulty.HARD,
         successRate: successRate.FIFTY_FIFTY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
 },
 {
     lead: 'Mother Talzin',
@@ -121,8 +122,8 @@ export const bottomDSP1: dataType[] = [{
     notes: 'auto',
     videos: [{ url: 'https://www.youtube.com/watch?v=WNhnP7qjZgQ', creator: creators.egnards }],
     difficulty: difficulty.EASY,
-        successRate: successRate.NINETY_PERCENT,
-        interactionType: interactionType.AUTO
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.AUTO]
 },
 {
     lead: 'DTMG (Enoch omi)',
@@ -132,7 +133,7 @@ export const bottomDSP1: dataType[] = [{
     videos: [{ url: 'https://youtu.be/I6J9XHpBIrc' }],
     difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO,
+        interactionType: [interactionType.AUTO],
     omi: true,
 },
 {
@@ -141,8 +142,8 @@ export const bottomDSP1: dataType[] = [{
     notes: 'Auto',
     videos: [{ url: 'https://youtu.be/BTWI-B8Oc-Q' }],
     difficulty: difficulty.EASY,
-        successRate: successRate.NINETY_PERCENT,
-        interactionType: interactionType.AUTO
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.AUTO]
 },
 {
     lead: 'GG',
@@ -152,7 +153,7 @@ export const bottomDSP1: dataType[] = [{
     videos: [{ url: 'https://youtu.be/ZE009t8VImc' }],
     difficulty: difficulty.HARD,
         successRate: successRate.FIFTY_FIFTY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
 },
 {
     lead: 'Baylan',
@@ -161,7 +162,7 @@ export const bottomDSP1: dataType[] = [{
     videos: [{ url: 'https://youtu.be/IgwTIlI2T64' }],
     difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO,
+        interactionType: [interactionType.AUTO],
     omi: true,
 },
 {
@@ -171,7 +172,7 @@ export const bottomDSP1: dataType[] = [{
     videos: [{ url: 'https://youtu.be/-Uhr-v_0zdQ' }],
     difficulty: difficulty.HARD,
         successRate: successRate.FIFTY_FIFTY,
-        interactionType: interactionType.AUTO,
+        interactionType: [interactionType.AUTO],
 }
 ];
 
@@ -182,8 +183,8 @@ export const topDSP1: dataType[] = [
         notes: 'Stun droideka first, second phase poke brute, otherwise auto',
         videos: [{ url: 'https://youtu.be/QGui7hJ4ZrQ' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.NINETY_PERCENT,
-        interactionType: interactionType.TARGET_START
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Baylan',
@@ -192,7 +193,7 @@ export const topDSP1: dataType[] = [
         videos: [{ url: 'https://youtu.be/y2_S73szIS0' }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO,
+        interactionType: [interactionType.AUTO],
         omi: true,
     }, {
         lead: 'Great Mothers',
@@ -200,8 +201,8 @@ export const topDSP1: dataType[] = [
         notes: 'Doom droideka, bless Morgan, hit auto',
         videos: [{ url: 'https://youtu.be/zjxxsvQos5Y' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: interactionType.TARGET_START
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Reva',
@@ -210,7 +211,7 @@ export const topDSP1: dataType[] = [
         videos: [{ url: 'https://youtu.be/V75J-k6i40s?si=uX_YUqMZEuQr7VIN&t=145', creator: creators.pico }],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.TARGET_START,
+        interactionType: [interactionType.TARGET_START],
         targeted: true
     },
     {
@@ -221,7 +222,7 @@ export const topDSP1: dataType[] = [
         videos: [{ url: 'https://youtu.be/usKjKU8tLHo' }],
         difficulty: difficulty.CAUTION,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Trench',
@@ -230,7 +231,7 @@ export const topDSP1: dataType[] = [
         videos: [{ url: 'https://youtu.be/Xi75-aTjxmI' }],
         difficulty: difficulty.HARD,
         successRate: successRate.FIFTY_FIFTY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'DTMG (Enoch omi)',
@@ -240,7 +241,7 @@ export const topDSP1: dataType[] = [
         videos: [{ url: 'https://youtu.be/jbXA0XrS9Bk' }],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO,
+        interactionType: [interactionType.AUTO],
         omi: true,
     },
 ];
@@ -254,7 +255,7 @@ export const lvP1: dataType[] = [
         videos: [{ url: 'https://youtu.be/YIOTKDpWtRM' }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     }
 ]
 
@@ -278,6 +279,6 @@ export const shipsDSP1 = [
         ],
         difficulty: difficulty.NO_AUTO,
         successRate: successRate.UNRELIABLE,
-        interactionType: interactionType.MANUAL
+        interactionType: [interactionType.MANUAL]
     }
 ]

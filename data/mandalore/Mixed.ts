@@ -10,7 +10,7 @@ export const mandaloreFleets: dataType[] = [
         videos: [{ url: 'https://youtu.be/5dZTKfblLvM' }],
         difficulty: difficulty.NO_AUTO,
         successRate: successRate.UNRELIABLE,
-        interactionType: interactionType.MANUAL
+        interactionType: [interactionType.MANUAL]
     },
     {
         lead: 'Leviathan (guided)',
@@ -19,7 +19,7 @@ export const mandaloreFleets: dataType[] = [
         videos: [{ url: 'https://youtu.be/-Xqd1DYrdUA' }],
         difficulty: difficulty.CAUTION,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
         {
         lead: 'Profundity',
@@ -28,7 +28,7 @@ export const mandaloreFleets: dataType[] = [
         videos: [{ url: 'https://youtu.be/VcXsUBHgbUs' }],
         difficulty: difficulty.NO_AUTO,
         successRate: successRate.UNRELIABLE,
-        interactionType: interactionType.MANUAL
+        interactionType: [interactionType.MANUAL]
     },
         {
         lead: 'Leviathan (full auto)',
@@ -45,7 +45,7 @@ export const mandaloreFleets: dataType[] = [
         videos: [{ url: 'https://youtu.be/RKTzZS5tjR8' }],
         difficulty: difficulty.NO_AUTO,
         successRate: successRate.UNRELIABLE,
-        interactionType: interactionType.MANUAL
+        interactionType: [interactionType.MANUAL]
     },
 ]
 
@@ -57,7 +57,7 @@ export const mandaloreGeneric: dataType[] = [
         videos: [{ url: 'https://youtu.be/fLPilo3n-gw' }],
         difficulty: difficulty.CAUTION,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.TARGET_START,
+        interactionType: [interactionType.TARGET_START],
         omi: true
     },
     {
@@ -67,7 +67,7 @@ export const mandaloreGeneric: dataType[] = [
         videos: [{ url: 'https://youtu.be/ke-l_Xxu0p4' }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO,
+        interactionType: [interactionType.AUTO],
         omi: true
     },
     {
@@ -77,7 +77,7 @@ export const mandaloreGeneric: dataType[] = [
         videos: [{ url: 'https://youtu.be/rF6NV7kLMpA' }],
         difficulty: difficulty.CAUTION,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.PAUSE_WAVE2,
+        interactionType: [interactionType.PAUSE_WAVE2],
         omi: true,
         targeted: true
     },
@@ -88,7 +88,7 @@ export const mandaloreGeneric: dataType[] = [
         videos: [{ url: 'https://youtu.be/5VAQS5EqLGE' }],
         difficulty: difficulty.HARD,
         successRate: successRate.FIFTY_FIFTY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'QA',
@@ -98,7 +98,7 @@ export const mandaloreGeneric: dataType[] = [
         videos: [{ url: 'https://youtu.be/inP-FwCeOn0' }],
         difficulty: difficulty.HARD,
         successRate: successRate.FIFTY_FIFTY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'JMK',
@@ -108,7 +108,7 @@ export const mandaloreGeneric: dataType[] = [
         videos: [{ url: 'https://youtu.be/oMmbs2FA16Y' }],
         difficulty: difficulty.HARD,
         successRate: successRate.FIFTY_FIFTY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Ahsoka Tano',
@@ -117,7 +117,7 @@ export const mandaloreGeneric: dataType[] = [
         videos: [{ url: 'https://youtu.be/G8X9wesq-xg' }],
         difficulty: difficulty.HARD,
         successRate: successRate.FIFTY_FIFTY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Finn (omi)',
@@ -126,7 +126,7 @@ export const mandaloreGeneric: dataType[] = [
         videos: [{ url: 'https://www.youtube.com/watch?v=3OXMLd1e7PI', creator: creators.pico }],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO,
+        interactionType: [interactionType.AUTO],
         omi: true,
     },
     {
@@ -136,7 +136,7 @@ export const mandaloreGeneric: dataType[] = [
         videos: [{url: 'https://youtu.be/oXkwJiE_EGg'}, { url: 'https://youtu.be/JuEnsbbFuT4?si=W7cLID0-I95kNy8h', creator: creators.avengerObs }],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO,
+        interactionType: [interactionType.AUTO],
         omi: true,
     },
     {
@@ -147,7 +147,7 @@ export const mandaloreGeneric: dataType[] = [
         videos: [{ url: 'https://youtu.be/UaOt-HO-smQ' }],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Pirate King Hondo',
@@ -157,7 +157,7 @@ export const mandaloreGeneric: dataType[] = [
         videos: [{ url: 'https://youtu.be/iXiC7WhOI8U' }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.PAUSE_WAVE2,
+        interactionType: [interactionType.PAUSE_WAVE2],
         targeted: true
     },
     {
@@ -168,7 +168,7 @@ export const mandaloreGeneric: dataType[] = [
         videos: [{ url: 'https://youtu.be/4ptGfbJBAvw' }],
         difficulty: difficulty.HARD,
         successRate: successRate.FIFTY_FIFTY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'JMMW',
@@ -178,7 +178,7 @@ export const mandaloreGeneric: dataType[] = [
         videos: [{ url: 'https://youtu.be/X8s6QTd1LMY' }],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO,
+        interactionType: [interactionType.AUTO],
         omi: true
     },
 ]
@@ -192,7 +192,7 @@ export const mandaloreDTMG: dataType[] = [
         videos: [{url: 'https://youtu.be/SLiK2dv_sSw'}],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO,
+        interactionType: [interactionType.AUTO],
         omi: true,
     }
 ]

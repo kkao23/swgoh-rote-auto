@@ -29,8 +29,8 @@ export const mixedQiraP4: dataType[] = [
         notes: 'poke, auto',
         videos: [{url: 'https://youtu.be/kmFHKrKTX1c'}],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
-        interactionType: [interactionType.AUTO]
+        successRate: successRate.NINETY_PERCENT,
+        interactionType: [interactionType.TARGET_START]
     },
     {
         lead: 'Ahsoka Tano',
@@ -48,7 +48,7 @@ export const mixedQiraP4: dataType[] = [
         notes: 'Wave 2 was a bit dicey, still won on full auto though. May require R9?',
         videos: [{ url: 'https://youtu.be/VNDsqSv-5hE' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.CONSISTENT,
+        successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO],
     },
     {
@@ -153,7 +153,7 @@ export const mixedGenericP4: dataType[] = [
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/QUmyeBZBCKc' }],
         difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
+        successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO]
     },
     {
@@ -191,7 +191,7 @@ export const mixedGenericP4: dataType[] = [
         notes: 'You do want the full complement of clones here',
         videos: [{ url: 'https://youtu.be/j1u6kaAtakw', }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.NINETY_PERCENT,
         omi: true
     },
     {
@@ -233,7 +233,7 @@ export const mixedGenericP4: dataType[] = [
         notes: 'full auto, last two replaceable, a bit dicey',
         videos: [{ url: 'https://youtu.be/DeCVAVWrbR8' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.CONSISTENT,
+        successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO],
     },
 ]
@@ -254,18 +254,20 @@ export const mixedFleetP4: dataType[] = [
     {
         lead: 'Leviathan',
         others: 'FCI, Bomber, Dorito, Assassin, MK6 Interceptor, Scimitar, Emp Shuttle',
-        notes: 'very difficult',
+        notes: 'very difficult, semi auto (see video)',
         videos: [{ url: 'https://youtu.be/5rZYEDKdxCo' }],
         difficulty: difficulty.NO_AUTO,
         successRate: successRate.UNRELIABLE,
+        interactionType: [interactionType.MANUAL]
     },
     {
-        lead: 'Profundity',
+        lead: 'Profundity (no Rogue One)',
         others: 'Outrider, Y Wing, Ghost starting, Phantom, MF, Biggs, Wedge reinf',
         notes: 'very difficult',
         videos: [{ url: 'https://youtu.be/kx9p09Z4DM0' }],
         difficulty: difficulty.NO_AUTO,
-        successRate: successRate.UNRELIABLE
+        successRate: successRate.UNRELIABLE,
+        interactionType: [interactionType.MANUAL]
     },
     {
         lead: 'Profundity (Rogue One)',

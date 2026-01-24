@@ -12,31 +12,23 @@ export const mandaloreFleets: dataType[] = [
         successRate: successRate.UNRELIABLE,
         interactionType: [interactionType.MANUAL]
     },
-    {
-        lead: 'Leviathan (guided)',
-        others: 'Gauntlet (mandatory), Bomber, FCI, Assassin, Dorito, MK6 Interceptor, Scimitar',
-        notes: 'semi auto, isolate anakin, hold the instakill for Marauder',
-        videos: [{ url: 'https://youtu.be/-Xqd1DYrdUA' }],
-        difficulty: difficulty.CAUTION,
-        successRate: successRate.USUALLY,
-        interactionType: [interactionType.AUTO]
-    },
         {
         lead: 'Profundity',
         others: 'MF, Outrider start, Phantom, Biggs, Wedge Reinf',
         notes: 'cant auto but easy win',
         videos: [{ url: 'https://youtu.be/VcXsUBHgbUs' }],
         difficulty: difficulty.NO_AUTO,
-        successRate: successRate.UNRELIABLE,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.MANUAL]
     },
         {
         lead: 'Leviathan (full auto)',
         others: 'Gauntlet (mandatory), Bomber, FCI, Dorito, Assassin, MK6 Interceptor, Scimitar',
-        notes: 'seems a bit dicier than guided',
+        notes: 'easy after Levi buffs',
         videos: [{ url: 'https://youtu.be/kyCQ6JXDJvM' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Executrix',
@@ -44,7 +36,7 @@ export const mandaloreFleets: dataType[] = [
         notes: 'no auto until Anakin and Marauder are down, go after Anakin first and bring out Defender first then go after Marauder',
         videos: [{ url: 'https://youtu.be/RKTzZS5tjR8' }],
         difficulty: difficulty.NO_AUTO,
-        successRate: successRate.UNRELIABLE,
+        successRate: successRate.FIFTY_FIFTY,
         interactionType: [interactionType.MANUAL]
     },
 ]
@@ -135,8 +127,8 @@ export const mandaloreGeneric: dataType[] = [
         notes: 'auto',
         videos: [{url: 'https://youtu.be/oXkwJiE_EGg'}, { url: 'https://youtu.be/JuEnsbbFuT4?si=W7cLID0-I95kNy8h', creator: creators.avengerObs }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
-        interactionType: [interactionType.AUTO],
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.PAUSE_WAVE2],
         omi: true,
     },
     {
@@ -177,7 +169,7 @@ export const mandaloreGeneric: dataType[] = [
         notes: 'auto with all platoons',
         videos: [{ url: 'https://youtu.be/X8s6QTd1LMY' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO],
         omi: true
     },

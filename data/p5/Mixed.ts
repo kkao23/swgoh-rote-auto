@@ -9,7 +9,7 @@ export const mixedFleetP5: dataType[] = [
         notes: 'auto but pause for MK6 Instakill of RC',
         videos: [{ url: 'https://youtu.be/thD2kZHHTOs' }],
         difficulty: difficulty.CAUTION,
-        successRate: successRate.USUALLY,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.PAUSE_WAVE2],
         targeted: true
     },

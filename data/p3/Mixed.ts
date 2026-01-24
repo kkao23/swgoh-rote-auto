@@ -7,11 +7,11 @@ export const boKatanP3: dataType[] = [
         lead: 'BK Mandalore',
         leadFull: 'Bo Katan Mandalore',
         others: 'IG12',
-        notes: 'IG call bo to assist, BAM birds, auto. pause to use ballista if Bo gets eaten',
+        notes: 'IG call bo to assist, don\'t use Birds with BAM. Ballista if someone gets eaten.',
         videos: [{ url: 'https://youtu.be/x2D1hwUiHjw' }],
         difficulty: difficulty.CAUTION,
-        successRate: successRate.USUALLY,
-        interactionType: [interactionType.PAUSE_WAVE2],
+        successRate: successRate.NINETY_PERCENT,
+        interactionType: [interactionType.MANUAL],
         targeted: true
     }
 ]
@@ -23,8 +23,8 @@ export const revaP3: dataType[] = [
         notes: 'basics until you get 6 stacks of purge, hit Auto',
         videos: [{ url: 'https://youtu.be/q1lYPCfhpUA' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
-        interactionType: [interactionType.AUTO]
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.TARGET_START]
     },
     {
         lead: 'GI',
@@ -125,7 +125,7 @@ export const fennecP3: dataType[] = [
         notes: 'auto. Enoch omi makes it easier but not required',
         videos: [{url: 'https://youtu.be/2CeDdqWnyIE'}],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         omi: true,
     },
@@ -257,7 +257,7 @@ export const mixedTopLeftP3: dataType[] = [
         notes: 'Looked a bit dicey but super quick',
         videos: [{ url: 'https://youtu.be/3ZbDFkDzkSc', }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.NINETY_PERCENT,
         omi: true
     },
     {
@@ -299,7 +299,7 @@ export const mixedP3Ships: dataType[] = [
         notes: 'auto, use other BH ships if not platooned',
         videos: [{ url: 'https://youtu.be/rcqIa6VlXHs' }],
         difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO]
     },
     {
@@ -309,7 +309,7 @@ export const mixedP3Ships: dataType[] = [
         notes: 'If no Punishing One, auto',
         videos: [{ url: 'https://youtu.be/MoaMRXXAMqw' }],
         difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
+        successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO]
     }
 ]

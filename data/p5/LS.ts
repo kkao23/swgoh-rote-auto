@@ -8,7 +8,9 @@ export const lsTopLeftP5: dataType[] = [
         others: 'POW, MQJ, Snips, GK',
         notes: '1/2 on auto, don\'t target probe droid',
         videos: [{ url: 'https://youtu.be/ofMJ0SXjdCU' }],
-        difficulty: difficulty.HARD
+        difficulty: difficulty.HARD,
+        successRate: successRate.FIFTY_FIFTY,
+        interactionType: [interactionType.TARGET_START],
     },
     {
         lead: 'Omega (Mercenary) (Omi)',
@@ -17,7 +19,7 @@ export const lsTopLeftP5: dataType[] = [
         notes: 'easy auto with Wrecker Omi, pause auto at the beginning of wave 2. Full platoon required',
         videos: [{ url: 'https://youtu.be/BeYMQVqnVV0' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.CONSISTENT,
         interactionType: [interactionType.PAUSE_WAVE2],
         omi: true,
     },
@@ -27,7 +29,7 @@ export const lsTopLeftP5: dataType[] = [
         notes: '2/2 on auto, the more Spectres the better',
         videos: [{ url: 'https://youtu.be/rKrNwQrNHw4' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
     },
     {
@@ -45,7 +47,7 @@ export const lsTopLeftP5: dataType[] = [
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/FwsUlJJgz_o' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO]
     },
 ]
@@ -139,8 +141,8 @@ export const lsShipsP5: dataType[] = [
         notes: 'Keep reticule on Scythe, auto',
         videos: [{ url: 'https://youtu.be/qpNtrNGpeKI' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
-        interactionType: [interactionType.AUTO],
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.TARGET_START],
         targeted: true
     },
     {
@@ -148,6 +150,8 @@ export const lsShipsP5: dataType[] = [
         others: 'MF, Outrider, Y Wing, Wedge, Biggs, Phantom, Ghost',
         notes: 'can\'t auto. Go after Scythe, Phantom first reinforcement',
         videos: [{ url: 'https://youtu.be/9HiGycdlf4E' }],
-        difficulty: difficulty.NO_AUTO
+        difficulty: difficulty.NO_AUTO,
+        successRate: successRate.UNRELIABLE,
+        interactionType: [interactionType.MANUAL],
     },
 ]

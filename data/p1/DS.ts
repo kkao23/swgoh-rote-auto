@@ -18,8 +18,8 @@ export const leftDSP1: dataType[] = [{
     notes: 'Any other FO, Poke Droideka, Auto',
     videos: [{ url: 'https://youtu.be/AsoKUJ0UIik' }],
     difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
-        interactionType: [interactionType.AUTO]
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.TARGET_START]
 },
 {
     lead: 'SEE',
@@ -37,7 +37,7 @@ export const leftDSP1: dataType[] = [{
     notes: 'auto',
     videos: [{ url: 'https://www.youtube.com/watch?v=yPPfk6jXukU', creator: creators.egnards }],
     difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO]
 }, {
     lead: 'Great Mothers',
@@ -62,7 +62,7 @@ export const leftDSP1: dataType[] = [{
     notes: 'auto, I have most of them at R7, may be harder at R5',
     videos: [{ url: 'https://youtu.be/H8crYJOOfd8' }],
     difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO]
 },
 {
@@ -83,8 +83,8 @@ export const bottomDSP1: dataType[] = [{
     notes: 'Doom droideka, bless Morgan, hit auto',
     videos: [{ url: 'https://youtu.be/dVJSaQ_Pwmo' }],
     difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
-        interactionType: [interactionType.AUTO]
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.TARGET_START]
 },
 {
     lead: 'Reva',
@@ -92,7 +92,7 @@ export const bottomDSP1: dataType[] = [{
     notes: 'Target Droideka, hit auto',
     videos: [{ url: 'https://youtu.be/Pk9v02K5wwc' }],
     difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.TARGET_START],
     targeted: true
 },
@@ -122,7 +122,7 @@ export const bottomDSP1: dataType[] = [{
     notes: 'auto',
     videos: [{ url: 'https://www.youtube.com/watch?v=WNhnP7qjZgQ', creator: creators.egnards }],
     difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO]
 },
 {
@@ -142,7 +142,7 @@ export const bottomDSP1: dataType[] = [{
     notes: 'Auto',
     videos: [{ url: 'https://youtu.be/BTWI-B8Oc-Q' }],
     difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO]
 },
 {
@@ -183,16 +183,16 @@ export const topDSP1: dataType[] = [
         notes: 'Stun droideka first, second phase poke brute, otherwise auto',
         videos: [{ url: 'https://youtu.be/QGui7hJ4ZrQ' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
-        interactionType: [interactionType.AUTO]
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.TARGET_START, interactionType.PAUSE_WAVE2],
     },
     {
         lead: 'Baylan',
         others: 'Marrok, Shin, any 2 mercs',
-        notes: 'auto, Marrok Omi',
+        notes: 'auto, Marrok Omi, can get unlucky if they focus down marrok',
         videos: [{ url: 'https://youtu.be/y2_S73szIS0' }],
         difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO],
         omi: true,
     }, {
@@ -201,8 +201,8 @@ export const topDSP1: dataType[] = [
         notes: 'Doom droideka, bless Morgan, hit auto',
         videos: [{ url: 'https://youtu.be/zjxxsvQos5Y' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
-        interactionType: [interactionType.AUTO]
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.TARGET_START]
     },
     {
         lead: 'Reva',
@@ -210,7 +210,7 @@ export const topDSP1: dataType[] = [
         notes: 'Target B2, hit auto',
         videos: [{ url: 'https://youtu.be/V75J-k6i40s?si=uX_YUqMZEuQr7VIN&t=145', creator: creators.pico }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.CONSISTENT,
         interactionType: [interactionType.TARGET_START],
         targeted: true
     },
@@ -268,7 +268,7 @@ export const shipsDSP1 = [
         { url: 'https://www.youtube.com/watch?v=ahVD4QBYne4', creator: creators.egnards },
         ],
         difficulty: difficulty.HARD,
-        successRate: successRate.USUALLY
+        successRate: successRate.FIFTY_FIFTY
     },
     {
         lead: 'Chimera',

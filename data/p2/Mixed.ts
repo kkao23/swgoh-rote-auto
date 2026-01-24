@@ -141,7 +141,7 @@ export const mixedP2: dataType[] = [
         notes: 'auto, 5th flexible',
         videos: [{url: 'https://youtu.be/YTkdcZLEnaw'}],
         difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO]
     },
     {
@@ -272,6 +272,8 @@ export const youngLandoP2: dataType[] = [
         notes: 'auto, pause at the end of wave 1, target iden wave 2 and auto. hope they don\'t target Marrok',
         videos: [{ url: 'https://youtu.be/qy4IhX1vf7s' }],
         difficulty: difficulty.NO_AUTO,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.PAUSE_WAVE2],
         omi: true
     },
 ]

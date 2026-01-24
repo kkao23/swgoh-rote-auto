@@ -19,7 +19,7 @@ export const shipsLSP2: dataType[] = [
         notes: 'target scythe, auto',
         videos: [{ url: 'https://youtu.be/dD9Eey116EY' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.CONSISTENT,
         interactionType: [interactionType.TARGET_START],
         targeted: true
     }
@@ -64,7 +64,7 @@ export const jediLSP2: dataType[] = [
         notes: 'deselect reticule, auto with KK omi',
         videos: [{ url: 'https://youtu.be/eggFQcIom2E' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.TARGET_START],
         omi: true,
     },
@@ -108,7 +108,7 @@ export const leftLSP2: dataType[] = [
         notes: 'auto, last two replaceable, can occasionally get unlucky if Leia < R8',
         videos: [{ url: 'https://youtu.be/fFO75yKREfA' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO]
     },
     {
@@ -172,7 +172,7 @@ export const rightLSP2: dataType[] = [
         notes: 'auto, last two replaceable, can occasionally get unlucky',
         videos: [{ url: 'https://youtu.be/Od4-cr8woO8' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO]
     },
     {
@@ -240,7 +240,7 @@ export const rightLSP2: dataType[] = [
         notes: 'omi Wrecker, auto but more consistent if you manually target wave 2',
         videos: [{ url: 'https://youtu.be/hssMBkkdQSk' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.CONSISTENT,
         interactionType: [interactionType.PAUSE_WAVE2],
         omi: true,
         targeted: true
@@ -262,8 +262,8 @@ export const zeffoUnlock: dataType[] = [
         notes: 'Two non lead omis on Cal. The white whale of auto',
         videos: [{ url: 'https://youtu.be/Ad_cJiVLLY0' }],
         difficulty: difficulty.NO_AUTO,
-        successRate: successRate.UNRELIABLE,
-        interactionType: [interactionType.AUTO],
+        successRate: successRate.NINETY_PERCENT,
+        interactionType: [interactionType.MANUAL],
         omi: true
     }
 ]

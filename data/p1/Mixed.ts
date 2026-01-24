@@ -52,7 +52,7 @@ export const qiraMixedP1: dataType[] = [
     {
         lead: 'Qira (Ahsoka Tano)',
         others: 'Ahsoka Tano, Padawan Sabine, Ezra Exile',
-        notes: 'auto, takes awhile',
+        notes: 'auto',
         videos: [{ url: 'https://youtu.be/_9kN1TSqgB0' }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
@@ -68,7 +68,7 @@ export const mixedP1: dataType[] = [
         notes: 'auto, may need to target damage dealers',
         videos: [{ url: 'https://youtu.be/CxIRs8XsEVA' },{url: 'https://www.youtube.com/watch?v=bvaEwtoy7W4', creator: creators.egnards }],
         difficulty: difficulty.CAUTION,
-        successRate: successRate.USUALLY,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.TARGET_START],
         targeted: true
     },
@@ -248,7 +248,7 @@ export const shipsP1: dataType[] = [
         notes: 'auto, use RC if not platooned',
         videos: [{ url: 'https://youtu.be/Qzduxv0BJx8' }],
         difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO]
     },
     {
@@ -284,7 +284,7 @@ export const shipsP1: dataType[] = [
         notes: 'cant auto. ',
         videos: [{ url: 'https://youtu.be/d9fdaQRbVkQ' }],
         difficulty: difficulty.NO_AUTO,
-        successRate: successRate.UNRELIABLE,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.MANUAL]
     },
     {
@@ -293,7 +293,7 @@ export const shipsP1: dataType[] = [
         notes: 'marauder likely mandatory, no auto',
         videos: [{ url: 'https://youtu.be/DDctMUYgHa0' }],
         difficulty: difficulty.NO_AUTO,
-        successRate: successRate.UNRELIABLE,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.MANUAL]
     },
 ]

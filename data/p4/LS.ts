@@ -45,7 +45,7 @@ export const lsShipsP4: dataType[] = [
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/0PAH1s4Umfs' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO]
     },
 ]
@@ -116,7 +116,7 @@ export const lsGenericP4: dataType[] = [
         notes: 'auto, faster than QA herself',
         videos: [{ url: 'https://youtu.be/B6E6XdAYfNQ' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO]
     },
 ]
@@ -174,22 +174,22 @@ export const jediLSP4: dataType[] = [
     },
     {
         lead: 'JML (KK Omi)',
-        leadFull: 'Jedi Master Luke with Kyle Katarn OMi',
+        leadFull: 'Jedi Master Luke with Kyle Katarn Omi',
         others: 'Kyle Katarn (omi), GAS, GMY, GK',
         notes: 'auto, GMY and GK are likely replaceable',
         videos: [{ url: 'https://www.youtube.com/watch?v=7N2-JbEer7k', creator: creators.egnards }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Kelleran Beq',
         leadFull: 'Kelleran Beq',
         others: 'Jocasta Nu, Shaak Ti, Aayla, Temple Guard',
-        notes: 'auto, all platoons required, Temple Guard required',
+        notes: 'auto, all platoons required, Temple Guard required, 100% consistent with Mace lead',
         videos: [{ url: 'https://youtu.be/A5hzdGVrBlY' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO]
     },
     {

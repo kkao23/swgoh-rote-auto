@@ -10,7 +10,7 @@ export const lsLeftP3: dataType[] = [
         notes: 'auto, not consistent 2/2',
         videos: [{ url: 'https://youtu.be/DiSqzfNlNww' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.CONSISTENT,
+        successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO]
     },
     {
@@ -50,7 +50,7 @@ export const lsLeftP3: dataType[] = [
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/gC6v0taN3Jw' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO]
     },
     {
@@ -111,8 +111,8 @@ export const lsRightP3: dataType[] = [
         notes: 'auto, focus mara wave 2',
         videos: [{ url: 'https://youtu.be/xrl2EVOFLxQ' }],
         difficulty: difficulty.CAUTION,
-        successRate: successRate.USUALLY,
-        interactionType: [interactionType.AUTO]
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.PAUSE_WAVE2]
     },
     {
         lead: 'Ahsoka Tano',
@@ -120,7 +120,7 @@ export const lsRightP3: dataType[] = [
         notes: 'auto, use Ezra and Hera if available',
         videos: [{ url: 'https://youtu.be/3T8M7wuyTuI' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
     },
     {
@@ -141,7 +141,7 @@ export const lsRightP3: dataType[] = [
         videos: [{ url: 'https://youtu.be/YmLMvgbqW3U' }],
         difficulty: difficulty.CAUTION,
         successRate: successRate.USUALLY,
-        interactionType: [interactionType.PAUSE_WAVE2],
+        interactionType: [interactionType.TARGET_START, interactionType.PAUSE_WAVE2],
     },
     {
         lead: 'JMK',
@@ -151,7 +151,7 @@ export const lsRightP3: dataType[] = [
         videos: [{ url: 'https://youtu.be/F1CGB8sTCA4' }],
         difficulty: difficulty.HARD,
         successRate: successRate.FIFTY_FIFTY,
-        interactionType: [interactionType.AUTO]
+        interactionType: [interactionType.AUTO, interactionType.PAUSE_WAVE2]
     },
     {
         lead: 'JML (Ezra)',
@@ -160,7 +160,7 @@ export const lsRightP3: dataType[] = [
         notes: 'auto, JKCK is good if available, Ezra mandatory. Target Mara wave 2',
         videos: [{ url: 'https://youtu.be/6LCLkhSg5AY' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.PAUSE_WAVE2]
     },
         {
@@ -179,7 +179,7 @@ export const lsRightP3: dataType[] = [
         videos: [{ url: 'https://youtu.be/foOES5g8prg' }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO],
+        interactionType: [interactionType.AUTO, interactionType.PAUSE_WAVE2],
         omi: true,
     },
     {
@@ -190,7 +190,7 @@ export const lsRightP3: dataType[] = [
         videos: [{ url: 'https://youtu.be/OKNAs62Omco' }],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: [interactionType.AUTO],
+        interactionType: [interactionType.AUTO, interactionType.PAUSE_WAVE2],
         omi: true
     },
     // {
@@ -211,7 +211,7 @@ export const sawP3: dataType[] = [
         notes: 'auto, target purge troopers',
         videos: [{ url: 'https://youtu.be/K4HObnZm0TU' }],
         difficulty: difficulty.HARD,
-        successRate: successRate.FIFTY_FIFTY,
+        successRate: successRate.USUALLY,
         interactionType: [interactionType.TARGET_START],
         targeted: true
     },
@@ -222,7 +222,7 @@ export const sawP3: dataType[] = [
         notes: 'auto, target purge troopers',
         videos: [{ url: 'https://youtu.be/FCEEsGXMtOA' }],
         difficulty: difficulty.CAUTION,
-        successRate: successRate.USUALLY,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.TARGET_START],
         targeted: true,
         omi: true

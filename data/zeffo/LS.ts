@@ -6,11 +6,11 @@ export const clonesSM: dataType[] = [
     {
         lead: 'Rex',
         others: 'Capt Rex, Echo, Arc Trooper, Fives',
-        notes: 'Auto, unselect reticule, Reticule on Consular in P2',
+        notes: 'Auto, unselect reticule, Reticule on Consular in P2 to make it a bit safer, the woman\'s counterattacks hurt',
         videos: [{ url: 'https://youtu.be/SvUzVopG8a4' }],
         difficulty: difficulty.CAUTION,
         successRate: successRate.USUALLY,
-        interactionType: [interactionType.AUTO]
+        interactionType: [interactionType.TARGET_START],
     }
 ]
 
@@ -33,7 +33,7 @@ export const zeffoJedi: dataType[] = [
         notes: 'Omi Kyle, auto',
         videos: [{ url: 'https://youtu.be/bBgHB0q5hmo' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO],
         omi: true
     },
@@ -43,7 +43,7 @@ export const zeffoJedi: dataType[] = [
         notes: 'Use ezra if possible, auto',
         videos: [{ url: 'https://youtu.be/V_u2XK-W8mA' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
     },
     {
@@ -53,7 +53,7 @@ export const zeffoJedi: dataType[] = [
         videos: [{ url: 'https://youtu.be/LqJsWBb5S88' }],
         difficulty: difficulty.CAUTION,
         successRate: successRate.USUALLY,
-        interactionType: [interactionType.PAUSE_WAVE2],
+        interactionType: [interactionType.TARGET_START, interactionType.PAUSE_WAVE2],
         targeted: true
     },
     {
@@ -62,7 +62,7 @@ export const zeffoJedi: dataType[] = [
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/ixnkyhqL5G0' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO],
         omi: true
     },
@@ -82,11 +82,11 @@ export const zeffoUFU: dataType[] = [
     {
         lead: 'Rey',
         others: 'CAT, Ben, Cere, JTR',
-        notes: 'auto, CAT mandatory, maybe like 70% success rate on auto',
+        notes: 'auto, CAT mandatory, maybe like 70% success rate on full auto, higher if you target purge troopers',
         videos: [{ url: 'https://youtu.be/LQbMxA3Oqcs' }, { url: 'https://www.youtube.com/watch?v=weXoe5KzFaY', creator: creators.egnards }],
         difficulty: difficulty.CAUTION,
-        successRate: successRate.USUALLY,
-        interactionType: [interactionType.AUTO]
+        successRate: successRate.NINETY_PERCENT,
+        interactionType: [interactionType.TARGET_START]
     },
     {
         lead: 'Ahsoka Tano (No CAT)',
@@ -116,7 +116,7 @@ export const zeffoCombat: dataType[] = [
         notes: 'auto, target humanoids first',
         videos: [{ url: 'https://youtu.be/zR1ZBzkfELU' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.CONSISTENT,
         interactionType: [interactionType.TARGET_START],
         targeted: true,
         omi: true,
@@ -127,8 +127,8 @@ export const zeffoCombat: dataType[] = [
         notes: 'auto, takes forever, can save Ezra for another mission. Need to take out others before big bot in wave 1',
         videos: [{ url: 'https://youtu.be/TTKvDyv3L1s' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
-        interactionType: [interactionType.AUTO]
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.TARGET_START]
     },
     {
         lead: 'JKL (JML)',
@@ -146,8 +146,8 @@ export const zeffoCombat: dataType[] = [
         notes: 'auto but dont mark the big bot in wave 1',
         videos: [{url: 'https://youtu.be/6kIPMiz3jKE'}],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
-        interactionType: [interactionType.AUTO],
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.TARGET_START],
         omi: true,
     },
     {
@@ -156,7 +156,7 @@ export const zeffoCombat: dataType[] = [
         notes: 'cant auto, try to spread stuns around',
         videos: [{ url: 'https://youtu.be/kDauBN0BZ0Y' }],
         difficulty: difficulty.NO_AUTO,
-        successRate: successRate.UNRELIABLE,
+        successRate: successRate.USUALLY,
         interactionType: [interactionType.MANUAL]
     },
 ]

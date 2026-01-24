@@ -9,8 +9,8 @@ export const acklayDSP2: dataType[] = [
         notes: 'Health/Prot tech on LV, hit auto',
         videos: [{ url: 'https://youtu.be/IfeFkchU5fA' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
-        interactionType: [interactionType.AUTO]
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.TARGET_START]
     },
     {
         lead: 'Reva',
@@ -28,7 +28,7 @@ export const acklayDSP2: dataType[] = [
         videos: [{ url: 'https://youtu.be/EssSASzT2qo' }],
         difficulty: difficulty.EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO]
+        interactionType: [interactionType.TARGET_START]
     },
     {
         lead: 'SLKR',
@@ -208,8 +208,8 @@ export const nexuDSP2: dataType[] = [
         notes: 'Poke, auto, DRey makes it easier',
         videos: [{ url: 'https://youtu.be/FW60H6-v6wM' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
-        interactionType: [interactionType.AUTO]
+        successRate: successRate.NINETY_PERCENT,
+        interactionType: [interactionType.TARGET_START]
     },
     {
         lead: 'LV',
@@ -235,8 +235,8 @@ export const nexuDSP2: dataType[] = [
         notes: 'bless morgan, auto',
         videos: [{ url: 'https://youtu.be/HjoqwXNWFNw' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
-        interactionType: [interactionType.AUTO]
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.TARGET_START]
     },
     {
         lead: 'Baylan',
@@ -244,7 +244,7 @@ export const nexuDSP2: dataType[] = [
         notes: 'omi Marrok, auto, last two any Mercenaries',
         videos: [{ url: 'https://youtu.be/FoCgJ_A0FNc' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO],
         omi: true
     },
@@ -255,8 +255,8 @@ export const nexuDSP2: dataType[] = [
         notes: 'I had Thrawn as 5th but Scorch is ideal. Not sure if I got lucky with them targeting Nightfall first',
         videos: [{ url: 'https://youtu.be/fjaJ59NNSmQ', }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
-        interactionType: [interactionType.TARGET_START],
+        successRate: successRate.NINETY_PERCENT,
+        interactionType: [interactionType.AUTO],
         targeted: true,
         omi: true
     },

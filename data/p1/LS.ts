@@ -73,7 +73,7 @@ export const jediP1: dataType[] = [
         notes: 'auto, if no JML',
         videos: [{ url: 'https://youtu.be/N3weS_bW_Js' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO]
     }, {
         lead: 'JMK',
@@ -102,7 +102,7 @@ export const jediP1: dataType[] = [
         notes: 'auto, really want Temple Guard here to tank',
         videos: [{ url: 'https://youtu.be/n15kElqRyyc' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO]
     }
 ]
@@ -132,7 +132,7 @@ export const shipsLSP1: dataType[] = [
         notes: 'Outrider 2nd special, auto, biggs then wedge reinf. wont work without MF',
         videos: [{ url: 'https://youtu.be/zxW5IOe_w_o' }],
         difficulty: difficulty.CAUTION,
-        successRate: successRate.USUALLY,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO]
     },
     {
@@ -150,7 +150,7 @@ export const shipsLSP1: dataType[] = [
         notes: 'marauder likely mandatory, auto',
         videos: [{ url: 'https://youtu.be/EEmfeYfr56Y' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO]
     }
 ]
@@ -260,7 +260,7 @@ export const genericLSP1: dataType[] = [
         notes: 'auto, can swap mace for GK',
         videos: [{ url: 'https://youtu.be/zwCGO6aeGNY' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO],
     },
     {
@@ -298,8 +298,8 @@ export const genericLSP1: dataType[] = [
         notes: '2/2 on full auto but not super smooth. Marked enemy leader first before auto',
         videos: [{ url: 'https://youtu.be/wp-v3OwyreQ' }],
         difficulty: difficulty.CAUTION,
-        successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO]
+        successRate: successRate.NINETY_PERCENT,
+        interactionType: [interactionType.TARGET_START, interactionType.PAUSE_WAVE2],
     },
 
 ]

@@ -43,7 +43,7 @@ export const dsMidRightP4: dataType[] = [
         notes: 'Pico has R9 on SEE, Traya and Sion. Not sure if this is reliable with R8',
         videos: [{url: 'https://youtu.be/ecgbRYyLYn8?si=vXiCr9uxLr9M5eJi', creator: creators.pico}],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.NINETY_PERCENT,
     },
     {
         lead: 'Reva',
@@ -62,7 +62,7 @@ export const dsMidRightP4: dataType[] = [
         notes: 'Scorch makes this easier but Piett works in his place. Need full platoons',
         videos: [{ url: 'https://youtu.be/zYBou5t9kRI', }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.NINETY_PERCENT,
         omi: true
     },
     {
@@ -72,17 +72,17 @@ export const dsMidRightP4: dataType[] = [
         notes: 'Really want an off tank to reduce the chance Marrok gets killed early',
         videos: [{ url: 'https://youtu.be/p6bhOC6tlEo', }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.NINETY_PERCENT,
         omi: true
     },
     {
         lead: 'SEE (requirement chars)',
         leadFull: 'Sith Eternal Emperor',
         others: 'Malak, Dooku, DR, Bane',
-        notes: 'need all platoons, auto not consistent',
+        notes: 'need all platoons, Use stranger instead of Dooku to make this consistent',
         videos: [{url: 'https://youtu.be/oLhPREH3EYs'}],
         difficulty: difficulty.NO_AUTO,
-        successRate: successRate.USUALLY,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO],
     },
     {
@@ -91,7 +91,7 @@ export const dsMidRightP4: dataType[] = [
         notes: 'auto, replace Bossk and +1 with Hutt Cartel if possible',
         videos: [{url: 'https://youtu.be/62v2RzJYplw'}],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO]
     },
     {
@@ -115,7 +115,7 @@ export const dsSortie: dataType[] = [
         notes: 'auto, need ult and full platoons',
         videos: [{ url: 'https://youtu.be/8HvKDJaolEU' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
     },
     {

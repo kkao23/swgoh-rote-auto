@@ -21,7 +21,7 @@ export const dsGenericP3: dataType[] = [
         videos: [{ url: 'https://youtu.be/eXq1LcioaFE' }],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: [interactionType.AUTO]
+        interactionType: [interactionType.TARGET_START]
     },
     {
         lead: 'SLKR',
@@ -29,8 +29,8 @@ export const dsGenericP3: dataType[] = [
         notes: 'Poke once in each round, auto, inconsistent without DRey',
         videos: [{ url: 'https://youtu.be/grmLuLr-XG0' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
-        interactionType: [interactionType.AUTO]
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.TARGET_START, interactionType.PAUSE_WAVE2]
     },
     {
         lead: 'General Grievous',
@@ -74,7 +74,7 @@ export const dsGenericP3: dataType[] = [
         notes: 'I had LV Thrawn scout trooper Iden Tarkin but I imagine any empire is fine. I would avoid piett. full auto',
         videos: [{ url: 'https://youtu.be/FAunjeobuzM' }],
         difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO]
     },
     {
@@ -136,7 +136,7 @@ export const dsEmpireP3: dataType[] = [
         notes: 'I had Piett as 5th but Scorch is ideal',
         videos: [{ url: 'https://youtu.be/ydXVr7yHHyY', }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.NINETY_PERCENT,
         omi: true
     },
 ]
@@ -148,7 +148,7 @@ export const drAphraP3: dataType[] = [
         notes: 'auto, Use 0-0-0 if you have him, can occasionally 1/2',
         videos: [{ url: 'https://youtu.be/_cLW8lg0kB4' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.FIFTY_FIFTY,
+        successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO]
     },
     {
@@ -157,7 +157,7 @@ export const drAphraP3: dataType[] = [
         notes: 'if no droids, auto, can occasionally 1/2',
         videos: [{ url: 'https://youtu.be/IsnUq7nxcBU' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.FIFTY_FIFTY,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO]
     },
     {
@@ -179,8 +179,8 @@ export const merrinP3: dataType[] = [
         notes: 'auto but Bless Morgan, doom maul first in P2',
         videos: [{ url: 'https://youtu.be/ldzz1yHeeWY' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
-        interactionType: [interactionType.AUTO]
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.TARGET_START, interactionType.PAUSE_WAVE2],
     },
     {
         lead: 'Old Daka',
@@ -188,7 +188,7 @@ export const merrinP3: dataType[] = [
         notes: 'auto, R8+ Daka and great mods required',
         videos: [{ url: 'https://www.youtube.com/watch?v=EM3GCo_0XSQ', creator: creators.egnards }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.FIFTY_FIFTY,
         interactionType: [interactionType.AUTO]
     }
 ]

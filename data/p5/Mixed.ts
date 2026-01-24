@@ -73,6 +73,16 @@ export const mixedCombatTopRightP5: dataType[] = [
         videos: [{ url: 'https://youtu.be/gXpYAR1XrUQ' }],
         difficulty: difficulty.EASY,
     },
+    {
+        lead: 'Omega (Mercenary) (Omi)',
+        leadFull: 'Omega with Bad Batch Mercenaries',
+        others: 'Crosshair, Wrecker, Batcher, Hunter',
+        notes: 'auto, can get 2/2 sometimes but not consistently. Pause to target someone at the start of Wave 2',
+        videos: [{ url: 'https://youtu.be/XkhNW3ccawU' }],
+        difficulty: difficulty.VERY_EASY,
+        omi: true,
+        targeted: true
+    },
 ]
 
 export const mixedCombatBottomLeftP5: dataType[] = [
@@ -116,7 +126,14 @@ export const mixedCombatBottomLeftP5: dataType[] = [
         videos: [{ url: 'https://youtu.be/uKpZmmIcmT4' }],
         difficulty: difficulty.EASY,
         omi: true,
-    }
+    },
+    {
+        lead: 'Queen Amidala',
+        others: 'POW, MQJ, +2 Galactic Republic',
+        notes: '1/2 on auto, can\'t get 2/2',
+        videos: [{ url: 'https://youtu.be/feUjL88H_b8' }],
+        difficulty: difficulty.HARD
+    },
 ];
 
 export const jabbaP5:dataType[] = [

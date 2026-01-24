@@ -33,6 +33,13 @@ export const lsTopLeftP5: dataType[] = [
         videos: [{ url: 'https://youtu.be/225Hr3xBRok' }, { url: 'https://youtu.be/8YPqRLYrLZM' }],
         difficulty: difficulty.EASY
     },
+    {
+        lead: 'Leia',
+        others: 'Drogan, R2-D2, Admiral Raddus, +1',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/FwsUlJJgz_o' }],
+        difficulty: difficulty.EASY
+    },
 ]
 
 export const lsTopMidP5: dataType[] = [
@@ -57,6 +64,13 @@ export const lsTopMidP5: dataType[] = [
         others: 'Drogan, R2-D2, Admiral Raddus, +1',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/czbZV5oFunQ' }],
+        difficulty: difficulty.VERY_EASY
+    },
+    {
+        lead: 'Ahsoka Tano',
+        others: 'Ezra, Fulcrum, +2',
+        notes: '2/2 on auto, the more Spectres the better',
+        videos: [{ url: 'https://youtu.be/Y3dadvLoH8o' }],
         difficulty: difficulty.VERY_EASY
     },
 ]
@@ -95,6 +109,14 @@ export const lsBottomP5: dataType[] = [
 ]
 
 export const lsShipsP5: dataType[] = [
+    {
+        lead: 'Profundity (Rogue One)',
+        others: 'MF, Outrider, Y Wing, Rogue One',
+        notes: 'Keep reticule on Scythe, auto',
+        videos: [{ url: 'https://youtu.be/qpNtrNGpeKI' }],
+        difficulty: difficulty.EASY,
+        targeted: true
+    },
     {
         lead: 'Profundity',
         others: 'MF, Outrider, Y Wing, Wedge, Biggs, Phantom, Ghost',

@@ -193,8 +193,12 @@ async function showToast(itemIndex: number) {
                                     <UIcon :name="difficultyIcon(item.content)" class="w-8 h-8"
                                         :class="difficultyColor(item.content)"></UIcon>
                                 </div>
-                                <!-- Target emoji for missions with targeted field set to true -->
-                                <span v-if="item.content.targeted" class="text-2xl ml-1">🎯</span>
+                                <!-- Target emoji with tooltip for missions with targeted field set to true -->
+                                <UTooltip v-if="item.content.targeted" 
+                                    text="Targeting or pausing auto at start of battle or wave recommended, see Notes"
+                                    :popper="{ placement: 'top' }">
+                                    <span class="text-2xl ml-1 cursor-help">🎯</span>
+                                </UTooltip>
                             </template>
                             <span>{{ item.label }}</span>
                             <img v-if="item.content.omi" src="/icons/omi.png" alt="omicron" class="h-4 w-4" />

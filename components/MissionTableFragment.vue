@@ -89,9 +89,11 @@ const difficultyIcon = (item: dataType) => {
 const successRateBadge = (rate?: string) => {
     switch (rate) {
         case successRate.CONSISTENT:
-            return { icon: 'i-heroicons-check-circle-solid', color: 'text-green-500', tooltip: 'Consistent 2/2 waves' };
+            return { icon: 'i-heroicons-check-circle-solid', color: 'text-green-500', tooltip: 'Consistent 2/2 waves (100%)' };
+        case successRate.NINETY_PERCENT:
+            return { icon: 'i-heroicons-hand-thumb-up-solid', color: 'text-blue-400', tooltip: 'Very reliable (~90%)' };
         case successRate.USUALLY:
-            return { icon: 'i-heroicons-exclamation-triangle-solid', color: 'text-yellow-500', tooltip: 'Usually works, can fail (60-80%)' };
+            return { icon: 'i-heroicons-exclamation-triangle-solid', color: 'text-yellow-500', tooltip: 'Usually works (60-80%)' };
         case successRate.FIFTY_FIFTY:
             return { icon: 'i-heroicons-minus-circle-solid', color: 'text-orange-500', tooltip: '50/50 - Consistent 1/2, sometimes 2/2' };
         case successRate.UNRELIABLE:

@@ -28,7 +28,8 @@ export enum difficulty {
 }
 
 export enum successRate {
-    CONSISTENT = 'consistent',           // Consistent 2/2
+    CONSISTENT = 'consistent',           // Consistent 2/2, 100%
+    NINETY_PERCENT = 'ninety-percent',   // 90% success rate
     USUALLY = 'usually',                 // 60-80% success, can fail
     FIFTY_FIFTY = 'fifty-fifty',         // 1/2 consistent, sometimes 2/2
     UNRELIABLE = 'unreliable',           // Cannot auto or very unreliable

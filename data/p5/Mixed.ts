@@ -79,7 +79,7 @@ export const mixedCombatTopRightP5: dataType[] = [
         others: 'Crosshair, Wrecker, Batcher, Hunter',
         notes: 'auto, can get 2/2 sometimes but not consistently. Pause to target someone at the start of Wave 2',
         videos: [{ url: 'https://youtu.be/XkhNW3ccawU' }],
-        difficulty: difficulty.VERY_EASY,
+        difficulty: difficulty.HARD,
         omi: true,
         targeted: true
     },

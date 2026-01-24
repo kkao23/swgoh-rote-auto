@@ -119,6 +119,7 @@ const accordionItems = computed(() => {
                 videos: d.videos,
                 difficulty: d.difficulty,
                 omi: d.omi,
+                targeted: d.targeted,
             },
             // Set defaultOpen based on initialDataIndexFromUrl for initial page load
             // If initialDataIndexFromUrl is null, default to opening the first item (index 0)
@@ -192,6 +193,8 @@ async function showToast(itemIndex: number) {
                                     <UIcon :name="difficultyIcon(item.content)" class="w-8 h-8"
                                         :class="difficultyColor(item.content)"></UIcon>
                                 </div>
+                                <!-- Target emoji for missions with targeted field set to true -->
+                                <span v-if="item.content.targeted" class="text-2xl ml-1">🎯</span>
                             </template>
                             <span>{{ item.label }}</span>
                             <img v-if="item.content.omi" src="/icons/omi.png" alt="omicron" class="h-4 w-4" />

@@ -162,7 +162,9 @@ export const mixedCombatBottomLeftP5: dataType[] = [
         others: 'POW, MQJ, +2 Galactic Republic',
         notes: '1/2 on auto, can\'t get 2/2',
         videos: [{ url: 'https://youtu.be/feUjL88H_b8' }],
-        difficulty: difficulty.HARD
+        difficulty: difficulty.HARD,
+        successRate: successRate.FIFTY_FIFTY,
+        interactionType: [interactionType.AUTO],
     },
 ];
 

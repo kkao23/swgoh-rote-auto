@@ -146,7 +146,7 @@ export const lsShipsP5: dataType[] = [
         targeted: true
     },
     {
-        lead: 'Profundity',
+        lead: 'Profundity (No Rogue One)',
         others: 'MF, Outrider, Y Wing, Wedge, Biggs, Phantom, Ghost',
         notes: 'can\'t auto. Go after Scythe, Phantom first reinforcement',
         videos: [{ url: 'https://youtu.be/9HiGycdlf4E' }],

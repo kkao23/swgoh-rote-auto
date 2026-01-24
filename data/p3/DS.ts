@@ -10,7 +10,7 @@ export const dsGenericP3: dataType[] = [
         videos: [{ url: 'https://youtu.be/WcYP7j8ooos' }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO,
+        interactionType: [interactionType.AUTO],
         omi: true
     },
     {
@@ -21,7 +21,7 @@ export const dsGenericP3: dataType[] = [
         videos: [{ url: 'https://youtu.be/eXq1LcioaFE' }],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'SLKR',
@@ -30,7 +30,7 @@ export const dsGenericP3: dataType[] = [
         videos: [{ url: 'https://youtu.be/grmLuLr-XG0' }],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'General Grievous',
@@ -39,7 +39,7 @@ export const dsGenericP3: dataType[] = [
         videos: [{ url: 'https://youtu.be/uILyRLFQv-o' }],
         difficulty: difficulty.HARD,
         successRate: successRate.FIFTY_FIFTY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Darth Revan',
@@ -48,7 +48,7 @@ export const dsGenericP3: dataType[] = [
         videos: [{ url: 'https://youtu.be/E3O_nxMHj8A' }],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Reva',
@@ -57,7 +57,7 @@ export const dsGenericP3: dataType[] = [
         videos: [{ url: 'https://www.youtube.com/watch?v=7wqarjgb6x8', creator: creators.egnards }],
         difficulty: difficulty.HARD,
         successRate: successRate.FIFTY_FIFTY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Trench',
@@ -66,7 +66,7 @@ export const dsGenericP3: dataType[] = [
         videos: [{url: 'https://youtu.be/9MoHoNzgNYw'}],
         difficulty: difficulty.CAUTION,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO,
+        interactionType: [interactionType.AUTO],
     },
     {
         lead: 'Lord Vader',
@@ -75,7 +75,7 @@ export const dsGenericP3: dataType[] = [
         videos: [{ url: 'https://youtu.be/FAunjeobuzM' }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'DTMG (Enoch omi)',
@@ -85,7 +85,7 @@ export const dsGenericP3: dataType[] = [
         videos: [{url: 'https://youtu.be/hpzwWiwI-dE'}],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO,
+        interactionType: [interactionType.AUTO],
         omi: true,
     },
     {
@@ -106,7 +106,7 @@ export const dsGenericP3: dataType[] = [
         videos: [{ url: 'https://youtu.be/40THp58CUfI' }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO,
+        interactionType: [interactionType.AUTO],
     },
 ]
 
@@ -118,7 +118,7 @@ export const dsEmpireP3: dataType[] = [
         videos: [{ url: 'https://youtu.be/Ap_rIhILZBM' }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Grand Inquisitor',
@@ -127,7 +127,7 @@ export const dsEmpireP3: dataType[] = [
         videos: [{ url: 'https://youtu.be/_hwmbHfEj_M' }],
         difficulty: difficulty.HARD,
         successRate: successRate.FIFTY_FIFTY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Tarkin',
@@ -149,7 +149,7 @@ export const drAphraP3: dataType[] = [
         videos: [{ url: 'https://youtu.be/_cLW8lg0kB4' }],
         difficulty: difficulty.EASY,
         successRate: successRate.FIFTY_FIFTY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Aphra (Sith)',
@@ -158,7 +158,7 @@ export const drAphraP3: dataType[] = [
         videos: [{ url: 'https://youtu.be/IsnUq7nxcBU' }],
         difficulty: difficulty.EASY,
         successRate: successRate.FIFTY_FIFTY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Aphra (IPD Omicron)',
@@ -167,7 +167,7 @@ export const drAphraP3: dataType[] = [
         videos: [{ url: 'https://youtu.be/MTkMzJMayUA?si=FfDoECPNw7uALL_n' }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO,
+        interactionType: [interactionType.AUTO],
         omi: true
     }
 ]
@@ -180,7 +180,7 @@ export const merrinP3: dataType[] = [
         videos: [{ url: 'https://youtu.be/ldzz1yHeeWY' }],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Old Daka',
@@ -189,7 +189,7 @@ export const merrinP3: dataType[] = [
         videos: [{ url: 'https://www.youtube.com/watch?v=EM3GCo_0XSQ', creator: creators.egnards }],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     }
 ]
 

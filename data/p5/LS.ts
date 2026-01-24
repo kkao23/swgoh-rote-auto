@@ -18,7 +18,7 @@ export const lsTopLeftP5: dataType[] = [
         videos: [{ url: 'https://youtu.be/BeYMQVqnVV0' }],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.PAUSE_WAVE2,
+        interactionType: [interactionType.PAUSE_WAVE2],
         omi: true,
     },
     {
@@ -28,7 +28,7 @@ export const lsTopLeftP5: dataType[] = [
         videos: [{ url: 'https://youtu.be/rKrNwQrNHw4' }],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'JMK',
@@ -37,7 +37,7 @@ export const lsTopLeftP5: dataType[] = [
         videos: [{ url: 'https://youtu.be/225Hr3xBRok' }, { url: 'https://youtu.be/8YPqRLYrLZM' }],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Leia',
@@ -46,7 +46,7 @@ export const lsTopLeftP5: dataType[] = [
         videos: [{ url: 'https://youtu.be/FwsUlJJgz_o' }],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
 ]
 
@@ -58,7 +58,7 @@ export const lsTopMidP5: dataType[] = [
         videos: [{ url: 'https://youtu.be/2eC85m5HXOA' }],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Omega (Mercenary) (Omi)',
@@ -68,7 +68,7 @@ export const lsTopMidP5: dataType[] = [
         videos: [{ url: 'https://youtu.be/GbS9hvNfB3k' }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO,
+        interactionType: [interactionType.AUTO],
         omi: true,
     },
     {
@@ -78,7 +78,7 @@ export const lsTopMidP5: dataType[] = [
         videos: [{ url: 'https://youtu.be/czbZV5oFunQ' }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Ahsoka Tano',
@@ -87,7 +87,7 @@ export const lsTopMidP5: dataType[] = [
         videos: [{ url: 'https://youtu.be/Y3dadvLoH8o' }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
 ]
 
@@ -99,7 +99,7 @@ export const lsBottomP5: dataType[] = [
         videos: [{ url: 'https://www.youtube.com/watch?v=5kjc-83PM2s', creator: creators.egnards }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Omega (Mercenary) (Omi)',
@@ -109,7 +109,7 @@ export const lsBottomP5: dataType[] = [
         videos: [{ url: 'https://youtu.be/OmM8S6w6l3s' }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.PAUSE_WAVE2,
+        interactionType: [interactionType.PAUSE_WAVE2],
         omi: true,
     },
     {
@@ -119,7 +119,7 @@ export const lsBottomP5: dataType[] = [
         videos: [{ url: 'https://youtu.be/xruQGASpTP4' }],
         difficulty: difficulty.HARD,
         successRate: successRate.FIFTY_FIFTY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Ahsoka Tano (spectres)',
@@ -128,7 +128,7 @@ export const lsBottomP5: dataType[] = [
         videos: [{ url: 'https://youtu.be/Q9fG6WCUjE4' }],
         difficulty: difficulty.CAUTION,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     }
 ]
 
@@ -140,7 +140,7 @@ export const lsShipsP5: dataType[] = [
         videos: [{ url: 'https://youtu.be/qpNtrNGpeKI' }],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO,
+        interactionType: [interactionType.AUTO],
         targeted: true
     },
     {

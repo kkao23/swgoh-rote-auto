@@ -11,7 +11,7 @@ export const dsInqP4: dataType[] = [
         videos: [{ url: 'https://youtu.be/2q1SguWa54Y' }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO,
+        interactionType: [interactionType.AUTO],
         omi: true
     }
 ]
@@ -25,7 +25,7 @@ export const dsMidRightP4: dataType[] = [
         videos: [{ url: 'https://youtu.be/JZT1-k2EDIo' }],
         difficulty: difficulty.HARD,
         successRate: successRate.FIFTY_FIFTY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Mother Talzin',
@@ -34,7 +34,7 @@ export const dsMidRightP4: dataType[] = [
         videos: [{ url: 'https://www.youtube.com/watch?v=UX67LlXNtBY', creator: creators.egnards }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'SEE (overrelic Triumvirate)',
@@ -52,7 +52,7 @@ export const dsMidRightP4: dataType[] = [
         videos: [{ url: 'https://youtu.be/w8sQ1bMYvew' }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO,
+        interactionType: [interactionType.AUTO],
         omi: true
     },
     {
@@ -83,7 +83,7 @@ export const dsMidRightP4: dataType[] = [
         videos: [{url: 'https://youtu.be/oLhPREH3EYs'}],
         difficulty: difficulty.NO_AUTO,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO,
+        interactionType: [interactionType.AUTO],
     },
     {
         lead: 'Jabba',
@@ -92,7 +92,7 @@ export const dsMidRightP4: dataType[] = [
         videos: [{url: 'https://youtu.be/62v2RzJYplw'}],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'DTMG',
@@ -102,7 +102,7 @@ export const dsMidRightP4: dataType[] = [
         videos: [{url: 'https://youtu.be/T8HbZSubWtI'}],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO,
+        interactionType: [interactionType.AUTO],
         omi: true,
     }
 ]
@@ -116,7 +116,7 @@ export const dsSortie: dataType[] = [
         videos: [{ url: 'https://youtu.be/8HvKDJaolEU' }],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO,
+        interactionType: [interactionType.AUTO],
     },
     {
         lead: 'DTMG',
@@ -126,7 +126,7 @@ export const dsSortie: dataType[] = [
         videos: [{url: 'https://youtu.be/MAYTTRm1l-c'}],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO,
+        interactionType: [interactionType.AUTO],
         omi: true,
     }
 ]

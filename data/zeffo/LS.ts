@@ -10,7 +10,7 @@ export const clonesSM: dataType[] = [
         videos: [{ url: 'https://youtu.be/SvUzVopG8a4' }],
         difficulty: difficulty.CAUTION,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     }
 ]
 
@@ -22,7 +22,7 @@ export const zeffoFleets: dataType[] = [
         videos: [{ url: 'https://youtu.be/h4nS7Flp4Zk' }],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
 ]
 
@@ -34,7 +34,7 @@ export const zeffoJedi: dataType[] = [
         videos: [{ url: 'https://youtu.be/bBgHB0q5hmo' }],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO,
+        interactionType: [interactionType.AUTO],
         omi: true
     },
     {
@@ -44,7 +44,7 @@ export const zeffoJedi: dataType[] = [
         videos: [{ url: 'https://youtu.be/V_u2XK-W8mA' }],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'JKCK (JML Ezra)',
@@ -53,7 +53,7 @@ export const zeffoJedi: dataType[] = [
         videos: [{ url: 'https://youtu.be/LqJsWBb5S88' }],
         difficulty: difficulty.CAUTION,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.PAUSE_WAVE2,
+        interactionType: [interactionType.PAUSE_WAVE2],
         targeted: true
     },
     {
@@ -63,7 +63,7 @@ export const zeffoJedi: dataType[] = [
         videos: [{ url: 'https://youtu.be/ixnkyhqL5G0' }],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO,
+        interactionType: [interactionType.AUTO],
         omi: true
     },
     {
@@ -73,7 +73,7 @@ export const zeffoJedi: dataType[] = [
         videos: [{ url: 'https://www.youtube.com/watch?v=rhEhxaGzODI', creator: creators.egnards }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.AUTO,
+        interactionType: [interactionType.AUTO],
         omi: true
     },
 ]
@@ -86,7 +86,7 @@ export const zeffoUFU: dataType[] = [
         videos: [{ url: 'https://youtu.be/LQbMxA3Oqcs' }, { url: 'https://www.youtube.com/watch?v=weXoe5KzFaY', creator: creators.egnards }],
         difficulty: difficulty.CAUTION,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Ahsoka Tano (No CAT)',
@@ -95,7 +95,7 @@ export const zeffoUFU: dataType[] = [
         videos: [{ url: 'https://youtu.be/H4xzXPPNV8Y' }],
         difficulty: difficulty.HARD,
         successRate: successRate.FIFTY_FIFTY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Ahsoka Tano (CAT)',
@@ -104,7 +104,7 @@ export const zeffoUFU: dataType[] = [
         videos: [{ url: 'https://youtu.be/jTJg8brbeS4' }],
         difficulty: difficulty.CAUTION,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.TARGET_START,
+        interactionType: [interactionType.TARGET_START],
         targeted: true
     },
 ]
@@ -117,7 +117,7 @@ export const zeffoCombat: dataType[] = [
         videos: [{ url: 'https://youtu.be/zR1ZBzkfELU' }],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.TARGET_START,
+        interactionType: [interactionType.TARGET_START],
         targeted: true,
         omi: true,
     },
@@ -128,7 +128,7 @@ export const zeffoCombat: dataType[] = [
         videos: [{ url: 'https://youtu.be/TTKvDyv3L1s' }],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'JKL (JML)',
@@ -138,7 +138,7 @@ export const zeffoCombat: dataType[] = [
         videos: [{ url: 'https://youtu.be/g42DEv89flA' }],
         difficulty: difficulty.EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: interactionType.TARGET_START
+        interactionType: [interactionType.TARGET_START]
     },
     {
         lead: 'Omega (omi)',
@@ -147,7 +147,7 @@ export const zeffoCombat: dataType[] = [
         videos: [{url: 'https://youtu.be/6kIPMiz3jKE'}],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
-        interactionType: interactionType.AUTO,
+        interactionType: [interactionType.AUTO],
         omi: true,
     },
     {
@@ -157,6 +157,6 @@ export const zeffoCombat: dataType[] = [
         videos: [{ url: 'https://youtu.be/kDauBN0BZ0Y' }],
         difficulty: difficulty.NO_AUTO,
         successRate: successRate.UNRELIABLE,
-        interactionType: interactionType.MANUAL
+        interactionType: [interactionType.MANUAL]
     },
 ]

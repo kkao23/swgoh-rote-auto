@@ -103,8 +103,8 @@ const successRateBadge = (rate?: string) => {
     }
 }
 
-// Interaction Type Badge Config
-const interactionBadge = (type?: string) => {
+// Interaction Type Badge Config (single type)
+const interactionBadge = (type: string) => {
     switch (type) {
         case interactionType.TARGET_START:
             return { icon: 'i-heroicons-cursor-arrow-rays', color: 'text-blue-400', tooltip: 'Target at battle start' };
@@ -116,6 +116,12 @@ const interactionBadge = (type?: string) => {
         default:
             return null; // Pure auto, no badge needed
     }
+}
+
+// Get all interaction badges for an array of types
+const interactionBadges = (types?: string[]) => {
+    if (!types || types.length === 0) return [];
+    return types.map(type => interactionBadge(type)).filter(badge => badge !== null);
 }
 
 const isMobile = useMediaQuery('(max-width: 768px)');
@@ -226,18 +232,22 @@ async function showToast(itemIndex: number) {
                                             :class="difficultyColor(item.content)"></UIcon>
                                     </div>
 
-                                    <!-- Interaction Type Badge -->
-                                    <UTooltip v-if="interactionBadge(item.content.interactionType)" 
-                                        :text="interactionBadge(item.content.interactionType)!.tooltip"
-                                        :popper="{ placement: 'top' }">
-                                        <div class="w-5 h-5 flex items-center justify-center">
-                                            <UIcon 
-                                                :name="interactionBadge(item.content.interactionType)!.icon" 
-                                                class="w-5 h-5"
-                                                :class="interactionBadge(item.content.interactionType)!.color">
-                                            </UIcon>
-                                        </div>
-                                    </UTooltip>
+                                    <!-- Interaction Type Badges (array) -->
+                                    <template v-if="item.content.interactionType && item.content.interactionType.length > 0">
+                                        <UTooltip 
+                                            v-for="(badge, badgeIndex) in interactionBadges(item.content.interactionType)" 
+                                            :key="badgeIndex"
+                                            :text="badge!.tooltip"
+                                            :popper="{ placement: 'top' }">
+                                            <div class="w-5 h-5 flex items-center justify-center">
+                                                <UIcon 
+                                                    :name="badge!.icon" 
+                                                    class="w-5 h-5"
+                                                    :class="badge!.color">
+                                                </UIcon>
+                                            </div>
+                                        </UTooltip>
+                                    </template>
 
                                     <!-- Legacy Targeted Badge (for backward compatibility) -->
                                     <UTooltip v-else-if="item.content.targeted" 

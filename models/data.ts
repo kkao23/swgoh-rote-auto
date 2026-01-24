@@ -15,7 +15,7 @@ export type data = {
     omi?: boolean,
     targeted?: boolean,
     successRate?: successRate,
-    interactionType?: interactionType,
+    interactionType?: interactionType[],  // Changed to array
     path?: string,
 }
 

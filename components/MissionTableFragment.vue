@@ -195,8 +195,12 @@ async function showToast(itemIndex: number) {
                                 </div>
                                 <!-- Target emoji with tooltip for missions with targeted field set to true -->
                                 <UTooltip v-if="item.content.targeted" 
-                                    text="Targeting or pausing auto at start of battle or wave recommended, see Notes"
                                     :popper="{ placement: 'top' }">
+                                    <template #text>
+                                        <div class="text-center max-w-xs">
+                                            Manual targeting or pausing<br>recommended - see Notes
+                                        </div>
+                                    </template>
                                     <span class="text-2xl ml-1 cursor-help">🎯</span>
                                 </UTooltip>
                             </template>

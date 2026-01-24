@@ -1,6 +1,6 @@
 import { type data as dataType } from "~/models/data";
 import { creators } from "~/models/creators";
-import { difficulty } from "~/models/data";
+import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const hondoMixedP2: dataType[] = [
     {
@@ -9,6 +9,8 @@ export const hondoMixedP2: dataType[] = [
         notes: 'Need to pause and target Tarkin wave 2',
         videos: [{ url: 'https://youtu.be/U09oOAmFQRQ' }],
         difficulty: difficulty.CAUTION,
+        successRate: successRate.USUALLY,
+        interactionType: interactionType.PAUSE_WAVE2,
         targeted: true,
         omi: true
     },
@@ -18,6 +20,8 @@ export const hondoMixedP2: dataType[] = [
         notes: 'post tarkin buff, auto, target range trooper first in both waves, leave Tarkin for last. I had R8 gungans',
         videos: [{ url: 'https://youtu.be/wnXeT0sUQdA'}],
         difficulty: difficulty.CAUTION,
+        successRate: successRate.USUALLY,
+        interactionType: interactionType.TARGET_START,
         omi: true,
     },
     {
@@ -27,6 +31,8 @@ export const hondoMixedP2: dataType[] = [
         notes: 'easy full auto with Wrecker Omi, leave Batcher out, R7+ Recommended',
         videos: [{ url: 'https://youtu.be/OS-6bEChQHo' }],
         difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO,
         omi: true,
     },
     {
@@ -36,6 +42,8 @@ export const hondoMixedP2: dataType[] = [
         notes: 'easy full auto, R7+ Recommended',
         videos: [{ url: 'https://youtu.be/M9r_x_gJlr0' }],
         difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO,
     },
 ]
 
@@ -45,27 +53,35 @@ export const shipsMixedP2: dataType[] = [
         others: 'Vulture, Hyena, Sun Fac, Spy, Soldier',
         notes: 'If you had to platoon exec, auto',
         videos: [{ url: 'https://youtu.be/ssTdWAi0jOs' }],
-        difficulty: difficulty.EASY
+        difficulty: difficulty.EASY,
+        successRate: successRate.USUALLY,
+        interactionType: interactionType.AUTO
     },
     {
         lead: 'Executor',
         others: 'Hounds Tooth, XB, RC, Slave 1, IG2000',
         notes: 'auto, you need RC, youll lose if RC is platooned',
         videos: [{ url: 'https://www.youtube.com/watch?v=TMQZ4iO_V4w', creator: creators.egnards }],
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO
     },
     {
         lead: 'Profundity',
         others: 'Outrider, MF, Y wing, Ghost, Phantom',
         notes: 'auto',
         videos: [{ url: 'https://www.youtube.com/watch?v=-q6P7kJP39c', creator: creators.egnards }],
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO
     },{
         lead: 'Leviathan',
         others: 'Sith Bomber, Fury Class Interceptor, Tie Dagger, Sith Fighter, MK6 Interceptor',
         notes: 'auto',
         videos: [{ url: 'https://www.youtube.com/watch?v=REBjxUTyzvc', creator: creators.egnards }],
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO
     },
 ]
 
@@ -76,7 +92,9 @@ export const mixedP2: dataType[] = [
         others: 'CAT, Ahsoka, Padme, GK',
         notes: 'easy auto',
         videos: [{ url: 'https://youtu.be/EaX496Y45Vc' }],
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO
     },
     {
         lead: 'GAS',
@@ -84,14 +102,18 @@ export const mixedP2: dataType[] = [
         others: 'Fives, Rex, Echo, Capt Rex',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/kxJYqcbYgDQ' }],
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO
     },
     {
         lead: 'Hera (Phoenix)',
         others: 'Kanan, Sabine, Chopper, Capt Rex',
         notes: 'auto',
         videos: [{ url: 'https://www.youtube.com/watch?v=Hf_-_PGj3rk', creator: creators.egnards }],
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO
     },
     {
         lead: 'Boss Nass',
@@ -99,6 +121,8 @@ export const mixedP2: dataType[] = [
         notes: 'easy auto with Tarpals Omi',
         videos: [{ url: 'https://youtu.be/j6c_GgoPyws?si=Hx1_pMIyDumR1mIX', creator: creators.pico }],
         difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO,
         omi: true
     },
     {
@@ -107,14 +131,18 @@ export const mixedP2: dataType[] = [
         others: 'Paz, Beskar Mando, IG12/Grogu, Rey',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/raru9eDGYqk' }],
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO
     },
     {
         lead: 'Queen Amidala (CUP)',
         others: 'CUP, POW, MQG, JKA',
         notes: 'auto, 5th flexible',
         videos: [{url: 'https://youtu.be/YTkdcZLEnaw'}],
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO
     },
     {
         lead: 'Baylan',
@@ -122,6 +150,8 @@ export const mixedP2: dataType[] = [
         notes: 'L3 for the pretaunt makes this easy, auto',
         videos: [{ url: 'https://youtu.be/qy4IhX1vf7s' }],
         difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO,
         omi: true
     },
     {
@@ -131,6 +161,8 @@ export const mixedP2: dataType[] = [
         notes: 'omi Wrecker, 2/2 on full auto',
         videos: [{ url: 'https://youtu.be/SF9oCVi1fuw' }],
         difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO,
         omi: true
     },
     {
@@ -139,7 +171,9 @@ export const mixedP2: dataType[] = [
         others: 'Jocasta Nu, Shaak Ti, Aayla, Temple Guard',
         notes: 'auto, prob need R8+ on Temple Guard',
         videos: [{ url: 'https://youtu.be/us8-AXQx2jw' }],
-        difficulty: difficulty.EASY
+        difficulty: difficulty.EASY,
+        successRate: successRate.USUALLY,
+        interactionType: interactionType.AUTO
     },
     {
         lead: 'JML',
@@ -148,6 +182,8 @@ export const mixedP2: dataType[] = [
         notes: 'auto, Use better jedi for more consistency. JKL wants fast mods',
         videos: [{ url: 'https://youtu.be/tmWmnc0eoPU' }],
         difficulty: difficulty.EASY,
+        successRate: successRate.USUALLY,
+        interactionType: interactionType.AUTO,
     },
     {
         lead: 'Tarkin',
@@ -156,6 +192,8 @@ export const mixedP2: dataType[] = [
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/XlSEmf82fu4', }],
         difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO,
         omi: true
     },
     {
@@ -165,6 +203,8 @@ export const mixedP2: dataType[] = [
         notes: 'full auto, last two replaceable',
         videos: [{ url: 'https://youtu.be/jlF8EHzwTck' }],
         difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO,
     },
 ]
 
@@ -174,7 +214,9 @@ export const jabbaP2: dataType[] = [
         others: 'Boba, Krrsantan, Skiff Lando, Booush',
         notes: 'Boba can be any hutt cartel, easy auto',
         videos: [{ url: 'https://youtu.be/1Cu754InVBc' }],
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO
     }
 ]
 
@@ -184,13 +226,17 @@ export const youngLandoP2: dataType[] = [
         others: 'Ben, JTR, BB8',
         notes: 'only 1/2 on auto',
         videos: [{ url: 'https://youtu.be/_nNRPjVgX9U' }],
-        difficulty: difficulty.HARD
+        difficulty: difficulty.HARD,
+        successRate: successRate.FIFTY_FIFTY,
+        interactionType: interactionType.AUTO
     }, {
         lead: 'Baylan',
         others: 'Shin, Marrok, +1 Merc',
         notes: '2nd wave very hard, only 1/2 on auto',
         videos: [{ url: 'https://youtu.be/pfpK6MA_uRM' }],
         difficulty: difficulty.HARD,
+        successRate: successRate.FIFTY_FIFTY,
+        interactionType: interactionType.AUTO,
         omi: true
     },
     {
@@ -199,13 +245,16 @@ export const youngLandoP2: dataType[] = [
         notes: 'Ezra mandatory. Need R8 minimum, preferably R9.',
         videos: [{url: 'https://youtu.be/j6c_GgoPyws?si=Hxm-IELtfWIbZqQH&t=470', creator: creators.pico}],
         difficulty: difficulty.EASY,
+        successRate: successRate.USUALLY,
     },
     {
         lead: 'Leia',
         others: 'Drogan, R2, Admiral Raddus',
         notes: 'only 1/2 on auto',
         videos: [{ url: 'https://youtu.be/hbifGXqcEB0' }],
-        difficulty: difficulty.HARD
+        difficulty: difficulty.HARD,
+        successRate: successRate.FIFTY_FIFTY,
+        interactionType: interactionType.AUTO
     },
     {
         lead: 'Reva',
@@ -213,6 +262,8 @@ export const youngLandoP2: dataType[] = [
         notes: 'only 1/2 on auto',
         videos: [{url: 'https://youtu.be/78qD1ZKy2BQ'}],
         difficulty: difficulty.HARD,
+        successRate: successRate.FIFTY_FIFTY,
+        interactionType: interactionType.AUTO,
         omi: true,
     },
     {

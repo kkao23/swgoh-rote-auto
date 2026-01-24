@@ -1,6 +1,6 @@
 import { type data as dataType } from "~/models/data";
 import { creators } from "~/models/creators";
-import { difficulty } from "~/models/data";
+import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const mixedQiraP4: dataType[] = [
     {
@@ -8,7 +8,9 @@ export const mixedQiraP4: dataType[] = [
         others: 'R2, Drogan, Qira, L3',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/rnj73wSUTrE' }],
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO
     },
     {
         lead: 'Baylan',
@@ -16,6 +18,8 @@ export const mixedQiraP4: dataType[] = [
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/nBP08l-0Lj4' }],
         difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO,
         omi: true
     },
     {
@@ -24,14 +28,18 @@ export const mixedQiraP4: dataType[] = [
         others: 'DRey, Malak, Qira, L3',
         notes: 'poke, auto',
         videos: [{url: 'https://youtu.be/kmFHKrKTX1c'}],
-        difficulty: difficulty.EASY
+        difficulty: difficulty.EASY,
+        successRate: successRate.USUALLY,
+        interactionType: interactionType.AUTO
     },
     {
         lead: 'Ahsoka Tano',
         others: 'Fulcrum, any 5th',
         notes: 'easy auto',
         videos: [{ url: 'https://youtu.be/Rmd5Ppxxyfs' }],
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO
     },
     {
         lead: 'JMK',
@@ -40,6 +48,8 @@ export const mixedQiraP4: dataType[] = [
         notes: 'Wave 2 was a bit dicey, still won on full auto though. May require R9?',
         videos: [{ url: 'https://youtu.be/VNDsqSv-5hE' }],
         difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO,
     },
     {
         lead: 'Pirate King Hondo',
@@ -48,6 +58,8 @@ export const mixedQiraP4: dataType[] = [
         notes: 'easy full auto',
         videos: [{ url: 'https://youtu.be/lzHXRa2FHKU' }],
         difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO,
     },
 ]
 
@@ -65,7 +77,9 @@ export const mixedGenericP4: dataType[] = [
         others: 'MQG, POW, GMY, Ahsoka',
         notes: 'auto, Last two are flexible',
         videos: [{ url: 'https://youtu.be/LpchaAwpVuk' }],
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO
     },
     {
         lead: 'SEE',
@@ -73,28 +87,36 @@ export const mixedGenericP4: dataType[] = [
         others: 'Malak, Malgus, DR, Malicos',
         notes: 'auto, use sith instead of Malicos if possible',
         videos: [{ url: 'https://youtu.be/1LnWy0zcAWA' }],
-        difficulty: difficulty.EASY
+        difficulty: difficulty.EASY,
+        successRate: successRate.USUALLY,
+        interactionType: interactionType.AUTO
     },
     {
         lead: 'Ahsoka Tano',
         others: 'Fulcrum +3',
         notes: 'auto, Ezra or spectre speeds things up',
         videos: [{ url: 'https://youtu.be/t6bxMOvhWdY' }],
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO
     },
     {
         lead: 'SLKR',
         others: 'DRey, Starkiller, Malicos',
         notes: 'auto, use FO if possible',
         videos: [{ url: 'https://youtu.be/cggvycdd5iI' }],
-        difficulty: difficulty.EASY
+        difficulty: difficulty.EASY,
+        successRate: successRate.USUALLY,
+        interactionType: interactionType.AUTO
     },
     {
         lead: 'Mother Talzin',
         others: 'Old Daka, Merrin, Zombie',
         notes: 'auto, can add Asajj',
         videos: [{ url: 'https://www.youtube.com/watch?v=QxQHAEs1kHs', creator: creators.egnards }],
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO
     },
     {
         lead: 'JMK',
@@ -103,6 +125,7 @@ export const mixedGenericP4: dataType[] = [
         notes: 'Imagine Cody is a flex here and you can likely 4 man this',
         videos: [{ url: 'https://youtu.be/K7yZyrvCObI?si=zgFyWI6C0mjYh_zE&t=3', creator: creators.pico }],
         difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
     },
     {
         lead: 'Reva',
@@ -110,6 +133,8 @@ export const mixedGenericP4: dataType[] = [
         notes: 'auto',
         videos: [{url: 'https://youtu.be/bwZHmRAFWOA'}],
         difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO,
         omi: true,
     },
     {
@@ -118,6 +143,8 @@ export const mixedGenericP4: dataType[] = [
         notes: 'auto, I imagine there are better teammates. I had no other options',
         videos: [{url: 'https://youtu.be/TpgdflmfBxo'}],
         difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO,
     },
     {
         lead: 'QA (CUP)',
@@ -125,7 +152,9 @@ export const mixedGenericP4: dataType[] = [
         others: 'MQG, POW, CUP',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/QUmyeBZBCKc' }],
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO
     },
     {
         lead: 'Boss Nass',
@@ -133,6 +162,7 @@ export const mixedGenericP4: dataType[] = [
         notes: 'aut',
         videos: [{ url: 'https://youtu.be/PQghgdpTI3o' }],
         difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
         omi: true,
     },
     {
@@ -141,6 +171,8 @@ export const mixedGenericP4: dataType[] = [
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/Kzj93kyiKmM?si=oUrEfxpCHOBw0_bq', creator: creators.avengerObs }],
         difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO,
         omi: true,
     },
     {
@@ -149,6 +181,8 @@ export const mixedGenericP4: dataType[] = [
         notes: 'auto, 4 man, not super smooth without omi',
         videos: [{url: 'https://youtu.be/Rey9_Rr0mnU'}],
         difficulty: difficulty.CAUTION,
+        successRate: successRate.USUALLY,
+        interactionType: interactionType.AUTO,
     },
     {
         lead: 'Tarkin',
@@ -157,6 +191,7 @@ export const mixedGenericP4: dataType[] = [
         notes: 'You do want the full complement of clones here',
         videos: [{ url: 'https://youtu.be/j1u6kaAtakw', }],
         difficulty: difficulty.EASY,
+        successRate: successRate.USUALLY,
         omi: true
     },
     {
@@ -166,6 +201,8 @@ export const mixedGenericP4: dataType[] = [
         notes: 'easy full auto, Brutus and Silvo are good if you have them R8+',
         videos: [{ url: 'https://youtu.be/8JaAe5LrTzE' }],
         difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO,
     },
     {
         lead: 'DTMG',
@@ -174,6 +211,8 @@ export const mixedGenericP4: dataType[] = [
         notes: 'auto',
         videos: [{url: 'https://youtu.be/IvIIY5iBdbI'}],
         difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO,
         omi: true,
     },
     {
@@ -183,6 +222,8 @@ export const mixedGenericP4: dataType[] = [
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/vH6YIiUsXQ4' }],
         difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO,
         omi: true
     },
     {
@@ -192,6 +233,8 @@ export const mixedGenericP4: dataType[] = [
         notes: 'full auto, last two replaceable, a bit dicey',
         videos: [{ url: 'https://youtu.be/DeCVAVWrbR8' }],
         difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO,
     },
 ]
 
@@ -201,7 +244,9 @@ export const jabbaP4: dataType[] = [
         others: 'Boba, Krrsantan, +2',
         notes: 'Need Krrsantan, the more Hutt Cartel the better. Auto',
         videos: [{ url: 'https://youtu.be/pljI9oJdJEo' }],
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO
     }
 ]
 
@@ -212,19 +257,23 @@ export const mixedFleetP4: dataType[] = [
         notes: 'very difficult',
         videos: [{ url: 'https://youtu.be/5rZYEDKdxCo' }],
         difficulty: difficulty.NO_AUTO,
+        successRate: successRate.UNRELIABLE,
     },
     {
         lead: 'Profundity',
         others: 'Outrider, Y Wing, Ghost starting, Phantom, MF, Biggs, Wedge reinf',
         notes: 'very difficult',
         videos: [{ url: 'https://youtu.be/kx9p09Z4DM0' }],
-        difficulty: difficulty.NO_AUTO
+        difficulty: difficulty.NO_AUTO,
+        successRate: successRate.UNRELIABLE
     },
     {
         lead: 'Profundity (Rogue One)',
         others: 'Outrider, Ghost, Y wing starting, Rogue one, Phantom in reinforcements. Millennium Falcon is good if you have it',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/czrI8wjl3UY' }],
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO
     },
 ]

@@ -1,5 +1,5 @@
 import { type data as dataType } from "~/models/data";
-import { difficulty } from "~/models/data";
+import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const dsBottomRightP5: dataType[] = [
     {
@@ -9,6 +9,8 @@ export const dsBottomRightP5: dataType[] = [
         notes: '1/2 on auto',
         videos: [{ url: 'https://youtu.be/Ul8xHc4x-eY', }],
         difficulty: difficulty.HARD,
+        successRate: successRate.FIFTY_FIFTY,
+        interactionType: interactionType.AUTO,
         omi: true
     },
     {
@@ -18,6 +20,8 @@ export const dsBottomRightP5: dataType[] = [
         notes: '1/2 on auto',
         videos: [{ url: 'https://youtu.be/yALIZ_CCXhc' }],
         difficulty: difficulty.HARD,
+        successRate: successRate.FIFTY_FIFTY,
+        interactionType: interactionType.AUTO,
     },
 ]
 
@@ -29,6 +33,8 @@ export const dsTopMidP5: dataType[] = [
         notes: 'auto, may want to target Sabine wave 2',
         videos: [{ url: 'https://youtu.be/w23Nh5aFKJs', }],
         difficulty: difficulty.EASY,
+        successRate: successRate.USUALLY,
+        interactionType: interactionType.PAUSE_WAVE2,
         targeted: true,
         omi: true
     },
@@ -58,6 +64,8 @@ export const dsLeftP5: dataType[] = [
         notes: '1/2 on auto',
         videos: [{ url: 'https://youtu.be/DgJ-xZk7ttA', }],
         difficulty: difficulty.HARD,
+        successRate: successRate.FIFTY_FIFTY,
+        interactionType: interactionType.AUTO,
         omi: true
     },
 ]

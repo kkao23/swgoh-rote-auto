@@ -1,6 +1,6 @@
 import { type data as dataType } from "~/models/data";
 import { creators } from "~/models/creators";
-import { difficulty } from "~/models/data";
+import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const lsShipsP4: dataType[] = [
     {
@@ -8,35 +8,45 @@ export const lsShipsP4: dataType[] = [
         others: 'MF, Outrider, Y Wing, Wedge, Biggs, Phantom, Ghost',
         notes: 'auto, Dont use Ghost if required in Mixed',
         videos: [{ url: 'https://youtu.be/-AZjA6D9sK4' }],
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO
     },
     {
         lead: 'Negotiator',
         others: 'JKA, Y Wing, Marauder, Plo, Ahsoka, Fives, Rex',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/D30RG8s3HDQ' }],
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO
     },
     {
         lead: 'Raddus',
         others: 'Rey MF, Poe XWing, Res Bomber, Comeuppance, Res X Wing',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/drEhB7NLcZU' }],
-        difficulty: difficulty.EASY
+        difficulty: difficulty.EASY,
+        successRate: successRate.USUALLY,
+        interactionType: interactionType.AUTO
     },
     {
         lead: 'Home One (MF)',
         others: 'MF, Y Wing, Ravens Claw, Outrider, Phantom, Ghost, Cassian',
         notes: 'auto, Dont use Ghost if required in Mixed',
         videos: [{ url: 'https://youtu.be/67erqo3zyvA' }],
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO
     },
     {
         lead: 'Home One (B wing)',
         others: 'Biggs, Bistan and Ravens Claw starting, B wing, Cassian and Wedge in reinforcements',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/0PAH1s4Umfs' }],
-        difficulty: difficulty.EASY
+        difficulty: difficulty.EASY,
+        successRate: successRate.USUALLY,
+        interactionType: interactionType.AUTO
     },
 ]
 
@@ -46,7 +56,9 @@ export const lsGenericP4: dataType[] = [
         others: 'Han, Cassian, Raddus, R2-D2',
         notes: 'auto, Drogan if you have him',
         videos: [{ url: 'https://youtu.be/C6F4fIWlP-I' }],
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO
     },
     {
         lead: 'QA',
@@ -54,7 +66,9 @@ export const lsGenericP4: dataType[] = [
         others: 'POW, MQG, Yoda, Padme',
         notes: 'auto, other two can be any GR',
         videos: [{ url: 'https://youtu.be/6YzDrnBGFvw' }],
-        difficulty: difficulty.EASY
+        difficulty: difficulty.EASY,
+        successRate: successRate.USUALLY,
+        interactionType: interactionType.AUTO
     },
     {
         lead: 'JMK',
@@ -62,7 +76,9 @@ export const lsGenericP4: dataType[] = [
         others: 'Padme, Snips, GK, CAT',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/qPc-UJDjAt0' }],
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO
     },
     {
         lead: 'Boss Nass',
@@ -70,6 +86,8 @@ export const lsGenericP4: dataType[] = [
         notes: 'Tarpals omi, auto',
         videos: [{ url: 'https://youtu.be/xCacWaNrwto' }],
         difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO,
         omi: true
     },
     {
@@ -77,7 +95,9 @@ export const lsGenericP4: dataType[] = [
         others: 'Any',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/nNTovvlMApI' }],
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO
     },
     {
         lead: 'Omega (omicron)',
@@ -85,6 +105,8 @@ export const lsGenericP4: dataType[] = [
         notes: 'easy auto with omi',
         videos: [{ url: 'https://youtu.be/kjYZ24h5fok' }],
         difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO,
         omi: true,
     },
     {
@@ -93,7 +115,9 @@ export const lsGenericP4: dataType[] = [
         others: 'POW, MQG, Snips',
         notes: 'auto, faster than QA herself',
         videos: [{ url: 'https://youtu.be/B6E6XdAYfNQ' }],
-        difficulty: difficulty.EASY
+        difficulty: difficulty.EASY,
+        successRate: successRate.USUALLY,
+        interactionType: interactionType.AUTO
     },
 ]
 
@@ -104,7 +128,9 @@ export const jediLSP4: dataType[] = [
         others: 'GAS, Ahsoka, Ezra Exile, GK',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/nVtmzJh4xlk0' }],
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO
     },
     {
         lead: 'JML (Ezra)',
@@ -112,7 +138,9 @@ export const jediLSP4: dataType[] = [
         others: 'Ezra Exile, GAS, GMY, Plo',
         notes: 'auto, replace Plo if possible',
         videos: [{ url: 'https://youtu.be/OcVbpC8FHmE' }],
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO
     },
     {
         lead: 'JMK (no Ezra, no bros)',
@@ -120,7 +148,9 @@ export const jediLSP4: dataType[] = [
         others: 'GAS, Ahsoka, GK, Plo',
         notes: 'auto, only 1/2',
         videos: [{ url: 'https://youtu.be/nzJ8oUrygqc' }],
-        difficulty: difficulty.HARD
+        difficulty: difficulty.HARD,
+        successRate: successRate.FIFTY_FIFTY,
+        interactionType: interactionType.AUTO
     },
     {
         lead: 'JML (bros, no Ezra)',
@@ -128,7 +158,9 @@ export const jediLSP4: dataType[] = [
         others: 'GAS, GMY, POW, MQG',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/5tJavs7rly4' }],
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO
     },
     {
         lead: 'JMK (bros, no Ezra)',
@@ -136,7 +168,9 @@ export const jediLSP4: dataType[] = [
         others: 'GAS, GK, POW, MQG',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/9ZKHdxBljyc' }],
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO
     },
     {
         lead: 'JML (KK Omi)',
@@ -144,7 +178,9 @@ export const jediLSP4: dataType[] = [
         others: 'Kyle Katarn (omi), GAS, GMY, GK',
         notes: 'auto, GMY and GK are likely replaceable',
         videos: [{ url: 'https://www.youtube.com/watch?v=7N2-JbEer7k', creator: creators.egnards }],
-        difficulty: difficulty.EASY
+        difficulty: difficulty.EASY,
+        successRate: successRate.USUALLY,
+        interactionType: interactionType.AUTO
     },
     {
         lead: 'Kelleran Beq',
@@ -152,7 +188,9 @@ export const jediLSP4: dataType[] = [
         others: 'Jocasta Nu, Shaak Ti, Aayla, Temple Guard',
         notes: 'auto, all platoons required, Temple Guard required',
         videos: [{ url: 'https://youtu.be/A5hzdGVrBlY' }],
-        difficulty: difficulty.EASY
+        difficulty: difficulty.EASY,
+        successRate: successRate.USUALLY,
+        interactionType: interactionType.AUTO
     },
     {
         lead: 'Kelleran Beq',
@@ -161,6 +199,8 @@ export const jediLSP4: dataType[] = [
         notes: 'auto, dont need platoons, very fast',
         videos: [{ url: 'https://youtu.be/vH6YIiUsXQ4' }],
         difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: interactionType.AUTO,
         omi: true
     }
 ]

@@ -8,7 +8,7 @@ export const shipsLSP2: dataType[] = [
         others: 'HMF, Outrider, Y wing, Phantom, Ghost, Biggs, Wedge',
         notes: 'target scythe, auto',
         videos: [{ url: 'https://youtu.be/CkHBVQJmZtk' }],
-        difficulty: difficulty.VERY_EASY,
+        difficulty: difficulty.CAUTION,
         targeted: true
     },
     {

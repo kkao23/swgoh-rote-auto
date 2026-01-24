@@ -57,6 +57,7 @@ export const lsLeftP3: dataType[] = [
         notes: 'auto, deselect targeting reticule',
         videos: [{ url: 'https://youtu.be/rUBUeI9eQQA' }],
         difficulty: difficulty.CAUTION,
+        targeted: true,
     },
     // {
     //     lead: 'GAS with QA',
@@ -173,7 +174,8 @@ export const sawP3: dataType[] = [
         others: 'Capt Rex, Luthen, Cassian, Drogan',
         notes: 'auto, target purge troopers',
         videos: [{ url: 'https://youtu.be/K4HObnZm0TU' }],
-        difficulty: difficulty.HARD
+        difficulty: difficulty.HARD,
+        targeted: true
     },
     {
         lead: 'Saw (Kyle)',
@@ -182,6 +184,7 @@ export const sawP3: dataType[] = [
         notes: 'auto, target purge troopers',
         videos: [{ url: 'https://youtu.be/FCEEsGXMtOA' }],
         difficulty: difficulty.CAUTION,
+        targeted: true,
         omi: true
     }
 ]

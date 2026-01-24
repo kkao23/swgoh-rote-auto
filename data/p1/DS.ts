@@ -7,7 +7,8 @@ export const leftDSP1: dataType[] = [{
     others: 'Wat, Jango, Nute, Dooku',
     notes: 'Open with Tank Tech on Jango, target droideka, hit auto',
     videos: [{ url: 'https://youtu.be/zLFGIuSzFW0' }],
-    difficulty: difficulty.EASY
+    difficulty: difficulty.EASY,
+    targeted: true
 },
 {
     lead: 'SLKR',
@@ -72,7 +73,8 @@ export const bottomDSP1: dataType[] = [{
     others: 'GI, 7S, 5B, 8B',
     notes: 'Target Droideka, hit auto',
     videos: [{ url: 'https://youtu.be/Pk9v02K5wwc' }],
-    difficulty: difficulty.EASY
+    difficulty: difficulty.EASY,
+    targeted: true
 },
 {
     lead: 'SEE',
@@ -165,7 +167,8 @@ export const topDSP1: dataType[] = [
         others: 'GI, 7S, 2S, 8B',
         notes: 'Target B2, hit auto',
         videos: [{ url: 'https://youtu.be/V75J-k6i40s?si=uX_YUqMZEuQr7VIN&t=145', creator: creators.pico }],
-        difficulty: difficulty.EASY
+        difficulty: difficulty.EASY,
+        targeted: true
     },
     {
         lead: 'SEE',

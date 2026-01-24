@@ -38,7 +38,7 @@ const isAlertOpen = ref(false)
           :close-button="{ icon: 'i-heroicons-chevron-up', color: 'gray', variant: 'link', padded: false }"
           @close="isAlertOpen = false"
         > <template #description>
-          <span class="text-gray-900">
+          <span class="text-gray-100">
             With the release of <a class="text-blue-800 underline" href="https://forums.ea.com/blog/swgoh-game-info-hub-en/design-fireside-chat-edition/12686659">Relic Delta</a> on 11/18 your experiences may differ from those in the videos depending on your team's relic levels. Relic 5 and 6 planets will no longer be updated with new teams for ground battles, as a Relic delta of 3+ provides too much variance in results between rosters.
           </span>
           </template>

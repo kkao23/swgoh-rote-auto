@@ -9,6 +9,7 @@ export const hondoMixedP2: dataType[] = [
         notes: 'Need to pause and target Tarkin wave 2',
         videos: [{ url: 'https://youtu.be/U09oOAmFQRQ' }],
         difficulty: difficulty.CAUTION,
+        targeted: true,
         omi: true
     },
     {

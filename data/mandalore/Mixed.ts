@@ -63,7 +63,8 @@ export const mandaloreGeneric: dataType[] = [
         notes: 'L3s pretaunt is good here. Pause auto to target Moff Gideon in wave 2.',
         videos: [{ url: 'https://youtu.be/rF6NV7kLMpA' }],
         difficulty: difficulty.CAUTION,
-        omi: true
+        omi: true,
+        targeted: true
     },
     {
         lead: 'Leia',
@@ -126,6 +127,7 @@ export const mandaloreGeneric: dataType[] = [
         notes: 'auto, target Moff Gideon wave 2 to make things a bit faster',
         videos: [{ url: 'https://youtu.be/iXiC7WhOI8U' }],
         difficulty: difficulty.VERY_EASY,
+        targeted: true
     },
     {
         lead: 'SEE',

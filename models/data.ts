@@ -13,6 +13,7 @@ export type data = {
     videos: videos[],
     difficulty: difficulty,
     omi?: boolean,
+    targeted?: boolean,
     path?: string,
 }
 

@@ -55,7 +55,8 @@ export const mixedP1: dataType[] = [
         others: 'Han, Chewie, 3PO, Chewpio',
         notes: 'auto, may need to target damage dealers',
         videos: [{ url: 'https://youtu.be/CxIRs8XsEVA' },{url: 'https://www.youtube.com/watch?v=bvaEwtoy7W4', creator: creators.egnards }],
-        difficulty: difficulty.CAUTION
+        difficulty: difficulty.CAUTION,
+        targeted: true
     },
     {
         lead: 'GAS',

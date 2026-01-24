@@ -8,14 +8,16 @@ export const shipsLSP2: dataType[] = [
         others: 'HMF, Outrider, Y wing, Phantom, Ghost, Biggs, Wedge',
         notes: 'target scythe, auto',
         videos: [{ url: 'https://youtu.be/CkHBVQJmZtk' }],
-        difficulty: difficulty.VERY_EASY
+        difficulty: difficulty.CAUTION,
+        targeted: true
     },
     {
         lead: 'Profundity (R1, No MF)',
         others: 'Outrider, Y wing, Ghost, Rogue 1, Phantom',
         notes: 'target scythe, auto',
         videos: [{ url: 'https://youtu.be/dD9Eey116EY' }],
-        difficulty: difficulty.EASY
+        difficulty: difficulty.EASY,
+        targeted: true
     }
 ]
 
@@ -103,7 +105,8 @@ export const leftLSP2: dataType[] = [
         others: 'POW, MQG, GMY, Shaak Ti',
         notes: 'auto, deselect targeting reticule, need good mods on QA to get decoy out first',
         videos: [{ url: 'https://youtu.be/-4mjKaoesMs' }],
-        difficulty: difficulty.CAUTION
+        difficulty: difficulty.CAUTION,
+        targeted: true
     },
     {
         lead: 'Ahsoka Tano',
@@ -118,7 +121,8 @@ export const leftLSP2: dataType[] = [
         others: 'Snips, GAS, Padme, CAT',
         notes: 'Deselect reticule. Need to do targeting. Target same enemy to reduce max health',
         videos: [{ url: 'https://youtu.be/IuyL502QQJo' }],
-        difficulty: difficulty.CAUTION
+        difficulty: difficulty.CAUTION,
+        targeted: true
     },
     {
         lead: 'Omega (Mercenary)',
@@ -175,7 +179,8 @@ export const rightLSP2: dataType[] = [
         others: 'POW, MQG, Shaak Ti, CUP',
         notes: 'auto, deselect targeting reticule, need good mods on QA to get decoy out first',
         videos: [{ url: 'https://youtu.be/k1SV2V_ODjc' }],
-        difficulty: difficulty.CAUTION
+        difficulty: difficulty.CAUTION,
+        targeted: true
     },
     {
         lead: 'Omega',
@@ -191,7 +196,8 @@ export const rightLSP2: dataType[] = [
         notes: 'omi Wrecker, auto but more consistent if you manually target wave 2',
         videos: [{ url: 'https://youtu.be/hssMBkkdQSk' }],
         difficulty: difficulty.EASY,
-        omi: true
+        omi: true,
+        targeted: true
     },
     // {
     //     lead: 'GAS with QA',

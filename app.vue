@@ -67,6 +67,10 @@ const isAlertOpen = ref(false)
         </div>
       </div>
     </div>
+    
+    <!-- Floating Suggest Team Button -->
+    <SuggestTeamButton />
+    
     <UNotifications />
   </UApp>
 </template>

@@ -48,6 +48,16 @@ export const dsTopMidP5: dataType[] = [
         successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.PAUSE_WAVE2],
     },
+    {
+        lead: 'SEE',
+        leadFull: 'Sith Eternal Emperor',
+        others: 'Malak, The Stranger, Darth Revan, Bane',
+        notes: 'easy 1/2, 2/2 not totally consistent',
+        videos: [{url: 'https://youtu.be/j_cKE4G_PZ0'}],
+        difficulty: difficulty.EASY,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.AUTO],
+    },
 ]
 
 export const dsLeftP5: dataType[] = [

@@ -64,13 +64,15 @@ export const mixedCombatTopRightP5: dataType[] = [
         targeted: true
     },
     {
-        lead: 'Lord Vader',
-        others: 'Maul, RG, 9S, Darth Vader',
-        notes: 'Auto, only 1/2',
-        videos: [{url: 'https://youtu.be/1t_aEW7O9Zk?si=th-cDggFM7cPamGZ&t=14', creator: creators.pico}],
-        difficulty: difficulty.HARD,
-        successRate: successRate.FIFTY_FIFTY,
-        interactionType: [interactionType.AUTO]
+        lead: 'LV',
+        leadFull: 'Lord Vader',
+        others: 'Appo (omicron), DCT, CX-2, Scorch',
+        notes: 'Easy full auto',
+        videos: [{ url: 'https://youtu.be/uQ6HKrrI7uc' }],
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        omi: true,
     },
     {
         lead: 'JMK',
@@ -153,7 +155,7 @@ export const mixedCombatBottomLeftP5: dataType[] = [
         notes: 'Easy full auto',
         videos: [{ url: 'https://youtu.be/uKpZmmIcmT4' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.CONSISTENT,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO],
         omi: true,
     },

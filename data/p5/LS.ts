@@ -91,6 +91,15 @@ export const lsTopMidP5: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
     },
+    {
+        lead: 'JMK',
+        others: 'GK, CAT, Snips, +1 Galactic Republic',
+        notes: 'Auto, CWC Replaceable',
+        videos: [{ url: 'https://youtu.be/qsX88wWIk4Y' },],
+        difficulty: difficulty.EASY,
+        successRate: successRate.NINETY_PERCENT,
+        interactionType: [interactionType.AUTO]
+    },
 ]
 
 export const lsBottomP5: dataType[] = [
@@ -153,5 +162,14 @@ export const lsShipsP5: dataType[] = [
         difficulty: difficulty.NO_AUTO,
         successRate: successRate.UNRELIABLE,
         interactionType: [interactionType.MANUAL],
+    },
+    {
+        lead: 'Home One (B wing)',
+        others: 'Biggs, Bistan and Ravens Claw starting, B wing, Cassian in reinforcements',
+        notes: 'can\'t auto. Go after Scythe first. When Scythe uses its special to get all the stacks of formation, bring Cassian out to dispel them',
+        videos: [{ url: 'https://youtu.be/QahRayHXWXk' }],
+        difficulty: difficulty.EASY,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.MANUAL]
     },
 ]

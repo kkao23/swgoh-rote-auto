@@ -55,18 +55,14 @@ const isAlertOpen = ref(false)
           </NuxtLink>
         </div>
       <NuxtPage />
-      <div class="bg-color flex items-center text-white px-4 py-1 rounded-b-xl">
-        <p class="text-xs font-semibold">Created by captsolo in conjunction with the Slice of Otoh Gunga TB Library.
-          Join us:
-        </p>
-        <!-- Wrapper for icons -->
-        <div class="flex-grow flex justify-end space-x-2">
-          <!-- YouTube Link -->
-          <a href="https://discord.gg/rhrWK39XJH" target="_blank" class="hover:opacity-80">
-            <img src="/icons/discord.svg" alt="Discord" class="h-8 w-8" />
-          </a>
-        </div>
-      </div>
+      <div class="bg-color flex items-center justify-between text-white px-4 py-1 rounded-b-xl">
+  
+  <!-- Buy Me a Coffee -->
+  <a href="https://buymeacoffee.com/captsolo" target="_blank" class="flex items-center gap-2 hover:opacity-80 transition-opacity" title="Support this project">
+    <span class="text-xs font-medium">Buy me a coffee?</span>
+    <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" class="h-7" />
+  </a>
+</div>
     </div>
     
     <!-- Floating Suggest Team Button -->

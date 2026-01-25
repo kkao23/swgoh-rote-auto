@@ -109,15 +109,15 @@ export const mixedGenericP4: dataType[] = [
         successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO]
     },
-    {
-        lead: 'Mother Talzin',
-        others: 'Old Daka, Merrin, Zombie',
-        notes: 'auto, can add Asajj',
-        videos: [{ url: 'https://www.youtube.com/watch?v=QxQHAEs1kHs', creator: creators.egnards }],
-        difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO]
-    },
+    // {
+    //     lead: 'Mother Talzin',
+    //     others: 'Old Daka, Merrin, Zombie',
+    //     notes: 'auto, can add Asajj',
+    //     videos: [{ url: 'https://www.youtube.com/watch?v=QxQHAEs1kHs', creator: creators.egnards }],
+    //     difficulty: difficulty.VERY_EASY,
+    //     successRate: successRate.CONSISTENT,
+    //     interactionType: [interactionType.AUTO]
+    // },
     {
         lead: 'JMK',
         leadFull: 'Jedi Master Kenobi',

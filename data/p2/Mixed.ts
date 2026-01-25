@@ -57,32 +57,32 @@ export const shipsMixedP2: dataType[] = [
         successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO]
     },
-    {
-        lead: 'Executor',
-        others: 'Hounds Tooth, XB, RC, Slave 1, IG2000',
-        notes: 'auto, you need RC, youll lose if RC is platooned',
-        videos: [{ url: 'https://www.youtube.com/watch?v=TMQZ4iO_V4w', creator: creators.egnards }],
-        difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO]
-    },
-    {
-        lead: 'Profundity',
-        others: 'Outrider, MF, Y wing, Ghost, Phantom',
-        notes: 'auto',
-        videos: [{ url: 'https://www.youtube.com/watch?v=-q6P7kJP39c', creator: creators.egnards }],
-        difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO]
-    },{
-        lead: 'Leviathan',
-        others: 'Sith Bomber, Fury Class Interceptor, Tie Dagger, Sith Fighter, MK6 Interceptor',
-        notes: 'auto',
-        videos: [{ url: 'https://www.youtube.com/watch?v=REBjxUTyzvc', creator: creators.egnards }],
-        difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO]
-    },
+    // {
+    //     lead: 'Executor',
+    //     others: 'Hounds Tooth, XB, RC, Slave 1, IG2000',
+    //     notes: 'auto, you need RC, youll lose if RC is platooned',
+    //     videos: [{ url: 'https://www.youtube.com/watch?v=TMQZ4iO_V4w', creator: creators.egnards }],
+    //     difficulty: difficulty.VERY_EASY,
+    //     successRate: successRate.CONSISTENT,
+    //     interactionType: [interactionType.AUTO]
+    // },
+    // {
+    //     lead: 'Profundity',
+    //     others: 'Outrider, MF, Y wing, Ghost, Phantom',
+    //     notes: 'auto',
+    //     videos: [{ url: 'https://www.youtube.com/watch?v=-q6P7kJP39c', creator: creators.egnards }],
+    //     difficulty: difficulty.VERY_EASY,
+    //     successRate: successRate.CONSISTENT,
+    //     interactionType: [interactionType.AUTO]
+    // },{
+    //     lead: 'Leviathan',
+    //     others: 'Sith Bomber, Fury Class Interceptor, Tie Dagger, Sith Fighter, MK6 Interceptor',
+    //     notes: 'auto',
+    //     videos: [{ url: 'https://www.youtube.com/watch?v=REBjxUTyzvc', creator: creators.egnards }],
+    //     difficulty: difficulty.VERY_EASY,
+    //     successRate: successRate.CONSISTENT,
+    //     interactionType: [interactionType.AUTO]
+    // },
 ]
 
 export const mixedP2: dataType[] = [
@@ -106,15 +106,15 @@ export const mixedP2: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
     },
-    {
-        lead: 'Hera (Phoenix)',
-        others: 'Kanan, Sabine, Chopper, Capt Rex',
-        notes: 'auto',
-        videos: [{ url: 'https://www.youtube.com/watch?v=Hf_-_PGj3rk', creator: creators.egnards }],
-        difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO]
-    },
+    // {
+    //     lead: 'Hera (Phoenix)',
+    //     others: 'Kanan, Sabine, Chopper, Capt Rex',
+    //     notes: 'auto',
+    //     videos: [{ url: 'https://www.youtube.com/watch?v=Hf_-_PGj3rk', creator: creators.egnards }],
+    //     difficulty: difficulty.VERY_EASY,
+    //     successRate: successRate.CONSISTENT,
+    //     interactionType: [interactionType.AUTO]
+    // },
     {
         lead: 'Boss Nass',
         others: 'Gungans',

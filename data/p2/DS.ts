@@ -30,16 +30,16 @@ export const acklayDSP2: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.TARGET_START]
     },
-    {
-        lead: 'SLKR',
-        leadFull: 'Supreme Leader Kylo Ren',
-        others: 'KRU, Hux, FOO, Sith Trooper',
-        notes: 'auto, use D Rey if you have her',
-        videos: [{ url: 'https://www.youtube.com/watch?v=vvGaQA5SWYQ&ab_channel=Egnards', creator: creators.egnards }],
-        difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO],
-    },
+    // {
+    //     lead: 'SLKR',
+    //     leadFull: 'Supreme Leader Kylo Ren',
+    //     others: 'KRU, Hux, FOO, Sith Trooper',
+    //     notes: 'auto, use D Rey if you have her',
+    //     videos: [{ url: 'https://www.youtube.com/watch?v=vvGaQA5SWYQ&ab_channel=Egnards', creator: creators.egnards }],
+    //     difficulty: difficulty.VERY_EASY,
+    //     successRate: successRate.CONSISTENT,
+    //     interactionType: [interactionType.AUTO],
+    // },
     {
         lead: 'Baylan',
         others: 'Marrok, Shin, Jango, Zam',
@@ -122,24 +122,24 @@ export const reekDSP2: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
     },
-    {
-        lead: 'Reva',
-        others: 'GI, 5B, 7S, 8B',
-        notes: 'auto',
-        videos: [{ url: 'https://www.youtube.com/watch?v=c6IZXe1YtHc', creator: creators.egnards }],
-        difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO]
-    },
-    {
-        lead: 'Lord Vader',
-        others: 'Mara Jade, Ninth Sister, Piett, Thrawn',
-        notes: 'auto, I imagine the others can be whoever empire',
-        videos: [{ url: 'https://www.youtube.com/watch?v=Qz5O-GoAKkk', creator: creators.egnards }],
-        difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO]
-    },
+    // {
+    //     lead: 'Reva',
+    //     others: 'GI, 5B, 7S, 8B',
+    //     notes: 'auto',
+    //     videos: [{ url: 'https://www.youtube.com/watch?v=c6IZXe1YtHc', creator: creators.egnards }],
+    //     difficulty: difficulty.VERY_EASY,
+    //     successRate: successRate.CONSISTENT,
+    //     interactionType: [interactionType.AUTO]
+    // },
+    // {
+    //     lead: 'Lord Vader',
+    //     others: 'Mara Jade, Ninth Sister, Piett, Thrawn',
+    //     notes: 'auto, I imagine the others can be whoever empire',
+    //     videos: [{ url: 'https://www.youtube.com/watch?v=Qz5O-GoAKkk', creator: creators.egnards }],
+    //     difficulty: difficulty.VERY_EASY,
+    //     successRate: successRate.CONSISTENT,
+    //     interactionType: [interactionType.AUTO]
+    // },
     {
         lead: 'Dr Aphra',
         others: 'BT1, Darth Vader, HK47, General Grievous',

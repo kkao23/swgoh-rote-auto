@@ -172,16 +172,16 @@ export const jediLSP4: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
     },
-    {
-        lead: 'JML (KK Omi)',
-        leadFull: 'Jedi Master Luke with Kyle Katarn Omi',
-        others: 'Kyle Katarn (omi), GAS, GMY, GK',
-        notes: 'auto, GMY and GK are likely replaceable',
-        videos: [{ url: 'https://www.youtube.com/watch?v=7N2-JbEer7k', creator: creators.egnards }],
-        difficulty: difficulty.EASY,
-        successRate: successRate.NINETY_PERCENT,
-        interactionType: [interactionType.AUTO]
-    },
+    // {
+    //     lead: 'JML (KK Omi)',
+    //     leadFull: 'Jedi Master Luke with Kyle Katarn Omi',
+    //     others: 'Kyle Katarn (omi), GAS, GMY, GK',
+    //     notes: 'auto, GMY and GK are likely replaceable',
+    //     videos: [{ url: 'https://www.youtube.com/watch?v=7N2-JbEer7k', creator: creators.egnards }],
+    //     difficulty: difficulty.EASY,
+    //     successRate: successRate.NINETY_PERCENT,
+    //     interactionType: [interactionType.AUTO]
+    // },
     {
         lead: 'Kelleran Beq',
         leadFull: 'Kelleran Beq',

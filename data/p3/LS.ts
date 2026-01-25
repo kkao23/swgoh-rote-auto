@@ -123,16 +123,16 @@ export const lsRightP3: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
     },
-    {
-        lead: 'Boss Nass',
-        others: 'Gungans',
-        notes: 'auto, Tarpals Omi',
-        videos: [{ url: 'https://www.youtube.com/watch?v=bwDYfbb_W-A', creator: creators.egnards }],
-        difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO],
-        omi: true
-    },
+    // {
+    //     lead: 'Boss Nass',
+    //     others: 'Gungans',
+    //     notes: 'auto, Tarpals Omi',
+    //     videos: [{ url: 'https://www.youtube.com/watch?v=bwDYfbb_W-A', creator: creators.egnards }],
+    //     difficulty: difficulty.VERY_EASY,
+    //     successRate: successRate.CONSISTENT,
+    //     interactionType: [interactionType.AUTO],
+    //     omi: true
+    // },
     {
         lead: 'QA',
         leadFull: 'Queen Amidala',

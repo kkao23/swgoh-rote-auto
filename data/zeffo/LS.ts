@@ -66,16 +66,16 @@ export const zeffoJedi: dataType[] = [
         interactionType: [interactionType.AUTO],
         omi: true
     },
-    {
-        lead: 'JKCK (Lead Omi, JML)',
-        others: 'JML, JKL, GMY, Shaak Ti',
-        notes: 'auto, lead omi mandatory',
-        videos: [{ url: 'https://www.youtube.com/watch?v=rhEhxaGzODI', creator: creators.egnards }],
-        difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO],
-        omi: true
-    },
+    // {
+    //     lead: 'JKCK (Lead Omi, JML)',
+    //     others: 'JML, JKL, GMY, Shaak Ti',
+    //     notes: 'auto, lead omi mandatory',
+    //     videos: [{ url: 'https://www.youtube.com/watch?v=rhEhxaGzODI', creator: creators.egnards }],
+    //     difficulty: difficulty.VERY_EASY,
+    //     successRate: successRate.CONSISTENT,
+    //     interactionType: [interactionType.AUTO],
+    //     omi: true
+    // },
 ]
 
 export const zeffoUFU: dataType[] = [
@@ -83,7 +83,7 @@ export const zeffoUFU: dataType[] = [
         lead: 'Rey',
         others: 'CAT, Ben, Cere, JTR',
         notes: 'auto, CAT mandatory, maybe like 70% success rate on full auto, higher if you target purge troopers',
-        videos: [{ url: 'https://youtu.be/LQbMxA3Oqcs' }, { url: 'https://www.youtube.com/watch?v=weXoe5KzFaY', creator: creators.egnards }],
+        videos: [{ url: 'https://youtu.be/LQbMxA3Oqcs' },],
         difficulty: difficulty.CAUTION,
         successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.TARGET_START]

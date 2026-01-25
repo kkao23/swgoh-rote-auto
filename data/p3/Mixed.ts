@@ -162,24 +162,24 @@ export const mixedTopLeftP3: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
     },
-    {
-        lead: 'Mother Talzin',
-        others: 'Asajj, Daka, Zombie, Merrin',
-        notes: 'auto',
-        videos: [{ url: 'https://www.youtube.com/watch?v=9I7t5cDbZRU', creator: creators.egnards }],
-        difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO]
-    },
-    {
-        lead: 'Hera (Phoenix)',
-        others: 'Chopper, Kanan, Sabine, Capt Rex',
-        notes: 'auto',
-        videos: [{ url: 'https://www.youtube.com/watch?v=TK71MGKC2Ho', creator: creators.egnards }],
-        difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO]
-    },
+    // {
+    //     lead: 'Mother Talzin',
+    //     others: 'Asajj, Daka, Zombie, Merrin',
+    //     notes: 'auto',
+    //     videos: [{ url: 'https://www.youtube.com/watch?v=9I7t5cDbZRU', creator: creators.egnards }],
+    //     difficulty: difficulty.VERY_EASY,
+    //     successRate: successRate.CONSISTENT,
+    //     interactionType: [interactionType.AUTO]
+    // },
+    // {
+    //     lead: 'Hera (Phoenix)',
+    //     others: 'Chopper, Kanan, Sabine, Capt Rex',
+    //     notes: 'auto',
+    //     videos: [{ url: 'https://www.youtube.com/watch?v=TK71MGKC2Ho', creator: creators.egnards }],
+    //     difficulty: difficulty.VERY_EASY,
+    //     successRate: successRate.CONSISTENT,
+    //     interactionType: [interactionType.AUTO]
+    // },
     {
         lead: 'Finn (omi)',
         others: 'Poe, Zorii, RH Finn, Resistance Pilot',

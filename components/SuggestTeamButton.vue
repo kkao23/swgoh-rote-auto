@@ -89,12 +89,12 @@ const submitSuggestion = async () => {
 <template>
   <div>
     <!-- Floating Button with Close X -->
-    <div v-if="!isHidden" class="fixed bottom-6 right-6 z-50 flex items-start gap-2">
+    <div v-if="!isHidden" class="fixed bottom-8 right-6 z-50 flex items-start gap-2">
       <button
         @click="isOpen = true"
-        class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-full shadow-lg transition-all duration-200 hover:scale-105 flex items-center gap-2"
+        class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-5 py-2 rounded-full shadow-lg transition-all duration-200 hover:scale-105 flex items-center gap-2 text-sm"
       >
-        <UIcon name="i-heroicons-light-bulb" class="w-5 h-5" />
+        <UIcon name="i-heroicons-light-bulb" class="w-4 h-4" />
         Suggest a Team!
       </button>
       

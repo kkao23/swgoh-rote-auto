@@ -7,7 +7,7 @@ export default defineNuxtConfig({
     head: {
       link: [
         { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" },
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.png' }
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
       ],
       title: 'SWGOH RoTE Auto Guide', // Set the page title
       meta: [

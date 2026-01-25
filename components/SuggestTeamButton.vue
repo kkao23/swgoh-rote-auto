@@ -3,6 +3,7 @@ const isOpen = ref(false);
 const isSubmitting = ref(false);
 const submitSuccess = ref(false);
 const errorMessage = ref('');
+const isHidden = ref(false);
 
 const formData = ref({
   lead: '',
@@ -42,6 +43,14 @@ const closeModal = () => {
   }, 300);
 };
 
+const hideButton = () => {
+  isHidden.value = true;
+  // Store preference in localStorage
+  if (typeof window !== 'undefined') {
+    localStorage.setItem('hideSuggestButton', 'true');
+  }
+};
+
 const submitSuggestion = async () => {
   // Validation
   if (!formData.value.lead || !formData.value.others || !formData.value.notes || 
@@ -79,18 +88,39 @@ const submitSuggestion = async () => {
     isSubmitting.value = false;
   }
 };
+
+// Check localStorage on mount
+onMounted(() => {
+  if (typeof window !== 'undefined') {
+    const hidden = localStorage.getItem('hideSuggestButton');
+    if (hidden === 'true') {
+      isHidden.value = true;
+    }
+  }
+});
 </script>
 
 <template>
   <div>
-    <!-- Floating Button -->
-    <button
-      @click="isOpen = true"
-      class="fixed bottom-6 right-6 z-50 bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-full shadow-lg transition-all duration-200 hover:scale-105 flex items-center gap-2"
-    >
-      <UIcon name="i-heroicons-light-bulb" class="w-5 h-5" />
-      Suggest a Team!
-    </button>
+    <!-- Floating Button with Close X -->
+    <div v-if="!isHidden" class="fixed bottom-6 right-6 z-50 flex items-start gap-2">
+      <button
+        @click="isOpen = true"
+        class="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 py-3 rounded-full shadow-lg transition-all duration-200 hover:scale-105 flex items-center gap-2"
+      >
+        <UIcon name="i-heroicons-light-bulb" class="w-5 h-5" />
+        Suggest a Team!
+      </button>
+      
+      <!-- Small X button to hide -->
+      <button
+        @click="hideButton"
+        class="bg-gray-700 hover:bg-gray-800 text-gray-300 hover:text-white w-8 h-8 rounded-full shadow-lg transition-all duration-200 flex items-center justify-center"
+        title="Hide this button"
+      >
+        <UIcon name="i-heroicons-x-mark" class="w-4 h-4" />
+      </button>
+    </div>
 
     <!-- Modal -->
     <UModal v-model="isOpen" :ui="{ width: 'sm:max-w-2xl' }">

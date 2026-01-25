@@ -45,10 +45,6 @@ const closeModal = () => {
 
 const hideButton = () => {
   isHidden.value = true;
-  // Store preference in localStorage
-  if (typeof window !== 'undefined') {
-    localStorage.setItem('hideSuggestButton', 'true');
-  }
 };
 
 const submitSuggestion = async () => {
@@ -88,16 +84,6 @@ const submitSuggestion = async () => {
     isSubmitting.value = false;
   }
 };
-
-// Check localStorage on mount
-onMounted(() => {
-  if (typeof window !== 'undefined') {
-    const hidden = localStorage.getItem('hideSuggestButton');
-    if (hidden === 'true') {
-      isHidden.value = true;
-    }
-  }
-});
 </script>
 
 <template>

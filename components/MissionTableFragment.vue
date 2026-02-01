@@ -266,9 +266,9 @@ async function showToast(itemIndex: number) {
                                 <!-- Badge Cluster -->
                                 <div class="flex items-center gap-1 -my-1">
                                     <!-- Success Rate Badge -->
-                                    <UTooltip v-if="successRateBadge(item.content.successRate)" 
+                                    <UTooltip v-if="successRateBadge(item.content.successRate)" @click.stop 
                                         :text="successRateBadge(item.content.successRate)!.tooltip"
-                                        :popper="{ placement: 'top' }">
+                                        :popper="{ placement: 'top', strategy: 'fixed', touch: ['hold', 500] }">
                                         <div class="w-5 h-5 flex items-center justify-center">
                                             <UIcon 
                                                 :name="successRateBadge(item.content.successRate)!.icon" 
@@ -290,7 +290,7 @@ async function showToast(itemIndex: number) {
                                             v-for="(badge, badgeIndex) in interactionBadges(item.content.interactionType)" 
                                             :key="badgeIndex"
                                             :text="badge!.tooltip"
-                                            :popper="{ placement: 'top' }">
+                                            :popper="{ placement: 'top', strategy: 'fixed', touch: ['hold', 500] }">
                                             <div class="w-5 h-5 flex items-center justify-center">
                                                 <UIcon 
                                                     :name="badge!.icon" 
@@ -303,7 +303,7 @@ async function showToast(itemIndex: number) {
 
                                     <!-- Legacy Targeted Badge (for backward compatibility) -->
                                     <UTooltip v-else-if="item.content.targeted" 
-                                        :popper="{ placement: 'top' }">
+                                        :popper="{ placement: 'top', strategy: 'fixed', touch: ['hold', 500] }">
                                         <template #text>
                                             <div class="text-center max-w-xs">
                                                 Manual targeting or pausing<br>recommended - see Notes

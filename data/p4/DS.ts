@@ -27,15 +27,15 @@ export const dsMidRightP4: dataType[] = [
         successRate: successRate.FIFTY_FIFTY,
         interactionType: [interactionType.AUTO]
     },
-    {
-        lead: 'Mother Talzin',
-        others: 'Asajj, Daka, Zombie, Merrin',
-        notes: 'auto',
-        videos: [{ url: 'https://www.youtube.com/watch?v=UX67LlXNtBY', creator: creators.egnards }],
-        difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO]
-    },
+    // {
+    //     lead: 'Mother Talzin',
+    //     others: 'Asajj, Daka, Zombie, Merrin',
+    //     notes: 'auto',
+    //     videos: [{ url: 'https://www.youtube.com/watch?v=UX67LlXNtBY', creator: creators.egnards }],
+    //     difficulty: difficulty.VERY_EASY,
+    //     successRate: successRate.CONSISTENT,
+    //     interactionType: [interactionType.AUTO]
+    // },
     {
         lead: 'SEE (overrelic Triumvirate)',
         leadFull: 'Sith Eternal Emperor',

@@ -31,15 +31,16 @@ export const leftDSP1: dataType[] = [{
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
 },
+// {
+//     lead: 'Mother Talzin',
+//     others: 'Merrin, Asajj, Daka, Zombie',
+//     notes: 'auto',
+//     videos: [{ url: 'https://www.youtube.com/watch?v=yPPfk6jXukU', creator: creators.egnards }],
+//     difficulty: difficulty.EASY,
+//         successRate: successRate.NINETY_PERCENT,
+//         interactionType: [interactionType.AUTO]
+// }, 
 {
-    lead: 'Mother Talzin',
-    others: 'Merrin, Asajj, Daka, Zombie',
-    notes: 'auto',
-    videos: [{ url: 'https://www.youtube.com/watch?v=yPPfk6jXukU', creator: creators.egnards }],
-    difficulty: difficulty.EASY,
-        successRate: successRate.NINETY_PERCENT,
-        interactionType: [interactionType.AUTO]
-}, {
     lead: 'Great Mothers',
     others: 'Morgan, Night Trooper, Death Trooper, Merrin',
     notes: 'Auto, can bless morgan manually if you want to be totally safe',
@@ -116,15 +117,15 @@ export const bottomDSP1: dataType[] = [{
         successRate: successRate.FIFTY_FIFTY,
         interactionType: [interactionType.AUTO]
 },
-{
-    lead: 'Mother Talzin',
-    others: 'Merrin, Asajj, Daka, Zombie',
-    notes: 'auto',
-    videos: [{ url: 'https://www.youtube.com/watch?v=WNhnP7qjZgQ', creator: creators.egnards }],
-    difficulty: difficulty.EASY,
-        successRate: successRate.NINETY_PERCENT,
-        interactionType: [interactionType.AUTO]
-},
+// {
+//     lead: 'Mother Talzin',
+//     others: 'Merrin, Asajj, Daka, Zombie',
+//     notes: 'auto',
+//     videos: [{ url: 'https://www.youtube.com/watch?v=WNhnP7qjZgQ', creator: creators.egnards }],
+//     difficulty: difficulty.EASY,
+//         successRate: successRate.NINETY_PERCENT,
+//         interactionType: [interactionType.AUTO]
+// },
 {
     lead: 'DTMG (Enoch omi)',
     leadFull: 'Dark Trooper Moff Gideon',
@@ -265,7 +266,6 @@ export const shipsDSP1 = [
         others: 'Sith Bomber, MK6 Interceptor, Sith Fighter, Tie Adv, Scimitar',
         notes: 'Not consistent',
         videos: [{ url: 'https://youtu.be/xCuGwcVtd98' },
-        { url: 'https://www.youtube.com/watch?v=ahVD4QBYne4', creator: creators.egnards },
         ],
         difficulty: difficulty.HARD,
         successRate: successRate.FIFTY_FIFTY

@@ -103,15 +103,15 @@ export const lsTopMidP5: dataType[] = [
 ]
 
 export const lsBottomP5: dataType[] = [
-    {
-        lead: 'Boss Nass',
-        others: 'Gungans, Tarpal Omi',
-        notes: 'Auto',
-        videos: [{ url: 'https://www.youtube.com/watch?v=5kjc-83PM2s', creator: creators.egnards }],
-        difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO]
-    },
+    // {
+    //     lead: 'Boss Nass',
+    //     others: 'Gungans, Tarpal Omi',
+    //     notes: 'Auto',
+    //     videos: [{ url: 'https://www.youtube.com/watch?v=5kjc-83PM2s', creator: creators.egnards }],
+    //     difficulty: difficulty.VERY_EASY,
+    //     successRate: successRate.CONSISTENT,
+    //     interactionType: [interactionType.AUTO]
+    // },
     {
         lead: 'Omega (Mercenary) (Omi)',
         leadFull: 'Omega with Bad Batch Mercenaries',

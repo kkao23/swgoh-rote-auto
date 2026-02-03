@@ -1,5 +1,4 @@
 import { type data as dataType } from "~/models/data";
-import { creators } from "~/models/creators";
 import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const hondoMixedP2: dataType[] = [
@@ -57,32 +56,32 @@ export const shipsMixedP2: dataType[] = [
         successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO]
     },
-    // {
-    //     lead: 'Executor',
-    //     others: 'Hounds Tooth, XB, RC, Slave 1, IG2000',
-    //     notes: 'auto, you need RC, youll lose if RC is platooned',
-    //     videos: [{ url: 'https://www.youtube.com/watch?v=TMQZ4iO_V4w', creator: creators.egnards }],
-    //     difficulty: difficulty.VERY_EASY,
-    //     successRate: successRate.CONSISTENT,
-    //     interactionType: [interactionType.AUTO]
-    // },
-    // {
-    //     lead: 'Profundity',
-    //     others: 'Outrider, MF, Y wing, Ghost, Phantom',
-    //     notes: 'auto',
-    //     videos: [{ url: 'https://www.youtube.com/watch?v=-q6P7kJP39c', creator: creators.egnards }],
-    //     difficulty: difficulty.VERY_EASY,
-    //     successRate: successRate.CONSISTENT,
-    //     interactionType: [interactionType.AUTO]
-    // },{
-    //     lead: 'Leviathan',
-    //     others: 'Sith Bomber, Fury Class Interceptor, Tie Dagger, Sith Fighter, MK6 Interceptor',
-    //     notes: 'auto',
-    //     videos: [{ url: 'https://www.youtube.com/watch?v=REBjxUTyzvc', creator: creators.egnards }],
-    //     difficulty: difficulty.VERY_EASY,
-    //     successRate: successRate.CONSISTENT,
-    //     interactionType: [interactionType.AUTO]
-    // },
+    {
+        lead: 'Executor',
+        others: 'Hounds Tooth, XB, RC, Slave 1, IG2000',
+        notes: 'auto, you need RC, youll lose if RC is platooned',
+        videos: [{ url: 'https://www.youtube.com/watch?v=TMQZ4iO_V4w', creator: 'egnards' }],
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
+    },
+    {
+        lead: 'Profundity',
+        others: 'Outrider, MF, Y wing, Ghost, Phantom',
+        notes: 'auto',
+        videos: [{ url: 'https://www.youtube.com/watch?v=-q6P7kJP39c', creator: 'egnards' }],
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
+    },{
+        lead: 'Leviathan',
+        others: 'Sith Bomber, Fury Class Interceptor, Tie Dagger, Sith Fighter, MK6 Interceptor',
+        notes: 'auto',
+        videos: [{ url: 'https://www.youtube.com/watch?v=REBjxUTyzvc', creator: 'egnards' }],
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
+    },
 ]
 
 export const mixedP2: dataType[] = [
@@ -106,20 +105,20 @@ export const mixedP2: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
     },
-    // {
-    //     lead: 'Hera (Phoenix)',
-    //     others: 'Kanan, Sabine, Chopper, Capt Rex',
-    //     notes: 'auto',
-    //     videos: [{ url: 'https://www.youtube.com/watch?v=Hf_-_PGj3rk', creator: creators.egnards }],
-    //     difficulty: difficulty.VERY_EASY,
-    //     successRate: successRate.CONSISTENT,
-    //     interactionType: [interactionType.AUTO]
-    // },
+    {
+        lead: 'Hera (Phoenix)',
+        others: 'Kanan, Sabine, Chopper, Capt Rex',
+        notes: 'auto',
+        videos: [{ url: 'https://www.youtube.com/watch?v=Hf_-_PGj3rk', creator: 'egnards' }],
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
+    },
     {
         lead: 'Boss Nass',
         others: 'Gungans',
         notes: 'easy auto with Tarpals Omi',
-        videos: [{ url: 'https://youtu.be/j6c_GgoPyws?si=Hx1_pMIyDumR1mIX', creator: creators.pico }],
+        videos: [{ url: 'https://youtu.be/j6c_GgoPyws?si=Hx1_pMIyDumR1mIX', creator: 'pico' }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
@@ -243,7 +242,7 @@ export const youngLandoP2: dataType[] = [
         lead: 'Ahsoka Tano',
         others: 'Ezra Exile, Hera, Sabine',
         notes: 'Ezra mandatory. Need R8 minimum, preferably R9.',
-        videos: [{url: 'https://youtu.be/j6c_GgoPyws?si=Hxm-IELtfWIbZqQH&t=470', creator: creators.pico}],
+        videos: [{url: 'https://youtu.be/j6c_GgoPyws?si=Hxm-IELtfWIbZqQH&t=470', creator: 'pico'}],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
     },

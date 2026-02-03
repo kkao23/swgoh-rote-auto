@@ -1,7 +1,5 @@
 import { type data as dataType } from "~/models/data";
-import { creators } from "~/models/creators";
 import { difficulty, successRate, interactionType } from "~/models/data";
-
 
 export const dsInqP4: dataType[] = [
     {
@@ -27,21 +25,21 @@ export const dsMidRightP4: dataType[] = [
         successRate: successRate.FIFTY_FIFTY,
         interactionType: [interactionType.AUTO]
     },
-    // {
-    //     lead: 'Mother Talzin',
-    //     others: 'Asajj, Daka, Zombie, Merrin',
-    //     notes: 'auto',
-    //     videos: [{ url: 'https://www.youtube.com/watch?v=UX67LlXNtBY', creator: creators.egnards }],
-    //     difficulty: difficulty.VERY_EASY,
-    //     successRate: successRate.CONSISTENT,
-    //     interactionType: [interactionType.AUTO]
-    // },
+    {
+        lead: 'Mother Talzin',
+        others: 'Asajj, Daka, Zombie, Merrin',
+        notes: 'auto',
+        videos: [{ url: 'https://www.youtube.com/watch?v=UX67LlXNtBY', creator: 'avengerObs' }],
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
+    },
     {
         lead: 'SEE (overrelic Triumvirate)',
         leadFull: 'Sith Eternal Emperor',
         others: 'Traya, Malgus, Nihilus, Sion',
         notes: 'Pico has R9 on SEE, Traya and Sion. Not sure if this is reliable with R8',
-        videos: [{url: 'https://youtu.be/ecgbRYyLYn8?si=vXiCr9uxLr9M5eJi', creator: creators.pico}],
+        videos: [{url: 'https://youtu.be/ecgbRYyLYn8?si=vXiCr9uxLr9M5eJi', creator: 'pico'}],
         difficulty: difficulty.EASY,
         successRate: successRate.NINETY_PERCENT,
     },

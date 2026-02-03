@@ -1,5 +1,4 @@
 import { type data as dataType } from "~/models/data";
-import { creators } from "~/models/creators";
 import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const qiraMixedP1: dataType[] = [
@@ -35,7 +34,7 @@ export const qiraMixedP1: dataType[] = [
         lead: 'Qira (Rey/CAT)',
         others: 'Rey, CAT, Dash',
         notes: 'auto',
-        videos: [{url: 'https://youtu.be/9ZoFbJLgMeQ?si=52LjaRA6F8zWoIIE&t=334', creator: creators.pico}],
+        videos: [{url: 'https://youtu.be/9ZoFbJLgMeQ?si=52LjaRA6F8zWoIIE&t=334', creator: 'pico'}],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
@@ -82,39 +81,39 @@ export const mixedP1: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
     },
-    // {
-    //     lead: 'E Palaptine (Starkiller)',
-    //     leadFull: 'Emperor Palpatine (Starkiller)',
-    //     others: 'Starkiller, Mara Jade, Old Ben, Visas',
-    //     notes: 'auto, last two can be any jedi/LS UFU',
-    //     videos: [{ url: 'https://www.youtube.com/watch?v=wyyfYpCldN4', creator: creators.egnards }],
-    //     difficulty: difficulty.VERY_EASY,
-    //     successRate: successRate.CONSISTENT,
-    //     interactionType: [interactionType.AUTO]
-    // },
-    // {
-    //     lead: 'Hera (Phoenix)',
-    //     others: 'Capt Rex, Kanan, Sabine, Chopper',
-    //     notes: 'I cant get this to work on auto. May require excellent mods',
-    //     videos: [{ url: 'https://www.youtube.com/watch?v=lAw9OrvQzfU', creator: creators.egnards }],
-    //     difficulty: difficulty.HARD,
-    //     successRate: successRate.FIFTY_FIFTY,
-    //     interactionType: [interactionType.AUTO]
-    // },
-    // {
-    //     lead: 'Mother Talzin',
-    //     others: 'Merrin, Asajj, Daka, Zombie',
-    //     notes: 'auto',
-    //     videos: [{ url: 'https://www.youtube.com/watch?v=BuRRMRfocoo', creator: creators.egnards }],
-    //     difficulty: difficulty.VERY_EASY,
-    //     successRate: successRate.CONSISTENT,
-    //     interactionType: [interactionType.AUTO]
-    // },
+    {
+        lead: 'E Palaptine (Starkiller)',
+        leadFull: 'Emperor Palpatine (Starkiller)',
+        others: 'Starkiller, Mara Jade, Old Ben, Visas',
+        notes: 'auto, last two can be any jedi/LS UFU',
+        videos: [{ url: 'https://www.youtube.com/watch?v=wyyfYpCldN4', creator: 'egnards' }],
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
+    },
+    {
+        lead: 'Hera (Phoenix)',
+        others: 'Capt Rex, Kanan, Sabine, Chopper',
+        notes: 'I cant get this to work on auto. May require excellent mods',
+        videos: [{ url: 'https://www.youtube.com/watch?v=lAw9OrvQzfU', creator: 'egnards' }],
+        difficulty: difficulty.HARD,
+        successRate: successRate.FIFTY_FIFTY,
+        interactionType: [interactionType.AUTO]
+    },
+    {
+        lead: 'Mother Talzin',
+        others: 'Merrin, Asajj, Daka, Zombie',
+        notes: 'auto',
+        videos: [{ url: 'https://www.youtube.com/watch?v=BuRRMRfocoo', creator: 'egnards' }],
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
+    },
     {
         lead: 'Finn (omi)',
         others: 'Rose, Poe, RH Finn, Zorii',
         notes: 'auto',
-        videos: [{url: 'https://youtu.be/9ZoFbJLgMeQ?si=OsvnQRT7eJTYF4EQ&t=264', creator: creators.pico}],
+        videos: [{url: 'https://youtu.be/9ZoFbJLgMeQ?si=OsvnQRT7eJTYF4EQ&t=264', creator: 'pico'}],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],

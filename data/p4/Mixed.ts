@@ -1,5 +1,4 @@
 import { type data as dataType } from "~/models/data";
-import { creators } from "~/models/creators";
 import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const mixedQiraP4: dataType[] = [
@@ -109,21 +108,21 @@ export const mixedGenericP4: dataType[] = [
         successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO]
     },
-    // {
-    //     lead: 'Mother Talzin',
-    //     others: 'Old Daka, Merrin, Zombie',
-    //     notes: 'auto, can add Asajj',
-    //     videos: [{ url: 'https://www.youtube.com/watch?v=QxQHAEs1kHs', creator: creators.egnards }],
-    //     difficulty: difficulty.VERY_EASY,
-    //     successRate: successRate.CONSISTENT,
-    //     interactionType: [interactionType.AUTO]
-    // },
+    {
+        lead: 'Mother Talzin',
+        others: 'Old Daka, Merrin, Zombie',
+        notes: 'auto, can add Asajj',
+        videos: [{ url: 'https://www.youtube.com/watch?v=QxQHAEs1kHs', creator: 'egnards' }],
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
+    },
     {
         lead: 'JMK',
         leadFull: 'Jedi Master Kenobi',
         others: 'Padme, Snips, GK, Cody',
         notes: 'Imagine Cody is a flex here and you can likely 4 man this',
-        videos: [{ url: 'https://youtu.be/K7yZyrvCObI?si=zgFyWI6C0mjYh_zE&t=3', creator: creators.pico }],
+        videos: [{ url: 'https://youtu.be/K7yZyrvCObI?si=zgFyWI6C0mjYh_zE&t=3', creator: 'pico' }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
     },
@@ -169,7 +168,7 @@ export const mixedGenericP4: dataType[] = [
         lead: 'Omega (omi)',
         others: 'Bad Batch Mercenaries',
         notes: 'auto',
-        videos: [{ url: 'https://youtu.be/Kzj93kyiKmM?si=oUrEfxpCHOBw0_bq', creator: creators.avengerObs }],
+        videos: [{ url: 'https://youtu.be/Kzj93kyiKmM?si=oUrEfxpCHOBw0_bq', creator: 'avengerObs' }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],

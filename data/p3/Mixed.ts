@@ -1,5 +1,4 @@
 import { type data as dataType } from "~/models/data";
-import { creators } from "~/models/creators";
 import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const boKatanP3: dataType[] = [
@@ -75,7 +74,7 @@ export const fennecP3: dataType[] = [
         lead: 'Bossk',
         others: 'Boba, Greef, Mando',
         notes: 'auto',
-        videos: [{url: 'https://youtu.be/R7zqN2V0kQo?si=JDJovWknr8nAx7_t&t=267', creator: creators.pico}],
+        videos: [{url: 'https://youtu.be/R7zqN2V0kQo?si=JDJovWknr8nAx7_t&t=267', creator: 'pico'}],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
@@ -166,7 +165,7 @@ export const mixedTopLeftP3: dataType[] = [
     //     lead: 'Mother Talzin',
     //     others: 'Asajj, Daka, Zombie, Merrin',
     //     notes: 'auto',
-    //     videos: [{ url: 'https://www.youtube.com/watch?v=9I7t5cDbZRU', creator: creators.egnards }],
+    //     videos: [{ url: 'https://www.youtube.com/watch?v=9I7t5cDbZRU', creator: 'avengerObs' }],
     //     difficulty: difficulty.VERY_EASY,
     //     successRate: successRate.CONSISTENT,
     //     interactionType: [interactionType.AUTO]
@@ -175,7 +174,7 @@ export const mixedTopLeftP3: dataType[] = [
     //     lead: 'Hera (Phoenix)',
     //     others: 'Chopper, Kanan, Sabine, Capt Rex',
     //     notes: 'auto',
-    //     videos: [{ url: 'https://www.youtube.com/watch?v=TK71MGKC2Ho', creator: creators.egnards }],
+    //     videos: [{ url: 'https://www.youtube.com/watch?v=TK71MGKC2Ho', creator: 'avengerObs' }],
     //     difficulty: difficulty.VERY_EASY,
     //     successRate: successRate.CONSISTENT,
     //     interactionType: [interactionType.AUTO]
@@ -184,7 +183,7 @@ export const mixedTopLeftP3: dataType[] = [
         lead: 'Finn (omi)',
         others: 'Poe, Zorii, RH Finn, Resistance Pilot',
         notes: 'auto, i imagine Resistance Pilot is replaceable',
-        videos: [{url: 'https://youtu.be/R7zqN2V0kQo?si=urjbrnVAjSeaOTHa&t=387', creator: creators.pico}],
+        videos: [{url: 'https://youtu.be/R7zqN2V0kQo?si=urjbrnVAjSeaOTHa&t=387', creator: 'pico'}],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],

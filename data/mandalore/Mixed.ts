@@ -1,5 +1,4 @@
 import { type data as dataType } from "~/models/data";
-import { creators } from "~/models/creators";
 import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const mandaloreFleets: dataType[] = [
@@ -115,7 +114,7 @@ export const mandaloreGeneric: dataType[] = [
         lead: 'Finn (omi)',
         others: 'RH Finn, Rose, Zorii, Poe',
         notes: 'auto',
-        videos: [{ url: 'https://www.youtube.com/watch?v=3OXMLd1e7PI', creator: creators.pico }],
+        videos: [{ url: 'https://www.youtube.com/watch?v=3OXMLd1e7PI', creator: 'pico' }],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO],
@@ -125,7 +124,7 @@ export const mandaloreGeneric: dataType[] = [
         lead: 'Omega (omi)',
         others: 'Bad Batch Mercenaries',
         notes: 'auto',
-        videos: [{url: 'https://youtu.be/oXkwJiE_EGg'}, { url: 'https://youtu.be/JuEnsbbFuT4?si=W7cLID0-I95kNy8h', creator: creators.avengerObs }],
+        videos: [{url: 'https://youtu.be/oXkwJiE_EGg'}, { url: 'https://youtu.be/JuEnsbbFuT4?si=W7cLID0-I95kNy8h', creator: 'egnards' }],
         difficulty: difficulty.EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.PAUSE_WAVE2],

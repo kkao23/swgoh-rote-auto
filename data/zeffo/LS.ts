@@ -1,5 +1,4 @@
 import { type data as dataType } from "~/models/data";
-import { creators } from "~/models/creators";
 import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const clonesSM: dataType[] = [
@@ -70,7 +69,7 @@ export const zeffoJedi: dataType[] = [
     //     lead: 'JKCK (Lead Omi, JML)',
     //     others: 'JML, JKL, GMY, Shaak Ti',
     //     notes: 'auto, lead omi mandatory',
-    //     videos: [{ url: 'https://www.youtube.com/watch?v=rhEhxaGzODI', creator: creators.egnards }],
+    //     videos: [{ url: 'https://www.youtube.com/watch?v=rhEhxaGzODI', creator: 'avengerObs' }],
     //     difficulty: difficulty.VERY_EASY,
     //     successRate: successRate.CONSISTENT,
     //     interactionType: [interactionType.AUTO],

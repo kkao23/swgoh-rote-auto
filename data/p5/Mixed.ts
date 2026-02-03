@@ -1,5 +1,4 @@
 import { type data as dataType } from "~/models/data";
-import { creators } from "~/models/creators";
 import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const mixedFleetP5: dataType[] = [
@@ -175,7 +174,7 @@ export const jabbaP5:dataType[] = [
         lead: 'Jabba',
         others: 'Boosh, Krrsantan, Gam Guard (omi), Bossk',
         notes: 'auto, replace Bossk with Hutt Cartel if possible',
-        videos: [{url: 'https://youtu.be/1t_aEW7O9Zk?si=FZVN2wEADXdQHkT2&t=156', creator: creators.pico}],
+        videos: [{url: 'https://youtu.be/1t_aEW7O9Zk?si=FZVN2wEADXdQHkT2&t=156', creator: 'pico'}],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],

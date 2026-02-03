@@ -1,5 +1,4 @@
 import { type data as dataType } from "~/models/data";
-import { creators } from "~/models/creators";
 import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const maceKitP1 = [
@@ -85,17 +84,17 @@ export const jediP1: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
     }, 
-    // {
-    //     lead: 'JKCK (Lead Omi)',
-    //     leadFull: 'Jedi Knight Cal Kestis (Lead Omi)',
-    //     others: 'any 4 Jedi',
-    //     notes: 'auto',
-    //     videos: [{ url: 'https://www.youtube.com/watch?v=KorRjRRh6k0', creator: creators.egnards }],
-    //     difficulty: difficulty.VERY_EASY,
-    //     successRate: successRate.CONSISTENT,
-    //     interactionType: [interactionType.AUTO],
-    //     omi: true,
-    // },
+    {
+        lead: 'JKCK (Lead Omi)',
+        leadFull: 'Jedi Knight Cal Kestis (Lead Omi)',
+        others: 'any 4 Jedi',
+        notes: 'auto',
+        videos: [{ url: 'https://www.youtube.com/watch?v=KorRjRRh6k0', creator: 'egnards' }],
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        omi: true,
+    },
     {
         lead: 'Kelleran Beq',
         leadFull: 'Kelleran Beq',
@@ -246,15 +245,15 @@ export const genericLSP1: dataType[] = [
         successRate: successRate.FIFTY_FIFTY,
         interactionType: [interactionType.AUTO]
     },
-    // {
-    //     lead: 'Padme (Bad Batch)',
-    //     others: 'Hunter, Wrecker, Tech, Echo',
-    //     notes: 'auto, can get unlucky in 2nd wave',
-    //     videos: [{ url: 'https://www.youtube.com/watch?v=TT9Au4z9hcs', creator: creators.egnards }],
-    //     difficulty: difficulty.CAUTION,
-    //     successRate: successRate.USUALLY,
-    //     interactionType: [interactionType.AUTO],
-    // },
+    {
+        lead: 'Padme (Bad Batch)',
+        others: 'Hunter, Wrecker, Tech, Echo',
+        notes: 'auto, can get unlucky in 2nd wave',
+        videos: [{ url: 'https://www.youtube.com/watch?v=TT9Au4z9hcs', creator: 'egnards' }],
+        difficulty: difficulty.CAUTION,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.AUTO],
+    },
     {
         lead: 'Padme (CAT)',
         others: 'Snips, JKA, CAT, Mace',

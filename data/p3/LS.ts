@@ -1,5 +1,4 @@
 import { type data as dataType } from "~/models/data";
-import { creators } from "~/models/creators";
 import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const lsLeftP3: dataType[] = [
@@ -38,7 +37,7 @@ export const lsLeftP3: dataType[] = [
         lead: 'Boss Nass',
         others: 'Other gungans (tarpal omi)',
         notes: 'auto',
-        videos: [{url: 'https://youtu.be/TY97HzhePAg?si=zo9rbCRZ-_JOfg8N&t=231', creator: creators.pico}],
+        videos: [{url: 'https://youtu.be/TY97HzhePAg?si=zo9rbCRZ-_JOfg8N&t=231', creator: 'pico'}],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
@@ -123,16 +122,16 @@ export const lsRightP3: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
     },
-    // {
-    //     lead: 'Boss Nass',
-    //     others: 'Gungans',
-    //     notes: 'auto, Tarpals Omi',
-    //     videos: [{ url: 'https://www.youtube.com/watch?v=bwDYfbb_W-A', creator: creators.egnards }],
-    //     difficulty: difficulty.VERY_EASY,
-    //     successRate: successRate.CONSISTENT,
-    //     interactionType: [interactionType.AUTO],
-    //     omi: true
-    // },
+    {
+        lead: 'Boss Nass',
+        others: 'Gungans',
+        notes: 'auto, Tarpals Omi',
+        videos: [{ url: 'https://www.youtube.com/watch?v=bwDYfbb_W-A', creator: 'egnards' }],
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        omi: true
+    },
     {
         lead: 'QA',
         leadFull: 'Queen Amidala',
@@ -234,7 +233,7 @@ export const wookies: dataType[] = [
         lead: 'Tarfull',
         others: 'Chewbacca, Chewpio, Zaalbaar, Clone Wars Chewie',
         notes: 'Pico has them all R8, not sure if possible at R7. Looked safe though',
-        videos: [{url: 'https://youtu.be/TY97HzhePAg?si=ewaYO47t0fspuZwl&t=463', creator: creators.pico}],
+        videos: [{url: 'https://youtu.be/TY97HzhePAg?si=ewaYO47t0fspuZwl&t=463', creator: 'pico'}],
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
     }

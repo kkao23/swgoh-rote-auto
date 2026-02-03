@@ -159,52 +159,66 @@ const interactionComplexity = (types?: string[]): number => {
 
 const isMobile = useMediaQuery('(max-width: 768px)');
 
-const accordionItems = computed(() => {
-    const sortedData = [...props.data].sort((a, b) => {
-        // First: Sort by creator videos (non-creator first)
-        const aHasCreatorVideo = a.videos?.some(video => video.creator);
-        const bHasCreatorVideo = b.videos?.some(video => video.creator);
-        if (aHasCreatorVideo !== bHasCreatorVideo) {
-            return aHasCreatorVideo ? 1 : -1;
-        }
-        
-        // Second: Sort by success rate (better success first)
+const verifiedTeams = computed(() => {
+    return props.data.filter(d => !d.videos?.some(video => video.creator));
+});
+
+const communityTeams = computed(() => {
+    return props.data.filter(d => d.videos?.some(video => video.creator));
+});
+
+const verifiedAccordionItems = computed(() => {
+    const sortedData = [...verifiedTeams.value].sort((a, b) => {
+        // Sort by success rate (better success first)
         const aSuccessValue = successRateValue(a.successRate);
         const bSuccessValue = successRateValue(b.successRate);
         if (aSuccessValue !== bSuccessValue) {
             return aSuccessValue - bSuccessValue;
         }
         
-        // Third: Sort by interaction complexity (simpler first)
+        // Sort by interaction complexity (simpler first)
         const aComplexity = interactionComplexity(a.interactionType);
         const bComplexity = interactionComplexity(b.interactionType);
         if (aComplexity !== bComplexity) {
             return aComplexity - bComplexity;
         }
         
-        // Fourth: Fallback to old difficulty for missions without badges
+        // Fallback to old difficulty
         return a.difficulty - b.difficulty;
     });
 
-    return sortedData.map((d, index) => {
-        return {
-            label: !isMobile.value && d.leadFull ? d.leadFull : d.lead,
-            content: {
-                others: d.others,
-                notes: d.notes,
-                videos: d.videos,
-                difficulty: d.difficulty,
-                omi: d.omi,
-                targeted: d.targeted,
-                successRate: d.successRate,
-                interactionType: d.interactionType,
-            },
-            defaultOpen: initialDataIndexFromUrl.value !== null ? initialDataIndexFromUrl.value === index : index === 0,
-        }
-    });
+    return sortedData.map((d, index) => ({
+        label: !isMobile.value && d.leadFull ? d.leadFull : d.lead,
+        content: {
+            others: d.others,
+            notes: d.notes,
+            videos: d.videos,
+            difficulty: d.difficulty,
+            omi: d.omi,
+            targeted: d.targeted,
+            successRate: d.successRate,
+            interactionType: d.interactionType,
+        },
+        defaultOpen: initialDataIndexFromUrl.value !== null ? initialDataIndexFromUrl.value === index : index === 0,
+    }));
 });
 
-const creatorMapLocal: { [key: string]: string } = creatorMap;
+const communityAccordionItems = computed(() => {
+    return communityTeams.value.map((d) => ({
+        label: !isMobile.value && d.leadFull ? d.leadFull : d.lead,
+        content: {
+            others: d.others,
+            notes: d.notes,
+            videos: d.videos,
+            difficulty: d.difficulty,
+            omi: d.omi,
+            targeted: d.targeted,
+            successRate: d.successRate,
+            interactionType: d.interactionType,
+        },
+        defaultOpen: false,
+    }));
+});
 
 const toast = useToast();
 
@@ -257,7 +271,7 @@ async function showToast(itemIndex: number) {
                             @click="localIsModalOpen = false" />
                     </div>
                 </template>
-                <UAccordion :items="accordionItems" v-model="openAccordionIndices">
+                <UAccordion :items="verifiedAccordionItems" v-model="openAccordionIndices">
                     <template #default="{ item, index, open }">
                         <UButton
                             class="focus:outline-none focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 flex-shrink-0 font-medium rounded-md text-sm gap-x-1.5 px-2.5 py-1.5 text-primary-500 dark:text-primary-400 bg-primary-50 hover:bg-primary-100 disabled:bg-primary-50 aria-disabled:bg-primary-50 dark:bg-primary-950 dark:hover:bg-primary-900 dark:disabled:bg-primary-950 dark:aria-disabled:bg-primary-950 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400 inline-flex items-center mb-1.5 w-full"
@@ -340,10 +354,57 @@ async function showToast(itemIndex: number) {
                             <img src="/icons/icons8-youtube.svg" alt="YouTube" class="h-6 w-6" />
                             <span>Video</span>
                             </a>
-                            <span v-if="video.creator" class="text-gray-300"> by </span><img v-if="video.creator" :src="creatorMapLocal[video.creator as string]" class="h-12 w-12" />
                         </div>
                     </template>
                 </UAccordion>
+                
+                <!-- Community Suggestions Section -->
+                <div v-if="communityAccordionItems.length > 0" class="mt-6">
+                    <div class="mb-3 px-3">
+                        <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">
+                            Community Suggestions
+                        </h4>
+                    </div>
+                    <UAccordion :items="communityAccordionItems">
+                        <template #default="{ item, index, open }">
+                            <UButton
+                                class="focus:outline-none focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 flex-shrink-0 font-medium rounded-md text-sm gap-x-1.5 px-2.5 py-1.5 text-primary-500 dark:text-primary-400 bg-primary-50 hover:bg-primary-100 disabled:bg-primary-50 aria-disabled:bg-primary-50 dark:bg-primary-950 dark:hover:bg-primary-900 dark:disabled:bg-primary-950 dark:aria-disabled:bg-primary-950 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400 inline-flex items-center mb-1.5 w-full"
+                                :ui="{ padding: { sm: 'p-3' } }">
+                                <span>{{ item.label }}</span>
+                                <img v-if="item.content.omi" src="/icons/omi.png" alt="omicron" class="h-4 w-4" />
+                                <template #trailing>
+                                    <UIcon name="i-heroicons-chevron-right-20-solid" class="w-5 h-5 ms-auto transform transition-transform duration-200"
+                                        :class="[open && 'rotate-90']" />
+                                </template>
+                            </UButton>
+                        </template>
+                        <template #item="{ item }">
+                            <div class="text-sm text-gray-700 dark:text-gray-300 space-y-4 px-4 py-3">
+                                <div>
+                                    <strong class="text-gray-900 dark:text-white">Team:</strong>
+                                    <p class="mt-1">{{ item.content.others }}</p>
+                                </div>
+                                <div>
+                                    <strong class="text-gray-900 dark:text-white">Notes:</strong>
+                                    <p class="mt-1 whitespace-pre-line">{{ item.content.notes }}</p>
+                                </div>
+                                <div v-if="item.content.videos && item.content.videos.length > 0">
+                                    <strong class="text-gray-900 dark:text-white">Videos:</strong>
+                                    <div class="mt-2 space-y-2">
+                                        <div v-for="(video, videoIndex) in item.content.videos" :key="videoIndex">
+                                            <a :href="video.url" target="_blank" rel="noopener noreferrer"
+                                                class="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 underline flex items-center gap-2">
+                                                <img src="/icons/icons8-youtube.svg" alt="YouTube" class="h-4 w-4" />
+                                                <span v-if="video.creator">by {{ video.creator }}</span>
+                                                <span v-else>Watch Video</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </template>
+                    </UAccordion>
+                </div>
                 <template #footer>
                     <MissionModalFooter></MissionModalFooter>
                 </template>

@@ -1,5 +1,4 @@
 import { type data as dataType } from "~/models/data";
-import { creators } from "~/models/creators";
 import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const leftDSP1: dataType[] = [{
@@ -31,15 +30,15 @@ export const leftDSP1: dataType[] = [{
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
 },
-// {
-//     lead: 'Mother Talzin',
-//     others: 'Merrin, Asajj, Daka, Zombie',
-//     notes: 'auto',
-//     videos: [{ url: 'https://www.youtube.com/watch?v=yPPfk6jXukU', creator: creators.egnards }],
-//     difficulty: difficulty.EASY,
-//         successRate: successRate.NINETY_PERCENT,
-//         interactionType: [interactionType.AUTO]
-// }, 
+{
+    lead: 'Mother Talzin',
+    others: 'Merrin, Asajj, Daka, Zombie',
+    notes: 'auto',
+    videos: [{ url: 'https://www.youtube.com/watch?v=yPPfk6jXukU', creator: 'egnards' }],
+    difficulty: difficulty.EASY,
+        successRate: successRate.NINETY_PERCENT,
+        interactionType: [interactionType.AUTO]
+}, 
 {
     lead: 'Great Mothers',
     others: 'Morgan, Night Trooper, Death Trooper, Merrin',
@@ -117,15 +116,15 @@ export const bottomDSP1: dataType[] = [{
         successRate: successRate.FIFTY_FIFTY,
         interactionType: [interactionType.AUTO]
 },
-// {
-//     lead: 'Mother Talzin',
-//     others: 'Merrin, Asajj, Daka, Zombie',
-//     notes: 'auto',
-//     videos: [{ url: 'https://www.youtube.com/watch?v=WNhnP7qjZgQ', creator: creators.egnards }],
-//     difficulty: difficulty.EASY,
-//         successRate: successRate.NINETY_PERCENT,
-//         interactionType: [interactionType.AUTO]
-// },
+{
+    lead: 'Mother Talzin',
+    others: 'Merrin, Asajj, Daka, Zombie',
+    notes: 'auto',
+    videos: [{ url: 'https://www.youtube.com/watch?v=WNhnP7qjZgQ', creator: 'egnards' }],
+    difficulty: difficulty.EASY,
+        successRate: successRate.NINETY_PERCENT,
+        interactionType: [interactionType.AUTO]
+},
 {
     lead: 'DTMG (Enoch omi)',
     leadFull: 'Dark Trooper Moff Gideon',
@@ -209,7 +208,7 @@ export const topDSP1: dataType[] = [
         lead: 'Reva',
         others: 'GI, 7S, 2S, 8B',
         notes: 'Target B2, hit auto',
-        videos: [{ url: 'https://youtu.be/V75J-k6i40s?si=uX_YUqMZEuQr7VIN&t=145', creator: creators.pico }],
+        videos: [{ url: 'https://youtu.be/V75J-k6i40s?si=uX_YUqMZEuQr7VIN&t=145', creator: 'pico' }],
         difficulty: difficulty.EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.TARGET_START],
@@ -275,7 +274,7 @@ export const shipsDSP1 = [
         others: 'Scythe, Mk6, Tie Adv, Defender, Interceptor, Sith Fighter, TIE Fighter',
         notes: 'cant auto',
         videos: [
-            { url: 'https://www.youtube.com/watch?v=4skhcZSGAoQ', creator: creators.kahzgul },
+            { url: 'https://www.youtube.com/watch?v=4skhcZSGAoQ', creator: 'kahzgul' },
         ],
         difficulty: difficulty.NO_AUTO,
         successRate: successRate.UNRELIABLE,

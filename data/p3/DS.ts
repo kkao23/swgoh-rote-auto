@@ -1,5 +1,4 @@
 import { type data as dataType } from "~/models/data";
-import { creators } from "~/models/creators";
 import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const dsGenericP3: dataType[] = [
@@ -50,15 +49,15 @@ export const dsGenericP3: dataType[] = [
         successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO]
     },
-    // {
-    //     lead: 'Reva',
-    //     others: 'GI, 7S, 5B, 8B',
-    //     notes: 'Torture, auto, I personally have not gotten this team to work under 10 minutes',
-    //     videos: [{ url: 'https://www.youtube.com/watch?v=7wqarjgb6x8', creator: creators.egnards }],
-    //     difficulty: difficulty.HARD,
-    //     successRate: successRate.FIFTY_FIFTY,
-    //     interactionType: [interactionType.AUTO]
-    // },
+    {
+        lead: 'Reva',
+        others: 'GI, 7S, 5B, 8B',
+        notes: 'Torture, auto, I personally have not gotten this team to work under 10 minutes',
+        videos: [{ url: 'https://www.youtube.com/watch?v=7wqarjgb6x8', creator: 'kahzgul' }],
+        difficulty: difficulty.HARD,
+        successRate: successRate.FIFTY_FIFTY,
+        interactionType: [interactionType.AUTO]
+    },
     {
         lead: 'Trench',
         others: 'Dooku, Wat, Jango, Nute',
@@ -182,14 +181,13 @@ export const merrinP3: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.TARGET_START, interactionType.PAUSE_WAVE2],
     },
-    // {
-    //     lead: 'Old Daka',
-    //     others: 'Asajj, Zombie, Mother Talzin, Merrin',
-    //     notes: 'auto, R8+ Daka and great mods required',
-    //     videos: [{ url: 'https://www.youtube.com/watch?v=EM3GCo_0XSQ', creator: creators.egnards }],
-    //     difficulty: difficulty.EASY,
-    //     successRate: successRate.FIFTY_FIFTY,
-    //     interactionType: [interactionType.AUTO]
-    // }
+    {
+        lead: 'Old Daka',
+        others: 'Asajj, Zombie, Mother Talzin, Merrin',
+        notes: 'auto, R8+ Daka and great mods required',
+        videos: [{ url: 'https://www.youtube.com/watch?v=EM3GCo_0XSQ', creator: 'kahzgul' }],
+        difficulty: difficulty.EASY,
+        successRate: successRate.FIFTY_FIFTY,
+        interactionType: [interactionType.AUTO]
+    }
 ]
-

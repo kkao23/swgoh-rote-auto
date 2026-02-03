@@ -1,8 +1,6 @@
-import { creators } from "./creators"
-
 type videos = {
     url: string,
-    creator?: creators,
+    creator?: string,
 }
 
 export type data = {

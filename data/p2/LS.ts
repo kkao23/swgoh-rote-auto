@@ -1,5 +1,4 @@
 import { type data as dataType } from "~/models/data";
-import { creators } from "~/models/creators";
 import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const shipsLSP2: dataType[] = [
@@ -109,16 +108,15 @@ export const leftLSP2: dataType[] = [
         videos: [{ url: 'https://youtu.be/fFO75yKREfA' }],
         difficulty: difficulty.EASY,
         successRate: successRate.NINETY_PERCENT,
-        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Finn (omi)',
         others: 'Poe, Zorii, RH Finn, Rose',
         notes: 'auto',
-        videos: [{url: 'https://youtu.be/-T5DUTDHm6Y?si=enslsLffHD2qyfnW&t=381', creator: creators.pico}],
-        difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO],
+        videos: [{url: 'https://youtu.be/-T5DUTDHm6Y?si=enslsLffHD2qyfnW&t=381'}],
+        difficulty: 2,
+        successRate: 3,
+        interactionType: [0],
         omi: true,
     },
     {

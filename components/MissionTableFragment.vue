@@ -276,7 +276,7 @@ async function showToast(itemIndex: number) {
                 <UAccordion :items="verifiedAccordionItems" v-model="openAccordionIndices">
                     <template #default="{ item, index, open }">
                         <UButton
-                            class="focus:outline-none focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 flex-shrink-0 font-medium rounded-md text-sm gap-x-1.5 px-2.5 py-1.5 text-primary-500 dark:text-primary-400 bg-primary-50 hover:bg-primary-100 disabled:bg-primary-50 aria-disabled:bg-primary-50 dark:bg-primary-950 dark:hover:bg-primary-900 dark:disabled:bg-primary-950 dark:aria-disabled:bg-primary-950 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400 inline-flex items-center mb-1.5 w-full"
+                            class="focus:outline-none focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 flex-shrink-0 font-medium rounded-md text-sm gap-x-1.5 px-2.5 py-1.5 text-primary-400 bg-primary-950 hover:bg-primary-900 disabled:bg-primary-950 aria-disabled:bg-primary-950 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary-400 inline-flex items-center mb-1.5 w-full"
                             :ui="{ padding: { sm: 'py-4 px-4' } }">
                             <template #leading>
                                 <!-- Badge Cluster -->
@@ -371,7 +371,7 @@ async function showToast(itemIndex: number) {
                     <UAccordion :items="communityAccordionItems">
                         <template #default="{ item, index, open }">
                             <UButton
-                                class="focus:outline-none focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 flex-shrink-0 font-medium rounded-md text-sm gap-x-1.5 px-2.5 py-1.5 text-primary-500 dark:text-primary-400 bg-primary-50 hover:bg-primary-100 disabled:bg-primary-50 aria-disabled:bg-primary-50 dark:bg-primary-950 dark:hover:bg-primary-900 dark:disabled:bg-primary-950 dark:aria-disabled:bg-primary-950 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400 inline-flex items-center mb-1.5 w-full"
+                                class="focus:outline-none focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 flex-shrink-0 font-medium rounded-md text-sm gap-x-1.5 px-2.5 py-1.5 text-primary-400 bg-primary-950 hover:bg-primary-900 disabled:bg-primary-950 aria-disabled:bg-primary-950 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary-400 inline-flex items-center mb-1.5 w-full"
                                 :ui="{ padding: { sm: 'py-4 px-4' } }">
                                 <img v-if="item.content.icon" :src="item.content.icon" class="h-9 w-9 rounded" />
                                 <span>{{ item.label }}</span>
@@ -383,21 +383,21 @@ async function showToast(itemIndex: number) {
                             </UButton>
                         </template>
                         <template #item="{ item }">
-                            <div class="text-sm text-gray-700 dark:text-gray-300 space-y-4 px-4 py-3">
+                            <div class="text-sm text-gray-300 space-y-4 px-4 py-3">
                                 <div>
-                                    <strong class="text-gray-900 dark:text-white">Team:</strong>
+                                    <strong class="text-white">Team:</strong>
                                     <p class="mt-1">{{ item.content.others }}</p>
                                 </div>
                                 <div>
-                                    <strong class="text-gray-900 dark:text-white">Notes:</strong>
+                                    <strong class="text-white">Notes:</strong>
                                     <p class="mt-1 whitespace-pre-line">{{ item.content.notes }}</p>
                                 </div>
                                 <div v-if="item.content.videos && item.content.videos.length > 0">
-                                    <strong class="text-gray-900 dark:text-white">Videos:</strong>
+                                    <strong class="text-white">Videos:</strong>
                                     <div class="mt-2 space-y-2">
                                         <div v-for="(video, videoIndex) in item.content.videos" :key="videoIndex">
                                             <a :href="video.url" target="_blank" rel="noopener noreferrer"
-                                                class="text-blue-500 hover:text-blue-600 dark:text-blue-400 dark:hover:text-blue-300 underline flex items-center gap-2">
+                                                class="text-blue-400 hover:text-blue-300 underline flex items-center gap-2">
                                                 <img src="/icons/icons8-youtube.svg" alt="YouTube" class="h-4 w-4" />
                                                 <span v-if="video.creator">by {{ video.creator }}</span>
                                                 <span v-else>Watch Video</span>

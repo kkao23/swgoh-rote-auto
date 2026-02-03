@@ -17,7 +17,7 @@ export const leftDSP1: dataType[] = [{
     others: 'DRey',
     notes: 'Any other FO, Poke Droideka, Auto',
     videos: [{ url: 'https://youtu.be/AsoKUJ0UIik' }],
-    icon: '/icons/characters/tex.charui_kyloren_tros_tros.png',
+    icon: '/icons/characters/tex.charui_kyloren_tros.png',
         difficulty: difficulty.EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.TARGET_START]
@@ -155,7 +155,7 @@ export const bottomDSP1: dataType[] = [{
     others: 'DRey, Hux, KRU, Sith Trooper',
     notes: 'Auto',
     videos: [{ url: 'https://youtu.be/BTWI-B8Oc-Q' }],
-    icon: '/icons/characters/tex.charui_kyloren_tros_tros.png',
+    icon: '/icons/characters/tex.charui_kyloren_tros.png',
         difficulty: difficulty.EASY,
         successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO]
@@ -200,7 +200,7 @@ export const topDSP1: dataType[] = [
         others: 'Hux, KRU, Sith Trooper, any 5th',
         notes: 'Stun droideka first, second phase poke brute, otherwise auto',
         videos: [{ url: 'https://youtu.be/QGui7hJ4ZrQ' }],
-        icon: '/icons/characters/tex.charui_kyloren_tros_tros.png',
+        icon: '/icons/characters/tex.charui_kyloren_tros.png',
         difficulty: difficulty.EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.TARGET_START, interactionType.PAUSE_WAVE2],

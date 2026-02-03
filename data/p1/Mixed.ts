@@ -247,7 +247,7 @@ export const drAphraP1: dataType[] = [
         others: 'SLKR, Dark Side Rey, KRU, Sith Trooper',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/H6rzBkYeixY' }],
-        icon: '/icons/characters/tex.charui_kyloren_tros_tros.png',
+        icon: '/icons/characters/tex.charui_kyloren_tros.png',
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]

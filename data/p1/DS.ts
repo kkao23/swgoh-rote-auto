@@ -9,7 +9,8 @@ export const leftDSP1: dataType[] = [{
     difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
         interactionType: [interactionType.TARGET_START],
-    targeted: true
+    targeted: true,
+    icon: '/icons/characters/tex.charui_admiraltrench.png'
 },
 {
     lead: 'SLKR',

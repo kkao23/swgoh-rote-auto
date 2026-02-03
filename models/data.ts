@@ -15,6 +15,7 @@ export type data = {
     successRate?: successRate,
     interactionType?: interactionType[],  // Changed to array
     path?: string,
+    icon?: string,
 }
 
 export enum difficulty {

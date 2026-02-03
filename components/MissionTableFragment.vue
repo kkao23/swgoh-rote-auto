@@ -198,6 +198,7 @@ const verifiedAccordionItems = computed(() => {
             targeted: d.targeted,
             successRate: d.successRate,
             interactionType: d.interactionType,
+            icon: d.icon,
         },
         defaultOpen: initialDataIndexFromUrl.value !== null ? initialDataIndexFromUrl.value === index : index === 0,
     }));
@@ -215,6 +216,7 @@ const communityAccordionItems = computed(() => {
             targeted: d.targeted,
             successRate: d.successRate,
             interactionType: d.interactionType,
+            icon: d.icon,
         },
         defaultOpen: false,
     }));
@@ -327,6 +329,7 @@ async function showToast(itemIndex: number) {
                                     </UTooltip>
                                 </div>
                             </template>
+                            <img v-if="item.content.icon" :src="item.content.icon" class="h-6 w-6 rounded" />
                             <span>{{ item.label }}</span>
                             <img v-if="item.content.omi" src="/icons/omi.png" alt="omicron" class="h-4 w-4" />
                             <UButton color="white" variant="outline" icon="i-heroicons-share" size="xs" 
@@ -370,6 +373,7 @@ async function showToast(itemIndex: number) {
                             <UButton
                                 class="focus:outline-none focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 flex-shrink-0 font-medium rounded-md text-sm gap-x-1.5 px-2.5 py-1.5 text-primary-500 dark:text-primary-400 bg-primary-50 hover:bg-primary-100 disabled:bg-primary-50 aria-disabled:bg-primary-50 dark:bg-primary-950 dark:hover:bg-primary-900 dark:disabled:bg-primary-950 dark:aria-disabled:bg-primary-950 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400 inline-flex items-center mb-1.5 w-full"
                                 :ui="{ padding: { sm: 'p-3' } }">
+                                <img v-if="item.content.icon" :src="item.content.icon" class="h-6 w-6 rounded" />
                                 <span>{{ item.label }}</span>
                                 <img v-if="item.content.omi" src="/icons/omi.png" alt="omicron" class="h-4 w-4" />
                                 <template #trailing>

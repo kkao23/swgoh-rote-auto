@@ -276,7 +276,7 @@ async function showToast(itemIndex: number) {
                 <UAccordion :items="verifiedAccordionItems" v-model="openAccordionIndices">
                     <template #default="{ item, index, open }">
                         <UButton
-                            class="focus:outline-none focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 flex-shrink-0 font-medium rounded-md text-sm gap-x-1.5 px-2.5 py-1.5 text-primary-400 bg-primary-950 hover:bg-primary-900 disabled:bg-primary-950 aria-disabled:bg-primary-950 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary-400 inline-flex items-center mb-1.5 w-full"
+                            class="focus:outline-none focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 flex-shrink-0 font-medium rounded-md text-sm gap-x-1.5 px-2.5 py-1.5 text-primary-500 dark:text-primary-400 bg-primary-50 hover:bg-primary-100 disabled:bg-primary-50 aria-disabled:bg-primary-50 dark:bg-primary-950 dark:hover:bg-primary-900 dark:disabled:bg-primary-950 dark:aria-disabled:bg-primary-950 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400 inline-flex items-center mb-1.5 w-full"
                             :ui="{ padding: { sm: 'py-4 px-4' } }">
                             <template #leading>
                                 <!-- Badge Cluster -->
@@ -371,7 +371,7 @@ async function showToast(itemIndex: number) {
                     <UAccordion :items="communityAccordionItems">
                         <template #default="{ item, index, open }">
                             <UButton
-                                class="focus:outline-none focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 flex-shrink-0 font-medium rounded-md text-sm gap-x-1.5 px-2.5 py-1.5 text-primary-400 bg-primary-950 hover:bg-primary-900 disabled:bg-primary-950 aria-disabled:bg-primary-950 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary-400 inline-flex items-center mb-1.5 w-full"
+                                class="focus:outline-none focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 flex-shrink-0 font-medium rounded-md text-sm gap-x-1.5 px-2.5 py-1.5 text-primary-500 dark:text-primary-400 bg-primary-50 hover:bg-primary-100 disabled:bg-primary-50 aria-disabled:bg-primary-50 dark:bg-primary-950 dark:hover:bg-primary-900 dark:disabled:bg-primary-950 dark:aria-disabled:bg-primary-950 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400 inline-flex items-center mb-1.5 w-full"
                                 :ui="{ padding: { sm: 'py-4 px-4' } }">
                                 <img v-if="item.content.icon" :src="item.content.icon" class="h-9 w-9 rounded" />
                                 <span>{{ item.label }}</span>

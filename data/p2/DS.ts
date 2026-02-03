@@ -206,7 +206,19 @@ export const reekDSP2: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         omi: true,
-    }
+    },
+    {
+        lead: 'Tarkin',
+        leadFull: 'Grand Moff Tarkin',
+        others: 'Appo, CX, Disguised Clone Trooper, Scorch',
+        notes: 'easy auto',
+        videos: [{ url: 'https://youtu.be/Gi6SPOp4NE8', }],
+        icon: '/icons/characters/tex.charui_tarkinadmiral.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        omi: true
+    },
 ]
 
 export const nexuDSP2: dataType[] = [

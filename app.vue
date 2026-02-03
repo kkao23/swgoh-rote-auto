@@ -53,6 +53,9 @@ const isAlertOpen = ref(false)
           <NuxtLink to="/usage" class="text-lg text-gray-300 hover:text-white transition-colors duration-200 border border-gray-600 hover:border-white rounded-lg px-4 py-1">
             Search by Lead
           </NuxtLink>
+          <NuxtLink to="/tier-list" class="text-lg text-gray-300 hover:text-white transition-colors duration-200 border border-gray-600 hover:border-white rounded-lg px-4 py-1">
+            Omicron Tier List
+          </NuxtLink>
         </div>
       <NuxtPage />
       <div class="bg-color flex items-center justify-between text-white px-4 py-1 rounded-b-xl">

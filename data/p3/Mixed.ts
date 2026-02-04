@@ -314,6 +314,18 @@ export const mixedTopLeftP3: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
     },
+    {
+        lead: 'Kelleran Beq or JMMW',
+        leadFull: 'Kelleran Beq or Jedi Master Mace Windu',
+        others: 'Jocasta Nu, Shaak Ti, Temple Guard, Depa Billaba (omicron)',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/sqGLakqZ0gc' }],
+        icon: '/icons/characters/tex.charui_kelleranbeq.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        omi: true
+    }
 ]
 
 export const mixedP3Ships: dataType[] = [

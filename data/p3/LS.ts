@@ -138,7 +138,7 @@ export const lsRightP3: dataType[] = [
         lead: 'Boss Nass',
         others: 'Gungans',
         notes: 'auto, Tarpals Omi',
-        videos: [{ url: 'https://www.youtube.com/watch?v=bwDYfbb_W-A', creator: 'egnards' }],
+        videos: [{ url: 'https://youtu.be/fO_7TdAxH6U' }],
         icon: '/icons/characters/tex.charui_bossnass.png',
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
@@ -261,6 +261,17 @@ export const wookies: dataType[] = [
 ]
 
 export const shipsLSP3: dataType[] = [
+        {
+        lead: 'Profundity (no MF, Rogue One)',
+        others: 'Outrider, Y wing, Ghost, Rogue One, Biggs, Phantom, Wedge',
+        notes: 'If you have to platoon MF. Targeted auto. Keep reticule on Scythe. Biggs should be 2nd reinforcement',
+        videos: [{ url: 'https://youtu.be/mpUiTI-GfP0' }],
+        icon: '/icons/ships/tex.charui_rogueoneship.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.NINETY_PERCENT,
+        interactionType: [interactionType.TARGET_START],
+        targeted: true
+    },
     {
         lead: 'Profundity (no MF)',
         others: 'Outrider, Y wing, Ghost, Phantom, Cassian, Biggs, Wedge',

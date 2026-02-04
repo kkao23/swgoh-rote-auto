@@ -112,7 +112,18 @@ export const dsMidRightP4: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         omi: true,
-    }
+    },
+    {
+        lead: 'Pirate King Hondo',
+        leadFull: 'Pirate King Hondo Onaka',
+        others: 'SM-33, Vane, Brutus, Silvo',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/r_TERIa2NFQ' }],
+        icon: '/icons/characters/tex.charui_glhondo.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+    },
 ]
 
 export const dsSortie: dataType[] = [

@@ -71,6 +71,17 @@ export const zeffoJedi: dataType[] = [
         interactionType: [interactionType.AUTO],
         omi: true
     },
+    {
+        lead: 'JKCK (Rebels)',
+        others: 'Han Solo, Chewie, C3PO, Chewpio',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/ATrk0zrpPLw' }],
+        icon: '/icons/characters/tex.charui_chewbacca_c3po.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        omi: true
+    },
     // {
     //     lead: 'JKCK (Lead Omi, JML)',
     //     others: 'JML, JKL, GMY, Shaak Ti',

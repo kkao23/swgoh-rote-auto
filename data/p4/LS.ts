@@ -130,6 +130,18 @@ export const lsGenericP4: dataType[] = [
         successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO]
     },
+    {
+        lead: 'Kelleran Beq or JMMW',
+        leadFull: 'Kelleran Beq or Jedi Master Master Windu',
+        others: 'Jocasta Nu, Shaak Ti, Depa Billaba (omicron), Temple Guard',
+        notes: 'auto, dont need platoons, very fast',
+        videos: [{ url: 'https://youtu.be/wRYwjDu3F5Y' }],
+        icon: '/icons/characters/tex.charui_kelleranbeq.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        omi: true
+    }
 ]
 
 export const jediLSP4: dataType[] = [
@@ -200,7 +212,7 @@ export const jediLSP4: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Kelleran Beq',
+        lead: 'Kelleran Beq or JMMW',
         leadFull: 'Kelleran Beq',
         others: 'Jocasta Nu, Shaak Ti, Aayla, Temple Guard',
         notes: 'auto, all platoons required, Temple Guard required, 100% consistent with Mace lead',
@@ -211,7 +223,7 @@ export const jediLSP4: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Kelleran Beq',
+        lead: 'Kelleran Beq or JMMW',
         leadFull: 'Kelleran Beq',
         others: 'Jocasta Nu, Shaak Ti, Depa Billaba (omicron), Temple Guard',
         notes: 'auto, dont need platoons, very fast',

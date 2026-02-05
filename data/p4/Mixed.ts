@@ -66,6 +66,17 @@ export const mixedQiraP4: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
     },
+    {
+        lead: 'SEE',
+        leadFull: 'Sith Eternal Emperor',
+        others: 'Malak, Darth Revan',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/UQufx4iGiZQ' }],
+        icon: '/icons/characters/tex.charui_espalpatine_pre.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.NINETY_PERCENT,
+        interactionType: [interactionType.AUTO]
+    },
 ]
 
 export const mixedGenericP4: dataType[] = [
@@ -76,6 +87,8 @@ export const mixedGenericP4: dataType[] = [
         videos: [{ url: 'https://youtu.be/QLoZOYsI6h0' }],
         icon: '/icons/characters/tex.charui_leiaendor.png',
         difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'QA',
@@ -85,7 +98,7 @@ export const mixedGenericP4: dataType[] = [
         videos: [{ url: 'https://youtu.be/LpchaAwpVuk' }],
         icon: '/icons/characters/tex.charui_queenamidala.png',
         difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO]
     },
     {
@@ -132,9 +145,9 @@ export const mixedGenericP4: dataType[] = [
     {
         lead: 'JMK',
         leadFull: 'Jedi Master Kenobi',
-        others: 'Padme, Snips, GK, Cody',
-        notes: 'Imagine Cody is a flex here and you can likely 4 man this',
-        videos: [{ url: 'https://youtu.be/K7yZyrvCObI?si=zgFyWI6C0mjYh_zE&t=3', creator: 'pico' }],
+        others: 'Padme, Snips, GK, +1 Galactic Republic',
+        notes: 'CAT is best as 5th, I used Clone Wars Chewie',
+        videos: [{ url: 'https://youtu.be/L22N-ALx6mQ' }],
         icon: '/icons/characters/tex.charui_globiwan.png',
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
@@ -162,7 +175,7 @@ export const mixedGenericP4: dataType[] = [
     },
     {
         lead: 'QA (CUP)',
-        leadFull: 'Queen Amidala',
+        leadFull: 'Queen Amidala with CUP',
         others: 'MQG, POW, CUP',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/QUmyeBZBCKc' }],
@@ -185,7 +198,7 @@ export const mixedGenericP4: dataType[] = [
         lead: 'Omega (omi)',
         others: 'Bad Batch Mercenaries',
         notes: 'auto',
-        videos: [{ url: 'https://youtu.be/Kzj93kyiKmM?si=oUrEfxpCHOBw0_bq', creator: 'avengerObs' }],
+        videos: [{ url: 'https://youtu.be/FEHeBqhR3jY' }],
         icon: '/icons/characters/tex.charui_omegas3.png',
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,

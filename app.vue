@@ -50,6 +50,9 @@ const isAlertOpen = ref(false)
           <NuxtLink to="/" class="text-lg text-gray-300 hover:text-white transition-colors duration-200 border border-gray-600 hover:border-white rounded-lg px-4 py-1">
             Home
           </NuxtLink>
+          <NuxtLink to="/map-view" class="text-lg text-gray-300 hover:text-white transition-colors duration-200 border border-gray-600 hover:border-white rounded-lg px-4 py-1">
+            Map View
+          </NuxtLink>
           <NuxtLink to="/usage" class="text-lg text-gray-300 hover:text-white transition-colors duration-200 border border-gray-600 hover:border-white rounded-lg px-4 py-1">
             Search by Lead
           </NuxtLink>

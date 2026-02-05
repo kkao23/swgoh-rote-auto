@@ -52,3 +52,12 @@ export type PhaseData = {
 export type SideData = {
     [key: string]: any[];
 }
+
+export type MissionRegion = {
+  name: string
+  points: string
+  phase: string
+  alignment: string
+  position: string
+  data: data[]
+}

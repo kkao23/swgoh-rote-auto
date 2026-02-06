@@ -13,21 +13,25 @@ const props = defineProps<{
 const router = useRouter()
 const isPlatoonsModalOpen = ref(false)
 
+// Store refs to MissionTableFragments by position
+const missionRefs = ref<Map<string, any>>(new Map())
+
+function setMissionRef(el: any, position: string) {
+  if (el) {
+    missionRefs.value.set(position, el)
+  }
+}
+
 function selectMission(mission: MissionRegion) {
   if (mission.position === 'platoons') {
     isPlatoonsModalOpen.value = true
     return
   }
-  // Set URL query params to trigger MissionTableFragment's modal
-  router.push({
-    path: router.currentRoute.value.path,
-    query: {
-      phase: mission.phase,
-      alignment: mission.alignment,
-      position: mission.position,
-      dataIndex: '0'
-    }
-  })
+  // Directly open the modal via exposed method
+  const fragment = missionRefs.value.get(mission.position)
+  if (fragment) {
+    fragment.openModal()
+  }
 }
 
 function goBack() {
@@ -39,6 +43,17 @@ function goToPlatoons() {
 }
 
 const viewBox = computed(() => `0 0 ${props.imageWidth} ${props.imageHeight}`)
+
+// Deduplicate missions by position for MissionTableFragments
+const uniqueMissions = computed(() => {
+  const seen = new Set<string>()
+  return props.missions.filter(m => {
+    if (m.position === 'platoons') return false
+    if (seen.has(m.position)) return false
+    seen.add(m.position)
+    return true
+  })
+})
 </script>
 
 <template>
@@ -65,7 +80,7 @@ const viewBox = computed(() => `0 0 ${props.imageWidth} ${props.imageHeight}`)
           :viewBox="viewBox"
           preserveAspectRatio="none"
         >
-          <g v-for="mission in missions" :key="mission.name">
+          <g v-for="(mission, index) in missions" :key="`${mission.name}-${index}`">
             <polygon
               :points="mission.points"
               fill="transparent"
@@ -102,12 +117,14 @@ const viewBox = computed(() => `0 0 ${props.imageWidth} ${props.imageHeight}`)
     <!-- Hidden MissionTableFragments that respond to URL query params -->
     <div class="opacity-0 h-0 overflow-hidden">
       <MissionTableFragment
-        v-for="mission in missions.filter(m => m.position !== 'platoons')"
-        :key="mission.position"
+        v-for="(mission, index) in uniqueMissions"
+        :ref="(el) => setMissionRef(el, mission.position)"
+        :key="`${mission.position}-${index}`"
         :position="mission.position"
         :data="mission.data"
         :phase="mission.phase"
         :alignment="mission.alignment"
+        :url-triggered="false"
       />
     </div>
     

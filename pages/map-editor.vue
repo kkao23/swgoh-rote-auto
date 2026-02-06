@@ -2,7 +2,7 @@
 import { ref, computed } from 'vue'
 
 // Change this to match your current background image
-const imageUrl = '/images/map_view/mustafar.png'
+const imageUrl = '/images/map_view/coruscant.png'
 const viewBox = '0 0 1362 802' // Match your real viewBox
 
 const points = ref<string[]>([])
@@ -25,6 +25,13 @@ function addPoint(event: MouseEvent) {
   
   const coord = `${x},${y}`
   points.value.push(coord)
+  
+  // When 4 points are reached, print to console and clear
+  if (points.value.length === 4) {
+    const polygonString = points.value.join(' ')
+    console.log(polygonString)
+    points.value = []
+  }
 }
 
 function undo() {

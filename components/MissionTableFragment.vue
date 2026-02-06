@@ -14,6 +14,10 @@ const props = defineProps({
     alignment: String,
     position: String,
     helpUrl: String,
+    urlTriggered: {
+        type: Boolean,
+        default: true
+    },
     data: {
         type: Array<dataType>,
         required: true
@@ -32,6 +36,7 @@ const openAccordionIndices = ref<number[]>([]);
 const initialDataIndexFromUrl = ref<number | null>(null);
 
 watchEffect(() => {
+    if (!props.urlTriggered) return;
     if (route.query.phase === props.phase &&
         route.query.alignment === props.alignment &&
         route.query.position === props.position) {
@@ -84,6 +89,13 @@ const difficultyIcon = (item: dataType) => {
         default: return 'hidden';
     }
 }
+
+// Expose method to open modal from parent
+function openModal() {
+    localIsModalOpen.value = true;
+}
+
+defineExpose({ openModal });
 
 // Success Rate Badge Config
 const successRateBadge = (rate?: string) => {

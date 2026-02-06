@@ -82,16 +82,18 @@ export const zeffoJedi: dataType[] = [
         interactionType: [interactionType.AUTO],
         omi: true
     },
-    // {
-    //     lead: 'JKCK (Lead Omi, JML)',
-    //     others: 'JML, JKL, GMY, Shaak Ti',
-    //     notes: 'auto, lead omi mandatory',
-    //     videos: [{ url: 'https://www.youtube.com/watch?v=rhEhxaGzODI', creator: 'avengerObs' }],
-    //     difficulty: difficulty.VERY_EASY,
-    //     successRate: successRate.CONSISTENT,
-    //     interactionType: [interactionType.AUTO],
-    //     omi: true
-    // },
+    {
+        lead: 'JKCK (Lead Omi, JML)',
+        leadFull: 'Jedi Knight Cal Kestis with Jedi Master Luke',
+        others: 'JML, Ezra Exile, +2',
+        notes: 'auto, lead omi mandatory, probably want whirlwind slam as well',
+        videos: [{ url: 'https://youtu.be/at8p8E9ApT4' }],
+        icon: '/icons/characters/tex.charui_calkestis.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        omi: true
+    },
 ]
 
 export const zeffoUFU: dataType[] = [
@@ -183,4 +185,16 @@ export const zeffoCombat: dataType[] = [
         successRate: successRate.USUALLY,
         interactionType: [interactionType.MANUAL]
     },
+    {
+        lead: 'JMMW',
+        leadFull: 'Jedi Master Master Windu',
+        others: 'Jocasta Nu, Kelleran Beq, Depa Billaba (omicron), Temple Guard',
+        notes: 'auto, deselect reticule to speed things up',
+        videos: [{ url: 'https://youtu.be/to1sL6BiHc8' }],
+        icon: '/icons/characters/tex.charui_macewindu.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        omi: true
+    }
 ]

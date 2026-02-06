@@ -44,6 +44,16 @@ export const mixedFleetP5: dataType[] = [
         successRate: successRate.UNRELIABLE,
         interactionType: [interactionType.MANUAL]
     },
+    {
+        lead: 'Profundity (Rogue One)',
+        others: 'MF, Outrider, Y Wing, Rogue One, Phantom, Ghost',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/IHphO3ub9QU' }],
+        icon: '/icons/ships/tex.charui_profundity.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
+    },
 ]
 
 export const mixedCombatTopRightP5: dataType[] = [
@@ -186,6 +196,16 @@ export const mixedCombatBottomLeftP5: dataType[] = [
 ];
 
 export const jabbaP5: dataType[] = [
+        {
+        lead: 'Jabba',
+        others: 'Boushh, Krrsantan, +2 filler',
+        notes: 'auto, need at least Boushh and Krrsantan to full auto',
+        videos: [{ url: 'https://youtu.be/XVMS1A0j1C4'}],
+        icon: '/icons/characters/tex.charui_jabbathehutt.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.AUTO],
+    },
     {
         lead: 'Jabba',
         others: 'Boosh, Krrsantan, Gam Guard (omi), Bossk',

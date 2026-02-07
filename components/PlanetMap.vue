@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import type { MissionRegion } from '~/models/data'
+import { trackEvent } from '~/util/analytics'
 
 const props = defineProps<{
   planetName: string
@@ -24,12 +25,14 @@ function setMissionRef(el: any, position: string) {
 
 function selectMission(mission: MissionRegion) {
   if (mission.position === 'platoons') {
+    trackEvent('map_mission_click', { target: `${mission.phase} ${mission.alignment} ${mission.position}` })
     isPlatoonsModalOpen.value = true
     return
   }
   // Directly open the modal via exposed method
   const fragment = missionRefs.value.get(mission.position)
   if (fragment) {
+    trackEvent('map_mission_click', { target: `${mission.phase} ${mission.alignment} ${mission.position}` })
     fragment.openModal()
   }
 }

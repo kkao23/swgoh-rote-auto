@@ -5,6 +5,7 @@ import { difficulty, successRate, interactionType } from './../models/data';
 import { creatorMap } from '~/models/creators';
 import { useRouter, useRoute } from 'vue-router';
 import { nextTick, watch, computed } from 'vue';
+import { trackEvent } from '~/util/analytics';
 
 const props = defineProps({
     special: Boolean,
@@ -258,10 +259,10 @@ async function showToast(itemIndex: number) {
         <div class="flex items-center space-x-1">
             <img v-if="special" src="/icons/GET.png" alt="Guild Event Token Icon" class="w-6 h-6">
             <img v-if="shard" src="/icons/sst.png" alt="Shard Icon" class="w-6 h-6">
-            <span class="flex-1 text-left hover:underline cursor-pointer" @click="localIsModalOpen = !localIsModalOpen">{{ position }}</span>
+            <span class="flex-1 text-left hover:underline cursor-pointer" @click="trackEvent('mission_click', { target: `${phase} ${alignment} ${position}` }); localIsModalOpen = !localIsModalOpen">{{ position }}</span>
             <UIcon v-if="helpUrl" name="i-heroicons-question-mark-circle" @click="isHelpModalOpen = true" class="pl-2 w-6 h-6 text-blue-300 cursor-pointer"></UIcon>
             <UIcon v-if="unlock" name="i-heroicons-lock-open" class="pl-2 w-6 h-6" /><button
-                @click="localIsModalOpen = !localIsModalOpen"
+                @click="trackEvent('mission_expand', { target: `${phase} ${alignment} ${position}` }); localIsModalOpen = !localIsModalOpen"
                 class="w-8 h-8 ml-auto text-zinc-200 cursor-pointer hover:text-zinc-50 transition duration-200"
                 v-show="!modalStore.isModalOpen" style="padding-top: 5px;">
                 <UIcon name="i-heroicons-plus-circle" v-if="!localIsModalOpen" class="w-6 h-6" />

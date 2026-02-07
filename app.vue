@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { trackEvent } from '~/util/analytics'
+
 const isAlertOpen = ref(false)
 const isNoticeHidden = ref(false)
 
@@ -8,27 +10,34 @@ const navigationLinks = [
   {
     label: 'Home',
     icon: 'i-heroicons-home',
-    to: '/'
+    to: '/',
+    click: () => { trackEvent('nav_click', { target: 'Home' }) }
   },
   {
     label: 'Map',
     icon: 'i-heroicons-map',
-    to: '/map-view'
+    to: '/map-view',
+    click: () => { trackEvent('nav_click', { target: 'Map' }) }
   },
   {
     label: 'Search',
     icon: 'i-heroicons-magnifying-glass',
-    to: '/usage'
+    to: '/usage',
+    click: () => { trackEvent('nav_click', { target: 'Search' }) }
   },
   {
     label: 'Tier List',
     icon: 'i-heroicons-chart-bar',
-    to: '/tier-list'
+    to: '/tier-list',
+    click: () => { trackEvent('nav_click', { target: 'Tier List' }) }
   },
   {
     label: 'Support',
     icon: 'i-heroicons-heart',
-    click: () => { isSupportOpen.value = true }
+    click: () => {
+      trackEvent('nav_click', { target: 'Support' })
+      isSupportOpen.value = true
+    }
   }
 ]
 </script>

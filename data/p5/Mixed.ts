@@ -135,7 +135,7 @@ export const mixedCombatBottomLeftP5: dataType[] = [
         videos: [{ url: 'https://youtu.be/uX718augk0M' }],
         icon: '/icons/characters/tex.charui_omegas3.png',
         difficulty: difficulty.HARD,
-        successRate: successRate.FIFTY_FIFTY,
+        successRate: successRate.UNRELIABLE,
         interactionType: [interactionType.AUTO],
         omi: true
     },
@@ -146,8 +146,8 @@ export const mixedCombatBottomLeftP5: dataType[] = [
         videos: [{ url: 'https://youtu.be/3zJzzLSbT1w' }],
         icon: '/icons/characters/tex.charui_globiwan.png',
         difficulty: difficulty.CAUTION,
-        successRate: successRate.USUALLY,
-        interactionType: [interactionType.AUTO]
+        successRate: successRate.NINETY_PERCENT,
+        interactionType: [interactionType.MANUAL]
     },
     {
         lead: 'Pirate King Hondo',
@@ -157,7 +157,7 @@ export const mixedCombatBottomLeftP5: dataType[] = [
         videos: [{ url: 'https://youtu.be/zZhDqdw3PUI' }],
         icon: '/icons/characters/tex.charui_glhondo.png',
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
     },
     {
@@ -167,7 +167,7 @@ export const mixedCombatBottomLeftP5: dataType[] = [
         videos: [{ url: 'https://youtu.be/2_pnO482ksw' }],
         icon: '/icons/characters/tex.charui_leiaendor.png',
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.PAUSE_WAVE2],
         targeted: true
     },
@@ -190,7 +190,18 @@ export const mixedCombatBottomLeftP5: dataType[] = [
         videos: [{ url: 'https://youtu.be/feUjL88H_b8' }],
         icon: '/icons/characters/tex.charui_queenamidala.png',
         difficulty: difficulty.HARD,
-        successRate: successRate.FIFTY_FIFTY,
+        successRate: successRate.UNRELIABLE,
+        interactionType: [interactionType.AUTO],
+    },
+    {
+        lead: 'SEE',
+        leadFull: 'Sith Eternal Emperor',
+        others: 'Malak, The Stranger, Darth Revan, Bane',
+        notes: 'auto, Malak hard required',
+        videos: [{url: 'https://youtu.be/14wxk2eV9j0'}],
+        icon: '/icons/characters/tex.charui_espalpatine_pre.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO],
     },
 ];

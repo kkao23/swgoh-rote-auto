@@ -285,7 +285,13 @@ async function showToast(itemIndex: number) {
                             @click="localIsModalOpen = false" />
                     </div>
                 </template>
-                <UAccordion :items="verifiedAccordionItems" v-model="openAccordionIndices">
+                
+                <!-- Coming soon message when data is empty -->
+                <div v-if="!data || data.length === 0" class="py-8 text-center">
+                    <p class="text-gray-300 text-lg">Coming soon</p>
+                </div>
+                
+                <UAccordion v-else :items="verifiedAccordionItems" v-model="openAccordionIndices">
                     <template #default="{ item, index, open }">
                         <UButton
                             class="focus:outline-none focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 flex-shrink-0 font-medium rounded-md text-sm gap-x-1.5 px-2.5 py-1.5 text-primary-500 dark:text-primary-400 bg-primary-50 hover:bg-primary-100 disabled:bg-primary-50 aria-disabled:bg-primary-50 dark:bg-primary-950 dark:hover:bg-primary-900 dark:disabled:bg-primary-950 dark:aria-disabled:bg-primary-950 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400 inline-flex items-center mb-1.5 w-full"

@@ -14,7 +14,10 @@ import P4LS from '../components/p4/P4LS.vue';
 import P4Mixed from '../components/p4/P4Mixed.vue';
 import P5LS from '../components/p5/P5LS.vue';
 import P5DS from '../components/p5/P5DS.vue';
-import P5Mixed from '../components/p5/P5Mixed.vue';
+import P5Mixed from '../components/p5/P5Mixed.vue'; 
+import P6LS from '../components/p6/P6LS.vue';
+import P6DS from '../components/p6/P6DS.vue';
+import P6Mixed from '../components/p6/P6Mixed.vue';
 import Zeffo from '../components/zeffo/Zeffo.vue';
 import Mandalore from '../components/mandalore/Mandalore.vue';
 import SpecialMissions from '../components/special/Special.vue';
@@ -47,7 +50,13 @@ const phases = [
         label: 'Phase 5 (R9)',
         slot: 'phase-5-slot', // Define a slot name
         disabled: modalStore.isModalOpen,
-    }, {
+    }, 
+    {
+        label: 'Phase 6 (R9)',
+        slot: 'phase-6-slot', // Define a slot name
+        disabled: modalStore.isModalOpen,
+    },
+    {
         label: 'Zeffo (R7)',
         slot: 'zeffo-slot', // Define a slot name
         disabled: modalStore.isModalOpen,
@@ -94,6 +103,7 @@ const phases = [
         </template>
         <template #phase-6-slot>
             <PhaseWrapper phase-number="6"
+                :ls-component="P6LS" :ds-component="P6DS" :mixed-component="P6Mixed"
                 :ls-planet-name="'Scarif'" :ds-planet-name="'Death Star'" :mixed-planet-name="'Hoth'">
             </PhaseWrapper>
         </template>

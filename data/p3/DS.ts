@@ -204,7 +204,7 @@ export const merrinP3: dataType[] = [
         others: 'Asajj, Zombie, Mother Talzin, Merrin',
         notes: 'auto, R8+ Daka and great mods required',
         videos: [{ url: 'https://www.youtube.com/watch?v=EM3GCo_0XSQ', creator: 'kahzgul' }],
-        icon: '/icons/characters/tex.charui_talisia.png',
+        icon: '/icons/characters/tex.charui_daka.png',
         difficulty: difficulty.EASY,
         successRate: successRate.FIFTY_FIFTY,
         interactionType: [interactionType.AUTO]

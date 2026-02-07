@@ -14,6 +14,10 @@ const props = defineProps({
     alignment: String,
     position: String,
     helpUrl: String,
+    urlTriggered: {
+        type: Boolean,
+        default: true
+    },
     data: {
         type: Array<dataType>,
         required: true
@@ -32,6 +36,7 @@ const openAccordionIndices = ref<number[]>([]);
 const initialDataIndexFromUrl = ref<number | null>(null);
 
 watchEffect(() => {
+    if (!props.urlTriggered) return;
     if (route.query.phase === props.phase &&
         route.query.alignment === props.alignment &&
         route.query.position === props.position) {
@@ -84,6 +89,13 @@ const difficultyIcon = (item: dataType) => {
         default: return 'hidden';
     }
 }
+
+// Expose method to open modal from parent
+function openModal() {
+    localIsModalOpen.value = true;
+}
+
+defineExpose({ openModal });
 
 // Success Rate Badge Config
 const successRateBadge = (rate?: string) => {
@@ -273,7 +285,13 @@ async function showToast(itemIndex: number) {
                             @click="localIsModalOpen = false" />
                     </div>
                 </template>
-                <UAccordion :items="verifiedAccordionItems" v-model="openAccordionIndices">
+                
+                <!-- Coming soon message when data is empty -->
+                <div v-if="!data || data.length === 0" class="py-8 text-center">
+                    <p class="text-gray-300 text-lg">Coming soon</p>
+                </div>
+                
+                <UAccordion v-else :items="verifiedAccordionItems" v-model="openAccordionIndices">
                     <template #default="{ item, index, open }">
                         <UButton
                             class="focus:outline-none focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 flex-shrink-0 font-medium rounded-md text-sm gap-x-1.5 px-2.5 py-1.5 text-primary-500 dark:text-primary-400 bg-primary-50 hover:bg-primary-100 disabled:bg-primary-50 aria-disabled:bg-primary-50 dark:bg-primary-950 dark:hover:bg-primary-900 dark:disabled:bg-primary-950 dark:aria-disabled:bg-primary-950 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400 inline-flex items-center mb-1.5 w-full"

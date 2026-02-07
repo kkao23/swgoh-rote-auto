@@ -5,6 +5,7 @@ import { difficulty, successRate, interactionType } from './../models/data';
 import { creatorMap } from '~/models/creators';
 import { useRouter, useRoute } from 'vue-router';
 import { nextTick, watch, computed } from 'vue';
+import { trackEvent } from '~/util/analytics';
 
 const props = defineProps({
     special: Boolean,
@@ -14,6 +15,10 @@ const props = defineProps({
     alignment: String,
     position: String,
     helpUrl: String,
+    urlTriggered: {
+        type: Boolean,
+        default: true
+    },
     data: {
         type: Array<dataType>,
         required: true
@@ -32,6 +37,7 @@ const openAccordionIndices = ref<number[]>([]);
 const initialDataIndexFromUrl = ref<number | null>(null);
 
 watchEffect(() => {
+    if (!props.urlTriggered) return;
     if (route.query.phase === props.phase &&
         route.query.alignment === props.alignment &&
         route.query.position === props.position) {
@@ -84,6 +90,13 @@ const difficultyIcon = (item: dataType) => {
         default: return 'hidden';
     }
 }
+
+// Expose method to open modal from parent
+function openModal() {
+    localIsModalOpen.value = true;
+}
+
+defineExpose({ openModal });
 
 // Success Rate Badge Config
 const successRateBadge = (rate?: string) => {
@@ -246,10 +259,10 @@ async function showToast(itemIndex: number) {
         <div class="flex items-center space-x-1">
             <img v-if="special" src="/icons/GET.png" alt="Guild Event Token Icon" class="w-6 h-6">
             <img v-if="shard" src="/icons/sst.png" alt="Shard Icon" class="w-6 h-6">
-            <span class="flex-1 text-left hover:underline cursor-pointer" @click="localIsModalOpen = !localIsModalOpen">{{ position }}</span>
+            <span class="flex-1 text-left hover:underline cursor-pointer" @click="trackEvent('mission_click', { target: `${phase} ${alignment} ${position}` }); localIsModalOpen = !localIsModalOpen">{{ position }}</span>
             <UIcon v-if="helpUrl" name="i-heroicons-question-mark-circle" @click="isHelpModalOpen = true" class="pl-2 w-6 h-6 text-blue-300 cursor-pointer"></UIcon>
             <UIcon v-if="unlock" name="i-heroicons-lock-open" class="pl-2 w-6 h-6" /><button
-                @click="localIsModalOpen = !localIsModalOpen"
+                @click="trackEvent('mission_expand', { target: `${phase} ${alignment} ${position}` }); localIsModalOpen = !localIsModalOpen"
                 class="w-8 h-8 ml-auto text-zinc-200 cursor-pointer hover:text-zinc-50 transition duration-200"
                 v-show="!modalStore.isModalOpen" style="padding-top: 5px;">
                 <UIcon name="i-heroicons-plus-circle" v-if="!localIsModalOpen" class="w-6 h-6" />
@@ -273,7 +286,13 @@ async function showToast(itemIndex: number) {
                             @click="localIsModalOpen = false" />
                     </div>
                 </template>
-                <UAccordion :items="verifiedAccordionItems" v-model="openAccordionIndices">
+                
+                <!-- Coming soon message when data is empty -->
+                <div v-if="!data || data.length === 0" class="py-8 text-center">
+                    <p class="text-gray-300 text-lg">Coming soon</p>
+                </div>
+                
+                <UAccordion v-else :items="verifiedAccordionItems" v-model="openAccordionIndices">
                     <template #default="{ item, index, open }">
                         <UButton
                             class="focus:outline-none focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 flex-shrink-0 font-medium rounded-md text-sm gap-x-1.5 px-2.5 py-1.5 text-primary-500 dark:text-primary-400 bg-primary-50 hover:bg-primary-100 disabled:bg-primary-50 aria-disabled:bg-primary-50 dark:bg-primary-950 dark:hover:bg-primary-900 dark:disabled:bg-primary-950 dark:aria-disabled:bg-primary-950 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400 inline-flex items-center mb-1.5 w-full"

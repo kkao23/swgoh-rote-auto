@@ -214,6 +214,26 @@ export const data: DataType = {
             left: dsLeftP5,
         }
     },
+    phase6: {
+        mixed: {
+            generic: [],
+            aphra: [],
+            ships: [],
+            jabba: [],
+        },
+        ls: {
+            generic: [],
+            baze: [],
+            cassian: [],
+            ships: [],
+        },
+        ds: {
+            iden: [],
+            generic: [],
+            darthVader: [],
+            fleets: [],
+        },
+    },
     special: {
         all: {
             qiraP1: qiraMixedP1,

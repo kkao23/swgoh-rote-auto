@@ -66,7 +66,7 @@ export const dsMidRightP4: dataType[] = [
         videos: [{ url: 'https://youtu.be/zYBou5t9kRI', }],
         icon: '/icons/characters/tex.charui_tarkinadmiral.png',
         difficulty: difficulty.EASY,
-        successRate: successRate.NINETY_PERCENT,
+        successRate: successRate.USUALLY,
         omi: true
     },
     {

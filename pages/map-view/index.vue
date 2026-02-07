@@ -51,7 +51,6 @@ function navigateToPlanet(slug: string) {
 
 <template>
   <div class="px-4 pb-8">
-    <h2 class="text-xl text-white mb-4 text-center">Rise of the Empire - Galaxy Map</h2>
     <p class="text-gray-400 text-sm text-center mb-6">Click on a planet to view mission details</p>
     
     <div class="relative w-full max-w-4xl mx-auto">

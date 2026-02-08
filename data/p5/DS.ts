@@ -89,4 +89,16 @@ export const dsLeftP5: dataType[] = [
         interactionType: [interactionType.AUTO],
         omi: true
     },
+    {
+        lead: 'LV',
+        leadFull: 'Lord Vader',
+        others: 'Appo (omicron), DCT, CX-2, Scorch',
+        notes: 'Easy full auto',
+        videos: [{ url: 'https://youtu.be/14wxk2eV9j0' }],
+        icon: '/icons/characters/tex.charui_lordvader.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        omi: true,
+    },
 ]

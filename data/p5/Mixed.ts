@@ -204,17 +204,27 @@ export const mixedCombatBottomLeftP5: dataType[] = [
         successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO],
     },
+    {
+        lead: 'Ahsoka Tano',
+        others: 'Any R9s',
+        notes: 'Auto, consistent 1/2 but can\'t beat nest in Wave 2. Any teammates work',
+        videos: [{ url: 'https://youtu.be/j9Q3uxdmvv4' }],
+        icon: '/icons/characters/tex.charui_ahsokatanogray.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.UNRELIABLE,
+        interactionType: [interactionType.AUTO]
+    },
 ];
 
 export const jabbaP5: dataType[] = [
         {
         lead: 'Jabba',
         others: 'Boushh, Krrsantan, +2 filler',
-        notes: 'auto, need at least Boushh and Krrsantan to full auto',
+        notes: 'auto, need at least Boushh and Krrsantan to full auto. 1/2 consistent on auto, 2/2 takes some luck or manual play',
         videos: [{ url: 'https://youtu.be/XVMS1A0j1C4'}],
         icon: '/icons/characters/tex.charui_jabbathehutt.png',
         difficulty: difficulty.VERY_EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.FIFTY_FIFTY,
         interactionType: [interactionType.AUTO],
     },
     {

@@ -48,12 +48,12 @@ export const mandaloreGeneric: dataType[] = [
     {
         lead: 'Boss Nass',
         others: 'The other gungans',
-        notes: 'auto with Tarpal Omi, dont deselect reticule to build up stacks in Wave 1. can sometimes go wrong',
+        notes: 'usually 1/2 without platoons, 2/2 with',
         videos: [{ url: 'https://youtu.be/fLPilo3n-gw' }],
         icon: '/icons/characters/tex.charui_bossnass.png',
         difficulty: difficulty.CAUTION,
-        successRate: successRate.USUALLY,
-        interactionType: [interactionType.TARGET_START],
+        successRate: successRate.FIFTY_FIFTY,
+        interactionType: [interactionType.AUTO],
         omi: true
     },
     {

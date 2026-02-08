@@ -5,11 +5,11 @@ export const dsGenericP3: dataType[] = [
     {
         lead: 'Baylan',
         others: 'Marrok, Shin, Jango, Zam',
-        notes: 'omi Marrok, auto, last two are flexible',
+        notes: 'omi Marrok, auto, last two are flexible. can get unlucky if they focus Marrok wave 1 at the start',
         videos: [{ url: 'https://youtu.be/WcYP7j8ooos' }],
         icon: '/icons/characters/tex.charui_baylanskoll.png',
         difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO],
         omi: true
     },
@@ -179,7 +179,7 @@ export const drAphraP3: dataType[] = [
         lead: 'Aphra (IPD Omicron)',
         others: 'Darth Vader, BT1, IPD (omicron), 0-0-0',
         notes: 'auto, expensive',
-        videos: [{ url: 'https://youtu.be/MTkMzJMayUA?si=FfDoECPNw7uALL_n' }],
+        videos: [{ url: 'https://youtu.be/MTkMzJMayUA?si=FfDoECPNw7uALL_n', creator: 'anonymous' }],
         icon: '/icons/characters/tex.charui_doctoraphra.png',
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,

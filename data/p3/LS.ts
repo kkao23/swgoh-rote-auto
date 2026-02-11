@@ -245,6 +245,18 @@ export const sawP3: dataType[] = [
         interactionType: [interactionType.TARGET_START],
         targeted: true,
         omi: true
+    },
+    {
+        lead: 'Saw (Cara and Jyn)',
+        leadFull: 'Saw with Cara Dune and Jyn Erso',
+        others: 'Cara Dune, Capt Rex, Luthen, Jyn',
+        notes: 'auto, you can replace Luthen with Cassian but then you need speed remod',
+        videos: [],
+        icon: '/icons/characters/tex.charui_sawgerrera.png',
+        difficulty: difficulty.CAUTION,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.AUTO],
+        creator: 'espo',
     }
 ]
 

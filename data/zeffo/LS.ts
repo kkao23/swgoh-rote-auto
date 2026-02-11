@@ -11,7 +11,29 @@ export const clonesSM: dataType[] = [
         difficulty: difficulty.CAUTION,
         successRate: successRate.USUALLY,
         interactionType: [interactionType.TARGET_START],
-    }
+    },
+    {
+        lead: 'Hunter',
+        creator: 'MacReady138',
+        others: 'Echo, Tech, Wrecker, Omega',
+        notes: 'Full auto, no omi needed',
+        videos: [{ url: 'https://youtu.be/fIeJMLJuR3A', creator: 'Drice' }],
+        icon: '/icons/characters/tex.charui_bb_hunter.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
+    },
+    {
+        lead: 'Cody',
+        others: 'CRex, Rex, Echo, Fives',
+        notes: 'Full auto',
+        videos: [{ url: 'https://youtu.be/T-vZqiD9j38?si=_wgI6FHo29r4xNOH', creator: 'MacReady138' }],
+        icon: '/icons/characters/tex.charui_trooperclone_cody.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'MacReady138',
+    },
 ]
 
 export const zeffoFleets: dataType[] = [
@@ -144,6 +166,19 @@ export const zeffoCombat: dataType[] = [
         omi: true,
     },
     {
+        lead: 'Finn',
+        leadFull: 'Finn (Omi)',
+        others: 'Res Hero Finn, Res Hero Poe, Rose, Zorii',
+        notes: 'Auto: Move target off enemy leader til last. Needs Finn Omi',
+        videos: [],
+        icon: '/icons/characters/tex.charui_finn.png',
+        difficulty: difficulty.CAUTION,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.TARGET_START],
+        omi: true,
+        creator: 'anonymous',
+    },
+    {
         lead: 'Ahsoka Tano',
         others: 'other spectre',
         notes: 'auto, takes forever, can save Ezra for another mission. Need to take out others before big bot in wave 1',
@@ -168,7 +203,7 @@ export const zeffoCombat: dataType[] = [
         lead: 'Omega (omi)',
         others: 'Bad Batch Mercenaries',
         notes: 'auto but dont mark the big bot in wave 1',
-        videos: [{url: 'https://youtu.be/6kIPMiz3jKE'}],
+        videos: [{ url: 'https://youtu.be/6kIPMiz3jKE' }],
         icon: '/icons/characters/tex.charui_omegas3.png',
         difficulty: difficulty.EASY,
         successRate: successRate.CONSISTENT,

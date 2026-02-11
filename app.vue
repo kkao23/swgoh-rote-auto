@@ -78,27 +78,27 @@ const navigationLinks = [
             and tips.</p>
         </div>
       </div>
-      <div v-if="!isNoticeHidden" class="mx-4 mb-6 relative">
-        <UButton v-if="!isAlertOpen" icon="i-heroicons-information-circle" color="amber" variant="soft"
-          label="Relic Delta Notice" block @click="isAlertOpen = true" />
-        <UAlert v-else icon="i-heroicons-information-circle" color="amber" variant="soft" title="Relic Delta Notice"
-          :close-button="{ icon: 'i-heroicons-chevron-up', color: 'gray', variant: 'link', padded: false }"
-          @close="isAlertOpen = false"> <template #description>
-            <span class="text-gray-800">
-              With the release of <a class="text-blue-400 underline"
-                href="https://forums.ea.com/blog/swgoh-game-info-hub-en/design-fireside-chat-edition/12686659">Relic
-                Delta</a> on 11/18 your experiences may differ from those in the videos depending on your team's relic
-              levels. Relic 5 and 6 planets will no longer be updated with new teams for ground battles, as a Relic
-              delta of 3+ provides too much variance in results between rosters.
-            </span>
-          </template>
-        </UAlert>
-        <button @click="isNoticeHidden = true"
-          class="absolute top-1.5 right-2 w-5 h-5 flex items-center justify-center rounded-full bg-amber-100 border border-amber-500 text-amber-600 hover:bg-amber-200 hover:text-amber-700 transition-colors z-10"
-          title="Dismiss notice">
-          <UIcon name="i-heroicons-x-mark" class="w-3 h-3" />
-        </button>
-      </div>
+        <!-- <div v-if="!isNoticeHidden" class="mx-4 mb-6 relative">
+          <UButton v-if="!isAlertOpen" icon="i-heroicons-information-circle" color="amber" variant="soft"
+            label="Relic Delta Notice" block @click="isAlertOpen = true" />
+          <UAlert v-else icon="i-heroicons-information-circle" color="amber" variant="soft" title="Relic Delta Notice"
+            :close-button="{ icon: 'i-heroicons-chevron-up', color: 'gray', variant: 'link', padded: false }"
+            @close="isAlertOpen = false"> <template #description>
+              <span class="text-gray-800">
+                With the release of <a class="text-blue-400 underline"
+                  href="https://forums.ea.com/blog/swgoh-game-info-hub-en/design-fireside-chat-edition/12686659">Relic
+                  Delta</a> on 11/18 your experiences may differ from those in the videos depending on your team's relic
+                levels. Relic 5 and 6 planets will no longer be updated with new teams for ground battles, as a Relic
+                delta of 3+ provides too much variance in results between rosters.
+              </span>
+            </template>
+          </UAlert>
+          <button @click="isNoticeHidden = true"
+            class="absolute top-1.5 right-2 w-5 h-5 flex items-center justify-center rounded-full bg-amber-100 border border-amber-500 text-amber-600 hover:bg-amber-200 hover:text-amber-700 transition-colors z-10"
+            title="Dismiss notice">
+            <UIcon name="i-heroicons-x-mark" class="w-3 h-3" />
+          </button>
+        </div> -->
       <NuxtPage />
       <div class="bg-color flex items-center justify-between text-white px-4 py-1 rounded-b-xl"></div>
 

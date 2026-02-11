@@ -173,11 +173,11 @@ const interactionComplexity = (types?: string[]): number => {
 const isMobile = useMediaQuery('(max-width: 768px)');
 
 const verifiedTeams = computed(() => {
-    return props.data.filter(d => !d.videos?.some(video => video.creator));
+    return props.data.filter(d => !d.videos?.some(video => video.creator) && !d.creator);
 });
 
 const communityTeams = computed(() => {
-    return props.data.filter(d => d.videos?.some(video => video.creator));
+    return props.data.filter(d => d.videos?.some(video => video.creator) || d.creator);
 });
 
 const verifiedAccordionItems = computed(() => {
@@ -230,6 +230,7 @@ const communityAccordionItems = computed(() => {
             successRate: d.successRate,
             interactionType: d.interactionType,
             icon: d.icon,
+            creator: d.creator,
         },
         defaultOpen: false,
     }));
@@ -418,11 +419,15 @@ async function showToast(itemIndex: number) {
                                             <a :href="video.url" target="_blank" rel="noopener noreferrer"
                                                 class="text-blue-400 hover:text-blue-300 underline flex items-center gap-2">
                                                 <img src="/icons/icons8-youtube.svg" alt="YouTube" class="h-4 w-4" />
-                                                <span v-if="video.creator">by {{ video.creator }}</span>
+                                                <span v-if="video.creator || item.content.creator">by {{ video.creator || item.content.creator }}</span>
                                                 <span v-else>Watch Video</span>
                                             </a>
                                         </div>
                                     </div>
+                                </div>
+                                <div v-if="item.content.creator && !item.content.videos.length">
+                                    <strong class="text-white">Suggested by:</strong>
+                                    <p class="mt-1">{{ item.content.creator }}</p>
                                 </div>
                             </div>
                         </template>

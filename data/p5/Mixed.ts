@@ -198,7 +198,7 @@ export const mixedCombatBottomLeftP5: dataType[] = [
         leadFull: 'Sith Eternal Emperor',
         others: 'Malak, The Stranger, Darth Revan, Bane',
         notes: 'auto, Malak hard required',
-        videos: [{url: 'https://youtu.be/14wxk2eV9j0'}],
+        videos: [{ url: 'https://youtu.be/14wxk2eV9j0' }],
         icon: '/icons/characters/tex.charui_espalpatine_pre.png',
         difficulty: difficulty.EASY,
         successRate: successRate.NINETY_PERCENT,
@@ -214,14 +214,28 @@ export const mixedCombatBottomLeftP5: dataType[] = [
         successRate: successRate.UNRELIABLE,
         interactionType: [interactionType.AUTO]
     },
+    {
+        lead: 'JMMW',
+        leadFull: 'Jedi Master Mace Windu',
+        others: 'Depa Billaba (omni), Temple Guard, Jocasta Nu, Shaak Ti',
+        notes: 'All r9 is required. Target cargo to dispell DoTs. Hope your team survive. Very hard but doable.',
+        videos: [],
+        icon: '/icons/characters/tex.charui_jedimastermacewindu.png',
+        difficulty: difficulty.HARD,
+        successRate: successRate.FIFTY_FIFTY,
+        interactionType: [interactionType.TARGET_START],
+        targeted: true,
+        omi: true,
+        creator: 'anonymous',
+    },
 ];
 
 export const jabbaP5: dataType[] = [
-        {
+    {
         lead: 'Jabba',
         others: 'Boushh, Krrsantan, +2 filler',
         notes: 'auto, need at least Boushh and Krrsantan to full auto. 1/2 consistent on auto, 2/2 takes some luck or manual play',
-        videos: [{ url: 'https://youtu.be/XVMS1A0j1C4'}],
+        videos: [{ url: 'https://youtu.be/XVMS1A0j1C4' }],
         icon: '/icons/characters/tex.charui_jabbathehutt.png',
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.FIFTY_FIFTY,

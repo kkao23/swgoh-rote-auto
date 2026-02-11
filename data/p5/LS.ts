@@ -68,6 +68,19 @@ export const lsTopMidP5: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
+        lead: 'JMMW',
+        leadFull: 'Jedi Master Mace Windu',
+        others: 'Jocasta, Depa, Aayla, Temple Guard',
+        notes: 'Depa omi - full auto',
+        videos: [],
+        icon: '/icons/characters/tex.charui_jedimastermacewindu.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.AUTO],
+        omi: true,
+        creator: 'Njuta 93',
+    },
+    {
         lead: 'Omega (Mercenary) (Omi)',
         leadFull: 'Omega with Bad Batch Mercenaries',
         others: 'Crosshair, Wrecker, Batcher, Hunter',

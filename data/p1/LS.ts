@@ -72,6 +72,19 @@ export const jediP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
+        lead: 'JMMW',
+        leadFull: 'Jedi Master Mace Windu',
+        others: 'Temple Guard, Aayla, Depa, Jocasta',
+        notes: 'Full auto',
+        videos: [],
+        icon: '/icons/characters/tex.charui_jedimastermacewindu.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.AUTO],
+        omi: true,
+        creator: 'anonymous',
+    },
+    {
         lead: 'JKL (Ezra)',
         leadFull: 'Jedi Knight Luke with Ezra Exile',
         others: 'Ezra GMY Hyoda Bastila',

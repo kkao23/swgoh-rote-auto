@@ -16,6 +16,7 @@ export type data = {
     interactionType?: interactionType[],  // Changed to array
     path?: string,
     icon?: string,
+    creator?: string,
 }
 
 export enum difficulty {

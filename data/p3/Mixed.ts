@@ -176,24 +176,38 @@ export const mixedTopLeftP3: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
     },
-    // {
-    //     lead: 'Mother Talzin',
-    //     others: 'Asajj, Daka, Zombie, Merrin',
-    //     notes: 'auto',
-    //     videos: [{ url: 'https://www.youtube.com/watch?v=9I7t5cDbZRU', creator: 'avengerObs' }],
-    //     difficulty: difficulty.VERY_EASY,
-    //     successRate: successRate.CONSISTENT,
-    //     interactionType: [interactionType.AUTO]
-    // },
-    // {
-    //     lead: 'Hera (Phoenix)',
-    //     others: 'Chopper, Kanan, Sabine, Capt Rex',
-    //     notes: 'auto',
-    //     videos: [{ url: 'https://www.youtube.com/watch?v=TK71MGKC2Ho', creator: 'avengerObs' }],
-    //     difficulty: difficulty.VERY_EASY,
-    //     successRate: successRate.CONSISTENT,
-    //     interactionType: [interactionType.AUTO]
-    // },
+    {
+        lead: '50R-T',
+        leadFull: '50R-T',
+        others: 'weak leftovers',
+        notes: 'Auto: 50R-T gains prot. up when hit, ennemies die by DOT (weak leftovers so they can die quick while ennemies get turns faster), 30s battle',
+        videos: [],
+        icon: '/icons/characters/tex.charui_50rt.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous'
+    },
+    {
+        lead: 'Mother Talzin',
+        others: 'Asajj, Daka, Zombie, Merrin',
+        notes: 'auto',
+        videos: [{ url: 'https://www.youtube.com/watch?v=9I7t5cDbZRU', creator: 'avengerObs' }],
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        icon: '/icons/characters/tex.charui_nightsisters_talzin.png'
+    },
+    {
+        lead: 'Hera (Phoenix)',
+        others: 'Chopper, Kanan, Sabine, Capt Rex',
+        notes: 'auto',
+        videos: [{ url: 'https://www.youtube.com/watch?v=TK71MGKC2Ho', creator: 'avengerObs' }],
+        icon: '/icons/characters/tex.charui_hera_s3.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
+    },
     {
         lead: 'Finn (omi)',
         others: 'Poe, Zorii, RH Finn, Resistance Pilot',

@@ -7,9 +7,9 @@ export const leftDSP1: dataType[] = [{
     notes: 'Open with Tank Tech on Jango, target droideka, hit auto',
     videos: [{ url: 'https://youtu.be/zLFGIuSzFW0' }],
     icon: '/icons/characters/tex.charui_admiraltrench.png',
-        difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
-        interactionType: [interactionType.TARGET_START],
+    difficulty: difficulty.EASY,
+    successRate: successRate.USUALLY,
+    interactionType: [interactionType.TARGET_START],
     targeted: true,
 },
 {
@@ -18,9 +18,9 @@ export const leftDSP1: dataType[] = [{
     notes: 'Any other FO, Poke Droideka, Auto',
     videos: [{ url: 'https://youtu.be/AsoKUJ0UIik' }],
     icon: '/icons/characters/tex.charui_kyloren_tros.png',
-        difficulty: difficulty.EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.TARGET_START]
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.TARGET_START]
 },
 {
     lead: 'SEE',
@@ -29,9 +29,9 @@ export const leftDSP1: dataType[] = [{
     notes: 'auto',
     videos: [{ url: 'https://youtu.be/pGSL9U-0rPs' }],
     icon: '/icons/characters/tex.charui_espalpatine_pre.png',
-        difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO]
+    difficulty: difficulty.VERY_EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO]
 },
 {
     lead: 'Mother Talzin',
@@ -39,28 +39,28 @@ export const leftDSP1: dataType[] = [{
     notes: 'auto',
     videos: [{ url: 'https://www.youtube.com/watch?v=yPPfk6jXukU', creator: 'egnards' }],
     icon: '/icons/characters/tex.charui_nightsisters_talzin.png',
-        difficulty: difficulty.EASY,
-        successRate: successRate.NINETY_PERCENT,
-        interactionType: [interactionType.AUTO]
-}, 
+    difficulty: difficulty.EASY,
+    successRate: successRate.NINETY_PERCENT,
+    interactionType: [interactionType.AUTO]
+},
 {
     lead: 'Great Mothers',
     others: 'Morgan, Night Trooper, Death Trooper, Merrin',
     notes: 'Auto, can bless morgan manually if you want to be totally safe',
     videos: [{ url: 'https://youtu.be/YUMJjeD6k5A' }],
     icon: '/icons/characters/tex.charui_greatmothers.png',
-        difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO]
+    difficulty: difficulty.VERY_EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO]
 }, {
     lead: 'Reva',
     others: 'GI, 7S, 5B, 8B',
     notes: 'auto',
     videos: [{ url: 'https://youtu.be/kibKGIAfVf4' }],
     icon: '/icons/characters/tex.charui_thirdsister.png',
-        difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO]
+    difficulty: difficulty.VERY_EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO]
 },
 {
     lead: 'General Grievous',
@@ -68,9 +68,9 @@ export const leftDSP1: dataType[] = [{
     notes: 'auto, I have most of them at R7, may be harder at R5',
     videos: [{ url: 'https://youtu.be/H8crYJOOfd8' }],
     icon: '/icons/characters/tex.charui_grievous.png',
-        difficulty: difficulty.EASY,
-        successRate: successRate.NINETY_PERCENT,
-        interactionType: [interactionType.AUTO]
+    difficulty: difficulty.EASY,
+    successRate: successRate.NINETY_PERCENT,
+    interactionType: [interactionType.AUTO]
 },
 {
     lead: 'DTMG (Enoch omi)',
@@ -79,9 +79,9 @@ export const leftDSP1: dataType[] = [{
     notes: 'auto',
     videos: [{ url: 'https://youtu.be/qSHFMblMpXs' }],
     icon: '/icons/characters/tex.charui_moffgideons3.png',
-        difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO],
+    difficulty: difficulty.VERY_EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
     omi: true,
 },];
 
@@ -91,9 +91,9 @@ export const bottomDSP1: dataType[] = [{
     notes: 'Doom droideka, bless Morgan, hit auto',
     videos: [{ url: 'https://youtu.be/dVJSaQ_Pwmo' }],
     icon: '/icons/characters/tex.charui_greatmothers.png',
-        difficulty: difficulty.EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.TARGET_START]
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.TARGET_START]
 },
 {
     lead: 'Reva',
@@ -101,9 +101,9 @@ export const bottomDSP1: dataType[] = [{
     notes: 'Target Droideka, hit auto',
     videos: [{ url: 'https://youtu.be/Pk9v02K5wwc' }],
     icon: '/icons/characters/tex.charui_thirdsister.png',
-        difficulty: difficulty.EASY,
-        successRate: successRate.NINETY_PERCENT,
-        interactionType: [interactionType.TARGET_START],
+    difficulty: difficulty.EASY,
+    successRate: successRate.NINETY_PERCENT,
+    interactionType: [interactionType.TARGET_START],
     targeted: true
 },
 {
@@ -113,9 +113,9 @@ export const bottomDSP1: dataType[] = [{
     notes: 'only 1/2 on auto',
     videos: [{ url: 'https://youtu.be/CjxSQ88mlMk' }],
     icon: '/icons/characters/tex.charui_espalpatine_pre.png',
-        difficulty: difficulty.HARD,
-        successRate: successRate.FIFTY_FIFTY,
-        interactionType: [interactionType.AUTO]
+    difficulty: difficulty.HARD,
+    successRate: successRate.FIFTY_FIFTY,
+    interactionType: [interactionType.AUTO]
 },
 {
     lead: 'E Palpatine',
@@ -124,9 +124,9 @@ export const bottomDSP1: dataType[] = [{
     notes: 'only 1/2 on auto',
     videos: [{ url: 'https://youtu.be/AU0_LBntv9o' }],
     icon: '/icons/characters/tex.charui_palpatineemperor.png',
-        difficulty: difficulty.HARD,
-        successRate: successRate.FIFTY_FIFTY,
-        interactionType: [interactionType.AUTO]
+    difficulty: difficulty.HARD,
+    successRate: successRate.FIFTY_FIFTY,
+    interactionType: [interactionType.AUTO]
 },
 {
     lead: 'Mother Talzin',
@@ -134,9 +134,9 @@ export const bottomDSP1: dataType[] = [{
     notes: 'auto',
     videos: [{ url: 'https://www.youtube.com/watch?v=WNhnP7qjZgQ', creator: 'egnards' }],
     icon: '/icons/characters/tex.charui_nightsisters_talzin.png',
-        difficulty: difficulty.EASY,
-        successRate: successRate.NINETY_PERCENT,
-        interactionType: [interactionType.AUTO]
+    difficulty: difficulty.EASY,
+    successRate: successRate.NINETY_PERCENT,
+    interactionType: [interactionType.AUTO]
 },
 {
     lead: 'DTMG (Enoch omi)',
@@ -145,9 +145,9 @@ export const bottomDSP1: dataType[] = [{
     notes: 'auto',
     videos: [{ url: 'https://youtu.be/I6J9XHpBIrc' }],
     icon: '/icons/characters/tex.charui_moffgideons3.png',
-        difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO],
+    difficulty: difficulty.VERY_EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
     omi: true,
 },
 {
@@ -156,9 +156,9 @@ export const bottomDSP1: dataType[] = [{
     notes: 'Auto',
     videos: [{ url: 'https://youtu.be/BTWI-B8Oc-Q' }],
     icon: '/icons/characters/tex.charui_kyloren_tros.png',
-        difficulty: difficulty.EASY,
-        successRate: successRate.NINETY_PERCENT,
-        interactionType: [interactionType.AUTO]
+    difficulty: difficulty.EASY,
+    successRate: successRate.NINETY_PERCENT,
+    interactionType: [interactionType.AUTO]
 },
 {
     lead: 'GG',
@@ -167,9 +167,9 @@ export const bottomDSP1: dataType[] = [{
     notes: 'Only 1/2 on auto',
     videos: [{ url: 'https://youtu.be/ZE009t8VImc' }],
     icon: '/icons/characters/tex.charui_grievous.png',
-        difficulty: difficulty.HARD,
-        successRate: successRate.FIFTY_FIFTY,
-        interactionType: [interactionType.AUTO]
+    difficulty: difficulty.HARD,
+    successRate: successRate.FIFTY_FIFTY,
+    interactionType: [interactionType.AUTO]
 },
 {
     lead: 'Baylan',
@@ -177,9 +177,9 @@ export const bottomDSP1: dataType[] = [{
     notes: 'auto, Marrok Omi',
     videos: [{ url: 'https://youtu.be/IgwTIlI2T64' }],
     icon: '/icons/characters/tex.charui_baylanskoll.png',
-        difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO],
+    difficulty: difficulty.VERY_EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
     omi: true,
 },
 {
@@ -188,10 +188,35 @@ export const bottomDSP1: dataType[] = [{
     notes: 'only 1/2 on auto',
     videos: [{ url: 'https://youtu.be/-Uhr-v_0zdQ' }],
     icon: '/icons/characters/tex.charui_maul.png',
-        difficulty: difficulty.HARD,
-        successRate: successRate.FIFTY_FIFTY,
-        interactionType: [interactionType.AUTO],
-}
+    difficulty: difficulty.HARD,
+    successRate: successRate.FIFTY_FIFTY,
+    interactionType: [interactionType.AUTO],
+},
+{
+    lead: 'Tarkin',
+    leadFull: 'Tarkin (Clones)',
+    others: 'DS Clones (Appo Omi)',
+    notes: 'Auto',
+    videos: [],
+    icon: '/icons/characters/tex.charui_tarkinadmiral.png',
+    difficulty: difficulty.VERY_EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    omi: true,
+    creator: 'anonymous',
+},
+{
+    lead: 'Pirate King Hondo',
+    leadFull: 'Pirate King Hondo Onaka',
+    others: 'Smee, vane, any',
+    notes: 'Do not use baylan mercs on auto',
+    videos: [],
+    icon: '/icons/characters/tex.charui_glhondo.png',
+    difficulty: difficulty.VERY_EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'anonymous',
+},
 ];
 
 export const topDSP1: dataType[] = [

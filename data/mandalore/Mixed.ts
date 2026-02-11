@@ -57,6 +57,17 @@ export const mandaloreGeneric: dataType[] = [
         omi: true
     },
     {
+        lead: 'Lord Vader',
+        others: 'Appo, CX2, Scorch, DCT',
+        notes: 'nil Omicron on Appo, full auto, did select Gideon phase 2 to be sure. I have recorded the battle as evidence',
+        videos: [],
+        icon: '/icons/characters/tex.charui_lordvader.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.AUTO],
+        creator: 'aFERALPLATYPUS',
+    },
+    {
         lead: 'Reva',
         others: 'GI, 7S, 5B, Marrok',
         notes: 'Marrok Omi, easy auto',

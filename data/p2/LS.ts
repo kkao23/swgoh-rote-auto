@@ -74,8 +74,8 @@ export const jediLSP2: dataType[] = [
         omi: true,
     },
     {
-        lead: 'Kelleran Beq',
-        leadFull: 'Kelleran Beq',
+        lead: 'Kelleran Beq or JMMW',
+        leadFull: 'Kelleran Beq or Jedi Master Mace Windu',
         others: 'Jocasta Nu, Shaak Ti, Temple Guard, Depa Billaba (omicron)',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/SPL5FC0Qdcc' }],
@@ -199,7 +199,21 @@ export const rightLSP2: dataType[] = [
         successRate: successRate.FIFTY_FIFTY,
         interactionType: [interactionType.AUTO],
         omi: true
-    }, {
+    },
+    {
+        lead: 'JKCK',
+        leadFull: 'JKCK (triple o)',
+        others: 'Kyle (o), EE, Shaak Ti, JKA',
+        notes: 'deselect reticle, full auto. had my EE at R10. Editors Note: Don\'t use JKCK here',
+        videos: [],
+        icon: '/icons/characters/tex.charui_calkestis.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        omi: true,
+        creator: 'jkat70',
+    },
+    {
         lead: 'Ahsoka Tano',
         others: 'Padawan Sabine, Huyang, Fulcrum, +any',
         notes: 'auto, use Hera if available, can save Ezra for Jedi mission',

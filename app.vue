@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const route = useRoute()
+const { gtag } = useGtag()
 import { trackEvent } from '~/util/analytics'
 
 const isAlertOpen = ref(false)
@@ -6,36 +8,52 @@ const isNoticeHidden = ref(false)
 
 const isSupportOpen = ref(false)
 
+watch(() => route.path, (newPath) => {
+  const labels: Record<string, string> = {
+    '/': 'Home',
+    '/map-view': 'Map',
+    '/usage': 'Search',
+    '/tier-list': 'Tier List',
+    '/support': 'Support'
+  }
+
+  gtag('event', 'nav_click', {
+    target: labels[newPath] || 'Unknown',
+    path: newPath,
+    transport_type: 'beacon'
+  })
+}, { immediate: true })
+
 const navigationLinks = [
   {
     label: 'Home',
     icon: 'i-heroicons-home',
     to: '/',
-    click: () => { trackEvent('nav_click', { target: 'Home' }) }
+    // click: () => { trackEvent('nav_click', { target: 'Home' }) }
   },
   {
     label: 'Map',
     icon: 'i-heroicons-map',
     to: '/map-view',
-    click: () => { trackEvent('nav_click', { target: 'Map' }) }
+    // click: () => { trackEvent('nav_click', { target: 'Map' }) }
   },
   {
     label: 'Search',
     icon: 'i-heroicons-magnifying-glass',
     to: '/usage',
-    click: () => { trackEvent('nav_click', { target: 'Search' }) }
+    // click: () => { trackEvent('nav_click', { target: 'Search' }) }
   },
   {
     label: 'Tier List',
     icon: 'i-heroicons-chart-bar',
     to: '/tier-list',
-    click: () => { trackEvent('nav_click', { target: 'Tier List' }) }
+    // click: () => { trackEvent('nav_click', { target: 'Tier List' }) }
   },
   {
     label: 'Support',
     icon: 'i-heroicons-heart',
+    to: '/support',
     click: () => {
-      trackEvent('nav_click', { target: 'Support' })
       isSupportOpen.value = true
     }
   }
@@ -75,7 +93,9 @@ const navigationLinks = [
             </span>
           </template>
         </UAlert>
-        <button @click="isNoticeHidden = true" class="absolute top-1.5 right-2 w-5 h-5 flex items-center justify-center rounded-full bg-amber-100 border border-amber-500 text-amber-600 hover:bg-amber-200 hover:text-amber-700 transition-colors z-10" title="Dismiss notice">
+        <button @click="isNoticeHidden = true"
+          class="absolute top-1.5 right-2 w-5 h-5 flex items-center justify-center rounded-full bg-amber-100 border border-amber-500 text-amber-600 hover:bg-amber-200 hover:text-amber-700 transition-colors z-10"
+          title="Dismiss notice">
           <UIcon name="i-heroicons-x-mark" class="w-3 h-3" />
         </button>
       </div>
@@ -83,7 +103,8 @@ const navigationLinks = [
       <div class="bg-color flex items-center justify-between text-white px-4 py-1 rounded-b-xl"></div>
 
       <!-- Bottom Navigation Footer -->
-      <footer class="fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 pb-safe">
+      <footer
+        class="fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 border-t-2 border-blue-500 pb-[env(safe-area-inset-bottom)]">
         <UHorizontalNavigation :links="navigationLinks" :ui="{
           container: 'flex justify-around w-full',
           base: 'group relative flex flex-col items-center justify-center gap-1 py-2 px-1',
@@ -98,9 +119,9 @@ const navigationLinks = [
           icon: {
             base: 'w-6 h-6 transition-colors duration-200',
             active: '!text-white',
-            inactive: '!text-current' // Inherits from parent color
+            inactive: '!text-yellow-400' // Inherits from parent color
           },
-          label: 'text-[10px] sm:text-xs font-medium !text-current transition-colors duration-200'
+          label: 'text-[10px] sm:text-xs font-medium !text-yellow-400 transition-colors duration-200'
         }" />
       </footer>
     </div>

@@ -83,6 +83,19 @@ import { dsBottomRightP5 } from "./p5/DS";
 import { dsTopMidP5 } from "./p5/DS";
 import { dsLeftP5 } from "./p5/DS";
 
+// P6
+import { jabbaP6 } from "./p6/Mixed";
+import { mixedFleetP6 } from "./p6/Mixed";
+import { bottomLeftMixedP6 } from "./p6/Mixed";
+import { topWampaP6 } from "./p6/Mixed";
+
+import { lsShipsP6 } from "./p6/LS";
+
+import { shipsDSP6 } from "./p6/DS";
+import { idenP6 } from "./p6/DS";
+import { darthVaderP6 } from "./p6/DS";
+import { dsGenericP6 } from "./p6/DS";
+
 // zeffo
 import { zeffoCombat } from "./zeffo/LS";
 import { zeffoUFU } from "./zeffo/LS";
@@ -216,22 +229,23 @@ export const data: DataType = {
     },
     phase6: {
         mixed: {
-            generic: [],
+            wampa: topWampaP6,
+            bottomLeft: bottomLeftMixedP6,
             aphra: [],
-            ships: [],
-            jabba: [],
+            ships: mixedFleetP6,
+            jabba: jabbaP6,
         },
         ls: {
             generic: [],
             baze: [],
             cassian: [],
-            ships: [],
+            ships: lsShipsP6,
         },
         ds: {
-            iden: [],
-            generic: [],
-            darthVader: [],
-            fleets: [],
+            iden: idenP6,
+            generic: dsGenericP6,
+            darthVader: darthVaderP6,
+            fleets: shipsDSP6,
         },
     },
     special: {

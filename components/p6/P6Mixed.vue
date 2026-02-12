@@ -13,15 +13,18 @@ const alignment = 'Mixed';
 
 <template>
     <tr>
-        <MissionTableFragment :position="`Generic`" :data="data.mixed.generic" :phase="phase" :alignment="alignment"></MissionTableFragment>
+        <MissionTableFragment :position="`Top Mid (Wampa)`" :data="data.mixed.wampa" :phase="phase" :alignment="alignment"></MissionTableFragment>
     </tr>
     <tr>
-        <MissionTableFragment :position="`Aphra`" :data="data.mixed.aphra" :phase="phase" :alignment="alignment"></MissionTableFragment>
+        <MissionTableFragment :position="`Bottom Left`" :data="data.mixed.bottomLeft" :phase="phase" :alignment="alignment"></MissionTableFragment>
     </tr>
     <tr>
         <MissionTableFragment :position="`Jabba`" :data="data.mixed.jabba" :phase="phase" :alignment="alignment"></MissionTableFragment>
     </tr>
     <tr>
-        <MissionTableFragment :position="`Fleet`" :data="data.mixed.fleet" :phase="phase" :alignment="alignment"></MissionTableFragment>
+        <MissionTableFragment :position="`Aphra`" :data="data.mixed.aphra" :phase="phase" :alignment="alignment"></MissionTableFragment>
+    </tr>
+    <tr>
+        <MissionTableFragment :position="`Fleet`" :data="data.mixed.ships" :phase="phase" :alignment="alignment"></MissionTableFragment>
     </tr>
 </template>

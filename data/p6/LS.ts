@@ -132,15 +132,13 @@ export const lsBottomP5: dataType[] = [
         videos: [{ url: 'https://www.youtube.com/watch?v=5kjc-83PM2s', creator: 'avengerObs' }],
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO],
-        icon: '/icons/characters/tex.charui_bossnass.png',
-        creator: 'avengerObs',
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Omega (Mercenary) (Omi)',
         leadFull: 'Omega with Bad Batch Mercenaries',
         others: 'Crosshair, Wrecker, Batcher, Hunter',
-        notes: 'easy auto with Wrecker Omi, pause to target Mara at the beginning of wave 2.',
+        notes: 'easy auto with Wrecker Omi, pause to target Mara at the beginning of wave 2. Full platoon required',
         videos: [{ url: 'https://youtu.be/OmM8S6w6l3s' }],
         icon: '/icons/characters/tex.charui_omegas3.png',
         difficulty: difficulty.VERY_EASY,
@@ -170,36 +168,16 @@ export const lsBottomP5: dataType[] = [
     }
 ]
 
-export const lsShipsP5: dataType[] = [
+export const lsShipsP6: dataType[] = [
     {
-        lead: 'Profundity (Rogue One)',
-        others: 'MF, Outrider, Y Wing, Rogue One',
-        notes: 'Keep reticule on Scythe, auto',
-        videos: [{ url: 'https://youtu.be/qpNtrNGpeKI' }],
+        lead: 'Profundity',
+        others: 'MF, Outrider, Y Wing, Phantom, Cassian, Biggs, Bistan',
+        notes: 'Video is on manual but looks autoable with Rogue One',
+        videos: [{ url: 'https://youtu.be/JcmNmvY4klY?si=TfjlyK7qYDoOSkwJ', creator: 'GoBucsGo' }],
         icon: '/icons/ships/tex.charui_profundity.png',
         difficulty: difficulty.EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.TARGET_START],
         targeted: true
-    },
-    {
-        lead: 'Profundity (No Rogue One)',
-        others: 'MF, Outrider, Y Wing, Wedge, Biggs, Phantom, Ghost',
-        notes: 'can\'t auto. Go after Scythe, Phantom first reinforcement',
-        videos: [{ url: 'https://youtu.be/9HiGycdlf4E' }],
-        icon: '/icons/ships/tex.charui_profundity.png',
-        difficulty: difficulty.NO_AUTO,
-        successRate: successRate.UNRELIABLE,
-        interactionType: [interactionType.MANUAL],
-    },
-    {
-        lead: 'Home One (B wing)',
-        others: 'Biggs, Bistan and Ravens Claw starting, B wing, Cassian in reinforcements',
-        notes: 'can\'t auto. Go after Scythe first. When Scythe uses its special to get all the stacks of formation, bring Cassian out to dispel them',
-        videos: [{ url: 'https://youtu.be/QahRayHXWXk' }],
-        icon: '/icons/ships/tex.charui_moncalamarilibertycruiser.png',
-        difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
-        interactionType: [interactionType.MANUAL]
     },
 ]

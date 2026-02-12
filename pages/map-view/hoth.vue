@@ -4,20 +4,20 @@ import type { MissionRegion } from '~/models/data'
 
 const missions: MissionRegion[] = [
   { 
-    name: 'Generic', 
+    name: 'Bottom Left', 
     points: '188,657 188,783 445,779 451,650',
     phase: 'phase6',
     alignment: 'mixed',
-    position: 'Generic',
-    data: data.phase6.mixed.generic
+    position: 'Bottom Left',
+    data: data.phase6.mixed.bottomLeft
   },
   { 
-    name: 'Generic', 
+    name: 'Top Mid', 
     points: '677,297 696,428 909,418 919,297',
     phase: 'phase6',
     alignment: 'mixed',
-    position: 'Generic',
-    data: data.phase6.mixed.generic
+    position: 'Wampa',
+    data: data.phase6.mixed.wampa
   },
   { 
     name: 'Jabba', 

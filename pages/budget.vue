@@ -2,6 +2,14 @@
 import { useLocalStorage } from '@vueuse/core'
 
 const DAYS_PER_MONTH = 30
+const { gtag } = useGtag()
+
+onMounted(() => {
+  gtag('event', 'budget_page_view', {
+    path: '/budget',
+    transport_type: 'beacon',
+  })
+})
 
 const guaranteedIncome = {
   loginCalendarMonthly: 380,

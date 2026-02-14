@@ -2,9 +2,11 @@
 const route = useRoute()
 const { gtag } = useGtag()
 import { trackEvent } from '~/util/analytics'
+import { useLocalStorage } from '@vueuse/core'
 
 const isAlertOpen = ref(false)
 const isNoticeHidden = ref(false)
+const isFavoriteBannerHidden = useLocalStorage('swgoh-rote-favorite-banner-hidden', false)
 
 const isSupportOpen = ref(false)
 
@@ -72,11 +74,19 @@ const navigationLinks = [
             </div>
           </template>
         </UCard>
-        <div class="text-center mb-4">
-          <p class="text-gray-300 text-sm md:text-base">Master Rise of the Empire Territory Battles with
+        <div class="sr-only">
+          <p>Master Rise of the Empire Territory Battles with
             auto-battle teams
             and tips.</p>
         </div>
+      </div>
+      <div v-if="!isFavoriteBannerHidden" class="mx-4 mb-4 relative">
+        <UAlert icon="i-heroicons-heart-solid" color="pink" variant="soft" title="New!" description="Save your favorite teams by tapping the ❤️ heart icon next to the share button." />
+        <button @click="isFavoriteBannerHidden = true"
+          class="absolute top-1.5 right-2 w-5 h-5 flex items-center justify-center rounded-full bg-pink-100 border border-pink-400 text-pink-600 hover:bg-pink-200 hover:text-pink-700 transition-colors z-10"
+          title="Dismiss notice">
+          <UIcon name="i-heroicons-x-mark" class="w-3 h-3" />
+        </button>
       </div>
         <!-- <div v-if="!isNoticeHidden" class="mx-4 mb-6 relative">
           <UButton v-if="!isAlertOpen" icon="i-heroicons-information-circle" color="amber" variant="soft"

@@ -7,6 +7,8 @@ import { useRouter, useRoute } from 'vue-router';
 import { nextTick, watch, computed } from 'vue';
 import { trackEvent } from '~/util/analytics';
 
+const { isSaved, toggleSaved } = useSavedTeams();
+
 const props = defineProps({
     special: Boolean,
     shard: Boolean,
@@ -182,6 +184,11 @@ const communityTeams = computed(() => {
 
 const verifiedAccordionItems = computed(() => {
     const sortedData = [...verifiedTeams.value].sort((a, b) => {
+        // Saved/hearted teams sort to top
+        const aSaved = isSaved(props.phase || '', props.alignment || '', props.position || '', a.lead) ? 0 : 1;
+        const bSaved = isSaved(props.phase || '', props.alignment || '', props.position || '', b.lead) ? 0 : 1;
+        if (aSaved !== bSaved) return aSaved - bSaved;
+
         // Sort by success rate (better success first)
         const aSuccessValue = successRateValue(a.successRate);
         const bSuccessValue = successRateValue(b.successRate);
@@ -212,6 +219,7 @@ const verifiedAccordionItems = computed(() => {
             successRate: d.successRate,
             interactionType: d.interactionType,
             icon: d.icon,
+            lead: d.lead,
         },
         defaultOpen: initialDataIndexFromUrl.value !== null ? initialDataIndexFromUrl.value === index : index === 0,
     }));
@@ -354,6 +362,14 @@ async function showToast(itemIndex: number) {
                             <img v-if="item.content.omi" src="/icons/omi.png" alt="omicron" class="h-4 w-4" />
                             <UButton color="white" variant="outline" icon="i-heroicons-share" size="xs" 
                                 class="rounded-full text-blue-400 ml-2" @click.stop="showToast(index)"/>
+                            <UButton color="white" variant="ghost" size="xs"
+                                class="rounded-full ml-1" 
+                                :class="isSaved(phase || '', alignment || '', position || '', item.content.lead) ? 'text-red-500' : 'text-gray-400'"
+                                @click.stop="trackEvent('team_favorite', { action: isSaved(phase || '', alignment || '', position || '', item.content.lead) ? 'unsave' : 'save', target: `${phase} ${alignment} ${position}`, team: item.content.lead }); toggleSaved(phase || '', alignment || '', position || '', item.content.lead)">
+                                <UIcon 
+                                    :name="isSaved(phase || '', alignment || '', position || '', item.content.lead) ? 'i-heroicons-heart-solid' : 'i-heroicons-heart'"
+                                    class="w-4 h-4" />
+                            </UButton>
                             <template #trailing>
                                 <UIcon name="i-heroicons-chevron-down-20-solid"
                                     class="w-5 h-5 ms-auto transform transition-transform duration-200 flex-shrink-0"

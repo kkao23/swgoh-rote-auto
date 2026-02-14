@@ -120,8 +120,7 @@ const phases = [
 </template>
 
 <style scoped>
-/* :deep(button) {
-    background-color: #24244D !important;
-    color: #EAF4FC !important;
-} */
+:deep(button) {
+    color: #E5E7EB !important;
+}
 </style>

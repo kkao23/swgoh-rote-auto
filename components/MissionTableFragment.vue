@@ -296,6 +296,8 @@ async function showToast(itemIndex: number) {
                     </div>
                 </template>
                 
+                <MissionModalFooter></MissionModalFooter>
+
                 <!-- Coming soon message when data is empty -->
                 <div v-if="!data || data.length === 0" class="py-8 text-center">
                     <p class="text-gray-300 text-lg">Coming soon</p>
@@ -304,7 +306,7 @@ async function showToast(itemIndex: number) {
                 <UAccordion v-else :items="verifiedAccordionItems" v-model="openAccordionIndices">
                     <template #default="{ item, index, open }">
                         <UButton
-                            class="focus:outline-none focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 flex-shrink-0 font-medium rounded-md text-sm gap-x-1.5 px-2.5 py-1.5 text-primary-500 dark:text-primary-400 bg-primary-50 hover:bg-primary-100 disabled:bg-primary-50 aria-disabled:bg-primary-50 dark:bg-primary-950 dark:hover:bg-primary-900 dark:disabled:bg-primary-950 dark:aria-disabled:bg-primary-950 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400 inline-flex items-center mb-1.5 w-full"
+                            class="focus:outline-none focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 flex-shrink-0 font-medium rounded-md text-sm gap-x-1.5 px-2.5 py-1.5 text-gray-200 dark:text-gray-200 bg-primary-50 hover:bg-primary-100 disabled:bg-primary-50 aria-disabled:bg-primary-50 dark:bg-primary-950 dark:hover:bg-primary-900 dark:disabled:bg-primary-950 dark:aria-disabled:bg-primary-950 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400 inline-flex items-center mb-1.5 w-full"
                             :ui="{ padding: { sm: 'py-4 px-4' } }">
                             <template #leading>
                                 <!-- Badge Cluster -->
@@ -400,14 +402,14 @@ async function showToast(itemIndex: number) {
                 <!-- Community Suggestions Section -->
                 <div v-if="communityAccordionItems.length > 0" class="mt-6">
                     <div class="mb-3 px-3">
-                        <h4 class="text-sm font-semibold text-gray-400 uppercase tracking-wider">
+                        <h4 class="text-sm font-semibold text-gray-300 uppercase tracking-wider">
                             Community Suggestions
                         </h4>
                     </div>
                     <UAccordion :items="communityAccordionItems">
                         <template #default="{ item, index, open }">
                             <UButton
-                                class="focus:outline-none focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 flex-shrink-0 font-medium rounded-md text-sm gap-x-1.5 px-2.5 py-1.5 text-primary-500 dark:text-primary-400 bg-primary-50 hover:bg-primary-100 disabled:bg-primary-50 aria-disabled:bg-primary-50 dark:bg-primary-950 dark:hover:bg-primary-900 dark:disabled:bg-primary-950 dark:aria-disabled:bg-primary-950 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400 inline-flex items-center mb-1.5 w-full"
+                                class="focus:outline-none focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 flex-shrink-0 font-medium rounded-md text-sm gap-x-1.5 px-2.5 py-1.5 text-gray-200 dark:text-gray-200 bg-primary-50 hover:bg-primary-100 disabled:bg-primary-50 aria-disabled:bg-primary-50 dark:bg-primary-950 dark:hover:bg-primary-900 dark:disabled:bg-primary-950 dark:aria-disabled:bg-primary-950 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400 inline-flex items-center mb-1.5 w-full"
                                 :ui="{ padding: { sm: 'py-4 px-4' } }">
                                 <img v-if="item.content.icon" :src="item.content.icon" class="h-9 w-9 rounded" />
                                 <span>{{ item.label }}</span>
@@ -449,9 +451,6 @@ async function showToast(itemIndex: number) {
                         </template>
                     </UAccordion>
                 </div>
-                <template #footer>
-                    <MissionModalFooter></MissionModalFooter>
-                </template>
             </UCard>
         </UModal>
 

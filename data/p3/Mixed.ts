@@ -118,7 +118,7 @@ export const fennecP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Omega (omicron)',
+        lead: 'Omega',
         others: 'Wrecker (omicron), Hunter, Crosshair, Fennec',
         notes: 'easy auto with omi',
         videos: [{ url: 'https://youtu.be/Sv1SbpTmcWI' }],

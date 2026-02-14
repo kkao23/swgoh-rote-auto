@@ -73,7 +73,7 @@ export const leftDSP1: dataType[] = [{
     interactionType: [interactionType.AUTO]
 },
 {
-    lead: 'DTMG (Enoch omi)',
+    lead: 'DTMG',
     leadFull: 'Dark Trooper Moff Gideon',
     others: 'Scout Trooper, Captain Enoch (omi), Moff Gideon, Death Trooper',
     notes: 'auto',
@@ -139,7 +139,7 @@ export const bottomDSP1: dataType[] = [{
     interactionType: [interactionType.AUTO]
 },
 {
-    lead: 'DTMG (Enoch omi)',
+    lead: 'DTMG',
     leadFull: 'Dark Trooper Moff Gideon',
     others: 'Scout Trooper, Captain Enoch (omi), Moff Gideon, Death Trooper',
     notes: 'auto',
@@ -283,7 +283,7 @@ export const topDSP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'DTMG (Enoch omi)',
+        lead: 'DTMG',
         leadFull: 'Dark Trooper Moff Gideon',
         others: 'Scout Trooper, Captain Enoch (omi), Moff Gideon, Tie Fighter Pilot',
         notes: 'auto',

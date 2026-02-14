@@ -109,7 +109,7 @@ export const lsGenericP4: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Omega (omicron)',
+        lead: 'Omega',
         others: 'other Bad Batch Mercenaries',
         notes: 'easy auto with omi',
         videos: [{ url: 'https://youtu.be/kjYZ24h5fok' }],

@@ -25,7 +25,7 @@ export const lsLeftP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'JKCK (Omis)',
+        lead: 'JKCK (All Omis)',
         leadFull: 'Jedi Knight Cal Kestis',
         others: 'Kyle Katarn, +3 Jedi',
         notes: 'auto, omis on JKCK lead and Kyle Katarn',
@@ -89,7 +89,7 @@ export const lsLeftP3: dataType[] = [
         difficulty: difficulty.VERY_EASY
     },
     {
-        lead: 'Omega (omicron)',
+        lead: 'Omega',
         others: 'other Bad Batch Mercenaries',
         notes: 'easy auto with omi',
         videos: [{ url: 'https://youtu.be/YR4PCMzh0QI' }],
@@ -189,7 +189,7 @@ export const lsRightP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Omega (omicron)',
+        lead: 'Omega',
         others: 'other Bad Batch Mercenaries',
         notes: 'easy auto with omi',
         videos: [{ url: 'https://youtu.be/foOES5g8prg' }],

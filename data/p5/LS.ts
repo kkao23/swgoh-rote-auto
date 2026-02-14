@@ -13,7 +13,7 @@ export const lsTopLeftP5: dataType[] = [
         interactionType: [interactionType.TARGET_START],
     },
     {
-        lead: 'Omega (Mercenary) (Omi)',
+        lead: 'Omega (Mercenary)',
         leadFull: 'Omega with Bad Batch Mercenaries',
         others: 'Crosshair, Wrecker, Batcher, Hunter',
         notes: 'easy auto with Wrecker Omi, pause auto at the beginning of wave 2. Full platoon required',
@@ -81,7 +81,7 @@ export const lsTopMidP5: dataType[] = [
         creator: 'Njuta 93',
     },
     {
-        lead: 'Omega (Mercenary) (Omi)',
+        lead: 'Omega (Mercenary)',
         leadFull: 'Omega with Bad Batch Mercenaries',
         others: 'Crosshair, Wrecker, Batcher, Hunter',
         notes: 'easy auto with Wrecker Omi. Full platoon required',
@@ -137,7 +137,7 @@ export const lsBottomP5: dataType[] = [
         creator: 'avengerObs',
     },
     {
-        lead: 'Omega (Mercenary) (Omi)',
+        lead: 'Omega (Mercenary)',
         leadFull: 'Omega with Bad Batch Mercenaries',
         others: 'Crosshair, Wrecker, Batcher, Hunter',
         notes: 'easy auto with Wrecker Omi, pause to target Mara at the beginning of wave 2.',

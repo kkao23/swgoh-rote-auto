@@ -238,7 +238,7 @@ export const genericLSP1: dataType[] = [
         omi: true,
     },
     {
-        lead: 'Omega (Mercenary) (Omi)',
+        lead: 'Omega (Mercenary)',
         leadFull: 'Omega with Bad Batch Mercenaries',
         others: 'Crosshair, Wrecker, Batcher, Hunter',
         notes: 'easy full auto with Wrecker Omi',

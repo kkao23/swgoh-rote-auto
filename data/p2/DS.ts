@@ -76,7 +76,7 @@ export const acklayDSP2: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'DTMG (Enoch omi)',
+        lead: 'DTMG',
         leadFull: 'Dark Trooper Moff Gideon',
         others: 'Scout Trooper, Captain Enoch (omi), Death Trooper, Night Trooper',
         notes: 'auto',
@@ -196,7 +196,7 @@ export const reekDSP2: dataType[] = [
         omi: true
     },
     {
-        lead: 'DTMG (Enoch omi)',
+        lead: 'DTMG',
         leadFull: 'Dark Trooper Moff Gideon',
         others: 'Scout Trooper, Captain Enoch (omi), Death Trooper, Moff Gideon',
         notes: 'auto',
@@ -298,7 +298,7 @@ export const nexuDSP2: dataType[] = [
         omi: true
     },
     {
-        lead: 'DTMG (Enoch omi)',
+        lead: 'DTMG',
         leadFull: 'Dark Trooper Moff Gideon',
         others: 'Scout Trooper, Captain Enoch (omi), Death Trooper, Moff Gideon',
         notes: 'auto',

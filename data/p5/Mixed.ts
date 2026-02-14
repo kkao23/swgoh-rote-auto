@@ -112,7 +112,7 @@ export const mixedCombatTopRightP5: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'Omega (Mercenary) (Omi)',
+        lead: 'Omega (Mercenary)',
         leadFull: 'Omega with Bad Batch Mercenaries',
         others: 'Crosshair, Wrecker, Batcher, Hunter',
         notes: 'auto, can get 2/2 sometimes but not consistently. Pause to target someone at the start of Wave 2',

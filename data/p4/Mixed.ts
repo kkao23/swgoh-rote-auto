@@ -195,7 +195,7 @@ export const mixedGenericP4: dataType[] = [
         omi: true,
     },
     {
-        lead: 'Omega (omi)',
+        lead: 'Omega',
         others: 'Bad Batch Mercenaries',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/FEHeBqhR3jY' }],

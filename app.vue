@@ -2,13 +2,38 @@
 const route = useRoute()
 const { gtag } = useGtag()
 import { trackEvent } from '~/util/analytics'
-import { useLocalStorage, useWindowScroll } from '@vueuse/core'
+import { useLocalStorage, useWindowScroll, useMediaQuery } from '@vueuse/core'
+
+const isMobile = useMediaQuery('(max-width: 768px)')
 
 const isAlertOpen = ref(false)
 const isNoticeHidden = ref(false)
 const isFavoriteBannerHidden = useLocalStorage('swgoh-rote-favorite-banner-hidden', false)
 
 const isSupportOpen = ref(false)
+
+const showSupportNudge = ref(false)
+const hasClickedSupport = useLocalStorage('swgoh-rote-support-clicked', false)
+
+onMounted(() => {
+  if (!hasClickedSupport.value) {
+    setTimeout(() => {
+      showSupportNudge.value = true
+      setTimeout(() => {
+        showSupportNudge.value = false
+      }, 6000)
+    }, 5000)
+  }
+})
+
+function onSupportNudgeClick() {
+  showSupportNudge.value = false
+  isSupportOpen.value = true
+}
+
+function onSupportLinkClick() {
+  hasClickedSupport.value = true
+}
 
 const { y: scrollY } = useWindowScroll()
 const lastScrollY = ref(0)
@@ -153,6 +178,15 @@ const navigationLinks = [
     <!-- Floating Suggest Team Button -->
     <SuggestTeamButton />
 
+    <!-- Support Nudge -->
+    <Transition name="nudge">
+      <button v-if="showSupportNudge"
+        @click="onSupportNudgeClick"
+        class="fixed right-0 top-1/3 z-50 bg-sky-500 text-white text-sm font-semibold px-4 py-2 rounded-l-xl shadow-lg cursor-pointer hover:bg-sky-400 transition-colors">
+        Support ❤️
+      </button>
+    </Transition>
+
     <USlideover v-model="isSupportOpen" side="bottom" :ui="{
       overlay: { background: 'bg-gray-900/50' },
       // 1. Force the height to NOT be h-screen
@@ -166,16 +200,36 @@ const navigationLinks = [
         <div class="w-10 h-1 bg-sky-300 rounded-full mb-4"></div>
 
         <p class="text-blue-900 text-xs font-bold mb-4 px-6 leading-tight">
-          If this tool helps you, consider supporting the server costs!
+          This tool is free and ad-free — help keep it that way!
         </p>
 
-        <a href="https://buymeacoffee.com/captsolo" target="_blank" class="active:scale-95 transition-transform">
-          <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee"
-            class="h-10 rounded-lg shadow-sm" />
-        </a>
+        <div class="flex items-center gap-4">
+          <a href="https://buymeacoffee.com/captsolo" target="_blank" class="active:scale-95 transition-transform" @click="onSupportLinkClick">
+            <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee"
+              class="h-10 rounded-lg shadow-sm" />
+          </a>
+          <a v-if="isMobile" href="venmo://users/swgoh-rote" class="active:scale-95 transition-transform" @click="onSupportLinkClick">
+            <img src="/images/venmo.png" alt="Venmo" class="h-10 rounded-lg shadow-sm" />
+          </a>
+          <div v-else class="flex flex-col items-center">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://venmo.com/swgoh-rote" alt="Venmo QR" class="w-20 h-20 rounded" />
+            <span class="text-blue-900 text-[10px] mt-1">Venmo @swgoh-rote</span>
+          </div>
+        </div>
       </div>
     </USlideover>
 
     <UNotifications />
   </UApp>
 </template>
+
+<style>
+.nudge-enter-active,
+.nudge-leave-active {
+  transition: transform 0.4s ease;
+}
+.nudge-enter-from,
+.nudge-leave-to {
+  transform: translateX(100%);
+}
+</style>

@@ -719,7 +719,7 @@ watch([isWizardComplete, areExpenseStepsComplete], ([wizardDone, expensesDone]) 
 <template>
   <div class="flex-1 bg-color min-h-screen">
     <UContainer class="py-8">
-      <h1 class="text-2xl font-bold text-white mb-2">Crystal Budget Wizard</h1>
+      <h1 class="text-2xl font-bold text-white mb-2">Crystal Budget Wizard - Beta</h1>
       <p class="text-gray-300 mb-6">Monthly and daily crystal budgeting.</p>
 
       <details class="sticky top-3 z-30 bg-gradient-to-r from-emerald-900/90 to-cyan-900/80 border border-emerald-700 rounded-xl p-4 mb-5 shadow-xl backdrop-blur-sm">

@@ -192,7 +192,7 @@ const navigationLinks = [
       // 1. Force the height to NOT be h-screen
       // 2. Center it horizontally and give it a max-width so it's not a full-width bar
       width: 'w-full max-w-lg mx-auto',
-      height: '!h-auto !max-h-fit',
+      height: '!h-auto !max-h-[80vh] overflow-y-auto',
       // 3. Style the background and corners
       background: 'bg-sky-100 dark:bg-sky-100 rounded-t-3xl border-t border-sky-200'
     }">
@@ -215,7 +215,14 @@ const navigationLinks = [
             <img src="https://api.qrserver.com/v1/create-qr-code/?size=80x80&data=https://venmo.com/swgoh-rote" alt="Venmo QR" class="w-20 h-20 rounded" />
             <span class="text-blue-900 text-[10px] mt-1">Venmo @swgoh-rote</span>
           </div>
+          <a href="https://ko-fi.com/swgohrote" target="_blank" class="active:scale-95 transition-transform" @click="onSupportLinkClick">
+            <img src="/images/kofi.webp" alt="Ko-fi" class="h-10 rounded-lg shadow-sm" />
+          </a>
         </div>
+
+        <iframe id="kofiframe" src="https://ko-fi.com/swgohrote/?hidefeed=true&widget=true&embed=true&preview=true"
+          class="border-none w-full mt-4 rounded-lg" style="background: #f9f9f9; padding: 4px;" height="400"
+          title="swgohrote" />
       </div>
     </USlideover>
 

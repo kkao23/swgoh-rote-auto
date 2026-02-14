@@ -26,7 +26,7 @@ export const hondoMixedP2: dataType[] = [
         omi: true,
     },
     {
-        lead: 'Omega (Mercenary) (Omi)',
+        lead: 'Omega (Mercenary)',
         leadFull: 'Omega with Bad Batch Mercenaries',
         others: 'Crosshair, Wrecker, Hunter',
         notes: 'easy full auto with Wrecker Omi, leave Batcher out, R7+ Recommended',

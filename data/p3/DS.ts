@@ -85,7 +85,7 @@ export const dsGenericP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'DTMG (Enoch omi)',
+        lead: 'DTMG',
         leadFull: 'Dark Trooper Moff Gideon',
         others: 'Scout Trooper, Captain Enoch (omi), Death Trooper, Moff Gideon',
         notes: 'auto',
@@ -176,7 +176,7 @@ export const drAphraP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Aphra (IPD Omicron)',
+        lead: 'Aphra (IPD Omi)',
         others: 'Darth Vader, BT1, IPD (omicron), 0-0-0',
         notes: 'auto, expensive',
         videos: [{ url: 'https://youtu.be/MTkMzJMayUA?si=FfDoECPNw7uALL_n', creator: 'anonymous' }],

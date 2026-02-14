@@ -200,7 +200,7 @@ export const zeffoCombat: dataType[] = [
         interactionType: [interactionType.TARGET_START]
     },
     {
-        lead: 'Omega (omi)',
+        lead: 'Omega',
         others: 'Bad Batch Mercenaries',
         notes: 'auto but dont mark the big bot in wave 1',
         videos: [{ url: 'https://youtu.be/6kIPMiz3jKE' }],

@@ -4,6 +4,8 @@ const { gtag } = useGtag()
 import { trackEvent } from '~/util/analytics'
 import { useLocalStorage, useWindowScroll, useMediaQuery } from '@vueuse/core'
 
+const isBudgetPage = computed(() => route.path === '/budget')
+
 const isMobile = useMediaQuery('(max-width: 768px)')
 
 const isAlertOpen = ref(false)
@@ -117,7 +119,7 @@ const navigationLinks = [
             and tips.</p>
         </div>
       </div>
-      <div v-if="!isFavoriteBannerHidden" class="mx-4 mb-4 relative">
+      <div v-if="!isBudgetPage && !isFavoriteBannerHidden" class="mx-4 mb-4 relative">
         <UAlert icon="i-heroicons-heart-solid" color="pink" variant="soft" title="New!" description="Save your favorite teams by tapping the ❤️ heart icon next to the share button."
           :ui="{ title: 'text-pink-100 font-bold', description: 'text-pink-100' }" />
         <button @click="isFavoriteBannerHidden = true"
@@ -176,7 +178,7 @@ const navigationLinks = [
     </div>
 
     <!-- Floating Suggest Team Button -->
-    <SuggestTeamButton />
+    <SuggestTeamButton v-if="!isBudgetPage" />
 
     <!-- Support Nudge -->
     <Transition name="nudge">

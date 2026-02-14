@@ -2,7 +2,7 @@
 const route = useRoute()
 const { gtag } = useGtag()
 import { trackEvent } from '~/util/analytics'
-import { useLocalStorage } from '@vueuse/core'
+import { useLocalStorage, useWindowScroll } from '@vueuse/core'
 
 const isAlertOpen = ref(false)
 const isNoticeHidden = ref(false)
@@ -10,13 +10,25 @@ const isFavoriteBannerHidden = useLocalStorage('swgoh-rote-favorite-banner-hidde
 
 const isSupportOpen = ref(false)
 
+const { y: scrollY } = useWindowScroll()
+const lastScrollY = ref(0)
+const isNavHidden = ref(false)
+
+watch(scrollY, (newY) => {
+  if (newY > lastScrollY.value && newY > 50) {
+    isNavHidden.value = true
+  } else {
+    isNavHidden.value = false
+  }
+  lastScrollY.value = newY
+})
+
 watch(() => route.path, (newPath) => {
   const labels: Record<string, string> = {
     '/': 'Home',
     '/map-view': 'Map',
     '/usage': 'Search',
-    '/tier-list': 'Tier List',
-    '/support': 'Support'
+    '/tier-list': 'Tier List'
   }
 
   gtag('event', 'nav_click', {
@@ -54,8 +66,8 @@ const navigationLinks = [
   {
     label: 'Support',
     icon: 'i-heroicons-heart',
-    to: '/support',
     click: () => {
+      gtag('event', 'nav_click', { target: 'Support', transport_type: 'beacon' })
       isSupportOpen.value = true
     }
   }
@@ -81,7 +93,8 @@ const navigationLinks = [
         </div>
       </div>
       <div v-if="!isFavoriteBannerHidden" class="mx-4 mb-4 relative">
-        <UAlert icon="i-heroicons-heart-solid" color="pink" variant="soft" title="New!" description="Save your favorite teams by tapping the ❤️ heart icon next to the share button." />
+        <UAlert icon="i-heroicons-heart-solid" color="pink" variant="soft" title="New!" description="Save your favorite teams by tapping the ❤️ heart icon next to the share button."
+          :ui="{ title: 'text-pink-100 font-bold', description: 'text-pink-100' }" />
         <button @click="isFavoriteBannerHidden = true"
           class="absolute top-1.5 right-2 w-5 h-5 flex items-center justify-center rounded-full bg-pink-100 border border-pink-400 text-pink-600 hover:bg-pink-200 hover:text-pink-700 transition-colors z-10"
           title="Dismiss notice">
@@ -114,7 +127,8 @@ const navigationLinks = [
 
       <!-- Bottom Navigation Footer -->
       <footer
-        class="fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 border-t-2 border-blue-500 pb-[env(safe-area-inset-bottom)]">
+        class="fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 border-t-2 border-blue-500 pb-[env(safe-area-inset-bottom)] transition-transform duration-300"
+        :class="isNavHidden ? 'translate-y-full' : 'translate-y-0'">
         <UHorizontalNavigation :links="navigationLinks" :ui="{
           container: 'flex justify-around w-full',
           base: 'group relative flex flex-col items-center justify-center gap-1 py-2 px-1',
@@ -124,14 +138,14 @@ const navigationLinks = [
 
           // Forces states using ! to win the specificity battle
           active: '!text-white',
-          inactive: '!text-gray-400 group-hover:!text-white',
+          inactive: '!text-yellow-400 group-hover:!text-white',
 
           icon: {
             base: 'w-6 h-6 transition-colors duration-200',
             active: '!text-white',
-            inactive: '!text-yellow-400' // Inherits from parent color
+            inactive: '!text-yellow-400'
           },
-          label: 'text-[10px] sm:text-xs font-medium !text-yellow-400 transition-colors duration-200'
+          label: 'text-[10px] sm:text-xs font-medium transition-colors duration-200'
         }" />
       </footer>
     </div>

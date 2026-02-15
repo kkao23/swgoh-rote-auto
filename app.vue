@@ -150,6 +150,10 @@ const navigationLinks = [
           </button>
         </div> -->
       <NuxtPage />
+      <div class="px-4 pt-3 pb-20 text-[11px] leading-relaxed text-slate-400">
+        SWGOH RoTE Auto Guide provides free digital tools (RoTE auto-battle guidance, team search, and crystal budget planning).
+        Support links are optional donations for hosting and maintenance. No physical goods, subscriptions, or in-game items are sold.
+      </div>
       <div class="bg-color flex items-center justify-between text-white px-4 py-1 rounded-b-xl"></div>
 
       <!-- Bottom Navigation Footer -->
@@ -204,6 +208,14 @@ const navigationLinks = [
         <p class="text-blue-900 text-xs font-bold mb-4 px-6 leading-tight">
           This tool is free and ad-free — help keep it that way!
         </p>
+
+        <div class="w-full max-w-md bg-white/70 border border-sky-200 rounded-xl p-3 text-left text-blue-900 text-xs mb-4">
+          <p class="font-semibold mb-1">Donation disclosure</p>
+          <p>
+            These links are optional tips to support SWGOH RoTE Auto Guide hosting and maintenance.
+            You are supporting an existing free digital tool. No physical products, subscriptions, or guaranteed in-game benefits are sold.
+          </p>
+        </div>
 
         <div class="flex items-center gap-4">
           <a href="https://buymeacoffee.com/captsolo" target="_blank" class="active:scale-95 transition-transform" @click="onSupportLinkClick">

@@ -1,6 +1,7 @@
 export const guaranteedIncome = {
   loginCalendarMonthly: 380,
   galacticBountiesMonthly: 200,
+  kesselRunMonthly: 200,
   dailiesDaily: 80,
   galacticWarDaily: 25,
 }
@@ -18,8 +19,8 @@ export const fleetRankOptions = [
 ]
 
 export const GAC_ROUNDS_PER_YEAR = 13
-export const GAC_WINS_PER_ROUND = 6
-export const GAC_LOSSES_PER_ROUND = 6
+export const GAC_WINS_PER_ROUND = 4.5
+export const GAC_LOSSES_PER_ROUND = 4.5
 
 export const gacDivisionOptions = [
   { label: 'Kyber 1', value: 'kyber-1', daily: 260, victory: 900, defeat: 200, championship: 2135 },

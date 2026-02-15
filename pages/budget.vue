@@ -29,6 +29,26 @@ import type { EnergyType, MarqueeGoal } from '~/data/budgetExpenses'
 const DAYS_PER_MONTH = 30
 const { gtag } = useGtag()
 
+useSeoMeta({
+  title: 'SWGOH Crystal Budget Wizard - Daily & Monthly Crystal Planner',
+  description: 'Estimate your Star Wars Galaxy of Heroes crystal income, expenses, and net crystal budget with assumptions for Fleet Arena, GAC, Territory Battles, energy refreshes, shard refreshes, and marquee goals.',
+  keywords: 'SWGOH crystal calculator, SWGOH budget wizard, SWGOH crystal income, SWGOH crystal expenses, Star Wars Galaxy of Heroes planner',
+  robots: 'index, follow',
+  ogTitle: 'SWGOH Crystal Budget Wizard',
+  ogDescription: 'Plan your SWGOH crystals with a step-by-step calculator for income, expenses, and net monthly crystal budget.',
+  ogUrl: 'https://swgohrote.com/budget',
+  ogType: 'website',
+  twitterTitle: 'SWGOH Crystal Budget Wizard',
+  twitterDescription: 'Estimate daily and monthly SWGOH crystals with income and expense assumptions.',
+  twitterCard: 'summary_large_image',
+})
+
+useHead({
+  link: [
+    { rel: 'canonical', href: 'https://swgohrote.com/budget' },
+  ],
+})
+
 onMounted(() => {
   gtag('event', 'budget_page_view', {
     path: '/budget',
@@ -610,8 +630,23 @@ watch([isWizardComplete, areExpenseStepsComplete], ([wizardDone, expensesDone]) 
 <template>
   <div class="flex-1 bg-color min-h-screen">
     <UContainer class="py-8">
+      <section class="sr-only" aria-label="Crystal budget wizard page description">
+        <h2>SWGOH Crystal Budget Calculator</h2>
+        <p>
+          This page helps Star Wars Galaxy of Heroes players estimate daily and monthly crystal flow.
+          It includes income from guaranteed rewards, Fleet Arena, Grand Arena Championship, Territory Battles,
+          Peridea Patrol, and Duel of the Fates, plus optional purchased crystals.
+        </p>
+        <p>
+          It also estimates expenses for energy refreshes, hard node refreshes, marquee unlock goals,
+          and era or materials spending, then calculates net crystal gain or loss.
+        </p>
+      </section>
+
       <h1 class="text-2xl font-bold text-white mb-2">Crystal Budget Wizard - Beta</h1>
-      <p class="text-gray-300 mb-6">Monthly and daily crystal budgeting.</p>
+      <p class="text-gray-300 mb-6">
+        Estimate SWGOH daily and monthly crystal income, spending, and net balance with transparent assumptions for GAC, Fleet Arena, Territory Battles, refreshes, and marquee goals.
+      </p>
 
       <details class="sticky top-3 z-30 bg-gradient-to-r from-emerald-900/90 to-cyan-900/80 border border-emerald-700 rounded-xl p-4 mb-5 shadow-xl backdrop-blur-sm">
         <summary class="cursor-pointer select-none">

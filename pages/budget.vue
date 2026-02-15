@@ -69,6 +69,7 @@ const isMarqueeSourceOpen = ref(false)
 const guaranteedMonthlyIncome = computed(() => {
   return guaranteedIncome.loginCalendarMonthly
     + guaranteedIncome.galacticBountiesMonthly
+    + guaranteedIncome.kesselRunMonthly
     + ((guaranteedIncome.dailiesDaily + guaranteedIncome.galacticWarDaily) * DAYS_PER_MONTH)
 })
 
@@ -707,6 +708,10 @@ watch([isWizardComplete, areExpenseStepsComplete], ([wizardDone, expensesDone]) 
               <span class="font-semibold">{{ guaranteedIncome.galacticBountiesMonthly }} / month</span>
             </li>
             <li class="flex justify-between text-slate-200">
+              <span>Kessel Run</span>
+              <span class="font-semibold">{{ guaranteedIncome.kesselRunMonthly }} / month</span>
+            </li>
+            <li class="flex justify-between text-slate-200">
               <span>Dailies</span>
               <span class="font-semibold">{{ guaranteedIncome.dailiesDaily }} / day</span>
             </li>
@@ -746,6 +751,10 @@ watch([isWizardComplete, areExpenseStepsComplete], ([wizardDone, expensesDone]) 
                 <p>
                   <span class="font-semibold text-white">Galactic Bounties:</span>
                   assuming this event runs once per month, each sim gives 100 crystals, and you can sim it twice (2 × 100 = 200/month).
+                </p>
+                <p>
+                  <span class="font-semibold text-white">Kessel Run:</span>
+                  this can range from roughly 200 to 1200 crystals per month if you claim the web store daily. Since there is no reliable expected value published, this wizard uses a conservative default of 200/month.
                 </p>
                 <p>
                   <span class="font-semibold text-white">Dailies:</span>

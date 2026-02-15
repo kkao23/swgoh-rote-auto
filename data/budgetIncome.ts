@@ -1,6 +1,7 @@
 export const guaranteedIncome = {
   loginCalendarMonthly: 380,
   galacticBountiesMonthly: 200,
+  kesselRunMonthly: 200,
   dailiesDaily: 80,
   galacticWarDaily: 25,
 }

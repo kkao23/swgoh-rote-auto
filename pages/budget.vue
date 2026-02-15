@@ -30,22 +30,78 @@ const DAYS_PER_MONTH = 30
 const { gtag } = useGtag()
 
 useSeoMeta({
-  title: 'SWGOH Crystal Budget Wizard - Daily & Monthly Crystal Planner',
-  description: 'Estimate your Star Wars Galaxy of Heroes crystal income, expenses, and net crystal budget with assumptions for Fleet Arena, GAC, Territory Battles, energy refreshes, shard refreshes, and marquee goals.',
-  keywords: 'SWGOH crystal calculator, SWGOH budget wizard, SWGOH crystal income, SWGOH crystal expenses, Star Wars Galaxy of Heroes planner',
+  title: 'SWGOH Crystal Income Calculator - Daily & Monthly Budget Wizard',
+  description: 'Use this SWGOH crystal income calculator to estimate daily and monthly crystal income, expenses, and net crystal budget with transparent assumptions for Fleet Arena, GAC, Territory Battles, energy refreshes, shard refreshes, and marquee goals.',
+  keywords: 'SWGOH crystal income calculator, SWGOH crystal calculator, SWGOH budget wizard, SWGOH crystal income, SWGOH crystal expenses, Star Wars Galaxy of Heroes planner',
   robots: 'index, follow',
-  ogTitle: 'SWGOH Crystal Budget Wizard',
-  ogDescription: 'Plan your SWGOH crystals with a step-by-step calculator for income, expenses, and net monthly crystal budget.',
+  ogTitle: 'SWGOH Crystal Income Calculator',
+  ogDescription: 'Estimate SWGOH crystal income and expenses with a step-by-step daily and monthly calculator.',
   ogUrl: 'https://swgohrote.com/budget',
   ogType: 'website',
-  twitterTitle: 'SWGOH Crystal Budget Wizard',
-  twitterDescription: 'Estimate daily and monthly SWGOH crystals with income and expense assumptions.',
+  twitterTitle: 'SWGOH Crystal Income Calculator',
+  twitterDescription: 'Estimate daily and monthly SWGOH crystal income and expenses with transparent assumptions.',
   twitterCard: 'summary_large_image',
 })
+
+const softwareApplicationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'SoftwareApplication',
+  name: 'SWGOH Crystal Income Calculator',
+  applicationCategory: 'GameApplication',
+  operatingSystem: 'Web',
+  url: 'https://swgohrote.com/budget',
+  description: 'Calculator for Star Wars Galaxy of Heroes crystal income, expenses, and net monthly crystal budget.',
+  offers: {
+    '@type': 'Offer',
+    price: '0',
+    priceCurrency: 'USD',
+  },
+}
+
+const budgetFaqSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    {
+      '@type': 'Question',
+      name: 'How does this SWGOH crystal income calculator work?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'The calculator combines selected income sources and crystal expenses, then shows estimated daily and monthly net crystals.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does the calculator include GAC and Fleet Arena payouts?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. It includes GAC division payouts, fleet rank payouts, and other selected income categories like Territory Battles and Assault Battles.',
+      },
+    },
+    {
+      '@type': 'Question',
+      name: 'Does this include crystal spending like refreshes and marquee farming?',
+      acceptedAnswer: {
+        '@type': 'Answer',
+        text: 'Yes. It includes energy refreshes, hard node shard refreshes, marquee goals, and optional era or materials whaling.',
+      },
+    },
+  ],
+}
 
 useHead({
   link: [
     { rel: 'canonical', href: 'https://swgohrote.com/budget' },
+  ],
+  script: [
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify(softwareApplicationSchema),
+    },
+    {
+      type: 'application/ld+json',
+      children: JSON.stringify(budgetFaqSchema),
+    },
   ],
 })
 
@@ -676,10 +732,23 @@ watch([isWizardComplete, areExpenseStepsComplete], ([wizardDone, expensesDone]) 
         </p>
       </section>
 
-      <h1 class="text-2xl font-bold text-white mb-2">Crystal Budget Wizard - Beta</h1>
+      <h1 class="text-2xl font-bold text-white mb-2">SWGOH Crystal Income Calculator - Beta</h1>
       <p class="text-gray-300 mb-6">
         Estimate SWGOH daily and monthly crystal income, spending, and net balance with transparent assumptions for GAC, Fleet Arena, Territory Battles, refreshes, and marquee goals.
       </p>
+
+      <section class="mb-6 rounded-xl border border-slate-700 bg-slate-900/60 p-4 text-sm text-slate-200">
+        <h2 class="text-base font-semibold text-white mb-2">How this SWGOH crystal income calculator works</h2>
+        <p class="mb-2">
+          Pick your current game activity and spending habits, and the tool calculates estimated crystals per day and per month.
+          Every major source is shown separately so you can audit the math.
+        </p>
+        <ul class="list-disc ml-5 space-y-1 text-slate-300">
+          <li>Income sources include guaranteed rewards, Fleet Arena, GAC, Territory Battles, and selected Assault Battles.</li>
+          <li>Expense sources include energy refreshes, hard node refreshes, marquee shard goals, and optional era/material spending.</li>
+          <li>The final table reports net crystal gain or loss using the same assumptions shown in each step.</li>
+        </ul>
+      </section>
 
       <details class="sticky top-3 z-30 bg-gradient-to-r from-emerald-900/90 to-cyan-900/80 border border-emerald-700 rounded-xl p-4 mb-5 shadow-xl backdrop-blur-sm">
         <summary class="cursor-pointer select-none">

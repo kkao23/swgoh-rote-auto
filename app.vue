@@ -152,6 +152,11 @@ const navigationLinks = [
       <NuxtPage />
       <div class="px-4 pt-3 pb-20 text-[11px] leading-relaxed text-slate-400">
         SWGOH RoTE Auto Guide provides free digital tools (RoTE auto-battle guidance, team search, and crystal budget planning).
+        Try the
+        <NuxtLink to="/budget" class="text-cyan-300 underline underline-offset-2 hover:text-cyan-200">
+          SWGOH crystal income calculator
+        </NuxtLink>
+        for daily and monthly planning.
         Support links are optional donations for hosting and maintenance. No physical goods, subscriptions, or in-game items are sold.
       </div>
       <div class="bg-color flex items-center justify-between text-white px-4 py-1 rounded-b-xl"></div>

@@ -107,6 +107,38 @@ const gacAnnualEndOfRoundRewards = computed(() => {
   return GAC_END_OF_ROUND_REWARD * GAC_END_OF_ROUND_WEEKS_PER_YEAR
 })
 
+const gacMonthlyDailyPayoutIncome = computed(() => {
+  if (!selectedGacPayout.value) {
+    return 0
+  }
+  return (selectedGacPayout.value.daily * 365) / 12
+})
+
+const gacMonthlyVictoryIncome = computed(() => {
+  if (!selectedGacPayout.value) {
+    return 0
+  }
+  return (selectedGacPayout.value.victory * GAC_WINS_PER_ROUND * GAC_ROUNDS_PER_YEAR) / 12
+})
+
+const gacMonthlyDefeatIncome = computed(() => {
+  if (!selectedGacPayout.value) {
+    return 0
+  }
+  return (selectedGacPayout.value.defeat * GAC_LOSSES_PER_ROUND * GAC_ROUNDS_PER_YEAR) / 12
+})
+
+const gacMonthlyChampionshipIncome = computed(() => {
+  if (!selectedGacPayout.value) {
+    return 0
+  }
+  return (selectedGacPayout.value.championship * GAC_ROUNDS_PER_YEAR) / 12
+})
+
+const gacMonthlyEndOfRoundIncome = computed(() => {
+  return gacAnnualEndOfRoundRewards.value / 12
+})
+
 const gacAnnualIncome = computed(() => {
   const payout = selectedGacPayout.value
   if (!payout) {
@@ -886,6 +918,39 @@ watch([isWizardComplete, areExpenseStepsComplete], ([wizardDone, expensesDone]) 
               <p class="text-xs uppercase tracking-wide text-slate-400 mb-1">End of Round Rewards</p>
               <p class="text-lg font-bold text-violet-300">{{ GAC_END_OF_ROUND_REWARD }}</p>
               <p class="text-[11px] text-slate-400 mt-1">3 of 4 weeks ({{ GAC_END_OF_ROUND_WEEKS_PER_YEAR }}/year)</p>
+            </div>
+          </div>
+
+          <div class="px-3 pb-3">
+            <div class="rounded-lg border border-slate-700 overflow-hidden">
+              <div class="grid grid-cols-2 bg-slate-800/70 text-xs uppercase tracking-wide text-slate-300">
+                <p class="px-3 py-2">Monthly source</p>
+                <p class="px-3 py-2 text-right">Crystals/month</p>
+              </div>
+              <div class="grid grid-cols-2 border-t border-slate-700 text-sm text-slate-200">
+                <p class="px-3 py-2">Daily payout ({{ selectedGacPayout?.daily || 0 }} × 365 / 12)</p>
+                <p class="px-3 py-2 text-right">{{ gacMonthlyDailyPayoutIncome.toFixed(1) }}</p>
+              </div>
+              <div class="grid grid-cols-2 border-t border-slate-700 text-sm text-slate-200">
+                <p class="px-3 py-2">Victory payouts ({{ selectedGacPayout?.victory || 0 }} × {{ GAC_WINS_PER_ROUND }} × {{ GAC_ROUNDS_PER_YEAR }} / 12)</p>
+                <p class="px-3 py-2 text-right">{{ gacMonthlyVictoryIncome.toFixed(1) }}</p>
+              </div>
+              <div class="grid grid-cols-2 border-t border-slate-700 text-sm text-slate-200">
+                <p class="px-3 py-2">Defeat payouts ({{ selectedGacPayout?.defeat || 0 }} × {{ GAC_LOSSES_PER_ROUND }} × {{ GAC_ROUNDS_PER_YEAR }} / 12)</p>
+                <p class="px-3 py-2 text-right">{{ gacMonthlyDefeatIncome.toFixed(1) }}</p>
+              </div>
+              <div class="grid grid-cols-2 border-t border-slate-700 text-sm text-slate-200">
+                <p class="px-3 py-2">Championship payout ({{ selectedGacPayout?.championship || 0 }} × {{ GAC_ROUNDS_PER_YEAR }} / 12)</p>
+                <p class="px-3 py-2 text-right">{{ gacMonthlyChampionshipIncome.toFixed(1) }}</p>
+              </div>
+              <div class="grid grid-cols-2 border-t border-slate-700 text-sm text-slate-200">
+                <p class="px-3 py-2">End-of-round rewards ({{ GAC_END_OF_ROUND_REWARD }} × {{ GAC_END_OF_ROUND_WEEKS_PER_YEAR }} / 12)</p>
+                <p class="px-3 py-2 text-right">{{ gacMonthlyEndOfRoundIncome.toFixed(1) }}</p>
+              </div>
+              <div class="grid grid-cols-2 border-t border-slate-600 bg-slate-800/80 text-sm font-semibold text-violet-200">
+                <p class="px-3 py-2">Total estimated monthly GAC income</p>
+                <p class="px-3 py-2 text-right">{{ gacMonthlyIncome.toFixed(0) }}</p>
+              </div>
             </div>
           </div>
         </details>

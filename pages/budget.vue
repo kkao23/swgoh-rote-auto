@@ -798,7 +798,7 @@ watch([isWizardComplete, areExpenseStepsComplete], ([wizardDone, expensesDone]) 
       <div v-if="fleetComplete" id="step-gac" :class="['bg-slate-900/70 border border-slate-700 rounded-xl p-5 mt-5 scroll-mt-28', isCurrentStep('gac') ? 'step-highlight' : '']">
         <h2 class="text-lg font-semibold text-white mb-2">Step 2: GAC Division</h2>
         <p class="text-sm text-slate-300 mb-2">Which GAC division are you currently in?</p>
-        <p class="text-xs text-slate-400 mb-4">Assumption: 13 GAC rounds/year, 6 wins + 6 losses per round, and end of round rewards (750/2) for 3 out of 4 weeks.</p>
+        <p class="text-xs text-slate-400 mb-4">Assumption: 13 GAC rounds/year, average 4.5 wins + 4.5 losses per active cycle, and end of round rewards (750/2) for 3 out of 4 weeks.</p>
 
         <button
           type="button"

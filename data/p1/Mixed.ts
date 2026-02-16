@@ -35,9 +35,9 @@ export const qiraMixedP1: dataType[] = [
     },
     {
         lead: 'Qira (Rey/CAT)',
-        others: 'Rey, CAT, Dash',
+        others: 'Rey, CAT, Ben Solo',
         notes: 'auto',
-        videos: [{url: 'https://youtu.be/9ZoFbJLgMeQ?si=52LjaRA6F8zWoIIE&t=334', creator: 'pico'}],
+        videos: [{url: 'https://youtu.be/gRYjQVOTQR0'}],
         icon: '/icons/characters/tex.charui_rey_tros.png',
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,

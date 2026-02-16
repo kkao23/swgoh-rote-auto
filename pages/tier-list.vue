@@ -1,5 +1,8 @@
 <script setup lang="ts">
+import { useLocalStorage } from '@vueuse/core'
+
 const { gtag } = useGtag()
+const isDarkMode = useLocalStorage('swgoh-rote-dark-mode', true)
 
 useSeoMeta({
   title: 'SWGOH Omicron Tier List - RoTE Auto Guide',
@@ -16,7 +19,7 @@ onMounted(() => {
 <template>
   <div class="px-4 pb-8">
     <section class="max-w-4xl mx-auto mb-4 text-center">
-      <h1 class="text-white text-xl font-semibold mb-2">SWGOH Omicron Tier List</h1>
+      <h1 :class="['text-xl font-semibold mb-2', isDarkMode ? 'text-white' : 'text-slate-900']">SWGOH Omicron Tier List</h1>
       <p class="text-gray-300 text-sm">
         Browse this SWGOH omicron tier list for Rise of the Empire Territory Battles.
         Rankings focus on practical value for auto-friendly clears, roster efficiency, and long-term utility.

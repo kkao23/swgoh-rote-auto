@@ -16,6 +16,18 @@ const isSupportOpen = ref(false)
 
 const showSupportNudge = ref(false)
 const hasClickedSupport = useLocalStorage('swgoh-rote-support-clicked', false)
+const isDarkMode = useLocalStorage('swgoh-rote-dark-mode', true)
+
+watch(isDarkMode, (isDark) => {
+  if (!process.client) {
+    return
+  }
+  document.documentElement.classList.toggle('dark', isDark)
+}, { immediate: true })
+
+function toggleTheme() {
+  isDarkMode.value = !isDarkMode.value
+}
 
 onMounted(() => {
   if (!hasClickedSupport.value) {
@@ -102,17 +114,30 @@ const navigationLinks = [
 </script>
 <template>
   <UApp>
-    <div class="bg-color flex flex-col min-h-[100dvh] pt-8">
+    <div :class="[isDarkMode ? 'bg-color' : 'bg-slate-100 light-mode', 'flex flex-col min-h-[100dvh] pt-8 transition-colors duration-200']">
       <div class="px-4">
-        <UCard
-          class="mb-4 bg-gradient-to-r from-blue-400 via-indigo-500 to-red-600 text-white shadow-lg rounded-xl px-6"
-          :ui="{ header: { padding: 'py-3' } }">
-          <template #header>
-            <div class="flex justify-center items-center">
-              <h1 class="text-l font-[Orbitron]">SWGOH RoTE Auto Guide</h1>
-            </div>
-          </template>
-        </UCard>
+        <div class="mb-4 flex items-stretch gap-3">
+          <UCard
+            class="flex-1 min-w-0 bg-gradient-to-r from-blue-400 via-indigo-500 to-red-600 text-white shadow-lg rounded-xl px-6"
+            :ui="{ header: { padding: 'py-3' } }">
+            <template #header>
+              <div class="flex justify-center items-center">
+                <h1 class="text-l font-[Orbitron]">SWGOH RoTE Auto Guide</h1>
+              </div>
+            </template>
+          </UCard>
+
+          <button
+            type="button"
+            @click="toggleTheme"
+            class="w-14 shrink-0 rounded-xl border shadow-lg flex items-center justify-center transition-colors"
+            :class="isDarkMode ? 'bg-slate-800 text-yellow-300 border-slate-600 hover:bg-slate-700' : 'bg-white text-slate-700 border-slate-300 hover:bg-slate-50'"
+            :title="isDarkMode ? 'Switch to light mode' : 'Switch to dark mode'"
+            aria-label="Toggle light and dark mode"
+          >
+            <UIcon :name="isDarkMode ? 'i-heroicons-sun' : 'i-heroicons-moon'" class="w-5 h-5" />
+          </button>
+        </div>
         <div class="sr-only">
           <p>Master Rise of the Empire Territory Battles with
             auto-battle teams
@@ -257,5 +282,86 @@ const navigationLinks = [
 .nudge-enter-from,
 .nudge-leave-to {
   transform: translateX(100%);
+}
+
+.light-mode {
+  --ui-bg: #f1f5f9;
+  --ui-bg-elevated: #ffffff;
+  --ui-bg-muted: #e2e8f0;
+  --ui-bg-accented: #cbd5e1;
+  --ui-border: #cbd5e1;
+  --ui-text: #0f172a;
+  --ui-text-muted: #334155;
+  --ui-text-dimmed: #475569;
+}
+
+.light-mode .bg-color {
+  background-color: #f1f5f9 !important;
+}
+
+.light-mode .text-gray-300,
+.light-mode .text-slate-300 {
+  color: #334155 !important;
+}
+
+.light-mode .text-gray-400,
+.light-mode .text-slate-400,
+.light-mode .text-slate-500 {
+  color: #475569 !important;
+}
+
+.light-mode .text-pink-100 {
+  color: #be185d !important;
+}
+
+.light-mode .border-slate-700,
+.light-mode .border-slate-600,
+.light-mode .border-slate-500 {
+  border-color: #cbd5e1 !important;
+}
+
+.light-mode .bg-slate-900\/70,
+.light-mode .bg-slate-900\/80,
+.light-mode .bg-slate-800\/70,
+.light-mode .bg-slate-800\/40,
+.light-mode .bg-slate-800 {
+  background-color: #ffffff !important;
+}
+
+/* Light mode: Phases accordion readability */
+.light-mode .acc button {
+  color: #111827 !important;
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+}
+
+/* Light mode: mission fragment readability */
+.light-mode .mission-fragment .text-gray-200,
+.light-mode .mission-fragment .text-gray-300,
+.light-mode .mission-fragment .text-gray-400,
+.light-mode .mission-fragment .text-zinc-200,
+.light-mode .mission-fragment .text-white {
+  color: #111827 !important;
+}
+
+.light-mode .mission-fragment .text-blue-200 {
+  color: #1d4ed8 !important;
+}
+
+/* Teleported modals are outside component wrappers; target class directly */
+html:not(.dark) .mission-fragment {
+  color: #334155 !important;
+}
+
+html:not(.dark) .mission-team-label {
+  color: #64748b !important;
+}
+
+html:not(.dark) .text-purple-300 {
+  color: #6d28d9 !important;
+}
+
+html:not(.dark) .text-blue-200 {
+  color: #1e3a8a !important;
 }
 </style>

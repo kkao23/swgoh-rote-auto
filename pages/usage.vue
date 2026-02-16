@@ -4,8 +4,10 @@ import { data } from '~/data/data';
 import { searchLeads } from '~/util/searchLeads';
 import { type data as dataType } from "~/models/data";
 import { difficulty } from '~/models/data';
+import { useLocalStorage } from '@vueuse/core'
 
 const { gtag } = useGtag()
+const isDarkMode = useLocalStorage('swgoh-rote-dark-mode', true)
 
 useSeoMeta({
   title: 'SWGOH Team Search - Find RoTE Auto Teams',
@@ -71,11 +73,14 @@ watch(searchQuery, () => {
 });
 </script>
 <template>
-<div class="flex-1 bg-gray-900 text-gray-100 p-8 min-h-screen">
+<div :class="[
+  'flex-1 p-8 min-h-screen transition-colors duration-200',
+  isDarkMode ? 'bg-gray-900 text-gray-100' : 'bg-slate-100 text-slate-900'
+]">
     <div class="max-w-2xl mx-auto">
       <section class="mb-6 text-center">
-        <h1 class="text-white text-xl font-semibold mb-2">SWGOH Team Search</h1>
-        <p class="text-gray-300 text-sm">
+        <h1 :class="['text-xl font-semibold mb-2', isDarkMode ? 'text-white' : 'text-slate-900']">SWGOH Team Search</h1>
+        <p :class="['text-sm', isDarkMode ? 'text-gray-300' : 'text-slate-700']">
           Search RoTE auto teams by lead name to quickly find recommended squads, difficulty, and linked videos.
           This SWGOH team finder is designed for fast in-game lookup during Territory Battles.
         </p>
@@ -86,24 +91,35 @@ watch(searchQuery, () => {
           v-model="searchQuery"
           type="text"
           placeholder="Search for a lead..."
-          class="w-full p-3 rounded-lg bg-gray-800 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
+          :class="[
+            'w-full p-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors',
+            isDarkMode
+              ? 'bg-gray-800 text-white placeholder-gray-400 border-gray-700'
+              : 'bg-white text-slate-900 placeholder-slate-500 border-slate-300'
+          ]"
         />
       </div>
 
       <div v-if="searchQuery && Object.keys(groupedResults).length > 0">
         <h2 class="text-xl font-semibold mb-4">Search Results ({{ searchResults.length }})</h2>
         <div v-for="(group, path) in groupedResults" :key="path" class="mb-6">
-          <button @click="toggleCollapse(path)" class="flex justify-between items-center w-full p-4 rounded-lg bg-gray-700 text-left text-white shadow-lg focus:outline-none"
+          <button @click="toggleCollapse(path)" :class="[
+            'flex justify-between items-center w-full p-4 rounded-lg text-left shadow-lg focus:outline-none transition-colors',
+            isDarkMode ? 'bg-gray-700 text-white' : 'bg-slate-200 text-slate-900 border border-slate-300'
+          ]"
 >            <h3 class="text-lg font-bold">{{ formatPath(path) }} ({{ group.length }})</h3>
             <span class="transition-transform duration-200 transform" :class="{'rotate-90': !collapsedState[path]}">
               ▶
             </span>
           </button>
           <div v-if="!collapsedState[path]" class="mt-2">
-            <div v-for="(result, index) in group" :key="result.lead + index" class="bg-gray-800 p-4 rounded-lg mb-2 shadow-inner">
+            <div v-for="(result, index) in group" :key="result.lead + index" :class="[
+              'p-4 rounded-lg mb-2 shadow-inner transition-colors',
+              isDarkMode ? 'bg-gray-800' : 'bg-white border border-slate-300'
+            ]">
               <h4 class="text-lg font-bold text-blue-400">Lead: {{ result.lead }}</h4>
-              <p class="text-gray-300">Others: {{ result.others }}</p>
-              <p class="text-gray-400 text-sm italic">{{ result.notes }}</p>
+              <p :class="isDarkMode ? 'text-gray-300' : 'text-slate-700'">Others: {{ result.others }}</p>
+              <p :class="isDarkMode ? 'text-gray-400 text-sm italic' : 'text-slate-600 text-sm italic'">{{ result.notes }}</p>
               <p class="text-sm mt-2">Difficulty: <span :class="{
                 'text-cyan-400': result.difficulty === difficulty.VERY_EASY,
                 'text-green-400': result.difficulty === difficulty.EASY,
@@ -124,10 +140,10 @@ watch(searchQuery, () => {
         </div>
       </div>
       <div v-else-if="searchQuery && Object.keys(groupedResults).length === 0">
-        <p class="text-gray-400 text-center">No results found for "{{ searchQuery }}".</p>
+        <p :class="['text-center', isDarkMode ? 'text-gray-400' : 'text-slate-600']">No results found for "{{ searchQuery }}".</p>
       </div>
       <div v-else>
-        <p class="text-gray-400 text-center">Start typing to search for a lead.</p>
+        <p :class="['text-center', isDarkMode ? 'text-gray-400' : 'text-slate-600']">Start typing to search for a lead.</p>
       </div>
     </div>
   </div>

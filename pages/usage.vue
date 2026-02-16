@@ -5,6 +5,19 @@ import { searchLeads } from '~/util/searchLeads';
 import { type data as dataType } from "~/models/data";
 import { difficulty } from '~/models/data';
 
+const { gtag } = useGtag()
+
+useSeoMeta({
+  title: 'SWGOH Team Search - Find RoTE Auto Teams',
+})
+
+onMounted(() => {
+  gtag('event', 'usage_page_view', {
+    path: '/usage',
+    transport_type: 'beacon',
+  })
+})
+
 const searchQuery = ref('');
 const searchResults = ref<dataType[]>([]);
 const collapsedState = ref<Record<string, boolean>>({});
@@ -60,6 +73,14 @@ watch(searchQuery, () => {
 <template>
 <div class="flex-1 bg-gray-900 text-gray-100 p-8 min-h-screen">
     <div class="max-w-2xl mx-auto">
+      <section class="mb-6 text-center">
+        <h1 class="text-white text-xl font-semibold mb-2">SWGOH Team Search</h1>
+        <p class="text-gray-300 text-sm">
+          Search RoTE auto teams by lead name to quickly find recommended squads, difficulty, and linked videos.
+          This SWGOH team finder is designed for fast in-game lookup during Territory Battles.
+        </p>
+      </section>
+
       <div class="mb-6">
         <input
           v-model="searchQuery"

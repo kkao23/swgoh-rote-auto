@@ -1,6 +1,19 @@
 <script setup lang="ts">
 import { useRouter } from 'vue-router'
 
+const { gtag } = useGtag()
+
+useSeoMeta({
+  title: 'SWGOH RoTE Map View - Planet Mission Map',
+})
+
+onMounted(() => {
+  gtag('event', 'map_view_page_view', {
+    path: '/map-view',
+    transport_type: 'beacon',
+  })
+})
+
 interface PlanetRegion {
   name: string
   slug: string
@@ -51,6 +64,13 @@ function navigateToPlanet(slug: string) {
 
 <template>
   <div class="px-4 pb-8">
+    <section class="max-w-4xl mx-auto mb-4 text-center">
+      <h1 class="text-white text-xl font-semibold mb-2">SWGOH RoTE Map View</h1>
+      <p class="text-gray-300 text-sm">
+        Use this interactive Rise of the Empire map to quickly find SWGOH planet mission details, platoons, and team guidance.
+        Click any planet to open its mission board.
+      </p>
+    </section>
     <p class="text-gray-400 text-sm text-center mb-6">Click on a planet to view mission details</p>
     
     <div class="relative w-full max-w-4xl mx-auto">

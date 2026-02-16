@@ -1,5 +1,28 @@
+<script setup lang="ts">
+const { gtag } = useGtag()
+
+useSeoMeta({
+  title: 'SWGOH Omicron Tier List - RoTE Auto Guide',
+})
+
+onMounted(() => {
+  gtag('event', 'tier_list_page_view', {
+    path: '/tier-list',
+    transport_type: 'beacon',
+  })
+})
+</script>
+
 <template>
   <div class="px-4 pb-8">
+    <section class="max-w-4xl mx-auto mb-4 text-center">
+      <h1 class="text-white text-xl font-semibold mb-2">SWGOH Omicron Tier List</h1>
+      <p class="text-gray-300 text-sm">
+        Browse this SWGOH omicron tier list for Rise of the Empire Territory Battles.
+        Rankings focus on practical value for auto-friendly clears, roster efficiency, and long-term utility.
+      </p>
+    </section>
+
     <UCard class="bg-gray-800 text-white">
       <template #header>
         <div class="flex items-center justify-between">

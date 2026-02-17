@@ -280,6 +280,18 @@ export const rightLSP2: dataType[] = [
         omi: true,
         targeted: true
     },
+    {
+        lead: 'JMMW',
+        leadFull: 'Jedi Master Mace Windu',
+        others: 'Jocasta Nu, Kelleran Beq, Temple Guard, Depa Billaba (omicron)',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/cA40fp4eNUY' }],
+        icon: '/icons/characters/tex.charui_jedimastermacewindu.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        omi: true
+    }
     // {
     //     lead: 'GAS with QA',
     //     leadFull: 'General Anakin Skywalker with Queen Amidala',

@@ -35,12 +35,12 @@ export const acklayDSP2: dataType[] = [
     {
         lead: 'SLKR',
         leadFull: 'Supreme Leader Kylo Ren',
-        others: 'KRU, Hux, FOO, Sith Trooper',
-        notes: 'auto, use D Rey if you have her',
-        videos: [{ url: 'https://www.youtube.com/watch?v=vvGaQA5SWYQ&ab_channel=Egnards' }],
+        others: 'Dark Rey, whatever other First Order you have',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/Nytd6WxJ08A' }],
         icon: '/icons/characters/tex.charui_kyloren_tros.png',
-        difficulty: difficulty.EASY,
-        successRate: successRate.NINETY_PERCENT,
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
     },
     {
@@ -137,9 +137,9 @@ export const reekDSP2: dataType[] = [
         lead: 'Reva',
         others: 'GI, 5B, 7S, 8B',
         notes: 'auto',
-        videos: [{ url: 'https://www.youtube.com/watch?v=c6IZXe1YtHc', creator: 'egnards' }],
-        difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        videos: [{ url: 'https://youtu.be/grC8Q6YjdX4' }],
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         icon: '/icons/characters/tex.charui_thirdsister.png'
     },
@@ -308,7 +308,18 @@ export const nexuDSP2: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         omi: true,
-    }
+    },
+    {
+        lead: 'SEE (Super Sith)',
+        leadFull: 'Sith Eternal Emperor',
+        others: 'Darth Revan, Bane, Malak, the Stranger',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/25LcpIsymsk' }],
+        icon: '/icons/characters/tex.charui_espalpatine_pre.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
+    },
 ]
 
 export const shipsDSP2: dataType[] = [

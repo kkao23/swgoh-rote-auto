@@ -63,9 +63,9 @@ export const shipsMixedP2: dataType[] = [
     },
     {
         lead: 'Executor',
-        others: 'Hounds Tooth, XB, RC, Slave 1, IG2000',
-        notes: 'auto, you need RC, youll lose if RC is platooned',
-        videos: [{ url: 'https://www.youtube.com/watch?v=TMQZ4iO_V4w', creator: 'egnards' }],
+        others: 'Hounds Tooth, Punishing one, Xanadu Blood, Slave one and IG 2000',
+        notes: 'auto,  Start Razor crest over XB if you don\'t have RC platooned',
+        videos: [{ url: 'https://youtu.be/v01t66qncGA' }],
         icon: '/icons/ships/tex.charui_executor.png',
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
@@ -224,6 +224,17 @@ export const mixedP2: dataType[] = [
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
+    },
+    {
+        lead: 'Rey (Resistance)',
+        leadFull: 'Rey with Resistance',
+        others: 'Ben, C3PO, BB8 and JTR',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/84J-rVWq9b8' }],
+        icon: '/icons/characters/tex.charui_rey_tros.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
     },
 ]
 

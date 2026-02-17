@@ -717,7 +717,7 @@ watch([isWizardComplete, areExpenseStepsComplete], ([wizardDone, expensesDone]) 
 </script>
 
 <template>
-  <div class="flex-1 bg-color min-h-screen">
+  <div class="flex-1 bg-color min-h-screen budget-page">
     <UContainer class="py-8">
       <section class="sr-only" aria-label="Crystal budget wizard page description">
         <h2>SWGOH Crystal Budget Calculator</h2>
@@ -732,18 +732,18 @@ watch([isWizardComplete, areExpenseStepsComplete], ([wizardDone, expensesDone]) 
         </p>
       </section>
 
-      <h1 class="text-2xl font-bold text-white mb-2">SWGOH Crystal Income Calculator - Beta</h1>
+      <h1 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">SWGOH Crystal Income Calculator - Beta</h1>
       <p class="text-gray-300 mb-6">
         Estimate SWGOH daily and monthly crystal income, spending, and net balance with transparent assumptions for GAC, Fleet Arena, Territory Battles, refreshes, and marquee goals.
       </p>
 
       <section class="mb-6 rounded-xl border border-slate-700 bg-slate-900/60 p-4 text-sm text-slate-200">
-        <h2 class="text-base font-semibold text-white mb-2">How this SWGOH crystal income calculator works</h2>
+        <h2 class="text-base font-semibold text-slate-700 dark:text-white mb-2">How this SWGOH crystal income calculator works</h2>
         <p class="mb-2">
           Pick your current game activity and spending habits, and the tool calculates estimated crystals per day and per month.
           Every major source is shown separately so you can audit the math.
         </p>
-        <ul class="list-disc ml-5 space-y-1 text-slate-300">
+        <ul class="list-disc ml-5 space-y-1 text-slate-700 dark:text-slate-300">
           <li>Income sources include guaranteed rewards, Fleet Arena, GAC, Territory Battles, and selected Assault Battles.</li>
           <li>Expense sources include energy refreshes, hard node refreshes, marquee shard goals, and optional era/material spending.</li>
           <li>The final table reports net crystal gain or loss using the same assumptions shown in each step.</li>
@@ -788,7 +788,7 @@ watch([isWizardComplete, areExpenseStepsComplete], ([wizardDone, expensesDone]) 
       </details>
 
       <details class="bg-slate-900/70 border border-slate-700 rounded-xl p-5">
-        <summary class="cursor-pointer select-none text-lg font-semibold text-white">Guaranteed Income</summary>
+        <summary class="cursor-pointer select-none text-lg font-semibold text-slate-900 dark:text-white">Guaranteed Income</summary>
 
         <div class="pt-4">
           <button
@@ -1787,5 +1787,35 @@ watch([isWizardComplete, areExpenseStepsComplete], ([wizardDone, expensesDone]) 
 .step-highlight {
   border-color: #22d3ee;
   box-shadow: 0 0 0 2px rgba(34, 211, 238, 0.45);
+}
+
+html:not(.dark) [id^='step-'] h2 {
+  color: #0f172a !important;
+}
+
+html:not(.dark) .budget-page .bg-slate-900\/60 {
+  background-color: #e2e8f0 !important;
+}
+
+html:not(.dark) .budget-page .text-slate-200 {
+  color: #334155 !important;
+}
+
+html:not(.dark) .budget-page .text-violet-200,
+html:not(.dark) .budget-page .text-violet-300 {
+  color: #6d28d9 !important;
+}
+
+html:not(.dark) .budget-page .text-cyan-300 {
+  color: #1d4ed8 !important;
+}
+
+html:not(.dark) .budget-page .hover\:text-cyan-200:hover {
+  color: #1e40af !important;
+}
+
+html:not(.dark) .budget-page select,
+html:not(.dark) .budget-page input[type='number'] {
+  color: #0f172a !important;
 }
 </style>

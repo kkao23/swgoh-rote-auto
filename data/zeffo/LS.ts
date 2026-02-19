@@ -105,11 +105,23 @@ export const zeffoJedi: dataType[] = [
         omi: true
     },
     {
-        lead: 'JKCK (Lead Omi, JML)',
+        lead: 'JKCK (Lead Omi, JML and Ezra)',
         leadFull: 'Jedi Knight Cal Kestis with Jedi Master Luke',
         others: 'JML, Ezra Exile, +2',
         notes: 'auto, lead omi mandatory, probably want whirlwind slam as well',
         videos: [{ url: 'https://youtu.be/at8p8E9ApT4' }],
+        icon: '/icons/characters/tex.charui_calkestis.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        omi: true
+    },
+    {
+        lead: 'JKCK (Lead Omi, JML no Ezra)',
+        leadFull: 'Jedi Knight Cal Kestis with Jedi Master Luke',
+        others: 'JML, GMY, JKL, Shaak ti',
+        notes: 'auto, lead omi mandatory, probably want whirlwind slam as well',
+        videos: [{ url: 'https://youtu.be/KSSA0U7ecsc' }],
         icon: '/icons/characters/tex.charui_calkestis.png',
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,

@@ -40,7 +40,7 @@ export const lsLeftP3: dataType[] = [
         lead: 'Boss Nass',
         others: 'Other gungans (tarpal omi)',
         notes: 'auto',
-        videos: [{url: 'https://youtu.be/TY97HzhePAg?si=zo9rbCRZ-_JOfg8N&t=231', creator: 'pico'}],
+        videos: [{url: 'https://youtu.be/rahjtupSkX0'}],
         icon: '/icons/characters/tex.charui_bossnass.png',
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
@@ -221,6 +221,19 @@ export const lsRightP3: dataType[] = [
 ]
 
 export const sawP3: dataType[] = [
+    {
+        lead: 'Saw (Drogan and Kyle)',
+        leadFull: 'Saw with Drogan and Kyle',
+        others: 'Capt Rex, Luthen, Drogan, Kyle',
+        notes: 'auto, deselect targeting reticule at the beginning',
+        videos: [{ url: 'https://youtu.be/JGJuSZEGWc0' }],
+        icon: '/icons/characters/tex.charui_sawgerrera.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.NINETY_PERCENT,
+        interactionType: [interactionType.TARGET_START],
+        targeted: true,
+        omi: true
+    },
     {
         lead: 'Saw (Drogan)',
         leadFull: 'Saw with Drogan',

@@ -106,7 +106,7 @@ export const leftLSP2: dataType[] = [
         videos: [{ url: 'https://youtu.be/2epBiIcFaG0' }],
         icon: '/icons/characters/tex.charui_bossnass.png',
         difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO],
         omi: true
     },

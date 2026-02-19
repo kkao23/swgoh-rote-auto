@@ -151,6 +151,16 @@ export const fennecP3: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
     },
+    {
+        lead: 'Maz Kanata',
+        others: 'Ithano, Quiggold, Kix',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/KdRAXLcA0vY' }],
+        icon: '/icons/characters/tex.charui_mazkanata.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
+    },
 ]
 
 export const mixedTopLeftP3: dataType[] = [
@@ -339,7 +349,19 @@ export const mixedTopLeftP3: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         omi: true
-    }
+    },
+    {
+        lead: 'DTMG',
+        leadFull: 'Dark Trooper Moff Gideon',
+        others: 'Scout Trooper, Death Trooper, Moff Gideon, Enoch',
+        notes: 'auto. Enoch omi makes it easier but not required',
+        videos: [{url: 'https://youtu.be/ohiPMAxXBj8'}],
+        icon: '/icons/characters/tex.charui_moffgideons3.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        omi: true,
+    },
 ]
 
 export const mixedP3Ships: dataType[] = [

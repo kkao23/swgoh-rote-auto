@@ -275,6 +275,16 @@ export const sawP3: dataType[] = [
 
 export const wookies: dataType[] = [
     {
+        lead: 'Tarfull (no Zaalbar)',
+        others: 'Chewbacca, Chewpio, Veteran Smuggler Chewie, Clone Wars Chewie',
+        notes: 'Challenging without Zaalbar, can\'t auto. See video for notes',
+        videos: [{url: 'https://youtu.be/MeT6aMDa8S0'}],
+        icon: '/icons/characters/tex.charui_tarfful.png',
+        difficulty: difficulty.HARD,
+        successRate: successRate.FIFTY_FIFTY,
+        interactionType: [interactionType.MANUAL],
+    },
+    {
         lead: 'Tarfull',
         others: 'Chewbacca, Chewpio, Zaalbaar, Clone Wars Chewie',
         notes: 'Pico has them all R8, not sure if possible at R7. Looked safe though',

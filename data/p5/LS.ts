@@ -54,6 +54,18 @@ export const lsTopLeftP5: dataType[] = [
         successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO]
     },
+    {
+        lead: 'JMMW',
+        leadFull: 'Jedi Master Mace Windu',
+        others: 'Jocasta Nu, Kelleran Beq, Depa Billaba (omicron), Temple Guard',
+        notes: 'auto, dont need platoons, very fast',
+        videos: [{ url: 'https://youtu.be/f1k6giFnvZY' }],
+        icon: '/icons/characters/tex.charui_jedimastermacewindu.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        omi: true
+    }
 ]
 
 export const lsTopMidP5: dataType[] = [

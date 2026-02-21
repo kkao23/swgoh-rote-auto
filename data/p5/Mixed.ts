@@ -54,6 +54,16 @@ export const mixedFleetP5: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
     },
+    {
+        lead: 'Profundity (R1 no MF)',
+        others: 'Outrider, Y Wing, Ghost, Rogue One, Biggs, Phantom',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/j0PmTp3VExM' }],
+        icon: '/icons/ships/tex.charui_profundity.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.AUTO]
+    },
 ]
 
 export const mixedCombatTopRightP5: dataType[] = [
@@ -123,6 +133,16 @@ export const mixedCombatTopRightP5: dataType[] = [
         interactionType: [interactionType.PAUSE_WAVE2],
         omi: true,
         targeted: true
+    },
+    {
+        lead: 'Queen Amidala',
+        others: 'POW, MQJ, Snips, GK',
+        notes: '1/2 on auto, takes some luck',
+        videos: [{ url: 'https://youtu.be/BVFb4v_aoWE' }],
+        icon: '/icons/characters/tex.charui_queenamidala.png',
+        difficulty: difficulty.HARD,
+        successRate: successRate.UNRELIABLE,
+        interactionType: [interactionType.AUTO],
     },
 ]
 
@@ -227,6 +247,16 @@ export const mixedCombatBottomLeftP5: dataType[] = [
         targeted: true,
         omi: true,
         creator: 'anonymous',
+    },
+    {
+        lead: 'Rey',
+        others: 'CAT, Ben, Fulcrum, +1',
+        notes: '1/2 on auto',
+        videos: [{ url: 'https://youtu.be/f_GaBJp32F0' }],
+        icon: '/icons/characters/tex.charui_rey_tlj.png',
+        difficulty: difficulty.CAUTION,
+        successRate: successRate.UNRELIABLE,
+        interactionType: [interactionType.AUTO]
     },
 ];
 

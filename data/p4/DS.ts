@@ -149,5 +149,17 @@ export const dsSortie: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         omi: true,
-    }
+    },
+    {
+        lead: 'LV',
+        leadFull: 'Lord Vader',
+        others: 'Appo (omicron), DCT, CX-2, Scorch',
+        notes: 'auto, kind of dicey',
+        videos: [{ url: 'https://youtu.be/HFlPkVlSTMw' }],
+        icon: '/icons/characters/tex.charui_lordvader.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.AUTO],
+        omi: true,
+    },
 ]

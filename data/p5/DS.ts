@@ -25,6 +25,17 @@ export const dsBottomRightP5: dataType[] = [
         successRate: successRate.FIFTY_FIFTY,
         interactionType: [interactionType.AUTO],
     },
+    {
+        lead: 'Pirate King Hondo',
+        leadFull: 'Pirate King Hondo Onaka',
+        others: 'SM-33, Vane, Hondo +1',
+        notes: '2/2 on manual, don\'t use event special',
+        videos: [{ url: 'https://youtu.be/GXdv-5I_JNY' }],
+        icon: '/icons/characters/tex.charui_glhondo.png',
+        difficulty: difficulty.CAUTION,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.MANUAL],
+    },
 ]
 
 export const dsTopMidP5: dataType[] = [
@@ -63,6 +74,18 @@ export const dsTopMidP5: dataType[] = [
         successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO],
     },
+    {
+        lead: 'LV',
+        leadFull: 'Lord Vader',
+        others: 'Appo (omicron), DCT, CX-2, Scorch',
+        notes: 'Easy full auto',
+        videos: [{ url: 'https://youtu.be/vc-tz5t4ync' }],
+        icon: '/icons/characters/tex.charui_lordvader.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        omi: true,
+    },
 ]
 
 export const dsLeftP5: dataType[] = [
@@ -100,5 +123,16 @@ export const dsLeftP5: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         omi: true,
+    },
+    {
+        lead: 'SEE',
+        leadFull: 'Sith Eternal Emperor',
+        others: 'Malak/Malgus, The Stranger, Darth Revan, Bane',
+        notes: 'easy 1/2, 2/2 not totally consistent',
+        videos: [{url: 'https://youtu.be/F9aYFWdjCLo'}],
+        icon: '/icons/characters/tex.charui_espalpatine_pre.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.AUTO],
     },
 ]

@@ -144,6 +144,16 @@ export const mixedCombatTopRightP5: dataType[] = [
         successRate: successRate.UNRELIABLE,
         interactionType: [interactionType.AUTO],
     },
+    {
+        lead: 'Rey',
+        others: 'CAT, Ben, Fulcrum, Ezra',
+        notes: '1/2 on auto',
+        videos: [{ url: 'https://youtu.be/8sCXFMpGvYk' }],
+        icon: '/icons/characters/tex.charui_rey_tlj.png',
+        difficulty: difficulty.CAUTION,
+        successRate: successRate.UNRELIABLE,
+        interactionType: [interactionType.AUTO]
+    },
 ]
 
 export const mixedCombatBottomLeftP5: dataType[] = [
@@ -183,12 +193,12 @@ export const mixedCombatBottomLeftP5: dataType[] = [
     {
         lead: 'Leia',
         others: 'Drogan, R2-D2, Fulcrum, Admiral Raddus',
-        notes: 'auto, pause at the end of wave 1 to hit the box if possible',
+        notes: 'auto',
         videos: [{ url: 'https://youtu.be/2_pnO482ksw' }],
         icon: '/icons/characters/tex.charui_leiaendor.png',
         difficulty: difficulty.EASY,
         successRate: successRate.NINETY_PERCENT,
-        interactionType: [interactionType.PAUSE_WAVE2],
+        interactionType: [interactionType.AUTO],
         targeted: true
     },
     {

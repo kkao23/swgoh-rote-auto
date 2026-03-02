@@ -236,6 +236,18 @@ export const mixedP2: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
     },
+    {
+        lead: 'Padme',
+        leadFull: 'Padmé Amidala',
+        others: 'General Kenobi, GAS, Yoda, C-3PO',
+        notes: 'Auto',
+        videos: [],
+        icon: '/icons/characters/tex.charui_padme_geonosis.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'SpT Stev',
+    },
 ]
 
 export const jabbaP2: dataType[] = [

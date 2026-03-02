@@ -293,3 +293,18 @@ export const jabbaP5: dataType[] = [
         omi: true,
     }
 ]
+
+export const youngHanP5: dataType[] = [
+{
+    lead: 'Ahsoka Tano',
+    leadFull: 'Ahsoka Tano',
+    others: 'Fulcrum, GAS, Young Han, Vandor',
+    notes: 'Get exile off fulcrum asap, keep Han and chewie alive with the box. The Ashokas and Gas will take care of the enemies.',
+    videos: [],
+    icon: '/icons/characters/tex.charui_ahsokaadult.png',
+    difficulty: difficulty.CAUTION,
+    successRate: successRate.USUALLY,
+    interactionType: [interactionType.MANUAL],
+    creator: 'anonymous',
+},
+]

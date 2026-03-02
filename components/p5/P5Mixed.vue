@@ -24,4 +24,7 @@ const alignment = 'Mixed';
     <tr>
         <MissionTableFragment :position="`Fleet`" :data="data.mixed.fleet" :phase="phase" :alignment="alignment"></MissionTableFragment>
     </tr>
+    <tr>
+        <MissionTableFragment :position="`Young Han`" :data="data.mixed.youngHan" :phase="phase" :alignment="alignment" :special="true"></MissionTableFragment>
+    </tr>
 </template>

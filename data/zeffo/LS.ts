@@ -243,5 +243,18 @@ export const zeffoCombat: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         omi: true
-    }
+    },
+    {
+        lead: 'JMK',
+        leadFull: 'Jedi Master Luke Skywalker',
+        others: 'POW, MQG, GK, Mace',
+        notes: 'Dam immunity on GK, go after droids first, second wave save Mace 1Special for guardian with tenacity down. Easy on manual, hit or miss on auto.',
+        videos: [{ url: 'https://youtu.be/mgIBj0I-ZRM' }],
+        icon: '/icons/characters/tex.charui_globiwan.png',
+        difficulty: difficulty.CAUTION,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.TARGET_START],
+        targeted: true,
+        creator: 'Narorbisath',
+    },
 ]

@@ -233,5 +233,17 @@ export const jediLSP4: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         omi: true
-    }
+    },
+    {
+        lead: 'GAS',
+        leadFull: 'General Anakin Skywalker',
+        others: 'Snips, POW, MQG, GMY',
+        notes: 'Auto - only have to defeat enemy toons once each because of GAS revive prevention. Fast and easy.',
+        videos: [],
+        icon: '/icons/characters/tex.charui_generalanakin.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'Mark Green',
+    },
 ]

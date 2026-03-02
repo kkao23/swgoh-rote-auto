@@ -73,6 +73,7 @@ import { mixedFleetP5 } from "./p5/Mixed";
 import { mixedCombatBottomLeftP5 } from "./p5/Mixed";
 import { jabbaP5 } from "./p5/Mixed";
 import { mixedCombatTopRightP5 } from "./p5/Mixed";
+import { youngHanP5 } from "./p5/Mixed";
 
 import { lsBottomP5 } from "./p5/LS";
 import { lsTopLeftP5 } from "./p5/LS";
@@ -213,7 +214,8 @@ export const data: DataType = {
             topRight: mixedCombatTopRightP5,
             bottomLeft: mixedCombatBottomLeftP5,
             jabba: jabbaP5,
-            fleet: mixedFleetP5
+            fleet: mixedFleetP5,
+            youngHan: youngHanP5,
         },
         ls: {
             topLeft: lsTopLeftP5,
@@ -225,7 +227,7 @@ export const data: DataType = {
             bottomRight: dsBottomRightP5,
             topMid: dsTopMidP5,
             left: dsLeftP5,
-        }
+        },
     },
     phase6: {
         mixed: {

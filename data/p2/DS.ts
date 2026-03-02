@@ -99,6 +99,18 @@ export const acklayDSP2: dataType[] = [
         interactionType: [interactionType.AUTO],
         omi: true
     },
+    {
+        lead: 'DTMG',
+        leadFull: 'Dark Trooper Moff Gideon',
+        others: 'Dark Trooper, Night Trooper, Scout Trooper, Enoch',
+        notes: 'No omi, always call Dark Trooper for assist, all my guys R7, only Dark Trooper R8, because of RotE platoon.',
+        videos: [],
+        icon: '/icons/characters/tex.charui_moffgideons3.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.MANUAL],
+        creator: 'anonymous',
+    },
 ]
 
 export const reekDSP2: dataType[] = [

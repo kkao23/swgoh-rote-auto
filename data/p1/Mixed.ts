@@ -206,6 +206,16 @@ export const mixedP1: dataType[] = [
         interactionType: [interactionType.AUTO],
         omi: true
     },
+    {
+        lead: 'Rey',
+        others: 'JTR, BB8, Han, Chewbacca',
+        notes: 'easy auto',
+        videos: [{ url: 'https://youtu.be/9emVf4bmMKM' }],
+        icon: '/icons/characters/tex.charui_rey_tlj.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
+    },
 ]
 
 export const jabbaP1: dataType[] = [

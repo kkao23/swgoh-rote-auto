@@ -3,7 +3,7 @@ import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const shipsLSP2: dataType[] = [
     {
-        lead: 'Profundity',
+        lead: 'Profundity (No R1)',
         others: 'HMF, Outrider, Y wing, Phantom, Ghost, Biggs, Wedge',
         notes: 'target scythe, auto',
         videos: [{ url: 'https://youtu.be/CkHBVQJmZtk' }],
@@ -22,6 +22,17 @@ export const shipsLSP2: dataType[] = [
         difficulty: difficulty.EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.TARGET_START],
+        targeted: true
+    },
+    {
+        lead: 'Profundity (R1 and MF)',
+        others: 'MF, Outrider, Y wing, Rogue 1',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/vZSrJ7_YVJE' }],
+        icon: '/icons/ships/tex.charui_profundity.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
         targeted: true
     }
 ]
@@ -171,6 +182,18 @@ export const leftLSP2: dataType[] = [
         notes: 'omi Wrecker, 2/2 on full auto',
         videos: [{ url: 'https://youtu.be/i6NewbYrjqU' }],
         icon: '/icons/characters/tex.charui_omegas3.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        omi: true
+    },
+    {
+        lead: 'Kelleran Beq or JMMW',
+        leadFull: 'Kelleran Beq or Jedi Master Mace Windu',
+        others: 'Jocasta Nu, Shaak Ti, Temple Guard, Depa Billaba (omicron)',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/_1vWj7GQYPo' }],
+        icon: '/icons/characters/tex.charui_kelleranbeq.png',
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],

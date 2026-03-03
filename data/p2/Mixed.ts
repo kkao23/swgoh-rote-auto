@@ -48,6 +48,17 @@ export const hondoMixedP2: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
     },
+    {
+        lead: 'Reva',
+        others: 'Marrok (omi), GI, 7S',
+        notes: 'auto',
+        videos: [{url: 'https://youtu.be/hrLU_z9clf8'}],
+        icon: '/icons/characters/tex.charui_thirdsister.png',
+        difficulty: difficulty.HARD,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        omi: true,
+    },
 ]
 
 export const shipsMixedP2: dataType[] = [
@@ -89,6 +100,16 @@ export const shipsMixedP2: dataType[] = [
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
+    },
+    {
+        lead: 'Home One (B wing)',
+        others: 'Biggs, Bistan and Ravens Claw starting, B wing, Cassian, Phantom, Ghost in reinforcements',
+        notes: 'difficult',
+        videos: [{ url: 'https://youtu.be/34mzcE14Wfws' }],
+        icon: '/icons/ships/tex.charui_moncalamarilibertycruiser.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.UNRELIABLE,
+        interactionType: [interactionType.MANUAL]
     },
 ]
 
@@ -248,6 +269,16 @@ export const mixedP2: dataType[] = [
         interactionType: [interactionType.AUTO],
         creator: 'SpT Stev',
     },
+    {
+        lead: 'Rey',
+        others: 'JTR, BB8, Han, Chewbacca',
+        notes: 'easy auto',
+        videos: [{ url: 'https://youtu.be/yjd2hNINbPE' }],
+        icon: '/icons/characters/tex.charui_rey_tlj.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
+    },
 ]
 
 export const jabbaP2: dataType[] = [
@@ -324,6 +355,17 @@ export const youngLandoP2: dataType[] = [
         difficulty: difficulty.NO_AUTO,
         successRate: successRate.USUALLY,
         interactionType: [interactionType.PAUSE_WAVE2],
+        omi: true
+    },
+    {
+        lead: 'Lord Vader',
+        others: 'Appo (omicron), CX, Scorch',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/IkwUfwpgJnc' }],
+        icon: '/icons/characters/tex.charui_lordvader.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
         omi: true
     },
 ]

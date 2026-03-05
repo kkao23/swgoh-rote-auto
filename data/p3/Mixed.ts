@@ -161,6 +161,17 @@ export const fennecP3: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
     },
+    {
+        lead: 'JML',
+        leadFull: 'Jedi Master Luke',
+        others: 'JKL, Shaak Ti, GMY',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/wKmThMNfBn0' }],
+        icon: '/icons/characters/tex.charui_luke_jml.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
+    },
 ]
 
 export const mixedTopLeftP3: dataType[] = [
@@ -183,7 +194,7 @@ export const mixedTopLeftP3: dataType[] = [
         videos: [{ url: 'https://youtu.be/GEsQiDuewto' }],
         icon: '/icons/characters/tex.charui_lukebespin.png',
         difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO]
     },
     {
@@ -361,6 +372,16 @@ export const mixedTopLeftP3: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         omi: true,
+    },
+    {
+        lead: 'SLKR',
+        others: 'KRU, Sith Trooper, +2 First Order (Use Rey if you have her)',
+        notes: 'easy full auto',
+        videos: [{ url: 'https://youtu.be/Cm8ou0NXDm4' }],
+        icon: '/icons/characters/tex.charui_kyloren_tros.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
     },
 ]
 

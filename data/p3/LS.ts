@@ -79,15 +79,15 @@ export const lsLeftP3: dataType[] = [
         interactionType: [interactionType.TARGET_START],
         targeted: true,
     },
-    {
-        lead: 'GAS with QA',
-        leadFull: 'General Anakin Skywalker with Queen Amidala',
-        others: 'Rex, Echo, Fives',
-        notes: 'auto, but currently theres a bug that makes Fives taunt',
-        videos: [{ url: 'https://youtu.be/DctCHNqsOEg' }],
-        icon: '/icons/characters/tex.charui_generalanakin.png',
-        difficulty: difficulty.VERY_EASY
-    },
+    // {
+    //     lead: 'GAS with QA',
+    //     leadFull: 'General Anakin Skywalker with Queen Amidala',
+    //     others: 'Rex, Echo, Fives',
+    //     notes: 'auto, but currently theres a bug that makes Fives taunt',
+    //     videos: [{ url: 'https://youtu.be/DctCHNqsOEg' }],
+    //     icon: '/icons/characters/tex.charui_generalanakin.png',
+    //     difficulty: difficulty.VERY_EASY
+    // },
     {
         lead: 'Omega',
         others: 'other Bad Batch Mercenaries',
@@ -207,7 +207,7 @@ export const lsRightP3: dataType[] = [
         videos: [{ url: 'https://youtu.be/OKNAs62Omco' }],
         icon: '/icons/characters/tex.charui_jedimastermacewindu.png',
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO, interactionType.PAUSE_WAVE2],
         omi: true
     },

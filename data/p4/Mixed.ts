@@ -77,6 +77,17 @@ export const mixedQiraP4: dataType[] = [
         successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO]
     },
+    {
+        lead: 'Rey',
+        leadFull: 'Rey with Resistance',
+        others: 'Ben, Scavenger Rey',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/RNTC4qD-Ttw' }],
+        icon: '/icons/characters/tex.charui_rey_tros.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
+    },
 ]
 
 export const mixedGenericP4: dataType[] = [

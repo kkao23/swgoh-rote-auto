@@ -36,6 +36,18 @@ export const dsBottomRightP5: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.MANUAL],
     },
+    {
+        lead: 'LV',
+        leadFull: 'Lord Vader',
+        others: 'Appo (omicron), DCT, CX-2, Scorch',
+        notes: 'auto, was a bit dicey',
+        videos: [{ url: 'https://youtu.be/5fLK_r54mX8' }],
+        icon: '/icons/characters/tex.charui_lordvader.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.AUTO],
+        omi: true,
+    },
 ]
 
 export const dsTopMidP5: dataType[] = [
@@ -85,6 +97,16 @@ export const dsTopMidP5: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         omi: true,
+    },
+    {
+        lead: 'SLKR',
+        others: 'use FO if you can but I had Malgus, Stranger, Darth Revan, Bane',
+        notes: 'Had to play Wave 1 manually, poke then auto wave 2',
+        videos: [{ url: 'https://youtu.be/zfqcSPadob0' }],
+        icon: '/icons/characters/tex.charui_kyloren_tros.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.MANUAL]
     },
 ]
 

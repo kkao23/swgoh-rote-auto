@@ -124,6 +124,19 @@ export const dsMidRightP4: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
     },
+    {
+    "lead": "Zuckuss",
+    "leadFull": "Zuckuss",
+    "others": "4Lom, Bossk, Dengar, Boba",
+    "notes": "Om on Zuckuss, R9s on Zuck, 4Lom, Bossk & Boba. Taunt on Bossk as soon as. Foresight on all as soon as",
+    "videos": [],
+    "icon": "/icons/characters/tex.charui_zuckuss.png",
+    "difficulty": difficulty.EASY,
+    "omi": true,
+    "successRate": successRate.USUALLY,
+    "interactionType": [interactionType.AUTO],
+    "creator": "anonymous"
+    },
 ]
 
 export const dsSortie: dataType[] = [

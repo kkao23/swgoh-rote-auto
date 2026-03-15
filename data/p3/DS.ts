@@ -118,6 +118,18 @@ export const dsGenericP3: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
     },
+    {
+    "lead": "Emp Palpatine",
+    "leadFull": "Emp Palpatine",
+    "others": "GI, 7th, Reva, 5th",
+    "notes": "Inqusitors w/ Reva (or i think that with fat 9sis could work too). I think 5th is importante (timing 1st special and his basic. Dont go after one char to finish at once, just hit everyone after one another to 0protection and then to half of health",
+    "videos": [],
+    "icon": "/icons/characters/tex.charui_palpatineemperor.png",
+    "difficulty": difficulty.EASY,
+    "successRate": successRate.USUALLY,
+    "interactionType": [interactionType.AUTO],
+    "creator": "anonymous"
+    }
 ]
 
 export const dsEmpireP3: dataType[] = [

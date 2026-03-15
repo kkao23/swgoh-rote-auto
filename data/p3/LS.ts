@@ -292,6 +292,18 @@ export const wookies: dataType[] = [
         icon: '/icons/characters/tex.charui_tarfful.png',
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
+    },
+    {
+    "lead": "Tarfful (with Choda)",
+    "leadFull": "Tarfful with Choda",
+    "others": "Choda, Zaalbar, Chewpio, CWC",
+    "notes": "Auto",
+    "videos": [{url: "https://youtu.be/Y1WZW6rWvbg"}],
+    "icon": "/icons/characters/tex.charui_tarfful.png",
+    "difficulty": difficulty.EASY,
+    "successRate": successRate.USUALLY,
+    "interactionType": [interactionType.AUTO],
+    "creator": "Mar Trepodi"
     }
 ]
 

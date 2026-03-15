@@ -175,7 +175,7 @@ export const mixedGenericP4: dataType[] = [
         omi: true,
     },
     {
-        lead: 'Lord Vader',
+        lead: 'Lord Vader (Randoms)',
         others: 'Piett, Dooku, Malicos',
         notes: 'auto, I imagine there are better teammates. I had no other options',
         videos: [{url: 'https://youtu.be/TpgdflmfBxo'}],
@@ -282,6 +282,19 @@ export const mixedGenericP4: dataType[] = [
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO],
+    },
+    {
+        lead: 'LV (Clones)',
+        leadFull: 'Lord Vader',
+        others: 'Appo (omicron), DCT, CX-2, Scorch',
+        notes: 'Easy full auto',
+        videos: [],
+        icon: '/icons/characters/tex.charui_lordvader.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        omi: true,
+        creator: 'anonymous'
     },
 ]
 

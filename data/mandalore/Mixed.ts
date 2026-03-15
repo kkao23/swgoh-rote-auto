@@ -200,6 +200,31 @@ export const mandaloreGeneric: dataType[] = [
         interactionType: [interactionType.AUTO],
         omi: true
     },
+    {
+        "lead": "Maz Kanata",
+        "leadFull": "Maz Kanata",
+        "others": "Quiggold (Omicron), SM33, Ithano, Kix",
+        "notes": "Auto",
+        "videos": [],
+        "icon": "/icons/characters/tex.charui_mazkanata.png",
+        "difficulty": difficulty.EASY,
+        "omi": true,
+        "successRate": successRate.USUALLY,
+        "interactionType": [interactionType.AUTO],
+        "creator": "anonymous"
+    },
+    {
+    "lead": "Stranger",
+    "leadFull": "Stranger",
+    "others": "Hate Fuelled Maul, Starkiller, GK, Cal Kestis",
+    "notes": "Testing but pretty sure it’s full auto",
+    "videos": [],
+    "icon": "/icons/characters/tex.charui_stranger.png",
+    "difficulty": difficulty.EASY,
+    "successRate": successRate.USUALLY,
+    "interactionType": [interactionType.AUTO],
+    "creator": "anonymous"
+    }
 ]
 
 export const mandaloreDTMG: dataType[] = [

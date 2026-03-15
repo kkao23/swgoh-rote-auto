@@ -62,6 +62,18 @@ export const qiraMixedP1: dataType[] = [
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
+    },
+    {
+    "lead": "Qira (Rey/CAT/Dash)",
+    "leadFull": "Qira with Rey, CAT, and Dash",
+    "others": "Rey, Cat, Dash",
+    "notes": "auto",
+    "videos": [],
+    "icon": "/icons/characters/tex.charui_rey_tros.png",
+    "difficulty": difficulty.EASY,
+    "successRate": successRate.USUALLY,
+    "interactionType": [interactionType.AUTO],
+    "creator": "anonymous"
     }
 ]
 

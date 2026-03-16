@@ -228,6 +228,16 @@ export const mixedP1: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
     },
+    {
+        lead: 'Stormtrooper Luke',
+        others: 'Princess Leia, Stormtrooper Han, C3PO, Chewpio',
+        notes: 'auto, was a bit dicey',
+        videos: [{ url: 'https://youtu.be/4ZL8_o5s-RQ' }],
+        icon: '/icons/characters/tex.charui_luke_ep4.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.AUTO]
+    },
 ]
 
 export const jabbaP1: dataType[] = [
@@ -244,6 +254,16 @@ export const jabbaP1: dataType[] = [
 ]
 
 export const drAphraP1: dataType[] = [
+    {
+        lead: 'Aphra (IG-90)',
+        others: 'BT1, 000, HK-47, IG-90',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/cxpLm8I_TJQ' }],
+        icon: '/icons/characters/tex.charui_doctoraphra.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
+    },
     {
         lead: 'Aphra (Rey)',
         others: 'Rey, JTR, Ben, BB8',

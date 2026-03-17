@@ -59,6 +59,16 @@ export const hondoMixedP2: dataType[] = [
         interactionType: [interactionType.AUTO],
         omi: true,
     },
+    {
+        lead: 'Maz Kanata',
+        others: 'Ithano, Quiggold, Kix, Hondo',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/vyb1K4RqGwc' }],
+        icon: '/icons/characters/tex.charui_mazkanata.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.TARGET_START]
+    },
 ]
 
 export const shipsMixedP2: dataType[] = [
@@ -84,9 +94,9 @@ export const shipsMixedP2: dataType[] = [
     },
     {
         lead: 'Profundity',
-        others: 'Outrider, MF, Y wing, Ghost, Phantom',
+        others: 'Outrider, Ghost, Y wing, Rogue One, Phantom',
         notes: 'auto',
-        videos: [{ url: 'https://www.youtube.com/watch?v=-q6P7kJP39c', creator: 'egnards' }],
+        videos: [{ url: 'https://youtu.be/IMSDAljuK5A' }],
         icon: '/icons/ships/tex.charui_profundity.png',
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
@@ -276,6 +286,16 @@ export const mixedP2: dataType[] = [
         videos: [{ url: 'https://youtu.be/yjd2hNINbPE' }],
         icon: '/icons/characters/tex.charui_rey_tlj.png',
         difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
+    },
+    {
+        lead: 'Aphra (IG-90)',
+        others: 'BT1, 000, HK-47, IG-90',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/AiqyB15RLZw' }],
+        icon: '/icons/characters/tex.charui_doctoraphra.png',
+        difficulty: difficulty.EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
     },

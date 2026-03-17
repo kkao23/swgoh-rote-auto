@@ -157,11 +157,11 @@ export const reekDSP2: dataType[] = [
     },
     {
         lead: 'Lord Vader',
-        others: 'Mara Jade, Ninth Sister, Piett, Thrawn',
-        notes: 'auto, I imagine the others can be whoever empire',
-        videos: [{ url: 'https://www.youtube.com/watch?v=Qz5O-GoAKkk', creator: 'egnards' }],
+        others: 'Shoretrooper, Piett, Thrawn',
+        notes: 'auto, any empire works',
+        videos: [{ url: 'https://youtu.be/1qQIxB3OQPs' }],
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         icon: '/icons/characters/tex.charui_lordvader.png'
     },

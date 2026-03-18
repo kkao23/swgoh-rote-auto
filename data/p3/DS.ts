@@ -168,6 +168,16 @@ export const dsEmpireP3: dataType[] = [
 
 export const drAphraP3: dataType[] = [
     {
+        lead: 'Aphra (IG 90)',
+        others: 'BT1, GG, HK47, IG 90',
+        notes: 'auto, Use 0-0-0 if you have him, IG 90 makes this super easy',
+        videos: [{ url: 'https://youtu.be/GdcO0wE8zt8' }],
+        icon: '/icons/characters/tex.charui_doctoraphra.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
+    },
+    {
         lead: 'Aphra (Droids)',
         others: 'BT1, GG, HK47, Darth Vader',
         notes: 'auto, Use 0-0-0 if you have him, can occasionally 1/2',

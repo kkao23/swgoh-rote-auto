@@ -129,7 +129,32 @@ export const dsGenericP3: dataType[] = [
     "successRate": successRate.USUALLY,
     "interactionType": [interactionType.AUTO],
     "creator": "anonymous"
-    }
+    },
+    {
+    "lead": "Emperor Palpatine (DV DE)",
+    "leadFull": "Emperor Palpatine",
+    "others": "Mara Jade, Royal Guard, Tarkin, Darth Vader (Duels End)",
+    "notes": "7* and full R7 team, have not tried it auto yet but DV(DE) dominates once you start TM snowballing. Focus Zombie until he can't revive, Mara+Palp+RG stun and TM snowball and DV(DE) AoE special will kill them with ease. Tarkin can probably be swapped with Piett or Thrawn, but his AoE and debuffs are helpful.",
+    "videos": [],
+    "icon": "/icons/characters/tex.charui_palpatineemperor.png",
+    "difficulty": difficulty.EASY,
+    "successRate": successRate.USUALLY,
+    "interactionType": [interactionType.AUTO],
+    "creator": "Nolthaz"
+},
+{
+    "lead": "Reva",
+    "leadFull": "Reva",
+    "others": "GI, 7th, 5th, Marrok (omi)",
+    "notes": "Auto",
+    "videos": [],
+    "icon": "/icons/characters/tex.charui_reva.png",
+    "difficulty": difficulty.EASY,
+    "omi": true,
+    "successRate": successRate.USUALLY,
+    "interactionType": [interactionType.AUTO],
+    "creator": "BailWritte"
+}
 ]
 
 export const dsEmpireP3: dataType[] = [
@@ -207,6 +232,18 @@ export const drAphraP3: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         omi: true
+    },
+    {
+        lead: 'Aphra (SLKR)',
+        others: 'SLKR, KRU, ST, Dark Rey',
+        notes: ' I manualed, but I\'m sure others could auto',
+        videos: [],
+        icon: '/icons/characters/tex.charui_doctoraphra.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        omi: true,
+        creator: 'jkat70'
     }
 ]
 

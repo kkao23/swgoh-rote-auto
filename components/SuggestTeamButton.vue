@@ -18,7 +18,7 @@ const formData = ref({
 
 const API_ENDPOINT = 'https://47rezenqn0.execute-api.us-east-2.amazonaws.com/prod/suggest-team';
 
-const phases = ['P1', 'P2', 'P3', 'P4', 'P5', 'Mandalore', 'Zeffo'];
+const phases = ['P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'Mandalore', 'Zeffo'];
 const alignments = ['LS', 'DS', 'Mixed'];
 
 const resetForm = () => {

@@ -238,6 +238,31 @@ export const mixedP1: dataType[] = [
         successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO]
     },
+    {
+    "lead": "Carth Onasi",
+    "leadFull": "Carth Onasi",
+    "others": "Zaalbar, Mission, Canderous, and 5OR-T",
+    "notes": "Omicron on Carth required, full auto, fast and easy. Actually works easily on every Mixed Phase up to P4 on full auto. After that (P5, P6, and Mandalore) the team still works, just have to go manual usually. No remodding required. Garbage mods work just fine.",
+    "videos": [],
+    "icon": "/icons/characters/tex.charui_carth.png",
+    "difficulty": difficulty.EASY,
+    "omi": true,
+    "successRate": successRate.USUALLY,
+    "interactionType": [interactionType.AUTO],
+    "creator": "DyloBin"
+},
+{
+    "lead": "Boss Nass",
+    "leadFull": "Boss Nass",
+    "others": "Team of Gungans",
+    "notes": "Auto",
+    "videos": [],
+    "icon": "/icons/characters/tex.charui_bossnass.png",
+    "difficulty": difficulty.EASY,
+    "successRate": successRate.USUALLY,
+    "interactionType": [interactionType.AUTO],
+    "creator": "BailWritte"
+}
 ]
 
 export const jabbaP1: dataType[] = [

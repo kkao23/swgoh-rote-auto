@@ -299,6 +299,18 @@ export const mixedP2: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
     },
+    {
+    "lead": "CLS",
+    "leadFull": "CLS",
+    "others": "Han, Chewbacca, C3PO, Threepio",
+    "notes": "Full auto",
+    "videos": [],
+    "icon": "/icons/characters/tex.charui_lukebespin.png",
+    "difficulty": difficulty.EASY,
+    "successRate": successRate.USUALLY,
+    "interactionType": [interactionType.AUTO],
+    "creator": "Kino Apparition"
+}
 ]
 
 export const jabbaP2: dataType[] = [

@@ -83,6 +83,17 @@ export const leftDSP1: dataType[] = [{
     successRate: successRate.CONSISTENT,
     interactionType: [interactionType.AUTO],
     omi: true,
+},
+{
+    lead: 'Grand Inquisitor',
+    others: '5, 7, 8, and 9',
+    notes: 'manual, Target B2\'s, use aoe\'s. Keep Droideka and Nuta ability blocked.',
+    videos: [{ url: 'https://youtu.be/kibKGIAfVf4' }],
+    icon: '/icons/characters/tex.charui_grandinquisitor.png',
+    difficulty: difficulty.VERY_EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'Darth Woogie'
 },];
 
 export const bottomDSP1: dataType[] = [{

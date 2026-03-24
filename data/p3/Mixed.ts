@@ -172,6 +172,18 @@ export const fennecP3: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
     },
+    {
+    "lead": "Darth Malgus",
+    "leadFull": "Darth Malgus",
+    "others": "Malak, Fennec +2 others",
+    "notes": "Full auto",
+    "videos": [],
+    "icon": "/icons/characters/tex.charui_darthmalgus.png",
+    "difficulty": difficulty.EASY,
+    "successRate": successRate.USUALLY,
+    "interactionType": [interactionType.AUTO],
+    "creator": "Kino Apparition"
+}
 ]
 
 export const mixedTopLeftP3: dataType[] = [

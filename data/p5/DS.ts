@@ -48,6 +48,16 @@ export const dsBottomRightP5: dataType[] = [
         interactionType: [interactionType.AUTO],
         omi: true,
     },
+    {
+        lead: 'SLKR',
+        others: 'use FO if you can but I had DS Rey, KRU, Darth Revan, Malgus. Tank probably required',
+        notes: 'Manual unfortunately required',
+        videos: [{ url: 'https://youtu.be/GfHfeBibbVs' }],
+        icon: '/icons/characters/tex.charui_kyloren_tros.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.NINETY_PERCENT,
+        interactionType: [interactionType.MANUAL]
+    },
 ]
 
 export const dsTopMidP5: dataType[] = [

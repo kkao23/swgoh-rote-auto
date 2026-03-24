@@ -50,7 +50,7 @@ export const dsMidRightP4: dataType[] = [
     {
         lead: 'Reva',
         others: 'Marrok, GI, 7S, 5B',
-        notes: 'marrok omi, auto',
+        notes: 'marrok omi, auto, platoons not required',
         videos: [{ url: 'https://youtu.be/w8sQ1bMYvew' }],
         icon: '/icons/characters/tex.charui_thirdsister.png',
         difficulty: difficulty.VERY_EASY,
@@ -105,7 +105,7 @@ export const dsMidRightP4: dataType[] = [
         lead: 'DTMG',
         leadFull: 'Dark Trooper Moff Gideon',
         others: 'Scout Trooper, Night Trooper, Death Trooper Peridia, Captain Enoch (omi)',
-        notes: 'auto',
+        notes: 'auto, platoons not required',
         videos: [{url: 'https://youtu.be/T8HbZSubWtI'}],
         icon: '/icons/characters/tex.charui_moffgideons3.png',
         difficulty: difficulty.VERY_EASY,
@@ -117,7 +117,7 @@ export const dsMidRightP4: dataType[] = [
         lead: 'Pirate King Hondo',
         leadFull: 'Pirate King Hondo Onaka',
         others: 'SM-33, Vane, Brutus, Silvo',
-        notes: 'auto',
+        notes: 'auto, platoons not required',
         videos: [{ url: 'https://youtu.be/r_TERIa2NFQ' }],
         icon: '/icons/characters/tex.charui_glhondo.png',
         difficulty: difficulty.VERY_EASY,
@@ -136,6 +136,16 @@ export const dsMidRightP4: dataType[] = [
     "successRate": successRate.USUALLY,
     "interactionType": [interactionType.AUTO],
     "creator": "anonymous"
+    },
+    {
+        lead: 'SLKR',
+        others: 'full FO. DS Rey, KRU, Hux, Sith Trooper',
+        notes: 'Manual unfortunately required. Platoons required',
+        videos: [{ url: 'https://youtu.be/HPiKprKRLfU' }],
+        icon: '/icons/characters/tex.charui_kyloren_tros.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.MANUAL]
     },
 ]
 
@@ -167,7 +177,7 @@ export const dsSortie: dataType[] = [
         lead: 'LV',
         leadFull: 'Lord Vader',
         others: 'Appo (omicron), DCT, CX-2, Scorch',
-        notes: 'auto, kind of dicey',
+        notes: 'auto, kind of dicey, platoons required for 2/2',
         videos: [{ url: 'https://youtu.be/HFlPkVlSTMw' }],
         icon: '/icons/characters/tex.charui_lordvader.png',
         difficulty: difficulty.EASY,

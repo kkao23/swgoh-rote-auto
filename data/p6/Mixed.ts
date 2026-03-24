@@ -5,12 +5,12 @@ export const topWampaP6: dataType[] = [
         {
         lead: 'Ahsoka Tano',
         others: 'Ezra Exile, Padawan Sabine, Huyang (omicron), Hera',
-        notes: 'Video is on manual, not sure if it can be auto',
-        videos: [{ url: 'https://www.youtube.com/watch?v=hnQlKZ51oko&t=6s', creator: 'Mar Trepodi' }],
+        notes: 'Full auto',
+        videos: [{ url: 'https://youtu.be/AFC74G68bu8', creator: 'Mar Trepodi' }],
         icon: '/icons/characters/tex.charui_ahsokatanogray.png',
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.MANUAL],
+        interactionType: [interactionType.AUTO],
         creator: 'Mar Trepodi',
     },
     {

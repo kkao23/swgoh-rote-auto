@@ -291,7 +291,19 @@ export const jabbaP5: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         omi: true,
-    }
+    },
+        {
+        lead: 'Jabba (Remnant',
+        others: 'Captain Enoch (Omi), Night Trooper, Scout Trooper, DT Peridea',
+        notes: 'auto',
+        videos: [],
+        icon: '/icons/characters/tex.charui_jabbathehutt.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.FIFTY_FIFTY,
+        interactionType: [interactionType.AUTO],
+        omi: true,
+        creator: 'BailWritte',
+    },
 ]
 
 export const youngHanP5: dataType[] = [

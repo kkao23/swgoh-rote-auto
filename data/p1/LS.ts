@@ -127,6 +127,17 @@ export const jediP1: dataType[] = [
         difficulty: difficulty.EASY,
         successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO]
+    },
+    {
+        lead: 'Satele Shan',
+        leadFull: 'Satele Shan',
+        others: 'Jedi Knight Revan, Bastila Shan, Jolee Bindo, Juhani',
+        notes: 'full auto',
+        videos: [{ url: 'https://youtu.be/OWZ-O1wlhvM' }],
+        icon: '/icons/characters/tex.charui_sateleshan.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
     }
 ]
 

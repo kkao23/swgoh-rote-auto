@@ -69,6 +69,17 @@ export const hondoMixedP2: dataType[] = [
         successRate: successRate.USUALLY,
         interactionType: [interactionType.TARGET_START]
     },
+    {
+        lead: 'Lord Vader',
+        others: 'Appo (omicron), CX, Scorch',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/MK9erlIFC3c' }],
+        icon: '/icons/characters/tex.charui_lordvader.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        omi: true
+    },
 ]
 
 export const shipsMixedP2: dataType[] = [
@@ -310,7 +321,17 @@ export const mixedP2: dataType[] = [
     "successRate": successRate.USUALLY,
     "interactionType": [interactionType.AUTO],
     "creator": "Kino Apparition"
-}
+},
+    {
+        lead: 'Stormtrooper Luke',
+        others: 'Princess Leia, Stormtrooper Han, C3PO, Chewpio',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/-gkhIkTXR7g' }],
+        icon: '/icons/characters/tex.charui_luke_ep4.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
+    },
 ]
 
 export const jabbaP2: dataType[] = [
@@ -334,7 +355,7 @@ export const youngLandoP2: dataType[] = [
         videos: [{ url: 'https://youtu.be/_nNRPjVgX9U' }],
         icon: '/icons/characters/tex.charui_rey_tlj.png',
         difficulty: difficulty.HARD,
-        successRate: successRate.FIFTY_FIFTY,
+        successRate: successRate.UNRELIABLE,
         interactionType: [interactionType.AUTO]
     }, {
         lead: 'Baylan',
@@ -343,7 +364,7 @@ export const youngLandoP2: dataType[] = [
         videos: [{ url: 'https://youtu.be/pfpK6MA_uRM' }],
         icon: '/icons/characters/tex.charui_baylanskoll.png',
         difficulty: difficulty.HARD,
-        successRate: successRate.FIFTY_FIFTY,
+        successRate: successRate.UNRELIABLE,
         interactionType: [interactionType.AUTO],
         omi: true
     },
@@ -364,7 +385,7 @@ export const youngLandoP2: dataType[] = [
         videos: [{ url: 'https://youtu.be/hbifGXqcEB0' }],
         icon: '/icons/characters/tex.charui_leiaendor.png',
         difficulty: difficulty.HARD,
-        successRate: successRate.FIFTY_FIFTY,
+        successRate: successRate.UNRELIABLE,
         interactionType: [interactionType.AUTO]
     },
     {
@@ -374,7 +395,7 @@ export const youngLandoP2: dataType[] = [
         videos: [{url: 'https://youtu.be/78qD1ZKy2BQ'}],
         icon: '/icons/characters/tex.charui_thirdsister.png',
         difficulty: difficulty.HARD,
-        successRate: successRate.FIFTY_FIFTY,
+        successRate: successRate.UNRELIABLE,
         interactionType: [interactionType.AUTO],
         omi: true,
     },
@@ -399,5 +420,16 @@ export const youngLandoP2: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         omi: true
+    },
+    {
+        lead: 'Pirate King Hondo',
+        leadFull: 'Pirate King Hondo Onaka',
+        others: 'Young Lando, Brutus, Vane, Silvo',
+        notes: '1/2 on auto',
+        videos: [{ url: 'https://youtu.be/7_6OuuYFrQI' }],
+        icon: '/icons/characters/tex.charui_glhondo.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.UNRELIABLE,
+        interactionType: [interactionType.AUTO],
     },
 ]

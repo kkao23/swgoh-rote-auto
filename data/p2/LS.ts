@@ -95,6 +95,17 @@ export const jediLSP2: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         omi: true
+    },
+    {
+        lead: 'Satele Shan',
+        leadFull: 'Satele Shan',
+        others: 'Jedi Knight Revan, Bastila Shan, Jolee Bindo, Juhani',
+        notes: 'full auto',
+        videos: [{ url: 'https://youtu.be/oBbG2BXfCRs' }],
+        icon: '/icons/characters/tex.charui_sateleshan.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.AUTO],
     }
 ]
 

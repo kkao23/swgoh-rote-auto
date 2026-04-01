@@ -110,6 +110,17 @@ export const lsLeftP3: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         omi: true
+    },
+    {
+        lead: 'Satele Shan',
+        leadFull: 'Satele Shan',
+        others: 'Jedi Knight Revan, Bastila Shan, Jolee Bindo, Juhani',
+        notes: 'will get stuck on the last character, painful. Don\'t recommmend',
+        videos: [{ url: 'https://youtu.be/mwtXQcKqFlU' }],
+        icon: '/icons/characters/tex.charui_sateleshan.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.NINETY_PERCENT,
+        interactionType: [interactionType.MANUAL],
     }
 ]
 

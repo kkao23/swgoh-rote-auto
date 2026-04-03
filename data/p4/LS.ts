@@ -246,4 +246,15 @@ export const jediLSP4: dataType[] = [
         interactionType: [interactionType.AUTO],
         creator: 'Mark Green',
     },
+    {
+        lead: 'Satele Shan',
+        leadFull: 'Satele Shan',
+        others: 'Jedi Knight Revan, Bastila Shan, Jolee Bindo, +1',
+        notes: 'Easy auto',
+        videos: [{ url: 'https://youtu.be/GZKn8ffULSw' }],
+        icon: '/icons/characters/tex.charui_sateleshan.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+    }
 ]

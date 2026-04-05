@@ -167,4 +167,14 @@ export const dsLeftP5: dataType[] = [
         successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO],
     },
+    {
+        lead: 'SLKR',
+        others: 'FO if you can, but I had DS Rey, KRU, Death Trooper, Night Trooper. Tank probably required',
+        notes: 'Manual unfortunately required',
+        videos: [{ url: 'https://youtu.be/mDwMZIjN7sk' }],
+        icon: '/icons/characters/tex.charui_kyloren_tros.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.NINETY_PERCENT,
+        interactionType: [interactionType.MANUAL]
+    },
 ]

@@ -286,6 +286,16 @@ export const sawP3: dataType[] = [
 
 export const wookies: dataType[] = [
     {
+        lead: 'Tarfull (Yoda and Chewie)',
+        others: 'Chewbacca, Chewpio, Yoda and Chewie, Clone Wars Chewie',
+        notes: 'Much easier with Yoda and Chewie. You want decent mods on CWC',
+        videos: [{url: 'https://youtu.be/vMke5AWP0jU'}],
+        icon: '/icons/characters/tex.charui_tarfful.png',
+        difficulty: difficulty.HARD,
+        successRate: successRate.NINETY_PERCENT,
+        interactionType: [interactionType.AUTO],
+    },
+    {
         lead: 'Tarfull (no Zaalbar)',
         others: 'Chewbacca, Chewpio, Veteran Smuggler Chewie, Clone Wars Chewie',
         notes: 'Challenging without Zaalbar, can\'t auto. See video for notes',
@@ -305,8 +315,8 @@ export const wookies: dataType[] = [
         successRate: successRate.USUALLY,
     },
     {
-    "lead": "Tarfful (with Choda)",
-    "leadFull": "Tarfful with Choda",
+    "lead": "Tarfful (with Choda and Zaalbar)",
+    "leadFull": "Tarfful with Choda and Zaalbar",
     "others": "Choda, Zaalbar, Chewpio, CWC",
     "notes": "Auto",
     "videos": [{url: "https://youtu.be/Y1WZW6rWvbg"}],

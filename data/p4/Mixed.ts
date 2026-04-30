@@ -296,6 +296,17 @@ export const mixedGenericP4: dataType[] = [
         omi: true,
         creator: 'anonymous'
     },
+    {
+        lead: 'Satele Shan',
+        leadFull: 'Satele Shan',
+        others: 'Jedi Knight Revan, Bastila Shan, Jolee Bindo',
+        notes: 'Auto, might need decent mods to 4 man',
+        videos: [{ url: 'https://youtu.be/DumncBcxJ2U' }],
+        icon: '/icons/characters/tex.charui_sateleshan.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.NINETY_PERCENT,
+        interactionType: [interactionType.AUTO],
+    }
 ]
 
 export const jabbaP4: dataType[] = [

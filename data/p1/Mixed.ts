@@ -262,7 +262,18 @@ export const mixedP1: dataType[] = [
     "successRate": successRate.USUALLY,
     "interactionType": [interactionType.AUTO],
     "creator": "BailWritte"
-}
+},
+    {
+        lead: 'Boba Fett Scion of Jango',
+        leadFull: 'Boba Fett Scion of Jango',
+        others: 'Asajj Dark Disciple, 4 LOM, Greef, Mando',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/mRXvmmCyBnU' },],
+        icon: '/icons/characters/tex.charui_bobafettold.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.NINETY_PERCENT,
+        interactionType: [interactionType.AUTO],
+    },
 ]
 
 export const jabbaP1: dataType[] = [

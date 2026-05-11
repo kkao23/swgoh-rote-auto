@@ -37,10 +37,10 @@ export const leftDSP1: dataType[] = [{
     lead: 'Mother Talzin',
     others: 'Merrin, Asajj, Daka, Zombie',
     notes: 'auto',
-    videos: [{ url: 'https://www.youtube.com/watch?v=yPPfk6jXukU', creator: 'egnards' }],
+    videos: [{ url: 'https://youtu.be/f9c_GD8ASj0'}],
     icon: '/icons/characters/tex.charui_nightsisters_talzin.png',
     difficulty: difficulty.EASY,
-    successRate: successRate.NINETY_PERCENT,
+    successRate: successRate.CONSISTENT,
     interactionType: [interactionType.AUTO]
 },
 {

@@ -332,6 +332,17 @@ export const mixedP2: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
     },
+        {
+        lead: 'Boba Fett Scion of Jango',
+        leadFull: 'Boba Fett Scion of Jango',
+        others: 'Asajj Dark Disciple, 4 LOM, Greef, Mando',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/OkxaPsxI5ks' },],
+        icon: '/icons/characters/tex.charui_bobafettold.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.NINETY_PERCENT,
+        interactionType: [interactionType.AUTO],
+    },
 ]
 
 export const jabbaP2: dataType[] = [

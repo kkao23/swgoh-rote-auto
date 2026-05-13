@@ -172,6 +172,17 @@ export const fennecP3: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
     },
+            {
+        lead: 'Boba Fett Scion of Jango',
+        leadFull: 'Boba Fett Scion of Jango',
+        others: 'Asajj Dark Disciple, Fennec, Greef, Mando',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/lH5NY1GC_8U' },],
+        icon: '/icons/characters/tex.charui_bobafettold.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.NINETY_PERCENT,
+        interactionType: [interactionType.AUTO],
+    },
     {
     "lead": "Darth Malgus",
     "leadFull": "Darth Malgus",

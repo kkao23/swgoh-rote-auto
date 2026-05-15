@@ -218,9 +218,9 @@ export const lsShipsP5: dataType[] = [
     },
     {
         lead: 'Home One (B wing)',
-        others: 'Biggs, Bistan and Ravens Claw starting, B wing, Cassian in reinforcements',
-        notes: 'can\'t auto. Go after Scythe first. When Scythe uses its special to get all the stacks of formation, bring Cassian out to dispel them',
-        videos: [{ url: 'https://youtu.be/QahRayHXWXk' }],
+        others: 'Ghost, Cassian, Ravens claw, B wing in reinforcements',
+        notes: 'can\'t auto. Go after Scythe first. All assists to B wing. High relic Drogan probably required',
+        videos: [{ url: 'https://youtu.be/J17DrHLP3mA' }],
         icon: '/icons/ships/tex.charui_moncalamarilibertycruiser.png',
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,

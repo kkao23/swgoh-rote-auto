@@ -343,6 +343,16 @@ export const mixedP2: dataType[] = [
         successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO],
     },
+    {
+    lead: 'Mother Talzin',
+    others: 'Merrin, Spirit, Daka, Zombie',
+    notes: 'auto',
+    videos: [{ url: 'https://youtu.be/wRwmwC33zVk'}],
+    icon: '/icons/characters/tex.charui_nightsisters_talzin.png',
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO]
+},
 ]
 
 export const jabbaP2: dataType[] = [

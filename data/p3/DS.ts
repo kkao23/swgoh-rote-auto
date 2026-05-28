@@ -189,6 +189,17 @@ export const dsEmpireP3: dataType[] = [
         successRate: successRate.NINETY_PERCENT,
         omi: true
     },
+    {
+        lead: 'Emp Palpatine (DVDE)',
+        leadFull: 'Emperor Palpatine',
+        others: 'Emperor Palpatine, Darth Vader, Darth Vader Duel\'s End, Admiral Piett and Ninth Sister',
+        notes: 'If you have Mara and or Royal Guard R7 they should work here too',
+        videos: [{ url: 'https://youtu.be/phNLE31Wsw8' }],
+        icon: '/icons/characters/tex.charui_palpatineemperor.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
+    },
 ]
 
 export const drAphraP3: dataType[] = [

@@ -147,6 +147,17 @@ export const dsMidRightP4: dataType[] = [
         successRate: successRate.USUALLY,
         interactionType: [interactionType.MANUAL]
     },
+    {
+        lead: 'Emp Palpatine (DVDE)',
+        leadFull: 'Emperor Palpatine',
+        others: 'Emperor Palpatine, Darth Vader Duel\'s End, Admiral Piett, Gar Saxon, Imperial Super Commando',
+        notes: 'auto, platoons likely required, may be some luck involved',
+        videos: [{ url: 'https://youtu.be/wDsE-DZom9c' }],
+        icon: '/icons/characters/tex.charui_palpatineemperor.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.AUTO]
+    },
 ]
 
 export const dsSortie: dataType[] = [

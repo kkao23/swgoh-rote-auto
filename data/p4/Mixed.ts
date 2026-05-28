@@ -283,6 +283,17 @@ export const mixedGenericP4: dataType[] = [
         successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO],
     },
+     {
+        lead: 'The Stranger (Spider Maul)',
+        leadFull: 'The Stranger (Spider Maul)',
+        others: 'Starkiller, Hate Fueled Maul, Scavenger Rey, Plo Koon',
+        notes: 'full auto',
+        videos: [{ url: 'https://youtu.be/XGEfZ2FCaLQ' }],
+        icon: '/icons/characters/tex.charui_stranger.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+    },
     {
         lead: 'LV (Clones)',
         leadFull: 'Lord Vader',

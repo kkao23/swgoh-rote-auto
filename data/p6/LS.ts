@@ -130,6 +130,7 @@ export const lsBottomP5: dataType[] = [
         others: 'Gungans, Tarpal Omi',
         notes: 'Auto',
         videos: [{ url: 'https://www.youtube.com/watch?v=5kjc-83PM2s', creator: 'avengerObs' }],
+        icon: '/icons/characters/tex.charui_bossnass.png',
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]

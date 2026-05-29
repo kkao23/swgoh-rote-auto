@@ -56,7 +56,35 @@ When requested to parse a team suggestion email, use the following rules:
      * "pause at wave 2" $\to$ `[interactionType.PAUSE_WAVE2]`
      * "target at start" $\to$ `[interactionType.TARGET_START]`
      * Default to `[interactionType.AUTO]` if pure auto.
-   * **creator**: Map to `Submitted by` field (e.g., "Anonymous (william.volny85@gmail.com)").
+   * **creator**: Map to `Submitted by` field (e.g., \"Anonymous (william.volny85@gmail.com)\").
 4. **Update and Verify**:
    * Append the new object to the target array.
    * Ensure imports/exports are correct and the application builds.
+
+---
+
+## Missing Icons Audit & Backfill
+
+As of 2026-05-29, **50 icons** were backfilled across 19 data files for team entries that were missing the `icon:` property. 
+
+### The automated script (`scripts/fix_missing_icons.py`)
+
+This script scans all `data/p*/**/*.ts` files for entries that have a `lead:` field but no `icon:` field, then inserts the correct icon path based on a lead-to-icon mapping.
+
+**Mapping logic:**
+- Lead names are matched to icon filenames using a static dictionary (`LEAD_ICON_MAP`).
+- Abbreviations (e.g., `PKHO` → Pirate King Hondo Onaka, `GM` → Great Mothers, `CLS` → Commander Luke Skywalker) are mapped through `data/leads.ts` aliases.
+- Ships (Executrix, Home One) use `/icons/ships/` paths; characters use `/icons/characters/`.
+- The icon line is inserted between the `videos:`/`notes:` block and the `difficulty:` line.
+
+**To run:**
+```bash
+python3 scripts/fix_missing_icons.py
+```
+
+**When to run:**
+- After batch-importing new team suggestions via `scripts/implement_suggestions.mjs`
+- Whenever new entries are added without icons
+- When new icon assets are added to `public/icons/` and existing entries should be updated
+
+**Add new mappings** by editing the `LEAD_ICON_MAP` dictionary in the script whenever a new lead abbreviation or variant spelling is encountered.

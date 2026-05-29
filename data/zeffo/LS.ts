@@ -262,6 +262,7 @@ export const zeffoCombat: dataType[] = [
     others: 'RH Finn, RH Poe, Zorii, Rose',
     notes: 'Auto',
     videos: [],
+    icon: '/icons/characters/tex.charui_finn.png',
     difficulty: difficulty.EASY,
     successRate: successRate.CONSISTENT,
     interactionType: [interactionType.AUTO],

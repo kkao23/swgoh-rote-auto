@@ -325,6 +325,7 @@ export const youngHanP5: dataType[] = [
     others: 'Fulcrum, gas, young Han, vandor.',
     notes: 'Get exile off fulcrum asap, keep Han and chewie alive with the box. The Ashokas and Gas will take care of the enemies.',
     videos: [],
+    icon: '/icons/characters/tex.charui_ahsokatanogray.png',
     difficulty: difficulty.EASY,
     successRate: successRate.CONSISTENT,
     interactionType: [interactionType.AUTO],

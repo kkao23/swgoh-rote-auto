@@ -412,6 +412,7 @@ export const mixedTopLeftP3: dataType[] = [
     others: 'Nighsister Zombie, Morgan Elsbeth,Asajj Ventress',
     notes: 'Bless Morgan, auto',
     videos: [],
+    icon: '/icons/characters/tex.charui_greatmothers.png',
     difficulty: difficulty.EASY,
     successRate: successRate.CONSISTENT,
     interactionType: [interactionType.AUTO],

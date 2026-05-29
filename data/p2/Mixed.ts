@@ -86,6 +86,7 @@ export const hondoMixedP2: dataType[] = [
     others: 'CAT, Padme, General Kenobi, Hondo',
     notes: 'Auto',
     videos: [],
+    icon: '/icons/characters/tex.charui_globiwan.png',
     difficulty: difficulty.EASY,
     successRate: successRate.CONSISTENT,
     interactionType: [interactionType.AUTO],

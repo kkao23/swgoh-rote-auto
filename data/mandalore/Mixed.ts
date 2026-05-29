@@ -231,6 +231,7 @@ export const mandaloreGeneric: dataType[] = [
     others: 'Jedi Knight Revan, Bastila Shan, Jolee Bindo, Juhani',
     notes: 'Dependind on mods, full auto',
     videos: [],
+    icon: '/icons/characters/tex.charui_sateleshan.png',
     difficulty: difficulty.EASY,
     successRate: successRate.CONSISTENT,
     interactionType: [interactionType.AUTO],

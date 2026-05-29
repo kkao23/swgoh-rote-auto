@@ -1,5 +1,6 @@
 import { useLocalStorage } from "@vueuse/core";
 import { generateClient } from "aws-amplify/data";
+import { ref } from "vue";
 import type { Schema } from "../amplify/data/resource";
 
 /**

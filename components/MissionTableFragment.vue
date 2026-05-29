@@ -6,6 +6,15 @@ import { creatorMap } from '~/models/creators';
 import { useRouter, useRoute } from 'vue-router';
 import { nextTick, watch, computed } from 'vue';
 import { trackEvent } from '~/util/analytics';
+import {
+    difficultyColor,
+    difficultyIcon,
+    successRateBadge,
+    successRateValue,
+    interactionBadge,
+    interactionBadges,
+    interactionComplexity,
+} from '~/util/missionHelpers';
 
 const { isSaved, toggleSaved } = useSavedTeams();
 
@@ -80,106 +89,12 @@ watch(localIsModalOpen, (isOpen) => {
     }
 });
 
-const difficultyColor = (item: dataType) => {
-    switch (item.difficulty) {
-        case difficulty.VERY_EASY: return 'text-green-500';
-        case difficulty.EASY: return 'text-blue-400';
-        case difficulty.CAUTION: return 'text-yellow-600';
-        case difficulty.HARD: return 'text-orange-600';
-        case difficulty.NO_AUTO: return 'text-red-900';
-        default: return 'hidden';
-    }
-}
-
-const difficultyIcon = (item: dataType) => {
-    switch (item.difficulty) {
-        case difficulty.VERY_EASY: return 'i-heroicons-check-circle-solid';
-        case difficulty.EASY: return 'i-heroicons-hand-thumb-up-solid';
-        case difficulty.CAUTION: return 'i-heroicons-exclamation-triangle-solid';
-        case difficulty.HARD: return 'i-heroicons-shield-exclamation-solid';
-        case difficulty.NO_AUTO: return 'i-heroicons-x-circle-solid';
-        default: return 'hidden';
-    }
-}
-
 // Expose method to open modal from parent
 function openModal() {
     localIsModalOpen.value = true;
 }
 
 defineExpose({ openModal });
-
-// Success Rate Badge Config
-const successRateBadge = (rate?: string) => {
-    switch (rate) {
-        case successRate.CONSISTENT:
-            return { icon: 'i-heroicons-check-circle-solid', color: 'text-green-500', tooltip: 'Consistent 2/2 waves (100%)' };
-        case successRate.NINETY_PERCENT:
-            return { icon: 'i-heroicons-hand-thumb-up-solid', color: 'text-blue-400', tooltip: 'Very reliable (~90%)' };
-        case successRate.USUALLY:
-            return { icon: 'i-heroicons-exclamation-triangle-solid', color: 'text-yellow-500', tooltip: 'Usually works (60-80%)' };
-        case successRate.FIFTY_FIFTY:
-            return { icon: 'i-heroicons-minus-circle-solid', color: 'text-orange-500', tooltip: '50/50 - Consistent 1/2, sometimes 2/2' };
-        case successRate.UNRELIABLE:
-            return { icon: 'i-heroicons-x-circle-solid', color: 'text-red-500', tooltip: 'Unreliable or cannot auto' };
-        default:
-            return null;
-    }
-}
-
-// Interaction Type Badge Config (single type)
-const interactionBadge = (type: string) => {
-    switch (type) {
-        case interactionType.TARGET_START:
-            return { icon: 'i-heroicons-cursor-arrow-rays', color: 'text-blue-400', tooltip: 'Target at battle start' };
-        case interactionType.PAUSE_WAVE2:
-            return { icon: 'i-heroicons-pause-circle', color: 'text-purple-400', tooltip: 'Pause at wave 2' };
-        case interactionType.MANUAL:
-            return { icon: 'i-heroicons-hand-raised', color: 'text-red-400', tooltip: 'Manual play required' };
-        case interactionType.AUTO:
-        default:
-            return null; // Pure auto, no badge needed
-    }
-}
-
-// Get all interaction badges for an array of types
-const interactionBadges = (types?: string[]) => {
-    if (!types || types.length === 0) return [];
-    return types.map(type => interactionBadge(type)).filter(badge => badge !== null);
-}
-
-// Get numeric value for success rate (for sorting)
-const successRateValue = (rate?: string): number => {
-    switch (rate) {
-        case successRate.CONSISTENT: return 0;
-        case successRate.NINETY_PERCENT: return 1;
-        case successRate.USUALLY: return 2;
-        case successRate.FIFTY_FIFTY: return 3;
-        case successRate.UNRELIABLE: return 4;
-        default: return 5; // Fallback for missions without successRate
-    }
-}
-
-// Get interaction complexity score (for sorting)
-const interactionComplexity = (types?: string[]): number => {
-    if (!types || types.length === 0) return 0;
-    
-    // Count non-auto interactions
-    const nonAutoCount = types.filter(t => t !== interactionType.AUTO).length;
-    
-    // Weight by type: manual is most complex, then pause, then target
-    let complexity = 0;
-    types.forEach(type => {
-        switch (type) {
-            case interactionType.MANUAL: complexity += 10; break;
-            case interactionType.PAUSE_WAVE2: complexity += 5; break;
-            case interactionType.TARGET_START: complexity += 3; break;
-            case interactionType.AUTO: complexity += 0; break;
-        }
-    });
-    
-    return complexity;
-}
 
 const isMobile = useMediaQuery('(max-width: 768px)');
 

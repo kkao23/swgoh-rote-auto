@@ -21,4 +21,6 @@ logs
 # Local env files
 .env
 .env.*
-!.env.example
+# Amplify gen 2 generated artifacts (per-developer, auto-generated)
+.amplify
+amplify_outputs.json

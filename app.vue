@@ -145,7 +145,8 @@ const navigationLinks = [
         </div>
       </div>
       <div v-if="!isBudgetPage && !isFavoriteBannerHidden" class="mx-4 mb-4 relative">
-        <UAlert icon="i-heroicons-heart-solid" color="pink" variant="soft" title="New!" description="Save your favorite teams by tapping the ❤️ heart icon next to the share button."
+        <UAlert icon="i-heroicons-hand-thumb-up-solid" color="pink" variant="soft" title="New!"
+          description="Upvote your favorite teams! Tap 👍 to upvote or 👎 to downvote, and see which teams the community recommends most."
           :ui="{ title: 'text-pink-100 font-bold', description: 'text-pink-100' }" />
         <button @click="isFavoriteBannerHidden = true"
           class="absolute top-1.5 right-2 w-5 h-5 flex items-center justify-center rounded-full bg-pink-100 border border-pink-400 text-pink-600 hover:bg-pink-200 hover:text-pink-700 transition-colors z-10"

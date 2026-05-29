@@ -9,7 +9,7 @@ import { trackEvent } from '~/util/analytics';
 
 const { isSaved, toggleSaved } = useSavedTeams();
 
-const { voteCounts, isLoading: votesLoading, hasVoted, fetchVotes, upvote, downvote, getTeamKey, votedTeams } = useVoteTracker();
+const { fetchVotes, voteCounts, getTeamKey } = useVoteTracker();
 
 const props = defineProps({
     special: Boolean,
@@ -198,6 +198,22 @@ const verifiedAccordionItems = computed(() => {
         const bSaved = isSaved(props.phase || '', props.alignment || '', props.position || '', b.lead) ? 0 : 1;
         if (aSaved !== bSaved) return aSaved - bSaved;
 
+        // Vote-based sort: teams with ≥ 50 votes cast sort by net votes (highest first)
+        const aKey = getTeamKey(props.phase || '', props.alignment || '', props.position || '', a.lead);
+        const bKey = getTeamKey(props.phase || '', props.alignment || '', props.position || '', b.lead);
+        const aVotes = voteCounts.value[aKey] ?? 0;
+        const bVotes = voteCounts.value[bKey] ?? 0;
+        const aHasEnough = Math.abs(aVotes) >= 50;
+        const bHasEnough = Math.abs(bVotes) >= 50;
+
+        if (aHasEnough || bHasEnough) {
+            // If one has enough votes and the other doesn't, the voted one wins
+            if (aHasEnough && !bHasEnough) return -1;
+            if (!aHasEnough && bHasEnough) return 1;
+            // Both have enough: sort by net votes descending
+            return bVotes - aVotes;
+        }
+
         // Sort by success rate (better success first)
         const aSuccessValue = successRateValue(a.successRate);
         const bSuccessValue = successRateValue(b.successRate);
@@ -235,7 +251,15 @@ const verifiedAccordionItems = computed(() => {
 });
 
 const communityAccordionItems = computed(() => {
-    return communityTeams.value.map((d) => ({
+    return [...communityTeams.value]
+        .sort((a, b) => {
+            const aKey = getTeamKey(props.phase || '', props.alignment || '', props.position || '', a.lead);
+            const bKey = getTeamKey(props.phase || '', props.alignment || '', props.position || '', b.lead);
+            const aVotes = voteCounts.value[aKey] ?? 0;
+            const bVotes = voteCounts.value[bKey] ?? 0;
+            return bVotes - aVotes;
+        })
+        .map((d) => ({
         label: !isMobile.value && d.leadFull ? d.leadFull : d.lead,
         content: {
             others: d.others,
@@ -248,6 +272,7 @@ const communityAccordionItems = computed(() => {
             interactionType: d.interactionType,
             icon: d.icon,
             creator: d.creator,
+            lead: d.lead,
         },
         defaultOpen: false,
     }));
@@ -373,26 +398,12 @@ async function showToast(itemIndex: number) {
                             <img v-if="item.content.omi" src="/icons/omi.png" alt="omicron" class="h-4 w-4" />
                             <template #trailing>
                                 <div class="flex items-center gap-0.5 ml-auto">
-                                    <!-- Vote count -->
-                                    <span class="text-xs text-gray-400 min-w-[22px] text-center tabular-nums mr-1">
-                                        {{ voteCounts[getTeamKey(phase || '', alignment || '', position || '', item.content.lead)] ?? 0 }}
-                                    </span>
-                                    <!-- Upvote -->
-                                    <button
-                                        class="rounded-full p-0.5"
-                                        :class="hasVoted(phase || '', alignment || '', position || '', item.content.lead) && votedTeams[getTeamKey(phase || '', alignment || '', position || '', item.content.lead)] === 'up' ? 'text-red-400' : 'text-gray-500'"
-                                        :disabled="hasVoted(phase || '', alignment || '', position || '', item.content.lead)"
-                                        @click.stop="upvote(phase || '', alignment || '', position || '', item.content.lead)">
-                                        <UIcon name="i-heroicons-hand-thumb-up-solid" class="w-4 h-4" />
-                                    </button>
-                                    <!-- Downvote -->
-                                    <button
-                                        class="rounded-full p-0.5"
-                                        :class="hasVoted(phase || '', alignment || '', position || '', item.content.lead) && votedTeams[getTeamKey(phase || '', alignment || '', position || '', item.content.lead)] === 'down' ? 'text-blue-400' : 'text-gray-500'"
-                                        :disabled="hasVoted(phase || '', alignment || '', position || '', item.content.lead)"
-                                        @click.stop="downvote(phase || '', alignment || '', position || '', item.content.lead)">
-                                        <UIcon name="i-heroicons-hand-thumb-down-solid" class="w-4 h-4" />
-                                    </button>
+                                    <VoteButtons
+                                        :phase="phase || ''"
+                                        :alignment="alignment || ''"
+                                        :position="position || ''"
+                                        :lead="item.content.lead"
+                                    />
                                     <!-- Share -->
                                     <UButton color="white" variant="outline" icon="i-heroicons-share" size="xs"
                                         class="rounded-full text-blue-400" @click.stop="showToast(index)"/>
@@ -449,8 +460,16 @@ async function showToast(itemIndex: number) {
                                 <span class="mission-team-label">{{ item.label }}</span>
                                 <img v-if="item.content.omi" src="/icons/omi.png" alt="omicron" class="h-4 w-4" />
                                 <template #trailing>
-                                    <UIcon name="i-heroicons-chevron-right-20-solid" class="w-5 h-5 ms-auto transform transition-transform duration-200"
-                                        :class="[open && 'rotate-90']" />
+                                    <div class="flex items-center gap-0.5 ml-auto">
+                                        <VoteButtons
+                                            :phase="phase || ''"
+                                            :alignment="alignment || ''"
+                                            :position="position || ''"
+                                            :lead="item.content.lead"
+                                        />
+                                        <UIcon name="i-heroicons-chevron-right-20-solid" class="w-5 h-5 transform transition-transform duration-200"
+                                            :class="[open && 'rotate-90']" />
+                                    </div>
                                 </template>
                             </UButton>
                         </template>

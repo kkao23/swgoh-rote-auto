@@ -4,8 +4,34 @@ This document records the analyzed architecture and rules for parsing "Suggest a
 
 ## Target Arrays & Mappings
 
-* **Phase 1 DS**: [data/p1/DS.ts](file:///C:/Users/choco/repos/swgoh-rote-auto/data/p1/DS.ts) $\to$ `shipsDSP1`, `leftDSP1`, etc.
+* **Phase 1 DS**: [data/p1/DS.ts](data/p1/DS.ts) $\to$ `shipsDSP1`, `leftDSP1`, etc.
 * **Phase 2-6**: Under `data/p[2-6]/` matching the alignment and zone.
+
+## Automated Bulk Processing
+
+For batch importing suggestions from Gmail Takeout `.mbox` exports, two scripts are available:
+
+### `scripts/parse_mbox.mjs`
+Parses an `.mbox` file and extracts all team suggestion emails into a structured JSON file (`scripts/parsed_suggestions.json`). Usage:
+```bash
+node scripts/parse_mbox.mjs
+```
+Update the `mboxPath` variable to point at your `.mbox` file before running.
+
+### `scripts/implement_suggestions.mjs`
+Reads the parsed JSON, maps each suggestion to the correct data file and array, checks for duplicates against existing entries, infers `difficulty`/`successRate`/`interactionType` from the notes, and inserts new entries directly into the TypeScript data files.
+
+**Key behaviors:**
+- **Duplicate detection**: Matches leads case-insensitively across both single-quoted (`lead: '...'`) and double-quoted (`"lead": "..."`) formats.
+- **Position mapping**: A static `POSITION_MAP` in the script maps email `Phase|Alignment|Position` strings to `{ file, array }` targets. New positions must be added here.
+- **Gameplay inference**: Heuristic rules in `inferGameplay()` extract difficulty and successRate from notes text (e.g., "auto" → EASY/CONSISTENT, "1/2" → FIFTY_FIFTY, "no auto" → NO_AUTO/MANUAL).
+- **Creator handling**: Named submitters get `creator: 'Name'`; anonymous submissions get `creator: 'anonymous'`; and `omi: true` is added when omicrons are mentioned.
+
+**Edge cases the script handles:**
+- Some pre-existing data files use JSON-style `"lead": "Name"` properties — these are detected alongside the standard `lead: 'Name'` format.
+- Some arrays close with `]` instead of `];` — the bracket-matching logic handles both.
+- Quoted-printable encoding (`=C3=A9` → `é`, `=E2=80=99` → `'`) is decoded automatically.
+- Typos in lead names (e.g., "Grand Inquistor" vs "Grand Inquisitor") are **not** caught by the duplicate check — review the output for near-duplicates after running.
 
 ### Parsing Instructions for AI Assistant (Run on demand)
 When requested to parse a team suggestion email, use the following rules:

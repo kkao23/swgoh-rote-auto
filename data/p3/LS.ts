@@ -122,6 +122,27 @@ export const lsLeftP3: dataType[] = [
         successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.MANUAL],
     }
+,
+{
+    lead: 'oFinn',
+    others: 'RH Finn, RH Poe, Zorii, Rose',
+    notes: 'Auto',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'anonymous'
+},
+{
+    lead: 'Jedi Knight Cal Kestis',
+    others: 'Jedi Knight Luke, Jedi Knight Revan, Kyle Katarn, Bastila Shan',
+    notes: '100% Auto',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'Windaar'
+}
 ]
 
 export const lsRightP3: dataType[] = [
@@ -229,6 +250,17 @@ export const lsRightP3: dataType[] = [
     //     videos: [{ url: 'https://youtu.be/DWqpQlVv0rA' }],
     //     difficulty: difficulty.EASY
     // },
+
+{
+    lead: 'Jedi Master Mace Windu',
+    others: 'Depa Bilaba, Temple Guard, Jocasta Nu, Aayla Secura',
+    notes: 'Auto, no omis required',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'anonymous'
+}
 ]
 
 export const sawP3: dataType[] = [
@@ -325,7 +357,7 @@ export const wookies: dataType[] = [
     "successRate": successRate.USUALLY,
     "interactionType": [interactionType.AUTO],
     "creator": "Mar Trepodi"
-    }
+}
 ]
 
 export const shipsLSP3: dataType[] = [

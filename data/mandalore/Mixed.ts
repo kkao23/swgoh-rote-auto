@@ -225,6 +225,17 @@ export const mandaloreGeneric: dataType[] = [
     "interactionType": [interactionType.AUTO],
     "creator": "anonymous"
     }
+,
+{
+    lead: 'Satele Shan',
+    others: 'Jedi Knight Revan, Bastila Shan, Jolee Bindo, Juhani',
+    notes: 'Dependind on mods, full auto',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'Andriu'
+}
 ]
 
 export const mandaloreDTMG: dataType[] = [

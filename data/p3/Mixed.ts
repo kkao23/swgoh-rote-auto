@@ -406,6 +406,17 @@ export const mixedTopLeftP3: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
     },
+
+{
+    lead: 'Great Mothers',
+    others: 'Nighsister Zombie, Morgan Elsbeth,Asajj Ventress',
+    notes: 'Bless Morgan, auto',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'Qwaze'
+}
 ]
 
 export const mixedP3Ships: dataType[] = [

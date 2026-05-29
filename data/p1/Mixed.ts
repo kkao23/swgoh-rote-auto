@@ -274,6 +274,27 @@ export const mixedP1: dataType[] = [
         successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO],
     },
+
+{
+    lead: 'Maul',
+    others: 'Jango, Cordo, Gar Saxon, super commando.',
+    notes: 'Easy auto.',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'anonymous'
+},
+{
+    lead: 'Palpatine',
+    others: 'MJ, Starkiller, Old Ben, Cal Kestis',
+    notes: 'Once MJ gets her turn and Palpatine shocks, everyone basically stays stunned for the remainder',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'anonymous'
+},
 ]
 
 export const jabbaP1: dataType[] = [

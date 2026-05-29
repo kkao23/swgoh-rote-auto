@@ -318,6 +318,37 @@ export const mixedGenericP4: dataType[] = [
         successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO],
     }
+,
+{
+    lead: 'Lord Vader',
+    others: 'DS clones',
+    notes: 'Auto',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'anonymous'
+},
+{
+    lead: 'GM',
+    others: 'Morgan, Spirit, NT, DTP',
+    notes: 'Auto',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'anonymous'
+},
+{
+    lead: 'CLS',
+    others: 'Chewpio Chewbacca Han Threepio',
+    notes: 'Auto',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'anonymous'
+}
 ]
 
 export const jabbaP4: dataType[] = [

@@ -319,4 +319,15 @@ export const youngHanP5: dataType[] = [
     interactionType: [interactionType.MANUAL],
     creator: 'anonymous',
 },
+
+{
+    lead: 'Glat',
+    others: 'Fulcrum, gas, young Han, vandor.',
+    notes: 'Get exile off fulcrum asap, keep Han and chewie alive with the box. The Ashokas and Gas will take care of the enemies.',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'anonymous'
+}
 ]

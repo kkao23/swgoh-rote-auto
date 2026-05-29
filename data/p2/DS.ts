@@ -111,6 +111,17 @@ export const acklayDSP2: dataType[] = [
         interactionType: [interactionType.MANUAL],
         creator: 'anonymous',
     },
+
+{
+    lead: 'Captain Enoch',
+    others: 'night trooper, death trooper peridea, any other imperial remnants',
+    notes: 'auto',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'Darth Speedy'
+}
 ]
 
 export const reekDSP2: dataType[] = [

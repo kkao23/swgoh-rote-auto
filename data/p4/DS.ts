@@ -158,6 +158,47 @@ export const dsMidRightP4: dataType[] = [
         successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO]
     },
+    
+{
+    lead: 'GM',
+    others: 'Morgan, Spirit, NT, DTP',
+    notes: 'Auto',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'anonymous'
+},
+{
+    lead: 'The Stranger',
+    others: 'Starkiller, Baylan, Plo Koon, Scav Rey',
+    notes: 'Baylan instead of Malicos, ahould be fully autoable',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'anonymous'
+},
+{
+    lead: 'Aphra',
+    others: 'BT1 Trip IG90 B2',
+    notes: 'auto',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'anonymous'
+},
+{
+    lead: 'Zuckuss',
+    others: '4Lom, Bossk, Dengar, Boba',
+    notes: 'Om on Zuckuss, R9s on Zuck, 4Lom, Bossk & Boba. Taunt on Bossk as soon as. Foresight on all as soon as',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'anonymous'
+}
 ]
 
 export const dsSortie: dataType[] = [

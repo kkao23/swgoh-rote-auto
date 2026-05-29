@@ -200,6 +200,27 @@ export const dsEmpireP3: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
     },
+
+{
+    lead: 'Emperor Palpatine',
+    others: 'GI, 9th sister, 7th sister, 5th brother',
+    notes: 'Auto (modding should be good), all R7 with zeta',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'anonymous'
+},
+{
+    lead: 'Emp Palpatine',
+    others: 'GI, 7th, Reva, 5th',
+    notes: 'Inqusitors w/ Reva (or i think that with fat 9sis could work too). I think 5th is importante (timing 1st special and his basic. Dont go after one char to finish at once, just hit everyone after one another to 0protection and then to half of health',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'anonymous'
+}
 ]
 
 export const drAphraP3: dataType[] = [
@@ -256,6 +277,48 @@ export const drAphraP3: dataType[] = [
         omi: true,
         creator: 'jkat70'
     }
+,
+{
+    lead: 'Aphra',
+    others: 'BT-1, 0-0-0, DV, Malak',
+    notes: 'Auto',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'BailWritte'
+},
+{
+    lead: 'Dr. Aphra',
+    others: 'GG, HK 47, IG 90 4LOOM',
+    notes: 'Full Auto',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'Gesho'
+},
+{
+    lead: 'Dr Aphra',
+    others: 'Baylan, Shin, Marrok (omicron), and Quiggold (omicron)',
+    notes: 'Quiggold (omicron) is not mandatory; this last unit can be swapped by Malak or another',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'Artha Dragon',
+    omi: true
+},
+{
+    lead: 'Doctor Aphra',
+    others: 'Marrok (omi), Inqs, Mercs',
+    notes: 'auto',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'anonymous'
+}
 ]
 
 export const merrinP3: dataType[] = [

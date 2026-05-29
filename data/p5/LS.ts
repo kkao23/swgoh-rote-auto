@@ -134,6 +134,18 @@ export const lsTopMidP5: dataType[] = [
         successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO]
     },
+
+{
+    lead: 'BKM',
+    others: 'Paz, IG12, PSW, Mando',
+    notes: 'Paz Omi needed. Was able to auto twice.',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'zeratul021',
+    omi: true
+}
 ]
 
 export const lsBottomP5: dataType[] = [
@@ -192,6 +204,17 @@ export const lsBottomP5: dataType[] = [
         interactionType: [interactionType.AUTO],
         omi: true
     }
+,
+{
+    lead: 'Ahsoka Tano',
+    others: 'Ezra, Padawan Sabine +2',
+    notes: 'Sabine can nuke nest, probably inconsistent',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.FIFTY_FIFTY,
+    interactionType: [interactionType.AUTO],
+    creator: 'anonymous'
+}
 ]
 
 export const lsShipsP5: dataType[] = [

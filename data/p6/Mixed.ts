@@ -38,6 +38,27 @@ export const bottomLeftMixedP6: dataType[] = [
         interactionType: [interactionType.MANUAL],
         creator: 'Mar Trepodi',
     }
+,
+{
+    lead: 'Maz',
+    others: 'Smee, kix, quiggold, and ithano',
+    notes: 'Auto',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'anonymous'
+},
+{
+    lead: 'JMMW',
+    others: 'TG, Depa, JN and KB',
+    notes: 'Easy win',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'anonymous'
+}
 ]
 
 

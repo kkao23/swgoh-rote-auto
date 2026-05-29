@@ -257,4 +257,14 @@ export const zeffoCombat: dataType[] = [
         targeted: true,
         creator: 'Narorbisath',
     },
+{
+    lead: 'oFinn',
+    others: 'RH Finn, RH Poe, Zorii, Rose',
+    notes: 'Auto',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'anonymous'
+}
 ]

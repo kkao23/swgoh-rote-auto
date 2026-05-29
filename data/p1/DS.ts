@@ -94,7 +94,18 @@ export const leftDSP1: dataType[] = [{
     successRate: successRate.CONSISTENT,
     interactionType: [interactionType.AUTO],
     creator: 'Darth Woogie'
-},];
+},
+{
+    lead: 'PKHO',
+    others: 'Silvo, Ithano, Vane, Brutus',
+    notes: 'Easy Auto',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'anonymous'
+}
+];
 
 export const bottomDSP1: dataType[] = [{
     lead: 'Great Mothers',
@@ -228,6 +239,17 @@ export const bottomDSP1: dataType[] = [{
     interactionType: [interactionType.AUTO],
     creator: 'anonymous',
 },
+
+{
+    lead: 'Grand Inquisitor',
+    others: 'Marrok, 5th 7th 8th',
+    notes: 'Auto',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'anonymous'
+}
 ];
 
 export const topDSP1: dataType[] = [
@@ -305,6 +327,17 @@ export const topDSP1: dataType[] = [
         interactionType: [interactionType.AUTO],
         omi: true,
     },
+
+{
+    lead: 'Admiral Trench',
+    others: 'Wat, Jango Fett, Nute Gunray, Count Dooku',
+    notes: 'In the first phase, Trench should charge Droedika. Stun him as well. Jango should finish off Droedika if the charge didn\'t finish him off. In the second phase, stun Wat before the taunts, kill Droedika. Trench\'s abilities should be active for the second phase. 100% winrate.',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'Teg bashar'
+}
 ];
 
 export const lvP1: dataType[] = [
@@ -344,4 +377,15 @@ export const shipsDSP1 = [
         successRate: successRate.UNRELIABLE,
         interactionType: [interactionType.MANUAL]
     }
+,
+{
+    lead: 'Executrix',
+    others: 'Mark VI, Scythe, Tie x1, Defender, Inceptor, Sith Fighter, Imperi=',
+    notes: 'Executrix gets two extra TIEs to start with. Eliminate all the oth=',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'anonymous'
+}
 ]

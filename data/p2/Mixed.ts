@@ -80,6 +80,17 @@ export const hondoMixedP2: dataType[] = [
         interactionType: [interactionType.AUTO],
         omi: true
     },
+
+{
+    lead: 'Jedi Master Kenobi',
+    others: 'CAT, Padme, General Kenobi, Hondo',
+    notes: 'Auto',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'Pym'
+}
 ]
 
 export const shipsMixedP2: dataType[] = [

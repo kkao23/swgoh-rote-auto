@@ -58,6 +58,17 @@ export const dsBottomRightP5: dataType[] = [
         successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.MANUAL]
     },
+
+{
+    lead: 'Dark Trooper Moff Gideon',
+    others: 'Night Trooper, Death Trooper (Peridia), Captain Enoch (Omi), Scout Trooper',
+    notes: 'Manual suggested for wave 1; Auto Wave 2',
+    videos: [],
+    difficulty: difficulty.CAUTION,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'anonymous'
+}
 ]
 
 export const dsTopMidP5: dataType[] = [
@@ -118,6 +129,17 @@ export const dsTopMidP5: dataType[] = [
         successRate: successRate.USUALLY,
         interactionType: [interactionType.MANUAL]
     },
+
+{
+    lead: 'GM',
+    others: 'Morgan, Spirit, NT, DTP',
+    notes: 'Auto',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'anonymous'
+}
 ]
 
 export const dsLeftP5: dataType[] = [

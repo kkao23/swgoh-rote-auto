@@ -35,6 +35,17 @@ export const shipsLSP2: dataType[] = [
         interactionType: [interactionType.AUTO],
         targeted: true
     }
+,
+{
+    lead: 'Home one',
+    others: 'Starting: Cassian, raven\'s claw, rebel y-wing.',
+    notes: 'Start with b-wing reinforcement and use ultimate home one.',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'anonymous'
+}
 ]
 
 export const jediLSP2: dataType[] = [
@@ -107,6 +118,38 @@ export const jediLSP2: dataType[] = [
         successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO],
     }
+,
+{
+    lead: 'Jedi Master Mace Windu',
+    others: 'Depa Bilaba, Temple Guard, Jocasta Nu, Aayla Secura',
+    notes: 'Full Auto, no omi required',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'anonymous',
+    omi: true
+},
+{
+    lead: 'Jedi master Luke',
+    others: 'Jedi Knight Luke,',
+    notes: 'Auto',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'Fettpack'
+},
+{
+    lead: 'JMLS',
+    others: 'KB, JKLS, GAS, JKCK',
+    notes: 'Reach ult ASAP, save JKCK insta kill for round 2. JMLS at R9, rest R7.',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'anonymous'
+}
 ]
 
 export const leftLSP2: dataType[] = [
@@ -209,7 +252,18 @@ export const leftLSP2: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         omi: true
-    }
+    },
+    {
+    lead: 'Cassian (Undercover)',
+    others: 'Vel, Kleya, Cinta, Luthen',
+    notes: 'Auto. Vel omicron.',
+    videos: [{ url: 'https://youtu.be/6V03L2DaXvQ' }],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'Mar Trepodi',
+    omi: true
+}
 ]
 
 export const rightLSP2: dataType[] = [
@@ -334,6 +388,19 @@ export const rightLSP2: dataType[] = [
     //     videos: [{ url: 'https://youtu.be/eOXu2I5QuII' }],
     //     difficulty: difficulty.EASY
     // },
+,
+
+{
+    lead: 'Finn (o)',
+    others: 'Poe, Zorii, RH Finn, Rose,',
+    notes: 'Having Finn Omicron is mandatory.',
+    videos: [{ url: 'https://youtu.be/5DLwd0lQEoU?si=cyY4SzcHLpqdhrhR&t=367' }],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'anonymous',
+    omi: true
+}
 ]
 
 export const zeffoUnlock: dataType[] = [

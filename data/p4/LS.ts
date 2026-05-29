@@ -142,6 +142,47 @@ export const lsGenericP4: dataType[] = [
         interactionType: [interactionType.AUTO],
         omi: true
     }
+,
+{
+    lead: 'General Syndulla',
+    others: 'Ezra (Exile), Huyang, Padawan Sabine Wren, Cassian Andor (But probably any toon will do)',
+    notes: 'Full auto. For safety measure you can target leader first in second phase.',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.TARGET_START],
+    creator: 'LQ'
+},
+{
+    lead: 'oFinn',
+    others: 'RH Finn, RH Poe, Zorii, Rose',
+    notes: 'Auto',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'anonymous'
+},
+{
+    lead: 'Padmé Amidala',
+    others: 'CAT, Snips, R2, ARC-Trooper',
+    notes: 'Good leftover team for smaller rosters.=20',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'anonymous'
+},
+{
+    lead: 'Rey (GL)',
+    others: 'BAM, Yoda, Han Solo, GK',
+    notes: 'No Auto,Kills with Rey and BAM(20 Whistling Birds)',
+    videos: [],
+    difficulty: difficulty.NO_AUTO,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.MANUAL],
+    creator: 'Found'
+}
 ]
 
 export const jediLSP4: dataType[] = [
@@ -256,5 +297,5 @@ export const jediLSP4: dataType[] = [
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
-    }
+}
 ]

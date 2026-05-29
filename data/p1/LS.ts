@@ -367,4 +367,25 @@ export const genericLSP1: dataType[] = [
     "interactionType": [interactionType.AUTO],
     "creator": "anonymous"
     }
+,
+{
+    lead: 'Satele Shan',
+    others: 'Jedi Knight Reva, Bastilla Shan, Jolee Bindo, Mission Vao',
+    notes: 'Auto',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'pshea07'
+},
+{
+    lead: 'Rey',
+    others: 'Rey (Jedi Training) , Cere Junda, Cal Kestis, CLS',
+    notes: 'Auto. could probably fill another UFU for CLS',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'anonymous'
+}
 ]

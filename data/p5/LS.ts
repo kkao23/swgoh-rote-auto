@@ -159,7 +159,6 @@ export const lsBottomP5: dataType[] = [
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
-        icon: '/icons/characters/tex.charui_bossnass.png',
         creator: 'avengerObs',
     },
     {

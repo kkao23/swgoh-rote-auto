@@ -175,8 +175,7 @@ export const reekDSP2: dataType[] = [
         icon: '/icons/characters/tex.charui_lordvader.png',
         difficulty: difficulty.EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO],
-        icon: '/icons/characters/tex.charui_lordvader.png'
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'Dr Aphra',

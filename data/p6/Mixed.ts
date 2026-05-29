@@ -22,7 +22,6 @@ export const topWampaP6: dataType[] = [
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
-        icon: '/icons/characters/tex.charui_bossnass.png',
         creator: 'Boston B',
     },
 ]

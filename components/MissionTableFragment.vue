@@ -9,6 +9,8 @@ import { trackEvent } from '~/util/analytics';
 
 const { isSaved, toggleSaved } = useSavedTeams();
 
+const { voteCounts, isLoading: votesLoading, hasVoted, fetchVotes, upvote, downvote, getTeamKey, votedTeams } = useVoteTracker();
+
 const props = defineProps({
     special: Boolean,
     shard: Boolean,
@@ -31,6 +33,13 @@ const modalStore = useModalStore();
 const globalToggleModal = () => modalStore.toggleModal();
 const localIsModalOpen = ref(false);
 const isHelpModalOpen = ref(false);
+
+// Fetch vote counts when the accordion modal opens
+watch(localIsModalOpen, (isOpen) => {
+    if (isOpen && props.phase && props.alignment && props.position) {
+        fetchVotes(props.phase, props.alignment, props.position);
+    }
+});
 
 const router = useRouter();
 const route = useRoute();
@@ -364,6 +373,26 @@ async function showToast(itemIndex: number) {
                             <img v-if="item.content.omi" src="/icons/omi.png" alt="omicron" class="h-4 w-4" />
                             <UButton color="white" variant="outline" icon="i-heroicons-share" size="xs" 
                                 class="rounded-full text-blue-400 ml-2" @click.stop="showToast(index)"/>
+
+                            <!-- Vote buttons -->
+                            <span class="text-xs text-gray-400 min-w-[20px] text-center tabular-nums ml-1">
+                                {{ voteCounts[getTeamKey(phase || '', alignment || '', position || '', item.content.lead)] ?? 0 }}
+                            </span>
+                            <UButton color="white" variant="ghost" size="xs"
+                                class="rounded-full ml-0.5"
+                                :class="hasVoted(phase || '', alignment || '', position || '', item.content.lead) && votedTeams[getTeamKey(phase || '', alignment || '', position || '', item.content.lead)] === 'up' ? 'text-green-400' : 'text-gray-500'"
+                                :disabled="hasVoted(phase || '', alignment || '', position || '', item.content.lead)"
+                                @click.stop="upvote(phase || '', alignment || '', position || '', item.content.lead)">
+                                ▲
+                            </UButton>
+                            <UButton color="white" variant="ghost" size="xs"
+                                class="rounded-full ml-0.5"
+                                :class="hasVoted(phase || '', alignment || '', position || '', item.content.lead) && votedTeams[getTeamKey(phase || '', alignment || '', position || '', item.content.lead)] === 'down' ? 'text-red-400' : 'text-gray-500'"
+                                :disabled="hasVoted(phase || '', alignment || '', position || '', item.content.lead)"
+                                @click.stop="downvote(phase || '', alignment || '', position || '', item.content.lead)">
+                                ▼
+                            </UButton>
+
                             <UButton color="white" variant="ghost" size="xs"
                                 class="rounded-full ml-1" 
                                 :class="isSaved(phase || '', alignment || '', position || '', item.content.lead) ? 'text-red-500' : 'text-gray-400'"

@@ -38,22 +38,22 @@ Unit tests for daily and monthly crystal calculations.
 ### Component 2: AWS Amplify Gen 2 Backend
 Setup Amplify Gen 2 TypeScript definitions for DynamoDB, AppSync, and custom Lambda functions.
 
-#### [NEW] [amplify/data/resource.ts](file:///C:/Users/choco/repos/swgoh-rote-auto/amplify/data/resource.ts)
+#### [NEW] [amplify/data/resource.ts](amplify/data/resource.ts)
 Defines the database schema:
 * `TeamVote`: Stores `teamKey` (string) and `votes` (integer).
 * `VoteLog`: Stores `ipHash_teamKey` (string) and `timestamp` (string).
 
-#### [NEW] [amplify/functions/vote-handler/resource.ts](file:///C:/Users/choco/repos/swgoh-rote-auto/amplify/functions/vote-handler/resource.ts)
+#### [NEW] [amplify/functions/vote-handler/resource.ts](amplify/functions/vote-handler/resource.ts)
 Defines the Lambda function trigger for handling votes.
 
-#### [NEW] [amplify/functions/vote-handler/handler.ts](file:///C:/Users/choco/repos/swgoh-rote-auto/amplify/functions/vote-handler/handler.ts)
+#### [NEW] [amplify/functions/vote-handler/handler.ts](amplify/functions/vote-handler/handler.ts)
 The Lambda code that:
 1. Obtains the user's IP from headers.
 2. Hashes the IP + `teamKey` using Node's crypto library.
 3. Checks if the hash exists in `VoteLog`.
 4. Increments the vote counter in `TeamVote` and writes the log.
 
-#### [MODIFY] [package.json](file:///C:/Users/choco/repos/swgoh-rote-auto/package.json)
+#### [MODIFY] [package.json](package.json)
 Add `@aws-amplify/backend` and `aws-amplify` dependencies.
 
 ---
@@ -61,12 +61,12 @@ Add `@aws-amplify/backend` and `aws-amplify` dependencies.
 ### Component 3: Frontend Integration
 Modify components to display and submit votes.
 
-#### [MODIFY] [components/MissionTableFragment.vue](file:///C:/Users/choco/repos/swgoh-rote-auto/components/MissionTableFragment.vue)
+#### [MODIFY] [components/MissionTableFragment.vue](components/MissionTableFragment.vue)
 * Add UI buttons for upvoting/downvoting.
 * Fetch current vote counts for teams when the accordion expands.
 * Disable voting buttons if the team is already voted on locally (stored in browser `localStorage`).
 
-#### [NEW] [composables/useVoteTracker.ts](file:///C:/Users/choco/repos/swgoh-rote-auto/composables/useVoteTracker.ts)
+#### [NEW] [composables/useVoteTracker.ts](composables/useVoteTracker.ts)
 Handles local state (disable buttons upon click, retrieve initial status) and triggers the AppSync API request.
 
 ---

@@ -112,7 +112,7 @@ export function useVoteTracker() {
 
     if (record) {
       // Update existing
-      const newVotes = Math.max(0, (record.votes ?? 0) + delta);
+      const newVotes = (record.votes ?? 0) + delta;
       await client.models.TeamVote.update({
         id: record.id,
         votes: newVotes,

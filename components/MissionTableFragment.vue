@@ -371,40 +371,45 @@ async function showToast(itemIndex: number) {
                             <img v-if="item.content.icon" :src="item.content.icon" class="h-9 w-9 rounded" />
                             <span class="mission-team-label">{{ item.label }}</span>
                             <img v-if="item.content.omi" src="/icons/omi.png" alt="omicron" class="h-4 w-4" />
-                            <UButton color="white" variant="outline" icon="i-heroicons-share" size="xs" 
-                                class="rounded-full text-blue-400 ml-2" @click.stop="showToast(index)"/>
-
-                            <!-- Vote buttons -->
-                            <span class="text-xs text-gray-400 min-w-[20px] text-center tabular-nums ml-1">
-                                {{ voteCounts[getTeamKey(phase || '', alignment || '', position || '', item.content.lead)] ?? 0 }}
-                            </span>
-                            <UButton color="white" variant="ghost" size="xs"
-                                class="rounded-full ml-0.5"
-                                :class="hasVoted(phase || '', alignment || '', position || '', item.content.lead) && votedTeams[getTeamKey(phase || '', alignment || '', position || '', item.content.lead)] === 'up' ? 'text-green-400' : 'text-gray-500'"
-                                :disabled="hasVoted(phase || '', alignment || '', position || '', item.content.lead)"
-                                @click.stop="upvote(phase || '', alignment || '', position || '', item.content.lead)">
-                                ▲
-                            </UButton>
-                            <UButton color="white" variant="ghost" size="xs"
-                                class="rounded-full ml-0.5"
-                                :class="hasVoted(phase || '', alignment || '', position || '', item.content.lead) && votedTeams[getTeamKey(phase || '', alignment || '', position || '', item.content.lead)] === 'down' ? 'text-red-400' : 'text-gray-500'"
-                                :disabled="hasVoted(phase || '', alignment || '', position || '', item.content.lead)"
-                                @click.stop="downvote(phase || '', alignment || '', position || '', item.content.lead)">
-                                ▼
-                            </UButton>
-
-                            <UButton color="white" variant="ghost" size="xs"
-                                class="rounded-full ml-1" 
-                                :class="isSaved(phase || '', alignment || '', position || '', item.content.lead) ? 'text-red-500' : 'text-gray-400'"
-                                @click.stop="trackEvent('team_favorite', { action: isSaved(phase || '', alignment || '', position || '', item.content.lead) ? 'unsave' : 'save', target: `${phase} ${alignment} ${position}`, team: item.content.lead }); toggleSaved(phase || '', alignment || '', position || '', item.content.lead)">
-                                <UIcon 
-                                    :name="isSaved(phase || '', alignment || '', position || '', item.content.lead) ? 'i-heroicons-heart-solid' : 'i-heroicons-heart'"
-                                    class="w-4 h-4" />
-                            </UButton>
                             <template #trailing>
-                                <UIcon name="i-heroicons-chevron-down-20-solid"
-                                    class="w-5 h-5 ms-auto transform transition-transform duration-200 flex-shrink-0"
-                                    :class="[open && 'rotate-180']" />
+                                <div class="flex items-center gap-0.5 ml-auto">
+                                    <!-- Vote count -->
+                                    <span class="text-xs text-gray-400 min-w-[22px] text-center tabular-nums mr-1">
+                                        {{ voteCounts[getTeamKey(phase || '', alignment || '', position || '', item.content.lead)] ?? 0 }}
+                                    </span>
+                                    <!-- Upvote -->
+                                    <button
+                                        class="rounded-full p-0.5"
+                                        :class="hasVoted(phase || '', alignment || '', position || '', item.content.lead) && votedTeams[getTeamKey(phase || '', alignment || '', position || '', item.content.lead)] === 'up' ? 'text-red-400' : 'text-gray-500'"
+                                        :disabled="hasVoted(phase || '', alignment || '', position || '', item.content.lead)"
+                                        @click.stop="upvote(phase || '', alignment || '', position || '', item.content.lead)">
+                                        <UIcon name="i-heroicons-hand-thumb-up-solid" class="w-4 h-4" />
+                                    </button>
+                                    <!-- Downvote -->
+                                    <button
+                                        class="rounded-full p-0.5"
+                                        :class="hasVoted(phase || '', alignment || '', position || '', item.content.lead) && votedTeams[getTeamKey(phase || '', alignment || '', position || '', item.content.lead)] === 'down' ? 'text-blue-400' : 'text-gray-500'"
+                                        :disabled="hasVoted(phase || '', alignment || '', position || '', item.content.lead)"
+                                        @click.stop="downvote(phase || '', alignment || '', position || '', item.content.lead)">
+                                        <UIcon name="i-heroicons-hand-thumb-down-solid" class="w-4 h-4" />
+                                    </button>
+                                    <!-- Share -->
+                                    <UButton color="white" variant="outline" icon="i-heroicons-share" size="xs"
+                                        class="rounded-full text-blue-400" @click.stop="showToast(index)"/>
+                                    <!-- Heart -->
+                                    <UButton color="white" variant="ghost" size="xs"
+                                        class="rounded-full"
+                                        :class="isSaved(phase || '', alignment || '', position || '', item.content.lead) ? 'text-red-500' : 'text-gray-400'"
+                                        @click.stop="trackEvent('team_favorite', { action: isSaved(phase || '', alignment || '', position || '', item.content.lead) ? 'unsave' : 'save', target: `${phase} ${alignment} ${position}`, team: item.content.lead }); toggleSaved(phase || '', alignment || '', position || '', item.content.lead)">
+                                        <UIcon
+                                            :name="isSaved(phase || '', alignment || '', position || '', item.content.lead) ? 'i-heroicons-heart-solid' : 'i-heroicons-heart'"
+                                            class="w-4 h-4" />
+                                    </UButton>
+                                    <!-- Expand chevron -->
+                                    <UIcon name="i-heroicons-chevron-down-20-solid"
+                                        class="w-5 h-5 transform transition-transform duration-200 flex-shrink-0"
+                                        :class="[open && 'rotate-180']" />
+                                </div>
                             </template>
                         </UButton>
                     </template>

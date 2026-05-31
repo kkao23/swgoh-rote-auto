@@ -1,7 +1,7 @@
 import { type data as dataType } from "~/models/data";
 import { difficulty, successRate, interactionType } from "~/models/data";
 
-export const dsGenericP6: dataType[] = [
+export const dsGenericLeftP6: dataType[] = [
     {
         lead: 'SLKR',
         leadFull: 'Supreme Leader Kylo Ren',
@@ -13,6 +13,20 @@ export const dsGenericP6: dataType[] = [
         successRate: successRate.FIFTY_FIFTY,
         interactionType: [interactionType.MANUAL],
     },
+        {
+        lead: 'Pirate King Hondo',
+        leadFull: 'Pirate King Hondo Onaka',
+        others: 'SM-33, Vane, Hondo, Brutus',
+        notes: 'Auto but I did do some targeting at the beginning so Hondo wouldn\'t immediately flee',
+        videos: [{ url: 'https://youtu.be/_tqOpolQE1E' }],
+        icon: '/icons/characters/tex.charui_glhondo.png',
+        difficulty: difficulty.CAUTION,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.TARGET_START],
+    },
+]
+
+export const dsGenericRightP6: dataType[] = [
 ]
 
 export const darthVaderP6: dataType[] = [
@@ -47,20 +61,9 @@ export const idenP6: dataType[] = [
 export const shipsDSP6: dataType[] = [
     {
         lead: 'Executrix',
-        others: 'Tie Fighter, Tie Advanced, Emperor\'s Shuttle, Scythe, Tie Interceptor, Tie Defender, Tie Bomber',
-        notes: 'video is on manual, not sure if autoable',
-        videos: [{ url: 'https://youtu.be/kxnlNYlNV_Y?si=Deeqabfh2O1ACr8T', creator: 'João Adão' }],
-        icon: '/icons/ships/tex.charui_stardestroyer.png',
-        difficulty: difficulty.NO_AUTO,
-        successRate: successRate.UNRELIABLE,
-        interactionType: [interactionType.MANUAL],
-        targeted: true
-    },
-    {
-        lead: 'Executrix',
-        others: 'Tie Fighter, Tie Advanced, Scythe, Emperor\'s Shuttle,Tie Interceptor, Tie Defender, Tie Bomber',
-        notes: 'video is on manual, not sure if autoable',
-        videos: [{ url: 'https://youtu.be/vD921nUnCAM?si=LOhGkXcKblXuLqjC', creator: 'Därth Nebula' }],
+        others: 'Tie Fighter, Tie Advanced, Scythe, Tie Interceptor, Tie Defender, Tie Bomber',
+        notes: 'not an easy mission. I did win even though scythe was destroyed though. don\'t think you can auto this, but maybe with a lot of tries you could get lucky',
+        videos: [{ url: 'https://youtu.be/bMyoCDaycQY' }],
         icon: '/icons/ships/tex.charui_stardestroyer.png',
         difficulty: difficulty.NO_AUTO,
         successRate: successRate.UNRELIABLE,

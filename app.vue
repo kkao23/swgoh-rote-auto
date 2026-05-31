@@ -10,7 +10,7 @@ const isMobile = useMediaQuery('(max-width: 768px)')
 
 const isAlertOpen = ref(false)
 const isNoticeHidden = ref(false)
-const isFavoriteBannerHidden = useLocalStorage('swgoh-rote-favorite-banner-hidden', false)
+const isFavoriteBannerHidden = useLocalStorage('swgoh-rote-upvote-banner-hidden', false)
 
 const isSupportOpen = ref(false)
 

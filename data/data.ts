@@ -95,7 +95,8 @@ import { lsShipsP6 } from "./p6/LS";
 import { shipsDSP6 } from "./p6/DS";
 import { idenP6 } from "./p6/DS";
 import { darthVaderP6 } from "./p6/DS";
-import { dsGenericP6 } from "./p6/DS";
+import { dsGenericLeftP6 } from "./p6/DS";
+import { dsGenericRightP6 } from "./p6/DS";
 
 // zeffo
 import { zeffoCombat } from "./zeffo/LS";
@@ -245,7 +246,8 @@ export const data: DataType = {
         },
         ds: {
             iden: idenP6,
-            generic: dsGenericP6,
+            genericLeft: dsGenericLeftP6,
+            genericRight: dsGenericRightP6,
             darthVader: darthVaderP6,
             fleets: shipsDSP6,
         },

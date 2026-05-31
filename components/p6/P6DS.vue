@@ -13,7 +13,10 @@ const alignment = 'DS';
 
 <template>
     <tr>
-        <MissionTableFragment :position="`Generic`" :data="data.ds.generic" :phase="phase" :alignment="alignment"></MissionTableFragment>
+        <MissionTableFragment :position="`Generic Left`" :data="data.ds.genericLeft" :phase="phase" :alignment="alignment"></MissionTableFragment>
+    </tr>
+    <tr>
+        <MissionTableFragment :position="`Generic Right`" :data="data.ds.genericRight" :phase="phase" :alignment="alignment"></MissionTableFragment>
     </tr>
     <tr>
         <MissionTableFragment :position="`Iden`" :data="data.ds.iden" :phase="phase" :alignment="alignment"></MissionTableFragment>

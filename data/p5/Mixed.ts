@@ -268,6 +268,17 @@ export const mixedCombatBottomLeftP5: dataType[] = [
         successRate: successRate.UNRELIABLE,
         interactionType: [interactionType.AUTO]
     },
+    {
+        lead: 'The Stranger',
+        leadFull: 'The Stranger',
+        others: 'Starkiller, Malicos, Fulcrum, General Kenobi',
+        notes: '1/2 on auto',
+        videos: [{ url: 'https://youtu.be/0sWrKVl4Pg8' }],
+        icon: '/icons/characters/tex.charui_stranger.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.UNRELIABLE,
+        interactionType: [interactionType.AUTO],
+    },
 ];
 
 export const jabbaP5: dataType[] = [

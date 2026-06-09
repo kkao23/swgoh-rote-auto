@@ -251,7 +251,18 @@ export const bottomDSP1: dataType[] = [{
     successRate: successRate.CONSISTENT,
     interactionType: [interactionType.AUTO],
     creator: 'anonymous'
-}
+},
+    {
+        lead: 'Emp Palpatine (DVDE)',
+        leadFull: 'Emperor Palpatine',
+        others: 'Emperor Palpatine, Darth Vader Duel\'s End, Admiral Piett, Gar Saxon, Imperial Super Commando',
+        notes: 'If you have Mara and or Royal Guard R7 they should work here too',
+        videos: [{ url: 'https://youtu.be/UA9vQyVwfFI' }],
+        icon: '/icons/characters/tex.charui_palpatineemperor.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
+    },
 ];
 
 export const topDSP1: dataType[] = [

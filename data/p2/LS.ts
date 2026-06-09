@@ -234,7 +234,7 @@ export const leftLSP2: dataType[] = [
         targeted: true
     },
     {
-        lead: 'Omega (Mercenary)',
+        lead: 'Omega',
         leadFull: 'Omega with Bad Batch Mercenaries',
         others: 'Crosshair, Wrecker, Batcher, Hunter',
         notes: 'omi Wrecker, 2/2 on full auto',
@@ -361,7 +361,7 @@ export const rightLSP2: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Omega (Mercenary)',
+        lead: 'Omega',
         leadFull: 'Omega with Bad Batch Mercenaries',
         others: 'Crosshair, Wrecker, Batcher, Hunter',
         notes: 'omi Wrecker, auto but more consistent if you manually target wave 2',

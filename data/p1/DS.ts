@@ -256,7 +256,7 @@ export const bottomDSP1: dataType[] = [{
         lead: 'Emp Palpatine (DVDE)',
         leadFull: 'Emperor Palpatine',
         others: 'Emperor Palpatine, Darth Vader Duel\'s End, Admiral Piett, Gar Saxon, Imperial Super Commando',
-        notes: 'If you have Mara and or Royal Guard R7 they should work here too',
+        notes: 'Easy fast auto',
         videos: [{ url: 'https://youtu.be/UA9vQyVwfFI' }],
         icon: '/icons/characters/tex.charui_palpatineemperor.png',
         difficulty: difficulty.EASY,

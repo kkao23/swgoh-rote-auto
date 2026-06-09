@@ -296,7 +296,7 @@ export const mixedTopLeftP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Omega (Mercenary)',
+        lead: 'Omega',
         leadFull: 'Omega with Bad Batch Mercenaries',
         others: 'Crosshair, Wrecker, Batcher, Hunter',
         notes: 'omi Wrecker, 2/2 on full auto',

@@ -13,14 +13,7 @@ export default defineEventHandler(async (event) => {
   const discordId = config.mhannDiscordId || process.env.NUXT_MHANN_DISCORD_ID || ''
   const baseUrl = config.mhannBaseUrl || process.env.NUXT_MHANN_BASE_URL || 'https://mhanndalorianbot.work/api'
 
-  console.log('[mhann/player] config keys present:', {
-    apiKey: !!apiKey,
-    discordId: !!discordId,
-    baseUrl,
-  })
-
   if (!apiKey || !discordId) {
-    console.error('[mhann/player] credentials missing — check NUXT_MHANN_* env vars')
     throw createError({
       statusCode: 500,
       statusMessage: 'Server misconfigured: Mhanndalorian API credentials not set',

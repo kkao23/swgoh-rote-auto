@@ -36,5 +36,10 @@ export default defineNuxtConfig({
   },
   gtag: {
     id: 'G-12Z9F2YGVE'
+  },
+  runtimeConfig: {
+    mhannApiKey: '',
+    mhannDiscordId: '',
+    mhannBaseUrl: 'https://mhanndalorianbot.work/api',
   }
 })

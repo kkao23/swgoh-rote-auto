@@ -114,15 +114,15 @@ const navigationLinks = [
 </script>
 <template>
   <UApp>
-    <div :class="[isDarkMode ? 'bg-color' : 'bg-slate-100 light-mode', 'flex flex-col min-h-[100dvh] pt-8 transition-colors duration-200']">
+    <div :class="[isDarkMode ? 'bg-color' : 'bg-slate-100 light-mode', 'flex flex-col min-h-[100dvh] pt-4 sm:pt-8 transition-colors duration-200']">
       <div class="px-4">
         <div class="mb-4 flex items-stretch gap-3">
           <UCard
-            class="flex-1 min-w-0 bg-gradient-to-r from-blue-400 via-indigo-500 to-red-600 text-white shadow-lg rounded-xl px-6"
-            :ui="{ header: { padding: 'py-3' } }">
+            class="flex-1 min-w-0 bg-gradient-to-r from-blue-400 via-indigo-500 to-red-600 text-white shadow-lg rounded-xl px-3 sm:px-6"
+            :ui="{ header: { padding: 'py-2 sm:py-3' } }">
             <template #header>
               <div class="flex justify-center items-center">
-                <h1 class="text-l font-[Orbitron]">SWGOH RoTE Auto Guide</h1>
+                <h1 class="text-sm sm:text-l font-[Orbitron]">SWGOH RoTE Auto Guide</h1>
               </div>
             </template>
           </UCard>

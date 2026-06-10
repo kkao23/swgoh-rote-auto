@@ -133,6 +133,166 @@ const guaranteedDailyIncome = computed(() => {
   return guaranteedMonthlyIncome.value / DAYS_PER_MONTH
 })
 
+const allyCode = useLocalStorage<string>('budget.allyCode', '')
+
+const isFetchingPlayerData = ref(false)
+const playerDataFetchError = ref<string | null>(null)
+const rawPlayerData = ref<unknown>(null)
+const fleetRankIsAutoPopulated = ref(false)
+const gacIsAutoPopulated = ref(false)
+const tbIsAutoPopulated = ref(false)
+const perideaIsAutoPopulated = ref(false)
+const duelIsAutoPopulated = ref(false)
+
+function mapFleetRankToBucket(rank: number): string {
+  if (rank === 1) return '1'
+  if (rank === 2) return '2'
+  if (rank === 3) return '3'
+  if (rank === 4) return '4'
+  if (rank === 5) return '5'
+  if (rank <= 10) return '6-10'
+  if (rank <= 20) return '11-20'
+  if (rank <= 50) return '21-50'
+  return '51+'
+}
+
+function mapTbDefinitionId(definitionId: string): string | null {
+  if (definitionId === 't01D' || definitionId === 't02D') return 'hoth'
+  if (definitionId === 't03D' || definitionId === 't04D') return 'geonosis'
+  if (definitionId === 't05D') return 'rote'
+  return null
+}
+
+async function fetchPlayerData(): Promise<void> {
+  if (!allyCode.value.trim()) {
+    return
+  }
+
+  isFetchingPlayerData.value = true
+  playerDataFetchError.value = null
+  rawPlayerData.value = null
+  fleetRankIsAutoPopulated.value = false
+  gacIsAutoPopulated.value = false
+  tbIsAutoPopulated.value = false
+  perideaIsAutoPopulated.value = false
+  duelIsAutoPopulated.value = false
+
+  try {
+    const response = await $fetch('/api/mhann/player', {
+      query: { allyCode: allyCode.value.trim() },
+    })
+    rawPlayerData.value = response
+
+    // Auto-populate fleet rank from events.pvpProfile[tab=2]
+    const data = response as Record<string, unknown>
+    const events = data?.events as Record<string, unknown> | undefined
+    const pvpProfile = events?.pvpProfile as Array<{ tab?: number; rank?: number }> | undefined
+    if (pvpProfile && Array.isArray(pvpProfile)) {
+      const fleetProfile = pvpProfile.find((p) => p.tab === 2)
+      if (fleetProfile && typeof fleetProfile.rank === 'number') {
+        selectedFleetRank.value = mapFleetRankToBucket(fleetProfile.rank)
+        fleetRankIsAutoPopulated.value = true
+      }
+    }
+
+    // Auto-populate GAC division from playerRating.playerRankStatus
+    const playerRating = events?.playerRating as Record<string, unknown> | undefined
+    const playerRankStatus = playerRating?.playerRankStatus as { leagueId?: string; divisionId?: number } | undefined
+    if (playerRankStatus?.leagueId && typeof playerRankStatus.divisionId === 'number') {
+      const tierNumber = 6 - (playerRankStatus.divisionId / 5)
+      const gacValue = `${playerRankStatus.leagueId.toLowerCase()}-${tierNumber}`
+      if (gacDivisionOptions.some((o) => o.value === gacValue)) {
+        selectedGacDivision.value = gacValue
+        gacIsAutoPopulated.value = true
+      }
+    }
+
+    // Auto-populate TB from guild data
+    const guildId = events?.guildId as string | undefined
+    if (guildId) {
+      try {
+        const guildResponse = await $fetch('/api/mhann/guild', { query: { guildId } })
+        const guildEvents = (guildResponse as Record<string, unknown>)?.events as Record<string, unknown> | undefined
+        const guild = guildEvents?.guild as Record<string, unknown> | undefined
+        const profile = guild?.profile as Record<string, unknown> | undefined
+        const tracker = profile?.guildEventTracker as Array<{ definitionId?: string; completedStars?: string }> | undefined
+        if (tracker && tracker.length > 0) {
+          const lastTB = tracker[0]
+          const tbType = lastTB.definitionId ? mapTbDefinitionId(lastTB.definitionId) : null
+          const stars = lastTB.completedStars ? parseInt(lastTB.completedStars, 10) : null
+          if (tbType && stars !== null && !isNaN(stars)) {
+            selectedTbType.value = tbType
+            // Cap stars at the TB type's max
+            const maxStars = maxStarsByTbType[tbType] || 0
+            selectedTbStars.value = Math.min(stars, maxStars)
+            tbIsAutoPopulated.value = true
+          }
+        }
+      } catch {
+        // Guild fetch failed — silently skip, user fills manually
+      }
+    }
+
+    // Auto-populate Peridea Patrol AB from roster
+    const PERIDEA_UNIT_IDS = ['CAPTAINENOCH:SEVEN_STAR', 'DEATHTROOPERPERIDEA:SEVEN_STAR', 'NIGHTTROOPER:SEVEN_STAR']
+    const roster = events?.rosterUnit as Array<{ definitionId?: string; relic?: { currentTier?: number } }> | undefined
+    if (roster && Array.isArray(roster)) {
+      const perideaUnits = PERIDEA_UNIT_IDS
+        .map(id => roster.find(u => u.definitionId === id))
+        .filter(Boolean)
+      if (perideaUnits.length === PERIDEA_UNIT_IDS.length) {
+        const relicTiers = perideaUnits.map(u => u.relic?.currentTier ?? 0)
+        const minRelic = Math.min(...relicTiers)
+        doesPerideaPatrol.value = 'yes'
+        if (minRelic >= 11) {
+          selectedPerideaTier.value = 't6'
+        } else if (minRelic >= 9) {
+          selectedPerideaTier.value = 't5'
+        } else if (minRelic >= 7) {
+          selectedPerideaTier.value = 't4'
+        } else {
+          selectedPerideaTier.value = 't3'
+        }
+        perideaIsAutoPopulated.value = true
+      } else {
+        doesPerideaPatrol.value = 'no'
+        perideaIsAutoPopulated.value = true
+      }
+    }
+
+    // Auto-populate Duel of the Fates AB from roster
+    const DUEL_UNIT_IDS = ['PADAWANOBIWAN:SEVEN_STAR', 'MASTERQUIGON:SEVEN_STAR']
+    const duelUnits = DUEL_UNIT_IDS
+      .map(id => roster.find(u => u.definitionId === id))
+      .filter(Boolean)
+    if (duelUnits.length === DUEL_UNIT_IDS.length) {
+      const duelRelicTiers = duelUnits.map(u => u.relic?.currentTier ?? 0)
+      const duelMinRelic = Math.min(...duelRelicTiers)
+      doesDuelOfFates.value = 'yes'
+      if (duelMinRelic >= 11) {
+        selectedDuelTier.value = 't7'
+      } else if (duelMinRelic >= 9) {
+        selectedDuelTier.value = 't6'
+      } else if (duelMinRelic >= 7) {
+        selectedDuelTier.value = 't5'
+      } else {
+        selectedDuelTier.value = 't4'
+      }
+      duelIsAutoPopulated.value = true
+    } else {
+      doesDuelOfFates.value = 'no'
+      duelIsAutoPopulated.value = true
+    }
+  } catch (err: unknown) {
+    const message = err instanceof Error ? err.message : 'Unknown error'
+    playerDataFetchError.value = message
+  } finally {
+    isFetchingPlayerData.value = false
+  }
+}
+
+const showAllIncomeSteps = computed(() => rawPlayerData.value !== null)
+
 const selectedFleetRank = useLocalStorage<string>('budget.selectedFleetRank', '')
 
 const selectedFleetReward = computed(() => {
@@ -581,17 +741,36 @@ const finalSummaryRows = computed(() => {
 const copiedResults = ref(false)
 
 async function copyResultsTable(): Promise<void> {
-  const header = 'Category\tDaily\tMonthly'
+  const header = 'Category | Daily | Monthly'
+  const separator = '---|---|---|'
   const body = finalSummaryRows.value
-    .map((row) => `${row.label}\t${row.daily.toFixed(1)}\t${row.monthly.toFixed(0)}`)
+    .map((row) => `${row.label} | ${row.daily.toFixed(1)} | ${row.monthly.toFixed(0)}`)
     .join('\n')
 
-  const textToCopy = `${header}\n${body}`
+  const textToCopy = `${header}\n${separator}\n${body}`
 
   await navigator.clipboard.writeText(textToCopy)
   copiedResults.value = true
   setTimeout(() => {
     copiedResults.value = false
+  }, 1800)
+}
+
+const copiedQuickResults = ref(false)
+
+async function copyQuickResults(): Promise<void> {
+  const header = 'Category | Daily | Monthly'
+  const separator = '---|---|---|'
+  const body = finalSummaryRows.value
+    .map((row) => `${row.label} | ${row.daily.toFixed(1)} | ${row.monthly.toFixed(0)}`)
+    .join('\n')
+
+  const textToCopy = `${header}\n${separator}\n${body}`
+
+  await navigator.clipboard.writeText(textToCopy)
+  copiedQuickResults.value = true
+  setTimeout(() => {
+    copiedQuickResults.value = false
   }, 1800)
 }
 
@@ -718,7 +897,7 @@ watch([isWizardComplete, areExpenseStepsComplete], ([wizardDone, expensesDone]) 
 
 <template>
   <div class="flex-1 bg-color min-h-screen budget-page">
-    <UContainer class="py-8">
+    <UContainer class="pt-0 sm:pt-4 pb-4 sm:pb-8">
       <section class="sr-only" aria-label="Crystal budget wizard page description">
         <h2>SWGOH Crystal Budget Calculator</h2>
         <p>
@@ -732,30 +911,53 @@ watch([isWizardComplete, areExpenseStepsComplete], ([wizardDone, expensesDone]) 
         </p>
       </section>
 
-      <h1 class="text-2xl font-bold text-slate-900 dark:text-white mb-2">SWGOH Crystal Income Calculator - Beta</h1>
-      <p class="text-gray-300 mb-6">
+      <h1 class="text-xl sm:text-2xl font-bold text-slate-900 dark:text-white mb-1 sm:mb-2">SWGOH Crystal Income Calculator - Beta</h1>
+      <p class="text-sm sm:text-base text-gray-300 mb-3 sm:mb-6">
         Estimate SWGOH daily and monthly crystal income, spending, and net balance with transparent assumptions for GAC, Fleet Arena, Territory Battles, refreshes, and marquee goals.
       </p>
 
-      <section class="mb-6 rounded-xl border border-slate-700 bg-slate-900/60 p-4 text-sm text-slate-200">
-        <h2 class="text-base font-semibold text-slate-700 dark:text-white mb-2">How this SWGOH crystal income calculator works</h2>
-        <p class="mb-2">
-          Pick your current game activity and spending habits, and the tool calculates estimated crystals per day and per month.
-          Every major source is shown separately so you can audit the math.
-        </p>
-        <ul class="list-disc ml-5 space-y-1 text-slate-700 dark:text-slate-300">
-          <li>Income sources include guaranteed rewards, Fleet Arena, GAC, Territory Battles, and selected Assault Battles.</li>
-          <li>Expense sources include energy refreshes, hard node refreshes, marquee shard goals, and optional era/material spending.</li>
-          <li>The final table reports net crystal gain or loss using the same assumptions shown in each step.</li>
-        </ul>
-      </section>
+      <div class="bg-slate-900/70 border border-slate-700 rounded-xl p-3 sm:p-5 mb-5">
+        <h2 class="text-base sm:text-lg font-semibold text-white mb-1 sm:mb-2">Quick Import from Ally Code</h2>
+        <p class="text-xs sm:text-sm text-slate-300 mb-2 sm:mb-4">Optionally enter your SWGOH ally code to auto-populate fields from your player data.</p>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <input
+            v-model="allyCode"
+            type="text"
+            placeholder="e.g. 761-355-883"
+            class="flex-1 bg-slate-800 text-white border border-slate-600 rounded-lg px-3 py-2"
+          />
+          <button
+            type="button"
+            :disabled="isFetchingPlayerData || !allyCode.trim()"
+            class="px-4 py-2 text-sm font-semibold rounded-lg bg-cyan-500 text-slate-900 hover:bg-cyan-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            @click="fetchPlayerData"
+          >
+            {{ isFetchingPlayerData ? 'Fetching...' : 'Fetch My Data' }}
+          </button>
+        </div>
 
-      <details class="sticky top-3 z-30 bg-gradient-to-r from-emerald-900/90 to-cyan-900/80 border border-emerald-700 rounded-xl p-4 mb-5 shadow-xl backdrop-blur-sm">
-        <summary class="cursor-pointer select-none">
-          <div class="grid grid-cols-3 gap-2 items-center">
-            <p class="text-sm font-semibold text-cyan-100">Net</p>
-            <p class="text-xl font-bold" :class="netDailyCrystals >= 0 ? 'text-cyan-200' : 'text-rose-300'">{{ netDailyCrystals.toFixed(1) }}</p>
-            <p class="text-xl font-bold" :class="netMonthlyCrystals >= 0 ? 'text-cyan-200' : 'text-rose-300'">{{ netMonthlyCrystals.toFixed(0) }}</p>
+        <div v-if="playerDataFetchError" class="mt-4 rounded-lg bg-red-900/30 border border-red-700 p-3 text-sm text-red-300">
+          {{ playerDataFetchError }}
+        </div>
+
+        <div v-if="rawPlayerData" class="mt-4">
+          <p class="text-xs text-emerald-300 mb-2">Data fetched successfully</p>
+        </div>
+      </div>
+
+      <details class="sticky top-3 z-30 bg-gradient-to-r from-emerald-900/90 to-cyan-900/80 border border-emerald-700 rounded-xl p-3 sm:p-4 mb-5 shadow-xl backdrop-blur-sm">
+        <summary class="cursor-pointer select-none list-none flex items-center gap-2">
+          <span class="text-cyan-100/70 text-[10px] shrink-0">▼</span>
+          <div class="flex-1 grid grid-cols-[1fr_auto_auto] gap-x-2 items-end">
+            <p class="text-xs font-semibold text-cyan-100">Net</p>
+            <div class="text-right">
+              <p class="text-[10px] text-cyan-100/70">Daily Crystals</p>
+              <p class="text-lg sm:text-xl font-bold leading-tight" :class="netDailyCrystals >= 0 ? 'text-cyan-200' : 'text-rose-300'">{{ netDailyCrystals.toFixed(1) }}</p>
+            </div>
+            <div class="text-right">
+              <p class="text-[10px] text-cyan-100/70">Monthly Crystals</p>
+              <p class="text-lg sm:text-xl font-bold leading-tight" :class="netMonthlyCrystals >= 0 ? 'text-cyan-200' : 'text-rose-300'">{{ netMonthlyCrystals.toFixed(0) }}</p>
+            </div>
           </div>
         </summary>
 
@@ -786,6 +988,28 @@ watch([isWizardComplete, areExpenseStepsComplete], ([wizardDone, expensesDone]) 
           </div>
         </div>
       </details>
+
+      <div class="flex justify-end mb-5">
+        <button
+          @click="copyQuickResults"
+          class="px-4 py-2 text-sm font-semibold rounded-lg bg-emerald-500 text-slate-900 hover:bg-emerald-400 transition-colors"
+        >
+          {{ copiedQuickResults ? 'Copied!' : 'Copy Results' }}
+        </button>
+      </div>
+
+<section class="mb-6 rounded-xl border border-slate-700 bg-slate-900/60 p-4 text-sm text-slate-200">
+        <h2 class="text-base font-semibold text-slate-700 dark:text-white mb-2">How this SWGOH crystal income calculator works</h2>
+        <p class="mb-2">
+          Pick your current game activity and spending habits, and the tool calculates estimated crystals per day and per month.
+          Every major source is shown separately so you can audit the math.
+        </p>
+        <ul class="list-disc ml-5 space-y-1 text-slate-700 dark:text-slate-300">
+          <li>Income sources include guaranteed rewards, Fleet Arena, GAC, Territory Battles, and selected Assault Battles.</li>
+          <li>Expense sources include energy refreshes, hard node refreshes, marquee shard goals, and optional era/material spending.</li>
+          <li>The final table reports net crystal gain or loss using the same assumptions shown in each step.</li>
+        </ul>
+      </section>
 
       <details class="bg-slate-900/70 border border-slate-700 rounded-xl p-5">
         <summary class="cursor-pointer select-none text-lg font-semibold text-slate-900 dark:text-white">Guaranteed Income</summary>
@@ -870,7 +1094,10 @@ watch([isWizardComplete, areExpenseStepsComplete], ([wizardDone, expensesDone]) 
 
       <div id="step-fleet" :class="['bg-slate-900/70 border border-slate-700 rounded-xl p-5 mt-5 scroll-mt-28', isCurrentStep('fleet') ? 'step-highlight' : '']">
         <h2 class="text-lg font-semibold text-white mb-2">Step 1: Fleet Arena Rank</h2>
-        <p class="text-sm text-slate-300 mb-4">What rank do you usually finish in Fleet Arena each day?</p>
+        <p :class="['text-sm text-slate-300', fleetRankIsAutoPopulated ? 'mb-1' : 'mb-4']">What rank do you usually finish in Fleet Arena each day?</p>
+        <p v-if="fleetRankIsAutoPopulated" class="text-xs text-amber-300 mb-4">
+          Auto-populated from your current rank. This may differ from your usual daily finish — update if needed.
+        </p>
 
         <button
           type="button"
@@ -932,7 +1159,7 @@ watch([isWizardComplete, areExpenseStepsComplete], ([wizardDone, expensesDone]) 
         </UModal>
 
         <button
-          v-if="isStepComplete('fleet') && getNextStep('fleet')"
+          v-if="isStepComplete('fleet') && getNextStep('fleet') && !showAllIncomeSteps"
           @click="goToNextStep('fleet')"
           class="mt-4 px-4 py-2 text-sm font-semibold rounded-lg bg-cyan-500 text-slate-900 hover:bg-cyan-400 transition-colors"
         >
@@ -940,10 +1167,13 @@ watch([isWizardComplete, areExpenseStepsComplete], ([wizardDone, expensesDone]) 
         </button>
       </div>
 
-      <div v-if="fleetComplete" id="step-gac" :class="['bg-slate-900/70 border border-slate-700 rounded-xl p-5 mt-5 scroll-mt-28', isCurrentStep('gac') ? 'step-highlight' : '']">
+      <div v-if="fleetComplete || showAllIncomeSteps" id="step-gac" :class="['bg-slate-900/70 border border-slate-700 rounded-xl p-5 mt-5 scroll-mt-28', isCurrentStep('gac') ? 'step-highlight' : '']">
         <h2 class="text-lg font-semibold text-white mb-2">Step 2: GAC Division</h2>
         <p class="text-sm text-slate-300 mb-2">Which GAC division are you currently in?</p>
-        <p class="text-xs text-slate-400 mb-4">Assumption: 13 GAC rounds/year, average 4.5 wins + 4.5 losses per active cycle, and end of round rewards (750/2) for 3 out of 4 weeks.</p>
+        <p class="text-xs text-slate-400 mb-2">Assumption: 13 GAC rounds/year, average 4.5 wins + 4.5 losses per active cycle, and end of round rewards (750/2) for 3 out of 4 weeks.</p>
+        <p v-if="gacIsAutoPopulated" class="text-xs text-amber-300 mb-4">
+          Auto-populated from your current GAC league and division. Verify this matches your actual bracket.
+        </p>
 
         <button
           type="button"
@@ -1065,7 +1295,7 @@ watch([isWizardComplete, areExpenseStepsComplete], ([wizardDone, expensesDone]) 
         </UModal>
 
         <button
-          v-if="isStepComplete('gac') && getNextStep('gac')"
+          v-if="isStepComplete('gac') && getNextStep('gac') && !showAllIncomeSteps"
           @click="goToNextStep('gac')"
           class="mt-4 px-4 py-2 text-sm font-semibold rounded-lg bg-cyan-500 text-slate-900 hover:bg-cyan-400 transition-colors"
         >
@@ -1073,10 +1303,13 @@ watch([isWizardComplete, areExpenseStepsComplete], ([wizardDone, expensesDone]) 
         </button>
       </div>
 
-      <div v-if="gacComplete" id="step-tb" :class="['bg-slate-900/70 border border-slate-700 rounded-xl p-5 mt-5 scroll-mt-28', isCurrentStep('tb') ? 'step-highlight' : '']">
+      <div v-if="gacComplete || showAllIncomeSteps" id="step-tb" :class="['bg-slate-900/70 border border-slate-700 rounded-xl p-5 mt-5 scroll-mt-28', isCurrentStep('tb') ? 'step-highlight' : '']">
         <h2 class="text-lg font-semibold text-white mb-2">Step 3: Territory Battles</h2>
         <p class="text-sm text-slate-300 mb-2">Which Territory Battle does your guild run, and how many stars do you average?</p>
-        <p class="text-xs text-slate-400 mb-4">Assumption: Territory Battles run 26 times per year.</p>
+        <p :class="['text-xs text-slate-400', tbIsAutoPopulated ? 'mb-2' : 'mb-4']">Assumption: Territory Battles run 26 times per year.</p>
+        <p v-if="tbIsAutoPopulated" class="text-xs text-amber-300 mb-4">
+          Auto-populated from your guild's most recent TB result. Update if your guild has switched TBs.
+        </p>
 
         <button
           type="button"
@@ -1164,7 +1397,7 @@ watch([isWizardComplete, areExpenseStepsComplete], ([wizardDone, expensesDone]) 
         </UModal>
 
         <button
-          v-if="isStepComplete('tb') && getNextStep('tb')"
+          v-if="isStepComplete('tb') && getNextStep('tb') && !showAllIncomeSteps"
           @click="goToNextStep('tb')"
           class="mt-4 px-4 py-2 text-sm font-semibold rounded-lg bg-cyan-500 text-slate-900 hover:bg-cyan-400 transition-colors"
         >
@@ -1172,9 +1405,12 @@ watch([isWizardComplete, areExpenseStepsComplete], ([wizardDone, expensesDone]) 
         </button>
       </div>
 
-      <div v-if="tbComplete" id="step-peridea" :class="['bg-slate-900/70 border border-slate-700 rounded-xl p-5 mt-5 scroll-mt-28', isCurrentStep('peridea') ? 'step-highlight' : '']">
+      <div v-if="tbComplete || showAllIncomeSteps" id="step-peridea" :class="['bg-slate-900/70 border border-slate-700 rounded-xl p-5 mt-5 scroll-mt-28', isCurrentStep('peridea') ? 'step-highlight' : '']">
         <h2 class="text-lg font-semibold text-white mb-2">Step 4: Peridea Patrol Assault Battle</h2>
-        <p class="text-sm text-slate-300 mb-4">Do you complete the Peridea Patrol Assault Battle?</p>
+        <p :class="['text-sm text-slate-300', perideaIsAutoPopulated ? 'mb-1' : 'mb-4']">Do you complete the Peridea Patrol Assault Battle?</p>
+        <p v-if="perideaIsAutoPopulated" class="text-xs text-amber-300 mb-4">
+          Auto-populated from your Enoch, DTP, and NT relic levels. Verify and adjust if needed.
+        </p>
 
         <button
           type="button"
@@ -1249,7 +1485,7 @@ watch([isWizardComplete, areExpenseStepsComplete], ([wizardDone, expensesDone]) 
         </UModal>
 
         <button
-          v-if="isStepComplete('peridea') && getNextStep('peridea')"
+          v-if="isStepComplete('peridea') && getNextStep('peridea') && !showAllIncomeSteps"
           @click="goToNextStep('peridea')"
           class="mt-4 px-4 py-2 text-sm font-semibold rounded-lg bg-cyan-500 text-slate-900 hover:bg-cyan-400 transition-colors"
         >
@@ -1257,9 +1493,12 @@ watch([isWizardComplete, areExpenseStepsComplete], ([wizardDone, expensesDone]) 
         </button>
       </div>
 
-      <div v-if="perideaComplete" id="step-duel" :class="['bg-slate-900/70 border border-slate-700 rounded-xl p-5 mt-5 scroll-mt-28', isCurrentStep('duel') ? 'step-highlight' : '']">
+      <div v-if="perideaComplete || showAllIncomeSteps" id="step-duel" :class="['bg-slate-900/70 border border-slate-700 rounded-xl p-5 mt-5 scroll-mt-28', isCurrentStep('duel') ? 'step-highlight' : '']">
         <h2 class="text-lg font-semibold text-white mb-2">Step 5: Duel of the Fates Assault Battle</h2>
-        <p class="text-sm text-slate-300 mb-4">Do you complete the Duel of the Fates Assault Battle?</p>
+        <p :class="['text-sm text-slate-300', duelIsAutoPopulated ? 'mb-1' : 'mb-4']">Do you complete the Duel of the Fates Assault Battle?</p>
+        <p v-if="duelIsAutoPopulated" class="text-xs text-amber-300 mb-4">
+          Auto-populated from your Padawan Obi-Wan and Master Qui-Gon relic levels. Verify and adjust if needed.
+        </p>
 
         <button
           type="button"
@@ -1334,7 +1573,7 @@ watch([isWizardComplete, areExpenseStepsComplete], ([wizardDone, expensesDone]) 
         </UModal>
 
         <button
-          v-if="isStepComplete('duel') && getNextStep('duel')"
+          v-if="isStepComplete('duel') && getNextStep('duel') && !showAllIncomeSteps"
           @click="goToNextStep('duel')"
           class="mt-4 px-4 py-2 text-sm font-semibold rounded-lg bg-cyan-500 text-slate-900 hover:bg-cyan-400 transition-colors"
         >
@@ -1342,7 +1581,7 @@ watch([isWizardComplete, areExpenseStepsComplete], ([wizardDone, expensesDone]) 
         </button>
       </div>
 
-      <div v-if="duelComplete" id="step-whale" :class="['bg-slate-900/70 border border-slate-700 rounded-xl p-5 mt-5 scroll-mt-28', isCurrentStep('whale') ? 'step-highlight' : '']">
+      <div v-if="duelComplete || showAllIncomeSteps" id="step-whale" :class="['bg-slate-900/70 border border-slate-700 rounded-xl p-5 mt-5 scroll-mt-28', isCurrentStep('whale') ? 'step-highlight' : '']">
         <h2 class="text-lg font-semibold text-white mb-2">Step 6: Crystal Purchases</h2>
         <p class="text-sm text-slate-300 mb-4">Do you whale?</p>
 
@@ -1381,7 +1620,7 @@ watch([isWizardComplete, areExpenseStepsComplete], ([wizardDone, expensesDone]) 
         </div>
 
         <button
-          v-if="isStepComplete('whale')"
+          v-if="isStepComplete('whale') && !showAllIncomeSteps"
           @click="scrollToSection('step-energy')"
           class="mt-4 px-4 py-2 text-sm font-semibold rounded-lg bg-cyan-500 text-slate-900 hover:bg-cyan-400 transition-colors"
         >
@@ -1389,7 +1628,7 @@ watch([isWizardComplete, areExpenseStepsComplete], ([wizardDone, expensesDone]) 
         </button>
       </div>
 
-      <div id="step-energy" v-if="isWizardComplete" class="bg-slate-900/80 border border-rose-700 rounded-xl p-5 mt-5 scroll-mt-28">
+      <div id="step-energy" v-if="isWizardComplete || showAllIncomeSteps" class="bg-slate-900/80 border border-rose-700 rounded-xl p-5 mt-5 scroll-mt-28">
         <h2 class="text-lg font-semibold text-white mb-2">Step 7: Expenses - Energy Refreshes</h2>
         <p class="text-sm text-slate-300 mb-4">Enter these in order: Normal → Cantina → Ship → Mod → Conquest.</p>
 
@@ -1492,7 +1731,7 @@ watch([isWizardComplete, areExpenseStepsComplete], ([wizardDone, expensesDone]) 
         </UModal>
 
         <button
-          v-if="isEnergyExpensesComplete"
+          v-if="isEnergyExpensesComplete && !showAllIncomeSteps"
           @click="goToNextExpenseStep('energy')"
           class="mt-4 px-4 py-2 text-sm font-semibold rounded-lg bg-cyan-500 text-slate-900 hover:bg-cyan-400 transition-colors"
         >
@@ -1500,7 +1739,7 @@ watch([isWizardComplete, areExpenseStepsComplete], ([wizardDone, expensesDone]) 
         </button>
       </div>
 
-      <div id="step-shard" v-if="isWizardComplete && isEnergyExpensesComplete" class="bg-slate-900/80 border border-rose-700 rounded-xl p-5 mt-5 scroll-mt-28">
+      <div id="step-shard" v-if="(isWizardComplete && isEnergyExpensesComplete) || showAllIncomeSteps" class="bg-slate-900/80 border border-rose-700 rounded-xl p-5 mt-5 scroll-mt-28">
         <h2 class="text-lg font-semibold text-white mb-2">Step 8: Expenses - Shard Refreshes</h2>
         <p class="text-sm text-slate-300 mb-4">How many characters are you shard refreshing per day, and how many times each?</p>
 
@@ -1571,7 +1810,7 @@ watch([isWizardComplete, areExpenseStepsComplete], ([wizardDone, expensesDone]) 
         </UModal>
 
         <button
-          v-if="isShardExpensesComplete"
+          v-if="isShardExpensesComplete && !showAllIncomeSteps"
           @click="goToNextExpenseStep('shard')"
           class="mt-4 px-4 py-2 text-sm font-semibold rounded-lg bg-cyan-500 text-slate-900 hover:bg-cyan-400 transition-colors"
         >
@@ -1579,7 +1818,7 @@ watch([isWizardComplete, areExpenseStepsComplete], ([wizardDone, expensesDone]) 
         </button>
       </div>
 
-      <div id="step-marquee" v-if="isWizardComplete && isShardExpensesComplete" class="bg-slate-900/80 border border-rose-700 rounded-xl p-5 mt-5 scroll-mt-28">
+      <div id="step-marquee" v-if="(isWizardComplete && isShardExpensesComplete) || showAllIncomeSteps" class="bg-slate-900/80 border border-rose-700 rounded-xl p-5 mt-5 scroll-mt-28">
         <h2 class="text-lg font-semibold text-white mb-2">Step 9: Expenses - New Marquee Shard Goals</h2>
         <p class="text-sm text-slate-300 mb-4">A new marquee is released every 2 weeks (26 per year). Choose your goal and whether you purchase the Episode Pass.</p>
 
@@ -1687,7 +1926,7 @@ watch([isWizardComplete, areExpenseStepsComplete], ([wizardDone, expensesDone]) 
         </UModal>
 
         <button
-          v-if="isMarqueeExpensesComplete"
+          v-if="isMarqueeExpensesComplete && !showAllIncomeSteps"
           @click="goToNextExpenseStep('marquee')"
           class="mt-4 px-4 py-2 text-sm font-semibold rounded-lg bg-cyan-500 text-slate-900 hover:bg-cyan-400 transition-colors"
         >
@@ -1695,7 +1934,7 @@ watch([isWizardComplete, areExpenseStepsComplete], ([wizardDone, expensesDone]) 
         </button>
       </div>
 
-      <div id="step-era" v-if="isWizardComplete && isMarqueeExpensesComplete" class="bg-slate-900/80 border border-rose-700 rounded-xl p-5 mt-5 scroll-mt-28">
+      <div id="step-era" v-if="(isWizardComplete && isMarqueeExpensesComplete) || showAllIncomeSteps" class="bg-slate-900/80 border border-rose-700 rounded-xl p-5 mt-5 scroll-mt-28">
         <h2 class="text-lg font-semibold text-white mb-2">Step 10: Estimate Monthly Crystal Whaling on Era Currency and Materials</h2>
         <p class="text-sm text-slate-300 mb-4">This defaults to 0.</p>
 
@@ -1721,7 +1960,7 @@ watch([isWizardComplete, areExpenseStepsComplete], ([wizardDone, expensesDone]) 
         </div>
 
         <button
-          v-if="isEraExpensesComplete"
+          v-if="isEraExpensesComplete && !showAllIncomeSteps"
           @click="goToNextExpenseStep('era')"
           class="mt-4 px-4 py-2 text-sm font-semibold rounded-lg bg-cyan-500 text-slate-900 hover:bg-cyan-400 transition-colors"
         >

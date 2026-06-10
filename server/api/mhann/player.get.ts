@@ -8,7 +8,19 @@ import { mhannFetch } from '~/server/utils/mhann-fetch'
 export default defineEventHandler(async (event) => {
   const config = useRuntimeConfig(event)
 
-  if (!config.mhannApiKey || !config.mhannDiscordId) {
+  // Fallback: read directly from process.env if runtimeConfig is empty (some Amplify setups)
+  const apiKey = config.mhannApiKey || process.env.NUXT_MHANN_API_KEY || ''
+  const discordId = config.mhannDiscordId || process.env.NUXT_MHANN_DISCORD_ID || ''
+  const baseUrl = config.mhannBaseUrl || process.env.NUXT_MHANN_BASE_URL || 'https://mhanndalorianbot.work/api'
+
+  console.log('[mhann/player] config keys present:', {
+    apiKey: !!apiKey,
+    discordId: !!discordId,
+    baseUrl,
+  })
+
+  if (!apiKey || !discordId) {
+    console.error('[mhann/player] credentials missing — check NUXT_MHANN_* env vars')
     throw createError({
       statusCode: 500,
       statusMessage: 'Server misconfigured: Mhanndalorian API credentials not set',
@@ -30,9 +42,9 @@ export default defineEventHandler(async (event) => {
     console.log(`[mhann/player] fetching ally code ${cleanCode}`)
     const data = await mhannFetch(
       {
-        apiKey: config.mhannApiKey,
-        discordId: config.mhannDiscordId,
-        baseUrl: config.mhannBaseUrl || 'https://mhanndalorianbot.work/api',
+        apiKey,
+        discordId,
+        baseUrl,
       },
       '/player',
       { payload: { allyCode: cleanCode, enums: false } },

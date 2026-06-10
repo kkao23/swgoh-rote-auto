@@ -740,10 +740,17 @@ const finalSummaryRows = computed(() => {
 
 const copiedResults = ref(false)
 
+function activeRows() {
+  return finalSummaryRows.value.filter((row) => {
+    if (row.label === 'Guaranteed Income' || row.label === 'NET') return true
+    return Math.abs(row.daily) > 0.05 || Math.abs(row.monthly) > 0.5
+  })
+}
+
 async function copyResultsTable(): Promise<void> {
   const header = 'Category | Daily | Monthly'
   const separator = '---|---|---|'
-  const body = finalSummaryRows.value
+  const body = activeRows()
     .map((row) => `${row.label} | ${row.daily.toFixed(1)} | ${row.monthly.toFixed(0)}`)
     .join('\n')
 
@@ -761,7 +768,7 @@ const copiedQuickResults = ref(false)
 async function copyQuickResults(): Promise<void> {
   const header = 'Category | Daily | Monthly'
   const separator = '---|---|---|'
-  const body = finalSummaryRows.value
+  const body = activeRows()
     .map((row) => `${row.label} | ${row.daily.toFixed(1)} | ${row.monthly.toFixed(0)}`)
     .join('\n')
 

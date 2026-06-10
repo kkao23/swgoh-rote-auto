@@ -114,4 +114,5 @@ export const perideaTierOptions = [
   { label: 'Tier 4 [Relic 5]', value: 't4', monthlyCrystals: 100 },
   { label: 'Tier 5 [Relic 7]', value: 't5', monthlyCrystals: 200 },
   { label: 'Tier 6 [Relic 9]', value: 't6', monthlyCrystals: 300 },
+  { label: 'Tier 7 [Relic 9+]', value: 't7', monthlyCrystals: 400 },
 ]

@@ -122,7 +122,7 @@ export const mixedCombatTopRightP5: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'Omega (Mercenary)',
+        lead: 'Omega',
         leadFull: 'Omega with Bad Batch Mercenaries',
         others: 'Crosshair, Wrecker, Batcher, Hunter',
         notes: 'auto, can get 2/2 sometimes but not consistently. Pause to target someone at the start of Wave 2',
@@ -158,7 +158,7 @@ export const mixedCombatTopRightP5: dataType[] = [
 
 export const mixedCombatBottomLeftP5: dataType[] = [
     {
-        lead: 'Omega (Mercenary)',
+        lead: 'Omega',
         leadFull: 'Omega with Bad Batch Mercenaries',
         others: 'Crosshair, Wrecker, Batcher, Hunter',
         notes: 'omi Wrecker, only 1/2 on full auto',
@@ -267,6 +267,17 @@ export const mixedCombatBottomLeftP5: dataType[] = [
         difficulty: difficulty.CAUTION,
         successRate: successRate.UNRELIABLE,
         interactionType: [interactionType.AUTO]
+    },
+    {
+        lead: 'The Stranger',
+        leadFull: 'The Stranger',
+        others: 'Starkiller, Malicos, Fulcrum, General Kenobi',
+        notes: '1/2 on auto',
+        videos: [{ url: 'https://youtu.be/0sWrKVl4Pg8' }],
+        icon: '/icons/characters/tex.charui_stranger.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.UNRELIABLE,
+        interactionType: [interactionType.AUTO],
     },
 ];
 

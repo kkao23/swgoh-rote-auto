@@ -249,7 +249,7 @@ export const genericLSP1: dataType[] = [
         omi: true,
     },
     {
-        lead: 'Omega (Mercenary)',
+        lead: 'Omega',
         leadFull: 'Omega with Bad Batch Mercenaries',
         others: 'Crosshair, Wrecker, Batcher, Hunter',
         notes: 'easy full auto with Wrecker Omi',
@@ -345,7 +345,7 @@ export const genericLSP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Omega (Mercenary)',
+        lead: 'Omega',
         leadFull: 'Omega with Bad Batch Mercenaries',
         others: 'Crosshair, Wrecker, Batcher, Hunter',
         notes: '2/2 on full auto but not super smooth. Marked enemy leader first before auto',

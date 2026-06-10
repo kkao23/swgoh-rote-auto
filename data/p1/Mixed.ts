@@ -126,7 +126,7 @@ export const mixedP1: dataType[] = [
         lead: 'Mother Talzin',
         others: 'Merrin, Asajj, Daka, Zombie',
         notes: 'auto',
-        videos: [{ url: 'https://www.youtube.com/watch?v=BuRRMRfocoo', creator: 'egnards' }],
+        videos: [{ url: 'https://youtu.be/UBKK051GcTc' }],
         icon: '/icons/characters/tex.charui_nightsisters_talzin.png',
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,

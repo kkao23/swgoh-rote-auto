@@ -871,7 +871,7 @@ const netMonthlyCrystals = computed(() => {
 })
 
 watch(currentStepKey, async (newStep, oldStep) => {
-  if (!newStep || !oldStep || newStep === oldStep) {
+  if (!newStep || !oldStep || newStep === oldStep || showAllIncomeSteps.value) {
     return
   }
 
@@ -880,7 +880,7 @@ watch(currentStepKey, async (newStep, oldStep) => {
 })
 
 watch(currentExpenseStepKey, async (newStep, oldStep) => {
-  if (!newStep || !oldStep || newStep === oldStep) {
+  if (!newStep || !oldStep || newStep === oldStep || showAllIncomeSteps.value) {
     return
   }
 

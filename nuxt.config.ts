@@ -38,8 +38,8 @@ export default defineNuxtConfig({
     id: 'G-12Z9F2YGVE'
   },
   runtimeConfig: {
-    mhannApiKey: '',
-    mhannDiscordId: '',
-    mhannBaseUrl: 'https://mhanndalorianbot.work/api',
+    mhannApiKey: process.env.NUXT_MHANN_API_KEY || '',
+    mhannDiscordId: process.env.NUXT_MHANN_DISCORD_ID || '',
+    mhannBaseUrl: process.env.NUXT_MHANN_BASE_URL || 'https://mhanndalorianbot.work/api',
   }
 })

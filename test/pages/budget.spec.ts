@@ -494,33 +494,43 @@ describe('Budget Calculations', () => {
       expect(MARQUEES_PER_YEAR).toBe(26)
     })
 
-    it('should have 5 marquee goal options', () => {
-      expect(marqueeGoalOptions).toHaveLength(5)
+    it('should have 4 marquee goal options', () => {
+      expect(marqueeGoalOptions).toHaveLength(4)
     })
 
     it('all marquee goals should have defined costs with and without episode pass', () => {
-      const goals: MarqueeGoal[] = ['four-stars', 'five-stars-one-day', 'five-stars-end-event', 'six-stars-one-week', 'seven-stars-one-week']
+      const goals: MarqueeGoal[] = ['four-stars', 'five-stars-end-event', 'six-stars-one-week', 'seven-stars-one-week']
       for (const goal of goals) {
-        expect(marqueeCostWithEpisodePass[goal]).toBeGreaterThan(0)
+        expect(marqueeCostWithEpisodePass[goal]).toBeGreaterThanOrEqual(0)
         expect(marqueeCostWithoutEpisodePass[goal]).toBeGreaterThan(0)
       }
     })
 
     it('costs with episode pass should be lower than without (because of +20 free shards)', () => {
-      const goals: MarqueeGoal[] = ['four-stars', 'five-stars-one-day', 'five-stars-end-event', 'six-stars-one-week', 'seven-stars-one-week']
+      const goals: MarqueeGoal[] = ['four-stars', 'five-stars-end-event', 'six-stars-one-week', 'seven-stars-one-week']
       for (const goal of goals) {
         expect(marqueeCostWithEpisodePass[goal]).toBeLessThan(marqueeCostWithoutEpisodePass[goal])
       }
     })
 
     it('higher star goals should cost more', () => {
-      expect(marqueeCostWithoutEpisodePass['five-stars-one-day']).toBeGreaterThan(marqueeCostWithoutEpisodePass['four-stars'])
+      expect(marqueeCostWithoutEpisodePass['five-stars-end-event']).toBeGreaterThan(marqueeCostWithoutEpisodePass['four-stars'])
       expect(marqueeCostWithoutEpisodePass['six-stars-one-week']).toBeGreaterThan(marqueeCostWithoutEpisodePass['five-stars-end-event'])
       expect(marqueeCostWithoutEpisodePass['seven-stars-one-week']).toBeGreaterThan(marqueeCostWithoutEpisodePass['six-stars-one-week'])
     })
 
-    it('five-stars with week-long event should cost less than one-day rush', () => {
-      expect(marqueeCostWithoutEpisodePass['five-stars-end-event']).toBeLessThan(marqueeCostWithoutEpisodePass['five-stars-one-day'])
+    it('should match expected hardcoded costs with episode pass', () => {
+      expect(marqueeCostWithEpisodePass['four-stars']).toBe(0)
+      expect(marqueeCostWithEpisodePass['five-stars-end-event']).toBe(3897)
+      expect(marqueeCostWithEpisodePass['six-stars-one-week']).toBe(11196)
+      expect(marqueeCostWithEpisodePass['seven-stars-one-week']).toBe(24990)
+    })
+
+    it('should match expected hardcoded costs without episode pass', () => {
+      expect(marqueeCostWithoutEpisodePass['four-stars']).toBe(2598)
+      expect(marqueeCostWithoutEpisodePass['five-stars-end-event']).toBe(7299)
+      expect(marqueeCostWithoutEpisodePass['six-stars-one-week']).toBe(12990)
+      expect(marqueeCostWithoutEpisodePass['seven-stars-one-week']).toBe(25980)
     })
   })
 

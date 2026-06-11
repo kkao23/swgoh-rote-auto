@@ -3,7 +3,7 @@ import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const lsTopLeftP5: dataType[] = [
     {
-        lead: 'Queen Amidala',
+        lead: 'Queen Amidala', gameId: 'QUEENAMIDALA',
         others: 'POW, MQJ, Snips, GK',
         notes: '1/2 on auto, don\'t target probe droid',
         videos: [{ url: 'https://youtu.be/ofMJ0SXjdCU' }],
@@ -13,7 +13,7 @@ export const lsTopLeftP5: dataType[] = [
         interactionType: [interactionType.TARGET_START],
     },
     {
-        lead: 'Omega',
+        lead: 'Omega', gameId: 'OMEGAS3',
         leadFull: 'Omega with Bad Batch Mercenaries',
         others: 'Crosshair, Wrecker, Batcher, Hunter',
         notes: 'easy auto with Wrecker Omi, pause auto at the beginning of wave 2. Full platoon required',
@@ -25,7 +25,7 @@ export const lsTopLeftP5: dataType[] = [
         omi: true,
     },
     {
-        lead: 'Ahsoka Tano',
+        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO',
         others: 'Ezra, Fulcrum, +2',
         notes: '2/2 on auto, the more Spectres the better',
         videos: [{ url: 'https://youtu.be/rKrNwQrNHw4' }],
@@ -35,7 +35,7 @@ export const lsTopLeftP5: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'JMK',
+        lead: 'JMK', gameId: 'JEDIMASTERKENOBI',
         others: 'GK, CAT, Snips, +1 Galactic Republic',
         notes: 'Auto, CWC Replaceable',
         videos: [{ url: 'https://youtu.be/225Hr3xBRok' }, { url: 'https://youtu.be/8YPqRLYrLZM' }],
@@ -45,7 +45,7 @@ export const lsTopLeftP5: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Leia',
+        lead: 'Leia', gameId: 'GLLEIA',
         others: 'Drogan, R2-D2, Admiral Raddus, +1',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/FwsUlJJgz_o' }],
@@ -58,7 +58,7 @@ export const lsTopLeftP5: dataType[] = [
 
 export const lsTopMidP5: dataType[] = [
     {
-        lead: 'Queen Amidala',
+        lead: 'Queen Amidala', gameId: 'QUEENAMIDALA',
         others: 'POW, MQJ, Snips, CUP',
         notes: 'auto, hope they dont kill MQG/POW',
         videos: [{ url: 'https://youtu.be/2eC85m5HXOA' }],
@@ -68,7 +68,7 @@ export const lsTopMidP5: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'JMMW',
+        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU',
         leadFull: 'Jedi Master Mace Windu',
         others: 'Jocasta, Depa, Aayla, Temple Guard',
         notes: 'Depa omi - full auto',
@@ -81,7 +81,7 @@ export const lsTopMidP5: dataType[] = [
         creator: 'Njuta 93',
     },
     {
-        lead: 'Omega',
+        lead: 'Omega', gameId: 'OMEGAS3',
         leadFull: 'Omega with Bad Batch Mercenaries',
         others: 'Crosshair, Wrecker, Batcher, Hunter',
         notes: 'easy auto with Wrecker Omi. Full platoon required',
@@ -93,7 +93,7 @@ export const lsTopMidP5: dataType[] = [
         omi: true,
     },
     {
-        lead: 'Leia',
+        lead: 'Leia', gameId: 'GLLEIA',
         others: 'Drogan, R2-D2, Admiral Raddus, +1',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/czbZV5oFunQ' }],
@@ -103,7 +103,7 @@ export const lsTopMidP5: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Ahsoka Tano',
+        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO',
         others: 'Ezra, Fulcrum, +2',
         notes: '2/2 on auto, the more Spectres the better',
         videos: [{ url: 'https://youtu.be/Y3dadvLoH8o' }],
@@ -113,7 +113,7 @@ export const lsTopMidP5: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'JMK',
+        lead: 'JMK', gameId: 'JEDIMASTERKENOBI',
         others: 'GK, CAT, Snips, +1 Galactic Republic',
         notes: 'Auto, CWC Replaceable',
         videos: [{ url: 'https://youtu.be/qsX88wWIk4Y' },],
@@ -126,7 +126,7 @@ export const lsTopMidP5: dataType[] = [
 
 export const lsBottomP5: dataType[] = [
     {
-        lead: 'Boss Nass',
+        lead: 'Boss Nass', gameId: 'BOSSNASS',
         others: 'Gungans, Tarpal Omi',
         notes: 'Auto',
         videos: [{ url: 'https://www.youtube.com/watch?v=5kjc-83PM2s', creator: 'avengerObs' }],
@@ -136,7 +136,7 @@ export const lsBottomP5: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Omega',
+        lead: 'Omega', gameId: 'OMEGAS3',
         leadFull: 'Omega with Bad Batch Mercenaries',
         others: 'Crosshair, Wrecker, Batcher, Hunter',
         notes: 'easy auto with Wrecker Omi, pause to target Mara at the beginning of wave 2. Full platoon required',
@@ -148,7 +148,7 @@ export const lsBottomP5: dataType[] = [
         omi: true,
     },
     {
-        lead: 'Ahsoka Tano (randoms)',
+        lead: 'Ahsoka Tano (randoms)', gameId: 'AHSOKATANO',
         others: 'Ezra, random R9',
         notes: '1/2 on auto, need more Spectres to 2/2',
         videos: [{ url: 'https://youtu.be/xruQGASpTP4' }],
@@ -158,7 +158,7 @@ export const lsBottomP5: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Ahsoka Tano (spectres)',
+        lead: 'Ahsoka Tano (spectres)', gameId: 'AHSOKATANO',
         others: 'Ezra, Sabine, Hera, Fulcrum',
         notes: 'auto but need some luck on who takes the opening mass assist',
         videos: [{ url: 'https://youtu.be/Q9fG6WCUjE4' }],
@@ -171,7 +171,7 @@ export const lsBottomP5: dataType[] = [
 
 export const lsShipsP6: dataType[] = [
     {
-        lead: 'Profundity',
+        lead: 'Profundity', gameId: 'CAPITALPROFUNDITY',
         others: 'MF, Outrider, Y Wing, Phantom, Cassian, Biggs, Bistan',
         notes: 'Video is on manual but looks autoable with Rogue One',
         videos: [{ url: 'https://youtu.be/JcmNmvY4klY?si=TfjlyK7qYDoOSkwJ', creator: 'GoBucsGo' }],

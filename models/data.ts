@@ -5,6 +5,7 @@ type videos = {
 
 export type data = {
     lead: string,
+    gameId?: string,
     leadFull?: string,
     others: string,
     notes: string,

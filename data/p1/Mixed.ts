@@ -3,7 +3,7 @@ import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const qiraMixedP1: dataType[] = [
     {
-        lead: 'Qira (Leia)',
+        lead: 'Qira (Leia)', gameId: 'QIRA',
         others: 'Leia, R2, Drogan',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/iViRHC81yvs' }],
@@ -13,7 +13,7 @@ export const qiraMixedP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Qira (JMK)',
+        lead: 'Qira (JMK)', gameId: 'QIRA',
         others: 'JMK, CAT, GK',
         notes: 'auto, got a bit dicey at the end',
         videos: [{ url: 'https://youtu.be/uYhZJ3qbU9c' }],
@@ -23,7 +23,7 @@ export const qiraMixedP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Qira (Baylan)',
+        lead: 'Qira (Baylan)', gameId: 'QIRA',
         others: 'Baylan, Marrok (o), Shin',
         notes: 'auto, hope they dont focus Marrok',
         videos: [{ url: 'https://youtu.be/srzybGeCGjw' }],
@@ -34,27 +34,27 @@ export const qiraMixedP1: dataType[] = [
         omi: true
     },
     {
-        lead: 'Qira (Rey/CAT)',
+        lead: 'Qira (Rey/CAT)', gameId: 'QIRA',
         others: 'Rey, CAT, Ben Solo',
         notes: 'auto',
-        videos: [{url: 'https://youtu.be/gRYjQVOTQR0'}],
+        videos: [{ url: 'https://youtu.be/gRYjQVOTQR0' }],
         icon: '/icons/characters/tex.charui_rey_tros.png',
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Qira (Rey no CAT)',
+        lead: 'Qira (Rey no CAT)', gameId: 'QIRA',
         others: 'Rey, L3, Hondo',
         notes: 'lifeblood L3, auto, this got scary, I would sub out Hondo',
-        videos: [{url: 'https://youtu.be/Vj9WEoCV4Io'}],
+        videos: [{ url: 'https://youtu.be/Vj9WEoCV4Io' }],
         icon: '/icons/characters/tex.charui_rey_tros.png',
         difficulty: difficulty.CAUTION,
         successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Qira (Ahsoka Tano)',
+        lead: 'Qira (Ahsoka Tano)', gameId: 'QIRA',
         others: 'Ahsoka Tano, Padawan Sabine, Ezra Exile',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/_9kN1TSqgB0' }],
@@ -64,22 +64,22 @@ export const qiraMixedP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-    "lead": "Qira (Rey/CAT/Dash)",
-    "leadFull": "Qira with Rey, CAT, and Dash",
-    "others": "Rey, Cat, Dash",
-    "notes": "auto",
-    "videos": [],
-    "icon": "/icons/characters/tex.charui_rey_tros.png",
-    "difficulty": difficulty.EASY,
-    "successRate": successRate.USUALLY,
-    "interactionType": [interactionType.AUTO],
-    "creator": "anonymous"
+        "lead": "Qira (Rey/CAT/Dash)", "gameId": "QIRA",
+        "leadFull": "Qira with Rey, CAT, and Dash",
+        "others": "Rey, Cat, Dash",
+        "notes": "auto",
+        "videos": [],
+        "icon": "/icons/characters/tex.charui_rey_tros.png",
+        "difficulty": difficulty.EASY,
+        "successRate": successRate.USUALLY,
+        "interactionType": [interactionType.AUTO],
+        "creator": "anonymous"
     }
 ]
 
 export const mixedP1: dataType[] = [
     {
-        lead: 'CLS',
+        lead: 'CLS', gameId: 'COMMANDERLUKESKYWALKER',
         leadFull: 'Commander Luke Skywalker',
         others: 'Han, Chewie, 3PO, Chewpio',
         notes: 'auto, may need to target damage dealers',
@@ -91,7 +91,7 @@ export const mixedP1: dataType[] = [
         targeted: true
     },
     {
-        lead: 'GAS',
+        lead: 'GAS', gameId: 'GENERALSKYWALKER',
         leadFull: 'General Anakin Skywalker',
         others: 'Fives, Rex, Echo, Capt Rex',
         notes: 'auto, need Capt Rex',
@@ -102,7 +102,7 @@ export const mixedP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'E Palaptine (Starkiller)',
+        lead: 'E Palaptine (Starkiller)', gameId: 'EMPERORPALPATINE, STARKILLER',
         leadFull: 'Emperor Palpatine (Starkiller)',
         others: 'Starkiller, Mara Jade, Old Ben, Visas',
         notes: 'auto, last two can be any jedi/LS UFU',
@@ -113,7 +113,7 @@ export const mixedP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Hera (Phoenix)',
+        lead: 'Hera (Phoenix)', gameId: 'HERASYNDULLAS3',
         others: 'Capt Rex, Kanan, Sabine, Chopper',
         notes: 'I cant get this to work on auto. May require excellent mods',
         videos: [{ url: 'https://www.youtube.com/watch?v=lAw9OrvQzfU', creator: 'egnards' }],
@@ -123,7 +123,7 @@ export const mixedP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Mother Talzin',
+        lead: 'Mother Talzin', gameId: 'MOTHERTALZIN',
         others: 'Merrin, Asajj, Daka, Zombie',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/UBKK051GcTc' }],
@@ -133,10 +133,10 @@ export const mixedP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Finn (omi)',
+        lead: 'Finn (omi)', gameId: 'FINN',
         others: 'Rose, Poe, RH Finn, Zorii',
         notes: 'auto',
-        videos: [{url: 'https://youtu.be/9ZoFbJLgMeQ?si=OsvnQRT7eJTYF4EQ&t=264', creator: 'pico'}],
+        videos: [{ url: 'https://youtu.be/9ZoFbJLgMeQ?si=OsvnQRT7eJTYF4EQ&t=264', creator: 'pico' }],
         icon: '/icons/characters/tex.charui_finn.png',
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
@@ -144,7 +144,7 @@ export const mixedP1: dataType[] = [
         omi: true,
     },
     {
-        lead: 'BK Mandalore',
+        lead: 'BK Mandalore', gameId: 'MANDALORBOKATAN',
         leadFull: 'Bo Katan Mandalore',
         others: 'Paz, Beskar Mando, IG12/Grogu, Regular Bo Katan',
         notes: 'auto',
@@ -155,7 +155,7 @@ export const mixedP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Queen Amidala',
+        lead: 'Queen Amidala', gameId: 'QUEENAMIDALA',
         others: 'POW, MQJ, Echo, Tech',
         notes: 'auto, last two can vary',
         videos: [{ url: 'https://youtu.be/grMuCEYKaF0' }],
@@ -165,7 +165,7 @@ export const mixedP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Darth Revan',
+        lead: 'Darth Revan', gameId: 'DARTHREVAN',
         others: 'Malak, BSF, Malgus, Marauder',
         notes: 'only 1/2 on auto',
         videos: [{ url: 'https://youtu.be/2nFRrzceFOY' }],
@@ -175,7 +175,7 @@ export const mixedP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Bossk',
+        lead: 'Bossk', gameId: 'BOSSK',
         others: 'Fennec, Mando, Boba, Greef',
         notes: 'only 1/2 on auto',
         videos: [{ url: 'https://youtu.be/6U5e-eqXBvQ' }],
@@ -185,7 +185,7 @@ export const mixedP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Omega',
+        lead: 'Omega', gameId: 'OMEGAS3',
         others: 'other Bad Batch Mercenaries',
         notes: 'omi wrecker, easy full auto',
         videos: [{ url: 'https://youtu.be/GNwcFQnw-xo' }],
@@ -196,7 +196,7 @@ export const mixedP1: dataType[] = [
         omi: true,
     },
     {
-        lead: 'GAS with QA',
+        lead: 'GAS with QA', gameId: 'GENERALSKYWALKER, QUEENAMIDALA',
         leadFull: 'General Anakin Skywalker with Queen Amidala',
         others: 'Rex, Fives, Echo',
         notes: 'auto',
@@ -207,7 +207,7 @@ export const mixedP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Tarkin',
+        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN',
         leadFull: 'Grand Moff Tarkin',
         others: 'Appo, CX, Disguised Clone Trooper, Scorch',
         notes: 'Easy auto',
@@ -219,7 +219,7 @@ export const mixedP1: dataType[] = [
         omi: true
     },
     {
-        lead: 'Rey',
+        lead: 'Rey', gameId: 'GLREY',
         others: 'JTR, BB8, Han, Chewbacca',
         notes: 'easy auto',
         videos: [{ url: 'https://youtu.be/9emVf4bmMKM' }],
@@ -229,7 +229,7 @@ export const mixedP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Stormtrooper Luke',
+        lead: 'Stormtrooper Luke', gameId: 'STORMTROOPERLUKE',
         others: 'Princess Leia, Stormtrooper Han, C3PO, Chewpio',
         notes: 'auto, was a bit dicey',
         videos: [{ url: 'https://youtu.be/4ZL8_o5s-RQ' }],
@@ -239,32 +239,32 @@ export const mixedP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-    "lead": "Carth Onasi",
-    "leadFull": "Carth Onasi",
-    "others": "Zaalbar, Mission, Canderous, and 5OR-T",
-    "notes": "Omicron on Carth required, full auto, fast and easy. Actually works easily on every Mixed Phase up to P4 on full auto. After that (P5, P6, and Mandalore) the team still works, just have to go manual usually. No remodding required. Garbage mods work just fine.",
-    "videos": [],
-    "icon": "/icons/characters/tex.charui_carth.png",
-    "difficulty": difficulty.EASY,
-    "omi": true,
-    "successRate": successRate.USUALLY,
-    "interactionType": [interactionType.AUTO],
-    "creator": "DyloBin"
-},
-{
-    "lead": "Boss Nass",
-    "leadFull": "Boss Nass",
-    "others": "Team of Gungans",
-    "notes": "Auto",
-    "videos": [],
-    "icon": "/icons/characters/tex.charui_bossnass.png",
-    "difficulty": difficulty.EASY,
-    "successRate": successRate.USUALLY,
-    "interactionType": [interactionType.AUTO],
-    "creator": "BailWritte"
-},
+        "lead": "Carth Onasi", "gameId": "CARTHONASI",
+        "leadFull": "Carth Onasi",
+        "others": "Zaalbar, Mission, Canderous, and 5OR-T",
+        "notes": "Omicron on Carth required, full auto, fast and easy. Actually works easily on every Mixed Phase up to P4 on full auto. After that (P5, P6, and Mandalore) the team still works, just have to go manual usually. No remodding required. Garbage mods work just fine.",
+        "videos": [],
+        "icon": "/icons/characters/tex.charui_carth.png",
+        "difficulty": difficulty.EASY,
+        "omi": true,
+        "successRate": successRate.USUALLY,
+        "interactionType": [interactionType.AUTO],
+        "creator": "DyloBin"
+    },
     {
-        lead: 'Boba Fett Scion of Jango',
+        "lead": "Boss Nass", "gameId": "BOSSNASS",
+        "leadFull": "Boss Nass",
+        "others": "Team of Gungans",
+        "notes": "Auto",
+        "videos": [],
+        "icon": "/icons/characters/tex.charui_bossnass.png",
+        "difficulty": difficulty.EASY,
+        "successRate": successRate.USUALLY,
+        "interactionType": [interactionType.AUTO],
+        "creator": "BailWritte"
+    },
+    {
+        lead: 'Boba Fett Scion of Jango', gameId: 'BOBAFETTSCION',
         leadFull: 'Boba Fett Scion of Jango',
         others: 'Asajj Dark Disciple, 4 LOM, Greef, Mando',
         notes: 'auto',
@@ -275,33 +275,33 @@ export const mixedP1: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
 
-{
-    lead: 'Maul',
-    others: 'Jango, Cordo, Gar Saxon, super commando.',
-    notes: 'Easy auto.',
-    videos: [],
-    icon: '/icons/characters/tex.charui_maul.png',
-    difficulty: difficulty.EASY,
-    successRate: successRate.CONSISTENT,
-    interactionType: [interactionType.AUTO],
-    creator: 'anonymous'
-},
-{
-    lead: 'Palpatine',
-    others: 'MJ, Starkiller, Old Ben, Cal Kestis',
-    notes: 'Once MJ gets her turn and Palpatine shocks, everyone basically stays stunned for the remainder',
-    videos: [],
-    icon: '/icons/characters/tex.charui_palpatineemperor.png',
-    difficulty: difficulty.EASY,
-    successRate: successRate.CONSISTENT,
-    interactionType: [interactionType.AUTO],
-    creator: 'anonymous'
-},
+    {
+        lead: 'Maul', gameId: 'MAULS7',
+        others: 'Jango, Cordo, Gar Saxon, super commando.',
+        notes: 'Easy auto.',
+        videos: [],
+        icon: '/icons/characters/tex.charui_maul.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous'
+    },
+    {
+        lead: 'Palpatine', gameId: 'EMPERORPALPATINE',
+        others: 'MJ, Starkiller, Old Ben, Cal Kestis',
+        notes: 'Once MJ gets her turn and Palpatine shocks, everyone basically stays stunned for the remainder',
+        videos: [],
+        icon: '/icons/characters/tex.charui_palpatineemperor.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous'
+    },
 ]
 
 export const jabbaP1: dataType[] = [
     {
-        lead: 'Jabba',
+        lead: 'Jabba', gameId: 'JABBATHEHUTT',
         others: 'Boba, Krrsantan, Skiff Lando, Booush',
         notes: 'easy auto',
         videos: [{ url: 'https://youtu.be/W_GayJRsWy4' }],
@@ -314,7 +314,7 @@ export const jabbaP1: dataType[] = [
 
 export const drAphraP1: dataType[] = [
     {
-        lead: 'Aphra (IG-90)',
+        lead: 'Aphra (IG-90)', gameId: 'DOCTORAPHRA',
         others: 'BT1, 000, HK-47, IG-90',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/cxpLm8I_TJQ' }],
@@ -324,7 +324,7 @@ export const drAphraP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Aphra (Rey)',
+        lead: 'Aphra (Rey)', gameId: 'DOCTORAPHRA',
         others: 'Rey, JTR, Ben, BB8',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/dNNTaMIUjD8' }],
@@ -334,7 +334,7 @@ export const drAphraP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Aphra (Droids)',
+        lead: 'Aphra (Droids)', gameId: 'DOCTORAPHRA',
         others: 'BT1, 000, Darth Vader, IG-88',
         notes: 'auto, can get unlucky if they focus down aphra, can sub IG-88 for Krr or another DS droid',
         videos: [{ url: 'https://youtu.be/36sojaFa4uA' }],
@@ -344,7 +344,7 @@ export const drAphraP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Aphra (SLKR)',
+        lead: 'Aphra (SLKR)', gameId: 'DOCTORAPHRA',
         others: 'SLKR, Dark Side Rey, KRU, Sith Trooper',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/H6rzBkYeixY' }],
@@ -354,7 +354,7 @@ export const drAphraP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Aphra (Ahsoka Tano)',
+        lead: 'Aphra (Ahsoka Tano)', gameId: 'DOCTORAPHRA',
         others: 'Hera, Sabine, Huyang',
         notes: 'auto, dont need ezra here',
         videos: [{ url: 'https://youtu.be/phkCY2ikmtI' }],
@@ -367,7 +367,7 @@ export const drAphraP1: dataType[] = [
 
 export const shipsP1: dataType[] = [
     {
-        lead: 'Executor',
+        lead: 'Executor', gameId: 'CAPITALEXECUTOR',
         others: 'HT, P1, XB, Slave 1, IG2000',
         notes: 'auto, use RC if not platooned',
         videos: [{ url: 'https://youtu.be/Qzduxv0BJx8' }],
@@ -377,17 +377,17 @@ export const shipsP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Malevolence',
+        lead: 'Malevolence', gameId: 'CAPITALMALEVOLENCE',
         others: 'Vulture, Hyena, Spy, Soldier',
         notes: 'auto, do not bring Sun Fac or any other reinforcements. not sure if totally reliable',
-        videos: [{url: 'https://youtu.be/VaQSNWNpfVU'}],
+        videos: [{ url: 'https://youtu.be/VaQSNWNpfVU' }],
         icon: '/icons/ships/tex.charui_malevolence.png',
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'Leviathan',
+        lead: 'Leviathan', gameId: 'CAPITALLEVIATHAN',
         others: 'FCI, Bomber start, Sith Fighter, MK6 Interceptor, Tie Dorito, Scimitar reinforcements',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/e1MRl_z2q60' }],
@@ -397,7 +397,7 @@ export const shipsP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Profundity',
+        lead: 'Profundity', gameId: 'CAPITALPROFUNDITY',
         others: 'HMF, Y wing, Phantom, Ghost, Biggs, Wedge',
         notes: 'auto, dont use Outrider here',
         videos: [{ url: 'https://youtu.be/bU0KRWRabAE' }],
@@ -407,7 +407,7 @@ export const shipsP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Raddus',
+        lead: 'Raddus', gameId: 'CAPITALRADDUS',
         others: 'Rey MF, Lando MF, Res Bomber, Comeuppance, Poes Xwing, Res Xwing, Ebon Hawk',
         notes: 'cant auto. ',
         videos: [{ url: 'https://youtu.be/d9fdaQRbVkQ' }],
@@ -417,7 +417,7 @@ export const shipsP1: dataType[] = [
         interactionType: [interactionType.MANUAL]
     },
     {
-        lead: 'Negotiator',
+        lead: 'Negotiator', gameId: 'CAPITALNEGOTIATOR',
         others: 'Marauder, Y Wing start, JKA, Fives, Ahsoka, Plo reinforcements',
         notes: 'marauder likely mandatory, no auto',
         videos: [{ url: 'https://youtu.be/DDctMUYgHa0' }],

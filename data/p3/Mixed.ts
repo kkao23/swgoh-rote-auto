@@ -3,7 +3,7 @@ import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const boKatanP3: dataType[] = [
     {
-        lead: 'BK Mandalore',
+        lead: 'BK Mandalore', gameId: 'MANDALORBOKATAN',
         leadFull: 'Bo Katan Mandalore',
         others: 'IG12',
         notes: 'IG call bo to assist, don\'t use Birds with BAM. Ballista if someone gets eaten.',
@@ -18,7 +18,7 @@ export const boKatanP3: dataType[] = [
 
 export const revaP3: dataType[] = [
     {
-        lead: 'Reva',
+        lead: 'Reva', gameId: 'THIRDSISTER',
         others: 'GI, 7S, 5B, 8B',
         notes: 'basics until you get 6 stacks of purge, hit Auto',
         videos: [{ url: 'https://youtu.be/q1lYPCfhpUA' }],
@@ -28,7 +28,7 @@ export const revaP3: dataType[] = [
         interactionType: [interactionType.TARGET_START]
     },
     {
-        lead: 'GI',
+        lead: 'GI', gameId: 'GRANDINQUISITOR',
         leadFull: 'Grand Inquisitor',
         others: 'Marrok (omi), +3',
         notes: 'if no Reva. easy auto with omi',
@@ -43,7 +43,7 @@ export const revaP3: dataType[] = [
 
 export const jabbaP3: dataType[] = [
     {
-        lead: 'Jabba',
+        lead: 'Jabba', gameId: 'JABBATHEHUTT',
         others: 'Any',
         notes: 'auto basic if no R7 Hutt Cartel',
         videos: [{ url: 'https://youtu.be/NpWgXSXi9pw' }],
@@ -56,7 +56,7 @@ export const jabbaP3: dataType[] = [
 
 export const fennecP3: dataType[] = [
     {
-        lead: 'Rey',
+        lead: 'Rey', gameId: 'GLREY',
         others: 'Fennec, any 3 resistance',
         notes: 'easy auto',
         videos: [{ url: 'https://youtu.be/ydm8T8Jvpyc' }],
@@ -66,7 +66,7 @@ export const fennecP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'JMK',
+        lead: 'JMK', gameId: 'JEDIMASTERKENOBI',
         leadFull: 'Jedi Master Kenobi',
         others: 'GK, Shaak Ti, Padme',
         notes: 'easy auto',
@@ -77,38 +77,38 @@ export const fennecP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Bossk',
+        lead: 'Bossk', gameId: 'BOSSK',
         others: 'Boba, Greef, Mando',
         notes: 'auto',
-        videos: [{url: 'https://youtu.be/R7zqN2V0kQo?si=JDJovWknr8nAx7_t&t=267', creator: 'pico'}],
+        videos: [{ url: 'https://youtu.be/R7zqN2V0kQo?si=JDJovWknr8nAx7_t&t=267', creator: 'pico' }],
         icon: '/icons/characters/tex.charui_bossk.png',
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'SEE',
+        lead: 'SEE', gameId: 'SITHPALPATINE',
         leadFull: 'Sith Eternal Emperor',
         others: 'leftover sith',
         notes: 'I had Darth maul, Darth sidious and sith marauder. full auto',
-        videos: [{url: 'https://youtu.be/CF5lIXEvEzc'}],
+        videos: [{ url: 'https://youtu.be/CF5lIXEvEzc' }],
         icon: '/icons/characters/tex.charui_espalpatine_pre.png',
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'Bane',
+        lead: 'Bane', gameId: 'DARTHBANE',
         leadFull: 'Darth Bane',
         others: 'leftover sith',
         notes: 'I had Darth maul, Darth sidious and sith empire trooper. can be dicey, add malak for guarantee win',
-        videos: [{url: 'https://youtube.com/shorts/EDQDXz6uwnE?feature=share'}],
+        videos: [{ url: 'https://youtube.com/shorts/EDQDXz6uwnE?feature=share' }],
         icon: '/icons/characters/tex.charui_darthbane.png',
         difficulty: difficulty.CAUTION,
         successRate: successRate.USUALLY,
     },
     {
-        lead: 'SLKR',
+        lead: 'SLKR', gameId: 'SUPREMELEADERKYLOREN',
         others: 'DRey, KRU, Sith Trooper',
         notes: 'easy full auto',
         videos: [{ url: 'https://youtu.be/qtWOgArbEX0' }],
@@ -118,7 +118,7 @@ export const fennecP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Omega',
+        lead: 'Omega', gameId: 'OMEGAS3',
         others: 'Wrecker (omicron), Hunter, Crosshair, Fennec',
         notes: 'easy auto with omi',
         videos: [{ url: 'https://youtu.be/Sv1SbpTmcWI' }],
@@ -129,11 +129,11 @@ export const fennecP3: dataType[] = [
         omi: true,
     },
     {
-        lead: 'DTMG',
+        lead: 'DTMG', gameId: 'MOFFGIDEONS3',
         leadFull: 'Dark Trooper Moff Gideon',
         others: 'Scout Trooper, Death Trooper, Moff Gideon, Fennec',
         notes: 'auto. Enoch omi makes it easier but not required',
-        videos: [{url: 'https://youtu.be/2CeDdqWnyIE'}],
+        videos: [{ url: 'https://youtu.be/2CeDdqWnyIE' }],
         icon: '/icons/characters/tex.charui_moffgideons3.png',
         difficulty: difficulty.EASY,
         successRate: successRate.CONSISTENT,
@@ -141,7 +141,7 @@ export const fennecP3: dataType[] = [
         omi: true,
     },
     {
-        lead: 'Pirate King Hondo',
+        lead: 'Pirate King Hondo', gameId: 'GLHONDO',
         leadFull: 'Pirate King Hondo Onaka',
         others: 'Silvo, Hondo, Vane',
         notes: 'easy full auto',
@@ -152,7 +152,7 @@ export const fennecP3: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'Maz Kanata',
+        lead: 'Maz Kanata', gameId: 'MAZKANATA',
         others: 'Ithano, Quiggold, Kix',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/KdRAXLcA0vY' }],
@@ -162,7 +162,7 @@ export const fennecP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'JML',
+        lead: 'JML', gameId: 'GRANDMASTERLUKE',
         leadFull: 'Jedi Master Luke',
         others: 'JKL, Shaak Ti, GMY',
         notes: 'auto',
@@ -172,8 +172,8 @@ export const fennecP3: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
     },
-            {
-        lead: 'Boba Fett Scion of Jango',
+    {
+        lead: 'Boba Fett Scion of Jango', gameId: 'BOBAFETTSCION',
         leadFull: 'Boba Fett Scion of Jango',
         others: 'Asajj Dark Disciple, Fennec, Greef, Mando',
         notes: 'auto',
@@ -184,22 +184,22 @@ export const fennecP3: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-    "lead": "Darth Malgus",
-    "leadFull": "Darth Malgus",
-    "others": "Malak, Fennec +2 others",
-    "notes": "Full auto",
-    "videos": [],
-    "icon": "/icons/characters/tex.charui_darthmalgus.png",
-    "difficulty": difficulty.EASY,
-    "successRate": successRate.USUALLY,
-    "interactionType": [interactionType.AUTO],
-    "creator": "Kino Apparition"
-}
+        "lead": "Darth Malgus", "gameId": "DARTHMALGUS",
+        "leadFull": "Darth Malgus",
+        "others": "Malak, Fennec +2 others",
+        "notes": "Full auto",
+        "videos": [],
+        "icon": "/icons/characters/tex.charui_darthmalgus.png",
+        "difficulty": difficulty.EASY,
+        "successRate": successRate.USUALLY,
+        "interactionType": [interactionType.AUTO],
+        "creator": "Kino Apparition"
+    }
 ]
 
 export const mixedTopLeftP3: dataType[] = [
     {
-        lead: 'GAS',
+        lead: 'GAS', gameId: 'GENERALSKYWALKER',
         leadFull: 'General Anakin Skywalker',
         others: '501st Clones',
         notes: 'auto',
@@ -210,7 +210,7 @@ export const mixedTopLeftP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'CLS',
+        lead: 'CLS', gameId: 'COMMANDERLUKESKYWALKER',
         leadFull: 'Commander Luke Skywalker',
         others: 'Han, Chewie, Chewpio, Admiral Raddus',
         notes: 'auto',
@@ -221,7 +221,7 @@ export const mixedTopLeftP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: '50R-T',
+        lead: '50R-T', gameId: '50RT',
         leadFull: '50R-T',
         others: 'weak leftovers',
         notes: 'Auto: 50R-T gains prot. up when hit, ennemies die by DOT (weak leftovers so they can die quick while ennemies get turns faster), 30s battle',
@@ -233,7 +233,7 @@ export const mixedTopLeftP3: dataType[] = [
         creator: 'anonymous'
     },
     {
-        lead: 'Mother Talzin',
+        lead: 'Mother Talzin', gameId: 'MOTHERTALZIN',
         others: 'Asajj, Daka, Zombie, Merrin',
         notes: 'auto',
         videos: [{ url: 'https://www.youtube.com/watch?v=9I7t5cDbZRU', creator: 'avengerObs' }],
@@ -243,7 +243,7 @@ export const mixedTopLeftP3: dataType[] = [
         icon: '/icons/characters/tex.charui_nightsisters_talzin.png'
     },
     {
-        lead: 'Hera (Phoenix)',
+        lead: 'Hera (Phoenix)', gameId: 'HERASYNDULLAS3',
         others: 'Chopper, Kanan, Sabine, Capt Rex',
         notes: 'auto',
         videos: [{ url: 'https://www.youtube.com/watch?v=TK71MGKC2Ho', creator: 'avengerObs' }],
@@ -253,10 +253,10 @@ export const mixedTopLeftP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Finn (omi)',
+        lead: 'Finn (omi)', gameId: 'FINN',
         others: 'Poe, Zorii, RH Finn, Resistance Pilot',
         notes: 'auto, i imagine Resistance Pilot is replaceable',
-        videos: [{url: 'https://youtu.be/R7zqN2V0kQo?si=urjbrnVAjSeaOTHa&t=387', creator: 'pico'}],
+        videos: [{ url: 'https://youtu.be/R7zqN2V0kQo?si=urjbrnVAjSeaOTHa&t=387', creator: 'pico' }],
         icon: '/icons/characters/tex.charui_finn.png',
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
@@ -264,7 +264,7 @@ export const mixedTopLeftP3: dataType[] = [
         omi: true,
     },
     {
-        lead: 'Cere',
+        lead: 'Cere', gameId: 'CEREJUNDA',
         leadFull: 'Cere Junda',
         others: 'UFUs',
         notes: 'auto, I had Cere JTR Scav Rey Malicos Starkiller but you can probably use whatever leftover UFUs you have',
@@ -275,7 +275,7 @@ export const mixedTopLeftP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'QA (CUP)',
+        lead: 'QA (CUP)', gameId: 'QUEENAMIDALA',
         leadFull: 'Queen Amidala',
         others: 'POW, MQG, JKA, CUP',
         notes: 'easy full auto',
@@ -286,7 +286,7 @@ export const mixedTopLeftP3: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'Rey',
+        lead: 'Rey', gameId: 'GLREY',
         others: 'any resistance. I had JTR, Scav Rey, BB8 and 3PO',
         notes: 'easy auto',
         videos: [{ url: 'https://youtu.be/jVRGTzX_4Ww' }],
@@ -296,7 +296,7 @@ export const mixedTopLeftP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Omega',
+        lead: 'Omega', gameId: 'OMEGAS3',
         leadFull: 'Omega with Bad Batch Mercenaries',
         others: 'Crosshair, Wrecker, Batcher, Hunter',
         notes: 'omi Wrecker, 2/2 on full auto',
@@ -308,7 +308,7 @@ export const mixedTopLeftP3: dataType[] = [
         omi: true
     },
     {
-        lead: 'Baylan',
+        lead: 'Baylan', gameId: 'BAYLANSKOLL',
         others: 'Marrok, Shin, Qira, L3',
         notes: 'omi Marrok, auto, last two are flexible',
         videos: [{ url: 'https://youtu.be/yn70eqOYuIU' }],
@@ -319,10 +319,10 @@ export const mixedTopLeftP3: dataType[] = [
         omi: true
     },
     {
-        lead: 'Boss Nass',
+        lead: 'Boss Nass', gameId: 'BOSSNASS',
         others: 'Gungans',
         notes: 'auto, Tarpals Omi',
-        videos: [{ url: 'https://youtu.be/d1odTRywhfc'}],
+        videos: [{ url: 'https://youtu.be/d1odTRywhfc' }],
         icon: '/icons/characters/tex.charui_bossnass.png',
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
@@ -330,7 +330,7 @@ export const mixedTopLeftP3: dataType[] = [
         omi: true
     },
     {
-        lead: 'Tarkin',
+        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN',
         leadFull: 'Grand Moff Tarkin',
         others: 'Appo (omicron), CX, Disguised Clone Trooper, Scorch',
         notes: 'Looked a bit dicey but super quick',
@@ -341,7 +341,7 @@ export const mixedTopLeftP3: dataType[] = [
         omi: true
     },
     {
-        lead: 'Maz Kanata',
+        lead: 'Maz Kanata', gameId: 'MAZKANATA',
         others: 'Ithano, Quiggold, Kix, SM-33',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/NS5C8WNMKxs' }],
@@ -351,7 +351,7 @@ export const mixedTopLeftP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'The Stranger',
+        lead: 'The Stranger', gameId: 'STRANGER',
         leadFull: 'The Stranger',
         others: 'Starkiller, Malicos, Scavenger Rey, Plo Koon',
         notes: 'full auto, last two replaceable',
@@ -362,7 +362,7 @@ export const mixedTopLeftP3: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'Pirate King Hondo',
+        lead: 'Pirate King Hondo', gameId: 'GLHONDO',
         leadFull: 'Pirate King Hondo Onaka',
         others: 'Silvo, Hondo, Vane, Brutus',
         notes: 'easy full auto',
@@ -373,7 +373,7 @@ export const mixedTopLeftP3: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'Kelleran Beq or JMMW',
+        lead: 'Kelleran Beq or JMMW', gameId: 'KELLERANBEQ',
         leadFull: 'Kelleran Beq or Jedi Master Mace Windu',
         others: 'Jocasta Nu, Shaak Ti, Temple Guard, Depa Billaba (omicron)',
         notes: 'auto',
@@ -385,11 +385,11 @@ export const mixedTopLeftP3: dataType[] = [
         omi: true
     },
     {
-        lead: 'DTMG',
+        lead: 'DTMG', gameId: 'MOFFGIDEONS3',
         leadFull: 'Dark Trooper Moff Gideon',
         others: 'Scout Trooper, Death Trooper, Moff Gideon, Enoch',
         notes: 'auto. Enoch omi makes it easier but not required',
-        videos: [{url: 'https://youtu.be/ohiPMAxXBj8'}],
+        videos: [{ url: 'https://youtu.be/ohiPMAxXBj8' }],
         icon: '/icons/characters/tex.charui_moffgideons3.png',
         difficulty: difficulty.EASY,
         successRate: successRate.CONSISTENT,
@@ -397,7 +397,7 @@ export const mixedTopLeftP3: dataType[] = [
         omi: true,
     },
     {
-        lead: 'SLKR',
+        lead: 'SLKR', gameId: 'SUPREMELEADERKYLOREN',
         others: 'KRU, Sith Trooper, +2 First Order (Use Rey if you have her)',
         notes: 'easy full auto',
         videos: [{ url: 'https://youtu.be/Cm8ou0NXDm4' }],
@@ -407,22 +407,22 @@ export const mixedTopLeftP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
 
-{
-    lead: 'Great Mothers',
-    others: 'Nighsister Zombie, Morgan Elsbeth,Asajj Ventress',
-    notes: 'Bless Morgan, auto',
-    videos: [],
-    icon: '/icons/characters/tex.charui_greatmothers.png',
-    difficulty: difficulty.EASY,
-    successRate: successRate.CONSISTENT,
-    interactionType: [interactionType.AUTO],
-    creator: 'Qwaze'
-}
+    {
+        lead: 'Great Mothers', gameId: 'GREATMOTHERS',
+        others: 'Nighsister Zombie, Morgan Elsbeth,Asajj Ventress',
+        notes: 'Bless Morgan, auto',
+        videos: [],
+        icon: '/icons/characters/tex.charui_greatmothers.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'Qwaze'
+    }
 ]
 
 export const mixedP3Ships: dataType[] = [
     {
-        lead: 'Executor (P1)',
+        lead: 'Executor (P1)', gameId: 'CAPITALEXECUTOR',
         leadFull: 'Executor with Punishing One',
         others: 'HT, XB, Punishing One, IG2000',
         notes: 'auto, use other BH ships if not platooned',
@@ -433,7 +433,7 @@ export const mixedP3Ships: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Executor (no P1)',
+        lead: 'Executor (no P1)', gameId: 'CAPITALEXECUTOR',
         leadFull: 'Executor without Punishing One',
         others: 'RC, HT, XB, Slave 1',
         notes: 'If no Punishing One, auto',

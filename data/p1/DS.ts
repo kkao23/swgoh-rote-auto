@@ -2,7 +2,7 @@ import { type data as dataType } from "~/models/data";
 import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const leftDSP1: dataType[] = [{
-    lead: 'Trench',
+    lead: 'Trench', gameId: 'TRENCH',
     others: 'Wat, Jango, Nute, Dooku',
     notes: 'Open with Tank Tech on Jango, target droideka, hit auto',
     videos: [{ url: 'https://youtu.be/zLFGIuSzFW0' }],
@@ -13,7 +13,7 @@ export const leftDSP1: dataType[] = [{
     targeted: true,
 },
 {
-    lead: 'SLKR',
+    lead: 'SLKR', gameId: 'SUPREMELEADERKYLOREN',
     others: 'DRey',
     notes: 'Any other FO, Poke Droideka, Auto',
     videos: [{ url: 'https://youtu.be/AsoKUJ0UIik' }],
@@ -23,7 +23,7 @@ export const leftDSP1: dataType[] = [{
     interactionType: [interactionType.TARGET_START]
 },
 {
-    lead: 'SEE',
+    lead: 'SEE', gameId: 'SITHPALPATINE',
     leadFull: 'Sith Eternal Emperor',
     others: 'Wat, Malak, +2 Sith',
     notes: 'auto',
@@ -34,17 +34,17 @@ export const leftDSP1: dataType[] = [{
     interactionType: [interactionType.AUTO]
 },
 {
-    lead: 'Mother Talzin',
+    lead: 'Mother Talzin', gameId: 'MOTHERTALZIN',
     others: 'Merrin, Asajj, Daka, Zombie',
     notes: 'auto',
-    videos: [{ url: 'https://youtu.be/f9c_GD8ASj0'}],
+    videos: [{ url: 'https://youtu.be/f9c_GD8ASj0' }],
     icon: '/icons/characters/tex.charui_nightsisters_talzin.png',
     difficulty: difficulty.EASY,
     successRate: successRate.CONSISTENT,
     interactionType: [interactionType.AUTO]
 },
 {
-    lead: 'Great Mothers',
+    lead: 'Great Mothers', gameId: 'GREATMOTHERS',
     others: 'Morgan, Night Trooper, Death Trooper, Merrin',
     notes: 'Auto, can bless morgan manually if you want to be totally safe',
     videos: [{ url: 'https://youtu.be/YUMJjeD6k5A' }],
@@ -53,7 +53,7 @@ export const leftDSP1: dataType[] = [{
     successRate: successRate.CONSISTENT,
     interactionType: [interactionType.AUTO]
 }, {
-    lead: 'Reva',
+    lead: 'Reva', gameId: 'THIRDSISTER',
     others: 'GI, 7S, 5B, 8B',
     notes: 'auto',
     videos: [{ url: 'https://youtu.be/kibKGIAfVf4' }],
@@ -63,7 +63,7 @@ export const leftDSP1: dataType[] = [{
     interactionType: [interactionType.AUTO]
 },
 {
-    lead: 'General Grievous',
+    lead: 'General Grievous', gameId: 'GRIEVOUS',
     others: 'Magna, STAP, B2, B1',
     notes: 'auto, I have most of them at R7, may be harder at R5',
     videos: [{ url: 'https://youtu.be/H8crYJOOfd8' }],
@@ -73,7 +73,7 @@ export const leftDSP1: dataType[] = [{
     interactionType: [interactionType.AUTO]
 },
 {
-    lead: 'DTMG',
+    lead: 'DTMG', gameId: 'MOFFGIDEONS3',
     leadFull: 'Dark Trooper Moff Gideon',
     others: 'Scout Trooper, Captain Enoch (omi), Moff Gideon, Death Trooper',
     notes: 'auto',
@@ -85,7 +85,7 @@ export const leftDSP1: dataType[] = [{
     omi: true,
 },
 {
-    lead: 'Grand Inquisitor',
+    lead: 'Grand Inquisitor', gameId: 'GRANDINQUISITOR',
     others: '5, 7, 8, and 9',
     notes: 'manual, Target B2\'s, use aoe\'s. Keep Droideka and Nuta ability blocked.',
     videos: [{ url: 'https://youtu.be/kibKGIAfVf4' }],
@@ -96,7 +96,7 @@ export const leftDSP1: dataType[] = [{
     creator: 'Darth Woogie'
 },
 {
-    lead: 'PKHO',
+    lead: 'PKHO', gameId: 'GLHONDO',
     others: 'Silvo, Ithano, Vane, Brutus',
     notes: 'Easy Auto',
     videos: [],
@@ -109,7 +109,7 @@ export const leftDSP1: dataType[] = [{
 ];
 
 export const bottomDSP1: dataType[] = [{
-    lead: 'Great Mothers',
+    lead: 'Great Mothers', gameId: 'GREATMOTHERS',
     others: 'Morgan, Night Trooper, Death Trooper, Merrin',
     notes: 'Doom droideka, bless Morgan, hit auto',
     videos: [{ url: 'https://youtu.be/dVJSaQ_Pwmo' }],
@@ -119,7 +119,7 @@ export const bottomDSP1: dataType[] = [{
     interactionType: [interactionType.TARGET_START]
 },
 {
-    lead: 'Reva',
+    lead: 'Reva', gameId: 'THIRDSISTER',
     others: 'GI, 7S, 5B, 8B',
     notes: 'Target Droideka, hit auto',
     videos: [{ url: 'https://youtu.be/Pk9v02K5wwc' }],
@@ -130,7 +130,7 @@ export const bottomDSP1: dataType[] = [{
     targeted: true
 },
 {
-    lead: 'SEE',
+    lead: 'SEE', gameId: 'SITHPALPATINE',
     leadFull: 'Sith Eternal Emperor',
     others: 'Wat, Malak, Bane, Malgus',
     notes: 'only 1/2 on auto',
@@ -141,7 +141,7 @@ export const bottomDSP1: dataType[] = [{
     interactionType: [interactionType.AUTO]
 },
 {
-    lead: 'E Palpatine',
+    lead: 'E Palpatine', gameId: 'EMPERORPALPATINE',
     leadFull: 'Emperor Palpatine',
     others: 'Mara, +3 Empire',
     notes: 'only 1/2 on auto',
@@ -152,7 +152,7 @@ export const bottomDSP1: dataType[] = [{
     interactionType: [interactionType.AUTO]
 },
 {
-    lead: 'Mother Talzin',
+    lead: 'Mother Talzin', gameId: 'MOTHERTALZIN',
     others: 'Merrin, Asajj, Daka, Zombie',
     notes: 'auto',
     videos: [{ url: 'https://www.youtube.com/watch?v=WNhnP7qjZgQ', creator: 'egnards' }],
@@ -162,7 +162,7 @@ export const bottomDSP1: dataType[] = [{
     interactionType: [interactionType.AUTO]
 },
 {
-    lead: 'DTMG',
+    lead: 'DTMG', gameId: 'MOFFGIDEONS3',
     leadFull: 'Dark Trooper Moff Gideon',
     others: 'Scout Trooper, Captain Enoch (omi), Moff Gideon, Death Trooper',
     notes: 'auto',
@@ -174,7 +174,7 @@ export const bottomDSP1: dataType[] = [{
     omi: true,
 },
 {
-    lead: 'SLKR',
+    lead: 'SLKR', gameId: 'SUPREMELEADERKYLOREN',
     others: 'DRey, Hux, KRU, Sith Trooper',
     notes: 'Auto',
     videos: [{ url: 'https://youtu.be/BTWI-B8Oc-Q' }],
@@ -184,7 +184,7 @@ export const bottomDSP1: dataType[] = [{
     interactionType: [interactionType.AUTO]
 },
 {
-    lead: 'GG',
+    lead: 'GG', gameId: 'GRIEVOUS',
     leadFull: 'General Grievous',
     others: 'B1, B2, STAP, Magna Guard',
     notes: 'Only 1/2 on auto',
@@ -195,7 +195,7 @@ export const bottomDSP1: dataType[] = [{
     interactionType: [interactionType.AUTO]
 },
 {
-    lead: 'Baylan',
+    lead: 'Baylan', gameId: 'BAYLANSKOLL',
     others: 'Marrok, Shin, any 2 mercs',
     notes: 'auto, Marrok Omi',
     videos: [{ url: 'https://youtu.be/IgwTIlI2T64' }],
@@ -206,7 +206,7 @@ export const bottomDSP1: dataType[] = [{
     omi: true,
 },
 {
-    lead: 'Maul',
+    lead: 'Maul', gameId: 'MAULS7',
     others: 'Jango, ISC, Gar Saxon, Canderous',
     notes: 'only 1/2 on auto',
     videos: [{ url: 'https://youtu.be/-Uhr-v_0zdQ' }],
@@ -216,7 +216,7 @@ export const bottomDSP1: dataType[] = [{
     interactionType: [interactionType.AUTO],
 },
 {
-    lead: 'Tarkin',
+    lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN',
     leadFull: 'Tarkin (Clones)',
     others: 'DS Clones (Appo Omi)',
     notes: 'Auto',
@@ -229,7 +229,7 @@ export const bottomDSP1: dataType[] = [{
     creator: 'anonymous',
 },
 {
-    lead: 'Pirate King Hondo',
+    lead: 'Pirate King Hondo', gameId: 'GLHONDO',
     leadFull: 'Pirate King Hondo Onaka',
     others: 'Smee, vane, any',
     notes: 'Do not use baylan mercs on auto',
@@ -242,7 +242,7 @@ export const bottomDSP1: dataType[] = [{
 },
 
 {
-    lead: 'Grand Inquisitor',
+    lead: 'Grand Inquisitor', gameId: 'GRANDINQUISITOR',
     others: 'Marrok, 5th 7th 8th',
     notes: 'Auto',
     videos: [],
@@ -252,22 +252,22 @@ export const bottomDSP1: dataType[] = [{
     interactionType: [interactionType.AUTO],
     creator: 'anonymous'
 },
-    {
-        lead: 'Emp Palpatine (DVDE)',
-        leadFull: 'Emperor Palpatine',
-        others: 'Emperor Palpatine, Darth Vader Duel\'s End, Admiral Piett, Gar Saxon, Imperial Super Commando',
-        notes: 'Easy fast auto',
-        videos: [{ url: 'https://youtu.be/UA9vQyVwfFI' }],
-        icon: '/icons/characters/tex.charui_palpatineemperor.png',
-        difficulty: difficulty.EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO]
-    },
+{
+    lead: 'Emp Palpatine (DVDE)', gameId: 'EMPERORPALPATINE, VADERDUELSEND',
+    leadFull: 'Emperor Palpatine',
+    others: 'Emperor Palpatine, Darth Vader Duel\'s End, Admiral Piett, Gar Saxon, Imperial Super Commando',
+    notes: 'Easy fast auto',
+    videos: [{ url: 'https://youtu.be/UA9vQyVwfFI' }],
+    icon: '/icons/characters/tex.charui_palpatineemperor.png',
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO]
+},
 ];
 
 export const topDSP1: dataType[] = [
     {
-        lead: 'SLKR',
+        lead: 'SLKR', gameId: 'SUPREMELEADERKYLOREN',
         others: 'Hux, KRU, Sith Trooper, any 5th',
         notes: 'Stun droideka first, second phase poke brute, otherwise auto',
         videos: [{ url: 'https://youtu.be/QGui7hJ4ZrQ' }],
@@ -277,7 +277,7 @@ export const topDSP1: dataType[] = [
         interactionType: [interactionType.TARGET_START, interactionType.PAUSE_WAVE2],
     },
     {
-        lead: 'Baylan',
+        lead: 'Baylan', gameId: 'BAYLANSKOLL',
         others: 'Marrok, Shin, any 2 mercs',
         notes: 'auto, Marrok Omi, can get unlucky if they focus down marrok',
         videos: [{ url: 'https://youtu.be/y2_S73szIS0' }],
@@ -287,7 +287,7 @@ export const topDSP1: dataType[] = [
         interactionType: [interactionType.AUTO],
         omi: true,
     }, {
-        lead: 'Great Mothers',
+        lead: 'Great Mothers', gameId: 'GREATMOTHERS',
         others: 'Morgan, Night Trooper, Death Trooper, Merrin',
         notes: 'Doom droideka, bless Morgan, hit auto',
         videos: [{ url: 'https://youtu.be/zjxxsvQos5Y' }],
@@ -297,7 +297,7 @@ export const topDSP1: dataType[] = [
         interactionType: [interactionType.TARGET_START]
     },
     {
-        lead: 'Reva',
+        lead: 'Reva', gameId: 'THIRDSISTER',
         others: 'GI, 7S, 2S, 8B',
         notes: 'Target B2, hit auto',
         videos: [{ url: 'https://youtu.be/V75J-k6i40s?si=uX_YUqMZEuQr7VIN&t=145', creator: 'pico' }],
@@ -308,7 +308,7 @@ export const topDSP1: dataType[] = [
         targeted: true
     },
     {
-        lead: 'SEE',
+        lead: 'SEE', gameId: 'SITHPALPATINE',
         leadFull: 'Sith Eternal Emperor',
         others: 'Wat, Malak, Bane, Darth Revan',
         notes: 'Tank Tech on SEE, auto, may not be totally consistent',
@@ -319,7 +319,7 @@ export const topDSP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Trench',
+        lead: 'Trench', gameId: 'TRENCH',
         others: 'Wat, Jango, Nute, Dooku',
         notes: 'only 1/2 on auto',
         videos: [{ url: 'https://youtu.be/Xi75-aTjxmI' }],
@@ -329,7 +329,7 @@ export const topDSP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'DTMG',
+        lead: 'DTMG', gameId: 'MOFFGIDEONS3',
         leadFull: 'Dark Trooper Moff Gideon',
         others: 'Scout Trooper, Captain Enoch (omi), Moff Gideon, Tie Fighter Pilot',
         notes: 'auto',
@@ -341,22 +341,22 @@ export const topDSP1: dataType[] = [
         omi: true,
     },
 
-{
-    lead: 'Admiral Trench',
-    others: 'Wat, Jango Fett, Nute Gunray, Count Dooku',
-    notes: 'In the first phase, Trench should charge Droedika. Stun him as well. Jango should finish off Droedika if the charge didn\'t finish him off. In the second phase, stun Wat before the taunts, kill Droedika. Trench\'s abilities should be active for the second phase. 100% winrate.',
-    videos: [],
-    icon: '/icons/characters/tex.charui_admiraltrench.png',
-    difficulty: difficulty.EASY,
-    successRate: successRate.CONSISTENT,
-    interactionType: [interactionType.AUTO],
-    creator: 'Teg bashar'
-}
+    {
+        lead: 'Admiral Trench', gameId: 'TRENCH',
+        others: 'Wat, Jango Fett, Nute Gunray, Count Dooku',
+        notes: 'In the first phase, Trench should charge Droedika. Stun him as well. Jango should finish off Droedika if the charge didn\'t finish him off. In the second phase, stun Wat before the taunts, kill Droedika. Trench\'s abilities should be active for the second phase. 100% winrate.',
+        videos: [],
+        icon: '/icons/characters/tex.charui_admiraltrench.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'Teg bashar'
+    }
 ];
 
 export const lvP1: dataType[] = [
     {
-        lead: 'LV',
+        lead: 'LV', gameId: 'LORDVADER',
         leadFull: 'Lord Vader',
         others: '',
         notes: 'Easy full auto',
@@ -370,7 +370,7 @@ export const lvP1: dataType[] = [
 
 export const shipsDSP1 = [
     {
-        lead: 'Leviathan',
+        lead: 'Leviathan', gameId: 'CAPITALLEVIATHAN',
         others: 'Sith Bomber, MK6 Interceptor, Sith Fighter, Tie Adv, Scimitar',
         notes: 'Not consistent',
         videos: [{ url: 'https://youtu.be/xCuGwcVtd98' },
@@ -380,7 +380,7 @@ export const shipsDSP1 = [
         successRate: successRate.FIFTY_FIFTY
     },
     {
-        lead: 'Chimera',
+        lead: 'Chimera', gameId: 'CAPITALCHIMAERA',
         others: 'Scythe, Mk6, Tie Adv, Defender, Interceptor, Sith Fighter, TIE Fighter',
         notes: 'cant auto',
         videos: [
@@ -391,16 +391,16 @@ export const shipsDSP1 = [
         successRate: successRate.UNRELIABLE,
         interactionType: [interactionType.MANUAL]
     }
-,
-{
-    lead: 'Executrix',
-    others: 'Mark VI, Scythe, Tie x1, Defender, Inceptor, Sith Fighter, Imperi=',
-    notes: 'Executrix gets two extra TIEs to start with. Eliminate all the oth=',
-    videos: [],
-    icon: '/icons/ships/tex.charui_stardestroyer.png',
-    difficulty: difficulty.EASY,
-    successRate: successRate.CONSISTENT,
-    interactionType: [interactionType.AUTO],
-    creator: 'anonymous'
-}
+    ,
+    {
+        lead: 'Executrix', gameId: 'CAPITALSTARDESTROYER',
+        others: 'Mark VI, Scythe, Tie x1, Defender, Inceptor, Sith Fighter, Imperi=',
+        notes: 'Executrix gets two extra TIEs to start with. Eliminate all the oth=',
+        videos: [],
+        icon: '/icons/ships/tex.charui_stardestroyer.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous'
+    }
 ]

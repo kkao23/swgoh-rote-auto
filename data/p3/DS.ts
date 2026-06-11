@@ -3,7 +3,7 @@ import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const dsGenericP3: dataType[] = [
     {
-        lead: 'Baylan',
+        lead: 'Baylan', gameId: 'BAYLANSKOLL',
         others: 'Marrok, Shin, Jango, Zam',
         notes: 'omi Marrok, auto, last two are flexible. can get unlucky if they focus Marrok wave 1 at the start',
         videos: [{ url: 'https://youtu.be/WcYP7j8ooos' }],
@@ -14,7 +14,7 @@ export const dsGenericP3: dataType[] = [
         omi: true
     },
     {
-        lead: 'Emp Palpatine',
+        lead: 'Emp Palpatine', gameId: 'EMPERORPALPATINE, VADERDUELSEND',
         leadFull: 'Emperor Palpatine',
         others: 'Wat, SEE, Malak, Bane',
         notes: 'Doable without Wat but slower, weapon tech on SEE, auto',
@@ -25,7 +25,7 @@ export const dsGenericP3: dataType[] = [
         interactionType: [interactionType.TARGET_START]
     },
     {
-        lead: 'SLKR',
+        lead: 'SLKR', gameId: 'SUPREMELEADERKYLOREN',
         others: 'DRey, KRU, Kylo Ren, Sith Trooper',
         notes: 'Poke once in each round, auto, inconsistent without DRey',
         videos: [{ url: 'https://youtu.be/grmLuLr-XG0' }],
@@ -35,7 +35,7 @@ export const dsGenericP3: dataType[] = [
         interactionType: [interactionType.TARGET_START, interactionType.PAUSE_WAVE2]
     },
     {
-        lead: 'General Grievous',
+        lead: 'General Grievous', gameId: 'GRIEVOUS',
         others: 'Wat, Dooku, Nute, Jango',
         notes: '2/2 is hard on auto',
         videos: [{ url: 'https://youtu.be/uILyRLFQv-o' }],
@@ -45,7 +45,7 @@ export const dsGenericP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Darth Revan',
+        lead: 'Darth Revan', gameId: 'DARTHREVAN',
         others: 'SEE, Malak, Bane, Malgus',
         notes: 'auto, use tanky sith',
         videos: [{ url: 'https://youtu.be/E3O_nxMHj8A' }],
@@ -55,7 +55,7 @@ export const dsGenericP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Reva',
+        lead: 'Reva', gameId: 'THIRDSISTER',
         others: 'GI, 7S, 5B, 8B',
         notes: 'Torture, auto, I personally have not gotten this team to work under 10 minutes',
         videos: [{ url: 'https://www.youtube.com/watch?v=7wqarjgb6x8', creator: 'kahzgul' }],
@@ -65,17 +65,17 @@ export const dsGenericP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Trench',
+        lead: 'Trench', gameId: 'TRENCH',
         others: 'Dooku, Wat, Jango, Nute',
         notes: 'auto, dicey',
-        videos: [{url: 'https://youtu.be/9MoHoNzgNYw'}],
+        videos: [{ url: 'https://youtu.be/9MoHoNzgNYw' }],
         icon: '/icons/characters/tex.charui_admiraltrench.png',
         difficulty: difficulty.CAUTION,
         successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'Lord Vader',
+        lead: 'Lord Vader', gameId: 'LORDVADER',
         others: 'Any Empire',
         notes: 'I had LV Thrawn scout trooper Iden Tarkin but I imagine any empire is fine. I would avoid piett. full auto',
         videos: [{ url: 'https://youtu.be/FAunjeobuzM' }],
@@ -85,11 +85,11 @@ export const dsGenericP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'DTMG',
+        lead: 'DTMG', gameId: 'MOFFGIDEONS3',
         leadFull: 'Dark Trooper Moff Gideon',
         others: 'Scout Trooper, Captain Enoch (omi), Death Trooper, Moff Gideon',
         notes: 'auto',
-        videos: [{url: 'https://youtu.be/gL9xzj4K6qE'}],
+        videos: [{ url: 'https://youtu.be/gL9xzj4K6qE' }],
         icon: '/icons/characters/tex.charui_moffgideons3.png',
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
@@ -97,7 +97,7 @@ export const dsGenericP3: dataType[] = [
         omi: true,
     },
     {
-        lead: 'Tarkin',
+        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN',
         leadFull: 'Grand Moff Tarkin',
         others: 'Appo (omicron), CX, Disguised Clone Trooper',
         notes: 'Scorch makes this easier but Thrawn works in his place',
@@ -108,7 +108,7 @@ export const dsGenericP3: dataType[] = [
         omi: true
     },
     {
-        lead: 'Pirate King Hondo',
+        lead: 'Pirate King Hondo', gameId: 'GLHONDO',
         leadFull: 'Pirate King Hondo Onaka',
         others: 'SM-33, Brutus, Vane, Silvo',
         notes: 'easy full auto',
@@ -119,47 +119,47 @@ export const dsGenericP3: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-    "lead": "Emp Palpatine",
-    "leadFull": "Emp Palpatine",
-    "others": "GI, 7th, Reva, 5th",
-    "notes": "Inqusitors w/ Reva (or i think that with fat 9sis could work too). I think 5th is importante (timing 1st special and his basic. Dont go after one char to finish at once, just hit everyone after one another to 0protection and then to half of health",
-    "videos": [],
-    "icon": "/icons/characters/tex.charui_palpatineemperor.png",
-    "difficulty": difficulty.EASY,
-    "successRate": successRate.USUALLY,
-    "interactionType": [interactionType.AUTO],
-    "creator": "anonymous"
+        "lead": "Emp Palpatine", "gameId": "EMPERORPALPATINE, VADERDUELSEND",
+        "leadFull": "Emp Palpatine",
+        "others": "GI, 7th, Reva, 5th",
+        "notes": "Inqusitors w/ Reva (or i think that with fat 9sis could work too). I think 5th is importante (timing 1st special and his basic. Dont go after one char to finish at once, just hit everyone after one another to 0protection and then to half of health",
+        "videos": [],
+        "icon": "/icons/characters/tex.charui_palpatineemperor.png",
+        "difficulty": difficulty.EASY,
+        "successRate": successRate.USUALLY,
+        "interactionType": [interactionType.AUTO],
+        "creator": "anonymous"
     },
     {
-    "lead": "Emperor Palpatine (DV DE)",
-    "leadFull": "Emperor Palpatine",
-    "others": "Mara Jade, Royal Guard, Tarkin, Darth Vader (Duels End)",
-    "notes": "7* and full R7 team, have not tried it auto yet but DV(DE) dominates once you start TM snowballing. Focus Zombie until he can't revive, Mara+Palp+RG stun and TM snowball and DV(DE) AoE special will kill them with ease. Tarkin can probably be swapped with Piett or Thrawn, but his AoE and debuffs are helpful.",
-    "videos": [],
-    "icon": "/icons/characters/tex.charui_palpatineemperor.png",
-    "difficulty": difficulty.EASY,
-    "successRate": successRate.USUALLY,
-    "interactionType": [interactionType.AUTO],
-    "creator": "Nolthaz"
-},
-{
-    "lead": "Reva",
-    "leadFull": "Reva",
-    "others": "GI, 7th, 5th, Marrok (omi)",
-    "notes": "Auto",
-    "videos": [],
-    "icon": "/icons/characters/tex.charui_reva.png",
-    "difficulty": difficulty.EASY,
-    "omi": true,
-    "successRate": successRate.USUALLY,
-    "interactionType": [interactionType.AUTO],
-    "creator": "BailWritte"
-}
+        "lead": "Emperor Palpatine (DV DE)", "gameId": "EMPERORPALPATINE",
+        "leadFull": "Emperor Palpatine",
+        "others": "Mara Jade, Royal Guard, Tarkin, Darth Vader (Duels End)",
+        "notes": "7* and full R7 team, have not tried it auto yet but DV(DE) dominates once you start TM snowballing. Focus Zombie until he can't revive, Mara+Palp+RG stun and TM snowball and DV(DE) AoE special will kill them with ease. Tarkin can probably be swapped with Piett or Thrawn, but his AoE and debuffs are helpful.",
+        "videos": [],
+        "icon": "/icons/characters/tex.charui_palpatineemperor.png",
+        "difficulty": difficulty.EASY,
+        "successRate": successRate.USUALLY,
+        "interactionType": [interactionType.AUTO],
+        "creator": "Nolthaz"
+    },
+    {
+        "lead": "Reva", "gameId": "THIRDSISTER",
+        "leadFull": "Reva",
+        "others": "GI, 7th, 5th, Marrok (omi)",
+        "notes": "Auto",
+        "videos": [],
+        "icon": "/icons/characters/tex.charui_reva.png",
+        "difficulty": difficulty.EASY,
+        "omi": true,
+        "successRate": successRate.USUALLY,
+        "interactionType": [interactionType.AUTO],
+        "creator": "BailWritte"
+    }
 ]
 
 export const dsEmpireP3: dataType[] = [
     {
-        lead: 'Lord Vader',
+        lead: 'Lord Vader', gameId: 'LORDVADER',
         others: 'Any',
         notes: 'auto, Dont use Piett',
         videos: [{ url: 'https://youtu.be/Ap_rIhILZBM' }],
@@ -169,7 +169,7 @@ export const dsEmpireP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Grand Inquisitor',
+        lead: 'Grand Inquisitor', gameId: 'GRANDINQUISITOR',
         others: 'Reva, 5B, 8B, 7S',
         notes: 'auto, takes forever, can sometimes 1/2',
         videos: [{ url: 'https://youtu.be/_hwmbHfEj_M' }],
@@ -179,7 +179,7 @@ export const dsEmpireP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Tarkin',
+        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN',
         leadFull: 'Grand Moff Tarkin',
         others: 'Appo (omicron), CX, Disguised Clone Trooper, +1',
         notes: 'I had Piett as 5th but Scorch is ideal',
@@ -190,7 +190,7 @@ export const dsEmpireP3: dataType[] = [
         omi: true
     },
     {
-        lead: 'Emp Palpatine (DVDE)',
+        lead: 'Emp Palpatine (DVDE)', gameId: 'EMPERORPALPATINE, VADERDUELSEND',
         leadFull: 'Emperor Palpatine',
         others: 'Emperor Palpatine, Darth Vader, Darth Vader Duel\'s End, Admiral Piett and Ninth Sister',
         notes: 'If you have Mara and or Royal Guard R7 they should work here too',
@@ -201,33 +201,33 @@ export const dsEmpireP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
 
-{
-    lead: 'Emperor Palpatine',
-    others: 'GI, 9th sister, 7th sister, 5th brother',
-    notes: 'Auto (modding should be good), all R7 with zeta',
-    videos: [],
-    icon: '/icons/characters/tex.charui_palpatineemperor.png',
-    difficulty: difficulty.EASY,
-    successRate: successRate.CONSISTENT,
-    interactionType: [interactionType.AUTO],
-    creator: 'anonymous'
-},
-{
-    lead: 'Emp Palpatine',
-    others: 'GI, 7th, Reva, 5th',
-    notes: 'Inqusitors w/ Reva (or i think that with fat 9sis could work too). I think 5th is importante (timing 1st special and his basic. Dont go after one char to finish at once, just hit everyone after one another to 0protection and then to half of health',
-    videos: [],
-    icon: '/icons/characters/tex.charui_palpatineemperor.png',
-    difficulty: difficulty.EASY,
-    successRate: successRate.CONSISTENT,
-    interactionType: [interactionType.AUTO],
-    creator: 'anonymous'
-}
+    {
+        lead: 'Emperor Palpatine', gameId: 'EMPERORPALPATINE',
+        others: 'GI, 9th sister, 7th sister, 5th brother',
+        notes: 'Auto (modding should be good), all R7 with zeta',
+        videos: [],
+        icon: '/icons/characters/tex.charui_palpatineemperor.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous'
+    },
+    {
+        lead: 'Emp Palpatine', gameId: 'EMPERORPALPATINE, VADERDUELSEND',
+        others: 'GI, 7th, Reva, 5th',
+        notes: 'Inqusitors w/ Reva (or i think that with fat 9sis could work too). I think 5th is importante (timing 1st special and his basic. Dont go after one char to finish at once, just hit everyone after one another to 0protection and then to half of health',
+        videos: [],
+        icon: '/icons/characters/tex.charui_palpatineemperor.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous'
+    }
 ]
 
 export const drAphraP3: dataType[] = [
     {
-        lead: 'Aphra (IG 90)',
+        lead: 'Aphra (IG 90)', gameId: 'DOCTORAPHRA',
         others: 'BT1, GG, HK47, IG 90',
         notes: 'auto, Use 0-0-0 if you have him, IG 90 makes this super easy',
         videos: [{ url: 'https://youtu.be/GdcO0wE8zt8' }],
@@ -237,7 +237,7 @@ export const drAphraP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Aphra (Droids)',
+        lead: 'Aphra (Droids)', gameId: 'DOCTORAPHRA',
         others: 'BT1, GG, HK47, Darth Vader',
         notes: 'auto, Use 0-0-0 if you have him, can occasionally 1/2',
         videos: [{ url: 'https://youtu.be/_cLW8lg0kB4' }],
@@ -247,7 +247,7 @@ export const drAphraP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Aphra (Sith)',
+        lead: 'Aphra (Sith)', gameId: 'DOCTORAPHRA',
         others: 'Darth Vader, Malak, Bane, Malgus',
         notes: 'if no droids, auto, can occasionally 1/2',
         videos: [{ url: 'https://youtu.be/IsnUq7nxcBU' }],
@@ -257,7 +257,7 @@ export const drAphraP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Aphra (IPD Omi)',
+        lead: 'Aphra (IPD Omi)', gameId: 'DOCTORAPHRA',
         others: 'Darth Vader, BT1, IPD (omicron), 0-0-0',
         notes: 'auto, expensive',
         videos: [{ url: 'https://youtu.be/MTkMzJMayUA?si=FfDoECPNw7uALL_n', creator: 'anonymous' }],
@@ -268,7 +268,7 @@ export const drAphraP3: dataType[] = [
         omi: true
     },
     {
-        lead: 'Aphra (SLKR)',
+        lead: 'Aphra (SLKR)', gameId: 'DOCTORAPHRA',
         others: 'SLKR, KRU, ST, Dark Rey',
         notes: ' I manualed, but I\'m sure others could auto',
         videos: [],
@@ -279,57 +279,57 @@ export const drAphraP3: dataType[] = [
         omi: true,
         creator: 'jkat70'
     }
-,
-{
-    lead: 'Aphra',
-    others: 'BT-1, 0-0-0, DV, Malak',
-    notes: 'Auto',
-    videos: [],
-    icon: '/icons/characters/tex.charui_doctoraphra.png',
-    difficulty: difficulty.EASY,
-    successRate: successRate.CONSISTENT,
-    interactionType: [interactionType.AUTO],
-    creator: 'BailWritte'
-},
-{
-    lead: 'Dr. Aphra',
-    others: 'GG, HK 47, IG 90 4LOOM',
-    notes: 'Full Auto',
-    videos: [],
-    icon: '/icons/characters/tex.charui_doctoraphra.png',
-    difficulty: difficulty.EASY,
-    successRate: successRate.CONSISTENT,
-    interactionType: [interactionType.AUTO],
-    creator: 'Gesho'
-},
-{
-    lead: 'Dr Aphra',
-    others: 'Baylan, Shin, Marrok (omicron), and Quiggold (omicron)',
-    notes: 'Quiggold (omicron) is not mandatory; this last unit can be swapped by Malak or another',
-    videos: [],
-    icon: '/icons/characters/tex.charui_doctoraphra.png',
-    difficulty: difficulty.EASY,
-    successRate: successRate.CONSISTENT,
-    interactionType: [interactionType.AUTO],
-    creator: 'Artha Dragon',
-    omi: true
-},
-{
-    lead: 'Doctor Aphra',
-    others: 'Marrok (omi), Inqs, Mercs',
-    notes: 'auto',
-    videos: [],
-    icon: '/icons/characters/tex.charui_doctoraphra.png',
-    difficulty: difficulty.EASY,
-    successRate: successRate.CONSISTENT,
-    interactionType: [interactionType.AUTO],
-    creator: 'anonymous'
-}
+    ,
+    {
+        lead: 'Aphra', gameId: 'DOCTORAPHRA',
+        others: 'BT-1, 0-0-0, DV, Malak',
+        notes: 'Auto',
+        videos: [],
+        icon: '/icons/characters/tex.charui_doctoraphra.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'BailWritte'
+    },
+    {
+        lead: 'Dr. Aphra', gameId: 'DOCTORAPHRA',
+        others: 'GG, HK 47, IG 90 4LOOM',
+        notes: 'Full Auto',
+        videos: [],
+        icon: '/icons/characters/tex.charui_doctoraphra.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'Gesho'
+    },
+    {
+        lead: 'Dr Aphra', gameId: 'DOCTORAPHRA',
+        others: 'Baylan, Shin, Marrok (omicron), and Quiggold (omicron)',
+        notes: 'Quiggold (omicron) is not mandatory; this last unit can be swapped by Malak or another',
+        videos: [],
+        icon: '/icons/characters/tex.charui_doctoraphra.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'Artha Dragon',
+        omi: true
+    },
+    {
+        lead: 'Doctor Aphra', gameId: 'DOCTORAPHRA',
+        others: 'Marrok (omi), Inqs, Mercs',
+        notes: 'auto',
+        videos: [],
+        icon: '/icons/characters/tex.charui_doctoraphra.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous'
+    }
 ]
 
 export const merrinP3: dataType[] = [
     {
-        lead: 'Great Mothers',
+        lead: 'Great Mothers', gameId: 'GREATMOTHERS',
         others: 'Morgan, Death Trooper, Night Trooper, Merrin',
         notes: 'auto but Bless Morgan, doom maul first in P2',
         videos: [{ url: 'https://youtu.be/ldzz1yHeeWY' }],
@@ -339,7 +339,7 @@ export const merrinP3: dataType[] = [
         interactionType: [interactionType.TARGET_START, interactionType.PAUSE_WAVE2],
     },
     {
-        lead: 'Old Daka',
+        lead: 'Old Daka', gameId: 'DAKA',
         others: 'Asajj, Zombie, Mother Talzin, Merrin',
         notes: 'auto, R8+ Daka and great mods required',
         videos: [{ url: 'https://www.youtube.com/watch?v=EM3GCo_0XSQ', creator: 'kahzgul' }],

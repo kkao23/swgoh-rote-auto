@@ -3,7 +3,7 @@ import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const mandaloreFleets: dataType[] = [
     {
-        lead: 'Chimera',
+        lead: 'Chimera', gameId: 'CAPITALCHIMAERA',
         others: 'Scythe, Tie Adv start, Tie interceptor, Tie Defender, Tie Fighter, Emp Shuttle',
         notes: 'not auto for the first moves',
         videos: [{ url: 'https://youtu.be/5dZTKfblLvM' }],
@@ -12,8 +12,8 @@ export const mandaloreFleets: dataType[] = [
         successRate: successRate.UNRELIABLE,
         interactionType: [interactionType.MANUAL]
     },
-        {
-        lead: 'Profundity',
+    {
+        lead: 'Profundity', gameId: 'CAPITALPROFUNDITY',
         others: 'MF, Outrider start, Phantom, Biggs, Wedge Reinf',
         notes: 'cant auto but easy win',
         videos: [{ url: 'https://youtu.be/VcXsUBHgbUs' }],
@@ -22,8 +22,8 @@ export const mandaloreFleets: dataType[] = [
         successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.MANUAL]
     },
-        {
-        lead: 'Leviathan (full auto)',
+    {
+        lead: 'Leviathan (full auto)', gameId: 'CAPITALLEVIATHAN',
         others: 'Gauntlet (mandatory), Bomber, FCI, Dorito, Assassin, MK6 Interceptor, Scimitar',
         notes: 'easy after Levi buffs',
         videos: [{ url: 'https://youtu.be/kyCQ6JXDJvM' }],
@@ -33,7 +33,7 @@ export const mandaloreFleets: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Executrix',
+        lead: 'Executrix', gameId: 'CAPITALSTARDESTROYER',
         others: 'Scythe, Tie Adv start, Tie interceptor, Tie Defender, Tie Fighter/Bomber, Emp Shuttle',
         notes: 'no auto until Anakin and Marauder are down, go after Anakin first and bring out Defender first then go after Marauder',
         videos: [{ url: 'https://youtu.be/RKTzZS5tjR8' }],
@@ -46,7 +46,7 @@ export const mandaloreFleets: dataType[] = [
 
 export const mandaloreGeneric: dataType[] = [
     {
-        lead: 'Boss Nass',
+        lead: 'Boss Nass', gameId: 'BOSSNASS',
         others: 'The other gungans',
         notes: 'usually 1/2 without platoons, 2/2 with',
         videos: [{ url: 'https://youtu.be/fLPilo3n-gw' }],
@@ -57,7 +57,7 @@ export const mandaloreGeneric: dataType[] = [
         omi: true
     },
     {
-        lead: 'Lord Vader',
+        lead: 'Lord Vader', gameId: 'LORDVADER',
         others: 'Appo, CX2, Scorch, DCT',
         notes: 'nil Omicron on Appo, full auto, did select Gideon phase 2 to be sure. I have recorded the battle as evidence',
         videos: [],
@@ -68,7 +68,7 @@ export const mandaloreGeneric: dataType[] = [
         creator: 'aFERALPLATYPUS',
     },
     {
-        lead: 'Reva',
+        lead: 'Reva', gameId: 'THIRDSISTER',
         others: 'GI, 7S, 5B, Marrok',
         notes: 'Marrok Omi, easy auto',
         videos: [{ url: 'https://youtu.be/ke-l_Xxu0p4' }],
@@ -79,7 +79,7 @@ export const mandaloreGeneric: dataType[] = [
         omi: true
     },
     {
-        lead: 'Baylan',
+        lead: 'Baylan', gameId: 'BAYLANSKOLL',
         others: 'Marrok (o), Shin, L3, Qira',
         notes: 'L3s pretaunt is good here. Pause auto to target Moff Gideon in wave 2.',
         videos: [{ url: 'https://youtu.be/rF6NV7kLMpA' }],
@@ -91,7 +91,7 @@ export const mandaloreGeneric: dataType[] = [
         targeted: true
     },
     {
-        lead: 'Leia',
+        lead: 'Leia', gameId: 'GLLEIA',
         others: 'R2, Drogan, +2 Rebels',
         notes: '1/2 on auto',
         videos: [{ url: 'https://youtu.be/5VAQS5EqLGE' }],
@@ -101,7 +101,7 @@ export const mandaloreGeneric: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'QA',
+        lead: 'QA', gameId: 'QUEENAMIDALA',
         leadFull: 'Queen Amidala',
         others: 'MQJ, POW, Padme, GMY',
         notes: '1/2 on auto',
@@ -112,7 +112,7 @@ export const mandaloreGeneric: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'JMK',
+        lead: 'JMK', gameId: 'JEDIMASTERKENOBI',
         leadFull: 'Jedi Master Kenobi',
         others: 'CAT, Snips, GK, Padme',
         notes: '1/2 on auto',
@@ -123,7 +123,7 @@ export const mandaloreGeneric: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Ahsoka Tano',
+        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO',
         others: 'Ezra Exile, +3',
         notes: 'auto, use spectre if possible, ezra required',
         videos: [{ url: 'https://youtu.be/G8X9wesq-xg' }],
@@ -133,7 +133,7 @@ export const mandaloreGeneric: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Finn (omi)',
+        lead: 'Finn (omi)', gameId: 'FINN',
         others: 'RH Finn, Rose, Zorii, Poe',
         notes: 'auto',
         videos: [{ url: 'https://www.youtube.com/watch?v=3OXMLd1e7PI', creator: 'pico' }],
@@ -144,10 +144,10 @@ export const mandaloreGeneric: dataType[] = [
         omi: true,
     },
     {
-        lead: 'Omega',
+        lead: 'Omega', gameId: 'OMEGAS3',
         others: 'Bad Batch Mercenaries',
         notes: 'auto',
-        videos: [{url: 'https://youtu.be/oXkwJiE_EGg'}, { url: 'https://youtu.be/JuEnsbbFuT4?si=W7cLID0-I95kNy8h', creator: 'egnards' }],
+        videos: [{ url: 'https://youtu.be/oXkwJiE_EGg' }, { url: 'https://youtu.be/JuEnsbbFuT4?si=W7cLID0-I95kNy8h', creator: 'egnards' }],
         icon: '/icons/characters/tex.charui_omegas3.png',
         difficulty: difficulty.EASY,
         successRate: successRate.CONSISTENT,
@@ -155,7 +155,7 @@ export const mandaloreGeneric: dataType[] = [
         omi: true,
     },
     {
-        lead: 'JMK (Ezra)',
+        lead: 'JMK (Ezra)', gameId: 'JEDIMASTERKENOBI',
         leadFull: 'Jedi Master Kenobi with Ezra Exile',
         others: 'Padme, CAT, Ezra Exile, GK',
         notes: 'auto',
@@ -166,7 +166,7 @@ export const mandaloreGeneric: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Pirate King Hondo',
+        lead: 'Pirate King Hondo', gameId: 'GLHONDO',
         leadFull: 'Pirate King Hondo Onaka',
         others: 'Vane, SM-33, Silvo, Brutus',
         notes: 'auto, target Moff Gideon wave 2 to make things a bit faster',
@@ -178,7 +178,7 @@ export const mandaloreGeneric: dataType[] = [
         targeted: true
     },
     {
-        lead: 'SEE',
+        lead: 'SEE', gameId: 'SITHPALPATINE',
         leadFull: 'Sith Eternal Emperor',
         others: 'Malgus, Dooku, Bane, +1',
         notes: 'auto, Only 1/2',
@@ -189,7 +189,7 @@ export const mandaloreGeneric: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'JMMW',
+        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU',
         leadFull: 'Jedi Master Mace Windu',
         others: 'Jocasta Nu, Kelleran Beq, Depa Billaba (omicron), Temple Guard',
         notes: 'auto with all platoons',
@@ -201,7 +201,7 @@ export const mandaloreGeneric: dataType[] = [
         omi: true
     },
     {
-        "lead": "Maz Kanata",
+        "lead": "Maz Kanata", "gameId": "MAZKANATA",
         "leadFull": "Maz Kanata",
         "others": "Quiggold (Omicron), SM33, Ithano, Kix",
         "notes": "Auto",
@@ -214,38 +214,38 @@ export const mandaloreGeneric: dataType[] = [
         "creator": "anonymous"
     },
     {
-    "lead": "Stranger",
-    "leadFull": "Stranger",
-    "others": "Hate Fuelled Maul, Starkiller, GK, Cal Kestis",
-    "notes": "Testing but pretty sure it’s full auto",
-    "videos": [],
-    "icon": "/icons/characters/tex.charui_stranger.png",
-    "difficulty": difficulty.EASY,
-    "successRate": successRate.USUALLY,
-    "interactionType": [interactionType.AUTO],
-    "creator": "anonymous"
+        "lead": "Stranger", "gameId": "STRANGER",
+        "leadFull": "Stranger",
+        "others": "Hate Fuelled Maul, Starkiller, GK, Cal Kestis",
+        "notes": "Testing but pretty sure it’s full auto",
+        "videos": [],
+        "icon": "/icons/characters/tex.charui_stranger.png",
+        "difficulty": difficulty.EASY,
+        "successRate": successRate.USUALLY,
+        "interactionType": [interactionType.AUTO],
+        "creator": "anonymous"
     }
-,
-{
-    lead: 'Satele Shan',
-    others: 'Jedi Knight Revan, Bastila Shan, Jolee Bindo, Juhani',
-    notes: 'Dependind on mods, full auto',
-    videos: [],
-    icon: '/icons/characters/tex.charui_sateleshan.png',
-    difficulty: difficulty.EASY,
-    successRate: successRate.CONSISTENT,
-    interactionType: [interactionType.AUTO],
-    creator: 'Andriu'
-}
+    ,
+    {
+        lead: 'Satele Shan', gameId: 'SATELESHAN',
+        others: 'Jedi Knight Revan, Bastila Shan, Jolee Bindo, Juhani',
+        notes: 'Dependind on mods, full auto',
+        videos: [],
+        icon: '/icons/characters/tex.charui_sateleshan.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'Andriu'
+    }
 ]
 
 export const mandaloreDTMG: dataType[] = [
     {
-        lead: 'DTMG',
+        lead: 'DTMG', gameId: 'MOFFGIDEONS3',
         leadFull: 'Dark Trooper Moff Gideon',
         others: 'Scout Trooper, Night Trooper, Death Trooper Peridea, Captain Enoch (omi)',
         notes: 'auto',
-        videos: [{url: 'https://youtu.be/SLiK2dv_sSw'}],
+        videos: [{ url: 'https://youtu.be/SLiK2dv_sSw' }],
         icon: '/icons/characters/tex.charui_moffgideons3.png',
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,

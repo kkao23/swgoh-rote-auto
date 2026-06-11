@@ -11,7 +11,7 @@ import {
   tbTypeOptions,
   maxStarsByTbType,
   tbPayoutByType,
-  perideaTierOptions,
+  duelTierOptions,
 } from '~/data/budgetIncome'
 import {
   refreshOptions,
@@ -270,13 +270,13 @@ async function fetchPlayerData(): Promise<void> {
       const duelMinRelic = Math.min(...duelRelicTiers)
       doesDuelOfFates.value = 'yes'
       if (duelMinRelic >= 11) {
-        selectedDuelTier.value = 't7'
-      } else if (duelMinRelic >= 9) {
         selectedDuelTier.value = 't6'
-      } else if (duelMinRelic >= 7) {
+      } else if (duelMinRelic >= 9) {
         selectedDuelTier.value = 't5'
-      } else {
+      } else if (duelMinRelic >= 7) {
         selectedDuelTier.value = 't4'
+      } else {
+        selectedDuelTier.value = 't3'
       }
       duelIsAutoPopulated.value = true
     } else {
@@ -435,7 +435,7 @@ const doesPerideaPatrol = useLocalStorage<'yes' | 'no' | ''>('budget.doesPeridea
 const selectedPerideaTier = useLocalStorage<string>('budget.selectedPerideaTier', '')
 
 const selectedPerideaTierPayout = computed(() => {
-  return perideaTierOptions.find((tier) => tier.value === selectedPerideaTier.value)
+  return duelTierOptions.find((tier) => tier.value === selectedPerideaTier.value)
 })
 
 const perideaMonthlyIncome = computed(() => {
@@ -453,7 +453,7 @@ const doesDuelOfFates = useLocalStorage<'yes' | 'no' | ''>('budget.doesDuelOfFat
 const selectedDuelTier = useLocalStorage<string>('budget.selectedDuelTier', '')
 
 const selectedDuelTierPayout = computed(() => {
-  return perideaTierOptions.find((tier) => tier.value === selectedDuelTier.value)
+  return duelTierOptions.find((tier) => tier.value === selectedDuelTier.value)
 })
 
 const duelMonthlyIncome = computed(() => {
@@ -1445,7 +1445,7 @@ watch([isWizardComplete, areExpenseStepsComplete], ([wizardDone, expensesDone]) 
             class="w-full bg-slate-800 text-white border border-slate-600 rounded-lg px-3 py-2"
           >
             <option disabled value="">Select tier</option>
-            <option v-for="option in perideaTierOptions" :key="option.value" :value="option.value">
+            <option v-for="option in duelTierOptions" :key="option.value" :value="option.value">
               {{ option.label }}
             </option>
           </select>
@@ -1533,7 +1533,7 @@ watch([isWizardComplete, areExpenseStepsComplete], ([wizardDone, expensesDone]) 
             class="w-full bg-slate-800 text-white border border-slate-600 rounded-lg px-3 py-2"
           >
             <option disabled value="">Select tier</option>
-            <option v-for="option in perideaTierOptions" :key="option.value" :value="option.value">
+            <option v-for="option in duelTierOptions" :key="option.value" :value="option.value">
               {{ option.label }}
             </option>
           </select>

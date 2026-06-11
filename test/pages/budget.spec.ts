@@ -10,7 +10,7 @@ import {
   tbTypeOptions,
   maxStarsByTbType,
   tbPayoutByType,
-  perideaTierOptions,
+  duelTierOptions,
 } from '~/data/budgetIncome'
 import {
   refreshOptions,
@@ -115,12 +115,22 @@ function calcTbDailyIncome(tbType: string, stars: number): number {
 
 function calcPerideaMonthlyIncome(doesPatrol: 'yes' | 'no' | '', tierValue: string): number {
   if (doesPatrol === 'no') return 0
-  const tier = perideaTierOptions.find((t) => t.value === tierValue)
+  const tier = duelTierOptions.find((t) => t.value === tierValue)
   return tier?.monthlyCrystals ?? 0
 }
 
 function calcPerideaDailyIncome(doesPatrol: 'yes' | 'no' | '', tierValue: string): number {
   return calcPerideaMonthlyIncome(doesPatrol, tierValue) / DAYS_PER_MONTH
+}
+
+function calcDuelMonthlyIncome(doesDuel: 'yes' | 'no' | '', tierValue: string): number {
+  if (doesDuel === 'no') return 0
+  const tier = duelTierOptions.find((t) => t.value === tierValue)
+  return tier?.monthlyCrystals ?? 0
+}
+
+function calcDuelDailyIncome(doesDuel: 'yes' | 'no' | '', tierValue: string): number {
+  return calcDuelMonthlyIncome(doesDuel, tierValue) / DAYS_PER_MONTH
 }
 
 function calcRefreshCost(type: 'normal' | 'cantina' | 'ship' | 'mod' | 'conquest', count: number): number {
@@ -362,7 +372,7 @@ describe('Budget Calculations', () => {
   })
 
   // ------------------------------------------------------------------
-  // Peridea Patrol / Duel of the Fates
+  // Peridea Patrol / Duel of the Fates (both use duelTierOptions)
   // ------------------------------------------------------------------
   describe('Peridea Patrol Income', () => {
     it('should return 0 when not patrolling', () => {
@@ -374,25 +384,105 @@ describe('Budget Calculations', () => {
       expect(calcPerideaMonthlyIncome('', '')).toBe(0)
     })
 
-    it('should return tier monthly crystal value when patrolling', () => {
-      expect(calcPerideaMonthlyIncome('yes', 't4')).toBe(100)
-      expect(calcPerideaMonthlyIncome('yes', 't5')).toBe(200)
-      expect(calcPerideaMonthlyIncome('yes', 't6')).toBe(300)
-    })
-
-    it('tier 3 or below should have 0 monthly crystals', () => {
-      const t3 = perideaTierOptions.find((t) => t.value === 't3')!
-      expect(t3.monthlyCrystals).toBe(0)
+    it('should return correct tier monthly crystal values (duelTierOptions)', () => {
+      expect(calcPerideaMonthlyIncome('yes', 't3')).toBe(100)
+      expect(calcPerideaMonthlyIncome('yes', 't4')).toBe(200)
+      expect(calcPerideaMonthlyIncome('yes', 't5')).toBe(300)
+      expect(calcPerideaMonthlyIncome('yes', 't6')).toBe(400)
     })
 
     it('daily income should be monthly / DAYS_PER_MONTH', () => {
-      expect(calcPerideaDailyIncome('yes', 't5')).toBe(200 / DAYS_PER_MONTH)
+      expect(calcPerideaDailyIncome('yes', 't5')).toBe(300 / DAYS_PER_MONTH)
     })
 
-    it('all peridea tiers should have non-negative monthly crystals', () => {
-      for (const tier of perideaTierOptions) {
+    it('all duel tiers should have non-negative monthly crystals', () => {
+      for (const tier of duelTierOptions) {
         expect(tier.monthlyCrystals).toBeGreaterThanOrEqual(0)
       }
+    })
+
+    it('duel tier values should be unique', () => {
+      const values = duelTierOptions.map((o) => o.value)
+      expect(new Set(values).size).toBe(values.length)
+    })
+
+    it('duel tier options should have exactly 4 entries (no t7)', () => {
+      expect(duelTierOptions).toHaveLength(4)
+      expect(duelTierOptions.map(t => t.value)).toEqual(['t3', 't4', 't5', 't6'])
+    })
+  })
+
+  describe('Duel of the Fates Income', () => {
+    it('should return 0 when not dueling', () => {
+      expect(calcDuelMonthlyIncome('no', 't6')).toBe(0)
+      expect(calcDuelDailyIncome('no', 't6')).toBe(0)
+    })
+
+    it('should return 0 for empty inputs', () => {
+      expect(calcDuelMonthlyIncome('', '')).toBe(0)
+    })
+
+    it('should return correct tier monthly crystal values', () => {
+      expect(calcDuelMonthlyIncome('yes', 't3')).toBe(100)
+      expect(calcDuelMonthlyIncome('yes', 't4')).toBe(200)
+      expect(calcDuelMonthlyIncome('yes', 't5')).toBe(300)
+      expect(calcDuelMonthlyIncome('yes', 't6')).toBe(400)
+    })
+
+    it('daily income should be monthly / DAYS_PER_MONTH', () => {
+      expect(calcDuelDailyIncome('yes', 't5')).toBe(300 / DAYS_PER_MONTH)
+      expect(calcDuelDailyIncome('yes', 't6')).toBe(400 / DAYS_PER_MONTH)
+    })
+  })
+
+  describe('Assault Battle Auto-Population (API relic → tier mapping)', () => {
+    // The mhann /player endpoint returns relic.currentTier shifted +2 vs in-game.
+    // Thresholds use raw API values: 11, 9, 7.
+    function mapApiRelicToTier(apiRelic: number): string {
+      if (apiRelic >= 11) return 't6'
+      if (apiRelic >= 9) return 't5'
+      if (apiRelic >= 7) return 't4'
+      return 't3'
+    }
+
+    it('API relic 0-6 → t3 "Tier 3 or below" (100 crystals)', () => {
+      for (const relic of [0, 1, 5, 6]) {
+        expect(mapApiRelicToTier(relic)).toBe('t3')
+      }
+      expect(duelTierOptions.find(t => t.value === 't3')!.monthlyCrystals).toBe(100)
+    })
+
+    it('API relic 7-8 → t4 "Tier 4 [Relic 5]" (200 crystals)', () => {
+      for (const relic of [7, 8]) {
+        expect(mapApiRelicToTier(relic)).toBe('t4')
+      }
+      expect(duelTierOptions.find(t => t.value === 't4')!.monthlyCrystals).toBe(200)
+    })
+
+    it('API relic 9-10 → t5 "Tier 5 [Relic 7]" (300 crystals)', () => {
+      for (const relic of [9, 10]) {
+        expect(mapApiRelicToTier(relic)).toBe('t5')
+      }
+      expect(duelTierOptions.find(t => t.value === 't5')!.monthlyCrystals).toBe(300)
+    })
+
+    it('API relic 11+ → t6 "Tier 6 [Relic 9]" (400 crystals)', () => {
+      for (const relic of [11, 12, 15, 20]) {
+        expect(mapApiRelicToTier(relic)).toBe('t6')
+      }
+      expect(duelTierOptions.find(t => t.value === 't6')!.monthlyCrystals).toBe(400)
+    })
+
+    // Regression: player 186973717 has API relic 9 (in-game relic 7) → t5
+    it('player 186973717 (API relic 9) → t5, 300 crystals', () => {
+      expect(mapApiRelicToTier(9)).toBe('t5')
+      expect(calcDuelMonthlyIncome('yes', 't5')).toBe(300)
+    })
+
+    // Regression: player 761355883 has API relic 11 (in-game relic 9) → t6
+    it('player 761355883 (API relic 11) → t6, 400 crystals', () => {
+      expect(mapApiRelicToTier(11)).toBe('t6')
+      expect(calcDuelMonthlyIncome('yes', 't6')).toBe(400)
     })
   })
 
@@ -581,8 +671,8 @@ describe('Budget Calculations', () => {
       expect(new Set(values).size).toBe(values.length)
     })
 
-    it('peridea tier values should all be unique', () => {
-      const values = perideaTierOptions.map((o) => o.value)
+    it('assault battle tier values should all be unique', () => {
+      const values = duelTierOptions.map((o) => o.value)
       expect(new Set(values).size).toBe(values.length)
     })
 

@@ -1,53 +1,22 @@
 <script setup lang="ts">
-import { useLocalStorage } from '@vueuse/core'
-import { buildRelicMap } from '~/util/rosterUtils'
-
-const allyCode = useLocalStorage<string>('roster.allyCode', '')
-const isFetching = ref(false)
-const fetchError = ref<string | null>(null)
-const rawPlayerData = ref<unknown>(null)
-const playerDataFetched = ref(false)
-
-// Extract roster units from raw response
-const rosterUnits = computed(() => {
-  if (!rawPlayerData.value) return []
-  const data = rawPlayerData.value as Record<string, unknown>
-  const events = data?.events as Record<string, unknown> | undefined
-  const roster = events?.rosterUnit as Array<{ definitionId?: string; relic?: { currentTier?: number } }> | undefined
-  return roster ?? []
-})
-
-// Build a quick-lookup map: gameId -> relic tier (API value, +2 shifted)
-const unitRelicMap = computed(() => buildRelicMap(rosterUnits.value as any))
-
-async function fetchPlayerData(): Promise<void> {
-  if (!allyCode.value.trim()) return
-
-  isFetching.value = true
-  fetchError.value = null
-  rawPlayerData.value = null
-  playerDataFetched.value = false
-
-  try {
-    const response = await $fetch('/api/mhann/player', {
-      query: { allyCode: allyCode.value.trim() },
-    })
-    rawPlayerData.value = response
-    playerDataFetched.value = true
-  } catch (err: unknown) {
-    const message = err instanceof Error ? err.message : 'Unknown error'
-    fetchError.value = message
-  } finally {
-    isFetching.value = false
-  }
-}
+const {
+  allyCode,
+  isFetching,
+  fetchError,
+  isFetched: playerDataFetched,
+  rosterUnits,
+  unitRelicMap,
+  fetchRoster: fetchPlayerData,
+  hasUnit,
+  getRelicTier,
+} = usePlayerRoster()
 
 // Provide roster data to child components
 provide('playerRoster', {
   units: rosterUnits,
   relicMap: unitRelicMap,
-  hasUnit: (gameId: string) => unitRelicMap.value.has(gameId.toLowerCase()),
-  getRelicTier: (gameId: string) => unitRelicMap.value.get(gameId.toLowerCase()) ?? null,
+  hasUnit,
+  getRelicTier,
   isFetched: playerDataFetched,
 })
 </script>

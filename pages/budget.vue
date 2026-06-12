@@ -133,11 +133,15 @@ const guaranteedDailyIncome = computed(() => {
   return guaranteedMonthlyIncome.value / DAYS_PER_MONTH
 })
 
-const allyCode = useLocalStorage<string>('budget.allyCode', '')
+const {
+  allyCode,
+  isFetching: isFetchingPlayerData,
+  fetchError: playerDataFetchError,
+  rawPlayerData,
+  isFetched: playerDataFetched,
+  fetchRoster,
+} = usePlayerRoster('budget.allyCode')
 
-const isFetchingPlayerData = ref(false)
-const playerDataFetchError = ref<string | null>(null)
-const rawPlayerData = ref<unknown>(null)
 const fleetRankIsAutoPopulated = ref(false)
 const gacIsAutoPopulated = ref(false)
 const tbIsAutoPopulated = ref(false)
@@ -164,132 +168,117 @@ function mapTbDefinitionId(definitionId: string): string | null {
 }
 
 async function fetchPlayerData(): Promise<void> {
-  if (!allyCode.value.trim()) {
-    return
-  }
-
-  isFetchingPlayerData.value = true
-  playerDataFetchError.value = null
-  rawPlayerData.value = null
   fleetRankIsAutoPopulated.value = false
   gacIsAutoPopulated.value = false
   tbIsAutoPopulated.value = false
   perideaIsAutoPopulated.value = false
   duelIsAutoPopulated.value = false
 
-  try {
-    const response = await $fetch('/api/mhann/player', {
-      query: { allyCode: allyCode.value.trim() },
-    })
-    rawPlayerData.value = response
+  await fetchRoster()
+  const response = rawPlayerData.value
+  if (!response) return
 
-    // Auto-populate fleet rank from events.pvpProfile[tab=2]
-    const data = response as Record<string, unknown>
-    const events = data?.events as Record<string, unknown> | undefined
-    const pvpProfile = events?.pvpProfile as Array<{ tab?: number; rank?: number }> | undefined
-    if (pvpProfile && Array.isArray(pvpProfile)) {
-      const fleetProfile = pvpProfile.find((p) => p.tab === 2)
-      if (fleetProfile && typeof fleetProfile.rank === 'number') {
-        selectedFleetRank.value = mapFleetRankToBucket(fleetProfile.rank)
-        fleetRankIsAutoPopulated.value = true
-      }
+  // Auto-populate fleet rank from events.pvpProfile[tab=2]
+  const data = response as Record<string, unknown>
+  const events = data?.events as Record<string, unknown> | undefined
+  const pvpProfile = events?.pvpProfile as Array<{ tab?: number; rank?: number }> | undefined
+  if (pvpProfile && Array.isArray(pvpProfile)) {
+    const fleetProfile = pvpProfile.find((p) => p.tab === 2)
+    if (fleetProfile && typeof fleetProfile.rank === 'number') {
+      selectedFleetRank.value = mapFleetRankToBucket(fleetProfile.rank)
+      fleetRankIsAutoPopulated.value = true
     }
+  }
 
-    // Auto-populate GAC division from playerRating.playerRankStatus
-    const playerRating = events?.playerRating as Record<string, unknown> | undefined
-    const playerRankStatus = playerRating?.playerRankStatus as { leagueId?: string; divisionId?: number } | undefined
-    if (playerRankStatus?.leagueId && typeof playerRankStatus.divisionId === 'number') {
-      const tierNumber = 6 - (playerRankStatus.divisionId / 5)
-      const gacValue = `${playerRankStatus.leagueId.toLowerCase()}-${tierNumber}`
-      if (gacDivisionOptions.some((o) => o.value === gacValue)) {
-        selectedGacDivision.value = gacValue
-        gacIsAutoPopulated.value = true
-      }
+  // Auto-populate GAC division from playerRating.playerRankStatus
+  const playerRating = events?.playerRating as Record<string, unknown> | undefined
+  const playerRankStatus = playerRating?.playerRankStatus as { leagueId?: string; divisionId?: number } | undefined
+  if (playerRankStatus?.leagueId && typeof playerRankStatus.divisionId === 'number') {
+    const tierNumber = 6 - (playerRankStatus.divisionId / 5)
+    const gacValue = `${playerRankStatus.leagueId.toLowerCase()}-${tierNumber}`
+    if (gacDivisionOptions.some((o) => o.value === gacValue)) {
+      selectedGacDivision.value = gacValue
+      gacIsAutoPopulated.value = true
     }
+  }
 
-    // Auto-populate TB from guild data
-    const guildId = events?.guildId as string | undefined
-    if (guildId) {
-      try {
-        const guildResponse = await $fetch('/api/mhann/guild', { query: { guildId } })
-        const guildEvents = (guildResponse as Record<string, unknown>)?.events as Record<string, unknown> | undefined
-        const guild = guildEvents?.guild as Record<string, unknown> | undefined
-        const profile = guild?.profile as Record<string, unknown> | undefined
-        const tracker = profile?.guildEventTracker as Array<{ definitionId?: string; completedStars?: string }> | undefined
-        if (tracker && tracker.length > 0) {
-          const lastTB = tracker[0]
-          const tbType = lastTB.definitionId ? mapTbDefinitionId(lastTB.definitionId) : null
-          const stars = lastTB.completedStars ? parseInt(lastTB.completedStars, 10) : null
-          if (tbType && stars !== null && !isNaN(stars)) {
-            selectedTbType.value = tbType
-            // Cap stars at the TB type's max
-            const maxStars = maxStarsByTbType[tbType] || 0
-            selectedTbStars.value = Math.min(stars, maxStars)
-            tbIsAutoPopulated.value = true
-          }
+  // Auto-populate TB from guild data
+  const guildId = events?.guildId as string | undefined
+  if (guildId) {
+    try {
+      const guildResponse = await $fetch('/api/mhann/guild', { query: { guildId } })
+      const guildEvents = (guildResponse as Record<string, unknown>)?.events as Record<string, unknown> | undefined
+      const guild = guildEvents?.guild as Record<string, unknown> | undefined
+      const profile = guild?.profile as Record<string, unknown> | undefined
+      const tracker = profile?.guildEventTracker as Array<{ definitionId?: string; completedStars?: string }> | undefined
+      if (tracker && tracker.length > 0) {
+        const lastTB = tracker[0]
+        const tbType = lastTB.definitionId ? mapTbDefinitionId(lastTB.definitionId) : null
+        const stars = lastTB.completedStars ? parseInt(lastTB.completedStars, 10) : null
+        if (tbType && stars !== null && !isNaN(stars)) {
+          selectedTbType.value = tbType
+          const maxStars = maxStarsByTbType[tbType] || 0
+          selectedTbStars.value = Math.min(stars, maxStars)
+          tbIsAutoPopulated.value = true
         }
-      } catch {
-        // Guild fetch failed — silently skip, user fills manually
       }
+    } catch {
+      // Guild fetch failed -- silently skip, user fills manually
     }
+  }
 
-    // Auto-populate Peridea Patrol AB from roster
-    const PERIDEA_UNIT_IDS = ['CAPTAINENOCH:SEVEN_STAR', 'DEATHTROOPERPERIDEA:SEVEN_STAR', 'NIGHTTROOPER:SEVEN_STAR']
-    const roster = events?.rosterUnit as Array<{ definitionId?: string; relic?: { currentTier?: number } }> | undefined
-    if (roster && Array.isArray(roster)) {
-      const perideaUnits = PERIDEA_UNIT_IDS
-        .map(id => roster.find(u => u.definitionId === id))
-        .filter(Boolean)
-      if (perideaUnits.length === PERIDEA_UNIT_IDS.length) {
-        const relicTiers = perideaUnits.map(u => u.relic?.currentTier ?? 0)
-        const minRelic = Math.min(...relicTiers)
-        doesPerideaPatrol.value = 'yes'
-        if (minRelic >= 11) {
-          selectedPerideaTier.value = 't6'
-        } else if (minRelic >= 9) {
-          selectedPerideaTier.value = 't5'
-        } else if (minRelic >= 7) {
-          selectedPerideaTier.value = 't4'
-        } else {
-          selectedPerideaTier.value = 't3'
-        }
-        perideaIsAutoPopulated.value = true
-      } else {
-        doesPerideaPatrol.value = 'no'
-        perideaIsAutoPopulated.value = true
-      }
-    }
-
-    // Auto-populate Duel of the Fates AB from roster
-    const DUEL_UNIT_IDS = ['PADAWANOBIWAN:SEVEN_STAR', 'MASTERQUIGON:SEVEN_STAR']
-    const duelUnits = DUEL_UNIT_IDS
+  // Auto-populate Peridea Patrol AB from roster
+  const PERIDEA_UNIT_IDS = ['CAPTAINENOCH:SEVEN_STAR', 'DEATHTROOPERPERIDEA:SEVEN_STAR', 'NIGHTTROOPER:SEVEN_STAR']
+  const roster = events?.rosterUnit as Array<{ definitionId?: string; relic?: { currentTier?: number } }> | undefined
+  if (roster && Array.isArray(roster)) {
+    const perideaUnits = PERIDEA_UNIT_IDS
       .map(id => roster.find(u => u.definitionId === id))
       .filter(Boolean)
-    if (duelUnits.length === DUEL_UNIT_IDS.length) {
-      const duelRelicTiers = duelUnits.map(u => u.relic?.currentTier ?? 0)
-      const duelMinRelic = Math.min(...duelRelicTiers)
-      doesDuelOfFates.value = 'yes'
-      if (duelMinRelic >= 11) {
-        selectedDuelTier.value = 't6'
-      } else if (duelMinRelic >= 9) {
-        selectedDuelTier.value = 't5'
-      } else if (duelMinRelic >= 7) {
-        selectedDuelTier.value = 't4'
+    if (perideaUnits.length === PERIDEA_UNIT_IDS.length) {
+      const relicTiers = perideaUnits.map(u => u.relic?.currentTier ?? 0)
+      const minRelic = Math.min(...relicTiers)
+      doesPerideaPatrol.value = 'yes'
+      if (minRelic >= 11) {
+        selectedPerideaTier.value = 't6'
+      } else if (minRelic >= 9) {
+        selectedPerideaTier.value = 't5'
+      } else if (minRelic >= 7) {
+        selectedPerideaTier.value = 't4'
       } else {
-        selectedDuelTier.value = 't3'
+        selectedPerideaTier.value = 't3'
       }
-      duelIsAutoPopulated.value = true
+      perideaIsAutoPopulated.value = true
     } else {
-      doesDuelOfFates.value = 'no'
-      duelIsAutoPopulated.value = true
+      doesPerideaPatrol.value = 'no'
+      perideaIsAutoPopulated.value = true
     }
-  } catch (err: unknown) {
-    const message = err instanceof Error ? err.message : 'Unknown error'
-    playerDataFetchError.value = message
-  } finally {
-    isFetchingPlayerData.value = false
+  }
+
+  // Auto-populate Duel of the Fates AB from roster
+  const DUEL_UNIT_IDS = ['PADAWANOBIWAN:SEVEN_STAR', 'MASTERQUIGON:SEVEN_STAR']
+  const duelUnits = DUEL_UNIT_IDS
+    .map(id => roster.find(u => u.definitionId === id))
+    .filter(Boolean)
+  if (duelUnits.length === DUEL_UNIT_IDS.length) {
+    const duelRelicTiers = duelUnits.map(u => u.relic?.currentTier ?? 0)
+    const duelMinRelic = Math.min(...duelRelicTiers)
+    doesDuelOfFates.value = 'yes'
+    if (duelMinRelic >= 11) {
+      selectedDuelTier.value = 't6'
+    } else if (duelMinRelic >= 9) {
+      selectedDuelTier.value = 't5'
+    } else if (duelMinRelic >= 7) {
+      selectedDuelTier.value = 't4'
+    } else {
+      selectedDuelTier.value = 't3'
+    }
+    duelIsAutoPopulated.value = true
+  } else {
+    doesDuelOfFates.value = 'no'
+    duelIsAutoPopulated.value = true
   }
 }
+
 
 const showAllIncomeSteps = computed(() => rawPlayerData.value !== null)
 

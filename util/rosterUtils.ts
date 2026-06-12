@@ -29,3 +29,30 @@ export function buildRelicMap(units: RosterUnit[]): Map<string, number> {
   }
   return map
 }
+
+/**
+ * Check if a unit is owned by the player.
+ * Supports comma-separated gameIds — ALL must be owned.
+ * Returns true when the roster hasn't been fetched yet (no penalty).
+ */
+export function isUnitOwned(
+  gameId: string | undefined,
+  isFetched: boolean,
+  hasUnit: (id: string) => boolean,
+): boolean {
+  if (!isFetched || !gameId) return true
+  const ids = gameId.split(',').map(s => s.trim().toLowerCase()).filter(Boolean)
+  return ids.every(id => hasUnit(id))
+}
+
+/**
+ * Sort value for ownership: 0 = owned, 1 = unowned.
+ * Returns 0 when roster isn't fetched (all treated equally).
+ */
+export function ownershipSortValue(
+  gameId: string | undefined,
+  isFetched: boolean,
+  hasUnit: (id: string) => boolean,
+): 0 | 1 {
+  return isUnitOwned(gameId, isFetched, hasUnit) ? 0 : 1
+}

@@ -4,7 +4,7 @@ import { type data as dataType } from './../models/data';
 import { difficulty, successRate, interactionType } from './../models/data';
 import { creatorMap } from '~/models/creators';
 import { useRouter, useRoute } from 'vue-router';
-import { nextTick, watch, computed } from 'vue';
+import { nextTick, watch, computed, inject, type Ref } from 'vue';
 import { trackEvent } from '~/util/analytics';
 import {
     difficultyColor,
@@ -15,10 +15,22 @@ import {
     interactionBadges,
     interactionComplexity,
 } from '~/util/missionHelpers';
+import { isUnitOwned as isUnitOwnedPure } from '~/util/rosterUtils';
 
 const { isSaved, toggleSaved } = useSavedTeams();
 
 const { fetchVotes, voteCounts, getTeamKey } = useVoteTracker();
+
+// Inject player roster for ownership checks
+const playerRoster = inject<{
+  hasUnit: (gameId: string) => boolean
+  getRelicTier: (gameId: string) => number | null
+  isFetched: Ref<boolean>
+} | null>('playerRoster', null)
+
+function isUnitOwned(gameId: string | undefined): boolean {
+  return isUnitOwnedPure(gameId, playerRoster?.isFetched.value ?? false, (id) => playerRoster?.hasUnit(id) ?? false)
+}
 
 const props = defineProps({
     special: Boolean,
@@ -129,6 +141,11 @@ const verifiedAccordionItems = computed(() => {
             return bVotes - aVotes;
         }
 
+        // Ownership: owned leads before unowned
+        const aOwned = isUnitOwned(a.gameId) ? 0 : 1
+        const bOwned = isUnitOwned(b.gameId) ? 0 : 1
+        if (aOwned !== bOwned) return aOwned - bOwned
+
         // Sort by success rate (better success first)
         const aSuccessValue = successRateValue(a.successRate);
         const bSuccessValue = successRateValue(b.successRate);
@@ -160,6 +177,8 @@ const verifiedAccordionItems = computed(() => {
             interactionType: d.interactionType,
             icon: d.icon,
             lead: d.lead,
+            gameId: d.gameId,
+            owned: isUnitOwned(d.gameId),
         },
         defaultOpen: initialDataIndexFromUrl.value !== null ? initialDataIndexFromUrl.value === index : index === 0,
     }));
@@ -172,6 +191,12 @@ const communityAccordionItems = computed(() => {
             const bKey = getTeamKey(props.phase || '', props.alignment || '', props.position || '', b.lead);
             const aVotes = voteCounts.value[aKey] ?? 0;
             const bVotes = voteCounts.value[bKey] ?? 0;
+
+            // Ownership: owned leads before unowned
+            const aOwned = isUnitOwned(a.gameId) ? 0 : 1
+            const bOwned = isUnitOwned(b.gameId) ? 0 : 1
+            if (aOwned !== bOwned) return aOwned - bOwned
+
             return bVotes - aVotes;
         })
         .map((d) => ({
@@ -188,6 +213,8 @@ const communityAccordionItems = computed(() => {
             icon: d.icon,
             creator: d.creator,
             lead: d.lead,
+            gameId: d.gameId,
+            owned: isUnitOwned(d.gameId),
         },
         defaultOpen: false,
     }));
@@ -256,6 +283,7 @@ async function showToast(itemIndex: number) {
                     <template #default="{ item, index, open }">
                         <UButton
                             class="focus:outline-none focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 flex-shrink-0 font-medium rounded-md text-sm gap-x-1.5 px-2.5 py-1.5 text-gray-200 dark:text-gray-200 bg-primary-50 hover:bg-primary-100 disabled:bg-primary-50 aria-disabled:bg-primary-50 dark:bg-primary-950 dark:hover:bg-primary-900 dark:disabled:bg-primary-950 dark:aria-disabled:bg-primary-950 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400 inline-flex items-center mb-1.5 w-full"
+                            :class="{ 'opacity-40 grayscale': playerRoster?.isFetched && !item.content.owned }"
                             :ui="{ padding: { sm: 'py-4 px-4' } }">
                             <template #leading>
                                 <!-- Badge Cluster -->
@@ -310,6 +338,7 @@ async function showToast(itemIndex: number) {
                             </template>
                             <img v-if="item.content.icon" :src="item.content.icon" class="h-9 w-9 rounded" />
                             <span class="mission-team-label">{{ item.label }}</span>
+                            <span v-if="playerRoster?.isFetched && !item.content.owned" class="text-xs text-red-400/70 ml-1">unowned</span>
                             <img v-if="item.content.omi" src="/icons/omi.png" alt="omicron" class="h-4 w-4" />
                             <template #trailing>
                                 <div class="flex items-center gap-0.5 ml-auto">
@@ -370,9 +399,11 @@ async function showToast(itemIndex: number) {
                         <template #default="{ item, index, open }">
                             <UButton
                                 class="focus:outline-none focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 flex-shrink-0 font-medium rounded-md text-sm gap-x-1.5 px-2.5 py-1.5 text-gray-200 dark:text-gray-200 bg-primary-50 hover:bg-primary-100 disabled:bg-primary-50 aria-disabled:bg-primary-50 dark:bg-primary-950 dark:hover:bg-primary-900 dark:disabled:bg-primary-950 dark:aria-disabled:bg-primary-950 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400 inline-flex items-center mb-1.5 w-full"
+                                :class="{ 'opacity-40 grayscale': playerRoster?.isFetched && !item.content.owned }"
                                 :ui="{ padding: { sm: 'py-4 px-4' } }">
                                 <img v-if="item.content.icon" :src="item.content.icon" class="h-9 w-9 rounded" />
                                 <span class="mission-team-label">{{ item.label }}</span>
+                                <span v-if="playerRoster?.isFetched && !item.content.owned" class="text-xs text-red-400/70 ml-1">unowned</span>
                                 <img v-if="item.content.omi" src="/icons/omi.png" alt="omicron" class="h-4 w-4" />
                                 <template #trailing>
                                     <div class="flex items-center gap-0.5 ml-auto">

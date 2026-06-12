@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import { buildRelicMap, isUnitOwned, ownershipSortValue, type RosterUnit } from '~/util/rosterUtils'
+import { buildRelicMap, isUnitOwned, ownershipSortValue, teamMeetsRelicReq, PHASE_RELIC_REQUIREMENTS, type RosterUnit } from '~/util/rosterUtils'
 
 describe('buildRelicMap', () => {
   it('extracts gameId and converts API relic to in-game relic (API 9 -> 7)', () => {
@@ -160,5 +160,63 @@ describe('ownershipSortValue', () => {
     const a = ownershipSortValue('trench', true, owned)
     const b = ownershipSortValue('unknown', true, owned)
     expect(a).toBeLessThan(b)
+  })
+})
+
+describe('teamMeetsRelicReq', () => {
+  const getRelic = (id: string) => {
+    const tiers: Record<string, number> = { 'greatmothers': 7, 'trench': 5, 'thirdsister': 9 }
+    return tiers[id] ?? null
+  }
+
+  it('returns true when roster is not fetched', () => {
+    expect(teamMeetsRelicReq('greatmothers', 'P3', false, getRelic)).toBe(true)
+  })
+
+  it('returns true when gameId or phase is missing', () => {
+    expect(teamMeetsRelicReq(undefined, 'P3', true, getRelic)).toBe(true)
+    expect(teamMeetsRelicReq('greatmothers', undefined, true, getRelic)).toBe(true)
+  })
+
+  it('returns true when phase has no relic requirement', () => {
+    expect(teamMeetsRelicReq('greatmothers', 'Unknown Phase', true, getRelic)).toBe(true)
+  })
+
+  it('returns true when unit meets the relic threshold', () => {
+    // Phase 3 requires R7; greatmothers is R7
+    expect(teamMeetsRelicReq('greatmothers', 'P3', true, getRelic)).toBe(true)
+  })
+
+  it('returns true when unit exceeds the relic threshold', () => {
+    // Phase 1 requires R5; greatmothers is R7
+    expect(teamMeetsRelicReq('greatmothers', 'P1', true, getRelic)).toBe(true)
+  })
+
+  it('returns false when unit is below the relic threshold', () => {
+    // Phase 3 requires R7; trench is R5
+    expect(teamMeetsRelicReq('trench', 'P3', true, getRelic)).toBe(false)
+  })
+
+  it('returns false when unit is not found in relic map', () => {
+    expect(teamMeetsRelicReq('unknown', 'P1', true, getRelic)).toBe(false)
+  })
+
+  it('multi-gameId: all units must meet relic threshold', () => {
+    // EMPERORPALPATINE is R7, VADERDUELSEND is R9 — both meet Phase 3 (R7)
+    const getRelic2 = (id: string) => ({ 'emperorpalpatine': 7, 'vaderduelsend': 9 }[id] ?? null)
+    expect(teamMeetsRelicReq('EMPERORPALPATINE, VADERDUELSEND', 'P3', true, getRelic2)).toBe(true)
+    // Phase 4 requires R8; EMPERORPALPATINE is only R7
+    expect(teamMeetsRelicReq('EMPERORPALPATINE, VADERDUELSEND', 'P4', true, getRelic2)).toBe(false)
+  })
+
+  it('PHASE_RELIC_REQUIREMENTS covers all known phases', () => {
+    expect(PHASE_RELIC_REQUIREMENTS['P1']).toBe(5)
+    expect(PHASE_RELIC_REQUIREMENTS['P2']).toBe(6)
+    expect(PHASE_RELIC_REQUIREMENTS['P3']).toBe(7)
+    expect(PHASE_RELIC_REQUIREMENTS['P4']).toBe(8)
+    expect(PHASE_RELIC_REQUIREMENTS['P5']).toBe(9)
+    expect(PHASE_RELIC_REQUIREMENTS['P6']).toBe(9)
+    expect(PHASE_RELIC_REQUIREMENTS['Zeffo']).toBe(7)
+    expect(PHASE_RELIC_REQUIREMENTS['Mandalore']).toBe(8)
   })
 })

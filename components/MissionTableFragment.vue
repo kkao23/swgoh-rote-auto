@@ -15,7 +15,7 @@ import {
     interactionBadges,
     interactionComplexity,
 } from '~/util/missionHelpers';
-import { isUnitOwned as isUnitOwnedPure } from '~/util/rosterUtils';
+import { isUnitOwned as isUnitOwnedPure, teamMeetsRelicReq } from '~/util/rosterUtils';
 
 const { isSaved, toggleSaved } = useSavedTeams();
 
@@ -30,6 +30,15 @@ const playerRoster = inject<{
 
 function isUnitOwned(gameId: string | undefined): boolean {
   return isUnitOwnedPure(gameId, playerRoster?.isFetched.value ?? false, (id) => playerRoster?.hasUnit(id) ?? false)
+}
+
+function meetsRelicReq(gameId: string | undefined): boolean {
+  return teamMeetsRelicReq(
+    gameId,
+    props.phase,
+    playerRoster?.isFetched.value ?? false,
+    (id) => playerRoster?.getRelicTier(id) ?? null,
+  )
 }
 
 const props = defineProps({
@@ -179,6 +188,7 @@ const verifiedAccordionItems = computed(() => {
             lead: d.lead,
             gameId: d.gameId,
             owned: isUnitOwned(d.gameId),
+            meetsRelic: meetsRelicReq(d.gameId),
         },
         defaultOpen: initialDataIndexFromUrl.value !== null ? initialDataIndexFromUrl.value === index : index === 0,
     }));
@@ -215,6 +225,7 @@ const communityAccordionItems = computed(() => {
             lead: d.lead,
             gameId: d.gameId,
             owned: isUnitOwned(d.gameId),
+            meetsRelic: meetsRelicReq(d.gameId),
         },
         defaultOpen: false,
     }));
@@ -283,7 +294,7 @@ async function showToast(itemIndex: number) {
                     <template #default="{ item, index, open }">
                         <UButton
                             class="focus:outline-none focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 flex-shrink-0 font-medium rounded-md text-sm gap-x-1.5 px-2.5 py-1.5 text-gray-200 dark:text-gray-200 bg-primary-50 hover:bg-primary-100 disabled:bg-primary-50 aria-disabled:bg-primary-50 dark:bg-primary-950 dark:hover:bg-primary-900 dark:disabled:bg-primary-950 dark:aria-disabled:bg-primary-950 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400 inline-flex items-center mb-1.5 w-full"
-                            :class="{ 'opacity-40 grayscale': playerRoster?.isFetched && !item.content.owned }"
+                            :class="{ 'opacity-40 grayscale': playerRoster?.isFetched && (!item.content.owned || !item.content.meetsRelic) }"
                             :ui="{ padding: { sm: 'py-4 px-4' } }">
                             <template #leading>
                                 <!-- Badge Cluster -->
@@ -339,6 +350,7 @@ async function showToast(itemIndex: number) {
                             <img v-if="item.content.icon" :src="item.content.icon" class="h-9 w-9 rounded" />
                             <span class="mission-team-label">{{ item.label }}</span>
                             <span v-if="playerRoster?.isFetched && !item.content.owned" class="text-xs text-red-400/70 ml-1">unowned</span>
+                            <span v-else-if="playerRoster?.isFetched && !item.content.meetsRelic" class="text-xs text-amber-400/70 ml-1">below relic</span>
                             <img v-if="item.content.omi" src="/icons/omi.png" alt="omicron" class="h-4 w-4" />
                             <template #trailing>
                                 <div class="flex items-center gap-0.5 ml-auto">
@@ -399,11 +411,12 @@ async function showToast(itemIndex: number) {
                         <template #default="{ item, index, open }">
                             <UButton
                                 class="focus:outline-none focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 flex-shrink-0 font-medium rounded-md text-sm gap-x-1.5 px-2.5 py-1.5 text-gray-200 dark:text-gray-200 bg-primary-50 hover:bg-primary-100 disabled:bg-primary-50 aria-disabled:bg-primary-50 dark:bg-primary-950 dark:hover:bg-primary-900 dark:disabled:bg-primary-950 dark:aria-disabled:bg-primary-950 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400 inline-flex items-center mb-1.5 w-full"
-                                :class="{ 'opacity-40 grayscale': playerRoster?.isFetched && !item.content.owned }"
+                                :class="{ 'opacity-40 grayscale': playerRoster?.isFetched && (!item.content.owned || !item.content.meetsRelic) }"
                                 :ui="{ padding: { sm: 'py-4 px-4' } }">
                                 <img v-if="item.content.icon" :src="item.content.icon" class="h-9 w-9 rounded" />
                                 <span class="mission-team-label">{{ item.label }}</span>
                                 <span v-if="playerRoster?.isFetched && !item.content.owned" class="text-xs text-red-400/70 ml-1">unowned</span>
+                            <span v-else-if="playerRoster?.isFetched && !item.content.meetsRelic" class="text-xs text-amber-400/70 ml-1">below relic</span>
                                 <img v-if="item.content.omi" src="/icons/omi.png" alt="omicron" class="h-4 w-4" />
                                 <template #trailing>
                                     <div class="flex items-center gap-0.5 ml-auto">

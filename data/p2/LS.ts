@@ -14,7 +14,7 @@ export const shipsLSP2: dataType[] = [
         targeted: true
     },
     {
-        lead: 'Profundity (R1, No MF)', gameId: 'CAPITALPROFUNDITY',
+        lead: 'Profundity (R1, No MF)', gameId: 'CAPITALPROFUNDITY, ROGUEONESHIP',
         others: 'Outrider, Y wing, Ghost, Rogue 1, Phantom',
         notes: 'target scythe, auto',
         videos: [{ url: 'https://youtu.be/dD9Eey116EY' }],
@@ -25,7 +25,7 @@ export const shipsLSP2: dataType[] = [
         targeted: true
     },
     {
-        lead: 'Profundity (R1 and MF)', gameId: 'CAPITALPROFUNDITY',
+        lead: 'Profundity (R1 and MF)', gameId: 'CAPITALPROFUNDITY, ROGUEONESHIP, MILLENNIUMFALCON',
         others: 'MF, Outrider, Y wing, Rogue 1',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/vZSrJ7_YVJE' }],
@@ -37,7 +37,7 @@ export const shipsLSP2: dataType[] = [
     }
     ,
     {
-        lead: 'Home one', gameId: 'CAPITALMONCALAMARICRUISER',
+        lead: 'Home one', gameId: 'CAPITALMONCALAMARICRUISER, BWINGREBEL',
         others: 'Starting: Cassian, raven\'s claw, rebel y-wing.',
         notes: 'Start with b-wing reinforcement and use ultimate home one.',
         videos: [],
@@ -411,7 +411,7 @@ export const rightLSP2: dataType[] = [
 
 export const zeffoUnlock: dataType[] = [
     {
-        lead: 'Cere', gameId: 'CEREJUNDA',
+        lead: 'Cere', gameId: 'CEREJUNDA, JEDIKNIGHTCAL',
         others: 'JKCK',
         notes: 'Two non lead omis on Cal. The white whale of auto',
         videos: [{ url: 'https://youtu.be/Ad_cJiVLLY0' }],

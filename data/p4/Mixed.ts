@@ -284,7 +284,7 @@ export const mixedGenericP4: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'The Stranger (Spider Maul)', gameId: 'STRANGER',
+        lead: 'The Stranger (Spider Maul)', gameId: 'STRANGER, MAULHATEFUELED',
         leadFull: 'The Stranger (Spider Maul)',
         others: 'Starkiller, Hate Fueled Maul, Scavenger Rey, Plo Koon',
         notes: 'full auto',
@@ -389,7 +389,7 @@ export const mixedFleetP4: dataType[] = [
         interactionType: [interactionType.MANUAL]
     },
     {
-        lead: 'Profundity (Rogue One)', gameId: 'CAPITALPROFUNDITY',
+        lead: 'Profundity (Rogue One)', gameId: 'CAPITALPROFUNDITY, ROGUEONESHIP',
         others: 'Outrider, Ghost, Y wing starting, Rogue one, Phantom in reinforcements. Millennium Falcon is good if you have it',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/czrI8wjl3UY' }],

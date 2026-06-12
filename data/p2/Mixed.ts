@@ -135,7 +135,7 @@ export const shipsMixedP2: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Home One (B wing)', gameId: 'CAPITALMONCALAMARICRUISER',
+        lead: 'Home One (B wing)', gameId: 'CAPITALMONCALAMARICRUISER, BWINGREBEL',
         others: 'Biggs, Bistan and Ravens Claw starting, B wing, Cassian, Phantom, Ghost in reinforcements',
         notes: 'difficult',
         videos: [{ url: 'https://youtu.be/34mzcE14Wfws' }],
@@ -191,7 +191,7 @@ export const mixedP2: dataType[] = [
         omi: true
     },
     {
-        lead: 'BK Mandalore (Rey)', gameId: 'MANDALORBOKATAN',
+        lead: 'BK Mandalore (Rey)', gameId: 'MANDALORBOKATAN, GLREY',
         leadFull: 'Bo Katan Mandalore',
         others: 'Paz, Beskar Mando, IG12/Grogu, Rey',
         notes: 'auto',
@@ -313,7 +313,7 @@ export const mixedP2: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Aphra (IG-90)', gameId: 'DOCTORAPHRA',
+        lead: 'Aphra (IG-90)', gameId: 'DOCTORAPHRA, IG90',
         others: 'BT1, 000, HK-47, IG-90',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/AiqyB15RLZw' }],
@@ -345,7 +345,7 @@ export const mixedP2: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Boba Fett Scion of Jango', gameId: 'BOBAFETTSCION',
+        lead: 'Boba Fett Scion of Jango', gameId: 'BOBAFETTSCION, ASAJJDARKDISCIPLE',
         leadFull: 'Boba Fett Scion of Jango',
         others: 'Asajj Dark Disciple, 4 LOM, Greef, Mando',
         notes: 'auto',

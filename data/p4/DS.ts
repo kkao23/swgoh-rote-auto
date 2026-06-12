@@ -38,7 +38,7 @@ export const dsMidRightP4: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'SEE (overrelic Triumvirate)', gameId: 'SITHPALPATINE',
+        lead: 'SEE (overrelic Triumvirate)', gameId: 'SITHPALPATINE, DARTHTRAYA',
         leadFull: 'Sith Eternal Emperor',
         others: 'Traya, Malgus, Nihilus, Sion',
         notes: 'Pico has R9 on SEE, Traya and Sion. Not sure if this is reliable with R8',

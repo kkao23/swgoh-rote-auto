@@ -319,7 +319,7 @@ export const jabbaP5: dataType[] = [
 
 export const youngHanP5: dataType[] = [
     {
-        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO',
+        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO, YOUNGHAN',
         leadFull: 'Ahsoka Tano',
         others: 'Fulcrum, GAS, Young Han, Vandor',
         notes: 'Get exile off fulcrum asap, keep Han and chewie alive with the box. The Ashokas and Gas will take care of the enemies.',
@@ -332,7 +332,7 @@ export const youngHanP5: dataType[] = [
     },
 
     {
-        lead: 'Glat', gameId: 'AHSOKATANO',
+        lead: 'Glat', gameId: 'AHSOKATANO, YOUNGHAN',
         others: 'Fulcrum, gas, young Han, vandor.',
         notes: 'Get exile off fulcrum asap, keep Han and chewie alive with the box. The Ashokas and Gas will take care of the enemies.',
         videos: [],

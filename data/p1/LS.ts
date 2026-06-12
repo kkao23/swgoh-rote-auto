@@ -324,7 +324,7 @@ export const genericLSP1: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'Finn (Zorii)', gameId: 'FINN',
+        lead: 'Finn (Zorii)', gameId: 'FINN, ZORIIBLISS_V2',
         others: 'RH Finn, RH Poe, Poe, Zorii',
         notes: 'only 1/2 on auto (no omi)',
         videos: [{ url: 'https://youtu.be/5vdRQTBlVmY' }],
@@ -334,7 +334,7 @@ export const genericLSP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'JTR (Rey)', gameId: 'REYJEDITRAINING',
+        lead: 'JTR (Rey)', gameId: 'REYJEDITRAINING, GLREY',
         leadFull: 'Jedi Training Rey with GL Rey',
         others: 'Rey, Resistance Trooper, BB8, Ben Solo',
         notes: 'only 1/2 on auto',

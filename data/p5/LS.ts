@@ -136,7 +136,7 @@ export const lsTopMidP5: dataType[] = [
     },
 
     {
-        lead: 'BKM', gameId: 'BOKATAN',
+        lead: 'BKM', gameId: 'MANDALORBOKATAN',
         others: 'Paz, IG12, PSW, Mando',
         notes: 'Paz Omi needed. Was able to auto twice.',
         videos: [],
@@ -221,7 +221,7 @@ export const lsBottomP5: dataType[] = [
 
 export const lsShipsP5: dataType[] = [
     {
-        lead: 'Profundity (Rogue One)', gameId: 'CAPITALPROFUNDITY',
+        lead: 'Profundity (Rogue One)', gameId: 'CAPITALPROFUNDITY, ROGUEONESHIP',
         others: 'MF, Outrider, Y Wing, Rogue One',
         notes: 'Keep reticule on Scythe, auto',
         videos: [{ url: 'https://youtu.be/qpNtrNGpeKI' }],
@@ -242,7 +242,7 @@ export const lsShipsP5: dataType[] = [
         interactionType: [interactionType.MANUAL],
     },
     {
-        lead: 'Home One (B wing)', gameId: 'CAPITALMONCALAMARICRUISER',
+        lead: 'Home One (B wing)', gameId: 'CAPITALMONCALAMARICRUISER, BWINGREBEL',
         others: 'Ghost, Cassian, Ravens claw, B wing in reinforcements',
         notes: 'can\'t auto. Go after Scythe first. All assists to B wing. High relic Drogan probably required',
         videos: [{ url: 'https://youtu.be/J17DrHLP3mA' }],

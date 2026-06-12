@@ -51,7 +51,7 @@ export const zeffoFleets: dataType[] = [
 
 export const zeffoJedi: dataType[] = [
     {
-        lead: 'JKCK (JMK Ezra)', gameId: 'JEDIKNIGHTCAL',
+        lead: 'JKCK (JMK Ezra)', gameId: 'JEDIKNIGHTCAL, JEDIMASTERKENOBI',
         others: 'JMK, Jedi Knight Luke, Ezra Exile, Kyle',
         notes: 'Omi Kyle, auto',
         videos: [{ url: 'https://youtu.be/bBgHB0q5hmo' }],
@@ -62,7 +62,7 @@ export const zeffoJedi: dataType[] = [
         omi: true
     },
     {
-        lead: 'JKCK (GLAT)', gameId: 'JEDIKNIGHTCAL',
+        lead: 'JKCK (GLAT)', gameId: 'JEDIKNIGHTCAL, AHSOKATANO',
         others: 'GLAT, Sabine, Hera, Huyang',
         notes: 'Use ezra if possible, auto',
         videos: [{ url: 'https://youtu.be/V_u2XK-W8mA' }],
@@ -72,7 +72,7 @@ export const zeffoJedi: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'JKCK (JML Ezra)', gameId: 'JEDIKNIGHTCAL',
+        lead: 'JKCK (JML Ezra)', gameId: 'JEDIKNIGHTCAL, GRANDMASTERLUKE',
         others: 'JML, Ezra Exile, JKL, Shaak',
         notes: 'auto, target purge trooper wave 1 then 2S wave 2',
         videos: [{ url: 'https://youtu.be/LqJsWBb5S88' }],
@@ -83,7 +83,7 @@ export const zeffoJedi: dataType[] = [
         targeted: true
     },
     {
-        lead: 'JKCK (Rey Ezra)', gameId: 'JEDIKNIGHTCAL',
+        lead: 'JKCK (Rey Ezra)', gameId: 'JEDIKNIGHTCAL, GLREY',
         others: 'Rey, Ezra Exile, JKL, Kyle (omi)',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/ixnkyhqL5G0' }],
@@ -105,7 +105,7 @@ export const zeffoJedi: dataType[] = [
         omi: true
     },
     {
-        lead: 'JKCK (Lead Omi, JML and Ezra)', gameId: 'JEDIKNIGHTCAL',
+        lead: 'JKCK (Lead Omi, JML and Ezra)', gameId: 'JEDIKNIGHTCAL, GRANDMASTERLUKE',
         leadFull: 'Jedi Knight Cal Kestis with Jedi Master Luke',
         others: 'JML, Ezra Exile, +2',
         notes: 'auto, lead omi mandatory, probably want whirlwind slam as well',
@@ -117,7 +117,7 @@ export const zeffoJedi: dataType[] = [
         omi: true
     },
     {
-        lead: 'JKCK (Lead Omi, JML no Ezra)', gameId: 'JEDIKNIGHTCAL',
+        lead: 'JKCK (Lead Omi, JML no Ezra)', gameId: 'JEDIKNIGHTCAL, GRANDMASTERLUKE',
         leadFull: 'Jedi Knight Cal Kestis with Jedi Master Luke',
         others: 'JML, GMY, JKL, Shaak ti',
         notes: 'auto, lead omi mandatory, probably want whirlwind slam as well',
@@ -142,7 +142,7 @@ export const zeffoUFU: dataType[] = [
         interactionType: [interactionType.TARGET_START]
     },
     {
-        lead: 'Ahsoka Tano (No CAT)', gameId: 'AHSOKATANO',
+        lead: 'Ahsoka Tano (No CAT)', gameId: 'AHSOKATANO, COMMANDERAHSOKA',
         others: 'Cere, Padawan Sabine, Fulcrum +1',
         notes: 'auto, only 1/2. Need CAT for 2/2',
         videos: [{ url: 'https://youtu.be/H4xzXPPNV8Y' }],
@@ -201,7 +201,7 @@ export const zeffoCombat: dataType[] = [
         interactionType: [interactionType.TARGET_START]
     },
     {
-        lead: 'JKL (JML)', gameId: 'JEDIKNIGHTLUKE',
+        lead: 'JKL (JML)', gameId: 'JEDIKNIGHTLUKE, GRANDMASTERLUKE',
         leadFull: 'Jedi Knight Luke with Jedi Master Luke',
         others: 'GMY, JKA, Shaak ti',
         notes: 'zero speed on JKL. full auto but target humanoids, then side bots round 1. round 2 full auto',

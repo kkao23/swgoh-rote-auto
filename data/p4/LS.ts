@@ -43,7 +43,7 @@ export const lsShipsP4: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Home One (B wing)', gameId: 'CAPITALMONCALAMARICRUISER',
+        lead: 'Home One (B wing)', gameId: 'CAPITALMONCALAMARICRUISER, BWINGREBEL',
         others: 'Biggs, Bistan and Ravens Claw starting, B wing, Cassian and Wedge in reinforcements',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/0PAH1s4Umfs' }],

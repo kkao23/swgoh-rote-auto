@@ -3,7 +3,7 @@ import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const qiraMixedP1: dataType[] = [
     {
-        lead: 'Qira (Leia)', gameId: 'QIRA',
+        lead: 'Qira (Leia)', gameId: 'QIRA, GLLEIA',
         others: 'Leia, R2, Drogan',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/iViRHC81yvs' }],
@@ -13,7 +13,7 @@ export const qiraMixedP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Qira (JMK)', gameId: 'QIRA',
+        lead: 'Qira (JMK)', gameId: 'QIRA, JEDIMASTERKENOBI',
         others: 'JMK, CAT, GK',
         notes: 'auto, got a bit dicey at the end',
         videos: [{ url: 'https://youtu.be/uYhZJ3qbU9c' }],
@@ -23,7 +23,7 @@ export const qiraMixedP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Qira (Baylan)', gameId: 'QIRA',
+        lead: 'Qira (Baylan)', gameId: 'QIRA, BAYLANSKOLL',
         others: 'Baylan, Marrok (o), Shin',
         notes: 'auto, hope they dont focus Marrok',
         videos: [{ url: 'https://youtu.be/srzybGeCGjw' }],
@@ -34,7 +34,7 @@ export const qiraMixedP1: dataType[] = [
         omi: true
     },
     {
-        lead: 'Qira (Rey/CAT)', gameId: 'QIRA',
+        lead: 'Qira (Rey/CAT)', gameId: 'QIRA, GLREY, COMMANDERAHSOKA',
         others: 'Rey, CAT, Ben Solo',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/gRYjQVOTQR0' }],
@@ -44,7 +44,7 @@ export const qiraMixedP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Qira (Rey no CAT)', gameId: 'QIRA',
+        lead: 'Qira (Rey no CAT)', gameId: 'QIRA, GLREY',
         others: 'Rey, L3, Hondo',
         notes: 'lifeblood L3, auto, this got scary, I would sub out Hondo',
         videos: [{ url: 'https://youtu.be/Vj9WEoCV4Io' }],
@@ -54,7 +54,7 @@ export const qiraMixedP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Qira (Ahsoka Tano)', gameId: 'QIRA',
+        lead: 'Qira (Ahsoka Tano)', gameId: 'QIRA, AHSOKATANO',
         others: 'Ahsoka Tano, Padawan Sabine, Ezra Exile',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/_9kN1TSqgB0' }],
@@ -64,16 +64,16 @@ export const qiraMixedP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        "lead": "Qira (Rey/CAT/Dash)", "gameId": "QIRA",
-        "leadFull": "Qira with Rey, CAT, and Dash",
-        "others": "Rey, Cat, Dash",
-        "notes": "auto",
-        "videos": [],
-        "icon": "/icons/characters/tex.charui_rey_tros.png",
-        "difficulty": difficulty.EASY,
-        "successRate": successRate.USUALLY,
-        "interactionType": [interactionType.AUTO],
-        "creator": "anonymous"
+        lead: "Qira (Rey/CAT/Dash)", gameId: "QIRA, GLREY, COMMANDERAHSOKA, DASHRENDAR",
+        leadFull: "Qira with Rey, CAT, and Dash",
+        others: "Rey, Cat, Dash",
+        notes: "auto",
+        videos: [],
+        icon: "/icons/characters/tex.charui_rey_tros.png",
+        difficulty: difficulty.EASY,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.AUTO],
+        creator: "anonymous"
     }
 ]
 
@@ -264,7 +264,7 @@ export const mixedP1: dataType[] = [
         "creator": "BailWritte"
     },
     {
-        lead: 'Boba Fett Scion of Jango', gameId: 'BOBAFETTSCION',
+        lead: 'Boba Fett Scion of Jango', gameId: 'BOBAFETTSCION, ASAJJDARKDISCIPLE',
         leadFull: 'Boba Fett Scion of Jango',
         others: 'Asajj Dark Disciple, 4 LOM, Greef, Mando',
         notes: 'auto',
@@ -287,7 +287,7 @@ export const mixedP1: dataType[] = [
         creator: 'anonymous'
     },
     {
-        lead: 'Palpatine', gameId: 'EMPERORPALPATINE',
+        lead: 'Palpatine', gameId: 'EMPERORPALPATINE, STARKILLER',
         others: 'MJ, Starkiller, Old Ben, Cal Kestis',
         notes: 'Once MJ gets her turn and Palpatine shocks, everyone basically stays stunned for the remainder',
         videos: [],
@@ -314,7 +314,7 @@ export const jabbaP1: dataType[] = [
 
 export const drAphraP1: dataType[] = [
     {
-        lead: 'Aphra (IG-90)', gameId: 'DOCTORAPHRA',
+        lead: 'Aphra (IG-90)', gameId: 'DOCTORAPHRA, IG90',
         others: 'BT1, 000, HK-47, IG-90',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/cxpLm8I_TJQ' }],
@@ -324,7 +324,7 @@ export const drAphraP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Aphra (Rey)', gameId: 'DOCTORAPHRA',
+        lead: 'Aphra (Rey)', gameId: 'DOCTORAPHRA, GLREY',
         others: 'Rey, JTR, Ben, BB8',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/dNNTaMIUjD8' }],
@@ -334,7 +334,7 @@ export const drAphraP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Aphra (Droids)', gameId: 'DOCTORAPHRA',
+        lead: 'Aphra (Droids)', gameId: 'DOCTORAPHRA, BT1',
         others: 'BT1, 000, Darth Vader, IG-88',
         notes: 'auto, can get unlucky if they focus down aphra, can sub IG-88 for Krr or another DS droid',
         videos: [{ url: 'https://youtu.be/36sojaFa4uA' }],
@@ -344,7 +344,7 @@ export const drAphraP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Aphra (SLKR)', gameId: 'DOCTORAPHRA',
+        lead: 'Aphra (SLKR)', gameId: 'DOCTORAPHRA, SUPREMELEADERKYLOREN',
         others: 'SLKR, Dark Side Rey, KRU, Sith Trooper',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/H6rzBkYeixY' }],
@@ -354,7 +354,7 @@ export const drAphraP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Aphra (Ahsoka Tano)', gameId: 'DOCTORAPHRA',
+        lead: 'Aphra (Ahsoka Tano)', gameId: 'DOCTORAPHRA, AHSOKATANO',
         others: 'Hera, Sabine, Huyang',
         notes: 'auto, dont need ezra here',
         videos: [{ url: 'https://youtu.be/phkCY2ikmtI' }],

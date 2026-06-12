@@ -14,7 +14,7 @@ export const dsGenericP3: dataType[] = [
         omi: true
     },
     {
-        lead: 'Emp Palpatine', gameId: 'EMPERORPALPATINE, VADERDUELSEND',
+        lead: 'Emp Palpatine', gameId: 'EMPERORPALPATINE',
         leadFull: 'Emperor Palpatine',
         others: 'Wat, SEE, Malak, Bane',
         notes: 'Doable without Wat but slower, weapon tech on SEE, auto',
@@ -119,7 +119,7 @@ export const dsGenericP3: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-        "lead": "Emp Palpatine", "gameId": "EMPERORPALPATINE, VADERDUELSEND",
+        "lead": "Emp Palpatine", "gameId": "EMPERORPALPATINE, THIRDSISTER",
         "leadFull": "Emp Palpatine",
         "others": "GI, 7th, Reva, 5th",
         "notes": "Inqusitors w/ Reva (or i think that with fat 9sis could work too). I think 5th is importante (timing 1st special and his basic. Dont go after one char to finish at once, just hit everyone after one another to 0protection and then to half of health",
@@ -131,7 +131,7 @@ export const dsGenericP3: dataType[] = [
         "creator": "anonymous"
     },
     {
-        "lead": "Emperor Palpatine (DV DE)", "gameId": "EMPERORPALPATINE",
+        "lead": "Emperor Palpatine (DV DE)", "gameId": "EMPERORPALPATINE, VADERDUELSEND",
         "leadFull": "Emperor Palpatine",
         "others": "Mara Jade, Royal Guard, Tarkin, Darth Vader (Duels End)",
         "notes": "7* and full R7 team, have not tried it auto yet but DV(DE) dominates once you start TM snowballing. Focus Zombie until he can't revive, Mara+Palp+RG stun and TM snowball and DV(DE) AoE special will kill them with ease. Tarkin can probably be swapped with Piett or Thrawn, but his AoE and debuffs are helpful.",
@@ -213,7 +213,7 @@ export const dsEmpireP3: dataType[] = [
         creator: 'anonymous'
     },
     {
-        lead: 'Emp Palpatine', gameId: 'EMPERORPALPATINE, VADERDUELSEND',
+        lead: 'Emp Palpatine', gameId: 'EMPERORPALPATINE, THIRDSISTER',
         others: 'GI, 7th, Reva, 5th',
         notes: 'Inqusitors w/ Reva (or i think that with fat 9sis could work too). I think 5th is importante (timing 1st special and his basic. Dont go after one char to finish at once, just hit everyone after one another to 0protection and then to half of health',
         videos: [],
@@ -227,7 +227,7 @@ export const dsEmpireP3: dataType[] = [
 
 export const drAphraP3: dataType[] = [
     {
-        lead: 'Aphra (IG 90)', gameId: 'DOCTORAPHRA',
+        lead: 'Aphra (IG 90)', gameId: 'DOCTORAPHRA, IG90',
         others: 'BT1, GG, HK47, IG 90',
         notes: 'auto, Use 0-0-0 if you have him, IG 90 makes this super easy',
         videos: [{ url: 'https://youtu.be/GdcO0wE8zt8' }],
@@ -257,7 +257,7 @@ export const drAphraP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Aphra (IPD Omi)', gameId: 'DOCTORAPHRA',
+        lead: 'Aphra (IPD Omi)', gameId: 'DOCTORAPHRA, IMPERIALPROBEDROID',
         others: 'Darth Vader, BT1, IPD (omicron), 0-0-0',
         notes: 'auto, expensive',
         videos: [{ url: 'https://youtu.be/MTkMzJMayUA?si=FfDoECPNw7uALL_n', creator: 'anonymous' }],
@@ -268,7 +268,7 @@ export const drAphraP3: dataType[] = [
         omi: true
     },
     {
-        lead: 'Aphra (SLKR)', gameId: 'DOCTORAPHRA',
+        lead: 'Aphra (SLKR)', gameId: 'DOCTORAPHRA, SUPREMELEADERKYLOREN',
         others: 'SLKR, KRU, ST, Dark Rey',
         notes: ' I manualed, but I\'m sure others could auto',
         videos: [],
@@ -329,7 +329,7 @@ export const drAphraP3: dataType[] = [
 
 export const merrinP3: dataType[] = [
     {
-        lead: 'Great Mothers', gameId: 'GREATMOTHERS',
+        lead: 'Great Mothers', gameId: 'GREATMOTHERS, MERRIN',
         others: 'Morgan, Death Trooper, Night Trooper, Merrin',
         notes: 'auto but Bless Morgan, doom maul first in P2',
         videos: [{ url: 'https://youtu.be/ldzz1yHeeWY' }],
@@ -339,7 +339,7 @@ export const merrinP3: dataType[] = [
         interactionType: [interactionType.TARGET_START, interactionType.PAUSE_WAVE2],
     },
     {
-        lead: 'Old Daka', gameId: 'DAKA',
+        lead: 'Old Daka', gameId: 'DAKA, MERRIN',
         others: 'Asajj, Zombie, Mother Talzin, Merrin',
         notes: 'auto, R8+ Daka and great mods required',
         videos: [{ url: 'https://www.youtube.com/watch?v=EM3GCo_0XSQ', creator: 'kahzgul' }],

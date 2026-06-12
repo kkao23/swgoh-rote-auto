@@ -321,7 +321,7 @@ export const sawP3: dataType[] = [
 
 export const wookies: dataType[] = [
     {
-        lead: 'Tarfull (Yoda and Chewie)', gameId: 'TARFFUL',
+        lead: 'Tarfull (Yoda and Chewie)', gameId: 'TARFFUL, YODACHEWBACCA',
         others: 'Chewbacca, Chewpio, Yoda and Chewie, Clone Wars Chewie',
         notes: 'Much easier with Yoda and Chewie. You want decent mods on CWC',
         videos: [{ url: 'https://youtu.be/vMke5AWP0jU' }],
@@ -341,7 +341,7 @@ export const wookies: dataType[] = [
         interactionType: [interactionType.MANUAL],
     },
     {
-        lead: 'Tarfull', gameId: 'TARFFUL',
+        lead: 'Tarfull', gameId: 'TARFFUL, ZAALBAR',
         others: 'Chewbacca, Chewpio, Zaalbaar, Clone Wars Chewie',
         notes: 'Pico has them all R8, not sure if possible at R7. Looked safe though',
         videos: [{ url: 'https://youtu.be/TY97HzhePAg?si=ewaYO47t0fspuZwl&t=463', creator: 'pico' }],
@@ -350,7 +350,7 @@ export const wookies: dataType[] = [
         successRate: successRate.USUALLY,
     },
     {
-        "lead": "Tarfful (with Choda and Zaalbar)", "gameId": "TARFFUL",
+        "lead": "Tarfful (with Choda and Zaalbar)", "gameId": "TARFFUL, YODACHEWBACCA, ZAALBAR",
         "leadFull": "Tarfful with Choda and Zaalbar",
         "others": "Choda, Zaalbar, Chewpio, CWC",
         "notes": "Auto",

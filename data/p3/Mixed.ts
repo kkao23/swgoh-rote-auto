@@ -173,7 +173,7 @@ export const fennecP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Boba Fett Scion of Jango', gameId: 'BOBAFETTSCION',
+        lead: 'Boba Fett Scion of Jango', gameId: 'BOBAFETTSCION, ASAJJDARKDISCIPLE',
         leadFull: 'Boba Fett Scion of Jango',
         others: 'Asajj Dark Disciple, Fennec, Greef, Mando',
         notes: 'auto',
@@ -422,7 +422,7 @@ export const mixedTopLeftP3: dataType[] = [
 
 export const mixedP3Ships: dataType[] = [
     {
-        lead: 'Executor (P1)', gameId: 'CAPITALEXECUTOR',
+        lead: 'Executor (P1)', gameId: 'CAPITALEXECUTOR, PUNISHINGONE',
         leadFull: 'Executor with Punishing One',
         others: 'HT, XB, Punishing One, IG2000',
         notes: 'auto, use other BH ships if not platooned',

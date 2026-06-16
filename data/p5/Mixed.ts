@@ -279,6 +279,27 @@ export const mixedCombatBottomLeftP5: dataType[] = [
         successRate: successRate.UNRELIABLE,
         interactionType: [interactionType.AUTO],
     },
+    {
+        lead: 'Boss Nass', gameId: 'BOSSNASS',
+        others: 'Gungans (with omicron)',
+        notes: 'Consistent auto, just time consuming due to Nest',
+        videos: [],
+        icon: '/icons/characters/tex.charui_bossnass.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'MINI MiloSynn'
+    },
+    {
+        lead: 'Omega fugitive', gameId: 'OMEGAS3',
+        others: 'OWrecker (Merc), Hunter (merc), Crosshair, Oomega',
+        notes: 'Full auto',
+        videos: [],
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous'
+    }
 ];
 
 export const jabbaP5: dataType[] = [

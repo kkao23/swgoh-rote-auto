@@ -254,6 +254,18 @@ export const reekDSP2: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
     },
+
+{
+    lead: 'Doctor Aphra (IG90)', gameId: 'DOCTORAPHRA',
+    others: 'IG-90, BT-1, 0-0-0 +1',
+    notes: 'Super easy. Any 5th works, I usually use Sm33 or Grievous. Probably dont need 000',
+    videos: [],
+    icon: '/icons/characters/tex.charui_doctoraphra.png',
+    difficulty: difficulty.EASY,
+    successRate: successRate.USUALLY,
+    interactionType: [interactionType.AUTO],
+    creator: 'anonymous'
+}
 ]
 
 export const nexuDSP2: dataType[] = [

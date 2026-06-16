@@ -24,6 +24,17 @@ export const dsGenericLeftP6: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.TARGET_START],
     },
+
+{
+    lead: 'Great Mothers', gameId: 'GREATMOTHERS',
+    others: 'Ns spirit, morgan, Dtp, Nt',
+    notes: 'Full auto',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'anonymous'
+}
 ]
 
 export const dsGenericRightP6: dataType[] = [
@@ -59,6 +70,17 @@ export const idenP6: dataType[] = [
 ]
 
 export const shipsDSP6: dataType[] = [
+    {
+        lead: 'Executrix (Reaper)', gameId: 'CAPITALSTARDESTROYER',
+        others: 'Tie Fighter, Tie Advanced, Reaper, Tie Interceptor, Tie Defender, Tie Bomber, Scythe',
+        notes: 'surprisingly fast auto, though it looked dicey at first',
+        videos: [{ url: 'https://youtu.be/M00kRpd3y34' }],
+        icon: '/icons/ships/tex.charui_stardestroyer.png',
+        difficulty: difficulty.NO_AUTO,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.AUTO],
+        targeted: true
+    },
     {
         lead: 'Executrix', gameId: 'CAPITALSTARDESTROYER',
         others: 'Tie Fighter, Tie Advanced, Scythe, Tie Interceptor, Tie Defender, Tie Bomber',

@@ -139,6 +139,30 @@ export const jediP1: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
     }
+,
+{
+    lead: 'Jedi Knight Cal kestis', gameId: 'JEDIKNIGHTCAL',
+    others: 'JML, JKL, Jedi Revan, any jedi',
+    notes: 'Keep swapping cal stances',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'anonymous',
+    icon: '/icons/characters/tex.charui_calkestis.png',
+}
+,
+{
+    lead: 'Jedi Knight Revan', gameId: 'JEDIKNIGHTREVAN',
+    others: 'Jedi Knight Cal Kestis, Kyle Katarn, Jolee Bindo, Hermit Yoda',
+    notes: 'auto, able to do wave 1 easily, not so well with wave 2',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'Parableman',
+    icon: '/icons/characters/tex.charui_jedirevan.png',
+}
 ]
 
 export const shipsLSP1: dataType[] = [
@@ -389,5 +413,5 @@ export const genericLSP1: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         creator: 'anonymous'
-    }
+}
 ]

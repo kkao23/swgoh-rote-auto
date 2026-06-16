@@ -39,6 +39,18 @@ export const revaP3: dataType[] = [
         interactionType: [interactionType.AUTO],
         omi: true
     },
+
+{
+    lead: 'GI (Inq Bariss)', gameId: 'GRANDINQUISITOR, INQUISITORBARRISS',
+    others: 'Inquisitor Bariss, 3rd Sister (Reva), 7th Sister, 5th Brother',
+    notes: 'Full Auto - target scavenger when you can',
+    videos: [{ url: 'https://youtu.be/ta2eAsy0xJw' }],
+    icon: '/icons/characters/tex.charui_grandinquisitor.png',
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'ALKABOURAS'
+},
 ]
 
 export const jabbaP3: dataType[] = [

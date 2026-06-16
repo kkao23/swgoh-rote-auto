@@ -203,6 +203,18 @@ export const dsMidRightP4: dataType[] = [
         interactionType: [interactionType.AUTO],
         creator: 'anonymous'
     }
+    ,
+    {
+        lead: 'Lord Vader', gameId: 'LORDVADER',
+        others: 'DS Clones',
+        notes: 'Auto with tb omi',
+        videos: [],
+        icon: '/icons/characters/tex.charui_lordvader.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous'
+    }
 ]
 
 export const dsSortie: dataType[] = [

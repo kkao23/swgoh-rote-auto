@@ -92,6 +92,18 @@ export const hondoMixedP2: dataType[] = [
         interactionType: [interactionType.AUTO],
         creator: 'Pym'
     }
+    ,
+    {
+        lead: 'SEE', gameId: 'SITHPALPATINE',
+        others: 'Wat, malak, hondo, sith maurauder',
+        notes: '1/2',
+        videos: [],
+        icon: '/icons/characters/tex.charui_espalpatine_pre.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.FIFTY_FIFTY,
+        interactionType: [interactionType.AUTO],
+        creator: 'Lune'
+    }
 ]
 
 export const shipsMixedP2: dataType[] = [

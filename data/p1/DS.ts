@@ -106,6 +106,17 @@ export const leftDSP1: dataType[] = [{
     interactionType: [interactionType.AUTO],
     creator: 'anonymous'
 }
+,
+{
+    lead: 'Darth Bane', gameId: 'DARTHBANE',
+    others: 'Malak, BSF, Darth Revan, Darth Talon',
+    notes: 'auto -- cleared both waves',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'Parableman'
+},
 ];
 
 export const bottomDSP1: dataType[] = [{
@@ -262,7 +273,18 @@ export const bottomDSP1: dataType[] = [{
     difficulty: difficulty.EASY,
     successRate: successRate.CONSISTENT,
     interactionType: [interactionType.AUTO]
-},
+}
+,
+{
+    lead: 'Darth Bane', gameId: 'DARTHBANE',
+    others: 'Darth Malak, any three other Sith',
+    notes: 'Auto works fine -- don\'t expect to clear wave 2 or for any to survive long except Bane and Malak, but you can clear wave 1 on auto easily with Bane',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'Parableman'
+}
 ];
 
 export const topDSP1: dataType[] = [

@@ -236,7 +236,40 @@ export const mandaloreGeneric: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         creator: 'Andriu'
-    }
+    },
+    {
+        lead: 'Emp Palpatine (DVDE)', gameId: 'EMPERORPALPATINE, VADERDUELSEND',
+        leadFull: 'Emperor Palpatine',
+        others: 'Emperor Palpatine, Darth Vader Duel\'s End, Admiral Piett, Gar Saxon, Imperial Super Commando',
+        notes: 'auto, platoons likely required, may be some luck involved',
+        videos: [{ url: 'https://youtu.be/hV0tpUjM1uE' }],
+        icon: '/icons/characters/tex.charui_palpatineemperor.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.NINETY_PERCENT,
+        interactionType: [interactionType.AUTO]
+    },
+
+{
+    lead: 'Ahsoka Tano (full spectre)', gameId: 'AHSOKATANO',
+    others: 'Full spectre',
+    notes: 'Easy',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'anonymous'
+}
+,
+{
+    lead: 'Bo-Katan (Mand\'alor)',
+    others: 'Paz Vizsla, Mandalorian (Beskar Armor), IG-12 & Grogu, Bo-Katan',
+    notes: 'This mission is missed on the webpage so far',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'anonymous'
+}
 ]
 
 export const mandaloreDTMG: dataType[] = [
@@ -252,4 +285,15 @@ export const mandaloreDTMG: dataType[] = [
         interactionType: [interactionType.AUTO],
         omi: true,
     }
+,
+{
+    lead: 'DTMG (Lord Vader)', gameId: 'MOFFGIDEONS3',
+    others: 'LV, Baylan, Reva, Marrok (omi)',
+    notes: 'Very expensive. Can 2/2, sometimes only 1/2',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.UNRELIABLE,
+    interactionType: [interactionType.AUTO],
+    creator: 'anonymous'
+}
 ]

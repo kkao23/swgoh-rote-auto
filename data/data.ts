@@ -90,7 +90,7 @@ import { mixedFleetP6 } from "./p6/Mixed";
 import { bottomLeftMixedP6 } from "./p6/Mixed";
 import { topWampaP6 } from "./p6/Mixed";
 
-import { lsShipsP6 } from "./p6/LS";
+import { lsShipsP6, genericLSP6, cassianLSP6, bazeLSP6 } from "./p6/LS";
 
 import { shipsDSP6 } from "./p6/DS";
 import { idenP6 } from "./p6/DS";
@@ -239,9 +239,9 @@ export const data: DataType = {
             jabba: jabbaP6,
         },
         ls: {
-            generic: [],
-            baze: [],
-            cassian: [],
+            generic: genericLSP6,
+            baze: bazeLSP6,
+            cassian: cassianLSP6,
             ships: lsShipsP6,
         },
         ds: {

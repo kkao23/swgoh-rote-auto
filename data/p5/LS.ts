@@ -217,6 +217,18 @@ export const lsBottomP5: dataType[] = [
         interactionType: [interactionType.AUTO],
         creator: 'anonymous'
     }
+    ,
+    {
+        lead: 'JKCK (omi)', gameId: 'JEDIKNIGHTCAL',
+        others: 'Okk, K2, cassian, (Jml/jkl/gmy as 5th)',
+        notes: 'Full auto',
+        videos: [],
+        icon: '/icons/characters/tex.charui_calkestis.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous'
+    }
 ]
 
 export const lsShipsP5: dataType[] = [
@@ -244,8 +256,8 @@ export const lsShipsP5: dataType[] = [
     {
         lead: 'Home One (B wing)', gameId: 'CAPITALMONCALAMARICRUISER, BWINGREBEL',
         others: 'Ghost, Cassian, Ravens claw, B wing in reinforcements',
-        notes: 'can\'t auto. Go after Scythe first. All assists to B wing. High relic Drogan probably required',
-        videos: [{ url: 'https://youtu.be/J17DrHLP3mA' }],
+        notes: 'can\'t auto. Go after Scythe first. Bistan special then basics (guaranteed crits). Cassian should do Tenacity down then call Bistan if stealthed, B Wing if not',
+        videos: [{ url: 'https://youtu.be/kLN6a-_1yO4' }],
         icon: '/icons/ships/tex.charui_moncalamarilibertycruiser.png',
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,

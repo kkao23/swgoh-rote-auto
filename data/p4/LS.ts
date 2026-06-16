@@ -187,6 +187,18 @@ export const lsGenericP4: dataType[] = [
         interactionType: [interactionType.MANUAL],
         creator: 'Found'
     }
+    ,
+    {
+        lead: 'Padme Amidala', gameId: 'PADMEAMIDALA',
+        others: 'CAT, Snips, R2, ARC-Trooper',
+        notes: 'Good leftover team for smaller rosters.',
+        icon: '/icons/characters/tex.charui_padme_geonosis.png',
+        videos: [],
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous'
+    }
 ]
 
 export const jediLSP4: dataType[] = [
@@ -301,5 +313,28 @@ export const jediLSP4: dataType[] = [
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
+    }
+    ,
+    {
+        lead: 'Jedi Master Mace Windu', gameId: 'JEDIMASTERMACEWINDU',
+        others: 'Depa (Omni), Temple Guardian, Plo Koon, any 5th',
+        notes: 'Easy Auto',
+        videos: [],
+        icon: '/icons/characters/tex.charui_jedimastermacewindu.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'Nathan Crawford'
+    },
+    {
+        lead: 'JML (GAS)', gameId: 'GRANDMASTERLUKE',
+        others: 'Satele, GAS +2, JKL ideally',
+        notes: 'R10 JML and Satele help a lot here',
+        icon: '/icons/characters/tex.charui_luke_jml.png',
+        videos: [],
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous'
     }
 ]

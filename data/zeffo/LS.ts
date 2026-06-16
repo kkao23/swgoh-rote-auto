@@ -128,6 +128,17 @@ export const zeffoJedi: dataType[] = [
         interactionType: [interactionType.AUTO],
         omi: true
     },
+    {
+        lead: 'JKCK (Lead omi)', gameId: 'JEDIKNIGHTCAL',
+        others: 'Bastilla Shan, JKA, JKLS, Ezra Exile',
+        notes: 'Auto, Kyle kKatarn (omi) is possible instead of JKLS',
+        videos: [],
+        icon: '/icons/characters/tex.charui_calkestis.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'BailWritte'
+    }
 ]
 
 export const zeffoUFU: dataType[] = [
@@ -268,4 +279,59 @@ export const zeffoCombat: dataType[] = [
         interactionType: [interactionType.AUTO],
         creator: 'anonymous'
     }
+    ,
+    {
+        lead: 'Boss Nass (no omi)', gameId: 'BOSSNASS',
+        others: 'Gungans',
+        notes: 'Omi not required, inconsistent, keep Phalanx taunting at all times',
+        videos: [],
+        difficulty: difficulty.EASY,
+        successRate: successRate.FIFTY_FIFTY,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous',
+        omi: true
+    },
+    {
+        lead: 'Rey', gameId: 'GLREY',
+        others: 'Ben Solo, Ezra Bridger (Exile) +2',
+        notes: 'I used Satele and JKL. Ezra nerf does not affect this',
+        videos: [],
+        icon: '/icons/characters/tex.charui_rey_tros.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous'
+    },
+    {
+        lead: 'JKCK (omi only on Lead)', gameId: 'JEDIKNIGHTCAL',
+        others: 'Kyle (omi), Han Solo, C3PO, Chewbacca',
+        notes: 'Full auto without platoons.',
+        icon: '/icons/characters/tex.charui_calkestis.png',
+        videos: [],
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'BailWritte'
+    },
+    {
+        lead: 'Ashoka', gameId: 'AHSOKATANO',
+        others: 'Fulcrum, PWS, Cere, Cal',
+        notes: 'R10 Tano can beat 2/2 full auto. Rest was R7, maybe a 15% chance to lose?',
+        videos: [],
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'DynoTrooper'
+    },
+    {
+        lead: 'JKCK (no omis)', gameId: 'JEDIKNIGHTCAL',
+        others: 'JML, GAS, Ezra Exile, Shaak Ti',
+        notes: 'Focus Purge Trooper in Phase 1 and keep stunned and ability blocked. I played this manually today, but I\'m going to try to auto using this team next ROTE. JKL is in other recommendations, but I\'m usually assigning him to platoons, so I\'d like to share that this comp worked',
+        videos: [],
+        icon: '/icons/characters/tex.charui_calkestis.png',
+        difficulty: difficulty.CAUTION,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.AUTO],
+        creator: 'Brink'
+}
 ]

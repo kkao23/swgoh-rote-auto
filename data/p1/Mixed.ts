@@ -75,6 +75,19 @@ export const qiraMixedP1: dataType[] = [
         interactionType: [interactionType.AUTO],
         creator: "anonymous"
     }
+,
+{
+    lead: 'Qira (Hondo)', gameId: 'QIRA, GLHONDO',
+    others: 'PKHO, Brutus, Vane',
+    notes: 'Full auto and simple',
+    videos: [],
+    icon: '/icons/characters/tex.charui_glhondo.png',
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'Calski'
+}
+,
 ]
 
 export const mixedP1: dataType[] = [
@@ -362,7 +375,7 @@ export const drAphraP1: dataType[] = [
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
-    }
+}
 ]
 
 export const shipsP1: dataType[] = [

@@ -264,6 +264,18 @@ export const lsRightP3: dataType[] = [
         interactionType: [interactionType.AUTO],
         creator: 'anonymous'
     }
+    ,
+    {
+        lead: 'JKL', gameId: 'JEDIKNIGHTLUKE',
+        others: 'JML, JKCK, Yoda, GK',
+        notes: 'Finish wave 1 with all cooldowns reset and end on a mass swarm so JKL goes first on 2nd wave. AOE stun, work on left-most enemy to get to JKCK ult to take out Mara. About 50% successful.',
+        videos: [],
+        icon: '/icons/characters/tex.charui_luke_jediknight.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous'
+    }
 ]
 
 export const sawP3: dataType[] = [
@@ -317,6 +329,17 @@ export const sawP3: dataType[] = [
         interactionType: [interactionType.AUTO],
         creator: 'espo',
     }
+    ,
+    {
+        lead: 'Saw (Kleya)', gameId: 'SAWGERRERA, KLEYA',
+        others: 'Luthen, Kleya, SRP, Kyle',
+        notes: 'Make sure keen stays on SRP. Reapply it each time he revives and don\'t use it otherwise. Easy',
+        videos: [],
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous'
+}
 ]
 
 export const wookies: dataType[] = [
@@ -360,7 +383,7 @@ export const wookies: dataType[] = [
         "successRate": successRate.USUALLY,
         "interactionType": [interactionType.AUTO],
         "creator": "Mar Trepodi"
-    }
+}
 ]
 
 export const shipsLSP3: dataType[] = [

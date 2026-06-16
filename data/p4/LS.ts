@@ -166,17 +166,6 @@ export const lsGenericP4: dataType[] = [
         creator: 'anonymous'
     },
     {
-        lead: 'Padmé Amidala', gameId: 'PADMEAMIDALA',
-        others: 'CAT, Snips, R2, ARC-Trooper',
-        notes: 'Good leftover team for smaller rosters.=20',
-        videos: [],
-        icon: '/icons/characters/tex.charui_padme_geonosis.png',
-        difficulty: difficulty.EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO],
-        creator: 'anonymous'
-    },
-    {
         lead: 'Rey (GL)', gameId: 'GLREY',
         others: 'BAM, Yoda, Han Solo, GK',
         notes: 'No Auto,Kills with Rey and BAM(20 Whistling Birds)',

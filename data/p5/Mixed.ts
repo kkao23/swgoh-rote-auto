@@ -291,14 +291,16 @@ export const mixedCombatBottomLeftP5: dataType[] = [
         creator: 'MINI MiloSynn'
     },
     {
-        lead: 'Omega fugitive', gameId: 'OMEGAS3',
+        lead: 'Omega x2', gameId: 'OMEGAS3',
         others: 'OWrecker (Merc), Hunter (merc), Crosshair, Oomega',
         notes: 'Full auto',
         videos: [],
+        icon: '/icons/characters/tex.charui_omegas3.png',
         difficulty: difficulty.EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
-        creator: 'anonymous'
+        creator: 'anonymous',
+        omi: true
     }
 ];
 

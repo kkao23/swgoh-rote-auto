@@ -119,7 +119,7 @@ export const dsGenericP3: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-        "lead": "Emp Palpatine", "gameId": "EMPERORPALPATINE, THIRDSISTER",
+        "lead": "Emp Palpatine (Inqs)", "gameId": "EMPERORPALPATINE, THIRDSISTER",
         "leadFull": "Emp Palpatine",
         "others": "GI, 7th, Reva, 5th",
         "notes": "Inqusitors w/ Reva (or i think that with fat 9sis could work too). I think 5th is importante (timing 1st special and his basic. Dont go after one char to finish at once, just hit everyone after one another to 0protection and then to half of health",
@@ -148,7 +148,7 @@ export const dsGenericP3: dataType[] = [
         "others": "GI, 7th, 5th, Marrok (omi)",
         "notes": "Auto",
         "videos": [],
-        "icon": "/icons/characters/tex.charui_reva.png",
+        icon: '/icons/characters/tex.charui_thirdsister.png',
         "difficulty": difficulty.EASY,
         "omi": true,
         "successRate": successRate.USUALLY,
@@ -191,7 +191,7 @@ export const dsEmpireP3: dataType[] = [
     },
     {
         lead: 'Emp Palpatine (DVDE)', gameId: 'EMPERORPALPATINE, VADERDUELSEND',
-        leadFull: 'Emperor Palpatine',
+        leadFull: 'Emperor Palpatine (DVDE)',
         others: 'Emperor Palpatine, Darth Vader, Darth Vader Duel\'s End, Admiral Piett and Ninth Sister',
         notes: 'If you have Mara and or Royal Guard R7 they should work here too',
         videos: [{ url: 'https://youtu.be/phNLE31Wsw8' }],
@@ -200,20 +200,8 @@ export const dsEmpireP3: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
     },
-
     {
-        lead: 'Emperor Palpatine', gameId: 'EMPERORPALPATINE',
-        others: 'GI, 9th sister, 7th sister, 5th brother',
-        notes: 'Auto (modding should be good), all R7 with zeta',
-        videos: [],
-        icon: '/icons/characters/tex.charui_palpatineemperor.png',
-        difficulty: difficulty.EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO],
-        creator: 'anonymous'
-    },
-    {
-        lead: 'Emp Palpatine', gameId: 'EMPERORPALPATINE, THIRDSISTER',
+        lead: 'Emp Palpatine (Inqs)', gameId: 'EMPERORPALPATINE, THIRDSISTER',
         others: 'GI, 7th, Reva, 5th',
         notes: 'Inqusitors w/ Reva (or i think that with fat 9sis could work too). I think 5th is importante (timing 1st special and his basic. Dont go after one char to finish at once, just hit everyone after one another to 0protection and then to half of health',
         videos: [],
@@ -281,7 +269,7 @@ export const drAphraP3: dataType[] = [
     }
     ,
     {
-        lead: 'Aphra', gameId: 'DOCTORAPHRA',
+        lead: 'Aphra (Malak)', gameId: 'DOCTORAPHRA',
         others: 'BT-1, 0-0-0, DV, Malak',
         notes: 'Auto',
         videos: [],
@@ -292,8 +280,8 @@ export const drAphraP3: dataType[] = [
         creator: 'BailWritte'
     },
     {
-        lead: 'Dr. Aphra', gameId: 'DOCTORAPHRA',
-        others: 'GG, HK 47, IG 90 4LOOM',
+        lead: 'Dr. Aphra (4LOM)', gameId: 'DOCTORAPHRA',
+        others: 'GG, HK 47, IG 90, 4LOM',
         notes: 'Full Auto',
         videos: [],
         icon: '/icons/characters/tex.charui_doctoraphra.png',
@@ -303,7 +291,7 @@ export const drAphraP3: dataType[] = [
         creator: 'Gesho'
     },
     {
-        lead: 'Dr Aphra', gameId: 'DOCTORAPHRA',
+        lead: 'Dr Aphra (Marrok)', gameId: 'DOCTORAPHRA',
         others: 'Baylan, Shin, Marrok (omicron), and Quiggold (omicron)',
         notes: 'Quiggold (omicron) is not mandatory; this last unit can be swapped by Malak or another',
         videos: [],
@@ -314,17 +302,6 @@ export const drAphraP3: dataType[] = [
         creator: 'Artha Dragon',
         omi: true
     },
-    {
-        lead: 'Doctor Aphra', gameId: 'DOCTORAPHRA',
-        others: 'Marrok (omi), Inqs, Mercs',
-        notes: 'auto',
-        videos: [],
-        icon: '/icons/characters/tex.charui_doctoraphra.png',
-        difficulty: difficulty.EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO],
-        creator: 'anonymous'
-    }
 ]
 
 export const merrinP3: dataType[] = [

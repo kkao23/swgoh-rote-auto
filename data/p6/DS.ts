@@ -30,6 +30,7 @@ export const dsGenericLeftP6: dataType[] = [
     others: 'Ns spirit, morgan, Dtp, Nt',
     notes: 'Full auto',
     videos: [],
+    icon: '/icons/characters/tex.charui_greatmothers.png',
     difficulty: difficulty.EASY,
     successRate: successRate.CONSISTENT,
     interactionType: [interactionType.AUTO],

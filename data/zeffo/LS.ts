@@ -285,11 +285,11 @@ export const zeffoCombat: dataType[] = [
         others: 'Gungans',
         notes: 'Omi not required, inconsistent, keep Phalanx taunting at all times',
         videos: [],
+        icon: '/icons/characters/tex.charui_bossnass.png',
         difficulty: difficulty.EASY,
         successRate: successRate.FIFTY_FIFTY,
         interactionType: [interactionType.AUTO],
         creator: 'anonymous',
-        omi: true
     },
     {
         lead: 'Rey', gameId: 'GLREY',

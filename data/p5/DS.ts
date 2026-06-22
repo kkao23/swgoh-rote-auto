@@ -3,7 +3,7 @@ import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const dsBottomRightP5: dataType[] = [
     {
-        lead: 'Tarkin',
+        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN',
         leadFull: 'Grand Moff Tarkin',
         others: 'Appo (omicron), CX, Disguised Clone Trooper, Scorch',
         notes: '1/2 on auto',
@@ -15,7 +15,7 @@ export const dsBottomRightP5: dataType[] = [
         omi: true
     },
     {
-        lead: 'Pirate King Hondo',
+        lead: 'Pirate King Hondo', gameId: 'GLHONDO',
         leadFull: 'Pirate King Hondo Onaka',
         others: 'SM-33, Vane, Hondo +1',
         notes: '1/2 on auto',
@@ -26,7 +26,7 @@ export const dsBottomRightP5: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'Pirate King Hondo',
+        lead: 'Pirate King Hondo', gameId: 'GLHONDO',
         leadFull: 'Pirate King Hondo Onaka',
         others: 'SM-33, Vane, Hondo +1',
         notes: '2/2 on manual, don\'t use event special',
@@ -37,7 +37,7 @@ export const dsBottomRightP5: dataType[] = [
         interactionType: [interactionType.MANUAL],
     },
     {
-        lead: 'LV',
+        lead: 'LV', gameId: 'LORDVADER',
         leadFull: 'Lord Vader',
         others: 'Appo (omicron), DCT, CX-2, Scorch',
         notes: 'auto, was a bit dicey',
@@ -49,7 +49,7 @@ export const dsBottomRightP5: dataType[] = [
         omi: true,
     },
     {
-        lead: 'SLKR',
+        lead: 'SLKR', gameId: 'SUPREMELEADERKYLOREN',
         others: 'use FO if you can but I had DS Rey, KRU, Darth Revan, Malgus. Tank probably required',
         notes: 'Manual unfortunately required',
         videos: [{ url: 'https://youtu.be/GfHfeBibbVs' }],
@@ -59,22 +59,22 @@ export const dsBottomRightP5: dataType[] = [
         interactionType: [interactionType.MANUAL]
     },
 
-{
-    lead: 'Dark Trooper Moff Gideon',
-    others: 'Night Trooper, Death Trooper (Peridia), Captain Enoch (Omi), Scout Trooper',
-    notes: 'Manual suggested for wave 1; Auto Wave 2',
-    videos: [],
-    icon: '/icons/characters/tex.charui_moffgideons3.png',
-    difficulty: difficulty.CAUTION,
-    successRate: successRate.CONSISTENT,
-    interactionType: [interactionType.AUTO],
-    creator: 'anonymous'
-}
+    {
+        lead: 'Dark Trooper Moff Gideon', gameId: 'MOFFGIDEONS3',
+        others: 'Night Trooper, Death Trooper (Peridia), Captain Enoch (Omi), Scout Trooper',
+        notes: 'Manual suggested for wave 1; Auto Wave 2',
+        videos: [],
+        icon: '/icons/characters/tex.charui_moffgideons3.png',
+        difficulty: difficulty.CAUTION,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous'
+    }
 ]
 
 export const dsTopMidP5: dataType[] = [
     {
-        lead: 'Tarkin',
+        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN',
         leadFull: 'Grand Moff Tarkin',
         others: 'Appo (omicron), CX, Disguised Clone Trooper, Scorch',
         notes: 'auto, may want to target Sabine wave 2',
@@ -87,7 +87,7 @@ export const dsTopMidP5: dataType[] = [
         omi: true
     },
     {
-        lead: 'Pirate King Hondo',
+        lead: 'Pirate King Hondo', gameId: 'GLHONDO',
         leadFull: 'Pirate King Hondo Onaka',
         others: 'SM-33, Vane, Hondo +1',
         notes: 'auto, but take out fulcrum and zeb in wave 2 once they\'re down to 1 HP',
@@ -98,18 +98,18 @@ export const dsTopMidP5: dataType[] = [
         interactionType: [interactionType.PAUSE_WAVE2],
     },
     {
-        lead: 'SEE',
+        lead: 'SEE', gameId: 'SITHPALPATINE',
         leadFull: 'Sith Eternal Emperor',
         others: 'Malak, The Stranger, Darth Revan, Bane',
         notes: 'easy 1/2, 2/2 not totally consistent',
-        videos: [{url: 'https://youtu.be/j_cKE4G_PZ0'}],
+        videos: [{ url: 'https://youtu.be/j_cKE4G_PZ0' }],
         icon: '/icons/characters/tex.charui_espalpatine_pre.png',
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'LV',
+        lead: 'LV', gameId: 'LORDVADER',
         leadFull: 'Lord Vader',
         others: 'Appo (omicron), DCT, CX-2, Scorch',
         notes: 'Easy full auto',
@@ -121,7 +121,7 @@ export const dsTopMidP5: dataType[] = [
         omi: true,
     },
     {
-        lead: 'SLKR',
+        lead: 'SLKR', gameId: 'SUPREMELEADERKYLOREN',
         others: 'use FO if you can but I had Malgus, Stranger, Darth Revan, Bane',
         notes: 'Had to play Wave 1 manually, poke then auto wave 2',
         videos: [{ url: 'https://youtu.be/zfqcSPadob0' }],
@@ -131,22 +131,22 @@ export const dsTopMidP5: dataType[] = [
         interactionType: [interactionType.MANUAL]
     },
 
-{
-    lead: 'GM',
-    others: 'Morgan, Spirit, NT, DTP',
-    notes: 'Auto',
-    videos: [],
-    icon: '/icons/characters/tex.charui_greatmothers.png',
-    difficulty: difficulty.EASY,
-    successRate: successRate.CONSISTENT,
-    interactionType: [interactionType.AUTO],
-    creator: 'anonymous'
-}
+    {
+        lead: 'GM', gameId: 'GREATMOTHERS',
+        others: 'Morgan, Spirit, NT, DTP',
+        notes: 'Auto',
+        videos: [],
+        icon: '/icons/characters/tex.charui_greatmothers.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous'
+    }
 ]
 
 export const dsLeftP5: dataType[] = [
     {
-        lead: 'Pirate King Hondo',
+        lead: 'Pirate King Hondo', gameId: 'GLHONDO',
         leadFull: 'Pirate King Hondo Onaka',
         others: 'SM-33, Vane, Hondo +1',
         notes: 'auto, but take out fulcrum and zeb in wave 2 once they\'re down to 1 HP',
@@ -157,7 +157,7 @@ export const dsLeftP5: dataType[] = [
         interactionType: [interactionType.PAUSE_WAVE2],
     },
     {
-        lead: 'Tarkin',
+        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN',
         leadFull: 'Grand Moff Tarkin',
         others: 'Appo, CX, Disguised Clone Trooper, Scorch',
         notes: '1/2 on auto',
@@ -169,7 +169,7 @@ export const dsLeftP5: dataType[] = [
         omi: true
     },
     {
-        lead: 'LV',
+        lead: 'LV', gameId: 'LORDVADER',
         leadFull: 'Lord Vader',
         others: 'Appo (omicron), DCT, CX-2, Scorch',
         notes: 'Easy full auto',
@@ -181,18 +181,18 @@ export const dsLeftP5: dataType[] = [
         omi: true,
     },
     {
-        lead: 'SEE',
+        lead: 'SEE', gameId: 'SITHPALPATINE',
         leadFull: 'Sith Eternal Emperor',
         others: 'Malak/Malgus, The Stranger, Darth Revan, Bane',
         notes: 'easy 1/2, 2/2 not totally consistent',
-        videos: [{url: 'https://youtu.be/F9aYFWdjCLo'}],
+        videos: [{ url: 'https://youtu.be/F9aYFWdjCLo' }],
         icon: '/icons/characters/tex.charui_espalpatine_pre.png',
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'SLKR',
+        lead: 'SLKR', gameId: 'SUPREMELEADERKYLOREN',
         others: 'FO if you can, but I had DS Rey, KRU, Death Trooper, Night Trooper. Tank probably required',
         notes: 'Manual unfortunately required',
         videos: [{ url: 'https://youtu.be/mDwMZIjN7sk' }],

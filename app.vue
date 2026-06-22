@@ -10,7 +10,7 @@ const isMobile = useMediaQuery('(max-width: 768px)')
 
 const isAlertOpen = ref(false)
 const isNoticeHidden = ref(false)
-const isFavoriteBannerHidden = useLocalStorage('swgoh-rote-upvote-banner-hidden', false)
+const isRosterBannerHidden = useLocalStorage('swgoh-rote-roster-banner-hidden', false)
 
 const isSupportOpen = ref(false)
 
@@ -144,12 +144,12 @@ const navigationLinks = [
             and tips.</p>
         </div>
       </div>
-      <div v-if="!isBudgetPage && !isFavoriteBannerHidden" class="mx-4 mb-4 relative">
-        <UAlert icon="i-heroicons-hand-thumb-up-solid" color="pink" variant="soft" title="New!"
-          description="Upvote your favorite teams! Tap 👍 to upvote or 👎 to downvote, and see which teams the community recommends most."
-          :ui="{ title: 'text-pink-100 font-bold', description: 'text-pink-100' }" />
-        <button @click="isFavoriteBannerHidden = true"
-          class="absolute top-1.5 right-2 w-5 h-5 flex items-center justify-center rounded-full bg-pink-100 border border-pink-400 text-pink-600 hover:bg-pink-200 hover:text-pink-700 transition-colors z-10"
+      <div v-if="!isRosterBannerHidden" class="mx-4 mb-4 relative">
+        <UAlert icon="i-heroicons-user-group-solid" color="cyan" variant="soft" title="New: Roster Import"
+          description="Enter your ally code to see which teams you can field! Unowned leads are grayed out and sorted to the bottom, and leads below the phase relic requirement are flagged."
+          :ui="{ title: 'text-cyan-100 font-bold', description: 'text-cyan-100' }" />
+        <button @click="isRosterBannerHidden = true"
+          class="absolute top-1.5 right-2 w-5 h-5 flex items-center justify-center rounded-full bg-cyan-100 border border-cyan-400 text-cyan-600 hover:bg-cyan-200 hover:text-cyan-700 transition-colors z-10"
           title="Dismiss notice">
           <UIcon name="i-heroicons-x-mark" class="w-3 h-3" />
         </button>

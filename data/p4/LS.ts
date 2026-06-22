@@ -3,7 +3,7 @@ import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const lsShipsP4: dataType[] = [
     {
-        lead: 'Profundity',
+        lead: 'Profundity', gameId: 'CAPITALPROFUNDITY',
         others: 'MF, Outrider, Y Wing, Wedge, Biggs, Phantom, Ghost',
         notes: 'auto, Dont use Ghost if required in Mixed',
         videos: [{ url: 'https://youtu.be/-AZjA6D9sK4' }],
@@ -13,7 +13,7 @@ export const lsShipsP4: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Negotiator',
+        lead: 'Negotiator', gameId: 'CAPITALNEGOTIATOR',
         others: 'JKA, Y Wing, Marauder, Plo, Ahsoka, Fives, Rex',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/D30RG8s3HDQ' }],
@@ -23,7 +23,7 @@ export const lsShipsP4: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Raddus',
+        lead: 'Raddus', gameId: 'CAPITALRADDUS',
         others: 'Rey MF, Poe XWing, Res Bomber, Comeuppance, Res X Wing',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/drEhB7NLcZU' }],
@@ -33,7 +33,7 @@ export const lsShipsP4: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Home One (MF)',
+        lead: 'Home One (MF)', gameId: 'CAPITALMONCALAMARICRUISER',
         others: 'MF, Y Wing, Ravens Claw, Outrider, Phantom, Ghost, Cassian',
         notes: 'auto, Dont use Ghost if required in Mixed',
         videos: [{ url: 'https://youtu.be/67erqo3zyvA' }],
@@ -43,7 +43,7 @@ export const lsShipsP4: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Home One (B wing)',
+        lead: 'Home One (B wing)', gameId: 'CAPITALMONCALAMARICRUISER, BWINGREBEL',
         others: 'Biggs, Bistan and Ravens Claw starting, B wing, Cassian and Wedge in reinforcements',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/0PAH1s4Umfs' }],
@@ -56,7 +56,7 @@ export const lsShipsP4: dataType[] = [
 
 export const lsGenericP4: dataType[] = [
     {
-        lead: 'Leia',
+        lead: 'Leia', gameId: 'GLLEIA',
         others: 'Han, Cassian, Raddus, R2-D2',
         notes: 'auto, Drogan if you have him',
         videos: [{ url: 'https://youtu.be/C6F4fIWlP-I' }],
@@ -66,7 +66,7 @@ export const lsGenericP4: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'QA',
+        lead: 'QA', gameId: 'QUEENAMIDALA',
         leadFull: 'Queen Amidala',
         others: 'POW, MQG, Yoda, Padme',
         notes: 'auto, other two can be any GR',
@@ -77,7 +77,7 @@ export const lsGenericP4: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'JMK',
+        lead: 'JMK', gameId: 'JEDIMASTERKENOBI',
         leadFull: 'Jedi Master Kenobi',
         others: 'Padme, Snips, GK, CAT',
         notes: 'auto',
@@ -88,7 +88,7 @@ export const lsGenericP4: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Boss Nass',
+        lead: 'Boss Nass', gameId: 'BOSSNASS',
         others: 'Gungans',
         notes: 'Tarpals omi, auto',
         videos: [{ url: 'https://youtu.be/xCacWaNrwto' }],
@@ -99,7 +99,7 @@ export const lsGenericP4: dataType[] = [
         omi: true
     },
     {
-        lead: 'Ahsoka Tano',
+        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO',
         others: 'Any',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/nNTovvlMApI' }],
@@ -109,7 +109,7 @@ export const lsGenericP4: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Omega',
+        lead: 'Omega', gameId: 'OMEGAS3',
         others: 'other Bad Batch Mercenaries',
         notes: 'easy auto with omi',
         videos: [{ url: 'https://youtu.be/kjYZ24h5fok' }],
@@ -120,7 +120,7 @@ export const lsGenericP4: dataType[] = [
         omi: true,
     },
     {
-        lead: 'GAS with QA',
+        lead: 'GAS with QA', gameId: 'GENERALSKYWALKER, QUEENAMIDALA',
         leadFull: 'General Anakin Skywalker with Queen Amidala',
         others: 'POW, MQG, Snips',
         notes: 'auto, faster than QA herself',
@@ -131,7 +131,7 @@ export const lsGenericP4: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Kelleran Beq or JMMW',
+        lead: 'Kelleran Beq or JMMW', gameId: 'KELLERANBEQ',
         leadFull: 'Kelleran Beq or Jedi Master Master Windu',
         others: 'Jocasta Nu, Shaak Ti, Depa Billaba (omicron), Temple Guard',
         notes: 'auto, dont need platoons, very fast',
@@ -142,56 +142,57 @@ export const lsGenericP4: dataType[] = [
         interactionType: [interactionType.AUTO],
         omi: true
     }
-,
-{
-    lead: 'General Syndulla',
-    others: 'Ezra (Exile), Huyang, Padawan Sabine Wren, Cassian Andor (But probably any toon will do)',
-    notes: 'Full auto. For safety measure you can target leader first in second phase.',
-    videos: [],
-    icon: '/icons/characters/tex.charui_generalsyndulla.png',
-    difficulty: difficulty.EASY,
-    successRate: successRate.CONSISTENT,
-    interactionType: [interactionType.TARGET_START],
-    creator: 'LQ'
-},
-{
-    lead: 'oFinn',
-    others: 'RH Finn, RH Poe, Zorii, Rose',
-    notes: 'Auto',
-    videos: [],
-    icon: '/icons/characters/tex.charui_finn.png',
-    difficulty: difficulty.EASY,
-    successRate: successRate.CONSISTENT,
-    interactionType: [interactionType.AUTO],
-    creator: 'anonymous'
-},
-{
-    lead: 'Padmé Amidala',
-    others: 'CAT, Snips, R2, ARC-Trooper',
-    notes: 'Good leftover team for smaller rosters.=20',
-    videos: [],
-    icon: '/icons/characters/tex.charui_padme_geonosis.png',
-    difficulty: difficulty.EASY,
-    successRate: successRate.CONSISTENT,
-    interactionType: [interactionType.AUTO],
-    creator: 'anonymous'
-},
-{
-    lead: 'Rey (GL)',
-    others: 'BAM, Yoda, Han Solo, GK',
-    notes: 'No Auto,Kills with Rey and BAM(20 Whistling Birds)',
-    videos: [],
-    icon: '/icons/characters/tex.charui_rey_tros.png',
-    difficulty: difficulty.NO_AUTO,
-    successRate: successRate.CONSISTENT,
-    interactionType: [interactionType.MANUAL],
-    creator: 'Found'
-}
+    ,
+    {
+        lead: 'General Syndulla', gameId: 'GENERALSYNDULLA',
+        others: 'Ezra (Exile), Huyang, Padawan Sabine Wren, Cassian Andor (But probably any toon will do)',
+        notes: 'Full auto. For safety measure you can target leader first in second phase.',
+        videos: [],
+        icon: '/icons/characters/tex.charui_generalsyndulla.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.TARGET_START],
+        creator: 'LQ'
+    },
+    {
+        lead: 'oFinn', gameId: 'FINN',
+        others: 'RH Finn, RH Poe, Zorii, Rose',
+        notes: 'Auto',
+        videos: [],
+        icon: '/icons/characters/tex.charui_finn.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous'
+    },
+    {
+        lead: 'Rey (GL)', gameId: 'GLREY',
+        others: 'BAM, Yoda, Han Solo, GK',
+        notes: 'No Auto,Kills with Rey and BAM(20 Whistling Birds)',
+        videos: [],
+        icon: '/icons/characters/tex.charui_rey_tros.png',
+        difficulty: difficulty.NO_AUTO,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.MANUAL],
+        creator: 'Found'
+    }
+    ,
+    {
+        lead: 'Padme Amidala', gameId: 'PADMEAMIDALA',
+        others: 'CAT, Snips, R2, ARC-Trooper',
+        notes: 'Good leftover team for smaller rosters.',
+        icon: '/icons/characters/tex.charui_padme_geonosis.png',
+        videos: [],
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous'
+    }
 ]
 
 export const jediLSP4: dataType[] = [
     {
-        lead: 'JMK (Ezra)',
+        lead: 'JMK (Ezra)', gameId: 'JEDIMASTERKENOBI',
         leadFull: 'Jedi Master Kenobi with Ezra Exile',
         others: 'GAS, Ahsoka, Ezra Exile, GK',
         notes: 'auto',
@@ -202,7 +203,7 @@ export const jediLSP4: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'JML (Ezra)',
+        lead: 'JML (Ezra)', gameId: 'GRANDMASTERLUKE',
         leadFull: 'Jedi Master Luke with Ezra Exile',
         others: 'Ezra Exile, GAS, GMY, Plo',
         notes: 'auto, replace Plo if possible',
@@ -213,7 +214,7 @@ export const jediLSP4: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'JMK (no Ezra, no bros)',
+        lead: 'JMK (no Ezra, no bros)', gameId: 'JEDIMASTERKENOBI',
         leadFull: 'Jedi Master Kenobi without Ezra Exile or POW/MQJ',
         others: 'GAS, Ahsoka, GK, Plo',
         notes: 'auto, only 1/2',
@@ -224,7 +225,7 @@ export const jediLSP4: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'JML (bros, no Ezra)',
+        lead: 'JML (bros, no Ezra)', gameId: 'GRANDMASTERLUKE',
         leadFull: 'Jedi Master Luke without Ezra Exile with POW/MQJ',
         others: 'GAS, GMY, POW, MQG',
         notes: 'auto',
@@ -235,7 +236,7 @@ export const jediLSP4: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'JMK (bros, no Ezra)',
+        lead: 'JMK (bros, no Ezra)', gameId: 'JEDIMASTERKENOBI',
         leadFull: 'Jedi Master Kenobi without Ezra Exile with POW/MQJ',
         others: 'GAS, GK, POW, MQG',
         notes: 'auto',
@@ -246,7 +247,7 @@ export const jediLSP4: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'JML (KK Omi)',
+        lead: 'JML (KK Omi)', gameId: 'GRANDMASTERLUKE',
         leadFull: 'Jedi Master Luke with Kyle Katarn Omi',
         others: 'Kyle Katarn (omi), GAS, GMY, GK',
         notes: 'auto, GMY and GK are likely replaceable',
@@ -257,7 +258,7 @@ export const jediLSP4: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Kelleran Beq or JMMW',
+        lead: 'Kelleran Beq or JMMW', gameId: 'KELLERANBEQ',
         leadFull: 'Kelleran Beq',
         others: 'Jocasta Nu, Shaak Ti, Aayla, Temple Guard',
         notes: 'auto, all platoons required, Temple Guard required, 100% consistent with Mace lead',
@@ -268,7 +269,7 @@ export const jediLSP4: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Kelleran Beq or JMMW',
+        lead: 'Kelleran Beq or JMMW', gameId: 'KELLERANBEQ',
         leadFull: 'Kelleran Beq',
         others: 'Jocasta Nu, Shaak Ti, Depa Billaba (omicron), Temple Guard',
         notes: 'auto, dont need platoons, very fast',
@@ -280,7 +281,7 @@ export const jediLSP4: dataType[] = [
         omi: true
     },
     {
-        lead: 'GAS',
+        lead: 'GAS', gameId: 'GENERALSKYWALKER',
         leadFull: 'General Anakin Skywalker',
         others: 'Snips, POW, MQG, GMY',
         notes: 'Auto - only have to defeat enemy toons once each because of GAS revive prevention. Fast and easy.',
@@ -292,7 +293,7 @@ export const jediLSP4: dataType[] = [
         creator: 'Mark Green',
     },
     {
-        lead: 'Satele Shan',
+        lead: 'Satele Shan', gameId: 'SATELESHAN',
         leadFull: 'Satele Shan',
         others: 'Jedi Knight Revan, Bastila Shan, Jolee Bindo, +1',
         notes: 'Easy auto',
@@ -301,5 +302,28 @@ export const jediLSP4: dataType[] = [
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
-}
+    }
+    ,
+    {
+        lead: 'Jedi Master Mace Windu', gameId: 'JEDIMASTERMACEWINDU',
+        others: 'Depa (Omni), Temple Guardian, Plo Koon, any 5th',
+        notes: 'Easy Auto',
+        videos: [],
+        icon: '/icons/characters/tex.charui_jedimastermacewindu.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'Nathan Crawford'
+    },
+    {
+        lead: 'JML (GAS)', gameId: 'GRANDMASTERLUKE',
+        others: 'Satele, GAS +2, JKL ideally',
+        notes: 'R10 JML and Satele help a lot here',
+        icon: '/icons/characters/tex.charui_luke_jml.png',
+        videos: [],
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous'
+    }
 ]

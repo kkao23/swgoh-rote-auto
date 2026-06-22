@@ -3,7 +3,7 @@ import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const acklayDSP2: dataType[] = [
     {
-        lead: 'Lord Vader',
+        lead: 'Lord Vader', gameId: 'LORDVADER',
         others: 'Wat, any 3 empire',
         notes: 'Health/Prot tech on LV, hit auto',
         videos: [{ url: 'https://youtu.be/IfeFkchU5fA' }],
@@ -13,7 +13,7 @@ export const acklayDSP2: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Reva',
+        lead: 'Reva', gameId: 'THIRDSISTER',
         others: 'GI, 7S, 5B, 8B',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/EYvM-YOI6Zk' }],
@@ -23,7 +23,7 @@ export const acklayDSP2: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Great Mothers',
+        lead: 'Great Mothers', gameId: 'GREATMOTHERS',
         others: 'Morgan, Merrin, Night Trooper, Death Trooper',
         notes: 'bless morgan, easy auto',
         videos: [{ url: 'https://youtu.be/EssSASzT2qo' }],
@@ -33,7 +33,7 @@ export const acklayDSP2: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'SLKR',
+        lead: 'SLKR', gameId: 'SUPREMELEADERKYLOREN',
         leadFull: 'Supreme Leader Kylo Ren',
         others: 'Dark Rey, whatever other First Order you have',
         notes: 'auto',
@@ -44,7 +44,7 @@ export const acklayDSP2: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'Baylan',
+        lead: 'Baylan', gameId: 'BAYLANSKOLL',
         others: 'Marrok, Shin, Jango, Zam',
         notes: 'omi Marrok, auto, last two any Mercenaries',
         videos: [{ url: 'https://youtu.be/oiaA3D00Efw' }],
@@ -55,10 +55,10 @@ export const acklayDSP2: dataType[] = [
         omi: true
     },
     {
-        lead: 'GG (Wat)',
+        lead: 'GG (Wat)', gameId: 'GRIEVOUS',
         leadFull: 'General Grievous with Wat',
         notes: 'auto, got a bit dicey at the end',
-        videos: [{url: 'https://youtu.be/qpJxPdNjDes'}],
+        videos: [{ url: 'https://youtu.be/qpJxPdNjDes' }],
         icon: '/icons/characters/tex.charui_grievous.png',
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
@@ -66,21 +66,21 @@ export const acklayDSP2: dataType[] = [
         others: 'Magnaguard, STAP, B2, Wat'
     },
     {
-        lead: 'Bane',
+        lead: 'Bane', gameId: 'DARTHBANE',
         others: 'Sith Empire Trooper + Any 3 sith',
         notes: 'auto',
-        videos: [{url: 'https://youtu.be/ufHTEnyIUG8'}],
+        videos: [{ url: 'https://youtu.be/ufHTEnyIUG8' }],
         icon: '/icons/characters/tex.charui_darthbane.png',
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'DTMG',
+        lead: 'DTMG', gameId: 'MOFFGIDEONS3',
         leadFull: 'Dark Trooper Moff Gideon',
         others: 'Scout Trooper, Captain Enoch (omi), Death Trooper, Night Trooper',
         notes: 'auto',
-        videos: [{url: 'https://youtu.be/ORKuex1uEC0'}],
+        videos: [{ url: 'https://youtu.be/ORKuex1uEC0' }],
         icon: '/icons/characters/tex.charui_moffgideons3.png',
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
@@ -88,7 +88,7 @@ export const acklayDSP2: dataType[] = [
         omi: true,
     },
     {
-        lead: 'Tarkin',
+        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN',
         leadFull: 'Grand Moff Tarkin',
         others: 'Appo, CX, Disguised Clone Trooper, Scorch',
         notes: 'Easy auto',
@@ -100,7 +100,7 @@ export const acklayDSP2: dataType[] = [
         omi: true
     },
     {
-        lead: 'DTMG',
+        lead: 'DTMG', gameId: 'MOFFGIDEONS3',
         leadFull: 'Dark Trooper Moff Gideon',
         others: 'Dark Trooper, Night Trooper, Scout Trooper, Enoch',
         notes: 'No omi, always call Dark Trooper for assist, all my guys R7, only Dark Trooper R8, because of RotE platoon.',
@@ -112,22 +112,22 @@ export const acklayDSP2: dataType[] = [
         creator: 'anonymous',
     },
 
-{
-    lead: 'Captain Enoch',
-    others: 'night trooper, death trooper peridea, any other imperial remnants',
-    notes: 'auto',
-    videos: [],
-    icon: '/icons/characters/tex.charui_captainenoch.png',
-    difficulty: difficulty.EASY,
-    successRate: successRate.CONSISTENT,
-    interactionType: [interactionType.AUTO],
-    creator: 'Darth Speedy'
-}
+    {
+        lead: 'Captain Enoch', gameId: 'CAPTAINENOCH',
+        others: 'night trooper, death trooper peridea, any other imperial remnants',
+        notes: 'auto',
+        videos: [],
+        icon: '/icons/characters/tex.charui_captainenoch.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'Darth Speedy'
+    }
 ]
 
 export const reekDSP2: dataType[] = [
     {
-        lead: 'SEE',
+        lead: 'SEE', gameId: 'SITHPALPATINE',
         leadFull: 'Sith Eternal Emperor',
         others: 'Darth Vader, Bane, Malak, any 5th',
         notes: 'auto, Vader and malak are nice, others dont matter',
@@ -138,7 +138,7 @@ export const reekDSP2: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Great Mothers',
+        lead: 'Great Mothers', gameId: 'GREATMOTHERS',
         others: 'Morgan, Merrin, Night Trooper, Death Trooper',
         notes: 'easy auto',
         videos: [{ url: 'https://youtu.be/H4r1Qyq-cr0' }],
@@ -148,7 +148,7 @@ export const reekDSP2: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'SLKR',
+        lead: 'SLKR', gameId: 'SUPREMELEADERKYLOREN',
         others: 'D Rey, KRU, +2 First Order',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/Ynmm55msvFo' }],
@@ -158,7 +158,7 @@ export const reekDSP2: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Reva',
+        lead: 'Reva', gameId: 'THIRDSISTER',
         others: 'GI, 5B, 7S, 8B',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/grC8Q6YjdX4' }],
@@ -168,7 +168,7 @@ export const reekDSP2: dataType[] = [
         icon: '/icons/characters/tex.charui_thirdsister.png'
     },
     {
-        lead: 'Lord Vader',
+        lead: 'Lord Vader', gameId: 'LORDVADER',
         others: 'Shoretrooper, Piett, Thrawn',
         notes: 'auto, any empire works',
         videos: [{ url: 'https://youtu.be/1qQIxB3OQPs' }],
@@ -178,37 +178,37 @@ export const reekDSP2: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Dr Aphra',
+        lead: 'Dr Aphra', gameId: 'DOCTORAPHRA',
         others: 'BT1, Darth Vader, HK47, General Grievous',
         notes: 'auto, 0-0-0 if you have him',
-        videos: [{ url: 'https://youtu.be/Dspj8Z4Q2bA'}],
+        videos: [{ url: 'https://youtu.be/Dspj8Z4Q2bA' }],
         icon: '/icons/characters/tex.charui_doctoraphra.png',
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Bane',
+        lead: 'Bane', gameId: 'DARTHBANE',
         others: 'Any 4 sith',
         notes: 'auto',
-        videos: [{url: 'https://youtu.be/iUuBF8TLBhw'}],
+        videos: [{ url: 'https://youtu.be/iUuBF8TLBhw' }],
         icon: '/icons/characters/tex.charui_darthbane.png',
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'General Grievous',
+        lead: 'General Grievous', gameId: 'GRIEVOUS',
         others: 'B2, STAP, Magna, Nute',
         notes: 'auto',
-        videos: [{url: 'https://youtu.be/Sr96cRiT6r8'}],
+        videos: [{ url: 'https://youtu.be/Sr96cRiT6r8' }],
         icon: '/icons/characters/tex.charui_grievous.png',
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Baylan',
+        lead: 'Baylan', gameId: 'BAYLANSKOLL',
         others: 'Marrok, Shin, Jango, Zam',
         notes: 'omi Marrok, auto, last two any Mercenaries, hope Marrok doesnt get targeted first turn',
         videos: [{ url: 'https://youtu.be/1QqyIDN0yvA' }],
@@ -220,11 +220,11 @@ export const reekDSP2: dataType[] = [
         omi: true
     },
     {
-        lead: 'DTMG',
+        lead: 'DTMG', gameId: 'MOFFGIDEONS3',
         leadFull: 'Dark Trooper Moff Gideon',
         others: 'Scout Trooper, Captain Enoch (omi), Death Trooper, Moff Gideon',
         notes: 'auto',
-        videos: [{url: 'https://youtu.be/NHvqhjH4klk'}],
+        videos: [{ url: 'https://youtu.be/NHvqhjH4klk' }],
         icon: '/icons/characters/tex.charui_moffgideons3.png',
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
@@ -232,7 +232,7 @@ export const reekDSP2: dataType[] = [
         omi: true,
     },
     {
-        lead: 'Tarkin',
+        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN',
         leadFull: 'Grand Moff Tarkin',
         others: 'Appo, CX, Disguised Clone Trooper, Scorch',
         notes: 'easy auto',
@@ -243,22 +243,34 @@ export const reekDSP2: dataType[] = [
         interactionType: [interactionType.AUTO],
         omi: true
     },
-        {
-            lead: 'Emp Palpatine (DVDE)',
-            leadFull: 'Emperor Palpatine',
-            others: 'Emperor Palpatine, Darth Vader Duel\'s End, Admiral Piett, Gar Saxon, Imperial Super Commando',
-            notes: 'Easy fast auto',
-            videos: [{ url: 'https://youtu.be/pqPw3rPCRb0' }],
-            icon: '/icons/characters/tex.charui_palpatineemperor.png',
-            difficulty: difficulty.EASY,
-            successRate: successRate.CONSISTENT,
-            interactionType: [interactionType.AUTO]
-        },
+    {
+        lead: 'Emp Palpatine (DVDE)', gameId: 'EMPERORPALPATINE, VADERDUELSEND',
+        leadFull: 'Emperor Palpatine',
+        others: 'Emperor Palpatine, Darth Vader Duel\'s End, Admiral Piett, Gar Saxon, Imperial Super Commando',
+        notes: 'Easy fast auto',
+        videos: [{ url: 'https://youtu.be/pqPw3rPCRb0' }],
+        icon: '/icons/characters/tex.charui_palpatineemperor.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
+    },
+
+{
+    lead: 'Doctor Aphra (IG90)', gameId: 'DOCTORAPHRA',
+    others: 'IG-90, BT-1, 0-0-0 +1',
+    notes: 'Super easy. Any 5th works, I usually use Sm33 or Grievous. Probably dont need 000',
+    videos: [],
+    icon: '/icons/characters/tex.charui_doctoraphra.png',
+    difficulty: difficulty.EASY,
+    successRate: successRate.USUALLY,
+    interactionType: [interactionType.AUTO],
+    creator: 'anonymous'
+}
 ]
 
 export const nexuDSP2: dataType[] = [
     {
-        lead: 'Reva',
+        lead: 'Reva', gameId: 'THIRDSISTER',
         others: 'GI, 7S, 5B, 8B',
         notes: '2nd special, Auto',
         videos: [{ url: 'https://youtu.be/x3lQbmRbC0U' }],
@@ -268,7 +280,7 @@ export const nexuDSP2: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'SLKR',
+        lead: 'SLKR', gameId: 'SUPREMELEADERKYLOREN',
         leadFull: 'Supreme Leader Kylo Ren',
         others: 'Hux, KRU, Sith Trooper, D Rey',
         notes: 'Poke, auto, DRey makes it easier',
@@ -279,7 +291,7 @@ export const nexuDSP2: dataType[] = [
         interactionType: [interactionType.TARGET_START]
     },
     {
-        lead: 'LV',
+        lead: 'LV', gameId: 'LORDVADER',
         leadFull: 'Lord Vader',
         others: 'Darth Vader, +3 Empire',
         notes: 'I had Piett Tarkin Thrawn',
@@ -289,7 +301,7 @@ export const nexuDSP2: dataType[] = [
         successRate: successRate.CONSISTENT
     },
     {
-        lead: 'SEE',
+        lead: 'SEE', gameId: 'SITHPALPATINE',
         leadFull: 'Sith Eternal Emperor',
         others: 'Wat, Bane, Malak, Darth Revan',
         notes: 'only 1/2. Use him elsewhere if you can',
@@ -299,7 +311,7 @@ export const nexuDSP2: dataType[] = [
         successRate: successRate.FIFTY_FIFTY
     },
     {
-        lead: 'Great Mothers',
+        lead: 'Great Mothers', gameId: 'GREATMOTHERS',
         others: 'Morgan, Merrin, Night Trooper, Death Trooper',
         notes: 'bless morgan, auto',
         videos: [{ url: 'https://youtu.be/HjoqwXNWFNw' }],
@@ -309,7 +321,7 @@ export const nexuDSP2: dataType[] = [
         interactionType: [interactionType.TARGET_START]
     },
     {
-        lead: 'Baylan',
+        lead: 'Baylan', gameId: 'BAYLANSKOLL',
         others: 'Marrok, Shin, Aurra, Zam',
         notes: 'omi Marrok, auto, last two any Mercenaries',
         videos: [{ url: 'https://youtu.be/FoCgJ_A0FNc' }],
@@ -320,7 +332,7 @@ export const nexuDSP2: dataType[] = [
         omi: true
     },
     {
-        lead: 'Tarkin',
+        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN',
         leadFull: 'Grand Moff Tarkin',
         others: 'Appo, CX, Disguised Clone Trooper, +1',
         notes: 'I had Thrawn as 5th but Scorch is ideal. Not sure if I got lucky with them targeting Nightfall first',
@@ -333,11 +345,11 @@ export const nexuDSP2: dataType[] = [
         omi: true
     },
     {
-        lead: 'DTMG',
+        lead: 'DTMG', gameId: 'MOFFGIDEONS3',
         leadFull: 'Dark Trooper Moff Gideon',
         others: 'Scout Trooper, Captain Enoch (omi), Death Trooper, Moff Gideon',
         notes: 'auto',
-        videos: [{url: 'https://youtu.be/9KBjG8jkKFU'}],
+        videos: [{ url: 'https://youtu.be/9KBjG8jkKFU' }],
         icon: '/icons/characters/tex.charui_moffgideons3.png',
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
@@ -345,7 +357,7 @@ export const nexuDSP2: dataType[] = [
         omi: true,
     },
     {
-        lead: 'SEE (Super Sith)',
+        lead: 'SEE (Super Sith)', gameId: 'SITHPALPATINE',
         leadFull: 'Sith Eternal Emperor',
         others: 'Darth Revan, Bane, Malak, the Stranger',
         notes: 'auto',
@@ -359,7 +371,7 @@ export const nexuDSP2: dataType[] = [
 
 export const shipsDSP2: dataType[] = [
     {
-        lead: 'Executrix',
+        lead: 'Executrix', gameId: 'CAPITALSTARDESTROYER',
         others: 'MK6 Interceptor, Vader, Scythe, Defender, Interceptor, Sith Fighter, Tie Fighter',
         notes: 'this is super hard, watch the video',
         videos: [{ url: 'https://www.youtube.com/watch?v=4uXzIQqyh1A', creator: 'kahzgul' }],

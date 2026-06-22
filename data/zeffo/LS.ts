@@ -3,7 +3,7 @@ import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const clonesSM: dataType[] = [
     {
-        lead: 'Rex',
+        lead: 'Rex', gameId: 'REX',
         others: 'Capt Rex, Echo, Arc Trooper, Fives',
         notes: 'Auto, unselect reticule, Reticule on Consular in P2 to make it a bit safer, the woman\'s counterattacks hurt',
         videos: [{ url: 'https://youtu.be/SvUzVopG8a4' }],
@@ -13,7 +13,7 @@ export const clonesSM: dataType[] = [
         interactionType: [interactionType.TARGET_START],
     },
     {
-        lead: 'Hunter',
+        lead: 'Hunter', gameId: 'BADBATCHHUNTER',
         creator: 'MacReady138',
         others: 'Echo, Tech, Wrecker, Omega',
         notes: 'Full auto, no omi needed',
@@ -24,7 +24,7 @@ export const clonesSM: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Cody',
+        lead: 'Cody', gameId: 'CC2224',
         others: 'CRex, Rex, Echo, Fives',
         notes: 'Full auto',
         videos: [{ url: 'https://youtu.be/T-vZqiD9j38?si=_wgI6FHo29r4xNOH', creator: 'MacReady138' }],
@@ -38,7 +38,7 @@ export const clonesSM: dataType[] = [
 
 export const zeffoFleets: dataType[] = [
     {
-        lead: 'Negotiator',
+        lead: 'Negotiator', gameId: 'CAPITALNEGOTIATOR',
         others: 'JKA, Marauder, Y wing, Ahsoka, Fives, Rex',
         notes: 'Auto',
         videos: [{ url: 'https://youtu.be/h4nS7Flp4Zk' }],
@@ -51,7 +51,7 @@ export const zeffoFleets: dataType[] = [
 
 export const zeffoJedi: dataType[] = [
     {
-        lead: 'JKCK (JMK Ezra)',
+        lead: 'JKCK (JMK Ezra)', gameId: 'JEDIKNIGHTCAL, JEDIMASTERKENOBI',
         others: 'JMK, Jedi Knight Luke, Ezra Exile, Kyle',
         notes: 'Omi Kyle, auto',
         videos: [{ url: 'https://youtu.be/bBgHB0q5hmo' }],
@@ -62,7 +62,7 @@ export const zeffoJedi: dataType[] = [
         omi: true
     },
     {
-        lead: 'JKCK (GLAT)',
+        lead: 'JKCK (GLAT)', gameId: 'JEDIKNIGHTCAL, AHSOKATANO',
         others: 'GLAT, Sabine, Hera, Huyang',
         notes: 'Use ezra if possible, auto',
         videos: [{ url: 'https://youtu.be/V_u2XK-W8mA' }],
@@ -72,7 +72,7 @@ export const zeffoJedi: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'JKCK (JML Ezra)',
+        lead: 'JKCK (JML Ezra)', gameId: 'JEDIKNIGHTCAL, GRANDMASTERLUKE',
         others: 'JML, Ezra Exile, JKL, Shaak',
         notes: 'auto, target purge trooper wave 1 then 2S wave 2',
         videos: [{ url: 'https://youtu.be/LqJsWBb5S88' }],
@@ -83,7 +83,7 @@ export const zeffoJedi: dataType[] = [
         targeted: true
     },
     {
-        lead: 'JKCK (Rey Ezra)',
+        lead: 'JKCK (Rey Ezra)', gameId: 'JEDIKNIGHTCAL, GLREY',
         others: 'Rey, Ezra Exile, JKL, Kyle (omi)',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/ixnkyhqL5G0' }],
@@ -94,7 +94,7 @@ export const zeffoJedi: dataType[] = [
         omi: true
     },
     {
-        lead: 'JKCK (Rebels)',
+        lead: 'JKCK (Rebels)', gameId: 'JEDIKNIGHTCAL',
         others: 'Han Solo, Chewie, C3PO, Chewpio',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/ATrk0zrpPLw' }],
@@ -105,7 +105,7 @@ export const zeffoJedi: dataType[] = [
         omi: true
     },
     {
-        lead: 'JKCK (Lead Omi, JML and Ezra)',
+        lead: 'JKCK (Lead Omi, JML and Ezra)', gameId: 'JEDIKNIGHTCAL, GRANDMASTERLUKE',
         leadFull: 'Jedi Knight Cal Kestis with Jedi Master Luke',
         others: 'JML, Ezra Exile, +2',
         notes: 'auto, lead omi mandatory, probably want whirlwind slam as well',
@@ -117,7 +117,7 @@ export const zeffoJedi: dataType[] = [
         omi: true
     },
     {
-        lead: 'JKCK (Lead Omi, JML no Ezra)',
+        lead: 'JKCK (Lead Omi, JML no Ezra)', gameId: 'JEDIKNIGHTCAL, GRANDMASTERLUKE',
         leadFull: 'Jedi Knight Cal Kestis with Jedi Master Luke',
         others: 'JML, GMY, JKL, Shaak ti',
         notes: 'auto, lead omi mandatory, probably want whirlwind slam as well',
@@ -128,11 +128,22 @@ export const zeffoJedi: dataType[] = [
         interactionType: [interactionType.AUTO],
         omi: true
     },
+    {
+        lead: 'JKCK (Lead omi)', gameId: 'JEDIKNIGHTCAL',
+        others: 'Bastilla Shan, JKA, JKLS, Ezra Exile',
+        notes: 'Auto, Kyle kKatarn (omi) is possible instead of JKLS',
+        videos: [],
+        icon: '/icons/characters/tex.charui_calkestis.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'BailWritte'
+    }
 ]
 
 export const zeffoUFU: dataType[] = [
     {
-        lead: 'Rey',
+        lead: 'Rey', gameId: 'GLREY',
         others: 'CAT, Ben, Cere, JTR',
         notes: 'auto, CAT mandatory, maybe like 70% success rate on full auto, higher if you target purge troopers',
         videos: [{ url: 'https://youtu.be/LQbMxA3Oqcs' },],
@@ -142,7 +153,7 @@ export const zeffoUFU: dataType[] = [
         interactionType: [interactionType.TARGET_START]
     },
     {
-        lead: 'Ahsoka Tano (No CAT)',
+        lead: 'Ahsoka Tano (No CAT)', gameId: 'AHSOKATANO, COMMANDERAHSOKA',
         others: 'Cere, Padawan Sabine, Fulcrum +1',
         notes: 'auto, only 1/2. Need CAT for 2/2',
         videos: [{ url: 'https://youtu.be/H4xzXPPNV8Y' }],
@@ -152,7 +163,7 @@ export const zeffoUFU: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Ahsoka Tano (CAT)',
+        lead: 'Ahsoka Tano (CAT)', gameId: 'AHSOKATANO',
         others: 'Cere, Padawan Sabine, Fulcrum, CAT',
         notes: 'auto, target purge trooper in wave 1',
         videos: [{ url: 'https://youtu.be/jTJg8brbeS4' }],
@@ -166,7 +177,7 @@ export const zeffoUFU: dataType[] = [
 
 export const zeffoCombat: dataType[] = [
     {
-        lead: 'Boss Nass',
+        lead: 'Boss Nass', gameId: 'BOSSNASS',
         others: 'other gungans (tarpals omi)',
         notes: 'auto, target humanoids first',
         videos: [{ url: 'https://youtu.be/zR1ZBzkfELU' }],
@@ -178,7 +189,7 @@ export const zeffoCombat: dataType[] = [
         omi: true,
     },
     {
-        lead: 'Finn',
+        lead: 'Finn', gameId: 'FINN',
         leadFull: 'Finn (Omi)',
         others: 'Res Hero Finn, Res Hero Poe, Rose, Zorii',
         notes: 'Auto: Move target off enemy leader til last. Needs Finn Omi',
@@ -191,7 +202,7 @@ export const zeffoCombat: dataType[] = [
         creator: 'anonymous',
     },
     {
-        lead: 'Ahsoka Tano',
+        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO',
         others: 'other spectre',
         notes: 'auto, takes forever, can save Ezra for another mission. Need to take out others before big bot in wave 1',
         videos: [{ url: 'https://youtu.be/TTKvDyv3L1s' }],
@@ -201,7 +212,7 @@ export const zeffoCombat: dataType[] = [
         interactionType: [interactionType.TARGET_START]
     },
     {
-        lead: 'JKL (JML)',
+        lead: 'JKL (JML)', gameId: 'JEDIKNIGHTLUKE, GRANDMASTERLUKE',
         leadFull: 'Jedi Knight Luke with Jedi Master Luke',
         others: 'GMY, JKA, Shaak ti',
         notes: 'zero speed on JKL. full auto but target humanoids, then side bots round 1. round 2 full auto',
@@ -212,7 +223,7 @@ export const zeffoCombat: dataType[] = [
         interactionType: [interactionType.TARGET_START]
     },
     {
-        lead: 'Omega',
+        lead: 'Omega', gameId: 'OMEGAS3',
         others: 'Bad Batch Mercenaries',
         notes: 'auto but dont mark the big bot in wave 1',
         videos: [{ url: 'https://youtu.be/6kIPMiz3jKE' }],
@@ -223,7 +234,7 @@ export const zeffoCombat: dataType[] = [
         omi: true,
     },
     {
-        lead: 'Leia',
+        lead: 'Leia', gameId: 'GLLEIA',
         others: 'R2, Drogan, Han, Chewie',
         notes: 'cant auto, try to spread stuns around',
         videos: [{ url: 'https://youtu.be/kDauBN0BZ0Y' }],
@@ -233,7 +244,7 @@ export const zeffoCombat: dataType[] = [
         interactionType: [interactionType.MANUAL]
     },
     {
-        lead: 'JMMW',
+        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU',
         leadFull: 'Jedi Master Master Windu',
         others: 'Jocasta Nu, Kelleran Beq, Depa Billaba (omicron), Temple Guard',
         notes: 'auto, deselect reticule to speed things up',
@@ -245,7 +256,7 @@ export const zeffoCombat: dataType[] = [
         omi: true
     },
     {
-        lead: 'JMK',
+        lead: 'JMK', gameId: 'JEDIMASTERKENOBI',
         leadFull: 'Jedi Master Luke Skywalker',
         others: 'POW, MQG, GK, Mace',
         notes: 'Dam immunity on GK, go after droids first, second wave save Mace 1Special for guardian with tenacity down. Easy on manual, hit or miss on auto.',
@@ -257,15 +268,70 @@ export const zeffoCombat: dataType[] = [
         targeted: true,
         creator: 'Narorbisath',
     },
-{
-    lead: 'oFinn',
-    others: 'RH Finn, RH Poe, Zorii, Rose',
-    notes: 'Auto',
-    videos: [],
-    icon: '/icons/characters/tex.charui_finn.png',
-    difficulty: difficulty.EASY,
-    successRate: successRate.CONSISTENT,
-    interactionType: [interactionType.AUTO],
-    creator: 'anonymous'
+    {
+        lead: 'oFinn', gameId: 'FINN',
+        others: 'RH Finn, RH Poe, Zorii, Rose',
+        notes: 'Auto',
+        videos: [],
+        icon: '/icons/characters/tex.charui_finn.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous'
+    }
+    ,
+    {
+        lead: 'Boss Nass (no omi)', gameId: 'BOSSNASS',
+        others: 'Gungans',
+        notes: 'Omi not required, inconsistent, keep Phalanx taunting at all times',
+        videos: [],
+        icon: '/icons/characters/tex.charui_bossnass.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.FIFTY_FIFTY,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous',
+    },
+    {
+        lead: 'Rey', gameId: 'GLREY',
+        others: 'Ben Solo, Ezra Bridger (Exile) +2',
+        notes: 'I used Satele and JKL. Ezra nerf does not affect this',
+        videos: [],
+        icon: '/icons/characters/tex.charui_rey_tros.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous'
+    },
+    {
+        lead: 'JKCK (omi only on Lead)', gameId: 'JEDIKNIGHTCAL',
+        others: 'Kyle (omi), Han Solo, C3PO, Chewbacca',
+        notes: 'Full auto without platoons.',
+        icon: '/icons/characters/tex.charui_calkestis.png',
+        videos: [],
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'BailWritte'
+    },
+    {
+        lead: 'Ashoka', gameId: 'AHSOKATANO',
+        others: 'Fulcrum, PWS, Cere, Cal',
+        notes: 'R10 Tano can beat 2/2 full auto. Rest was R7, maybe a 15% chance to lose?',
+        videos: [],
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'DynoTrooper'
+    },
+    {
+        lead: 'JKCK (no omis)', gameId: 'JEDIKNIGHTCAL',
+        others: 'JML, GAS, Ezra Exile, Shaak Ti',
+        notes: 'Focus Purge Trooper in Phase 1 and keep stunned and ability blocked. I played this manually today, but I\'m going to try to auto using this team next ROTE. JKL is in other recommendations, but I\'m usually assigning him to platoons, so I\'d like to share that this comp worked',
+        videos: [],
+        icon: '/icons/characters/tex.charui_calkestis.png',
+        difficulty: difficulty.CAUTION,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.AUTO],
+        creator: 'Brink'
 }
 ]

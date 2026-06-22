@@ -3,7 +3,7 @@ import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const dsInqP4: dataType[] = [
     {
-        lead: 'Reva',
+        lead: 'Reva', gameId: 'THIRDSISTER',
         others: 'Marrok, GI, 7S, 5B',
         notes: 'marrok omi, auto',
         videos: [{ url: 'https://youtu.be/2q1SguWa54Y' }],
@@ -17,7 +17,7 @@ export const dsInqP4: dataType[] = [
 
 export const dsMidRightP4: dataType[] = [
     {
-        lead: 'SEE',
+        lead: 'SEE', gameId: 'SITHPALPATINE',
         leadFull: 'Sith Eternal Emperor',
         others: 'Malak, Dooku, DR, Bane',
         notes: 'auto, Only 1/2',
@@ -28,7 +28,7 @@ export const dsMidRightP4: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Mother Talzin',
+        lead: 'Mother Talzin', gameId: 'MOTHERTALZIN',
         others: 'Asajj, Daka, Zombie, Merrin',
         notes: 'auto',
         videos: [{ url: 'https://www.youtube.com/watch?v=UX67LlXNtBY', creator: 'avengerObs' }],
@@ -38,17 +38,17 @@ export const dsMidRightP4: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'SEE (overrelic Triumvirate)',
+        lead: 'SEE (overrelic Triumvirate)', gameId: 'SITHPALPATINE, DARTHTRAYA',
         leadFull: 'Sith Eternal Emperor',
         others: 'Traya, Malgus, Nihilus, Sion',
         notes: 'Pico has R9 on SEE, Traya and Sion. Not sure if this is reliable with R8',
-        videos: [{url: 'https://youtu.be/ecgbRYyLYn8?si=vXiCr9uxLr9M5eJi', creator: 'pico'}],
+        videos: [{ url: 'https://youtu.be/ecgbRYyLYn8?si=vXiCr9uxLr9M5eJi', creator: 'pico' }],
         icon: '/icons/characters/tex.charui_espalpatine_pre.png',
         difficulty: difficulty.EASY,
         successRate: successRate.NINETY_PERCENT,
     },
     {
-        lead: 'Reva',
+        lead: 'Reva', gameId: 'THIRDSISTER',
         others: 'Marrok, GI, 7S, 5B',
         notes: 'marrok omi, auto, platoons not required',
         videos: [{ url: 'https://youtu.be/w8sQ1bMYvew' }],
@@ -59,7 +59,7 @@ export const dsMidRightP4: dataType[] = [
         omi: true
     },
     {
-        lead: 'Tarkin',
+        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN',
         leadFull: 'Grand Moff Tarkin',
         others: 'Appo, CX, Disguised Clone Trooper',
         notes: 'Scorch makes this easier but Piett works in his place. Need full platoons',
@@ -70,7 +70,7 @@ export const dsMidRightP4: dataType[] = [
         omi: true
     },
     {
-        lead: 'Baylan',
+        lead: 'Baylan', gameId: 'BAYLANSKOLL',
         leadFull: 'Baylan Skoll',
         others: 'Shin, Marrok, Malak, +1',
         notes: 'Really want an off tank to reduce the chance Marrok gets killed early',
@@ -81,32 +81,32 @@ export const dsMidRightP4: dataType[] = [
         omi: true
     },
     {
-        lead: 'SEE (requirement chars)',
+        lead: 'SEE (requirement chars)', gameId: 'SITHPALPATINE',
         leadFull: 'Sith Eternal Emperor',
         others: 'Malak, Dooku, DR, Bane',
         notes: 'need all platoons, Use stranger instead of Dooku to make this consistent',
-        videos: [{url: 'https://youtu.be/oLhPREH3EYs'}],
+        videos: [{ url: 'https://youtu.be/oLhPREH3EYs' }],
         icon: '/icons/characters/tex.charui_espalpatine_pre.png',
         difficulty: difficulty.NO_AUTO,
         successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'Jabba',
+        lead: 'Jabba', gameId: 'JABBATHEHUTT',
         others: 'Boba Fett, Krrsantan, Bossk, +1',
         notes: 'auto, replace Bossk and +1 with Hutt Cartel if possible',
-        videos: [{url: 'https://youtu.be/62v2RzJYplw'}],
+        videos: [{ url: 'https://youtu.be/62v2RzJYplw' }],
         icon: '/icons/characters/tex.charui_jabbathehutt.png',
         difficulty: difficulty.EASY,
         successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'DTMG',
+        lead: 'DTMG', gameId: 'MOFFGIDEONS3',
         leadFull: 'Dark Trooper Moff Gideon',
         others: 'Scout Trooper, Night Trooper, Death Trooper Peridia, Captain Enoch (omi)',
         notes: 'auto, platoons not required',
-        videos: [{url: 'https://youtu.be/T8HbZSubWtI'}],
+        videos: [{ url: 'https://youtu.be/T8HbZSubWtI' }],
         icon: '/icons/characters/tex.charui_moffgideons3.png',
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
@@ -114,7 +114,7 @@ export const dsMidRightP4: dataType[] = [
         omi: true,
     },
     {
-        lead: 'Pirate King Hondo',
+        lead: 'Pirate King Hondo', gameId: 'GLHONDO',
         leadFull: 'Pirate King Hondo Onaka',
         others: 'SM-33, Vane, Brutus, Silvo',
         notes: 'auto, platoons not required',
@@ -125,20 +125,20 @@ export const dsMidRightP4: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-    "lead": "Zuckuss",
-    "leadFull": "Zuckuss",
-    "others": "4Lom, Bossk, Dengar, Boba",
-    "notes": "Om on Zuckuss, R9s on Zuck, 4Lom, Bossk & Boba. Taunt on Bossk as soon as. Foresight on all as soon as",
-    "videos": [],
-    "icon": "/icons/characters/tex.charui_zuckuss.png",
-    "difficulty": difficulty.EASY,
-    "omi": true,
-    "successRate": successRate.USUALLY,
-    "interactionType": [interactionType.AUTO],
-    "creator": "anonymous"
+        "lead": "Zuckuss", "gameId": "ZUCKUSS",
+        "leadFull": "Zuckuss",
+        "others": "4Lom, Bossk, Dengar, Boba",
+        "notes": "Om on Zuckuss, R9s on Zuck, 4Lom, Bossk & Boba. Taunt on Bossk as soon as. Foresight on all as soon as",
+        "videos": [],
+        "icon": "/icons/characters/tex.charui_zuckuss.png",
+        "difficulty": difficulty.EASY,
+        "omi": true,
+        "successRate": successRate.USUALLY,
+        "interactionType": [interactionType.AUTO],
+        "creator": "anonymous"
     },
     {
-        lead: 'SLKR',
+        lead: 'SLKR', gameId: 'SUPREMELEADERKYLOREN',
         others: 'full FO. DS Rey, KRU, Hux, Sith Trooper',
         notes: 'Manual unfortunately required. Platoons required',
         videos: [{ url: 'https://youtu.be/HPiKprKRLfU' }],
@@ -148,7 +148,7 @@ export const dsMidRightP4: dataType[] = [
         interactionType: [interactionType.MANUAL]
     },
     {
-        lead: 'Emp Palpatine (DVDE)',
+        lead: 'Emp Palpatine (DVDE)', gameId: 'EMPERORPALPATINE, VADERDUELSEND',
         leadFull: 'Emperor Palpatine',
         others: 'Emperor Palpatine, Darth Vader Duel\'s End, Admiral Piett, Gar Saxon, Imperial Super Commando',
         notes: 'auto, platoons likely required, may be some luck involved',
@@ -158,56 +158,68 @@ export const dsMidRightP4: dataType[] = [
         successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO]
     },
-    
-{
-    lead: 'GM',
-    others: 'Morgan, Spirit, NT, DTP',
-    notes: 'Auto',
-    videos: [],
-    icon: '/icons/characters/tex.charui_greatmothers.png',
-    difficulty: difficulty.EASY,
-    successRate: successRate.CONSISTENT,
-    interactionType: [interactionType.AUTO],
-    creator: 'anonymous'
-},
-{
-    lead: 'The Stranger',
-    others: 'Starkiller, Baylan, Plo Koon, Scav Rey',
-    notes: 'Baylan instead of Malicos, ahould be fully autoable',
-    videos: [],
-    icon: '/icons/characters/tex.charui_stranger.png',
-    difficulty: difficulty.EASY,
-    successRate: successRate.CONSISTENT,
-    interactionType: [interactionType.AUTO],
-    creator: 'anonymous'
-},
-{
-    lead: 'Aphra',
-    others: 'BT1 Trip IG90 B2',
-    notes: 'auto',
-    videos: [],
-    icon: '/icons/characters/tex.charui_doctoraphra.png',
-    difficulty: difficulty.EASY,
-    successRate: successRate.CONSISTENT,
-    interactionType: [interactionType.AUTO],
-    creator: 'anonymous'
-},
-{
-    lead: 'Zuckuss',
-    others: '4Lom, Bossk, Dengar, Boba',
-    notes: 'Om on Zuckuss, R9s on Zuck, 4Lom, Bossk & Boba. Taunt on Bossk as soon as. Foresight on all as soon as',
-    videos: [],
-    icon: '/icons/characters/tex.charui_zuckuss.png',
-    difficulty: difficulty.EASY,
-    successRate: successRate.CONSISTENT,
-    interactionType: [interactionType.AUTO],
-    creator: 'anonymous'
-}
+
+    {
+        lead: 'GM', gameId: 'GREATMOTHERS',
+        others: 'Morgan, Spirit, NT, DTP',
+        notes: 'Auto',
+        videos: [],
+        icon: '/icons/characters/tex.charui_greatmothers.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous'
+    },
+    {
+        lead: 'The Stranger', gameId: 'STRANGER',
+        others: 'Starkiller, Baylan, Plo Koon, Scav Rey',
+        notes: 'Baylan instead of Malicos, ahould be fully autoable',
+        videos: [],
+        icon: '/icons/characters/tex.charui_stranger.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous'
+    },
+    {
+        lead: 'Aphra', gameId: 'DOCTORAPHRA',
+        others: 'BT1 Trip IG90 B2',
+        notes: 'auto',
+        videos: [],
+        icon: '/icons/characters/tex.charui_doctoraphra.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous'
+    },
+    {
+        lead: 'Zuckuss', gameId: 'ZUCKUSS',
+        others: '4Lom, Bossk, Dengar, Boba',
+        notes: 'Om on Zuckuss, R9s on Zuck, 4Lom, Bossk & Boba. Taunt on Bossk as soon as. Foresight on all as soon as',
+        videos: [],
+        icon: '/icons/characters/tex.charui_zuckuss.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous'
+    }
+    ,
+    {
+        lead: 'Lord Vader', gameId: 'LORDVADER',
+        others: 'DS Clones',
+        notes: 'Auto with tb omi',
+        videos: [],
+        icon: '/icons/characters/tex.charui_lordvader.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous'
+    }
 ]
 
 export const dsSortie: dataType[] = [
     {
-        lead: 'Pirate King Hondo',
+        lead: 'Pirate King Hondo', gameId: 'GLHONDO',
         leadFull: 'Pirate King Hondo Onaka',
         others: 'SM-33, Vane, Brutus, Silvo',
         notes: 'auto, need ult and full platoons',
@@ -218,11 +230,11 @@ export const dsSortie: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'DTMG',
+        lead: 'DTMG', gameId: 'MOFFGIDEONS3',
         leadFull: 'Dark Trooper Moff Gideon',
         others: 'Scout Trooper, Night Trooper, Death Trooper Peridia, Captain Enoch (omi)',
         notes: 'auto',
-        videos: [{url: 'https://youtu.be/MAYTTRm1l-c'}],
+        videos: [{ url: 'https://youtu.be/MAYTTRm1l-c' }],
         icon: '/icons/characters/tex.charui_moffgideons3.png',
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
@@ -230,7 +242,7 @@ export const dsSortie: dataType[] = [
         omi: true,
     },
     {
-        lead: 'LV',
+        lead: 'LV', gameId: 'LORDVADER',
         leadFull: 'Lord Vader',
         others: 'Appo (omicron), DCT, CX-2, Scorch',
         notes: 'auto, kind of dicey, platoons required for 2/2',

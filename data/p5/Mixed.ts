@@ -3,7 +3,7 @@ import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const mixedFleetP5: dataType[] = [
     {
-        lead: 'Leviathan',
+        lead: 'Leviathan', gameId: 'CAPITALLEVIATHAN',
         others: 'FCI, Bomber, Dorito, Assassin, MK6 Interceptor, Scimitar',
         notes: 'auto but pause for MK6 Instakill of RC',
         videos: [{ url: 'https://youtu.be/thD2kZHHTOs' }],
@@ -14,7 +14,7 @@ export const mixedFleetP5: dataType[] = [
         targeted: true
     },
     {
-        lead: 'Executor',
+        lead: 'Executor', gameId: 'CAPITALEXECUTOR',
         others: 'HT, RC, Punishing One, XB, Slave 1, IG2000',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/7cTPzAAqRa4' }],
@@ -24,7 +24,7 @@ export const mixedFleetP5: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Executor (no RC)',
+        lead: 'Executor (no RC)', gameId: 'CAPITALEXECUTOR',
         others: 'HT, Punishing One, XB, Slave 1, IG2000',
         notes: 'auto, untarget HT',
         videos: [{ url: 'https://youtu.be/uDfsGkP-cXM' }],
@@ -35,7 +35,7 @@ export const mixedFleetP5: dataType[] = [
         targeted: true
     },
     {
-        lead: 'Profundity',
+        lead: 'Profundity', gameId: 'CAPITALPROFUNDITY',
         others: 'MF, Outrider, Y wing start, Phantom, Ghost, Biggs, Wedge Reinf',
         notes: 'cant auto until you ult',
         videos: [{ url: 'https://youtu.be/LqmP7WGf1m0' }],
@@ -45,7 +45,7 @@ export const mixedFleetP5: dataType[] = [
         interactionType: [interactionType.MANUAL]
     },
     {
-        lead: 'Profundity (Rogue One)',
+        lead: 'Profundity (Rogue One)', gameId: 'CAPITALPROFUNDITY',
         others: 'MF, Outrider, Y Wing, Rogue One, Phantom, Ghost',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/IHphO3ub9QU' }],
@@ -55,7 +55,7 @@ export const mixedFleetP5: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Profundity (R1 no MF)',
+        lead: 'Profundity (R1 no MF)', gameId: 'CAPITALPROFUNDITY',
         others: 'Outrider, Y Wing, Ghost, Rogue One, Biggs, Phantom',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/j0PmTp3VExM' }],
@@ -68,7 +68,7 @@ export const mixedFleetP5: dataType[] = [
 
 export const mixedCombatTopRightP5: dataType[] = [
     {
-        lead: 'Ahsoka Tano',
+        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO',
         others: 'Any R9s, Fulcrum and Ezra really speed this up',
         notes: 'Auto, target TFP then Stormtrooper Commander, leave Range Troopers for last to speed things up',
         videos: [{ url: 'https://youtu.be/OCGLZm1SJiM' }],
@@ -78,7 +78,7 @@ export const mixedCombatTopRightP5: dataType[] = [
         interactionType: [interactionType.TARGET_START]
     },
     {
-        lead: 'Leia',
+        lead: 'Leia', gameId: 'GLLEIA',
         others: 'Drogan, R2-D2, Fulcrum, Admiral Raddus',
         notes: 'auto, pause at the end of wave 1 to hit the box if possible',
         videos: [{ url: 'https://youtu.be/GdepqEwdaqw' }],
@@ -89,7 +89,7 @@ export const mixedCombatTopRightP5: dataType[] = [
         targeted: true
     },
     {
-        lead: 'LV',
+        lead: 'LV', gameId: 'LORDVADER',
         leadFull: 'Lord Vader',
         others: 'Appo (omicron), DCT, CX-2, Scorch',
         notes: 'Easy full auto',
@@ -101,7 +101,7 @@ export const mixedCombatTopRightP5: dataType[] = [
         omi: true,
     },
     {
-        lead: 'JMK',
+        lead: 'JMK', gameId: 'JEDIMASTERKENOBI',
         others: 'GK, CAT, Snips, GAS',
         notes: '1/2 on auto',
         videos: [{ url: 'https://youtu.be/XNcU95MEEIs' }],
@@ -111,7 +111,7 @@ export const mixedCombatTopRightP5: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Pirate King Hondo',
+        lead: 'Pirate King Hondo', gameId: 'GLHONDO',
         leadFull: 'Pirate King Hondo Onaka',
         others: 'Hondo, Vane, +2',
         notes: 'auto, the more pirates you have R9, the easier it is. You need Vane though. Very laggy',
@@ -122,7 +122,7 @@ export const mixedCombatTopRightP5: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'Omega',
+        lead: 'Omega', gameId: 'OMEGAS3',
         leadFull: 'Omega with Bad Batch Mercenaries',
         others: 'Crosshair, Wrecker, Batcher, Hunter',
         notes: 'auto, can get 2/2 sometimes but not consistently. Pause to target someone at the start of Wave 2',
@@ -135,7 +135,7 @@ export const mixedCombatTopRightP5: dataType[] = [
         targeted: true
     },
     {
-        lead: 'Queen Amidala',
+        lead: 'Queen Amidala', gameId: 'QUEENAMIDALA',
         others: 'POW, MQJ, Snips, GK',
         notes: '1/2 on auto, takes some luck',
         videos: [{ url: 'https://youtu.be/BVFb4v_aoWE' }],
@@ -145,7 +145,7 @@ export const mixedCombatTopRightP5: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'Rey',
+        lead: 'Rey', gameId: 'GLREY',
         others: 'CAT, Ben, Fulcrum, Ezra',
         notes: '1/2 on auto',
         videos: [{ url: 'https://youtu.be/8sCXFMpGvYk' }],
@@ -158,7 +158,7 @@ export const mixedCombatTopRightP5: dataType[] = [
 
 export const mixedCombatBottomLeftP5: dataType[] = [
     {
-        lead: 'Omega',
+        lead: 'Omega', gameId: 'OMEGAS3',
         leadFull: 'Omega with Bad Batch Mercenaries',
         others: 'Crosshair, Wrecker, Batcher, Hunter',
         notes: 'omi Wrecker, only 1/2 on full auto',
@@ -170,7 +170,7 @@ export const mixedCombatBottomLeftP5: dataType[] = [
         omi: true
     },
     {
-        lead: 'JMK',
+        lead: 'JMK', gameId: 'JEDIMASTERKENOBI',
         others: 'GK, CAT, Snips, GAS',
         notes: 'Auto P1 until only one enemy is left, hit box, save CAT instakill for nest in Wave 2',
         videos: [{ url: 'https://youtu.be/3zJzzLSbT1w' }],
@@ -180,7 +180,7 @@ export const mixedCombatBottomLeftP5: dataType[] = [
         interactionType: [interactionType.MANUAL]
     },
     {
-        lead: 'Pirate King Hondo',
+        lead: 'Pirate King Hondo', gameId: 'GLHONDO',
         leadFull: 'Pirate King Hondo Onaka',
         others: 'Hondo, Vane, +2',
         notes: 'auto, the more pirates you have R9, the easier it is. You need Vane though',
@@ -191,7 +191,7 @@ export const mixedCombatBottomLeftP5: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'Leia',
+        lead: 'Leia', gameId: 'GLLEIA',
         others: 'Drogan, R2-D2, Fulcrum, Admiral Raddus',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/2_pnO482ksw' }],
@@ -202,7 +202,7 @@ export const mixedCombatBottomLeftP5: dataType[] = [
         targeted: true
     },
     {
-        lead: 'LV',
+        lead: 'LV', gameId: 'LORDVADER',
         leadFull: 'Lord Vader',
         others: 'Appo (omicron), DCT, CX-2, Scorch',
         notes: 'Easy full auto',
@@ -214,7 +214,7 @@ export const mixedCombatBottomLeftP5: dataType[] = [
         omi: true,
     },
     {
-        lead: 'Queen Amidala',
+        lead: 'Queen Amidala', gameId: 'QUEENAMIDALA',
         others: 'POW, MQJ, +2 Galactic Republic',
         notes: '1/2 on auto, can\'t get 2/2',
         videos: [{ url: 'https://youtu.be/feUjL88H_b8' }],
@@ -224,7 +224,7 @@ export const mixedCombatBottomLeftP5: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'SEE',
+        lead: 'SEE', gameId: 'SITHPALPATINE',
         leadFull: 'Sith Eternal Emperor',
         others: 'Malak, The Stranger, Darth Revan, Bane',
         notes: 'auto, Malak hard required',
@@ -235,7 +235,7 @@ export const mixedCombatBottomLeftP5: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'Ahsoka Tano',
+        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO',
         others: 'Any R9s',
         notes: 'Auto, consistent 1/2 but can\'t beat nest in Wave 2. Any teammates work',
         videos: [{ url: 'https://youtu.be/j9Q3uxdmvv4' }],
@@ -245,7 +245,7 @@ export const mixedCombatBottomLeftP5: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'JMMW',
+        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU',
         leadFull: 'Jedi Master Mace Windu',
         others: 'Depa Billaba (omni), Temple Guard, Jocasta Nu, Shaak Ti',
         notes: 'All r9 is required. Target cargo to dispell DoTs. Hope your team survive. Very hard but doable.',
@@ -259,7 +259,7 @@ export const mixedCombatBottomLeftP5: dataType[] = [
         creator: 'anonymous',
     },
     {
-        lead: 'Rey',
+        lead: 'Rey', gameId: 'GLREY',
         others: 'CAT, Ben, Fulcrum, +1',
         notes: '1/2 on auto',
         videos: [{ url: 'https://youtu.be/f_GaBJp32F0' }],
@@ -269,7 +269,7 @@ export const mixedCombatBottomLeftP5: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'The Stranger',
+        lead: 'The Stranger', gameId: 'STRANGER',
         leadFull: 'The Stranger',
         others: 'Starkiller, Malicos, Fulcrum, General Kenobi',
         notes: '1/2 on auto',
@@ -279,11 +279,34 @@ export const mixedCombatBottomLeftP5: dataType[] = [
         successRate: successRate.UNRELIABLE,
         interactionType: [interactionType.AUTO],
     },
+    {
+        lead: 'Boss Nass', gameId: 'BOSSNASS',
+        others: 'Gungans (with omicron)',
+        notes: 'Consistent auto, just time consuming due to Nest',
+        videos: [],
+        icon: '/icons/characters/tex.charui_bossnass.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'MINI MiloSynn'
+    },
+    {
+        lead: 'Omega x2', gameId: 'OMEGAS3',
+        others: 'OWrecker (Merc), Hunter (merc), Crosshair, Oomega',
+        notes: 'Full auto',
+        videos: [],
+        icon: '/icons/characters/tex.charui_omegas3.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous',
+        omi: true
+    }
 ];
 
 export const jabbaP5: dataType[] = [
     {
-        lead: 'Jabba',
+        lead: 'Jabba', gameId: 'JABBATHEHUTT',
         others: 'Boushh, Krrsantan, +2 filler',
         notes: 'auto, need at least Boushh and Krrsantan to full auto. 1/2 consistent on auto, 2/2 takes some luck or manual play',
         videos: [{ url: 'https://youtu.be/XVMS1A0j1C4' }],
@@ -293,7 +316,7 @@ export const jabbaP5: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'Jabba',
+        lead: 'Jabba', gameId: 'JABBATHEHUTT',
         others: 'Boosh, Krrsantan, Gam Guard (omi), Bossk',
         notes: 'auto, replace Bossk with Hutt Cartel if possible',
         videos: [{ url: 'https://youtu.be/1t_aEW7O9Zk?si=FZVN2wEADXdQHkT2&t=156', creator: 'pico' }],
@@ -303,8 +326,8 @@ export const jabbaP5: dataType[] = [
         interactionType: [interactionType.AUTO],
         omi: true,
     },
-        {
-        lead: 'Jabba (Remnant',
+    {
+        lead: 'Jabba (Remnant', gameId: 'JABBATHEHUTT',
         others: 'Captain Enoch (Omi), Night Trooper, Scout Trooper, DT Peridea',
         notes: 'auto',
         videos: [],
@@ -318,28 +341,28 @@ export const jabbaP5: dataType[] = [
 ]
 
 export const youngHanP5: dataType[] = [
-{
-    lead: 'Ahsoka Tano',
-    leadFull: 'Ahsoka Tano',
-    others: 'Fulcrum, GAS, Young Han, Vandor',
-    notes: 'Get exile off fulcrum asap, keep Han and chewie alive with the box. The Ashokas and Gas will take care of the enemies.',
-    videos: [],
-    icon: '/icons/characters/tex.charui_ahsokaadult.png',
-    difficulty: difficulty.CAUTION,
-    successRate: successRate.USUALLY,
-    interactionType: [interactionType.MANUAL],
-    creator: 'anonymous',
-},
+    {
+        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO, YOUNGHAN',
+        leadFull: 'Ahsoka Tano',
+        others: 'Fulcrum, GAS, Young Han, Vandor',
+        notes: 'Get exile off fulcrum asap, keep Han and chewie alive with the box. The Ashokas and Gas will take care of the enemies.',
+        videos: [],
+        icon: '/icons/characters/tex.charui_ahsokaadult.png',
+        difficulty: difficulty.CAUTION,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.MANUAL],
+        creator: 'anonymous',
+    },
 
-{
-    lead: 'Glat',
-    others: 'Fulcrum, gas, young Han, vandor.',
-    notes: 'Get exile off fulcrum asap, keep Han and chewie alive with the box. The Ashokas and Gas will take care of the enemies.',
-    videos: [],
-    icon: '/icons/characters/tex.charui_ahsokatanogray.png',
-    difficulty: difficulty.EASY,
-    successRate: successRate.CONSISTENT,
-    interactionType: [interactionType.AUTO],
-    creator: 'anonymous'
-}
+    {
+        lead: 'Glat', gameId: 'AHSOKATANO, YOUNGHAN',
+        others: 'Fulcrum, gas, young Han, vandor.',
+        notes: 'Get exile off fulcrum asap, keep Han and chewie alive with the box. The Ashokas and Gas will take care of the enemies.',
+        videos: [],
+        icon: '/icons/characters/tex.charui_ahsokatanogray.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous'
+    }
 ]

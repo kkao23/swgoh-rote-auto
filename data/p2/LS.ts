@@ -3,7 +3,7 @@ import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const shipsLSP2: dataType[] = [
     {
-        lead: 'Profundity (No R1)',
+        lead: 'Profundity (No R1)', gameId: 'CAPITALPROFUNDITY',
         others: 'HMF, Outrider, Y wing, Phantom, Ghost, Biggs, Wedge',
         notes: 'target scythe, auto',
         videos: [{ url: 'https://youtu.be/CkHBVQJmZtk' }],
@@ -14,7 +14,7 @@ export const shipsLSP2: dataType[] = [
         targeted: true
     },
     {
-        lead: 'Profundity (R1, No MF)',
+        lead: 'Profundity (R1, No MF)', gameId: 'CAPITALPROFUNDITY, ROGUEONESHIP',
         others: 'Outrider, Y wing, Ghost, Rogue 1, Phantom',
         notes: 'target scythe, auto',
         videos: [{ url: 'https://youtu.be/dD9Eey116EY' }],
@@ -25,7 +25,7 @@ export const shipsLSP2: dataType[] = [
         targeted: true
     },
     {
-        lead: 'Profundity (R1 and MF)',
+        lead: 'Profundity (R1 and MF)', gameId: 'CAPITALPROFUNDITY, ROGUEONESHIP, MILLENNIUMFALCON',
         others: 'MF, Outrider, Y wing, Rogue 1',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/vZSrJ7_YVJE' }],
@@ -35,23 +35,23 @@ export const shipsLSP2: dataType[] = [
         interactionType: [interactionType.AUTO],
         targeted: true
     }
-,
-{
-    lead: 'Home one',
-    others: 'Starting: Cassian, raven\'s claw, rebel y-wing.',
-    notes: 'Start with b-wing reinforcement and use ultimate home one.',
-    videos: [],
-    icon: '/icons/ships/tex.charui_moncalamarilibertycruiser.png',
-    difficulty: difficulty.EASY,
-    successRate: successRate.CONSISTENT,
-    interactionType: [interactionType.AUTO],
-    creator: 'anonymous'
-}
+    ,
+    {
+        lead: 'Home one', gameId: 'CAPITALMONCALAMARICRUISER, BWINGREBEL',
+        others: 'Starting: Cassian, raven\'s claw, rebel y-wing.',
+        notes: 'Start with b-wing reinforcement and use ultimate home one.',
+        videos: [],
+        icon: '/icons/ships/tex.charui_moncalamarilibertycruiser.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous'
+    }
 ]
 
 export const jediLSP2: dataType[] = [
     {
-        lead: 'JML (Ezra)',
+        lead: 'JML (Ezra)', gameId: 'GRANDMASTERLUKE',
         leadFull: 'Jedi Master Luke with Ezra',
         others: 'Ezra exile, JKL, Kyle Katarn, Shaak Ti',
         notes: 'auto with KK omi',
@@ -63,7 +63,7 @@ export const jediLSP2: dataType[] = [
         omi: true,
     },
     {
-        lead: 'JMK (Ezra)',
+        lead: 'JMK (Ezra)', gameId: 'JEDIMASTERKENOBI',
         leadFull: 'Jedi Master Kenobi with Ezra',
         others: 'Shaak, Ahsoka, Ezra exile, GK',
         notes: 'auto, long, not reliable 2/2',
@@ -74,7 +74,7 @@ export const jediLSP2: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'JML (Ezra)',
+        lead: 'JML (Ezra)', gameId: 'GRANDMASTERLUKE',
         leadFull: 'Jedi Master Luke with Ezra',
         others: 'Ezra exile, any 3 jedi',
         notes: 'auto, I had Bastila, JKA and Plo and it was close at the end. Use better jedi for more consistency',
@@ -85,7 +85,7 @@ export const jediLSP2: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'JKL (Ezra)',
+        lead: 'JKL (Ezra)', gameId: 'JEDIKNIGHTLUKE',
         leadFull: 'Jedi Master Luke with Ezra',
         others: 'Ezra exile, Kyle Katarn, +2 (I had Bastila and JKA)',
         notes: 'deselect reticule, auto with KK omi',
@@ -97,7 +97,7 @@ export const jediLSP2: dataType[] = [
         omi: true,
     },
     {
-        lead: 'Kelleran Beq or JMMW',
+        lead: 'Kelleran Beq or JMMW', gameId: 'KELLERANBEQ',
         leadFull: 'Kelleran Beq or Jedi Master Mace Windu',
         others: 'Jocasta Nu, Shaak Ti, Temple Guard, Depa Billaba (omicron)',
         notes: 'auto',
@@ -109,7 +109,7 @@ export const jediLSP2: dataType[] = [
         omi: true
     },
     {
-        lead: 'Satele Shan',
+        lead: 'Satele Shan', gameId: 'SATELESHAN',
         leadFull: 'Satele Shan',
         others: 'Jedi Knight Revan, Bastila Shan, Jolee Bindo, Juhani',
         notes: 'full auto',
@@ -119,46 +119,46 @@ export const jediLSP2: dataType[] = [
         successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO],
     }
-,
-{
-    lead: 'Jedi Master Mace Windu',
-    others: 'Depa Bilaba, Temple Guard, Jocasta Nu, Aayla Secura',
-    notes: 'Full Auto, no omi required',
-    videos: [],
-    icon: '/icons/characters/tex.charui_jedimastermacewindu.png',
-    difficulty: difficulty.EASY,
-    successRate: successRate.CONSISTENT,
-    interactionType: [interactionType.AUTO],
-    creator: 'anonymous',
-    omi: true
-},
-{
-    lead: 'Jedi master Luke',
-    others: 'Jedi Knight Luke,',
-    notes: 'Auto',
-    videos: [],
-    icon: '/icons/characters/tex.charui_luke_jml.png',
-    difficulty: difficulty.EASY,
-    successRate: successRate.CONSISTENT,
-    interactionType: [interactionType.AUTO],
-    creator: 'Fettpack'
-},
-{
-    lead: 'JMLS',
-    others: 'KB, JKLS, GAS, JKCK',
-    notes: 'Reach ult ASAP, save JKCK insta kill for round 2. JMLS at R9, rest R7.',
-    videos: [],
-    icon: '/icons/characters/tex.charui_luke_jml.png',
-    difficulty: difficulty.EASY,
-    successRate: successRate.CONSISTENT,
-    interactionType: [interactionType.AUTO],
-    creator: 'anonymous'
-}
+    ,
+    {
+        lead: 'Jedi Master Mace Windu', gameId: 'JEDIMASTERMACEWINDU',
+        others: 'Depa Bilaba, Temple Guard, Jocasta Nu, Aayla Secura',
+        notes: 'Full Auto, no omi required',
+        videos: [],
+        icon: '/icons/characters/tex.charui_jedimastermacewindu.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous',
+        omi: true
+    },
+    {
+        lead: 'Jedi master Luke', gameId: 'GRANDMASTERLUKE',
+        others: 'Jedi Knight Luke,',
+        notes: 'Auto',
+        videos: [],
+        icon: '/icons/characters/tex.charui_luke_jml.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'Fettpack'
+    },
+    {
+        lead: 'JMLS', gameId: 'GRANDMASTERLUKE',
+        others: 'KB, JKLS, GAS, JKCK',
+        notes: 'Reach ult ASAP, save JKCK insta kill for round 2. JMLS at R9, rest R7.',
+        videos: [],
+        icon: '/icons/characters/tex.charui_luke_jml.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous'
+    }
 ]
 
 export const leftLSP2: dataType[] = [
     {
-        lead: 'BK Mandalore',
+        lead: 'BK Mandalore', gameId: 'MANDALORBOKATAN',
         leadFull: 'Bo Katan Mandalore',
         others: 'Rey, Paz, Beskar Mando, IG12',
         notes: 'not reliable on auto, only 1/2',
@@ -169,7 +169,7 @@ export const leftLSP2: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Boss Nass',
+        lead: 'Boss Nass', gameId: 'BOSSNASS',
         others: 'Gungans',
         notes: 'easy auto with Tarpals Omi',
         videos: [{ url: 'https://youtu.be/2epBiIcFaG0' }],
@@ -180,7 +180,7 @@ export const leftLSP2: dataType[] = [
         omi: true
     },
     {
-        lead: 'Leia',
+        lead: 'Leia', gameId: 'GLLEIA',
         others: 'Drogan, R2, Han, Chewie',
         notes: 'auto, last two replaceable, can occasionally get unlucky if Leia < R8',
         videos: [{ url: 'https://youtu.be/fFO75yKREfA' }],
@@ -189,10 +189,10 @@ export const leftLSP2: dataType[] = [
         successRate: successRate.NINETY_PERCENT,
     },
     {
-        lead: 'Finn (omi)',
+        lead: 'Finn (omi)', gameId: 'FINN',
         others: 'Poe, Zorii, RH Finn, Rose',
         notes: 'auto',
-        videos: [{url: 'https://youtu.be/-T5DUTDHm6Y?si=enslsLffHD2qyfnW&t=381', creator: 'pico'}],
+        videos: [{ url: 'https://youtu.be/-T5DUTDHm6Y?si=enslsLffHD2qyfnW&t=381', creator: 'pico' }],
         icon: '/icons/characters/tex.charui_finn.png',
         difficulty: difficulty.EASY,
         successRate: successRate.CONSISTENT,
@@ -200,7 +200,7 @@ export const leftLSP2: dataType[] = [
         omi: true,
     },
     {
-        lead: 'QA',
+        lead: 'QA', gameId: 'QUEENAMIDALA',
         leadFull: 'Queen Amidala',
         others: 'POW, MQG, GMY, Shaak Ti',
         notes: 'auto, deselect targeting reticule, need good mods on QA to get decoy out first',
@@ -212,7 +212,7 @@ export const leftLSP2: dataType[] = [
         targeted: true
     },
     {
-        lead: 'Ahsoka Tano',
+        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO',
         others: 'Padawan Sabine, Huyang, Fulcrum, Hera',
         notes: 'auto, can save Ezra for Jedi mission',
         videos: [{ url: 'https://youtu.be/5nRShbbHbAI' }],
@@ -222,7 +222,7 @@ export const leftLSP2: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'JMK',
+        lead: 'JMK', gameId: 'JEDIMASTERKENOBI',
         leadFull: 'Jedi Master Kenobi',
         others: 'Snips, GAS, Padme, CAT',
         notes: 'Deselect reticule. Need to do targeting. Target same enemy to reduce max health',
@@ -234,7 +234,7 @@ export const leftLSP2: dataType[] = [
         targeted: true
     },
     {
-        lead: 'Omega',
+        lead: 'Omega', gameId: 'OMEGAS3',
         leadFull: 'Omega with Bad Batch Mercenaries',
         others: 'Crosshair, Wrecker, Batcher, Hunter',
         notes: 'omi Wrecker, 2/2 on full auto',
@@ -246,7 +246,7 @@ export const leftLSP2: dataType[] = [
         omi: true
     },
     {
-        lead: 'Kelleran Beq or JMMW',
+        lead: 'Kelleran Beq or JMMW', gameId: 'KELLERANBEQ',
         leadFull: 'Kelleran Beq or Jedi Master Mace Windu',
         others: 'Jocasta Nu, Shaak Ti, Temple Guard, Depa Billaba (omicron)',
         notes: 'auto',
@@ -258,22 +258,22 @@ export const leftLSP2: dataType[] = [
         omi: true
     },
     {
-    lead: 'Cassian (Undercover)',
-    others: 'Vel, Kleya, Cinta, Luthen',
-    notes: 'Auto. Vel omicron.',
-    videos: [{ url: 'https://youtu.be/6V03L2DaXvQ' }],
-    icon: '/icons/characters/tex.charui_cassian.png',
-    difficulty: difficulty.EASY,
-    successRate: successRate.CONSISTENT,
-    interactionType: [interactionType.AUTO],
-    creator: 'Mar Trepodi',
-    omi: true
-}
+        lead: 'Cassian (Undercover)', gameId: 'CASSIANUNDERCOVER',
+        others: 'Vel, Kleya, Cinta, Luthen',
+        notes: 'Auto. Vel omicron.',
+        videos: [{ url: 'https://youtu.be/6V03L2DaXvQ' }],
+        icon: '/icons/characters/tex.charui_cassian.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'Mar Trepodi',
+        omi: true
+    }
 ]
 
 export const rightLSP2: dataType[] = [
     {
-        lead: 'Leia',
+        lead: 'Leia', gameId: 'GLLEIA',
         others: 'Drogan, R2, Baze, Capt Rex',
         notes: 'auto, last two replaceable, can occasionally get unlucky',
         videos: [{ url: 'https://youtu.be/Od4-cr8woO8' }],
@@ -283,7 +283,7 @@ export const rightLSP2: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Saw',
+        lead: 'Saw', gameId: 'SAWGERRERA',
         others: 'Luthen, Kyle (o), Cassian, Capt Rex',
         notes: 'only 1/2 auto',
         videos: [{ url: 'https://youtu.be/jX-X3SfQGUI' }],
@@ -294,7 +294,7 @@ export const rightLSP2: dataType[] = [
         omi: true
     },
     {
-        lead: 'JKCK',
+        lead: 'JKCK', gameId: 'JEDIKNIGHTCAL',
         leadFull: 'JKCK (triple o)',
         others: 'Kyle (o), EE, Shaak Ti, JKA',
         notes: 'deselect reticle, full auto. had my EE at R10. Editors Note: Don\'t use JKCK here',
@@ -307,7 +307,7 @@ export const rightLSP2: dataType[] = [
         creator: 'jkat70',
     },
     {
-        lead: 'Ahsoka Tano',
+        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO',
         others: 'Padawan Sabine, Huyang, Fulcrum, +any',
         notes: 'auto, use Hera if available, can save Ezra for Jedi mission',
         videos: [{ url: 'https://youtu.be/aP8-BIqw0jk' }],
@@ -317,7 +317,7 @@ export const rightLSP2: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'JMK',
+        lead: 'JMK', gameId: 'JEDIMASTERKENOBI',
         leadFull: 'Jedi Master Kenobi',
         others: 'Snips, GK, Padme, CAT',
         notes: 'only 1/2 on auto. Deselect reticule',
@@ -328,7 +328,7 @@ export const rightLSP2: dataType[] = [
         interactionType: [interactionType.TARGET_START]
     },
     {
-        lead: 'Boss Nass',
+        lead: 'Boss Nass', gameId: 'BOSSNASS',
         others: 'Gungans',
         notes: 'easy auto with Tarpals Omi',
         videos: [{ url: 'https://youtu.be/AwPI5dywqAQ' }],
@@ -339,7 +339,7 @@ export const rightLSP2: dataType[] = [
         omi: true
     },
     {
-        lead: 'QA (CUP)',
+        lead: 'QA (CUP)', gameId: 'QUEENAMIDALA',
         leadFull: 'Queen Amidala',
         others: 'POW, MQG, Shaak Ti, CUP',
         notes: 'auto, deselect targeting reticule, need good mods on QA to get decoy out first',
@@ -351,7 +351,7 @@ export const rightLSP2: dataType[] = [
         targeted: true
     },
     {
-        lead: 'Omega',
+        lead: 'Omega', gameId: 'OMEGAS3',
         others: 'other Bad Batch Mercenaries',
         notes: '1/2 on auto (no omi)',
         videos: [{ url: 'https://youtu.be/Mnzx15JilpQ' }],
@@ -361,7 +361,7 @@ export const rightLSP2: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Omega',
+        lead: 'Omega', gameId: 'OMEGAS3',
         leadFull: 'Omega with Bad Batch Mercenaries',
         others: 'Crosshair, Wrecker, Batcher, Hunter',
         notes: 'omi Wrecker, auto but more consistent if you manually target wave 2',
@@ -374,7 +374,7 @@ export const rightLSP2: dataType[] = [
         targeted: true
     },
     {
-        lead: 'JMMW',
+        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU',
         leadFull: 'Jedi Master Mace Windu',
         others: 'Jocasta Nu, Kelleran Beq, Temple Guard, Depa Billaba (omicron)',
         notes: 'auto',
@@ -386,32 +386,32 @@ export const rightLSP2: dataType[] = [
         omi: true
     }
     // {
-    //     lead: 'GAS with QA',
+    //     lead: 'GAS with QA', gameId: 'GENERALSKYWALKER, QUEENAMIDALA',
     //     leadFull: 'General Anakin Skywalker with Queen Amidala',
     //     others: 'Fives, Rex, Snips/Echo',
     //     notes: 'auto, Echo is better if not platooned. Need Fives as the off tank',
     //     videos: [{ url: 'https://youtu.be/eOXu2I5QuII' }],
     //     difficulty: difficulty.EASY
     // },
-,
+    ,
 
-{
-    lead: 'Finn (o)',
-    others: 'Poe, Zorii, RH Finn, Rose,',
-    notes: 'Having Finn Omicron is mandatory.',
-    videos: [{ url: 'https://youtu.be/5DLwd0lQEoU?si=cyY4SzcHLpqdhrhR&t=367' }],
-    icon: '/icons/characters/tex.charui_finn.png',
-    difficulty: difficulty.EASY,
-    successRate: successRate.CONSISTENT,
-    interactionType: [interactionType.AUTO],
-    creator: 'anonymous',
-    omi: true
-}
+    {
+        lead: 'Finn (o)', gameId: 'FINN',
+        others: 'Poe, Zorii, RH Finn, Rose,',
+        notes: 'Having Finn Omicron is mandatory.',
+        videos: [{ url: 'https://youtu.be/5DLwd0lQEoU?si=cyY4SzcHLpqdhrhR&t=367' }],
+        icon: '/icons/characters/tex.charui_finn.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous',
+        omi: true
+    }
 ]
 
 export const zeffoUnlock: dataType[] = [
     {
-        lead: 'Cere',
+        lead: 'Cere', gameId: 'CEREJUNDA, JEDIKNIGHTCAL',
         others: 'JKCK',
         notes: 'Two non lead omis on Cal. The white whale of auto',
         videos: [{ url: 'https://youtu.be/Ad_cJiVLLY0' }],

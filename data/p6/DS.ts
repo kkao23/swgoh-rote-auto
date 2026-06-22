@@ -3,7 +3,7 @@ import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const dsGenericLeftP6: dataType[] = [
     {
-        lead: 'SLKR',
+        lead: 'SLKR', gameId: 'SUPREMELEADERKYLOREN',
         leadFull: 'Supreme Leader Kylo Ren',
         others: 'KRU, Dark Rey, +2',
         notes: 'video is on manual, not sure if autoable',
@@ -13,8 +13,8 @@ export const dsGenericLeftP6: dataType[] = [
         successRate: successRate.FIFTY_FIFTY,
         interactionType: [interactionType.MANUAL],
     },
-        {
-        lead: 'Pirate King Hondo',
+    {
+        lead: 'Pirate King Hondo', gameId: 'GLHONDO',
         leadFull: 'Pirate King Hondo Onaka',
         others: 'SM-33, Vane, Hondo, Brutus',
         notes: 'Auto but I did do some targeting at the beginning so Hondo wouldn\'t immediately flee',
@@ -24,6 +24,18 @@ export const dsGenericLeftP6: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.TARGET_START],
     },
+
+{
+    lead: 'Great Mothers', gameId: 'GREATMOTHERS',
+    others: 'Ns spirit, morgan, Dtp, Nt',
+    notes: 'Full auto',
+    videos: [],
+    icon: '/icons/characters/tex.charui_greatmothers.png',
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO],
+    creator: 'anonymous'
+}
 ]
 
 export const dsGenericRightP6: dataType[] = [
@@ -31,7 +43,7 @@ export const dsGenericRightP6: dataType[] = [
 
 export const darthVaderP6: dataType[] = [
     {
-        lead: 'Darth Vader',
+        lead: 'Darth Vader', gameId: 'VADER',
         leadFull: 'Darth Vader',
         others: 'None allowed',
         notes: 'video is on manual, looks like only 1/2 is possible',
@@ -46,7 +58,7 @@ export const darthVaderP6: dataType[] = [
 
 export const idenP6: dataType[] = [
     {
-        lead: 'Iden Versio',
+        lead: 'Iden Versio', gameId: 'IDENVERSIOEMPIRE',
         leadFull: 'Iden Versio',
         others: 'SLKR, Nightsister Zombie, Night Trooper, Death Trooper Peridia',
         notes: 'video is on manual, not sure if autoable',
@@ -60,7 +72,18 @@ export const idenP6: dataType[] = [
 
 export const shipsDSP6: dataType[] = [
     {
-        lead: 'Executrix',
+        lead: 'Executrix (Reaper)', gameId: 'CAPITALSTARDESTROYER',
+        others: 'Tie Fighter, Tie Advanced, Reaper, Tie Interceptor, Tie Defender, Tie Bomber, Scythe',
+        notes: 'surprisingly fast auto, though it looked dicey at first',
+        videos: [{ url: 'https://youtu.be/M00kRpd3y34' }],
+        icon: '/icons/ships/tex.charui_stardestroyer.png',
+        difficulty: difficulty.NO_AUTO,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.AUTO],
+        targeted: true
+    },
+    {
+        lead: 'Executrix', gameId: 'CAPITALSTARDESTROYER',
         others: 'Tie Fighter, Tie Advanced, Scythe, Tie Interceptor, Tie Defender, Tie Bomber',
         notes: 'not an easy mission. I did win even though scythe was destroyed though. don\'t think you can auto this, but maybe with a lot of tries you could get lucky',
         videos: [{ url: 'https://youtu.be/bMyoCDaycQY' }],

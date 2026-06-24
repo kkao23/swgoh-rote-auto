@@ -47,15 +47,28 @@ export function useVoteTracker() {
     isLoading.value = true;
     try {
       const prefix = `${phase}|${alignment}|${position}|`;
-      const { data: items, errors } = await client.models.TeamVote.list();
 
-      if (errors) {
-        console.error("Failed to fetch vote counts:", errors);
-        return;
-      }
+      // Paginate through all DynamoDB records (AppSync list() only returns
+      // one page by default, ~100 items; we have 1400+)
+      let allItems: Awaited<ReturnType<typeof client.models.TeamVote.list>>['data'] = [];
+      let nextToken: string | null = null;
+      do {
+        const result = await client.models.TeamVote.list({
+          limit: 1000,
+          nextToken,
+        });
+
+        if (result.errors) {
+          console.error("Failed to fetch vote counts:", result.errors);
+          return;
+        }
+
+        allItems = allItems.concat(result.data);
+        nextToken = result.nextToken ?? null;
+      } while (nextToken);
 
       const counts: Record<string, number> = {};
-      for (const item of items ?? []) {
+      for (const item of allItems) {
         if (item.teamKey?.startsWith(prefix)) {
           counts[item.teamKey] = item.votes ?? 0;
         }

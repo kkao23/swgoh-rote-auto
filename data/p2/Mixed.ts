@@ -377,6 +377,17 @@ export const mixedP2: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
     },
+    {
+        lead: 'Cobb Vanth', gameId: 'COBBVANTH',
+        leadFull: 'Cobb Vanth',
+        others: 'CUP, Nebit, Jawa Scavenger, +1 Constable',
+        notes: 'auto, no omicron needed',
+        videos: [{ url: 'https://youtu.be/sR3EOL9d2cg?si=tbSlWsbVp5lUFHI3' }],
+        icon: '/icons/characters/tex.charui_cobbvanth.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
+    },
 ]
 
 export const jabbaP2: dataType[] = [

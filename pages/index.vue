@@ -4,9 +4,11 @@ const {
   isFetching,
   fetchError,
   isFetched: playerDataFetched,
+  playerName,
   rosterUnits,
   unitRelicMap,
   fetchRoster: fetchPlayerData,
+  clearRoster,
   hasUnit,
   getRelicTier,
 } = usePlayerRoster()
@@ -46,6 +48,22 @@ provide('playerRoster', {
             @click="fetchPlayerData"
           >
             {{ isFetching ? 'Fetching...' : 'Fetch My Roster' }}
+          </button>
+        </div>
+
+        <!-- Player Name Badge -->
+        <div
+          v-if="playerDataFetched && playerName"
+          class="mt-3 inline-flex items-center gap-2 bg-slate-800 border border-slate-600 rounded-full px-3 py-1 text-sm"
+        >
+          <span class="text-slate-300">{{ playerName }}</span>
+          <button
+            type="button"
+            class="text-slate-400 hover:text-red-400 transition-colors leading-none text-lg"
+            title="Clear roster"
+            @click="clearRoster"
+          >
+            &times;
           </button>
         </div>
 

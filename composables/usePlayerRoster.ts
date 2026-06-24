@@ -8,6 +8,13 @@ export function usePlayerRoster(storageKey = 'roster.allyCode') {
   const rawPlayerData = ref<unknown>(null)
   const isFetched = ref(false)
 
+  const playerName = computed<string | null>(() => {
+    if (!rawPlayerData.value) return null
+    const data = rawPlayerData.value as Record<string, unknown>
+    const events = data?.events as Record<string, unknown> | undefined
+    return (events?.name as string) ?? null
+  })
+
   const rosterUnits = computed<RosterUnit[]>(() => {
     if (!rawPlayerData.value) return []
     const data = rawPlayerData.value as Record<string, unknown>
@@ -40,6 +47,13 @@ export function usePlayerRoster(storageKey = 'roster.allyCode') {
     }
   }
 
+  function clearRoster(): void {
+    allyCode.value = ''
+    rawPlayerData.value = null
+    isFetched.value = false
+    fetchError.value = null
+  }
+
   function hasUnit(gameId: string): boolean {
     return unitRelicMap.value.has(gameId.toLowerCase())
   }
@@ -54,9 +68,11 @@ export function usePlayerRoster(storageKey = 'roster.allyCode') {
     fetchError,
     rawPlayerData,
     isFetched,
+    playerName,
     rosterUnits,
     unitRelicMap,
     fetchRoster,
+    clearRoster,
     hasUnit,
     getRelicTier,
   }

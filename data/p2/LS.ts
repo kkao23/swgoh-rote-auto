@@ -268,7 +268,18 @@ export const leftLSP2: dataType[] = [
         interactionType: [interactionType.AUTO],
         creator: 'Mar Trepodi',
         omi: true
-    }
+    },
+    {
+        lead: 'Cobb Vanth', gameId: 'COBBVANTH',
+        leadFull: 'Cobb Vanth',
+        others: 'CUP, Nebit, Jawa Scavenger, Cara Dune',
+        notes: 'auto, no omicron needed',
+        videos: [{ url: 'https://youtu.be/e558IyT99Xk' }],
+        icon: '/icons/characters/tex.charui_cobbvanth.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
+    },
 ]
 
 export const rightLSP2: dataType[] = [

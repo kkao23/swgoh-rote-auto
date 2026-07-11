@@ -179,7 +179,7 @@ describe('solveDay', () => {
       if (key !== 'glleia') excludeAll.add(key);
     }
     const qira = allMissions.find(m => m.id === 'phase4:mixed:qira')!;
-    const generic = allMissions.find(m => m.id === 'phase4:mixed:generic')!;
+    const generic = allMissions.find(m => m.id === 'phase4:mixed:generic:1')!;
     const result = solveDay([qira.id, generic.id], excludeAll, allMissions, null);
     // Only one character (Leia) available for two missions — one gets assigned, one is unassigned
     expect(result.assignments.length).toBe(1);
@@ -192,10 +192,10 @@ describe('solveDayForPlanets', () => {
   const allMissions = getFlatMissions();
 
   it('expands planet ID into missions and solves', () => {
-    // P4 Kessel (mixed) has: qira, generic, jabba, fleet → 4 missions
+    // P4 Kessel (mixed) has: qira, generic×2, jabba, fleet → 5 missions
     const result = solveDayForPlanets(['phase4:mixed'], new Set(), allMissions, null);
     // Fleet is among the missions but "jabba" only has Jabba team
-    expect(result.assignments.length).toBeGreaterThanOrEqual(3);
+    expect(result.assignments.length).toBeGreaterThanOrEqual(4);
     expect(result.infeasible).toBe(false);
     // All leads should be distinct
     const leads = result.assignments.map(a => a.lead);
@@ -203,9 +203,9 @@ describe('solveDayForPlanets', () => {
   });
 
   it('handles multiple planets', () => {
-    // DS Haven (3 missions) + LS Lothal (3 missions)
+    // DS Haven (inqs + midRight×3 + sortie = 5) + LS Lothal (3) = 8
     const result = solveDayForPlanets(['phase4:ds', 'phase4:ls'], new Set(), allMissions, null);
-    expect(result.assignments.length).toBe(6);
+    expect(result.assignments.length).toBe(8);
     expect(result.infeasible).toBe(false);
   });
 

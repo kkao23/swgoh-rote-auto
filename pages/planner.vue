@@ -104,6 +104,17 @@ const PHASE_DISPLAY: Record<string, string> = {
 };
 const HIDDEN_PHASES = new Set(['Special']);
 
+// Column order: DS(0) | Mixed/Mandalore(1) | LS/Zeffo(2)
+function planetColumn(alignment: string): number {
+  if (alignment.includes('Dark')) return 0;
+  if (alignment === 'Mixed' || alignment === 'Mandalore') return 1;
+  return 2; // Light Side, Zeffo
+}
+
+function getPlanetInColumn(planets: typeof allPlanets.value, col: number) {
+  return planets.find(p => planetColumn(p.alignment) === col) ?? null;
+}
+
 // ── Format helpers ──────────────────────────────────────────────
 function successLabel(rate: string | undefined): string {
   switch (rate) {
@@ -229,65 +240,62 @@ const alignmentColors: Record<string, string> = {
             <h3 class="text-sm font-semibold text-slate-300 mb-2 border-b border-slate-700 pb-1">
               {{ PHASE_DISPLAY[phase] ?? phase }}
             </h3>
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
-              <div
-                v-for="planet in planets"
-                :key="planet.id"
-                class="relative"
-              >
-                <!-- Planet Card -->
-                <div
-                  class="rounded-lg border cursor-pointer transition-all"
-                  :class="planetSelectionCount(activeDay, planet.id).selected > 0
-                    ? 'bg-cyan-900/30 border-cyan-500'
-                    : 'bg-slate-800/50 border-slate-700 hover:bg-slate-800 hover:border-slate-500'"
-                  @click="togglePlanet(activeDay, planet.id)"
-                >
+            <div class="grid grid-cols-3 gap-2">
+              <template v-for="col in [0, 1, 2]" :key="col">
+                <div v-if="getPlanetInColumn(planets, col)" class="relative">
+                  <!-- Planet Card -->
+                  <div
+                    class="rounded-lg border cursor-pointer transition-all"
+                    :class="planetSelectionCount(activeDay, getPlanetInColumn(planets, col)!.id).selected > 0
+                      ? 'bg-cyan-900/30 border-cyan-500'
+                      : 'bg-slate-800/50 border-slate-700 hover:bg-slate-800 hover:border-slate-500'"
+                    @click="togglePlanet(activeDay, getPlanetInColumn(planets, col)!.id)"
+                  >
                   <div class="px-3 py-2.5 flex items-center justify-between">
                     <div class="flex-1 min-w-0">
                       <div class="flex items-center gap-1.5">
                         <!-- Checkbox -->
                         <div
                           class="w-4 h-4 rounded border flex-shrink-0 flex items-center justify-center"
-                          :class="planetSelectionCount(activeDay, planet.id).selected === planetSelectionCount(activeDay, planet.id).total
+                          :class="planetSelectionCount(activeDay, getPlanetInColumn(planets, col)!.id).selected === planetSelectionCount(activeDay, getPlanetInColumn(planets, col)!.id).total
                             ? 'bg-cyan-500 border-cyan-500'
-                            : planetSelectionCount(activeDay, planet.id).selected > 0
+                            : planetSelectionCount(activeDay, getPlanetInColumn(planets, col)!.id).selected > 0
                               ? 'bg-cyan-500/50 border-cyan-500'
                               : 'border-slate-500'"
                         >
                           <UIcon
-                            v-if="planetSelectionCount(activeDay, planet.id).selected > 0"
+                            v-if="planetSelectionCount(activeDay, getPlanetInColumn(planets, col)!.id).selected > 0"
                             name="i-heroicons-check"
                             class="w-3 h-3 text-white"
                           />
                         </div>
                         <span class="text-sm font-medium text-white truncate">
-                          {{ planet.planet }}
+                          {{ getPlanetInColumn(planets, col)!.planet }}
                         </span>
                         <span
                           class="text-xs flex-shrink-0"
-                          :class="alignmentColors[planet.alignment] ?? 'text-slate-400'"
-                        >{{ planet.alignment }}</span>
+                          :class="alignmentColors[getPlanetInColumn(planets, col)!.alignment] ?? 'text-slate-400'"
+                        >{{ getPlanetInColumn(planets, col)!.alignment }}</span>
                       </div>
                     </div>
 
                     <div class="flex items-center gap-2 flex-shrink-0 ml-2">
                       <!-- Selection counter -->
-                      <span class="text-xs" :class="planetSelectionCount(activeDay, planet.id).selected > 0 ? 'text-cyan-400' : 'text-slate-500'">
-                        {{ planetSelectionCount(activeDay, planet.id).selected }}/{{ planetSelectionCount(activeDay, planet.id).total }}
+                      <span class="text-xs" :class="planetSelectionCount(activeDay, getPlanetInColumn(planets, col)!.id).selected > 0 ? 'text-cyan-400' : 'text-slate-500'">
+                        {{ planetSelectionCount(activeDay, getPlanetInColumn(planets, col)!.id).selected }}/{{ planetSelectionCount(activeDay, getPlanetInColumn(planets, col)!.id).total }}
                       </span>
 
                       <!-- Availability warning -->
                       <div
-                        v-if="planetSelectionCount(activeDay, planet.id).selected > 0 && playerDataFetched"
+                        v-if="planetSelectionCount(activeDay, getPlanetInColumn(planets, col)!.id).selected > 0 && playerDataFetched"
                       >
                         <div
-                          v-if="getPlanetAvailability(activeDay, planet.id, rosterUnitMap)?.hasIssues"
+                          v-if="getPlanetAvailability(activeDay, getPlanetInColumn(planets, col)!.id, rosterUnitMap)?.hasIssues"
                           class="flex items-center gap-1 text-amber-400 text-xs"
-                          :title="getPlanetAvailability(activeDay, planet.id, rosterUnitMap)!.unavailableMissions.map(m => m.label).join(', ') + ' unavailable'"
+                          :title="getPlanetAvailability(activeDay, getPlanetInColumn(planets, col)!.id, rosterUnitMap)!.unavailableMissions.map(m => m.label).join(', ') + ' unavailable'"
                         >
                           <UIcon name="i-heroicons-exclamation-triangle" class="w-3.5 h-3.5" />
-                          {{ getPlanetAvailability(activeDay, planet.id, rosterUnitMap)!.unavailableMissions.length }}
+                          {{ getPlanetAvailability(activeDay, getPlanetInColumn(planets, col)!.id, rosterUnitMap)!.unavailableMissions.length }}
                         </div>
                       </div>
 
@@ -295,8 +303,8 @@ const alignmentColors: Record<string, string> = {
                       <UIcon
                         name="i-heroicons-chevron-down"
                         class="w-4 h-4 text-slate-400 hover:text-white transition-colors cursor-pointer"
-                        :class="{ 'rotate-180': expandedPlanet === planet.id }"
-                        @click.stop="togglePlanetDetails(planet.id)"
+                        :class="{ 'rotate-180': expandedPlanet === getPlanetInColumn(planets, col)!.id }"
+                        @click.stop="togglePlanetDetails(getPlanetInColumn(planets, col)!.id)"
                       />
                     </div>
                   </div>
@@ -304,11 +312,11 @@ const alignmentColors: Record<string, string> = {
 
                 <!-- Expanded mission checkboxes -->
                 <div
-                  v-if="expandedPlanet === planet.id"
+                  v-if="expandedPlanet === getPlanetInColumn(planets, col)!.id"
                   class="mt-1 mx-1 bg-slate-800/70 border border-slate-700 rounded-lg p-3"
                 >
                   <label
-                    v-for="mission in planet.missions"
+                    v-for="mission in getPlanetInColumn(planets, col)!.missions"
                     :key="mission.id"
                     class="flex items-center gap-2 py-1.5 cursor-pointer text-xs group"
                     :class="isMissionSelected(activeDay, mission.id) ? 'text-slate-200' : 'text-slate-500'"
@@ -330,7 +338,7 @@ const alignmentColors: Record<string, string> = {
                     <span class="text-slate-600">({{ mission.teams.length }} teams)</span>
                     <!-- Unavailable indicator -->
                     <UIcon
-                      v-if="playerDataFetched && getPlanetAvailability(activeDay, planet.id, rosterUnitMap)?.unavailableMissions.some(m => m.id === mission.id)"
+                      v-if="playerDataFetched && getPlanetAvailability(activeDay, getPlanetInColumn(planets, col)!.id, rosterUnitMap)?.unavailableMissions.some(m => m.id === mission.id)"
                       name="i-heroicons-x-circle"
                       class="w-3.5 h-3.5 text-red-400 ml-auto"
                       title="No valid teams — will be skipped by solver"
@@ -338,6 +346,8 @@ const alignmentColors: Record<string, string> = {
                   </label>
                 </div>
               </div>
+                <div v-else />
+              </template>
             </div>
           </div>
 

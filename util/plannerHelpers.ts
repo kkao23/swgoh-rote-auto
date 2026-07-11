@@ -3,6 +3,7 @@ import type { data as TeamData, DataType } from '~/models/data';
 import { successRate } from '~/models/data';
 import { leads } from '~/data/leads';
 import { GAME_ID_DISPLAY_NAMES, formatGameIdForDisplay } from '~/data/displayNames';
+import { MISSION_MULTIPLIERS } from '~/data/missionMultipliers';
 import { hungarian } from '~/util/solver';
 
 // ── Feature toggles ────────────────────────────────────────────────
@@ -90,6 +91,11 @@ const PHASE_PREFIX: Record<string, string> = {
 
 const ALIGNMENT_LABEL: Record<string, string> = {
   ds: 'Dark Side', ls: 'Light Side', mixed: 'Mixed',
+  zeffo: 'Zeffo', mandalore: 'Mandalore', all: 'Special',
+};
+
+// Sides that should appear as their own phase row, not grouped under parent phase
+const SIDE_PHASE_OVERRIDE: Record<string, string> = {
   zeffo: 'Zeffo', mandalore: 'Mandalore', all: 'Special',
 };
 
@@ -181,20 +187,27 @@ export function getFlatMissions(): FlatMission[] {
     const planetMap = PLANET_MAP[phaseKey] ?? {};
 
     for (const [sideKey, sideData] of Object.entries(phaseData)) {
+      const phase = SIDE_PHASE_OVERRIDE[sideKey] ?? prefix;
       const planet = planetMap[sideKey] ?? sideKey;
 
       for (const [posKey, teams] of Object.entries(sideData)) {
         if (!Array.isArray(teams) || teams.length === 0) continue;
 
-        missions.push({
-          id: `${phaseKey}:${sideKey}:${posKey}`,
-          phase: prefix,
-          alignment: sideKey.toUpperCase(),
-          position: posKey,
-          label: formatPositionLabel(posKey),
-          planet,
-          teams: teams as TeamData[],
-        });
+        const baseId = `${phaseKey}:${sideKey}:${posKey}`;
+        const mult = MISSION_MULTIPLIERS[baseId] ?? 1;
+
+        for (let copy = 1; copy <= mult; copy++) {
+          const suffix = mult > 1 ? `:${copy}` : '';
+          missions.push({
+            id: `${baseId}${suffix}`,
+            phase,
+            alignment: sideKey.toUpperCase(),
+            position: posKey,
+            label: mult > 1 ? `${formatPositionLabel(posKey)} ${copy}` : formatPositionLabel(posKey),
+            planet,
+            teams: teams as TeamData[],
+          });
+        }
       }
     }
   }
@@ -210,27 +223,34 @@ export function getFlatPlanets(): FlatPlanet[] {
     const planetMap = PLANET_MAP[phaseKey] ?? {};
 
     for (const [sideKey, sideData] of Object.entries(phaseData)) {
+      const phase = SIDE_PHASE_OVERRIDE[sideKey] ?? prefix;
       const planetName = planetMap[sideKey] ?? sideKey;
       const missions: FlatMission[] = [];
 
       for (const [posKey, teams] of Object.entries(sideData)) {
         if (!Array.isArray(teams) || teams.length === 0) continue;
 
-        missions.push({
-          id: `${phaseKey}:${sideKey}:${posKey}`,
-          phase: prefix,
-          alignment: sideKey.toUpperCase(),
-          position: posKey,
-          label: formatPositionLabel(posKey),
-          planet: planetName,
-          teams: teams as TeamData[],
-        });
+        const baseId = `${phaseKey}:${sideKey}:${posKey}`;
+        const mult = MISSION_MULTIPLIERS[baseId] ?? 1;
+
+        for (let copy = 1; copy <= mult; copy++) {
+          const suffix = mult > 1 ? `:${copy}` : '';
+          missions.push({
+            id: `${baseId}${suffix}`,
+            phase,
+            alignment: sideKey.toUpperCase(),
+            position: posKey,
+            label: mult > 1 ? `${formatPositionLabel(posKey)} ${copy}` : formatPositionLabel(posKey),
+            planet: planetName,
+            teams: teams as TeamData[],
+          });
+        }
       }
 
       if (missions.length > 0) {
         planets.push({
           id: `${phaseKey}:${sideKey}`,
-          phase: prefix,
+          phase,
           alignment: ALIGNMENT_LABEL[sideKey] ?? sideKey.toUpperCase(),
           planet: planetName,
           missions,

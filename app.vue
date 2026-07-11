@@ -97,10 +97,9 @@ const navigationLinks = [
     // click: () => { trackEvent('nav_click', { target: 'Search' }) }
   },
   {
-    label: 'Tier List',
-    icon: 'i-heroicons-chart-bar',
-    to: '/tier-list',
-    // click: () => { trackEvent('nav_click', { target: 'Tier List' }) }
+    label: 'Planner',
+    icon: 'i-heroicons-clipboard-document-list',
+    to: '/planner',
   },
   {
     label: 'Support',

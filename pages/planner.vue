@@ -96,6 +96,14 @@ const sortedAssignments = computed(() => {
   });
 });
 
+// ── Phase display override ──────────────────────────────────────
+const PHASE_DISPLAY: Record<string, string> = {
+  P1: 'Relic 5', P2: 'Relic 6', P3: 'Relic 7',
+  P4: 'Relic 8', P5: 'Relic 9', P6: 'Relic 9',
+  Zeffo: 'Zeffo', Mandalore: 'Mandalore',
+};
+const HIDDEN_PHASES = new Set(['Special']);
+
 // ── Format helpers ──────────────────────────────────────────────
 function successLabel(rate: string | undefined): string {
   switch (rate) {
@@ -217,9 +225,9 @@ const alignmentColors: Record<string, string> = {
 
         <!-- Day Content -->
         <div class="p-4">
-          <div v-for="[phase, planets] in planetsByPhase" :key="phase" class="mb-5">
+          <div v-for="[phase, planets] in planetsByPhase.filter(([p]) => !HIDDEN_PHASES.has(p))" :key="phase" class="mb-5">
             <h3 class="text-sm font-semibold text-slate-300 mb-2 border-b border-slate-700 pb-1">
-              {{ phase }}
+              {{ PHASE_DISPLAY[phase] ?? phase }}
             </h3>
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-2">
               <div

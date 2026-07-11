@@ -10,7 +10,7 @@ const isMobile = useMediaQuery('(max-width: 768px)')
 
 const isAlertOpen = ref(false)
 const isNoticeHidden = ref(false)
-const isRosterBannerHidden = useLocalStorage('swgoh-rote-roster-banner-hidden', false)
+const isRosterBannerHidden = useLocalStorage('swgoh-rote-planner-banner-hidden', false)
 
 const isSupportOpen = ref(false)
 
@@ -144,9 +144,13 @@ const navigationLinks = [
         </div>
       </div>
       <div v-if="!isRosterBannerHidden" class="mx-4 mb-4 relative">
-        <UAlert icon="i-heroicons-user-group-solid" color="cyan" variant="soft" title="New: Roster Import"
-          description="Enter your ally code to see which teams you can field! Unowned leads are grayed out and sorted to the bottom, and leads below the phase relic requirement are flagged."
-          :ui="{ title: 'text-cyan-100 font-bold', description: 'text-cyan-100' }" />
+        <UAlert icon="i-heroicons-clipboard-document-list" color="cyan" variant="soft" title="New: Squad Planner"
+          :ui="{ title: 'text-cyan-100 font-bold', description: 'text-cyan-100' }">
+          <template #description>
+            Plan your daily missions and get optimal team assignments —
+            <NuxtLink to="/planner" class="underline font-semibold hover:text-white">try the Squad Planner</NuxtLink>
+          </template>
+        </UAlert>
         <button @click="isRosterBannerHidden = true"
           class="absolute top-1.5 right-2 w-5 h-5 flex items-center justify-center rounded-full bg-cyan-100 border border-cyan-400 text-cyan-600 hover:bg-cyan-200 hover:text-cyan-700 transition-colors z-10"
           title="Dismiss notice">

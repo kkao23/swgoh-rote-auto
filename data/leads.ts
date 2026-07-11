@@ -11,6 +11,11 @@ export const leads:lead[] = [
     "aliases": []
   },
   {
+    "id": "cobbvanth",
+    "fullName": "Cobb Vanth",
+    "aliases": ["Cobb"]
+  },
+  {
     "id": "executor",
     "fullName": "Executor",
     "aliases": []

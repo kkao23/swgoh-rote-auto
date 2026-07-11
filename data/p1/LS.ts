@@ -3,7 +3,7 @@ import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const maceKitP1 = [
     {
-        lead: 'Mace (JMK)', gameId: 'MACEWINDU',
+        lead: 'Mace (JMK)', gameId: 'MACEWINDU, JEDIMASTERKENOBI',
         others: 'JMK, GAS, Ahsoka, Kit',
         notes: 'Full auto',
         videos: [{ url: 'https://youtu.be/sC8Srr7-ziM' }],
@@ -35,7 +35,7 @@ export const maceKitP1 = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Mace (JML)', gameId: 'MACEWINDU',
+        lead: 'Mace (JML)', gameId: 'MACEWINDU, GRANDMASTERLUKE',
         leadFull: 'Mace with Jedi Master Luke',
         others: 'JML, JKCK, Kyle, Kit',
         notes: 'Two non lead omis on Cal, omi on Kyle',

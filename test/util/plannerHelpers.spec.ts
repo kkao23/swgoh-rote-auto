@@ -172,7 +172,7 @@ describe('solveDay', () => {
     expect(result.assignments[0].lead.toLowerCase()).toBe('slkr');
   });
 
-  it('detects infeasibility', () => {
+  it('produces partial assignment when not enough unique characters', () => {
     const allLeads = getAllLeads();
     const excludeAll = new Set<string>();
     for (const [key] of allLeads) {
@@ -181,7 +181,10 @@ describe('solveDay', () => {
     const qira = allMissions.find(m => m.id === 'phase4:mixed:qira')!;
     const generic = allMissions.find(m => m.id === 'phase4:mixed:generic')!;
     const result = solveDay([qira.id, generic.id], excludeAll, allMissions, null);
-    expect(result.infeasible).toBe(true);
+    // Only one character (Leia) available for two missions — one gets assigned, one is unassigned
+    expect(result.assignments.length).toBe(1);
+    expect(result.unassigned.length).toBe(1);
+    expect(result.infeasible).toBe(false);
   });
 });
 

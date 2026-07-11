@@ -5,6 +5,11 @@ import { leads } from '~/data/leads';
 import { GAME_ID_DISPLAY_NAMES, formatGameIdForDisplay } from '~/data/displayNames';
 import { hungarian } from '~/util/solver';
 
+// ── Feature toggles ────────────────────────────────────────────────
+
+/** When true, community-submitted teams (with a `creator` field) are excluded from the solver. */
+export const EXCLUDE_COMMUNITY_TEAMS = true;
+
 // ── Types ────────────────────────────────────────────────────────────
 
 export interface FlatMission {
@@ -44,6 +49,8 @@ export interface PlannerAssignment {
   successRate: string | undefined;
   score: number;
   icon: string | undefined;
+  notes: string;
+  videos: { url: string; creator?: string }[];
 }
 
 export interface SolveResult {
@@ -256,6 +263,9 @@ function isTeamEligible(
     if (!ids.every(id => rosterUnitMap.has(id))) return false;
   }
 
+  // Exclude community-submitted teams when toggle is on
+  if (EXCLUDE_COMMUNITY_TEAMS && team.creator) return false;
+
   return true;
 }
 
@@ -342,64 +352,120 @@ export function solveDay(
     };
   }
 
-  // Gather candidates with canonical lead keys
-  const missionCandidates: { missionIdx: number; leadKey: string; team: TeamData }[] = [];
+  // Gather candidates with all character keys (not just lead)
+  const missionCandidates: {
+    missionIdx: number;
+    charKeys: string[];
+    team: TeamData;
+  }[] = [];
 
   available.forEach((mission, mi) => {
     for (const team of mission.teams) {
       if (!isTeamEligible(team, excludedLeads, rosterUnitMap)) continue;
-      missionCandidates.push({
-        missionIdx: mi,
-        leadKey: canonicalLeadKey(team),
-        team,
-      });
+      const keys = team.gameId
+        ? team.gameId.split(',').map(s => s.trim().toLowerCase()).filter(Boolean)
+        : [canonicalLeadKey(team)];
+      missionCandidates.push({ missionIdx: mi, charKeys: keys, team });
     }
   });
 
-  const leadList = [...new Set(missionCandidates.map(c => c.leadKey))];
-
   const n = available.length;
-  const m = leadList.length;
 
-  if (m < n) {
+  // Sort missions by candidate count (fewest first) for branching efficiency
+  const missionOrder = available.map((_, i) => i).sort((a, b) => {
+    const aCount = missionCandidates.filter(c => c.missionIdx === a).length;
+    const bCount = missionCandidates.filter(c => c.missionIdx === b).length;
+    return aCount - bCount;
+  });
+
+  const candidatesByMission = missionOrder.map(mi =>
+    missionCandidates.filter(c => c.missionIdx === mi),
+  );
+
+  // Compute max possible score (ignoring conflicts)
+  let maxPossibleScore = 0;
+  for (let mi = 0; mi < n; mi++) {
+    let best = 0;
+    for (const c of missionCandidates) {
+      if (c.missionIdx === mi) {
+        const s = teamScore(c.team);
+        if (s > best) best = s;
+      }
+    }
+    maxPossibleScore += best;
+  }
+
+  // Backtracking solver — respects all character keys in gameId, not just lead
+  const ASSIGNMENT_BONUS = 1000; // prefer assigning more missions
+
+  let bestScore = -1;
+  let bestAssignments: typeof missionCandidates = [];
+
+  function backtrack(
+    depth: number,
+    usedChars: Set<string>,
+    currentAssignments: typeof missionCandidates,
+    currentScore: number,
+  ) {
+    if (depth === candidatesByMission.length) {
+      if (currentScore > bestScore) {
+        bestScore = currentScore;
+        bestAssignments = [...currentAssignments];
+      }
+      return;
+    }
+
+    // Pruning: max possible additional score
+    let maxRemaining = 0;
+    for (let d = depth; d < candidatesByMission.length; d++) {
+      let bestForMission = 0;
+      for (const c of candidatesByMission[d]) {
+        const s = teamScore(c.team) + ASSIGNMENT_BONUS;
+        if (s > bestForMission) bestForMission = s;
+      }
+      maxRemaining += bestForMission;
+    }
+    if (currentScore + maxRemaining <= bestScore) return;
+
+    // Try each non-conflicting candidate
+    let anyAssigned = false;
+    for (const c of candidatesByMission[depth]) {
+      if (c.charKeys.some(k => usedChars.has(k))) continue;
+
+      anyAssigned = true;
+      const newUsed = new Set(usedChars);
+      for (const k of c.charKeys) newUsed.add(k);
+
+      backtrack(
+        depth + 1,
+        newUsed,
+        [...currentAssignments, c],
+        currentScore + teamScore(c.team) + ASSIGNMENT_BONUS,
+      );
+    }
+
+    // Skip mission if no valid team available
+    if (!anyAssigned) {
+      backtrack(depth + 1, usedChars, currentAssignments, currentScore);
+    }
+  }
+
+  backtrack(0, new Set<string>(), [], 0);
+
+  if (bestAssignments.length === 0) {
     return {
-      assignments: [], totalScore: 0, maxPossibleScore: 0,
+      assignments: [], totalScore: 0, maxPossibleScore,
       unassigned: available, unavailableMissions: unavailable, infeasible: true,
     };
   }
 
-  const leadToIdx = new Map(leadList.map((l, i) => [l, i]));
-  let maxPossibleScore = 0;
-
-  const costMatrix: number[][] = available.map((_, mi) => {
-    const row = new Array(m).fill(INVALID_COST);
-    for (const cand of missionCandidates) {
-      if (cand.missionIdx === mi) {
-        const col = leadToIdx.get(cand.leadKey)!;
-        const cost = teamCost(cand.team);
-        if (cost < row[col]) row[col] = cost;
-      }
-    }
-    const bestCost = Math.min(...row);
-    maxPossibleScore += 100 - bestCost;
-    return row;
-  });
-
-  const assignment = hungarian(costMatrix);
-
+  // Build result
   const assignments: PlannerAssignment[] = [];
   let totalScore = 0;
 
-  for (let mi = 0; mi < n; mi++) {
-    const col = assignment[mi];
-    if (col < 0 || col >= m) continue;
-
-    const mission = available[mi];
-    const leadKey = leadList[col];
-    const cand = missionCandidates.find(c => c.missionIdx === mi && c.leadKey === leadKey);
-    if (!cand) continue;
-
-    const score = teamScore(cand.team);
+  for (const c of bestAssignments) {
+    const mission = available[c.missionIdx];
+    const score = teamScore(c.team);
     totalScore += score;
 
     assignments.push({
@@ -408,12 +474,14 @@ export function solveDay(
       phase: mission.phase,
       alignment: mission.alignment,
       position: mission.position,
-      lead: cand.team.lead,           // original display label (e.g. "Aphra (Rey)")
-      leadFull: cand.team.leadFull,
-      others: cand.team.others,
-      successRate: cand.team.successRate,
+      lead: c.team.lead,
+      leadFull: c.team.leadFull,
+      others: c.team.others,
+      successRate: c.team.successRate,
       score,
-      icon: cand.team.icon,
+      icon: c.team.icon,
+      notes: c.team.notes,
+      videos: c.team.videos || [],
     });
   }
 

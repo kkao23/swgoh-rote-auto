@@ -42,6 +42,7 @@ const {
 const activeDay = ref(0);
 const showExcluded = ref(false);
 const expandedPlanet = ref<string | null>(null);
+const expandedResult = ref<string | null>(null);
 
 const dayLabels = ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6'];
 
@@ -65,17 +66,35 @@ const planetsByPhase = computed(() => {
 });
 
 // ── Actions ────────────────────────────────────────────────────
-function solveCurrentDay() {
+const resultsEl = ref<HTMLElement | null>(null);
+
+async function solveCurrentDay() {
   solve(activeDay.value, rosterUnitMap.value);
+  await nextTick();
+  resultsEl.value?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
-function solveAllDays() {
+async function solveAllDays() {
   solveAll(rosterUnitMap.value);
+  await nextTick();
+  resultsEl.value?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 function togglePlanetDetails(planetId: string) {
   expandedPlanet.value = expandedPlanet.value === planetId ? null : planetId;
 }
+
+// ── Sorted results ──────────────────────────────────────────────
+const sortedAssignments = computed(() => {
+  const result = dayStates.value[activeDay.value]?.result;
+  if (!result) return [];
+  return [...result.assignments].sort((a, b) => {
+    const pa = PHASE_ORDER.indexOf(a.phase);
+    const pb = PHASE_ORDER.indexOf(b.phase);
+    if (pa !== pb) return pa - pb;
+    return a.alignment.localeCompare(b.alignment);
+  });
+});
 
 // ── Format helpers ──────────────────────────────────────────────
 function successLabel(rate: string | undefined): string {
@@ -155,6 +174,25 @@ const alignmentColors: Record<string, string> = {
             </button>
           </div>
         </div>
+      </div>
+
+      <!-- Solve Buttons (top) -->
+      <div class="flex gap-3 mb-5">
+        <button
+          type="button"
+          :disabled="!dayStates[activeDay]?.selectedMissions.length"
+          class="px-4 py-2 text-sm font-semibold rounded-lg bg-cyan-500 text-slate-900 hover:bg-cyan-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+          @click="solveCurrentDay"
+        >
+          Solve Day {{ activeDay + 1 }}
+        </button>
+        <button
+          type="button"
+          class="px-4 py-2 text-sm font-semibold rounded-lg bg-slate-700 text-slate-200 hover:bg-slate-600 transition-colors"
+          @click="solveAllDays"
+        >
+          Solve All Days
+        </button>
       </div>
 
       <!-- Day Tabs -->
@@ -333,6 +371,7 @@ const alignmentColors: Record<string, string> = {
 
       <!-- Results -->
       <div
+        ref="resultsEl"
         v-if="dayStates[activeDay]?.result"
         class="bg-slate-900/70 border border-slate-700 rounded-xl p-5"
       >
@@ -379,42 +418,86 @@ const alignmentColors: Record<string, string> = {
               </tr>
             </thead>
             <tbody class="divide-y divide-slate-800">
-              <tr
-                v-for="a in dayStates[activeDay].result.assignments"
+              <template
+                v-for="a in sortedAssignments"
                 :key="a.missionId"
-                class="text-white"
               >
-                <td class="py-2 pr-2">
-                  <div>{{ a.missionLabel }}</div>
-                  <div class="text-xs text-slate-500 sm:hidden">{{ a.phase }} {{ a.alignment }}</div>
-                </td>
-                <td class="py-2 pr-2 hidden sm:table-cell text-slate-500 text-xs">
-                  {{ a.phase }} {{ a.alignment }}
-                </td>
-                <td class="py-2 pr-2">
-                  <div class="flex items-center gap-2">
-                    <img v-if="a.icon" :src="a.icon" class="h-6 w-6 rounded" />
-                    <span class="text-sm">{{ a.leadFull || a.lead }}</span>
-                  </div>
-                </td>
-                <td class="py-2 pr-2 hidden sm:table-cell text-slate-400 text-xs">
-                  {{ a.others }}
-                </td>
-                <td class="py-2 text-center">
-                  <span
-                    class="inline-block px-2 py-0.5 rounded text-xs font-medium"
-                    :class="{
-                      'bg-green-900/50 text-green-300': a.successRate === 'consistent',
-                      'bg-blue-900/50 text-blue-300': a.successRate === 'ninety-percent',
-                      'bg-yellow-900/50 text-yellow-300': a.successRate === 'usually',
-                      'bg-orange-900/50 text-orange-300': a.successRate === 'fifty-fifty',
-                      'bg-red-900/50 text-red-300': a.successRate === 'unreliable',
-                      'bg-slate-800 text-slate-400': !a.successRate,
-                    }"
-                  >{{ successLabel(a.successRate) }}</span>
-                </td>
-                <td class="py-2 text-right font-mono text-slate-300">{{ a.score }}</td>
-              </tr>
+                <tr
+                  class="text-white cursor-pointer hover:bg-slate-800/50 transition-colors"
+                  @click="expandedResult = expandedResult === a.missionId ? null : a.missionId"
+                >
+                  <td class="py-2 pr-2">
+                    <div class="flex items-center gap-1">
+                      <UIcon
+                        name="i-heroicons-chevron-right"
+                        class="w-3.5 h-3.5 text-slate-500 transition-transform flex-shrink-0"
+                        :class="{ 'rotate-90': expandedResult === a.missionId }"
+                      />
+                      <div>
+                        <div>{{ a.missionLabel }}</div>
+                        <div class="text-xs text-slate-500 sm:hidden">{{ a.phase }} {{ a.alignment }}</div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="py-2 pr-2 hidden sm:table-cell text-slate-500 text-xs">
+                    {{ a.phase }} {{ a.alignment }}
+                  </td>
+                  <td class="py-2 pr-2">
+                    <div class="flex items-center gap-2">
+                      <img v-if="a.icon" :src="a.icon" class="h-6 w-6 rounded" />
+                      <span class="text-sm">{{ a.leadFull || a.lead }}</span>
+                    </div>
+                  </td>
+                  <td class="py-2 pr-2 hidden sm:table-cell text-slate-400 text-xs">
+                    {{ a.others }}
+                  </td>
+                  <td class="py-2 text-center">
+                    <span
+                      class="inline-block px-2 py-0.5 rounded text-xs font-medium"
+                      :class="{
+                        'bg-green-900/50 text-green-300': a.successRate === 'consistent',
+                        'bg-blue-900/50 text-blue-300': a.successRate === 'ninety-percent',
+                        'bg-yellow-900/50 text-yellow-300': a.successRate === 'usually',
+                        'bg-orange-900/50 text-orange-300': a.successRate === 'fifty-fifty',
+                        'bg-red-900/50 text-red-300': a.successRate === 'unreliable',
+                        'bg-slate-800 text-slate-400': !a.successRate,
+                      }"
+                    >{{ successLabel(a.successRate) }}</span>
+                  </td>
+                  <td class="py-2 text-right font-mono text-slate-300">{{ a.score }}</td>
+                </tr>
+                <!-- Expanded detail row -->
+                <tr v-if="expandedResult === a.missionId" class="bg-slate-800/50">
+                  <td :colspan="6" class="px-4 py-3">
+                    <div class="text-sm space-y-2">
+                      <div v-if="a.notes">
+                        <strong class="text-slate-300">Notes:</strong>
+                        <p class="text-slate-400 mt-0.5">{{ a.notes }}</p>
+                      </div>
+                      <div v-if="a.videos && a.videos.length > 0">
+                        <strong class="text-slate-300">Videos:</strong>
+                        <div class="mt-1 space-y-1">
+                          <div v-for="(v, vi) in a.videos" :key="vi">
+                            <a
+                              :href="v.url"
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              class="text-blue-400 hover:text-blue-300 underline text-xs inline-flex items-center gap-1"
+                            >
+                              <img src="/icons/icons8-youtube.svg" alt="YouTube" class="h-4 w-4" />
+                              <span v-if="v.creator">Video by {{ v.creator }}</span>
+                              <span v-else>Watch Video</span>
+                            </a>
+                          </div>
+                        </div>
+                      </div>
+                      <div v-if="!a.notes && (!a.videos || a.videos.length === 0)" class="text-slate-600 text-xs">
+                        No notes or videos for this team.
+                      </div>
+                    </div>
+                  </td>
+                </tr>
+              </template>
             </tbody>
           </table>
         </div>

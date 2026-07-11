@@ -166,22 +166,26 @@ describe('solveDay', () => {
 
   it('respects roster auto-filter', () => {
     const m = allMissions.find(m => m.id === 'phase4:mixed:qira')!;
-    const roster = new Set<string>(['supremeleaderkyloren']);
+    // SLKR team requires SLKR + Qira + L3_37 in its gameId
+    const roster = new Set<string>(['supremeleaderkyloren', 'qira', 'l3_37']);
     const result = solveDay([m.id], new Set(), allMissions, roster);
     expect(result.assignments).toHaveLength(1);
     expect(result.assignments[0].lead.toLowerCase()).toBe('slkr');
   });
 
   it('produces partial assignment when not enough unique characters', () => {
+    // Two copies of the same multiplied mission share a candidate pool —
+    // only one can get the best team, the other gets unassigned if no alternatives exist.
+    const generic1 = allMissions.find(m => m.id === 'phase4:mixed:generic:1')!;
+    const generic2 = allMissions.find(m => m.id === 'phase4:mixed:generic:2')!;
+    // Exclude all leads except one
     const allLeads = getAllLeads();
     const excludeAll = new Set<string>();
     for (const [key] of allLeads) {
       if (key !== 'glleia') excludeAll.add(key);
     }
-    const qira = allMissions.find(m => m.id === 'phase4:mixed:qira')!;
-    const generic = allMissions.find(m => m.id === 'phase4:mixed:generic:1')!;
-    const result = solveDay([qira.id, generic.id], excludeAll, allMissions, null);
-    // Only one character (Leia) available for two missions — one gets assigned, one is unassigned
+    const result = solveDay([generic1.id, generic2.id], excludeAll, allMissions, null);
+    // Only one Leia, two missions — one gets assigned, one is unassigned
     expect(result.assignments.length).toBe(1);
     expect(result.unassigned.length).toBe(1);
     expect(result.infeasible).toBe(false);

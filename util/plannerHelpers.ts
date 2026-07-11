@@ -158,6 +158,14 @@ export function canonicalLeadDisplay(key: string): string {
   return formatGameIdForDisplay(key);
 }
 
+/** All character keys from a team's gameId (comma-separated). */
+function getCharKeys(team: TeamData): string[] {
+  if (team.gameId) {
+    return team.gameId.split(',').map(s => s.trim().toLowerCase()).filter(Boolean);
+  }
+  return [canonicalLeadKey(team)];
+}
+
 // ── Score mapping ────────────────────────────────────────────────────
 
 export function teamScore(team: TeamData): number {
@@ -274,9 +282,10 @@ function isTeamEligible(
   excludedLeads: Set<string>,
   rosterUnitMap?: Set<string> | null,
 ): boolean {
-  // Use canonical key for exclusion check — so "Aphra (Rey)" and "Aphra (SLKR)"
-  // are both excluded when the user excludes the Aphra canonical key.
-  if (excludedLeads.has(canonicalLeadKey(team))) return false;
+  // Check all character keys — any excluded character makes the team ineligible
+  for (const key of getCharKeys(team)) {
+    if (excludedLeads.has(key)) return false;
+  }
 
   if (rosterUnitMap && rosterUnitMap.size > 0 && team.gameId) {
     const ids = team.gameId.split(',').map(s => s.trim().toLowerCase());
@@ -517,42 +526,23 @@ export function solveDay(
 // ── All leads helper ─────────────────────────────────────────────────
 
 /**
- * Get all unique leads across all missions, deduplicated by canonical key.
- * Returns a map from canonical key → display info.
+ * Get all unique characters (leads AND required squad members) across all
+ * missions.  Returns a map from character key → display info, so the
+ * exclusion UI can toggle any character that appears in a team's gameId.
  */
 export function getAllLeads(): Map<string, LeadInfo> {
   const map = new Map<string, LeadInfo>();
   const missions = getFlatMissions();
   for (const m of missions) {
     for (const t of m.teams) {
-      const key = canonicalLeadKey(t);
-      const existing = map.get(key);
-
-      // Prefer the best display name: leadFull > lead (no parens) > canonicalLeadDisplay
-      const newDisplay = bestTeamDisplay(t, key);
-      if (!existing) {
-        map.set(key, { key, display: newDisplay, icon: t.icon });
-      } else {
-        // Prefer entry with an icon
-        if (!existing.icon && t.icon) {
-          existing.icon = t.icon;
+      for (const key of getCharKeys(t)) {
+        if (!map.has(key)) {
+          map.set(key, { key, display: canonicalLeadDisplay(key), icon: t.icon });
+        } else if (!map.get(key)!.icon && t.icon) {
+          map.get(key)!.icon = t.icon;
         }
       }
     }
   }
   return map;
-}
-
-/**
- * Pick the best human-readable display name from a team entry.
- * Prefers: leadFull > short lead (without parentheticals) > derived from canonical key.
- */
-function bestTeamDisplay(team: TeamData, canonicalKey: string): string {
-  if (team.leadFull) return team.leadFull;
-
-  // If lead has no parentheticals, it's already clean
-  if (!team.lead.includes('(')) return team.lead;
-
-  // Fall back to canonical key display
-  return canonicalLeadDisplay(canonicalKey);
 }

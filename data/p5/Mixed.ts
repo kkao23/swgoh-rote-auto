@@ -9,12 +9,12 @@ export const mixedFleetP5: dataType[] = [
         videos: [{ url: 'https://youtu.be/thD2kZHHTOs' }],
         icon: '/icons/ships/tex.charui_leviathan.png',
         difficulty: difficulty.CAUTION,
-        successRate: successRate.NINETY_PERCENT,
+        successRate: successRate.USUALLY,
         interactionType: [interactionType.PAUSE_WAVE2],
         targeted: true
     },
     {
-        lead: 'Executor', gameId: 'CAPITALEXECUTOR',
+        lead: 'Executor', gameId: 'CAPITALEXECUTOR, RAZORCREST',
         others: 'HT, RC, Punishing One, XB, Slave 1, IG2000',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/7cTPzAAqRa4' }],
@@ -35,7 +35,7 @@ export const mixedFleetP5: dataType[] = [
         targeted: true
     },
     {
-        lead: 'Profundity', gameId: 'CAPITALPROFUNDITY',
+        lead: 'Profundity', gameId: 'CAPITALPROFUNDITY, MILLENNIUMFALCON',
         others: 'MF, Outrider, Y wing start, Phantom, Ghost, Biggs, Wedge Reinf',
         notes: 'cant auto until you ult',
         videos: [{ url: 'https://youtu.be/LqmP7WGf1m0' }],
@@ -45,7 +45,7 @@ export const mixedFleetP5: dataType[] = [
         interactionType: [interactionType.MANUAL]
     },
     {
-        lead: 'Profundity (Rogue One)', gameId: 'CAPITALPROFUNDITY, ROGUEONESHIP',
+        lead: 'Profundity (Rogue One)', gameId: 'CAPITALPROFUNDITY, ROGUEONESHIP, MILLENNIUMFALCON',
         others: 'MF, Outrider, Y Wing, Rogue One, Phantom, Ghost',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/IHphO3ub9QU' }],

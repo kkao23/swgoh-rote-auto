@@ -85,7 +85,6 @@ export const qiraMixedP1: dataType[] = [
     difficulty: difficulty.EASY,
     successRate: successRate.CONSISTENT,
     interactionType: [interactionType.AUTO],
-    creator: 'Calski'
 }
 ,
 ]
@@ -220,7 +219,7 @@ export const mixedP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN',
+        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN, APPO, SCORCH, DISGUISEDCLONETROOPER',
         leadFull: 'Grand Moff Tarkin',
         others: 'Appo, CX, Disguised Clone Trooper, Scorch',
         notes: 'Easy auto',

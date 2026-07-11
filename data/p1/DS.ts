@@ -104,7 +104,6 @@ export const leftDSP1: dataType[] = [{
     difficulty: difficulty.EASY,
     successRate: successRate.CONSISTENT,
     interactionType: [interactionType.AUTO],
-    creator: 'anonymous'
 }
 ,
 {
@@ -228,7 +227,7 @@ export const bottomDSP1: dataType[] = [{
     interactionType: [interactionType.AUTO],
 },
 {
-    lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN',
+    lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN, APPO, SCORCH, DISGUISEDCLONETROOPER',
     leadFull: 'Tarkin (Clones)',
     others: 'DS Clones (Appo Omi)',
     notes: 'Auto',
@@ -243,14 +242,13 @@ export const bottomDSP1: dataType[] = [{
 {
     lead: 'Pirate King Hondo', gameId: 'GLHONDO',
     leadFull: 'Pirate King Hondo Onaka',
-    others: 'Smee, vane, any',
-    notes: 'Do not use baylan mercs on auto',
+    others: 'SM33, Vane, any',
+    notes: 'easy auto',
     videos: [],
     icon: '/icons/characters/tex.charui_glhondo.png',
     difficulty: difficulty.VERY_EASY,
     successRate: successRate.CONSISTENT,
     interactionType: [interactionType.AUTO],
-    creator: 'anonymous',
 },
 
 {

@@ -33,7 +33,7 @@ export const lsShipsP4: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Home One (MF)', gameId: 'CAPITALMONCALAMARICRUISER',
+        lead: 'Home One (MF)', gameId: 'CAPITALMONCALAMARICRUISER, MILLENNIUMFALCON',
         others: 'MF, Y Wing, Ravens Claw, Outrider, Phantom, Ghost, Cassian',
         notes: 'auto, Dont use Ghost if required in Mixed',
         videos: [{ url: 'https://youtu.be/67erqo3zyvA' }],
@@ -131,12 +131,25 @@ export const lsGenericP4: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Kelleran Beq or JMMW', gameId: 'KELLERANBEQ',
-        leadFull: 'Kelleran Beq or Jedi Master Master Windu',
+        lead: 'Kelleran Beq', gameId: 'KELLERANBEQ',
+        leadFull: 'Kelleran Beq',
         others: 'Jocasta Nu, Shaak Ti, Depa Billaba (omicron), Temple Guard',
         notes: 'auto, dont need platoons, very fast',
         videos: [{ url: 'https://youtu.be/wRYwjDu3F5Y' }],
         icon: '/icons/characters/tex.charui_kelleranbeq.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        omi: true
+    }
+    ,
+    {
+        lead: 'Jedi Master Mace Windu', gameId: 'JEDIMASTERMACEWINDU',
+        leadFull: 'Jedi Master Mace Windu',
+        others: 'Jocasta Nu, Shaak Ti, Depa Billaba (omicron), Temple Guard',
+        notes: 'auto, dont need platoons, very fast',
+        videos: [{ url: 'https://youtu.be/wRYwjDu3F5Y' }],
+        icon: '/icons/characters/tex.charui_jedimastermacewindu.png',
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
@@ -155,7 +168,7 @@ export const lsGenericP4: dataType[] = [
         creator: 'LQ'
     },
     {
-        lead: 'oFinn', gameId: 'FINN',
+        lead: 'Finn', gameId: 'FINN',
         others: 'RH Finn, RH Poe, Zorii, Rose',
         notes: 'Auto',
         videos: [],
@@ -163,10 +176,11 @@ export const lsGenericP4: dataType[] = [
         difficulty: difficulty.EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
-        creator: 'anonymous'
+        creator: 'anonymous',
+        omi: true
     },
     {
-        lead: 'Rey (GL)', gameId: 'GLREY',
+        lead: 'Rey', gameId: 'GLREY',
         others: 'BAM, Yoda, Han Solo, GK',
         notes: 'No Auto,Kills with Rey and BAM(20 Whistling Birds)',
         videos: [],
@@ -191,31 +205,31 @@ export const lsGenericP4: dataType[] = [
 ]
 
 export const jediLSP4: dataType[] = [
+    // {
+    //     lead: 'JMK (Ezra)', gameId: 'JEDIMASTERKENOBI',
+    //     leadFull: 'Jedi Master Kenobi with Ezra Exile',
+    //     others: 'GAS, Ahsoka, Ezra Exile, GK',
+    //     notes: 'auto',
+    //     videos: [{ url: 'https://youtu.be/nVtmzJh4xlk0' }],
+    //     icon: '/icons/characters/tex.charui_globiwan.png',
+    //     difficulty: difficulty.VERY_EASY,
+    //     successRate: successRate.CONSISTENT,
+    //     interactionType: [interactionType.AUTO]
+    // },
+    // {
+    //     lead: 'JML (Ezra)', gameId: 'GRANDMASTERLUKE',
+    //     leadFull: 'Jedi Master Luke with Ezra Exile',
+    //     others: 'Ezra Exile, GAS, GMY, Plo',
+    //     notes: 'auto, replace Plo if possible',
+    //     videos: [{ url: 'https://youtu.be/OcVbpC8FHmE' }],
+    //     icon: '/icons/characters/tex.charui_luke_jml.png',
+    //     difficulty: difficulty.VERY_EASY,
+    //     successRate: successRate.CONSISTENT,
+    //     interactionType: [interactionType.AUTO]
+    // },
     {
-        lead: 'JMK (Ezra)', gameId: 'JEDIMASTERKENOBI',
-        leadFull: 'Jedi Master Kenobi with Ezra Exile',
-        others: 'GAS, Ahsoka, Ezra Exile, GK',
-        notes: 'auto',
-        videos: [{ url: 'https://youtu.be/nVtmzJh4xlk0' }],
-        icon: '/icons/characters/tex.charui_globiwan.png',
-        difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO]
-    },
-    {
-        lead: 'JML (Ezra)', gameId: 'GRANDMASTERLUKE',
-        leadFull: 'Jedi Master Luke with Ezra Exile',
-        others: 'Ezra Exile, GAS, GMY, Plo',
-        notes: 'auto, replace Plo if possible',
-        videos: [{ url: 'https://youtu.be/OcVbpC8FHmE' }],
-        icon: '/icons/characters/tex.charui_luke_jml.png',
-        difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO]
-    },
-    {
-        lead: 'JMK (no Ezra, no bros)', gameId: 'JEDIMASTERKENOBI',
-        leadFull: 'Jedi Master Kenobi without Ezra Exile or POW/MQJ',
+        lead: 'JMK (no bros)', gameId: 'JEDIMASTERKENOBI',
+        leadFull: 'Jedi Master Kenobi without POW/MQJ',
         others: 'GAS, Ahsoka, GK, Plo',
         notes: 'auto, only 1/2',
         videos: [{ url: 'https://youtu.be/nzJ8oUrygqc' }],
@@ -225,8 +239,8 @@ export const jediLSP4: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'JML (bros, no Ezra)', gameId: 'GRANDMASTERLUKE',
-        leadFull: 'Jedi Master Luke without Ezra Exile with POW/MQJ',
+        lead: 'JML (bros)', gameId: 'GRANDMASTERLUKE, PADAWANOBIWAN, MASTERQUIGON',
+        leadFull: 'Jedi Master Luke with POW/MQJ',
         others: 'GAS, GMY, POW, MQG',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/5tJavs7rly4' }],
@@ -236,8 +250,8 @@ export const jediLSP4: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'JMK (bros, no Ezra)', gameId: 'JEDIMASTERKENOBI',
-        leadFull: 'Jedi Master Kenobi without Ezra Exile with POW/MQJ',
+        lead: 'JMK (bros)', gameId: 'JEDIMASTERKENOBI, PADAWANOBIWAN, MASTERQUIGON',
+        leadFull: 'Jedi Master Kenobi with Padawan Obi Wan and Master Qui Gon',
         others: 'GAS, GK, POW, MQG',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/9ZKHdxBljyc' }],
@@ -247,7 +261,7 @@ export const jediLSP4: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'JML (KK Omi)', gameId: 'GRANDMASTERLUKE',
+        lead: 'JML (KK Omi)', gameId: 'GRANDMASTERLUKE, KYLEKATARN',
         leadFull: 'Jedi Master Luke with Kyle Katarn Omi',
         others: 'Kyle Katarn (omi), GAS, GMY, GK',
         notes: 'auto, GMY and GK are likely replaceable',
@@ -258,7 +272,7 @@ export const jediLSP4: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Kelleran Beq or JMMW', gameId: 'KELLERANBEQ',
+        lead: 'Kelleran Beq', gameId: 'KELLERANBEQ',
         leadFull: 'Kelleran Beq',
         others: 'Jocasta Nu, Shaak Ti, Aayla, Temple Guard',
         notes: 'auto, all platoons required, Temple Guard required, 100% consistent with Mace lead',
@@ -269,12 +283,12 @@ export const jediLSP4: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Kelleran Beq or JMMW', gameId: 'KELLERANBEQ',
-        leadFull: 'Kelleran Beq',
+        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU',
+        leadFull: 'Jedi Master Mace Windu',
         others: 'Jocasta Nu, Shaak Ti, Depa Billaba (omicron), Temple Guard',
         notes: 'auto, dont need platoons, very fast',
         videos: [{ url: 'https://youtu.be/vH6YIiUsXQ4' }],
-        icon: '/icons/characters/tex.charui_kelleranbeq.png',
+        icon: '/icons/characters/tex.charui_jedimastermacewindu.png',
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],

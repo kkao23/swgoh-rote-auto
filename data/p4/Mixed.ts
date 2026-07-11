@@ -3,7 +3,7 @@ import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const mixedQiraP4: dataType[] = [
     {
-        lead: 'Leia', gameId: 'GLLEIA',
+        lead: 'Leia', gameId: 'GLLEIA, QIRA, L3_37',
         others: 'R2, Drogan, Qira, L3',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/rnj73wSUTrE' }],
@@ -13,7 +13,7 @@ export const mixedQiraP4: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Baylan', gameId: 'BAYLANSKOLL',
+        lead: 'Baylan', gameId: 'BAYLANSKOLL, QIRA, L3_37',
         others: 'Shin, Marrok (omi), Qira, L3',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/nBP08l-0Lj4' }],
@@ -24,7 +24,7 @@ export const mixedQiraP4: dataType[] = [
         omi: true
     },
     {
-        lead: 'SLKR', gameId: 'SUPREMELEADERKYLOREN',
+        lead: 'SLKR', gameId: 'SUPREMELEADERKYLOREN, QIRA, L3_37',
         leadFull: 'Supreme Leader Kylo Ren',
         others: 'DRey, Malak, Qira, L3',
         notes: 'poke, auto',
@@ -35,7 +35,7 @@ export const mixedQiraP4: dataType[] = [
         interactionType: [interactionType.TARGET_START]
     },
     {
-        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO',
+        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO, QIRA, L3_37',
         others: 'Fulcrum, any 5th',
         notes: 'easy auto',
         videos: [{ url: 'https://youtu.be/Rmd5Ppxxyfs' }],
@@ -45,7 +45,7 @@ export const mixedQiraP4: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'JMK', gameId: 'JEDIMASTERKENOBI',
+        lead: 'JMK', gameId: 'JEDIMASTERKENOBI, QIRA, L3_37',
         leadFull: 'Jedi Master Kenobi',
         others: 'Snips, CAT',
         notes: 'Wave 2 was a bit dicey, still won on full auto though. May require R9?',
@@ -56,7 +56,7 @@ export const mixedQiraP4: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'Pirate King Hondo', gameId: 'GLHONDO',
+        lead: 'Pirate King Hondo', gameId: 'GLHONDO, QIRA, L3_37',
         leadFull: 'Pirate King Hondo Onaka',
         others: 'Hondo, Vane',
         notes: 'easy full auto',
@@ -67,7 +67,7 @@ export const mixedQiraP4: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'SEE', gameId: 'SITHPALPATINE',
+        lead: 'SEE', gameId: 'SITHPALPATINE, QIRA, L3_37',
         leadFull: 'Sith Eternal Emperor',
         others: 'Malak, Darth Revan',
         notes: 'auto',
@@ -78,7 +78,7 @@ export const mixedQiraP4: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Rey', gameId: 'GLREY',
+        lead: 'Rey', gameId: 'GLREY, QIRA, L3_37',
         leadFull: 'Rey with Resistance',
         others: 'Ben, Scavenger Rey',
         notes: 'auto',
@@ -227,7 +227,7 @@ export const mixedGenericP4: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN',
+        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN, APPO, SCORCH, DISGUISEDCLONETROOPER',
         leadFull: 'Grand Moff Tarkin',
         others: 'Appo (omicron), CX, Disguised Clone Trooper, Scorch',
         notes: 'You do want the full complement of clones here',
@@ -356,7 +356,7 @@ export const mixedGenericP4: dataType[] = [
 
 export const jabbaP4: dataType[] = [
     {
-        lead: 'Jabba', gameId: 'JABBATHEHUTT',
+        lead: 'Jabba', gameId: 'JABBATHEHUTT, KRRSANTAN',
         others: 'Boba, Krrsantan, +2',
         notes: 'Need Krrsantan, the more Hutt Cartel the better. Auto',
         videos: [{ url: 'https://youtu.be/pljI9oJdJEo' }],

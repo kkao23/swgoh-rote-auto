@@ -291,7 +291,7 @@ export const lsRightP3: dataType[] = [
 
 export const sawP3: dataType[] = [
     {
-        lead: 'Saw (Drogan and Kyle)', gameId: 'SAWGERRERA',
+        lead: 'Saw (Drogan and Kyle)', gameId: 'SAWGERRERA, CAPTAINDROGAN, KYLEKATARN, CAPTAINREX, LUTHENRAEL',
         leadFull: 'Saw with Drogan and Kyle',
         others: 'Capt Rex, Luthen, Drogan, Kyle',
         notes: 'auto, deselect targeting reticule at the beginning',
@@ -304,7 +304,7 @@ export const sawP3: dataType[] = [
         omi: true
     },
     {
-        lead: 'Saw (Drogan)', gameId: 'SAWGERRERA',
+        lead: 'Saw (Drogan)', gameId: 'SAWGERRERA, CAPTAINDROGAN, CAPTAINREX, LUTHENRAEL',
         leadFull: 'Saw with Drogan',
         others: 'Capt Rex, Luthen, Cassian, Drogan',
         notes: 'auto, target purge troopers',
@@ -316,7 +316,7 @@ export const sawP3: dataType[] = [
         targeted: true
     },
     {
-        lead: 'Saw (Kyle)', gameId: 'SAWGERRERA',
+        lead: 'Saw (Kyle)', gameId: 'SAWGERRERA, KYLEKATARN, CAPTAINREX, LUTHENRAEL',
         leadFull: 'Saw with Kyle Katarn',
         others: 'Capt Rex, Luthen, Cassian, Kyle (o)',
         notes: 'auto, target purge troopers',
@@ -342,7 +342,7 @@ export const sawP3: dataType[] = [
     }
     ,
     {
-        lead: 'Saw (Kleya)', gameId: 'SAWGERRERA, KLEYA',
+        lead: 'Saw (Kleya)', gameId: 'SAWGERRERA, KLEYA, LUTHENRAEL',
         others: 'Luthen, Kleya, SRP, Kyle',
         notes: 'Make sure keen stays on SRP. Reapply it each time he revives and don\'t use it otherwise. Easy',
         videos: [],
@@ -399,7 +399,7 @@ export const wookies: dataType[] = [
 
 export const shipsLSP3: dataType[] = [
     {
-        lead: 'Profundity (no MF, Rogue One)', gameId: 'CAPITALPROFUNDITY',
+        lead: 'Profundity (no MF, Rogue One)', gameId: 'CAPITALPROFUNDITY, ROGUEONESHIP',
         others: 'Outrider, Y wing, Ghost, Rogue One, Biggs, Phantom, Wedge',
         notes: 'If you have to platoon MF. Targeted auto. Keep reticule on Scythe. Biggs should be 2nd reinforcement',
         videos: [{ url: 'https://youtu.be/mpUiTI-GfP0' }],

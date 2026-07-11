@@ -45,7 +45,7 @@ export const mixedFleetP5: dataType[] = [
         interactionType: [interactionType.MANUAL]
     },
     {
-        lead: 'Profundity (Rogue One)', gameId: 'CAPITALPROFUNDITY',
+        lead: 'Profundity (Rogue One)', gameId: 'CAPITALPROFUNDITY, ROGUEONESHIP',
         others: 'MF, Outrider, Y Wing, Rogue One, Phantom, Ghost',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/IHphO3ub9QU' }],

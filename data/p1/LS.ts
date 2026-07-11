@@ -3,7 +3,7 @@ import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const maceKitP1 = [
     {
-        lead: 'Mace (JMK)', gameId: 'MACEWINDU, JEDIMASTERKENOBI',
+        lead: 'Mace (JMK)', gameId: 'MACEWINDU, KITFISTO, JEDIMASTERKENOBI',
         others: 'JMK, GAS, Ahsoka, Kit',
         notes: 'Full auto',
         videos: [{ url: 'https://youtu.be/sC8Srr7-ziM' }],
@@ -13,7 +13,7 @@ export const maceKitP1 = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Mace (Boys)', gameId: 'MACEWINDU, KITFISTO',
+        lead: 'Mace (Boys)', gameId: 'MACEWINDU, KITFISTO, PADAWANOBIWAN, MASTERQUIGON',
         leadFull: 'Mace with Padawan Obi Wan and Master Qui Gon',
         others: 'Padawan Obi Wan, Master Qui Gon, KAM',
         notes: 'not sure if KAM is necessary. auto. can get unlucky when taunt drops',
@@ -24,7 +24,7 @@ export const maceKitP1 = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Mace (JKCK)', gameId: 'MACEWINDU, KITFISTO',
+        lead: 'Mace (JKCK)', gameId: 'MACEWINDU, KITFISTO, JEDIKNIGHTCAL',
         leadFull: 'Mace with Jedi Knight Cal Kestis',
         others: 'JKCK, GAS, Ahsoka, Kit',
         notes: 'Only 1/2 on auto',
@@ -46,7 +46,7 @@ export const maceKitP1 = [
         omi: true
     },
     {
-        lead: 'Mace (Depa Omi)', gameId: 'MACEWINDU, KITFISTO',
+        lead: 'Mace (Depa Omi)', gameId: 'MACEWINDU, KITFISTO, DEPABILLABA',
         leadFull: 'Mace with Depa Billaba Omicron',
         others: 'Depa Billaba (omi), Temple Guard, Kelleran Beq, Kit',
         notes: 'Omicron on Depa, full auto',
@@ -84,17 +84,18 @@ export const jediP1: dataType[] = [
         omi: true,
         creator: 'anonymous',
     },
+    // {
+    //     lead: 'JKL (Ezra)', gameId: 'JEDIKNIGHTLUKE',
+    //     leadFull: 'Jedi Knight Luke with Ezra Exile',
+    //     others: 'Ezra GMY Hyoda Bastila',
+    //     notes: 'auto, if no JML',
+    //     videos: [{ url: 'https://youtu.be/N3weS_bW_Js' }],
+    //     icon: '/icons/characters/tex.charui_luke_jediknight.png',
+    //     difficulty: difficulty.EASY,
+    //     successRate: successRate.NINETY_PERCENT,
+    //     interactionType: [interactionType.AUTO]
+    // }, 
     {
-        lead: 'JKL (Ezra)', gameId: 'JEDIKNIGHTLUKE',
-        leadFull: 'Jedi Knight Luke with Ezra Exile',
-        others: 'Ezra GMY Hyoda Bastila',
-        notes: 'auto, if no JML',
-        videos: [{ url: 'https://youtu.be/N3weS_bW_Js' }],
-        icon: '/icons/characters/tex.charui_luke_jediknight.png',
-        difficulty: difficulty.EASY,
-        successRate: successRate.NINETY_PERCENT,
-        interactionType: [interactionType.AUTO]
-    }, {
         lead: 'JMK', gameId: 'JEDIMASTERKENOBI',
         leadFull: 'Jedi Master Kenobi',
         others: 'Snips, GK, Shaak Ti, +1 GR',

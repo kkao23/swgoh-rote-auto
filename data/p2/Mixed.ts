@@ -188,7 +188,7 @@ export const mixedP2: dataType[] = [
         videos: [{ url: 'https://www.youtube.com/watch?v=Hf_-_PGj3rk', creator: 'egnards' }],
         icon: '/icons/characters/tex.charui_hera_s3.png',
         difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
+        successRate: successRate.FIFTY_FIFTY,
         interactionType: [interactionType.AUTO]
     },
     {
@@ -269,7 +269,7 @@ export const mixedP2: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN',
+        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN, APPO, SCORCH, DISGUISEDCLONETROOPER',
         leadFull: 'Grand Moff Tarkin',
         others: 'Appo, CX, Disguised Clone Trooper, Scorch',
         notes: 'auto',

@@ -59,7 +59,7 @@ export const dsMidRightP4: dataType[] = [
         omi: true
     },
     {
-        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN',
+        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN, APPO, SCORCH, DISGUISEDCLONETROOPER',
         leadFull: 'Grand Moff Tarkin',
         others: 'Appo, CX, Disguised Clone Trooper',
         notes: 'Scorch makes this easier but Piett works in his place. Need full platoons',
@@ -207,13 +207,13 @@ export const dsMidRightP4: dataType[] = [
     {
         lead: 'Lord Vader', gameId: 'LORDVADER',
         others: 'DS Clones',
-        notes: 'Auto with tb omi',
+        notes: 'Auto with Appo omi',
         videos: [],
         icon: '/icons/characters/tex.charui_lordvader.png',
         difficulty: difficulty.EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
-        creator: 'anonymous'
+        omi: true
     }
 ]
 

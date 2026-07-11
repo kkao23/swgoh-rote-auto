@@ -233,7 +233,7 @@ export const lsBottomP5: dataType[] = [
 
 export const lsShipsP5: dataType[] = [
     {
-        lead: 'Profundity (Rogue One)', gameId: 'CAPITALPROFUNDITY, ROGUEONESHIP',
+        lead: 'Profundity (Rogue One)', gameId: 'CAPITALPROFUNDITY, ROGUEONESHIP, MILLENNIUMFALCON',
         others: 'MF, Outrider, Y Wing, Rogue One',
         notes: 'Keep reticule on Scythe, auto',
         videos: [{ url: 'https://youtu.be/qpNtrNGpeKI' }],
@@ -244,7 +244,7 @@ export const lsShipsP5: dataType[] = [
         targeted: true
     },
     {
-        lead: 'Profundity (No Rogue One)', gameId: 'CAPITALPROFUNDITY',
+        lead: 'Profundity (No Rogue One)', gameId: 'CAPITALPROFUNDITY, MILLENNIUMFALCON',
         others: 'MF, Outrider, Y Wing, Wedge, Biggs, Phantom, Ghost',
         notes: 'can\'t auto. Go after Scythe, Phantom first reinforcement',
         videos: [{ url: 'https://youtu.be/9HiGycdlf4E' }],

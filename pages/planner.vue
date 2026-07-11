@@ -26,7 +26,7 @@ const {
   DAYS,
   dayStates,
   allPlanets,
-  leadOptions,
+  getDayLeadOptions,
   isMissionSelected,
   toggleMission,
   planetSelectionCount,
@@ -125,7 +125,7 @@ const alignmentColors: Record<string, string> = {
           @click="showExcluded = !showExcluded"
         >
           <span class="text-white font-semibold text-sm">
-            Excluded Teams ({{ leadOptions.filter(l => l.excluded).length }})
+            Excluded Teams ({{ getDayLeadOptions(activeDay).filter(l => l.excluded).length }})
           </span>
           <UIcon
             :name="showExcluded ? 'i-heroicons-chevron-up' : 'i-heroicons-chevron-down'"
@@ -134,7 +134,7 @@ const alignmentColors: Record<string, string> = {
         </button>
         <div v-if="showExcluded" class="px-4 pb-4 border-t border-slate-700">
           <p class="text-xs text-slate-400 mt-3 mb-2">
-            Toggle teams you don't have or don't want the solver to use.
+            Toggle teams you don't have, are platooned or don't want the solver to use.
             <template v-if="!playerDataFetched">
               <NuxtLink to="/" class="text-cyan-400 underline">Import your roster</NuxtLink>
               to auto-exclude unowned teams.
@@ -142,13 +142,13 @@ const alignmentColors: Record<string, string> = {
           </p>
           <div class="flex flex-wrap gap-2 max-h-48 overflow-y-auto">
             <button
-              v-for="lead in leadOptions"
+              v-for="lead in getDayLeadOptions(activeDay)"
               :key="lead.key"
               class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium transition-colors"
               :class="lead.excluded
                 ? 'bg-red-900/50 text-red-300 border border-red-700'
                 : 'bg-slate-800 text-slate-300 border border-slate-600 hover:bg-slate-700'"
-              @click="toggleExcludedLead(lead.key)"
+              @click="toggleExcludedLead(activeDay, lead.key)"
             >
               <img v-if="lead.icon" :src="lead.icon" class="h-4 w-4 rounded" />
               {{ lead.label }}
@@ -236,12 +236,12 @@ const alignmentColors: Record<string, string> = {
                         v-if="planetSelectionCount(activeDay, planet.id).selected > 0 && playerDataFetched"
                       >
                         <div
-                          v-if="getPlanetAvailability(planet.id, rosterUnitMap)?.hasIssues"
+                          v-if="getPlanetAvailability(activeDay, planet.id, rosterUnitMap)?.hasIssues"
                           class="flex items-center gap-1 text-amber-400 text-xs"
-                          :title="getPlanetAvailability(planet.id, rosterUnitMap)!.unavailableMissions.map(m => m.label).join(', ') + ' unavailable'"
+                          :title="getPlanetAvailability(activeDay, planet.id, rosterUnitMap)!.unavailableMissions.map(m => m.label).join(', ') + ' unavailable'"
                         >
                           <UIcon name="i-heroicons-exclamation-triangle" class="w-3.5 h-3.5" />
-                          {{ getPlanetAvailability(planet.id, rosterUnitMap)!.unavailableMissions.length }}
+                          {{ getPlanetAvailability(activeDay, planet.id, rosterUnitMap)!.unavailableMissions.length }}
                         </div>
                       </div>
 
@@ -284,7 +284,7 @@ const alignmentColors: Record<string, string> = {
                     <span class="text-slate-600">({{ mission.teams.length }} teams)</span>
                     <!-- Unavailable indicator -->
                     <UIcon
-                      v-if="playerDataFetched && getPlanetAvailability(planet.id, rosterUnitMap)?.unavailableMissions.some(m => m.id === mission.id)"
+                      v-if="playerDataFetched && getPlanetAvailability(activeDay, planet.id, rosterUnitMap)?.unavailableMissions.some(m => m.id === mission.id)"
                       name="i-heroicons-x-circle"
                       class="w-3.5 h-3.5 text-red-400 ml-auto"
                       title="No valid teams — will be skipped by solver"

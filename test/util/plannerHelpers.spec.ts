@@ -4,6 +4,7 @@ import {
   getFlatMissions,
   getFlatPlanets,
   getAllLeads,
+  canonicalLeadKey,
   teamScore,
   teamCost,
   solveDay,
@@ -106,11 +107,19 @@ describe('getAllLeads', () => {
     expect(getAllLeads().size).toBeGreaterThan(0);
   });
 
-  it('contains well-known leads', () => {
+  it('contains well-known leads by canonical key', () => {
     const leads = getAllLeads();
-    expect(leads.has('leia')).toBe(true);
-    expect(leads.has('slkr')).toBe(true);
-    expect(leads.has('jabba')).toBe(true);
+    expect(leads.has('glleia')).toBe(true);
+    expect(leads.has('supremeleaderkyloren')).toBe(true);
+    expect(leads.has('jabbathehutt')).toBe(true);
+  });
+
+  it('lead info has display name and key', () => {
+    const leads = getAllLeads();
+    const leia = leads.get('glleia');
+    expect(leia).toBeDefined();
+    expect(leia!.display).toBeTruthy();
+    expect(leia!.key).toBe('glleia');
   });
 });
 
@@ -147,10 +156,10 @@ describe('solveDay', () => {
   });
 
   it('detects unavailable missions', () => {
-    // Exclude ALL leads for a mission
+    // Exclude ALL leads for a mission (by canonical key)
     const m = allMissions.find(m => m.id === 'phase4:mixed:qira')!;
-    const allLeadNames = new Set(m.teams.map(t => t.lead.toLowerCase()));
-    const result = solveDay([m.id], allLeadNames, allMissions, null);
+    const allLeadKeys = new Set(m.teams.map(t => canonicalLeadKey(t)));
+    const result = solveDay([m.id], allLeadKeys, allMissions, null);
     expect(result.unavailableMissions).toHaveLength(1);
     expect(result.unavailableMissions[0].id).toBe(m.id);
   });
@@ -167,7 +176,7 @@ describe('solveDay', () => {
     const allLeads = getAllLeads();
     const excludeAll = new Set<string>();
     for (const [key] of allLeads) {
-      if (key !== 'leia') excludeAll.add(key);
+      if (key !== 'glleia') excludeAll.add(key);
     }
     const qira = allMissions.find(m => m.id === 'phase4:mixed:qira')!;
     const generic = allMissions.find(m => m.id === 'phase4:mixed:generic')!;
@@ -202,7 +211,7 @@ describe('solveDayForPlanets', () => {
     const haven = planets.find(p => p.id === 'phase4:ds')!;
     // Exclude all leads for the first mission
     const firstMission = haven.missions[0];
-    const allLeads = new Set(firstMission.teams.map(t => t.lead.toLowerCase()));
+    const allLeads = new Set(firstMission.teams.map(t => canonicalLeadKey(t)));
     const result = solveDayForPlanets(['phase4:ds'], allLeads, allMissions, null);
     // First mission should be unavailable
     expect(result.unavailableMissions.some(m => m.id === firstMission.id)).toBe(true);
@@ -227,7 +236,7 @@ describe('checkPlanetAvailability', () => {
     const p = planets.find(p => p.id === 'phase4:mixed')!;
     const jabbaMission = p.missions.find(m => m.position === 'jabba')!;
     // Exclude Jabba — this mission only has Jabba teams
-    const avail = checkPlanetAvailability(p, new Set(['jabba']), null);
+    const avail = checkPlanetAvailability(p, new Set(['jabbathehutt']), null);
     expect(avail.hasIssues).toBe(true);
     expect(avail.unavailableMissions.some(m => m.id === jabbaMission.id)).toBe(true);
   });

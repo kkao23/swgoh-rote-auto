@@ -1,27 +1,23 @@
 import { data as allData } from '~/data/data';
 import type { data as TeamData, DataType } from '~/models/data';
 import { successRate } from '~/models/data';
+import { leads } from '~/data/leads';
+import { GAME_ID_DISPLAY_NAMES, formatGameIdForDisplay } from '~/data/displayNames';
 import { hungarian } from '~/util/solver';
 
 // ── Types ────────────────────────────────────────────────────────────
 
 export interface FlatMission {
-  /** Unique key: "phase4:ds:inqs" */
   id: string;
   phase: string;
   alignment: string;
-  /** Position key from data (e.g. "qira", "generic") */
   position: string;
-  /** Display label for the mission */
   label: string;
-  /** Planet name for context */
   planet: string;
-  /** Available teams for this mission */
   teams: TeamData[];
 }
 
 export interface FlatPlanet {
-  /** Unique key: "phase4:ds" */
   id: string;
   phase: string;
   alignment: string;
@@ -30,13 +26,9 @@ export interface FlatPlanet {
 }
 
 export interface PlanetAvailability {
-  /** Missions on this planet that have at least one valid team */
   availableMissions: FlatMission[];
-  /** Missions on this planet with NO valid teams (given roster + exclusions) */
   unavailableMissions: FlatMission[];
-  /** Total missions on this planet */
   totalCount: number;
-  /** True if any mission is unavailable */
   hasIssues: boolean;
 }
 
@@ -59,9 +51,16 @@ export interface SolveResult {
   totalScore: number;
   maxPossibleScore: number;
   unassigned: FlatMission[];
-  /** Missions that had NO valid team candidates */
   unavailableMissions: FlatMission[];
   infeasible: boolean;
+}
+
+export interface LeadInfo {
+  /** Canonical dedup key — e.g. "doctoraphra" */
+  key: string;
+  /** Best display label — e.g. "Doctor Aphra" */
+  display: string;
+  icon: string | undefined;
 }
 
 // ── Display helpers ────────────────────────────────────────────────
@@ -83,15 +82,68 @@ const PHASE_PREFIX: Record<string, string> = {
 };
 
 const ALIGNMENT_LABEL: Record<string, string> = {
-  ds: 'Dark Side',
-  ls: 'Light Side',
-  mixed: 'Mixed',
-  zeffo: 'Zeffo',
-  mandalore: 'Mandalore',
-  all: 'Special',
+  ds: 'Dark Side', ls: 'Light Side', mixed: 'Mixed',
+  zeffo: 'Zeffo', mandalore: 'Mandalore', all: 'Special',
 };
 
 export const PHASE_ORDER = ['P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'Zeffo', 'Mandalore', 'Special'];
+
+// ── Canonical lead key ─────────────────────────────────────────────
+
+// Build a lookup from lowercase name → leads entry, using id + fullName + aliases
+const leadByName = new Map<string, (typeof leads)[number]>();
+for (const l of leads) {
+  leadByName.set(l.id.toLowerCase(), l);
+  leadByName.set(l.fullName.toLowerCase(), l);
+  for (const alias of l.aliases) {
+    leadByName.set(alias.toLowerCase(), l);
+  }
+}
+
+/**
+ * Returns a stable, canonical key for dedup purposes.
+ * Prefers gameId → resolves through leads.ts → falls back to stripped lead text.
+ */
+export function canonicalLeadKey(team: TeamData): string {
+  // 1. gameId — grab the first ID (the lead character)
+  if (team.gameId) {
+    const firstId = team.gameId.split(',')[0].trim().toLowerCase();
+    if (firstId) return firstId;
+  }
+
+  // 2. Strip parentheticals and trim
+  const stripped = team.lead.replace(/\(.*?\)/g, '').trim().toLowerCase();
+
+  // 3. Match against leads.ts
+  const match = leadByName.get(stripped);
+  if (match) return match.id;
+
+  // 4. Last resort: the stripped text
+  return stripped;
+}
+
+/**
+ * Best display name for a canonical lead key.
+ * Tries: leads.ts → strip "capital" prefix & try again → known overrides → smart format.
+ */
+export function canonicalLeadDisplay(key: string): string {
+  // 1. Exact match in leads.ts
+  const match = leadByName.get(key);
+  if (match) return match.fullName;
+
+  // 2. Strip "capital" prefix (for ship capitals) and try again
+  if (key.startsWith('capital')) {
+    const stripped = key.slice('capital'.length);
+    const strippedMatch = leadByName.get(stripped);
+    if (strippedMatch) return strippedMatch.fullName;
+  }
+
+  // 3. Known display overrides for gameIds not in leads.ts
+  if (GAME_ID_DISPLAY_NAMES[key]) return GAME_ID_DISPLAY_NAMES[key];
+
+  // 4. Smart formatting: split camelCase/ALL_CAPS into Title Case
+  return formatGameIdForDisplay(key);
+}
 
 // ── Score mapping ────────────────────────────────────────────────────
 
@@ -114,7 +166,6 @@ export const INVALID_COST = 100_000;
 
 // ── Data flattening ──────────────────────────────────────────────────
 
-/** Walk the DataType and return a flat list of all missions. */
 export function getFlatMissions(): FlatMission[] {
   const missions: FlatMission[] = [];
 
@@ -144,7 +195,6 @@ export function getFlatMissions(): FlatMission[] {
   return missions;
 }
 
-/** Walk the DataType and return planet groupings. */
 export function getFlatPlanets(): FlatPlanet[] {
   const planets: FlatPlanet[] = [];
 
@@ -187,10 +237,7 @@ export function getFlatPlanets(): FlatPlanet[] {
 
 function formatPositionLabel(key: string): string {
   const spaced = key.replace(/([a-z])([A-Z])/g, '$1 $2');
-  return spaced
-    .split(' ')
-    .map(w => w.charAt(0).toUpperCase() + w.slice(1))
-    .join(' ');
+  return spaced.split(' ').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
 }
 
 // ── Team eligibility ─────────────────────────────────────────────────
@@ -200,7 +247,9 @@ function isTeamEligible(
   excludedLeads: Set<string>,
   rosterUnitMap?: Set<string> | null,
 ): boolean {
-  if (excludedLeads.has(team.lead.toLowerCase())) return false;
+  // Use canonical key for exclusion check — so "Aphra (Rey)" and "Aphra (SLKR)"
+  // are both excluded when the user excludes the Aphra canonical key.
+  if (excludedLeads.has(canonicalLeadKey(team))) return false;
 
   if (rosterUnitMap && rosterUnitMap.size > 0 && team.gameId) {
     const ids = team.gameId.split(',').map(s => s.trim().toLowerCase());
@@ -212,10 +261,6 @@ function isTeamEligible(
 
 // ── Availability ─────────────────────────────────────────────────────
 
-/**
- * Check which missions on a planet are available given roster + exclusions.
- * Only meaningful when roster is loaded or exclusions are set.
- */
 export function checkPlanetAvailability(
   planet: FlatPlanet,
   excludedLeads: Set<string>,
@@ -245,21 +290,12 @@ export function checkPlanetAvailability(
 
 // ── Solver ───────────────────────────────────────────────────────────
 
-/**
- * Solve the team assignment for one day.
- *
- * @param selectedPlanetIds - Planet IDs the user plans to do this day.
- * @param excludedLeads     - Leads (lowercase) the user has excluded.
- * @param allMissions       - Flat list of all available missions.
- * @param rosterUnitMap     - Optional: set of owned unit gameIds (lowercase).
- */
 export function solveDayForPlanets(
   selectedPlanetIds: string[],
   excludedLeads: Set<string>,
   allMissions: FlatMission[],
   rosterUnitMap?: Set<string> | null,
 ): SolveResult {
-  // Expand planets → missions
   const planets = getFlatPlanets();
   const planetMap = new Map(planets.map(p => [p.id, p]));
 
@@ -276,9 +312,6 @@ export function solveDayForPlanets(
   return solveDay([...allMissionIds], excludedLeads, allMissions, rosterUnitMap);
 }
 
-/**
- * Solve the team assignment given a list of mission IDs.
- */
 export function solveDay(
   missionIds: string[],
   excludedLeads: Set<string>,
@@ -287,7 +320,6 @@ export function solveDay(
 ): SolveResult {
   const missionMap = new Map(allMissions.map(m => [m.id, m]));
 
-  // Split into available vs unavailable
   const available: FlatMission[] = [];
   const unavailable: FlatMission[] = [];
 
@@ -305,42 +337,37 @@ export function solveDay(
 
   if (available.length === 0) {
     return {
-      assignments: [],
-      totalScore: 0,
-      maxPossibleScore: 0,
-      unassigned: [],
-      unavailableMissions: unavailable,
-      infeasible: false,
+      assignments: [], totalScore: 0, maxPossibleScore: 0,
+      unassigned: [], unavailableMissions: unavailable, infeasible: false,
     };
   }
 
-  // Gather all candidate team leads (filtered)
-  const missionCandidates: { missionIdx: number; lead: string; team: TeamData }[] = [];
+  // Gather candidates with canonical lead keys
+  const missionCandidates: { missionIdx: number; leadKey: string; team: TeamData }[] = [];
 
   available.forEach((mission, mi) => {
     for (const team of mission.teams) {
       if (!isTeamEligible(team, excludedLeads, rosterUnitMap)) continue;
-      missionCandidates.push({ missionIdx: mi, lead: team.lead.toLowerCase(), team });
+      missionCandidates.push({
+        missionIdx: mi,
+        leadKey: canonicalLeadKey(team),
+        team,
+      });
     }
   });
 
-  const leadList = [...new Set(missionCandidates.map(c => c.lead))];
+  const leadList = [...new Set(missionCandidates.map(c => c.leadKey))];
 
   const n = available.length;
   const m = leadList.length;
 
   if (m < n) {
     return {
-      assignments: [],
-      totalScore: 0,
-      maxPossibleScore: 0,
-      unassigned: available,
-      unavailableMissions: unavailable,
-      infeasible: true,
+      assignments: [], totalScore: 0, maxPossibleScore: 0,
+      unassigned: available, unavailableMissions: unavailable, infeasible: true,
     };
   }
 
-  // Build cost matrix
   const leadToIdx = new Map(leadList.map((l, i) => [l, i]));
   let maxPossibleScore = 0;
 
@@ -348,7 +375,7 @@ export function solveDay(
     const row = new Array(m).fill(INVALID_COST);
     for (const cand of missionCandidates) {
       if (cand.missionIdx === mi) {
-        const col = leadToIdx.get(cand.lead)!;
+        const col = leadToIdx.get(cand.leadKey)!;
         const cost = teamCost(cand.team);
         if (cost < row[col]) row[col] = cost;
       }
@@ -360,7 +387,6 @@ export function solveDay(
 
   const assignment = hungarian(costMatrix);
 
-  // Build result
   const assignments: PlannerAssignment[] = [];
   let totalScore = 0;
 
@@ -369,8 +395,8 @@ export function solveDay(
     if (col < 0 || col >= m) continue;
 
     const mission = available[mi];
-    const lead = leadList[col];
-    const cand = missionCandidates.find(c => c.missionIdx === mi && c.lead === lead);
+    const leadKey = leadList[col];
+    const cand = missionCandidates.find(c => c.missionIdx === mi && c.leadKey === leadKey);
     if (!cand) continue;
 
     const score = teamScore(cand.team);
@@ -382,7 +408,7 @@ export function solveDay(
       phase: mission.phase,
       alignment: mission.alignment,
       position: mission.position,
-      lead: cand.team.lead,
+      lead: cand.team.lead,           // original display label (e.g. "Aphra (Rey)")
       leadFull: cand.team.leadFull,
       others: cand.team.others,
       successRate: cand.team.successRate,
@@ -395,27 +421,50 @@ export function solveDay(
   const unassigned = available.filter(m => !assignedIds.has(m.id));
 
   return {
-    assignments,
-    totalScore,
-    maxPossibleScore,
-    unassigned,
-    unavailableMissions: unavailable,
-    infeasible: false,
+    assignments, totalScore, maxPossibleScore,
+    unassigned, unavailableMissions: unavailable, infeasible: false,
   };
 }
 
 // ── All leads helper ─────────────────────────────────────────────────
 
-export function getAllLeads(): Map<string, TeamData> {
-  const leadMap = new Map<string, TeamData>();
+/**
+ * Get all unique leads across all missions, deduplicated by canonical key.
+ * Returns a map from canonical key → display info.
+ */
+export function getAllLeads(): Map<string, LeadInfo> {
+  const map = new Map<string, LeadInfo>();
   const missions = getFlatMissions();
   for (const m of missions) {
     for (const t of m.teams) {
-      const key = t.lead.toLowerCase();
-      if (!leadMap.has(key)) {
-        leadMap.set(key, t);
+      const key = canonicalLeadKey(t);
+      const existing = map.get(key);
+
+      // Prefer the best display name: leadFull > lead (no parens) > canonicalLeadDisplay
+      const newDisplay = bestTeamDisplay(t, key);
+      if (!existing) {
+        map.set(key, { key, display: newDisplay, icon: t.icon });
+      } else {
+        // Prefer entry with an icon
+        if (!existing.icon && t.icon) {
+          existing.icon = t.icon;
+        }
       }
     }
   }
-  return leadMap;
+  return map;
+}
+
+/**
+ * Pick the best human-readable display name from a team entry.
+ * Prefers: leadFull > short lead (without parentheticals) > derived from canonical key.
+ */
+function bestTeamDisplay(team: TeamData, canonicalKey: string): string {
+  if (team.leadFull) return team.leadFull;
+
+  // If lead has no parentheticals, it's already clean
+  if (!team.lead.includes('(')) return team.lead;
+
+  // Fall back to canonical key display
+  return canonicalLeadDisplay(canonicalKey);
 }

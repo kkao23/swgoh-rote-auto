@@ -13,22 +13,19 @@ const DAYS = 6;
 
 export interface DayState {
   selectedMissions: string[];
+  excludedLeads: string[];
   result: SolveResult | null;
+}
+
+function emptyDay(): DayState {
+  return { selectedMissions: [], excludedLeads: [], result: null };
 }
 
 export function usePlanner() {
   // ── Persisted state ────────────────────────────────────────────
   const dayStates = useLocalStorage<DayState[]>(
-    'swgoh-rote-planner-days-v3',
-    Array.from({ length: DAYS }, () => ({
-      selectedMissions: [] as string[],
-      result: null,
-    })),
-  );
-
-  const excludedLeads = useLocalStorage<string[]>(
-    'swgoh-rote-planner-excluded',
-    [],
+    'swgoh-rote-planner-days-v4',
+    Array.from({ length: DAYS }, () => emptyDay()),
   );
 
   // ── Derived data ───────────────────────────────────────────────
@@ -36,30 +33,24 @@ export function usePlanner() {
   const allPlanets = computed(() => getFlatPlanets());
   const allLeads = computed(() => getAllLeads());
 
-  const missionMap = computed(() => {
-    const map = new Map<string, (typeof allMissions.value)[number]>();
-    for (const m of allMissions.value) map.set(m.id, m);
-    return map;
-  });
-
   const planetMap = computed(() => {
     const map = new Map<string, FlatPlanet>();
     for (const p of allPlanets.value) map.set(p.id, p);
     return map;
   });
 
-  const leadOptions = computed(() => {
-    return [...allLeads.value.entries()]
-      .map(([key, team]) => ({
-        key,
-        label: team.leadFull || team.lead,
-        icon: team.icon,
-        excluded: excludedLeads.value.includes(key),
+  /** Lead options for a specific day's exclusion UI. */
+  function getDayLeadOptions(dayIndex: number) {
+    const excluded = new Set(dayStates.value[dayIndex]?.excludedLeads ?? []);
+    return [...allLeads.value.values()]
+      .map((lead) => ({
+        key: lead.key,
+        label: lead.display,
+        icon: lead.icon,
+        excluded: excluded.has(lead.key),
       }))
       .sort((a, b) => a.label.localeCompare(b.label));
-  });
-
-  const excludedSet = computed(() => new Set(excludedLeads.value));
+  }
 
   // ── Mission-level selection ───────────────────────────────────
 
@@ -82,7 +73,6 @@ export function usePlanner() {
 
   // ── Planet-level bulk toggle ──────────────────────────────────
 
-  /** Returns { selected, total } for a planet on a given day. */
   function planetSelectionCount(dayIndex: number, planetId: string): { selected: number; total: number } {
     const planet = planetMap.value.get(planetId);
     if (!planet) return { selected: 0, total: 0 };
@@ -96,7 +86,6 @@ export function usePlanner() {
     return { selected, total };
   }
 
-  /** Bulk toggle: if all missions are selected → deselect all, else → select all. */
   function togglePlanet(dayIndex: number, planetId: string) {
     const state = dayStates.value[dayIndex];
     if (!state) return;
@@ -107,10 +96,8 @@ export function usePlanner() {
     const missionIdSet = new Set(planet.missions.map(m => m.id));
 
     if (selected === total) {
-      // Deselect all missions of this planet
       state.selectedMissions = state.selectedMissions.filter(id => !missionIdSet.has(id));
     } else {
-      // Select all missions of this planet
       for (const m of planet.missions) {
         if (!state.selectedMissions.includes(m.id)) {
           state.selectedMissions.push(m.id);
@@ -122,33 +109,40 @@ export function usePlanner() {
     dayStates.value = [...dayStates.value];
   }
 
-  // ── Exclusions ────────────────────────────────────────────────
-  function toggleExcludedLead(leadKey: string) {
-    const idx = excludedLeads.value.indexOf(leadKey);
+  // ── Per-day exclusions ────────────────────────────────────────
+
+  function toggleExcludedLead(dayIndex: number, leadKey: string) {
+    const state = dayStates.value[dayIndex];
+    if (!state) return;
+    const idx = state.excludedLeads.indexOf(leadKey);
     if (idx === -1) {
-      excludedLeads.value.push(leadKey);
+      state.excludedLeads.push(leadKey);
     } else {
-      excludedLeads.value.splice(idx, 1);
+      state.excludedLeads.splice(idx, 1);
     }
-    for (const state of dayStates.value) {
-      state.result = null;
-    }
+    state.result = null;
+    dayStates.value = [...dayStates.value];
   }
 
-  function getPlanetAvailability(planetId: string, rosterUnitMap?: Set<string> | null) {
+  function getDayExcludedSet(dayIndex: number): Set<string> {
+    return new Set(dayStates.value[dayIndex]?.excludedLeads ?? []);
+  }
+
+  function getPlanetAvailability(dayIndex: number, planetId: string, rosterUnitMap?: Set<string> | null) {
     const planet = planetMap.value.get(planetId);
     if (!planet) return null;
-    return checkPlanetAvailability(planet, excludedSet.value, rosterUnitMap);
+    return checkPlanetAvailability(planet, getDayExcludedSet(dayIndex), rosterUnitMap);
   }
 
   // ── Solver ────────────────────────────────────────────────────
+
   function solve(dayIndex: number, rosterUnitMap?: Set<string> | null) {
     const state = dayStates.value[dayIndex];
     if (!state || state.selectedMissions.length === 0) return;
 
     state.result = solveDay(
       state.selectedMissions,
-      excludedSet.value,
+      getDayExcludedSet(dayIndex),
       allMissions.value,
       rosterUnitMap,
     );
@@ -161,7 +155,7 @@ export function usePlanner() {
       if (state && state.selectedMissions.length > 0) {
         state.result = solveDay(
           state.selectedMissions,
-          excludedSet.value,
+          getDayExcludedSet(i),
           allMissions.value,
           rosterUnitMap,
         );
@@ -171,15 +165,14 @@ export function usePlanner() {
   }
 
   function clearDay(dayIndex: number) {
-    dayStates.value[dayIndex] = { selectedMissions: [], result: null };
+    dayStates.value[dayIndex] = emptyDay();
     dayStates.value = [...dayStates.value];
   }
 
   function clearAll() {
     for (let i = 0; i < DAYS; i++) {
-      dayStates.value[i] = { selectedMissions: [], result: null };
+      dayStates.value[i] = emptyDay();
     }
-    excludedLeads.value = [];
     dayStates.value = [...dayStates.value];
   }
 
@@ -190,9 +183,7 @@ export function usePlanner() {
     allPlanets,
     planetMap,
     allLeads,
-    leadOptions,
-    excludedLeads,
-    excludedSet,
+    getDayLeadOptions,
     isMissionSelected,
     toggleMission,
     planetSelectionCount,

@@ -144,7 +144,18 @@ export const lsLeftP3: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         creator: 'Windaar'
-    }
+    },
+    {
+        lead: 'Cobb Vanth', gameId: 'COBBVANTH',
+        leadFull: 'Cobb Vanth',
+        others: 'CUP, Nebit, Jawa Scavenger, Cara Dune',
+        notes: 'auto, no omicron needed',
+        videos: [{ url: 'https://youtu.be/g2jfK7GYfHU' }],
+        icon: '/icons/characters/tex.charui_cobbvanth.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.NINETY_PERCENT,
+        interactionType: [interactionType.AUTO]
+    },
 ]
 
 export const lsRightP3: dataType[] = [

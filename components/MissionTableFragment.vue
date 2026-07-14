@@ -4,6 +4,7 @@ import { type data as dataType } from './../models/data';
 import { difficulty, successRate, interactionType } from './../models/data';
 import { creatorMap } from '~/models/creators';
 import { getCharacterIcon } from '~/data/displayNames';
+import { buildVerifiedAccordion, buildCommunityAccordion } from '~/util/accordionHelpers';
 import { useRouter, useRoute } from 'vue-router';
 import { nextTick, watch, computed, inject, type Ref } from 'vue';
 import { trackEvent } from '~/util/analytics';
@@ -11,10 +12,8 @@ import {
     difficultyColor,
     difficultyIcon,
     successRateBadge,
-    successRateValue,
     interactionBadge,
     interactionBadges,
-    interactionComplexity,
 } from '~/util/missionHelpers';
 import { isUnitOwned as isUnitOwnedPure, teamMeetsRelicReq } from '~/util/rosterUtils';
 
@@ -120,117 +119,22 @@ defineExpose({ openModal });
 
 const isMobile = useMediaQuery('(max-width: 768px)');
 
-const verifiedTeams = computed(() => {
-    return props.data.filter(d => !d.videos?.some(video => video.creator) && !d.creator);
-});
+const accordionOpts = computed(() => ({
+  data: props.data,
+  phase: props.phase || '',
+  alignment: props.alignment || '',
+  position: props.position || '',
+  isSaved,
+  voteCounts: voteCounts.value,
+  getTeamKey,
+  isUnitOwned,
+  meetsRelicReq,
+  isMobile: isMobile.value,
+  initialIndex: initialDataIndexFromUrl.value,
+}));
 
-const communityTeams = computed(() => {
-    return props.data.filter(d => d.videos?.some(video => video.creator) || d.creator);
-});
-
-const verifiedAccordionItems = computed(() => {
-    const sortedData = [...verifiedTeams.value].sort((a, b) => {
-        // Saved/hearted teams sort to top
-        const aSaved = isSaved(props.phase || '', props.alignment || '', props.position || '', a.lead) ? 0 : 1;
-        const bSaved = isSaved(props.phase || '', props.alignment || '', props.position || '', b.lead) ? 0 : 1;
-        if (aSaved !== bSaved) return aSaved - bSaved;
-
-        // Vote-based sort: teams with ≥ 50 votes cast sort by net votes (highest first)
-        const aKey = getTeamKey(props.phase || '', props.alignment || '', props.position || '', a.lead);
-        const bKey = getTeamKey(props.phase || '', props.alignment || '', props.position || '', b.lead);
-        const aVotes = voteCounts.value[aKey] ?? 0;
-        const bVotes = voteCounts.value[bKey] ?? 0;
-        const aHasEnough = Math.abs(aVotes) >= 50;
-        const bHasEnough = Math.abs(bVotes) >= 50;
-
-        if (aHasEnough || bHasEnough) {
-            // If one has enough votes and the other doesn't, the voted one wins
-            if (aHasEnough && !bHasEnough) return -1;
-            if (!aHasEnough && bHasEnough) return 1;
-            // Both have enough: sort by net votes descending
-            return bVotes - aVotes;
-        }
-
-        // Ownership: owned leads before unowned
-        const aOwned = isUnitOwned(a.gameId) ? 0 : 1
-        const bOwned = isUnitOwned(b.gameId) ? 0 : 1
-        if (aOwned !== bOwned) return aOwned - bOwned
-
-        // Sort by success rate (better success first)
-        const aSuccessValue = successRateValue(a.successRate);
-        const bSuccessValue = successRateValue(b.successRate);
-        if (aSuccessValue !== bSuccessValue) {
-            return aSuccessValue - bSuccessValue;
-        }
-        
-        // Sort by interaction complexity (simpler first)
-        const aComplexity = interactionComplexity(a.interactionType);
-        const bComplexity = interactionComplexity(b.interactionType);
-        if (aComplexity !== bComplexity) {
-            return aComplexity - bComplexity;
-        }
-        
-        // Fallback to old difficulty
-        return a.difficulty - b.difficulty;
-    });
-
-    return sortedData.map((d, index) => ({
-        label: !isMobile.value && d.leadFull ? d.leadFull : d.lead,
-        content: {
-            others: d.others,
-            notes: d.notes,
-            videos: d.videos,
-            difficulty: d.difficulty,
-            omi: d.omi,
-            targeted: d.targeted,
-            successRate: d.successRate,
-            interactionType: d.interactionType,
-            icon: d.icon,
-            lead: d.lead,
-            gameId: d.gameId,
-            owned: isUnitOwned(d.gameId),
-            meetsRelic: meetsRelicReq(d.gameId),
-        },
-        defaultOpen: initialDataIndexFromUrl.value !== null ? initialDataIndexFromUrl.value === index : index === 0,
-    }));
-});
-
-const communityAccordionItems = computed(() => {
-    return [...communityTeams.value]
-        .sort((a, b) => {
-            const aKey = getTeamKey(props.phase || '', props.alignment || '', props.position || '', a.lead);
-            const bKey = getTeamKey(props.phase || '', props.alignment || '', props.position || '', b.lead);
-            const aVotes = voteCounts.value[aKey] ?? 0;
-            const bVotes = voteCounts.value[bKey] ?? 0;
-
-            // Ownership: owned leads before unowned
-            const aOwned = isUnitOwned(a.gameId) ? 0 : 1
-            const bOwned = isUnitOwned(b.gameId) ? 0 : 1
-            if (aOwned !== bOwned) return aOwned - bOwned
-
-            return bVotes - aVotes;
-        })
-        .map((d) => ({
-        label: !isMobile.value && d.leadFull ? d.leadFull : d.lead,
-        content: {
-            others: d.others,
-            notes: d.notes,
-            videos: d.videos,
-            difficulty: d.difficulty,
-            omi: d.omi,
-            targeted: d.targeted,
-            successRate: d.successRate,
-            interactionType: d.interactionType,
-            icon: d.icon,
-            creator: d.creator,
-            lead: d.lead,
-            gameId: d.gameId,
-            owned: isUnitOwned(d.gameId),
-            meetsRelic: meetsRelicReq(d.gameId),
-        },
-        defaultOpen: false,
-    }));
-});
+const verifiedAccordionItems = computed(() => buildVerifiedAccordion(accordionOpts.value));
+const communityAccordionItems = computed(() => buildCommunityAccordion(accordionOpts.value));
 
 const toast = useToast();
 

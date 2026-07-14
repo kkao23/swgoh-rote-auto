@@ -221,7 +221,7 @@ export const shipsLSP1: dataType[] = [
 
 export const genericLSP1: dataType[] = [
     {
-        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO',
+        lead: 'Ahsoka Tano', gameId: 'GLAHSOKATANO',
         others: 'Any spectre',
         notes: 'auto, dont need ezra',
         videos: [{ url: 'https://youtu.be/lGY7TLSTCMA' }],

@@ -3,7 +3,7 @@ import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const topWampaP6: dataType[] = [
     {
-        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO',
+        lead: 'Ahsoka Tano', gameId: 'GLAHSOKATANO',
         others: 'Ezra Exile, Padawan Sabine, Huyang (omicron), Hera',
         notes: 'Full auto',
         videos: [{ url: 'https://youtu.be/AFC74G68bu8', creator: 'Mar Trepodi' }],

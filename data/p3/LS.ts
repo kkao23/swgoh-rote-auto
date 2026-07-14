@@ -58,7 +58,7 @@ export const lsLeftP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO',
+        lead: 'Ahsoka Tano', gameId: 'GLAHSOKATANO',
         others: 'Padawan Sabine, Huyang, Fulcrum, Hera',
         notes: 'auto, can save Ezra for somewher else',
         videos: [{ url: 'https://youtu.be/SWi--w5QKws' }],
@@ -170,7 +170,7 @@ export const lsRightP3: dataType[] = [
         interactionType: [interactionType.PAUSE_WAVE2]
     },
     {
-        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO',
+        lead: 'Ahsoka Tano', gameId: 'GLAHSOKATANO',
         others: 'Padawan Sabine, Huyang, Fulcrum, +1',
         notes: 'auto, use Ezra and Hera if available',
         videos: [{ url: 'https://youtu.be/3T8M7wuyTuI' }],

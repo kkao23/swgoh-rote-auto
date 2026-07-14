@@ -392,7 +392,7 @@ export const lvP1: dataType[] = [
 
 export const shipsDSP1 = [
     {
-        lead: 'Leviathan', gameId: 'CAPITALLEVIATHAN',
+        lead: 'Leviathan', gameId: 'CAPITALLEVIATHAN, SCYTHE',
         others: 'Sith Bomber, MK6 Interceptor, Sith Fighter, Tie Adv, Scimitar',
         notes: 'Not consistent',
         videos: [{ url: 'https://youtu.be/xCuGwcVtd98' },
@@ -402,7 +402,7 @@ export const shipsDSP1 = [
         successRate: successRate.FIFTY_FIFTY
     },
     {
-        lead: 'Chimera', gameId: 'CAPITALCHIMAERA',
+        lead: 'Chimera', gameId: 'CAPITALCHIMAERA, SCYTHE',
         others: 'Scythe, Mk6, Tie Adv, Defender, Interceptor, Sith Fighter, TIE Fighter',
         notes: 'cant auto',
         videos: [
@@ -415,7 +415,7 @@ export const shipsDSP1 = [
     }
     ,
     {
-        lead: 'Executrix', gameId: 'CAPITALSTARDESTROYER',
+        lead: 'Executrix', gameId: 'CAPITALSTARDESTROYER, SCYTHE',
         others: 'Mark VI, Scythe, Tie x1, Defender, Inceptor, Sith Fighter, Imperi=',
         notes: 'Executrix gets two extra TIEs to start with. Eliminate all the oth=',
         videos: [],

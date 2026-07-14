@@ -425,7 +425,7 @@ export const youngLandoP2: dataType[] = [
         omi: true
     },
     {
-        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO',
+        lead: 'Ahsoka Tano', gameId: 'GLAHSOKATANO',
         others: 'Ezra Exile, Hera, Sabine',
         notes: 'Auto',
         videos: [{ url: 'https://youtu.be/WnBhCQ580s0' }],

@@ -124,7 +124,7 @@ export const mixedGenericP4: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO',
+        lead: 'Ahsoka Tano', gameId: 'GLAHSOKATANO',
         others: 'Fulcrum +3',
         notes: 'auto, Ezra or spectre speeds things up',
         videos: [{ url: 'https://youtu.be/t6bxMOvhWdY' }],

@@ -99,7 +99,7 @@ export const lsGenericP4: dataType[] = [
         omi: true
     },
     {
-        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO',
+        lead: 'Ahsoka Tano', gameId: 'GLAHSOKATANO',
         others: 'Any',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/nNTovvlMApI' }],

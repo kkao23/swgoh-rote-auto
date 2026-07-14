@@ -25,7 +25,7 @@ export const lsTopLeftP5: dataType[] = [
         omi: true,
     },
     {
-        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO',
+        lead: 'Ahsoka Tano', gameId: 'GLAHSOKATANO',
         others: 'Ezra, Fulcrum, +2',
         notes: '2/2 on auto, the more Spectres the better',
         videos: [{ url: 'https://youtu.be/rKrNwQrNHw4' }],
@@ -115,7 +115,7 @@ export const lsTopMidP5: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO',
+        lead: 'Ahsoka Tano', gameId: 'GLAHSOKATANO',
         others: 'Ezra, Fulcrum, +2',
         notes: '2/2 on auto, the more Spectres the better',
         videos: [{ url: 'https://youtu.be/Y3dadvLoH8o' }],
@@ -174,7 +174,7 @@ export const lsBottomP5: dataType[] = [
         omi: true,
     },
     {
-        lead: 'Ahsoka Tano (randoms)', gameId: 'AHSOKATANO',
+        lead: 'Ahsoka Tano (randoms)', gameId: 'GLAHSOKATANO',
         others: 'Ezra, random R9',
         notes: '1/2 on auto, need more Spectres to 2/2',
         videos: [{ url: 'https://youtu.be/xruQGASpTP4' }],
@@ -184,7 +184,7 @@ export const lsBottomP5: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Ahsoka Tano (spectres)', gameId: 'AHSOKATANO',
+        lead: 'Ahsoka Tano (spectres)', gameId: 'GLAHSOKATANO',
         others: 'Ezra, Sabine, Hera, Fulcrum',
         notes: 'auto but need some luck on who takes the opening mass assist',
         videos: [{ url: 'https://youtu.be/Q9fG6WCUjE4' }],
@@ -207,7 +207,7 @@ export const lsBottomP5: dataType[] = [
     }
     ,
     {
-        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO',
+        lead: 'Ahsoka Tano', gameId: 'GLAHSOKATANO',
         others: 'Ezra, Padawan Sabine +2',
         notes: 'Sabine can nuke nest, probably inconsistent',
         videos: [],

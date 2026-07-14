@@ -68,7 +68,7 @@ export const mixedFleetP5: dataType[] = [
 
 export const mixedCombatTopRightP5: dataType[] = [
     {
-        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO',
+        lead: 'Ahsoka Tano', gameId: 'GLAHSOKATANO',
         others: 'Any R9s, Fulcrum and Ezra really speed this up',
         notes: 'Auto, target TFP then Stormtrooper Commander, leave Range Troopers for last to speed things up',
         videos: [{ url: 'https://youtu.be/OCGLZm1SJiM' }],
@@ -235,7 +235,7 @@ export const mixedCombatBottomLeftP5: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO',
+        lead: 'Ahsoka Tano', gameId: 'GLAHSOKATANO',
         others: 'Any R9s',
         notes: 'Auto, consistent 1/2 but can\'t beat nest in Wave 2. Any teammates work',
         videos: [{ url: 'https://youtu.be/j9Q3uxdmvv4' }],

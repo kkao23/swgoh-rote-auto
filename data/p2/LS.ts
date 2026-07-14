@@ -224,7 +224,7 @@ export const leftLSP2: dataType[] = [
         targeted: true
     },
     {
-        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO',
+        lead: 'Ahsoka Tano', gameId: 'GLAHSOKATANO',
         others: 'Padawan Sabine, Huyang, Fulcrum, Hera',
         notes: 'auto, Ezra great but not necessary here',
         videos: [{ url: 'https://youtu.be/5nRShbbHbAI' }],
@@ -342,7 +342,7 @@ export const rightLSP2: dataType[] = [
         creator: 'jkat70',
     },
     {
-        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO',
+        lead: 'Ahsoka Tano', gameId: 'GLAHSOKATANO',
         others: 'Padawan Sabine, Huyang, Fulcrum, +any',
         notes: 'auto, use Hera if available, can save Ezra for Jedi mission',
         videos: [{ url: 'https://youtu.be/aP8-BIqw0jk' }],

@@ -123,7 +123,7 @@ export const mandaloreGeneric: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO',
+        lead: 'Ahsoka Tano', gameId: 'GLAHSOKATANO',
         others: 'Ezra Exile, +3',
         notes: 'auto, use spectre if possible, ezra required',
         videos: [{ url: 'https://youtu.be/G8X9wesq-xg' }],
@@ -250,7 +250,7 @@ export const mandaloreGeneric: dataType[] = [
     },
 
 {
-    lead: 'Ahsoka Tano (full spectre)', gameId: 'AHSOKATANO',
+    lead: 'Ahsoka Tano (full spectre)', gameId: 'GLAHSOKATANO',
     others: 'Full spectre',
     notes: 'Easy',
     videos: [],

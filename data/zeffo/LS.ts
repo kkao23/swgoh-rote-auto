@@ -163,7 +163,7 @@ export const zeffoUFU: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Ahsoka Tano (CAT)', gameId: 'AHSOKATANO',
+        lead: 'Ahsoka Tano (CAT)', gameId: 'GLAHSOKATANO',
         others: 'Cere, Padawan Sabine, Fulcrum, CAT',
         notes: 'auto, target purge trooper in wave 1',
         videos: [{ url: 'https://youtu.be/jTJg8brbeS4' }],
@@ -202,7 +202,7 @@ export const zeffoCombat: dataType[] = [
         creator: 'anonymous',
     },
     {
-        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO',
+        lead: 'Ahsoka Tano', gameId: 'GLAHSOKATANO',
         others: 'other spectre',
         notes: 'auto, takes forever, can save Ezra for another mission. Need to take out others before big bot in wave 1',
         videos: [{ url: 'https://youtu.be/TTKvDyv3L1s' }],
@@ -314,7 +314,7 @@ export const zeffoCombat: dataType[] = [
         creator: 'BailWritte'
     },
     {
-        lead: 'Ashoka', gameId: 'AHSOKATANO',
+        lead: 'Ashoka', gameId: 'GLAHSOKATANO',
         others: 'Fulcrum, PWS, Cere, Cal',
         notes: 'R10 Tano can beat 2/2 full auto. Rest was R7, maybe a 15% chance to lose?',
         videos: [],

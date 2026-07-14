@@ -2,7 +2,7 @@ import { data as allData } from '~/data/data';
 import type { data as TeamData, DataType } from '~/models/data';
 import { successRate } from '~/models/data';
 import { leads } from '~/data/leads';
-import { GAME_ID_DISPLAY_NAMES, formatGameIdForDisplay } from '~/data/displayNames';
+import { GAME_ID_DISPLAY_NAMES, formatGameIdForDisplay, getCharacterIcon } from '~/data/displayNames';
 import { MISSION_MULTIPLIERS } from '~/data/missionMultipliers';
 import { hungarian } from '~/util/solver';
 
@@ -537,9 +537,13 @@ export function getAllLeads(): Map<string, LeadInfo> {
     for (const t of m.teams) {
       for (const key of getCharKeys(t)) {
         if (!map.has(key)) {
-          map.set(key, { key, display: canonicalLeadDisplay(key), icon: t.icon });
-        } else if (!map.get(key)!.icon && t.icon) {
-          map.get(key)!.icon = t.icon;
+          map.set(key, {
+            key,
+            display: canonicalLeadDisplay(key),
+            icon: getCharacterIcon(key) || t.icon,
+          });
+        } else if (!map.get(key)!.icon) {
+          map.get(key)!.icon = getCharacterIcon(key) || t.icon;
         }
       }
     }

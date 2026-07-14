@@ -3,6 +3,7 @@ import { useMediaQuery } from '@vueuse/core';
 import { type data as dataType } from './../models/data';
 import { difficulty, successRate, interactionType } from './../models/data';
 import { creatorMap } from '~/models/creators';
+import { getCharacterIcon } from '~/data/displayNames';
 import { useRouter, useRoute } from 'vue-router';
 import { nextTick, watch, computed, inject, type Ref } from 'vue';
 import { trackEvent } from '~/util/analytics';
@@ -347,7 +348,7 @@ async function showToast(itemIndex: number) {
                                     </UTooltip>
                                 </div>
                             </template>
-                            <img v-if="item.content.icon" :src="item.content.icon" class="h-9 w-9 rounded" />
+                            <img v-if="item.content.icon || getCharacterIcon(item.content.gameId)" :src="item.content.icon || getCharacterIcon(item.content.gameId)" class="h-9 w-9 rounded" />
                             <span class="mission-team-label">{{ item.label }}</span>
                             <span v-if="playerRoster?.isFetched && !item.content.owned" class="text-xs text-red-400/70 ml-1">unowned</span>
                             <span v-else-if="playerRoster?.isFetched && !item.content.meetsRelic" class="text-xs text-amber-400/70 ml-1">below relic</span>
@@ -413,7 +414,7 @@ async function showToast(itemIndex: number) {
                                 class="focus:outline-none focus-visible:outline-0 disabled:cursor-not-allowed disabled:opacity-75 aria-disabled:cursor-not-allowed aria-disabled:opacity-75 flex-shrink-0 font-medium rounded-md text-sm gap-x-1.5 px-2.5 py-1.5 text-gray-200 dark:text-gray-200 bg-primary-50 hover:bg-primary-100 disabled:bg-primary-50 aria-disabled:bg-primary-50 dark:bg-primary-950 dark:hover:bg-primary-900 dark:disabled:bg-primary-950 dark:aria-disabled:bg-primary-950 focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary-500 dark:focus-visible:ring-primary-400 inline-flex items-center mb-1.5 w-full"
                                 :class="{ 'opacity-40 grayscale': playerRoster?.isFetched && (!item.content.owned || !item.content.meetsRelic) }"
                                 :ui="{ padding: { sm: 'py-4 px-4' } }">
-                                <img v-if="item.content.icon" :src="item.content.icon" class="h-9 w-9 rounded" />
+                                <img v-if="item.content.icon || getCharacterIcon(item.content.gameId)" :src="item.content.icon || getCharacterIcon(item.content.gameId)" class="h-9 w-9 rounded" />
                                 <span class="mission-team-label">{{ item.label }}</span>
                                 <span v-if="playerRoster?.isFetched && !item.content.owned" class="text-xs text-red-400/70 ml-1">unowned</span>
                             <span v-else-if="playerRoster?.isFetched && !item.content.meetsRelic" class="text-xs text-amber-400/70 ml-1">below relic</span>

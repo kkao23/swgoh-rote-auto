@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { PHASE_ORDER } from '~/util/plannerHelpers';
+import { SHIP_GAME_IDS } from '~/data/displayNames';
 
 // ── Roster integration ──────────────────────────────────────────
 const {
@@ -115,6 +116,15 @@ function getPlanetInColumn(planets: typeof allPlanets.value, col: number) {
   return planets.find(p => planetColumn(p.alignment) === col) ?? null;
 }
 
+// ── Split leads into characters / ships for the exclusion UI ───
+const dayLeadGroups = computed(() => {
+  const all = getDayLeadOptions(activeDay.value);
+  return {
+    characters: all.filter(l => !SHIP_GAME_IDS.has(l.key)),
+    ships: all.filter(l => SHIP_GAME_IDS.has(l.key)),
+  };
+});
+
 // ── Format helpers ──────────────────────────────────────────────
 function successLabel(rate: string | undefined): string {
   switch (rate) {
@@ -163,7 +173,7 @@ const alignmentColors: Record<string, string> = {
           @click="showExcluded = !showExcluded"
         >
           <span class="text-white font-semibold text-sm">
-            Excluded Teams ({{ getDayLeadOptions(activeDay).filter(l => l.excluded).length }})
+            Excluded Teams ({{ dayLeadGroups.characters.filter(l => l.excluded).length + dayLeadGroups.ships.filter(l => l.excluded).length }})
           </span>
           <UIcon
             :name="showExcluded ? 'i-heroicons-chevron-up' : 'i-heroicons-chevron-down'"
@@ -179,18 +189,38 @@ const alignmentColors: Record<string, string> = {
             </template>
           </p>
           <div class="flex flex-wrap gap-2 max-h-48 overflow-y-auto">
-            <button
-              v-for="lead in getDayLeadOptions(activeDay)"
-              :key="lead.key"
-              class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium transition-colors"
-              :class="lead.excluded
-                ? 'bg-red-900/50 text-red-300 border border-red-700'
-                : 'bg-slate-800 text-slate-300 border border-slate-600 hover:bg-slate-700'"
-              @click="toggleExcludedLead(activeDay, lead.key)"
-            >
-              <img v-if="lead.icon" :src="lead.icon" class="h-4 w-4 rounded" />
-              {{ lead.label }}
-            </button>
+            <!-- Characters -->
+            <template v-if="dayLeadGroups.characters.length">
+              <div class="w-full text-[10px] text-slate-500 uppercase tracking-wider mt-1 mb-0.5">Characters</div>
+              <button
+                v-for="lead in dayLeadGroups.characters"
+                :key="lead.key"
+                class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium transition-colors"
+                :class="lead.excluded
+                  ? 'bg-red-900/50 text-red-300 border border-red-700'
+                  : 'bg-slate-800 text-slate-300 border border-slate-600 hover:bg-slate-700'"
+                @click="toggleExcludedLead(activeDay, lead.key)"
+              >
+                <img v-if="lead.icon" :src="lead.icon" class="h-4 w-4 rounded" />
+                {{ lead.label }}
+              </button>
+            </template>
+            <!-- Ships -->
+            <template v-if="dayLeadGroups.ships.length">
+              <div class="w-full text-[10px] text-slate-500 uppercase tracking-wider mt-3 mb-0.5">Ships</div>
+              <button
+                v-for="lead in dayLeadGroups.ships"
+                :key="lead.key"
+                class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium transition-colors"
+                :class="lead.excluded
+                  ? 'bg-red-900/50 text-red-300 border border-red-700'
+                  : 'bg-slate-800 text-slate-300 border border-slate-600 hover:bg-slate-700'"
+                @click="toggleExcludedLead(activeDay, lead.key)"
+              >
+                <img v-if="lead.icon" :src="lead.icon" class="h-4 w-4 rounded" />
+                {{ lead.label }}
+              </button>
+            </template>
           </div>
         </div>
       </div>

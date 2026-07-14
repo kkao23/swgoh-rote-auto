@@ -1,6 +1,7 @@
 import { data as allData } from '~/data/data';
 import type { data as TeamData, DataType } from '~/models/data';
 import { successRate } from '~/models/data';
+import { PHASE_RELIC_REQUIREMENTS } from '~/util/rosterUtils';
 import { leads } from '~/data/leads';
 import { GAME_ID_DISPLAY_NAMES, formatGameIdForDisplay, getCharacterIcon } from '~/data/displayNames';
 import { MISSION_MULTIPLIERS } from '~/data/missionMultipliers';
@@ -168,6 +169,18 @@ function getCharKeys(team: TeamData): string[] {
 
 // ── Score mapping ────────────────────────────────────────────────────
 
+/** Check that all characters in a team's gameId meet the relic requirement for a phase. */
+function meetsRelicReq(team: TeamData, phase: string, relicTierMap: Map<string, number>): boolean {
+  const required = PHASE_RELIC_REQUIREMENTS[phase];
+  if (required === undefined) return true;
+  const ids = team.gameId?.split(',').map(s => s.trim().toLowerCase()).filter(Boolean) ?? [];
+  if (ids.length === 0) return true;
+  return ids.every(id => {
+    const relic = relicTierMap.get(id);
+    return relic !== undefined && relic >= required;
+  });
+}
+
 export function teamScore(team: TeamData): number {
   switch (team.successRate) {
     case successRate.CONSISTENT: return 100;
@@ -334,6 +347,7 @@ export function solveDayForPlanets(
   excludedLeads: Set<string>,
   allMissions: FlatMission[],
   rosterUnitMap?: Set<string> | null,
+  relicTierMap?: Map<string, number> | null,
 ): SolveResult {
   const planets = getFlatPlanets();
   const planetMap = new Map(planets.map(p => [p.id, p]));
@@ -348,7 +362,7 @@ export function solveDayForPlanets(
     }
   }
 
-  return solveDay([...allMissionIds], excludedLeads, allMissions, rosterUnitMap);
+  return solveDay([...allMissionIds], excludedLeads, allMissions, rosterUnitMap, relicTierMap);
 }
 
 export function solveDay(
@@ -356,6 +370,7 @@ export function solveDay(
   excludedLeads: Set<string>,
   allMissions: FlatMission[],
   rosterUnitMap?: Set<string> | null,
+  relicTierMap?: Map<string, number> | null,
 ): SolveResult {
   const missionMap = new Map(allMissions.map(m => [m.id, m]));
 
@@ -391,6 +406,8 @@ export function solveDay(
   available.forEach((mission, mi) => {
     for (const team of mission.teams) {
       if (!isTeamEligible(team, excludedLeads, rosterUnitMap)) continue;
+      // Relic check: all required characters must meet the phase's relic requirement
+      if (relicTierMap && relicTierMap.size > 0 && !meetsRelicReq(team, mission.phase, relicTierMap)) continue;
       const keys = team.gameId
         ? team.gameId.split(',').map(s => s.trim().toLowerCase()).filter(Boolean)
         : [canonicalLeadKey(team)];

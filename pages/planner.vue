@@ -4,8 +4,15 @@ import { SHIP_GAME_IDS } from '~/data/displayNames';
 
 // ── Roster integration ──────────────────────────────────────────
 const {
+  allyCode,
+  isFetching,
+  fetchError,
   isFetched: playerDataFetched,
+  playerName,
   rosterUnits,
+  unitRelicMap,
+  fetchRoster: fetchPlayerData,
+  clearRoster,
 } = usePlayerRoster();
 
 const rosterUnitMap = computed<Set<string> | null>(() => {
@@ -20,6 +27,12 @@ const rosterUnitMap = computed<Set<string> | null>(() => {
     }
   }
   return set;
+});
+
+// Relic tier map for phase-level relic requirements
+const relicTierMap = computed<Map<string, number> | null>(() => {
+  if (!playerDataFetched.value) return null;
+  return unitRelicMap.value;
 });
 
 // ── Planner state ───────────────────────────────────────────────
@@ -70,13 +83,13 @@ const planetsByPhase = computed(() => {
 const resultsEl = ref<HTMLElement | null>(null);
 
 async function solveCurrentDay() {
-  solve(activeDay.value, rosterUnitMap.value);
+  solve(activeDay.value, rosterUnitMap.value, relicTierMap.value);
   await nextTick();
   resultsEl.value?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
 
 async function solveAllDays() {
-  solveAll(rosterUnitMap.value);
+  solveAll(rosterUnitMap.value, relicTierMap.value);
   await nextTick();
   resultsEl.value?.scrollIntoView({ behavior: 'smooth', block: 'start' });
 }
@@ -128,7 +141,7 @@ function getPlanetInColumn(planets: typeof allPlanets.value, col: number) {
 
 // ── Split leads into characters / ships for the exclusion UI ───
 const dayLeadGroups = computed(() => {
-  const all = getDayLeadOptions(activeDay.value);
+  const all = getDayLeadOptions(activeDay.value, relicTierMap.value);
   return {
     characters: all.filter(l => !SHIP_GAME_IDS.has(l.key)),
     ships: all.filter(l => SHIP_GAME_IDS.has(l.key)),
@@ -168,12 +181,55 @@ const alignmentColors: Record<string, string> = {
         </p>
       </div>
 
-      <!-- Roster Status -->
-      <div
-        v-if="playerDataFetched"
-        class="mb-4 rounded-lg bg-cyan-900/30 border border-cyan-700 p-3 text-sm text-cyan-300"
-      >
-        Roster loaded — unavailable missions are flagged below.
+      <!-- Ally Code Input -->
+      <div class="bg-slate-900/70 border border-slate-700 rounded-xl p-3 sm:p-5 mb-5">
+        <h2 class="text-base sm:text-lg font-semibold text-white mb-1 sm:mb-2">Import Your Roster</h2>
+        <p class="text-xs sm:text-sm text-slate-300 mb-2 sm:mb-4">
+          Enter your SWGOH ally code to highlight which teams you can use based on your roster.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-3">
+          <input
+            v-model="allyCode"
+            type="text"
+            placeholder="e.g. 761-355-883"
+            class="flex-1 bg-slate-800 text-white border border-slate-600 rounded-lg px-3 py-2"
+            @keyup.enter="fetchPlayerData"
+          />
+          <button
+            type="button"
+            :disabled="isFetching || !allyCode.trim()"
+            class="px-4 py-2 text-sm font-semibold rounded-lg bg-cyan-500 text-slate-900 hover:bg-cyan-400 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+            @click="fetchPlayerData"
+          >
+            {{ isFetching ? 'Fetching...' : 'Fetch My Roster' }}
+          </button>
+        </div>
+
+        <!-- Player Name Badge -->
+        <div
+          v-if="playerDataFetched && playerName"
+          class="mt-3 inline-flex items-center gap-2 bg-slate-800 border border-slate-600 rounded-full px-3 py-1 text-sm"
+        >
+          <span class="text-slate-300">{{ playerName }}</span>
+          <button
+            type="button"
+            class="text-slate-400 hover:text-red-400 transition-colors leading-none text-lg"
+            title="Clear roster"
+            @click="clearRoster"
+          >
+            &times;
+          </button>
+        </div>
+
+        <div v-if="fetchError" class="mt-4 rounded-lg bg-red-900/30 border border-red-700 p-3 text-sm text-red-300">
+          {{ fetchError }}
+        </div>
+
+        <div v-if="playerDataFetched" class="mt-4">
+          <p class="text-xs text-emerald-300">
+            Roster loaded — {{ rosterUnits.length }} units found. Teams you can't field will appear grayed out.
+          </p>
+        </div>
       </div>
 
       <!-- Excluded Teams -->
@@ -208,7 +264,11 @@ const alignmentColors: Record<string, string> = {
                 class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium transition-colors"
                 :class="lead.excluded
                   ? 'bg-red-900/50 text-red-300 border border-red-700'
-                  : 'bg-slate-800 text-slate-300 border border-slate-600 hover:bg-slate-700'"
+                  : lead.relicStatus === 'unowned'
+                    ? 'bg-slate-800 text-red-400/70 border border-red-800/50 hover:bg-slate-700'
+                    : lead.relicStatus === 'below_relic'
+                      ? 'bg-slate-800 text-amber-400/80 border border-amber-800/50 hover:bg-slate-700'
+                      : 'bg-slate-800 text-slate-300 border border-slate-600 hover:bg-slate-700'"
                 @click="toggleExcludedLead(activeDay, lead.key)"
               >
                 <img v-if="lead.icon" :src="lead.icon" class="h-4 w-4 rounded" />
@@ -224,7 +284,11 @@ const alignmentColors: Record<string, string> = {
                 class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium transition-colors"
                 :class="lead.excluded
                   ? 'bg-red-900/50 text-red-300 border border-red-700'
-                  : 'bg-slate-800 text-slate-300 border border-slate-600 hover:bg-slate-700'"
+                  : lead.relicStatus === 'unowned'
+                    ? 'bg-slate-800 text-red-400/70 border border-red-800/50 hover:bg-slate-700'
+                    : lead.relicStatus === 'below_relic'
+                      ? 'bg-slate-800 text-amber-400/80 border border-amber-800/50 hover:bg-slate-700'
+                      : 'bg-slate-800 text-slate-300 border border-slate-600 hover:bg-slate-700'"
                 @click="toggleExcludedLead(activeDay, lead.key)"
               >
                 <img v-if="lead.icon" :src="lead.icon" class="h-4 w-4 rounded" />

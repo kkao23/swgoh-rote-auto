@@ -22,13 +22,11 @@ function emptyDay(): DayState {
 }
 
 export function usePlanner() {
-  // ── Persisted state ────────────────────────────────────────────
   const dayStates = useLocalStorage<DayState[]>(
     'swgoh-rote-planner-days-v4',
     Array.from({ length: DAYS }, () => emptyDay()),
   );
 
-  // ── Derived data ───────────────────────────────────────────────
   const allMissions = computed(() => getFlatMissions());
   const allPlanets = computed(() => getFlatPlanets());
   const allLeads = computed(() => getAllLeads());
@@ -39,20 +37,31 @@ export function usePlanner() {
     return map;
   });
 
-  /** Lead options for a specific day's exclusion UI. */
-  function getDayLeadOptions(dayIndex: number) {
+  function getDayLeadOptions(dayIndex: number, relicTierMap?: Map<string, number> | null) {
     const excluded = new Set(dayStates.value[dayIndex]?.excludedLeads ?? []);
     return [...allLeads.value.values()]
-      .map((lead) => ({
-        key: lead.key,
-        label: lead.display,
-        icon: lead.icon,
-        excluded: excluded.has(lead.key),
-      }))
+      .map((lead) => {
+        let relicStatus: 'owned' | 'below_relic' | 'unowned' | null = null;
+        if (relicTierMap && relicTierMap.size > 0) {
+          const relic = relicTierMap.get(lead.key);
+          if (relic === undefined || relic < 0) {
+            relicStatus = 'unowned';
+          } else if (relic < 5) {
+            relicStatus = 'below_relic';
+          } else {
+            relicStatus = 'owned';
+          }
+        }
+        return {
+          key: lead.key,
+          label: lead.display,
+          icon: lead.icon,
+          excluded: excluded.has(lead.key),
+          relicStatus,
+        };
+      })
       .sort((a, b) => a.label.localeCompare(b.label));
   }
-
-  // ── Mission-level selection ───────────────────────────────────
 
   function isMissionSelected(dayIndex: number, missionId: string): boolean {
     return dayStates.value[dayIndex]?.selectedMissions.includes(missionId) ?? false;
@@ -70,8 +79,6 @@ export function usePlanner() {
     state.result = null;
     dayStates.value = [...dayStates.value];
   }
-
-  // ── Planet-level bulk toggle ──────────────────────────────────
 
   function planetSelectionCount(dayIndex: number, planetId: string): { selected: number; total: number } {
     const planet = planetMap.value.get(planetId);
@@ -91,10 +98,8 @@ export function usePlanner() {
     if (!state) return;
     const planet = planetMap.value.get(planetId);
     if (!planet) return;
-
     const { selected, total } = planetSelectionCount(dayIndex, planetId);
     const missionIdSet = new Set(planet.missions.map(m => m.id));
-
     if (selected === total) {
       state.selectedMissions = state.selectedMissions.filter(id => !missionIdSet.has(id));
     } else {
@@ -104,12 +109,9 @@ export function usePlanner() {
         }
       }
     }
-
     state.result = null;
     dayStates.value = [...dayStates.value];
   }
-
-  // ── Per-day exclusions ────────────────────────────────────────
 
   function toggleExcludedLead(dayIndex: number, leadKey: string) {
     const state = dayStates.value[dayIndex];
@@ -134,22 +136,20 @@ export function usePlanner() {
     return checkPlanetAvailability(planet, getDayExcludedSet(dayIndex), rosterUnitMap);
   }
 
-  // ── Solver ────────────────────────────────────────────────────
-
-  function solve(dayIndex: number, rosterUnitMap?: Set<string> | null) {
+  function solve(dayIndex: number, rosterUnitMap?: Set<string> | null, relicTierMap?: Map<string, number> | null) {
     const state = dayStates.value[dayIndex];
     if (!state || state.selectedMissions.length === 0) return;
-
     state.result = solveDay(
       state.selectedMissions,
       getDayExcludedSet(dayIndex),
       allMissions.value,
       rosterUnitMap,
+      relicTierMap,
     );
     dayStates.value = [...dayStates.value];
   }
 
-  function solveAll(rosterUnitMap?: Set<string> | null) {
+  function solveAll(rosterUnitMap?: Set<string> | null, relicTierMap?: Map<string, number> | null) {
     for (let i = 0; i < DAYS; i++) {
       const state = dayStates.value[i];
       if (state && state.selectedMissions.length > 0) {
@@ -158,6 +158,7 @@ export function usePlanner() {
           getDayExcludedSet(i),
           allMissions.value,
           rosterUnitMap,
+          relicTierMap,
         );
       }
     }

@@ -105,6 +105,16 @@ const PHASE_DISPLAY: Record<string, string> = {
 };
 const HIDDEN_PHASES = new Set(['Special']);
 
+// Which phases are available on each day (0-indexed)
+const DAY_PHASE_AVAILABILITY: Record<number, Set<string>> = {
+  0: new Set(['P1']),
+  1: new Set(['P1', 'P2']),
+  2: new Set(['P1', 'P2', 'P3', 'Zeffo']),
+  3: new Set(['P1', 'P2', 'P3', 'P4', 'Zeffo', 'Mandalore']),
+  4: new Set(['P1', 'P2', 'P3', 'P4', 'P5', 'Zeffo', 'Mandalore']),
+  5: new Set(['P1', 'P2', 'P3', 'P4', 'P5', 'P6', 'Zeffo', 'Mandalore']),
+};
+
 // Column order: DS(0) | Mixed/Mandalore(1) | LS/Zeffo(2)
 function planetColumn(alignment: string): number {
   if (alignment.includes('Dark')) return 0;
@@ -266,7 +276,7 @@ const alignmentColors: Record<string, string> = {
 
         <!-- Day Content -->
         <div class="p-4">
-          <div v-for="[phase, planets] in planetsByPhase.filter(([p]) => !HIDDEN_PHASES.has(p))" :key="phase" class="mb-5">
+          <div v-for="[phase, planets] in planetsByPhase.filter(([p]) => !HIDDEN_PHASES.has(p) && DAY_PHASE_AVAILABILITY[activeDay]?.has(p))" :key="phase" class="mb-5">
             <h3 class="text-sm font-semibold text-slate-300 mb-2 border-b border-slate-700 pb-1">
               {{ PHASE_DISPLAY[phase] ?? phase }}
             </h3>

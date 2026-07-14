@@ -12,6 +12,13 @@ export const SHIP_GAME_IDS = new Set([
   'capitalchimaera', 'capitalstardestroyer', 'capitalmoncalamaricruiser',
   'capitalleviathan', 'capitalmalevolence', 'capitalraddus', 'capitaljedicruiser',
   'thfat', 'rogueoneship', 'razorcrest', 'punishingone', 'millenniumfalcon', 'bwingrebel',
+  'scythe',
+]);
+
+export const GL_GAME_IDS = new Set([
+  'glleia', 'glrey', 'glhondo', 'sithpalpatine', 'jedimasterkenobi', 'lordvader', 'jabbathehutt', 
+  'supremeleaderkyloren', 'jedimasterlukeskywalker',
+  'glahsokatano'
 ]);
 
 /** Icon paths keyed by lowercase gameId.  Fill in over time — used as a fallback
@@ -64,7 +71,7 @@ export const CHARACTER_ICONS: Record<string, string> = {
   jediknightrevan: '/icons/characters/tex.charui_jedirevan.png',
   sateleshan: '/icons/characters/tex.charui_sateleshan.png',
   baylanskoll: '/icons/characters/tex.charui_baylanskoll.png',
-  ahsokatano: '/icons/characters/tex.charui_ahsokatanogray.png',
+  glahsokatano: '/icons/characters/tex.charui_ahsokatanogray.png',
   bossnass: '/icons/characters/tex.charui_bossnass.png',
   kelleranbeq: '/icons/characters/tex.charui_kelleranbeq.png',
   monmothma: '/icons/characters/tex.charui_monmothma.png',
@@ -94,6 +101,8 @@ export const CHARACTER_ICONS: Record<string, string> = {
   younghan: '/icons/characters/tex.charui_han_young.png',
   zaalbar: '/icons/characters/tex.charui_zaalbar.png',
   zoriibliss_v2: '/icons/characters/tex.charui_zoriibliss.png',
+  scythe: '/icons/ships/tex.charui_scythe.png',
+  ahsokatano: '/icons/characters/tex.charui_ahsoka.png'
 };
 
 /** Get the icon path for a gameId, if one is registered. */
@@ -107,6 +116,7 @@ export const GAME_ID_DISPLAY_NAMES: Record<string, string> = {
   // ── Galactic Legends & journey characters ──────────────────────
   glleia: 'GL Leia',
   glrey: 'GL Rey',
+  glahsokatano: 'GL Ahsoka',
   glhondo: 'Pirate King Hondo Onaka',
   sithpalpatine: 'Sith Eternal Emperor',
   jedimasterkenobi: 'Jedi Master Kenobi',
@@ -206,6 +216,7 @@ export const GAME_ID_DISPLAY_NAMES: Record<string, string> = {
   padawanobiwan: 'Padawan Obi-Wan',
   darthmalgus: 'Darth Malgus',
   zoriibliss_v2: 'Zorii Bliss',
+  ahsokatano: 'Snips'
 };
 
 /**

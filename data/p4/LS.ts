@@ -341,3 +341,17 @@ export const jediLSP4: dataType[] = [
         creator: 'anonymous'
     }
 ]
+
+export const phoenixLSP4: dataType[] = [
+    {
+        lead: 'Hera Syndulla', gameId: 'HERASYNDULLAS3, CAPTAINREX, CHOPPER',
+        leadFull: 'Phoenix',
+        others: 'Have seen different combos. Chopper and Rex most likely mandatory',
+        notes: 'Possibly autoable? not sure if that\'s consistent',
+        videos: [{ url: 'https://youtu.be/5SD-09kDFPE?si=MDnbIjZMaJ0CxqhP', creator: 'pariah'}],
+        icon: '/icons/characters/tex.charui_hera_s3.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.AUTO],
+    }
+]

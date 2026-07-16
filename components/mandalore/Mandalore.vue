@@ -20,4 +20,7 @@ const phase = 'Mandalore';
     <tr>
         <MissionTableFragment :position="`Fleet`" :data="data.mandalore.fleets" :phase="phase"></MissionTableFragment>
     </tr>
+    <tr>
+        <MissionTableFragment :position="`Bo Katan`" :data="data.mandalore.boKatan" :phase="phase"></MissionTableFragment>
+    </tr>
 </template>

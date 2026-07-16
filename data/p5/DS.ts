@@ -202,3 +202,18 @@ export const dsLeftP5: dataType[] = [
         interactionType: [interactionType.MANUAL]
     },
 ]
+
+export const dsInqsP5: dataType[] = [
+    {
+        lead: 'Fifth Brother', gameId: 'FIFTHBROTHER, EIGHTHBROTHER, SEVENTHSISTER',
+        leadFull: 'Fifth Brother',
+        others: '8th and 7th are mandatory, Third and GI or omi Marrok are the best others',
+        notes: 'auto with Marrok omi, not sure without',
+        videos: [{ url: 'https://youtu.be/vZ5koSc2xhU?si=hSQ2hrjGGRShDwzM', creator: 'General Skaar'}],
+        icon: '/icons/characters/tex.charui_fifthbrother.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        omi: true
+    },
+]

@@ -32,4 +32,9 @@ const alignment = 'LS';
             >
         </MissionTableFragment>
     </tr>
+    <tr>
+        <MissionTableFragment :position="`Cassian`" :data="data.ls.cassian" :phase="phase" :alignment="alignment"
+            >
+        </MissionTableFragment>
+    </tr>
 </template>

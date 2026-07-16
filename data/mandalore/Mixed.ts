@@ -300,3 +300,17 @@ export const mandaloreDTMG: dataType[] = [
     creator: 'anonymous'
 }
 ]
+
+export const mandaloreBoKatan: dataType[] = [
+    {
+        lead: 'BKM', gameId: 'MANDALORBOKATAN',
+        leadFull: 'Bo-Katan Mandalore',
+        others: 'Paz Vizsla, Mandalorian (Beskar Armor), IG-12 & Grogu, Bo-Katan',
+        notes: 'Not an easy mission, can\'t auto',
+        videos: [{ url: 'https://youtu.be/PtJTcb0_uNs?si=UpQUnQRDbkN9KvhJ', creator: 'Elnur Rustam' }],
+        icon: '/icons/characters/tex.charui_mandalorbokatan.png',
+        difficulty: difficulty.HARD,
+        successRate: successRate.UNRELIABLE,
+        interactionType: [interactionType.MANUAL],
+    }
+]

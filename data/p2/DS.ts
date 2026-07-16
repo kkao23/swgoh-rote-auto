@@ -379,4 +379,26 @@ export const shipsDSP2: dataType[] = [
         difficulty: difficulty.NO_AUTO,
         successRate: successRate.UNRELIABLE
     },
+    {
+        lead: 'Leviathan', gameId: 'CAPITALLEVIATHAN',
+        others: 'Sith Fighter, FCI, Sith Bomber, MKVI Interceptor, Tie Dagger, Scimitar, Emp Shuttle',
+        notes: 'this is super hard, watch the video',
+        videos: [{ url: 'https://www.youtube.com/watch?v=v5AJ8YN5E1o&pp=ygUbc3dnb2ggcm90ZSBnZW9ub3NpcyBtaXNzaW9u', creator: 'BitDynasty' }],
+        icon: '/icons/ships/tex.charui_leviathan.png',
+        difficulty: difficulty.NO_AUTO,
+        successRate: successRate.UNRELIABLE
+    },
+]
+
+export const geosDSP2: dataType[] = [
+    {
+        lead: 'GBA', gameId: 'GEONOSIANBROODALPHA, SUNFAC, GEONOSIANSOLDIER, GEONOSIANSPY, POGGLETHELESSER',
+        leadFull: 'Geonosian Brood Alpha',
+        others: 'The other geos',
+        notes: 'can\'t auto. Difficult mission. Not really worth it',
+        videos: [{ url: 'https://www.youtube.com/watch?v=8aX_N2-5T6Y&pp=ygUnc3dnb2ggcm90ZSBnZW9ub3NpcyBtaXNzaW9uIGJyb29kIGFscGhh', creator: 'PotatoGnarly' }],
+        icon: '/icons/ships/tex.charui_geonosian_broodalpha.png',
+        difficulty: difficulty.NO_AUTO,
+        successRate: successRate.UNRELIABLE
+    },
 ]

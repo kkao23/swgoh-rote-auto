@@ -264,3 +264,16 @@ export const lsShipsP5: dataType[] = [
         interactionType: [interactionType.MANUAL]
     },
 ]
+
+export const lsCassianP5: dataType[] = [
+    {
+        lead: 'Admiral Raddus', gameId: 'ADMIRALRADDUS, K2SO, CASSIANANDOR',
+        others: 'Jyn Erso, +1 Rogue One',
+        notes: 'Can\'t auto, challenging mission',
+        videos: [{url: 'https://youtu.be/Ow9hmHcUhQE?si=MGP3GHLfu1gtpTFG', creator: 'Panda Bear'}],
+        icon: '/icons/characters/tex.charui_admiralraddus.png',
+        difficulty: difficulty.HARD,
+        successRate: successRate.UNRELIABLE,
+        interactionType: [interactionType.MANUAL],
+    }
+]

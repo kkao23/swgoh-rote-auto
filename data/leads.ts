@@ -314,5 +314,15 @@ export const leads:lead[] = [
     "id": "bobafettold",
     "fullName": "Boba Fett Scion of Jango",
     "aliases": ["DBB", "Dad Bod Boba", "BFSOJ"]
+  },
+  {
+    "id": "geonosianbroodalpha",
+    "fullName": "Geonosian Brood Alpha",
+    "aliases": ["GBA"]
+  },
+  {
+    "id": "fifthbrother",
+    "fullName": "Fifth Brother",
+    "aliases": ["5B"]
   }
 ]

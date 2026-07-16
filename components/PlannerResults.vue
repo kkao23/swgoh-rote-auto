@@ -19,6 +19,93 @@ const sortedAssignments = computed(() => {
   });
 });
 
+interface UnifiedRow {
+  missionId: string;
+  missionLabel: string;
+  phase: string;
+  alignment: string;
+  assignedTeam: string;
+  squad: string;
+  successRate: string | undefined;
+  score: number;
+  icon: string | undefined;
+  notes: string;
+  videos: { url: string; creator?: string }[];
+  kind: 'assigned' | 'unavailable' | 'unassigned';
+}
+
+const unifiedRows = computed<UnifiedRow[]>(() => {
+  const r = props.result;
+  if (!r) return [];
+
+  const rows: UnifiedRow[] = [];
+
+  for (const a of sortedAssignments.value) {
+    rows.push({
+      missionId: a.missionId,
+      missionLabel: a.missionLabel,
+      phase: a.phase,
+      alignment: a.alignment,
+      assignedTeam: a.leadFull || a.lead,
+      squad: a.others,
+      successRate: a.successRate,
+      score: a.score,
+      icon: a.icon,
+      notes: a.notes,
+      videos: a.videos,
+      kind: 'assigned',
+    });
+  }
+
+  for (const m of r.unassigned) {
+    rows.push({
+      missionId: m.id,
+      missionLabel: m.label,
+      phase: m.phase,
+      alignment: m.alignment,
+      assignedTeam: 'N/A (No free teams)',
+      squad: '',
+      successRate: undefined,
+      score: 0,
+      icon: undefined,
+      notes: '',
+      videos: [],
+      kind: 'unassigned',
+    });
+  }
+
+  for (const m of r.unavailableMissions) {
+    rows.push({
+      missionId: m.id,
+      missionLabel: m.label,
+      phase: m.phase,
+      alignment: m.alignment,
+      assignedTeam: 'N/A (No Eligible Leads)',
+      squad: '',
+      successRate: undefined,
+      score: 0,
+      icon: undefined,
+      notes: '',
+      videos: [],
+      kind: 'unavailable',
+    });
+  }
+
+  const KIND_ORDER: Record<string, number> = { assigned: 0, unassigned: 1, unavailable: 2 };
+
+  rows.sort((a, b) => {
+    const ka = KIND_ORDER[a.kind];
+    const kb = KIND_ORDER[b.kind];
+    if (ka !== kb) return ka - kb;
+    const pa = PHASE_ORDER.indexOf(a.phase);
+    const pb = PHASE_ORDER.indexOf(b.phase);
+    if (pa !== pb) return pa - pb;
+    return a.alignment.localeCompare(b.alignment);
+  });
+
+  return rows;
+});
+
 function successLabel(rate: string | undefined): string {
   switch (rate) {
     case 'consistent': return '100%';
@@ -63,7 +150,7 @@ function successLabel(rate: string | undefined): string {
       {{ result.unavailableMissions.map(m => m.label).join(', ') }}
     </div>
 
-    <div v-if="result.assignments.length > 0" class="overflow-x-auto">
+    <div v-if="unifiedRows.length > 0" class="overflow-x-auto">
       <table class="w-full text-sm">
         <thead>
           <tr class="text-left text-slate-400 border-b border-slate-700">
@@ -77,64 +164,79 @@ function successLabel(rate: string | undefined): string {
         </thead>
         <tbody class="divide-y divide-slate-800">
           <template
-            v-for="a in sortedAssignments"
-            :key="a.missionId"
+            v-for="row in unifiedRows"
+            :key="row.missionId + row.kind"
           >
             <tr
-              class="text-white cursor-pointer hover:bg-slate-800/50 transition-colors"
-              @click="expandedResult = expandedResult === a.missionId ? null : a.missionId"
+              :class="[
+                'transition-colors',
+                row.kind === 'assigned'
+                  ? 'text-white cursor-pointer hover:bg-slate-800/50'
+                  : 'text-slate-500',
+              ]"
+              @click="row.kind === 'assigned' && (expandedResult = expandedResult === row.missionId ? null : row.missionId)"
             >
               <td class="py-2 pr-2">
                 <div class="flex items-center gap-1">
                   <UIcon
+                    v-if="row.kind === 'assigned'"
                     name="i-heroicons-chevron-right"
                     class="w-3.5 h-3.5 text-slate-500 transition-transform flex-shrink-0"
-                    :class="{ 'rotate-90': expandedResult === a.missionId }"
+                    :class="{ 'rotate-90': expandedResult === row.missionId }"
                   />
-                  <div>
-                    <div>{{ a.missionLabel }}</div>
-                    <div class="text-xs text-slate-500 sm:hidden">{{ a.phase }} {{ a.alignment }}</div>
+                  <div :class="{ 'ml-5': row.kind !== 'assigned' }">
+                    <div>{{ row.missionLabel }}</div>
+                    <div class="text-xs text-slate-500 sm:hidden">{{ row.phase }} {{ row.alignment }}</div>
                   </div>
                 </div>
               </td>
               <td class="py-2 pr-2 hidden sm:table-cell text-slate-500 text-xs">
-                {{ a.phase }} {{ a.alignment }}
+                {{ row.phase }} {{ row.alignment }}
               </td>
               <td class="py-2 pr-2">
                 <div class="flex items-center gap-2">
-                  <img v-if="a.icon" :src="a.icon" class="h-6 w-6 rounded" />
-                  <span class="text-sm">{{ a.leadFull || a.lead }}</span>
+                  <img v-if="row.icon" :src="row.icon" class="h-6 w-6 rounded" />
+                  <span
+                    :class="[
+                      'text-sm',
+                      row.kind !== 'assigned' ? 'italic text-slate-500' : '',
+                    ]"
+                  >{{ row.assignedTeam }}</span>
                 </div>
               </td>
               <td class="py-2 pr-2 hidden sm:table-cell text-slate-400 text-xs">
-                {{ a.others }}
+                {{ row.squad }}
               </td>
               <td class="py-2 text-center">
                 <span
+                  v-if="row.kind === 'assigned'"
                   class="inline-block px-2 py-0.5 rounded text-xs font-medium"
                   :class="{
-                    'bg-green-900/50 text-green-300': a.successRate === 'consistent',
-                    'bg-blue-900/50 text-blue-300': a.successRate === 'ninety-percent',
-                    'bg-yellow-900/50 text-yellow-300': a.successRate === 'usually',
-                    'bg-orange-900/50 text-orange-300': a.successRate === 'fifty-fifty',
-                    'bg-red-900/50 text-red-300': a.successRate === 'unreliable',
-                    'bg-slate-800 text-slate-400': !a.successRate,
+                    'bg-green-900/50 text-green-300': row.successRate === 'consistent',
+                    'bg-blue-900/50 text-blue-300': row.successRate === 'ninety-percent',
+                    'bg-yellow-900/50 text-yellow-300': row.successRate === 'usually',
+                    'bg-orange-900/50 text-orange-300': row.successRate === 'fifty-fifty',
+                    'bg-red-900/50 text-red-300': row.successRate === 'unreliable',
+                    'bg-slate-800 text-slate-400': !row.successRate,
                   }"
-                >{{ successLabel(a.successRate) }}</span>
+                >{{ successLabel(row.successRate) }}</span>
+                <span v-else class="text-slate-600 text-xs">—</span>
               </td>
-              <td class="py-2 text-right font-mono text-slate-300">{{ a.score }}</td>
+              <td class="py-2 text-right font-mono" :class="row.kind === 'assigned' ? 'text-slate-300' : 'text-slate-600'">
+                {{ row.kind === 'assigned' ? row.score : '—' }}
+              </td>
             </tr>
-            <tr v-if="expandedResult === a.missionId" class="bg-slate-800/50">
+            <tr v-if="row.kind === 'assigned' && expandedResult === row.missionId" class="bg-slate-800/50">
               <td :colspan="6" class="px-4 py-3">
                 <div class="text-sm space-y-2">
-                  <div v-if="a.notes">
+                  <div v-if="row.notes">
                     <strong class="text-slate-300">Notes:</strong>
-                    <p class="text-slate-400 mt-0.5">{{ a.notes }}</p>
+                    <p class="text-slate-400 mt-0.5">{{ row.notes }}</p>
                   </div>
-                  <div v-if="a.videos && a.videos.length > 0">
+                  <div v-if="row.videos && row.videos.length > 0">
                     <strong class="text-slate-300">Videos:</strong>
                     <div class="mt-1 space-y-1">
-                      <div v-for="(v, vi) in a.videos" :key="vi">
+                      <div v-for="(v, vi) in row.videos" :key="vi">
                         <a
                           :href="v.url"
                           target="_blank"
@@ -148,7 +250,7 @@ function successLabel(rate: string | undefined): string {
                       </div>
                     </div>
                   </div>
-                  <div v-if="!a.notes && (!a.videos || a.videos.length === 0)" class="text-slate-600 text-xs">
+                  <div v-if="!row.notes && (!row.videos || row.videos.length === 0)" class="text-slate-600 text-xs">
                     No notes or videos for this team.
                   </div>
                 </div>

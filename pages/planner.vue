@@ -150,10 +150,10 @@ const activeDayExcludedLeads = computed(() =>
 </script>
 
 <template>
-    <UContainer class="pt-0 sm:pt-4 pb-4 sm:pb-8">
+    <div class="px-2 sm:px-4 pt-0 sm:pt-4 pb-4 sm:pb-8 max-w-7xl mx-auto">
       <div class="mb-6">
         <h1 class="text-xl sm:text-2xl font-bold text-white">Squad Planner</h1>
-        <p class="text-sm text-slate-400 mt-1">
+        <p class="text-xs sm:text-sm text-slate-400 mt-1">
           Select planets and missions you plan to do each day. The solver assigns teams to maximise
           success rate, with no team used twice per day.
         </p>
@@ -244,7 +244,7 @@ const activeDayExcludedLeads = computed(() =>
           <button
             v-for="(label, i) in dayLabels"
             :key="i"
-            class="flex-1 px-3 py-3 text-sm font-medium whitespace-nowrap transition-colors min-w-0"
+            class="flex-1 px-1.5 sm:px-3 py-2 sm:py-3 text-xs sm:text-sm font-medium whitespace-nowrap transition-colors min-w-0"
             :class="activeDay === i
               ? 'text-white border-b-2 border-cyan-400 bg-slate-800/50'
               : 'text-slate-400 hover:text-slate-200'"
@@ -264,7 +264,7 @@ const activeDayExcludedLeads = computed(() =>
             <h3 class="text-sm font-semibold text-slate-300 mb-2 border-b border-slate-700 pb-1">
               {{ PHASE_DISPLAY[phase] ?? phase }}
             </h3>
-            <div class="grid grid-cols-3 gap-2">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
               <template v-for="col in [0, 1, 2]" :key="col">
                 <div v-if="getPlanetInColumn(planets, col)" class="relative">
                   <!-- Planet Card -->
@@ -431,7 +431,7 @@ const activeDayExcludedLeads = computed(() =>
           Clear All Data
         </button>
       </div>
-    </UContainer>
+    </div>
 </template>
 
 <style scoped>

@@ -66,9 +66,9 @@ export const leads:lead[] = [
     "aliases": ["Baylan"]
   },
   {
-    "id": "bo-katankryze",
+    "id": "bokatan",
     "fullName": "Bo-Katan Kryze",
-    "aliases": ["Bo Katan", "BKM"]
+    "aliases": ["Bo-Katan", "Bo Katan", "BK"]
   },
   {
     "id": "bossk",
@@ -86,7 +86,7 @@ export const leads:lead[] = [
     "aliases": ["Enoch"]
   },
   {
-    "id": "rex",
+    "id": "CT7567",
     "fullName": "Rex",
     "aliases": []
   },

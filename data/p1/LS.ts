@@ -381,7 +381,7 @@ export const genericLSP1: dataType[] = [
         interactionType: [interactionType.TARGET_START, interactionType.PAUSE_WAVE2],
     },
     {
-        "lead": "Rex", "gameId": "REX",
+        "lead": "Rex", "gameId": "CT7567",
         "leadFull": "Rex",
         "others": "501st + Crex",
         "notes": "Stall till Rex insta kill on medic on phase 2 stun one and finish the other having the insta kill off cooldown entering p2",

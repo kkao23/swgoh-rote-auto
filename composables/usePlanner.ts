@@ -8,6 +8,7 @@ import {
   type FlatPlanet,
   type SolveResult,
 } from '~/util/plannerHelpers';
+import { SHIP_GAME_IDS } from '~/data/displayNames';
 
 const DAYS = 6;
 
@@ -46,6 +47,8 @@ export function usePlanner() {
           const relic = relicTierMap.get(lead.key);
           if (relic === undefined || relic < 0) {
             relicStatus = 'unowned';
+          } else if (SHIP_GAME_IDS.has(lead.key)) {
+            relicStatus = 'owned'; // ships don't have relics — 7★ is enough
           } else if (relic < 5) {
             relicStatus = 'below_relic';
           } else {

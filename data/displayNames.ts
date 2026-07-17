@@ -17,8 +17,15 @@ export const SHIP_GAME_IDS = new Set([
 
 export const GL_GAME_IDS = new Set([
   'glleia', 'glrey', 'glhondo', 'sithpalpatine', 'jedimasterkenobi', 'lordvader', 'jabbathehutt', 
-  'supremeleaderkyloren', 'jedimasterlukeskywalker',
+  'supremeleaderkyloren', 'grandmasterluke',
   'glahsokatano'
+]);
+
+export const JOURNEY_GUIDE_GAME_IDS = new Set([
+  'doctoraphra', 'grandinquisitor', 'baylanskoll', 'starkiller', 'thirdsister', 
+  'generalskywalker', 'stranger', 'maulhatefueled', 'jedimastermacewindu',
+  'jediknightcal', 'mandalorbokatan',
+  'cassianundercover'
 ]);
 
 /** Icon paths keyed by lowercase gameId.  Fill in over time — used as a fallback
@@ -43,7 +50,7 @@ export const CHARACTER_ICONS: Record<string, string> = {
   lordvader: '/icons/characters/tex.charui_lordvader.png',
   jabbathehutt: '/icons/characters/tex.charui_jabbathehutt.png',
   supremeleaderkyloren: '/icons/characters/tex.charui_kyloren_tros.png',
-  jedimasterlukeskywalker: '/icons/characters/tex.charui_luke_jml.png',
+  grandmasterluke: '/icons/characters/tex.charui_luke_jml.png',
   jediknightlukeskywalker: '/icons/characters/tex.charui_luke_jediknight.png',
   jediknightcalkestis: '/icons/characters/tex.charui_calkestis.png',
   commanderlukeskywalker: '/icons/characters/tex.charui_luke_ep4.png',

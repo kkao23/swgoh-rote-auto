@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { PHASE_ORDER } from '~/util/plannerHelpers';
-import { SHIP_GAME_IDS, GL_GAME_IDS } from '~/data/displayNames';
+import { SHIP_GAME_IDS, GL_GAME_IDS, JOURNEY_GUIDE_GAME_IDS } from '~/data/displayNames';
 
 // ── Roster integration ──────────────────────────────────────────
 const {
@@ -125,12 +125,15 @@ function getPlanetInColumn(planets: typeof allPlanets.value, col: number) {
   return planets.find(p => planetColumn(p.alignment) === col) ?? null;
 }
 
-// ── Split leads into GLs / characters / ships for the exclusion UI
+// ── Split leads into GLs / Journey / characters / ships for the exclusion UI
 const dayLeadGroups = computed(() => {
   const all = getDayLeadOptions(activeDay.value, relicTierMap.value);
   return {
     gls: all.filter(l => GL_GAME_IDS.has(l.key)),
-    characters: all.filter(l => !GL_GAME_IDS.has(l.key) && !SHIP_GAME_IDS.has(l.key)),
+    journey: all.filter(l => JOURNEY_GUIDE_GAME_IDS.has(l.key)),
+    characters: all.filter(l =>
+      !GL_GAME_IDS.has(l.key) && !JOURNEY_GUIDE_GAME_IDS.has(l.key) && !SHIP_GAME_IDS.has(l.key),
+    ),
     ships: all.filter(l => SHIP_GAME_IDS.has(l.key)),
   };
 });
@@ -213,6 +216,7 @@ const activeDayExcludedLeads = computed(() =>
       <!-- Excluded Teams -->
       <ExcludedTeamsPanel
         :gls="dayLeadGroups.gls"
+        :journey="dayLeadGroups.journey"
         :characters="dayLeadGroups.characters"
         :ships="dayLeadGroups.ships"
         :player-data-fetched="playerDataFetched"

@@ -9,6 +9,7 @@ export interface LeadOption {
 
 const props = defineProps<{
   gls: LeadOption[];
+  journey: LeadOption[];
   characters: LeadOption[];
   ships: LeadOption[];
   playerDataFetched: boolean;
@@ -25,7 +26,7 @@ function excludedCount(list: LeadOption[]): number {
 }
 
 const totalExcluded = computed(() =>
-  excludedCount(props.gls) + excludedCount(props.characters) + excludedCount(props.ships),
+  excludedCount(props.gls) + excludedCount(props.journey) + excludedCount(props.characters) + excludedCount(props.ships),
 );
 
 function btnClass(lead: LeadOption): string {
@@ -64,6 +65,20 @@ function btnClass(lead: LeadOption): string {
           <div class="w-full text-[10px] text-yellow-400 uppercase tracking-wider mt-1 mb-0.5">Galactic Legends</div>
           <button
             v-for="lead in gls"
+            :key="lead.key"
+            class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium transition-colors"
+            :class="btnClass(lead)"
+            @click="emit('toggle-excluded', lead.key)"
+          >
+            <img v-if="lead.icon" :src="lead.icon" class="h-4 w-4 rounded" />
+            {{ lead.label }}
+          </button>
+        </template>
+        <!-- Journey Guide -->
+        <template v-if="journey.length">
+          <div class="w-full text-[10px] text-purple-400 uppercase tracking-wider mt-3 mb-0.5">Journey Guide</div>
+          <button
+            v-for="lead in journey"
             :key="lead.key"
             class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-medium transition-colors"
             :class="btnClass(lead)"

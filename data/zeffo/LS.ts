@@ -3,7 +3,7 @@ import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const clonesSM: dataType[] = [
     {
-        lead: 'Rex', gameId: 'REX',
+        lead: 'Rex', gameId: 'CT7567',
         others: 'Capt Rex, Echo, Arc Trooper, Fives',
         notes: 'Auto, unselect reticule, Reticule on Consular in P2 to make it a bit safer, the woman\'s counterattacks hurt',
         videos: [{ url: 'https://youtu.be/SvUzVopG8a4' }],

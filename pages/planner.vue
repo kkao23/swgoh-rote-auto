@@ -143,6 +143,10 @@ const alignmentColors: Record<string, string> = {
   'Mandalore': 'text-amber-300',
   'Special': 'text-pink-300',
 };
+
+const activeDayExcludedLeads = computed(() =>
+  new Set<string>(dayStates.value[activeDay.value]?.excludedLeads ?? []),
+);
 </script>
 
 <template>
@@ -413,6 +417,8 @@ const alignmentColors: Record<string, string> = {
         v-if="dayStates[activeDay]?.result"
         :result="dayStates[activeDay]!.result"
         :day-label="dayLabels[activeDay]"
+        :excluded-leads="activeDayExcludedLeads"
+        :roster-unit-map="rosterUnitMap"
       />
 
       <!-- Clear All -->

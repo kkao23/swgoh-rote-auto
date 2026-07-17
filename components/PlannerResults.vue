@@ -1,13 +1,29 @@
 <script setup lang="ts">
-import { PHASE_ORDER, type SolveResult } from '~/util/plannerHelpers';
+import { PHASE_ORDER, type SolveResult, isTeamEligible, getFlatMissions, teamScore } from '~/util/plannerHelpers';
+import type { data as TeamData } from '~/models/data';
 
 const props = defineProps<{
   result: SolveResult;
   dayLabel: string;
+  excludedLeads: Set<string>;
+  rosterUnitMap: Set<string> | null;
 }>();
 
 const expandedResult = ref<string | null>(null);
 
+// ── Mission teams lookup (all teams for every mission) ──────────
+const missionTeamsMap = computed(() => {
+  const map = new Map<string, TeamData[]>();
+  for (const m of getFlatMissions()) {
+    map.set(m.id, m.teams as TeamData[]);
+  }
+  return map;
+});
+
+// ── Manual team overrides: missionId → team index ──────────────
+const manualTeamIdx = ref<Record<string, number>>({});
+
+// ── Sorted solver assignments ────────────────────────────────────
 const sortedAssignments = computed(() => {
   const r = props.result;
   if (!r) return [];
@@ -19,19 +35,40 @@ const sortedAssignments = computed(() => {
   });
 });
 
+// ── Get eligible teams for a mission ────────────────────────────
+function eligibleTeams(missionId: string): TeamData[] {
+  const teams = missionTeamsMap.value.get(missionId);
+  if (!teams) return [];
+  return teams.filter(t => isTeamEligible(t, props.excludedLeads, props.rosterUnitMap));
+}
+
+// ── Find a team in the list (prefer gameId, fall back to lead) ──
+function findTeamIndex(teams: TeamData[], gameId: string | undefined, lead: string, others: string): number {
+  if (gameId) {
+    const gid = gameId.toLowerCase();
+    const idx = teams.findIndex(t => t.gameId?.toLowerCase() === gid);
+    if (idx >= 0) return idx;
+  }
+  return teams.findIndex(t =>
+    (t.lead === lead || t.leadFull === lead) && t.others === others,
+  );
+}
+
+// ── Unified table rows ──────────────────────────────────────────
 interface UnifiedRow {
   missionId: string;
   missionLabel: string;
   phase: string;
   alignment: string;
-  assignedTeam: string;
-  squad: string;
-  successRate: string | undefined;
-  score: number;
-  icon: string | undefined;
-  notes: string;
-  videos: { url: string; creator?: string }[];
   kind: 'assigned' | 'unavailable' | 'unassigned';
+  // Original solver assignment (null for unavailable/unassigned)
+  solverLead: string | null;
+  solverOthers: string | null;
+  solverSuccessRate: string | undefined;
+  solverScore: number;
+  solverIcon: string | undefined;
+  solverNotes: string;
+  solverVideos: { url: string; creator?: string }[];
 }
 
 const unifiedRows = computed<UnifiedRow[]>(() => {
@@ -46,14 +83,14 @@ const unifiedRows = computed<UnifiedRow[]>(() => {
       missionLabel: a.missionLabel,
       phase: a.phase,
       alignment: a.alignment,
-      assignedTeam: a.leadFull || a.lead,
-      squad: a.others,
-      successRate: a.successRate,
-      score: a.score,
-      icon: a.icon,
-      notes: a.notes,
-      videos: a.videos,
       kind: 'assigned',
+      solverLead: a.leadFull || a.lead,
+      solverOthers: a.others,
+      solverSuccessRate: a.successRate,
+      solverScore: a.score,
+      solverIcon: a.icon,
+      solverNotes: a.notes,
+      solverVideos: a.videos,
     });
   }
 
@@ -63,14 +100,14 @@ const unifiedRows = computed<UnifiedRow[]>(() => {
       missionLabel: m.label,
       phase: m.phase,
       alignment: m.alignment,
-      assignedTeam: 'N/A (No free teams)',
-      squad: '',
-      successRate: undefined,
-      score: 0,
-      icon: undefined,
-      notes: '',
-      videos: [],
       kind: 'unassigned',
+      solverLead: null,
+      solverOthers: null,
+      solverSuccessRate: undefined,
+      solverScore: 0,
+      solverIcon: undefined,
+      solverNotes: '',
+      solverVideos: [],
     });
   }
 
@@ -80,14 +117,14 @@ const unifiedRows = computed<UnifiedRow[]>(() => {
       missionLabel: m.label,
       phase: m.phase,
       alignment: m.alignment,
-      assignedTeam: 'N/A (No Eligible Leads)',
-      squad: '',
-      successRate: undefined,
-      score: 0,
-      icon: undefined,
-      notes: '',
-      videos: [],
       kind: 'unavailable',
+      solverLead: null,
+      solverOthers: null,
+      solverSuccessRate: undefined,
+      solverScore: 0,
+      solverIcon: undefined,
+      solverNotes: '',
+      solverVideos: [],
     });
   }
 
@@ -106,6 +143,38 @@ const unifiedRows = computed<UnifiedRow[]>(() => {
   return rows;
 });
 
+// ── Seed manual indexes from solver assignments ──────────────────
+watch(() => props.result, (r) => {
+  if (!r) return;
+  const next: Record<string, number> = {};
+  for (const a of r.assignments) {
+    const teams = missionTeamsMap.value.get(a.missionId);
+    if (!teams) continue;
+    const idx = findTeamIndex(teams, a.gameId, a.lead, a.others);
+    if (idx >= 0) next[a.missionId] = idx;
+  }
+  manualTeamIdx.value = next;
+}, { immediate: true });
+
+// ── Effective team for a row (manual override or solver seed) ────
+function getEffectiveTeam(row: UnifiedRow): TeamData | null {
+  const teams = missionTeamsMap.value.get(row.missionId);
+  if (!teams) return null;
+
+  const overrideIdx = manualTeamIdx.value[row.missionId];
+  if (overrideIdx !== undefined && overrideIdx >= 0 && overrideIdx < teams.length) {
+    return teams[overrideIdx];
+  }
+
+  return null;
+}
+
+function onTeamChange(row: UnifiedRow, event: Event) {
+  const idx = parseInt((event.target as HTMLSelectElement).value, 10);
+  manualTeamIdx.value = { ...manualTeamIdx.value, [row.missionId]: idx };
+}
+
+// ── Display helpers ──────────────────────────────────────────────
 function successLabel(rate: string | undefined): string {
   switch (rate) {
     case 'consistent': return '100%';
@@ -115,6 +184,12 @@ function successLabel(rate: string | undefined): string {
     case 'unreliable': return 'Unreliable';
     default: return '—';
   }
+}
+
+function teamOptionLabel(t: TeamData): string {
+  const name = t.leadFull || t.lead;
+  const pct = successLabel(t.successRate);
+  return `${name} (${pct})`;
 }
 </script>
 
@@ -194,49 +269,59 @@ function successLabel(rate: string | undefined): string {
                 {{ row.phase }} {{ row.alignment }}
               </td>
               <td class="py-2 pr-2">
-                <div class="flex items-center gap-2">
-                  <img v-if="row.icon" :src="row.icon" class="h-6 w-6 rounded" />
-                  <span
-                    :class="[
-                      'text-sm',
-                      row.kind !== 'assigned' ? 'italic text-slate-500' : '',
-                    ]"
-                  >{{ row.assignedTeam }}</span>
-                </div>
+                <!-- Dropdown for assigned & unassigned missions -->
+                <select
+                  v-if="row.kind !== 'unavailable' && eligibleTeams(row.missionId).length > 0"
+                  class="bg-slate-800 border border-slate-600 rounded text-sm text-white px-2 py-1 w-full max-w-[220px] focus:outline-none focus:border-cyan-500"
+                  :value="getEffectiveTeam(row) ? findTeamIndex(missionTeamsMap.get(row.missionId) ?? [], getEffectiveTeam(row)!.gameId, getEffectiveTeam(row)!.lead, getEffectiveTeam(row)!.others) : ''"
+                  @change="onTeamChange(row, $event)"
+                  @click.stop
+                >
+                  <option value="" disabled v-if="!getEffectiveTeam(row)">— Select a team —</option>
+                  <option
+                    v-for="(t, ti) in eligibleTeams(row.missionId)"
+                    :key="ti"
+                    :value="ti"
+                  >
+                    {{ teamOptionLabel(t) }}
+                  </option>
+                </select>
+                <!-- N/A text for unavailable missions -->
+                <span v-else class="text-sm italic text-slate-500">N/A (No Eligible Leads)</span>
               </td>
               <td class="py-2 pr-2 hidden sm:table-cell text-slate-400 text-xs">
-                {{ row.squad }}
+                {{ getEffectiveTeam(row)?.others ?? '' }}
               </td>
               <td class="py-2 text-center">
                 <span
-                  v-if="row.kind === 'assigned'"
+                  v-if="getEffectiveTeam(row)"
                   class="inline-block px-2 py-0.5 rounded text-xs font-medium"
                   :class="{
-                    'bg-green-900/50 text-green-300': row.successRate === 'consistent',
-                    'bg-blue-900/50 text-blue-300': row.successRate === 'ninety-percent',
-                    'bg-yellow-900/50 text-yellow-300': row.successRate === 'usually',
-                    'bg-orange-900/50 text-orange-300': row.successRate === 'fifty-fifty',
-                    'bg-red-900/50 text-red-300': row.successRate === 'unreliable',
-                    'bg-slate-800 text-slate-400': !row.successRate,
+                    'bg-green-900/50 text-green-300': getEffectiveTeam(row)!.successRate === 'consistent',
+                    'bg-blue-900/50 text-blue-300': getEffectiveTeam(row)!.successRate === 'ninety-percent',
+                    'bg-yellow-900/50 text-yellow-300': getEffectiveTeam(row)!.successRate === 'usually',
+                    'bg-orange-900/50 text-orange-300': getEffectiveTeam(row)!.successRate === 'fifty-fifty',
+                    'bg-red-900/50 text-red-300': getEffectiveTeam(row)!.successRate === 'unreliable',
+                    'bg-slate-800 text-slate-400': !getEffectiveTeam(row)!.successRate,
                   }"
-                >{{ successLabel(row.successRate) }}</span>
+                >{{ successLabel(getEffectiveTeam(row)!.successRate) }}</span>
                 <span v-else class="text-slate-600 text-xs">—</span>
               </td>
-              <td class="py-2 text-right font-mono" :class="row.kind === 'assigned' ? 'text-slate-300' : 'text-slate-600'">
-                {{ row.kind === 'assigned' ? row.score : '—' }}
+              <td class="py-2 text-right font-mono" :class="getEffectiveTeam(row) ? 'text-slate-300' : 'text-slate-600'">
+                {{ getEffectiveTeam(row) ? teamScore(getEffectiveTeam(row)!) : '—' }}
               </td>
             </tr>
             <tr v-if="row.kind === 'assigned' && expandedResult === row.missionId" class="bg-slate-800/50">
               <td :colspan="6" class="px-4 py-3">
                 <div class="text-sm space-y-2">
-                  <div v-if="row.notes">
+                  <div v-if="getEffectiveTeam(row)?.notes">
                     <strong class="text-slate-300">Notes:</strong>
-                    <p class="text-slate-400 mt-0.5">{{ row.notes }}</p>
+                    <p class="text-slate-400 mt-0.5">{{ getEffectiveTeam(row)!.notes }}</p>
                   </div>
-                  <div v-if="row.videos && row.videos.length > 0">
+                  <div v-if="getEffectiveTeam(row)?.videos && getEffectiveTeam(row)!.videos.length > 0">
                     <strong class="text-slate-300">Videos:</strong>
                     <div class="mt-1 space-y-1">
-                      <div v-for="(v, vi) in row.videos" :key="vi">
+                      <div v-for="(v, vi) in getEffectiveTeam(row)!.videos" :key="vi">
                         <a
                           :href="v.url"
                           target="_blank"
@@ -250,7 +335,7 @@ function successLabel(rate: string | undefined): string {
                       </div>
                     </div>
                   </div>
-                  <div v-if="!row.notes && (!row.videos || row.videos.length === 0)" class="text-slate-600 text-xs">
+                  <div v-if="!getEffectiveTeam(row)?.notes && (!getEffectiveTeam(row)?.videos || getEffectiveTeam(row)!.videos.length === 0)" class="text-slate-600 text-xs">
                     No notes or videos for this team.
                   </div>
                 </div>

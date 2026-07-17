@@ -47,6 +47,7 @@ export interface PlannerAssignment {
   position: string;
   lead: string;
   leadFull: string | undefined;
+  gameId: string | undefined;
   others: string;
   successRate: string | undefined;
   score: number;
@@ -290,7 +291,7 @@ function formatPositionLabel(key: string): string {
 
 // ── Team eligibility ─────────────────────────────────────────────────
 
-function isTeamEligible(
+export function isTeamEligible(
   team: TeamData,
   excludedLeads: Set<string>,
   rosterUnitMap?: Set<string> | null,
@@ -522,6 +523,7 @@ export function solveDay(
       position: mission.position,
       lead: c.team.lead,
       leadFull: c.team.leadFull,
+      gameId: c.team.gameId,
       others: c.team.others,
       successRate: c.team.successRate,
       score,

@@ -22,6 +22,8 @@ const missionTeamsMap = computed(() => {
 
 // ── Manual team overrides: missionId → team index ──────────────
 const manualTeamIdx = ref<Record<string, number>>({});
+// ── Freeform custom team text (clears team assignment) ──────────
+const customTeamText = ref<Record<string, string>>({});
 
 // ── Sorted solver assignments ────────────────────────────────────
 const sortedAssignments = computed(() => {
@@ -170,9 +172,57 @@ function getEffectiveTeam(row: UnifiedRow): TeamData | null {
 }
 
 function onTeamChange(row: UnifiedRow, event: Event) {
-  const idx = parseInt((event.target as HTMLSelectElement).value, 10);
-  manualTeamIdx.value = { ...manualTeamIdx.value, [row.missionId]: idx };
+  const val = (event.target as HTMLSelectElement).value;
+  if (val === '__custom__') {
+    const nextIdx = { ...manualTeamIdx.value };
+    delete nextIdx[row.missionId];
+    manualTeamIdx.value = nextIdx;
+    customTeamText.value = { ...customTeamText.value, [row.missionId]: '' };
+  } else {
+    const idx = parseInt(val, 10);
+    const nextCustom = { ...customTeamText.value };
+    delete nextCustom[row.missionId];
+    customTeamText.value = nextCustom;
+    manualTeamIdx.value = { ...manualTeamIdx.value, [row.missionId]: idx };
+  }
 }
+
+function onCustomTextInput(row: UnifiedRow, event: Event) {
+  customTeamText.value = {
+    ...customTeamText.value,
+    [row.missionId]: (event.target as HTMLInputElement).value,
+  };
+}
+
+function revertToSelect(row: UnifiedRow) {
+  const nextCustom = { ...customTeamText.value };
+  delete nextCustom[row.missionId];
+  customTeamText.value = nextCustom;
+}
+
+// ── Conflict detection: same character in multiple missions ──────
+const conflictMissions = computed(() => {
+  const conflicts = new Set<string>();
+  const charToMissions = new Map<string, string[]>(); // lowercase charKey → missionIds
+
+  for (const row of unifiedRows.value) {
+    const team = getEffectiveTeam(row);
+    if (!team?.gameId) continue;
+    const keys = team.gameId.split(',').map(s => s.trim().toLowerCase()).filter(Boolean);
+    for (const key of keys) {
+      if (!charToMissions.has(key)) charToMissions.set(key, []);
+      charToMissions.get(key)!.push(row.missionId);
+    }
+  }
+
+  for (const missionIds of charToMissions.values()) {
+    if (missionIds.length > 1) {
+      for (const mid of missionIds) conflicts.add(mid);
+    }
+  }
+
+  return conflicts;
+});
 
 // ── Display helpers ──────────────────────────────────────────────
 function successLabel(rate: string | undefined): string {
@@ -269,10 +319,25 @@ function teamOptionLabel(t: TeamData): string {
                 {{ row.phase }} {{ row.alignment }}
               </td>
               <td class="py-2 pr-2">
-                <!-- Dropdown for assigned & unassigned missions -->
+                <!-- Custom freeform text input -->
+                <div v-if="customTeamText[row.missionId] !== undefined" class="flex items-center gap-1" @click.stop>
+                  <input
+                    :value="customTeamText[row.missionId]"
+                    class="bg-slate-800 border border-purple-600 rounded text-sm text-purple-200 px-2 py-1 w-full max-w-[185px] focus:outline-none focus:border-purple-400"
+                    placeholder="Custom team name..."
+                    @input="onCustomTextInput(row, $event)"
+                  />
+                  <button
+                    class="text-slate-500 hover:text-slate-300 flex-shrink-0"
+                    title="Revert to team dropdown"
+                    @click="revertToSelect(row)"
+                  >✕</button>
+                </div>
+                <!-- Dropdown (with custom option) -->
                 <select
-                  v-if="row.kind !== 'unavailable' && eligibleTeams(row.missionId).length > 0"
-                  class="bg-slate-800 border border-slate-600 rounded text-sm text-white px-2 py-1 w-full max-w-[220px] focus:outline-none focus:border-cyan-500"
+                  v-else-if="row.kind !== 'unavailable' && eligibleTeams(row.missionId).length > 0"
+                  class="bg-slate-800 border rounded text-sm text-white px-2 py-1 w-full max-w-[220px] focus:outline-none focus:border-cyan-500"
+                  :class="conflictMissions.has(row.missionId) ? 'border-red-500 ring-1 ring-red-500/50' : 'border-slate-600'"
                   :value="getEffectiveTeam(row) ? findTeamIndex(missionTeamsMap.get(row.missionId) ?? [], getEffectiveTeam(row)!.gameId, getEffectiveTeam(row)!.lead, getEffectiveTeam(row)!.others) : ''"
                   @change="onTeamChange(row, $event)"
                   @click.stop
@@ -285,6 +350,8 @@ function teamOptionLabel(t: TeamData): string {
                   >
                     {{ teamOptionLabel(t) }}
                   </option>
+                  <option disabled>──────────────</option>
+                  <option value="__custom__">✏️ Custom entry…</option>
                 </select>
                 <!-- N/A text for unavailable missions -->
                 <span v-else class="text-sm italic text-slate-500">N/A (No Eligible Leads)</span>

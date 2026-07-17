@@ -102,7 +102,18 @@ export const CHARACTER_ICONS: Record<string, string> = {
   zaalbar: '/icons/characters/tex.charui_zaalbar.png',
   zoriibliss_v2: '/icons/characters/tex.charui_zoriibliss.png',
   scythe: '/icons/ships/tex.charui_scythe.png',
-  ahsokatano: '/icons/characters/tex.charui_ahsoka.png'
+  ahsokatano: '/icons/characters/tex.charui_ahsoka.png',
+  pogglethelesser: '/icons/characters/tex.charui_geonosian_poggle.png',
+  sunfac: '/icons/characters/tex.charui_geonosian_sunfac.png',
+  geonosianbroodalpha: '/icons/characters/tex.charui_geonosian_broodalpha.png',
+  geonosiansoldier: '/icons/characters/tex.charui_geonosian_soldier.png',
+  geonosianspy: '/icons/characters/tex.charui_geonosian_spy.png',
+  cassianandor: '/icons/characters/tex.charui_cassian.png',
+  seventhsister: '/icons/characters/tex.charui_seventhsister.png',
+  l3_37: '/icons/characters/tex.charui_l337.png',
+  k2so: '/icons/characters/tex.charui_k2so.png',
+  captaindrogan: '/icons/characters/tex.charui_captaindrogan.png',
+  chopper: '/icons/characters/tex.charui_chopper.png',
 };
 
 /** Get the icon path for a gameId, if one is registered. */
@@ -216,7 +227,15 @@ export const GAME_ID_DISPLAY_NAMES: Record<string, string> = {
   padawanobiwan: 'Padawan Obi-Wan',
   darthmalgus: 'Darth Malgus',
   zoriibliss_v2: 'Zorii Bliss',
-  ahsokatano: 'Snips'
+  ahsokatano: 'Snips',
+  CT7567: 'Rex',
+  geonosiansoldier: 'Geo Soldier',
+  geonosianspy: 'Geo Spy',
+  geonosianbroodalpha: 'Geo Brood Alpha',
+  pogglethelesser: 'Poggle',
+  sunfac: 'Sun Fac',
+  cassianandor: 'Cassian',
+  seventhsister: 'Seventh Sister',
 };
 
 /**

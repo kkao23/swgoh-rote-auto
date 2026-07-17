@@ -3,7 +3,7 @@ import type { data as TeamData, DataType } from '~/models/data';
 import { successRate } from '~/models/data';
 import { PHASE_RELIC_REQUIREMENTS } from '~/util/rosterUtils';
 import { leads } from '~/data/leads';
-import { GAME_ID_DISPLAY_NAMES, formatGameIdForDisplay, getCharacterIcon } from '~/data/displayNames';
+import { GAME_ID_DISPLAY_NAMES, formatGameIdForDisplay, getCharacterIcon, SHIP_GAME_IDS } from '~/data/displayNames';
 import { MISSION_MULTIPLIERS } from '~/data/missionMultipliers';
 import { hungarian } from '~/util/solver';
 
@@ -170,13 +170,14 @@ function getCharKeys(team: TeamData): string[] {
 
 // ── Score mapping ────────────────────────────────────────────────────
 
-/** Check that all characters in a team's gameId meet the relic requirement for a phase. */
+/** Check that all characters in a team's gameId meet the relic requirement for a phase. Ships are skipped. */
 function meetsRelicReq(team: TeamData, phase: string, relicTierMap: Map<string, number>): boolean {
   const required = PHASE_RELIC_REQUIREMENTS[phase];
   if (required === undefined) return true;
   const ids = team.gameId?.split(',').map(s => s.trim().toLowerCase()).filter(Boolean) ?? [];
   if (ids.length === 0) return true;
   return ids.every(id => {
+    if (SHIP_GAME_IDS.has(id)) return true; // ships don't have relics
     const relic = relicTierMap.get(id);
     return relic !== undefined && relic >= required;
   });

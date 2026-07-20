@@ -45,7 +45,7 @@ export const leftDSP1: dataType[] = [{
 },
 {
     lead: 'Great Mothers', gameId: 'GREATMOTHERS',
-    others: 'Morgan, Night Trooper, Death Trooper, Merrin',
+    others: 'Morgan, Night Trooper, Death Trooper, +1 NS',
     notes: 'Auto, can bless morgan manually if you want to be totally safe',
     videos: [{ url: 'https://youtu.be/YUMJjeD6k5A' }],
     icon: '/icons/characters/tex.charui_greatmothers.png',
@@ -121,7 +121,7 @@ export const leftDSP1: dataType[] = [{
 
 export const bottomDSP1: dataType[] = [{
     lead: 'Great Mothers', gameId: 'GREATMOTHERS',
-    others: 'Morgan, Night Trooper, Death Trooper, Merrin',
+    others: 'Morgan, Night Trooper, Death Trooper, +1 NS',
     notes: 'Doom droideka, bless Morgan, hit auto',
     videos: [{ url: 'https://youtu.be/dVJSaQ_Pwmo' }],
     icon: '/icons/characters/tex.charui_greatmothers.png',
@@ -310,7 +310,7 @@ export const topDSP1: dataType[] = [
         omi: true,
     }, {
         lead: 'Great Mothers', gameId: 'GREATMOTHERS',
-        others: 'Morgan, Night Trooper, Death Trooper, Merrin',
+        others: 'Morgan, Night Trooper, Death Trooper, +1 NS',
         notes: 'Doom droideka, bless Morgan, hit auto',
         videos: [{ url: 'https://youtu.be/zjxxsvQos5Y' }],
         icon: '/icons/characters/tex.charui_greatmothers.png',

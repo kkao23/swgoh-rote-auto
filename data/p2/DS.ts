@@ -24,7 +24,7 @@ export const acklayDSP2: dataType[] = [
     },
     {
         lead: 'Great Mothers', gameId: 'GREATMOTHERS',
-        others: 'Morgan, Merrin, Night Trooper, Death Trooper',
+        others: 'Morgan, Night Trooper, Death Trooper, +1 NS',
         notes: 'bless morgan, easy auto',
         videos: [{ url: 'https://youtu.be/EssSASzT2qo' }],
         icon: '/icons/characters/tex.charui_greatmothers.png',
@@ -139,7 +139,7 @@ export const reekDSP2: dataType[] = [
     },
     {
         lead: 'Great Mothers', gameId: 'GREATMOTHERS',
-        others: 'Morgan, Merrin, Night Trooper, Death Trooper',
+        others: 'Morgan, Night Trooper, Death Trooper, +1 NS',
         notes: 'easy auto',
         videos: [{ url: 'https://youtu.be/H4r1Qyq-cr0' }],
         icon: '/icons/characters/tex.charui_greatmothers.png',
@@ -312,7 +312,7 @@ export const nexuDSP2: dataType[] = [
     },
     {
         lead: 'Great Mothers', gameId: 'GREATMOTHERS',
-        others: 'Morgan, Merrin, Night Trooper, Death Trooper',
+        others: 'Morgan, Night Trooper, Death Trooper, +1 NS',
         notes: 'bless morgan, auto',
         videos: [{ url: 'https://youtu.be/HjoqwXNWFNw' }],
         icon: '/icons/characters/tex.charui_greatmothers.png',

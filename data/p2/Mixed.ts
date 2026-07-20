@@ -365,7 +365,7 @@ export const mixedP2: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'Mother Talzin', gameId: 'MOTHERTALZIN',
+        lead: 'Mother Talzin', gameId: 'MOTHERTALZIN, MERRIN',
         others: 'Merrin, Spirit, Daka, Zombie',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/wRwmwC33zVk' }],

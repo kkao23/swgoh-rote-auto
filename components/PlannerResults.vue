@@ -1,6 +1,9 @@
 <script setup lang="ts">
+import { useMediaQuery } from '@vueuse/core';
 import { PHASE_ORDER, type SolveResult, isTeamEligible, getFlatMissions, teamScore } from '~/util/plannerHelpers';
 import type { data as TeamData } from '~/models/data';
+
+const isSmallScreen = useMediaQuery('(max-width: 640px)');
 
 const props = defineProps<{
   result: SolveResult;
@@ -179,11 +182,20 @@ function onTeamChange(row: UnifiedRow, event: Event) {
     manualTeamIdx.value = nextIdx;
     customTeamText.value = { ...customTeamText.value, [row.missionId]: '' };
   } else {
-    const idx = parseInt(val, 10);
+    const eligibleIdx = parseInt(val, 10);
+    const eligible = eligibleTeams(row.missionId);
+    const team = eligible[eligibleIdx];
     const nextCustom = { ...customTeamText.value };
     delete nextCustom[row.missionId];
     customTeamText.value = nextCustom;
-    manualTeamIdx.value = { ...manualTeamIdx.value, [row.missionId]: idx };
+    // Convert eligible-array index to raw-array index
+    const rawIdx = findTeamIndex(
+      missionTeamsMap.value.get(row.missionId) ?? [],
+      team.gameId,
+      team.lead,
+      team.others,
+    );
+    manualTeamIdx.value = { ...manualTeamIdx.value, [row.missionId]: rawIdx };
   }
 }
 
@@ -237,7 +249,7 @@ function successLabel(rate: string | undefined): string {
 }
 
 function teamOptionLabel(t: TeamData): string {
-  const name = t.leadFull || t.lead;
+  const name = isSmallScreen.value ? t.lead : (t.leadFull || t.lead);
   const pct = successLabel(t.successRate);
   return `${name} (${pct})`;
 }
@@ -338,7 +350,7 @@ function teamOptionLabel(t: TeamData): string {
                   v-else-if="row.kind !== 'unavailable' && eligibleTeams(row.missionId).length > 0"
                   class="bg-slate-800 border rounded text-sm text-white px-2 py-1 w-full max-w-[220px] focus:outline-none focus:border-cyan-500"
                   :class="conflictMissions.has(row.missionId) ? 'border-red-500 ring-1 ring-red-500/50' : 'border-slate-600'"
-                  :value="getEffectiveTeam(row) ? findTeamIndex(missionTeamsMap.get(row.missionId) ?? [], getEffectiveTeam(row)!.gameId, getEffectiveTeam(row)!.lead, getEffectiveTeam(row)!.others) : ''"
+                  :value="getEffectiveTeam(row) ? eligibleTeams(row.missionId).findIndex(t => t.gameId === getEffectiveTeam(row)!.gameId) : ''"
                   @change="onTeamChange(row, $event)"
                   @click.stop
                 >

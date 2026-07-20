@@ -362,7 +362,16 @@ export const topDSP1: dataType[] = [
         interactionType: [interactionType.AUTO],
         omi: true,
     },
-
+    {
+        lead: 'PKHO', gameId: 'GLHONDO',
+        others: 'Silvo, Ithano, Vane, Brutus',
+        notes: 'Easy Auto',
+        videos: [],
+        icon: '/icons/characters/tex.charui_glhondo.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+    },
     {
         lead: 'Admiral Trench', gameId: 'TRENCH',
         others: 'Wat, Jango Fett, Nute Gunray, Count Dooku',

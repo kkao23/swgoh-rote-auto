@@ -181,7 +181,7 @@ export const mixedGenericP4: dataType[] = [
         videos: [{ url: 'https://youtu.be/TpgdflmfBxo' }],
         icon: '/icons/characters/tex.charui_lordvader.png',
         difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO],
     },
     {
@@ -320,7 +320,7 @@ export const mixedGenericP4: dataType[] = [
     }
     ,
     {
-        lead: 'Lord Vader', gameId: 'LORDVADER',
+        lead: 'Lord Vader (Clones)', gameId: 'LORDVADER',
         others: 'DS clones',
         notes: 'Auto',
         videos: [],
@@ -328,10 +328,9 @@ export const mixedGenericP4: dataType[] = [
         difficulty: difficulty.EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
-        creator: 'anonymous'
     },
     {
-        lead: 'GM', gameId: 'GREATMOTHERS',
+        lead: 'Great Mothers', gameId: 'GREATMOTHERS',
         others: 'Morgan, Spirit, NT, DTP',
         notes: 'Auto',
         videos: [],
@@ -391,22 +390,21 @@ export const mixedFleetP4: dataType[] = [
     {
         lead: 'Profundity (Rogue One)', gameId: 'CAPITALPROFUNDITY, ROGUEONESHIP',
         others: 'Outrider, Ghost, Y wing starting, Rogue one, Phantom in reinforcements. Millennium Falcon is good if you have it',
-        notes: 'auto',
+        notes: 'Play manually until you ult then auto',
         videos: [{ url: 'https://youtu.be/czrI8wjl3UY' }],
         icon: '/icons/ships/tex.charui_profundity.png',
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO]
+        interactionType: [interactionType.MANUAL]
     },
     {
         lead: 'Executor', gameId: 'CAPITALEXECUTOR',
         others: 'Hound\'s Tooth, Razor Crest, Ghost, Xanadu Blood, Punishing One, Slave I, IG-2000',
-        notes: '- Use only basics\n- 1st Executor turn use Heal on HT to get taunt (every time that you have that ability available, use it on HT to keep the taunt)\n- reinforcements call order: XB, Slave I, P1, IG-2000',
+        notes: '- Use only basics\n- 1st Executor turn use Heal on HT to get taunt (every time that you have that ability available, use it on HT to keep the taunt)\n- reinforcements call order: XB, Slave I, P1, IG-2000. Suggested by Artha Dragon',
         videos: [],
         icon: '/icons/ships/tex.charui_executor.png',
         difficulty: difficulty.NO_AUTO,
-        successRate: successRate.UNRELIABLE,
+        successRate: successRate.USUALLY,
         interactionType: [interactionType.MANUAL],
-        creator: 'Artha Dragon',
     },
 ]

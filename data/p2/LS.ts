@@ -50,40 +50,40 @@ export const shipsLSP2: dataType[] = [
 ]
 
 export const jediLSP2: dataType[] = [
-    // {
-    //     lead: 'JML (Ezra)', gameId: 'GRANDMASTERLUKE',
-    //     leadFull: 'Jedi Master Luke with Ezra',
-    //     others: 'Ezra exile, JKL, Kyle Katarn, Shaak Ti',
-    //     notes: 'auto with KK omi',
-    //     videos: [{ url: 'https://youtu.be/wom3RZrx9VQ' }],
-    //     icon: '/icons/characters/tex.charui_luke_jml.png',
-    //     difficulty: difficulty.VERY_EASY,
-    //     successRate: successRate.CONSISTENT,
-    //     interactionType: [interactionType.AUTO],
-    //     omi: true,
-    // },
-    // {
-    //     lead: 'JMK (Ezra)', gameId: 'JEDIMASTERKENOBI',
-    //     leadFull: 'Jedi Master Kenobi with Ezra',
-    //     others: 'Shaak, Ahsoka, Ezra exile, GK',
-    //     notes: 'auto, long, not reliable 2/2',
-    //     videos: [{ url: 'https://youtu.be/_0J9LtUwj4U' }],
-    //     icon: '/icons/characters/tex.charui_globiwan.png',
-    //     difficulty: difficulty.CAUTION,
-    //     successRate: successRate.USUALLY,
-    //     interactionType: [interactionType.AUTO]
-    // },
-    // {
-    //     lead: 'JML (Ezra)', gameId: 'GRANDMASTERLUKE',
-    //     leadFull: 'Jedi Master Luke with Ezra',
-    //     others: 'Ezra exile, any 3 jedi',
-    //     notes: 'auto, I had Bastila, JKA and Plo and it was close at the end. Use better jedi for more consistency',
-    //     videos: [{ url: 'https://youtu.be/d5uJfXLjlvc' }],
-    //     icon: '/icons/characters/tex.charui_luke_jml.png',
-    //     difficulty: difficulty.EASY,
-    //     successRate: successRate.USUALLY,
-    //     interactionType: [interactionType.AUTO],
-    // },
+    {
+        lead: 'JML', gameId: 'GRANDMASTERLUKE',
+        leadFull: 'Jedi Master Luke',
+        others: 'JKL, Kyle Katarn, Shaak Ti +1',
+        notes: 'auto with KK omi',
+        videos: [{ url: 'https://youtu.be/wom3RZrx9VQ' }],
+        icon: '/icons/characters/tex.charui_luke_jml.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        omi: true,
+    },
+    {
+        lead: 'JMK', gameId: 'JEDIMASTERKENOBI',
+        leadFull: 'Jedi Master Kenobi',
+        others: 'Shaak, Ahsoka, GK +1',
+        notes: '1/2 on auto',
+        videos: [{ url: 'https://youtu.be/_0J9LtUwj4U' }],
+        icon: '/icons/characters/tex.charui_globiwan.png',
+        difficulty: difficulty.CAUTION,
+        successRate: successRate.FIFTY_FIFTY,
+        interactionType: [interactionType.AUTO]
+    },
+    {
+        lead: 'JML', gameId: 'GRANDMASTERLUKE',
+        leadFull: 'Jedi Master Luke',
+        others: 'JKL, other Jedi',
+        notes: 'auto, not super consistent',
+        videos: [{ url: 'https://youtu.be/d5uJfXLjlvc' }],
+        icon: '/icons/characters/tex.charui_luke_jml.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.AUTO],
+    },
     // {
     //     lead: 'JKL (Ezra)', gameId: 'JEDIKNIGHTLUKE',
     //     leadFull: 'Jedi Master Luke with Ezra',
@@ -142,30 +142,29 @@ export const jediLSP2: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         creator: 'anonymous',
-        omi: true
     },
-    {
-        lead: 'JML', gameId: 'GRANDMASTERLUKE',
-        others: 'Jedi Knight Luke,',
-        notes: 'Auto',
-        videos: [],
-        icon: '/icons/characters/tex.charui_luke_jml.png',
-        difficulty: difficulty.EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO],
-        creator: 'Fettpack'
-    },
-    {
-        lead: 'JML', gameId: 'GRANDMASTERLUKE',
-        others: 'KB, JKLS, GAS, JKCK',
-        notes: 'Reach ult ASAP, save JKCK insta kill for round 2. JMLS at R9, rest R7.',
-        videos: [],
-        icon: '/icons/characters/tex.charui_luke_jml.png',
-        difficulty: difficulty.EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO],
-        creator: 'anonymous'
-    }
+    // {
+    //     lead: 'JML', gameId: 'GRANDMASTERLUKE',
+    //     others: 'Jedi Knight Luke,',
+    //     notes: 'Auto',
+    //     videos: [],
+    //     icon: '/icons/characters/tex.charui_luke_jml.png',
+    //     difficulty: difficulty.EASY,
+    //     successRate: successRate.CONSISTENT,
+    //     interactionType: [interactionType.AUTO],
+    //     creator: 'Fettpack'
+    // },
+    // {
+    //     lead: 'JML', gameId: 'GRANDMASTERLUKE',
+    //     others: 'KB, JKLS, GAS, JKCK',
+    //     notes: 'Reach ult ASAP, save JKCK insta kill for round 2. JMLS at R9, rest R7.',
+    //     videos: [],
+    //     icon: '/icons/characters/tex.charui_luke_jml.png',
+    //     difficulty: difficulty.EASY,
+    //     successRate: successRate.CONSISTENT,
+    //     interactionType: [interactionType.AUTO],
+    //     creator: 'anonymous'
+    // }
 ]
 
 export const leftLSP2: dataType[] = [
@@ -203,8 +202,8 @@ export const leftLSP2: dataType[] = [
     {
         lead: 'Finn', gameId: 'FINN',
         others: 'Poe, Zorii, RH Finn, Rose',
-        notes: 'auto',
-        videos: [{ url: 'https://youtu.be/-T5DUTDHm6Y?si=enslsLffHD2qyfnW&t=381', creator: 'pico' }],
+        notes: 'auto. Requires Finn Omicron. Suggested by Pico',
+        videos: [{ url: 'https://youtu.be/-T5DUTDHm6Y?si=enslsLffHD2qyfnW&t=381' }],
         icon: '/icons/characters/tex.charui_finn.png',
         difficulty: difficulty.EASY,
         successRate: successRate.CONSISTENT,
@@ -431,7 +430,7 @@ export const rightLSP2: dataType[] = [
     ,
 
     {
-        lead: 'Finn (o)', gameId: 'FINN',
+        lead: 'Finn', gameId: 'FINN',
         others: 'Poe, Zorii, RH Finn, Rose,',
         notes: 'Having Finn Omicron is mandatory.',
         videos: [{ url: 'https://youtu.be/5DLwd0lQEoU?si=cyY4SzcHLpqdhrhR&t=367' }],
@@ -439,7 +438,6 @@ export const rightLSP2: dataType[] = [
         difficulty: difficulty.EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
-        creator: 'anonymous',
         omi: true
     }
 ]

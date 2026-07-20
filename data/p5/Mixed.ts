@@ -245,7 +245,7 @@ export const mixedCombatBottomLeftP5: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU',
+        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU, DEPABILLABA',
         leadFull: 'Jedi Master Mace Windu',
         others: 'Depa Billaba (omni), Temple Guard, Jocasta Nu, Shaak Ti',
         notes: 'All r9 is required. Target cargo to dispell DoTs. Hope your team survive. Very hard but doable.',

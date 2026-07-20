@@ -118,7 +118,7 @@ export const jediP1: dataType[] = [
         omi: true,
     },
     {
-        lead: 'Kelleran Beq', gameId: 'KELLERANBEQ',
+        lead: 'Kelleran Beq', gameId: 'KELLERANBEQ, DEPABILLABA',
         leadFull: 'Kelleran Beq',
         icon: '/icons/characters/tex.charui_kelleranbeq.png',
         others: 'Jocasta Nu, Shaak Ti, Aayla, Temple Guard',

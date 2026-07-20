@@ -385,7 +385,7 @@ export const mixedTopLeftP3: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'Kelleran Beq or JMMW', gameId: 'KELLERANBEQ',
+        lead: 'Kelleran Beq or JMMW', gameId: 'KELLERANBEQ, DEPABILLABA',
         leadFull: 'Kelleran Beq or Jedi Master Mace Windu',
         others: 'Jocasta Nu, Shaak Ti, Temple Guard, Depa Billaba (omicron)',
         notes: 'auto',

@@ -51,7 +51,7 @@ export const bottomLeftMixedP6: dataType[] = [
         creator: 'anonymous'
     },
     {
-        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU',
+        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU, DEPABILLABA',
         others: 'TG, Depa, JN and KB',
         notes: 'Easy win',
         videos: [],

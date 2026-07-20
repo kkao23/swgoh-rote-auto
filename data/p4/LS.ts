@@ -176,7 +176,6 @@ export const lsGenericP4: dataType[] = [
         difficulty: difficulty.EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
-        creator: 'anonymous',
         omi: true
     },
     {

@@ -59,13 +59,12 @@ export const mandaloreGeneric: dataType[] = [
     {
         lead: 'Lord Vader', gameId: 'LORDVADER',
         others: 'Appo, CX2, Scorch, DCT',
-        notes: 'nil Omicron on Appo, full auto, did select Gideon phase 2 to be sure. I have recorded the battle as evidence',
+        notes: 'Omi on appo helps. full auto, target Gideon phase 2 to be sure. suggested by aFERALPLATYPUS',
         videos: [],
         icon: '/icons/characters/tex.charui_lordvader.png',
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
-        interactionType: [interactionType.AUTO],
-        creator: 'aFERALPLATYPUS',
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.PAUSE_WAVE2],
     },
     {
         lead: 'Reva', gameId: 'THIRDSISTER',
@@ -115,12 +114,12 @@ export const mandaloreGeneric: dataType[] = [
         lead: 'JMK', gameId: 'JEDIMASTERKENOBI',
         leadFull: 'Jedi Master Kenobi',
         others: 'CAT, Snips, GK, Padme',
-        notes: '1/2 on auto',
+        notes: '1/2 on auto. Better if you pause to kill Gideon Wave 2.',
         videos: [{ url: 'https://youtu.be/oMmbs2FA16Y' }],
         icon: '/icons/characters/tex.charui_globiwan.png',
         difficulty: difficulty.HARD,
-        successRate: successRate.FIFTY_FIFTY,
-        interactionType: [interactionType.AUTO]
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.PAUSE_WAVE2]
     },
     {
         lead: 'Ahsoka Tano', gameId: 'GLAHSOKATANO',
@@ -147,7 +146,7 @@ export const mandaloreGeneric: dataType[] = [
         lead: 'Omega', gameId: 'OMEGAS3',
         others: 'Bad Batch Mercenaries',
         notes: 'auto',
-        videos: [{ url: 'https://youtu.be/oXkwJiE_EGg' }, { url: 'https://youtu.be/JuEnsbbFuT4?si=W7cLID0-I95kNy8h', creator: 'egnards' }],
+        videos: [{ url: 'https://youtu.be/oXkwJiE_EGg' }],
         icon: '/icons/characters/tex.charui_omegas3.png',
         difficulty: difficulty.EASY,
         successRate: successRate.CONSISTENT,

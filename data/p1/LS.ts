@@ -79,10 +79,9 @@ export const jediP1: dataType[] = [
         videos: [],
         icon: '/icons/characters/tex.charui_jedimastermacewindu.png',
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         omi: true,
-        creator: 'anonymous',
     },
     // {
     //     lead: 'JKL (Ezra)', gameId: 'JEDIKNIGHTLUKE',
@@ -110,8 +109,8 @@ export const jediP1: dataType[] = [
         lead: 'JKCK (Lead Omi)', gameId: 'JEDIKNIGHTCAL',
         leadFull: 'Jedi Knight Cal Kestis (Lead Omi)',
         others: 'any 4 Jedi',
-        notes: 'auto',
-        videos: [{ url: 'https://www.youtube.com/watch?v=KorRjRRh6k0', creator: 'egnards' }],
+        notes: 'auto suggested by egnards',
+        videos: [{ url: 'https://www.youtube.com/watch?v=KorRjRRh6k0' }],
         icon: '/icons/characters/tex.charui_calkestis.png',
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
@@ -394,15 +393,14 @@ export const genericLSP1: dataType[] = [
     }
     ,
     {
-        lead: 'Satele Shan', gameId: 'SATELESHAN',
-        others: 'Jedi Knight Reva, Bastilla Shan, Jolee Bindo, Mission Vao',
-        notes: 'Auto',
+        lead: 'Satele Shan', gameId: 'SATELESHAN, JEDIKNIGHTREVAN',
+        others: 'Jedi Knight Revan, Bastilla Shan, Jolee Bindo, +1 Old Republic',
+        notes: 'Auto, suggested by pshea07',
         videos: [],
         icon: '/icons/characters/tex.charui_sateleshan.png',
         difficulty: difficulty.EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
-        creator: 'pshea07'
     },
     {
         lead: 'Rey', gameId: 'GLREY',

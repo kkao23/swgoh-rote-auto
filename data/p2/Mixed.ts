@@ -84,25 +84,22 @@ export const hondoMixedP2: dataType[] = [
     {
         lead: 'Jedi Master Kenobi', gameId: 'JEDIMASTERKENOBI',
         others: 'CAT, Padme, General Kenobi, Hondo',
-        notes: 'Auto',
+        notes: 'Auto. Suggested by Pym. Maybe save instakill for tarkin wave 2?',
         videos: [],
         icon: '/icons/characters/tex.charui_globiwan.png',
         difficulty: difficulty.EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO],
-        creator: 'Pym'
-    }
-    ,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.PAUSE_WAVE2],
+    },
     {
         lead: 'SEE', gameId: 'SITHPALPATINE',
         others: 'Wat, malak, hondo, sith maurauder',
-        notes: '1/2',
+        notes: '1/2 on auto. Suggested by Lune',
         videos: [],
         icon: '/icons/characters/tex.charui_espalpatine_pre.png',
         difficulty: difficulty.EASY,
         successRate: successRate.FIFTY_FIFTY,
         interactionType: [interactionType.AUTO],
-        creator: 'Lune'
     }
 ]
 

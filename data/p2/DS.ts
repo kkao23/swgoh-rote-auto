@@ -397,7 +397,7 @@ export const geosDSP2: dataType[] = [
         others: 'The other geos',
         notes: 'can\'t auto. Difficult mission. Not really worth it',
         videos: [{ url: 'https://www.youtube.com/watch?v=8aX_N2-5T6Y&pp=ygUnc3dnb2ggcm90ZSBnZW9ub3NpcyBtaXNzaW9uIGJyb29kIGFscGhh', creator: 'PotatoGnarly' }],
-        icon: '/icons/ships/tex.charui_geonosian_broodalpha.png',
+        icon: '/icons/characters/tex.charui_geonosian_broodalpha.png',
         difficulty: difficulty.NO_AUTO,
         successRate: successRate.UNRELIABLE
     },

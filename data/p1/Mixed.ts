@@ -110,18 +110,7 @@ export const mixedP1: dataType[] = [
         videos: [{ url: 'https://youtu.be/HQBzpbVvYD0' }],
         icon: '/icons/characters/tex.charui_generalanakin.png',
         difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO]
-    },
-    {
-        lead: 'E Palaptine (Starkiller)', gameId: 'EMPERORPALPATINE, STARKILLER',
-        leadFull: 'Emperor Palpatine (Starkiller)',
-        others: 'Starkiller, Mara Jade, Old Ben, Visas',
-        notes: 'auto, last two can be any jedi/LS UFU',
-        videos: [{ url: 'https://www.youtube.com/watch?v=wyyfYpCldN4', creator: 'egnards' }],
-        icon: '/icons/characters/tex.charui_palpatineemperor.png',
-        difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO]
     },
     {
@@ -143,17 +132,6 @@ export const mixedP1: dataType[] = [
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
-    },
-    {
-        lead: 'Finn (omi)', gameId: 'FINN',
-        others: 'Rose, Poe, RH Finn, Zorii',
-        notes: 'auto',
-        videos: [{ url: 'https://youtu.be/9ZoFbJLgMeQ?si=OsvnQRT7eJTYF4EQ&t=264', creator: 'pico' }],
-        icon: '/icons/characters/tex.charui_finn.png',
-        difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO],
-        omi: true,
     },
     {
         lead: 'BK Mandalore', gameId: 'MANDALORBOKATAN',
@@ -251,29 +229,50 @@ export const mixedP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
+        lead: 'E Palaptine (Starkiller)', gameId: 'EMPERORPALPATINE, STARKILLER',
+        leadFull: 'Emperor Palpatine (Starkiller)',
+        others: 'Starkiller, Mara Jade, Old Ben, Visas',
+        notes: 'auto, last two can be any jedi/LS UFU. Suggested by egnards',
+        videos: [{ url: 'https://www.youtube.com/watch?v=wyyfYpCldN4' }],
+        icon: '/icons/characters/tex.charui_palpatineemperor.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
+    },
+    {
+        lead: 'Finn (omi)', gameId: 'FINN',
+        others: 'Rose, Poe, RH Finn, Zorii',
+        notes: 'auto. Suggested by Pico',
+        videos: [{ url: 'https://youtu.be/9ZoFbJLgMeQ?si=OsvnQRT7eJTYF4EQ&t=264' }],
+        icon: '/icons/characters/tex.charui_finn.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        omi: true,
+    },
+    {
         "lead": "Carth Onasi", "gameId": "CARTHONASI",
         "leadFull": "Carth Onasi",
         "others": "Zaalbar, Mission, Canderous, and 5OR-T",
-        "notes": "Omicron on Carth required, full auto, fast and easy. Actually works easily on every Mixed Phase up to P4 on full auto. After that (P5, P6, and Mandalore) the team still works, just have to go manual usually. No remodding required. Garbage mods work just fine.",
+        "notes": "Omicron on Carth required, full auto, fast and easy. Actually works easily on every Mixed Phase up to P4 on full auto. After that (P5, P6, and Mandalore) the team still works, just have to go manual usually. No remodding required. Garbage mods work just fine. Suggested by DyloBin",
         "videos": [],
         "icon": "/icons/characters/tex.charui_carth.png",
         "difficulty": difficulty.EASY,
         "omi": true,
-        "successRate": successRate.USUALLY,
+        "successRate": successRate.CONSISTENT,
         "interactionType": [interactionType.AUTO],
-        "creator": "DyloBin"
     },
     {
         "lead": "Boss Nass", "gameId": "BOSSNASS",
         "leadFull": "Boss Nass",
         "others": "Team of Gungans",
-        "notes": "Auto",
+        "notes": "Auto. Suggested by BailWritte",
         "videos": [],
         "icon": "/icons/characters/tex.charui_bossnass.png",
         "difficulty": difficulty.EASY,
-        "successRate": successRate.USUALLY,
+        "successRate": successRate.CONSISTENT,
         "interactionType": [interactionType.AUTO],
-        "creator": "BailWritte"
+        "omi": true
     },
     {
         lead: 'Boba Fett Scion of Jango', gameId: 'BOBAFETTSCION, ASAJJDARKDISCIPLE',
@@ -289,25 +288,13 @@ export const mixedP1: dataType[] = [
 
     {
         lead: 'Maul', gameId: 'MAULS7',
-        others: 'Jango, Cordo, Gar Saxon, super commando.',
+        others: 'Jango, Canderous, Gar Saxon, ISC.',
         notes: 'Easy auto.',
         videos: [],
         icon: '/icons/characters/tex.charui_maul.png',
         difficulty: difficulty.EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
-        creator: 'anonymous'
-    },
-    {
-        lead: 'Palpatine', gameId: 'EMPERORPALPATINE, STARKILLER',
-        others: 'MJ, Starkiller, Old Ben, Cal Kestis',
-        notes: 'Once MJ gets her turn and Palpatine shocks, everyone basically stays stunned for the remainder',
-        videos: [],
-        icon: '/icons/characters/tex.charui_palpatineemperor.png',
-        difficulty: difficulty.EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO],
-        creator: 'anonymous'
     },
 ]
 

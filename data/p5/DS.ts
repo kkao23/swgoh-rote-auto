@@ -132,7 +132,7 @@ export const dsTopMidP5: dataType[] = [
     },
 
     {
-        lead: 'GM', gameId: 'GREATMOTHERS',
+        lead: 'Great Mothers', gameId: 'GREATMOTHERS',
         others: 'Morgan, Spirit, NT, DTP',
         notes: 'Auto',
         videos: [],

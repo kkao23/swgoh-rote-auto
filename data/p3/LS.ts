@@ -14,14 +14,14 @@ export const lsLeftP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'JML (Ezra)', gameId: 'GRANDMASTERLUKE',
-        leadFull: 'Jedi Master Luke with Ezra Exile',
-        others: 'Ezra Exile, JKL, +2 Jedi',
-        notes: 'auto, JKCK is good if available, Ezra mandatory',
+        lead: 'JML', gameId: 'GRANDMASTERLUKE',
+        leadFull: 'Jedi Master Luke',
+        others: 'JKL, +2 Jedi',
+        notes: 'hard on auto after ezra nerf. More consistent on manual',
         videos: [{ url: 'https://youtu.be/R_3rOQK49XQ' }],
         icon: '/icons/characters/tex.charui_luke_jml.png',
         difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
+        successRate: successRate.UNRELIABLE,
         interactionType: [interactionType.AUTO]
     },
     {
@@ -100,7 +100,7 @@ export const lsLeftP3: dataType[] = [
         omi: true,
     },
     {
-        lead: 'Kelleran Beq', gameId: 'KELLERANBEQ',
+        lead: 'Kelleran Beq', gameId: 'KELLERANBEQ, DEPABILLABA',
         leadFull: 'Kelleran Beq',
         others: 'Jocasta Nu, Shaak Ti, Temple Guard, Depa Billaba (omicron)',
         notes: 'auto',
@@ -213,14 +213,14 @@ export const lsRightP3: dataType[] = [
         interactionType: [interactionType.AUTO, interactionType.PAUSE_WAVE2]
     },
     {
-        lead: 'JML (Ezra)', gameId: 'GRANDMASTERLUKE',
-        leadFull: 'Jedi Master Luke with Ezra Exile',
-        others: 'Ezra Exile, JKL, +2 Jedi',
-        notes: 'auto, JKCK is good if available, Ezra mandatory. Target Mara wave 2',
+        lead: 'JML', gameId: 'GRANDMASTERLUKE',
+        leadFull: 'Jedi Master Luke',
+        others: 'JKL, +2 Jedi',
+        notes: 'hard on auto after ezra nerf. Target Mara wave 2',
         videos: [{ url: 'https://youtu.be/6LCLkhSg5AY' }],
         icon: '/icons/characters/tex.charui_luke_jml.png',
         difficulty: difficulty.EASY,
-        successRate: successRate.NINETY_PERCENT,
+        successRate: successRate.UNRELIABLE,
         interactionType: [interactionType.PAUSE_WAVE2]
     },
     {
@@ -245,7 +245,7 @@ export const lsRightP3: dataType[] = [
         omi: true,
     },
     {
-        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU',
+        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU, DEPABILLABA',
         leadFull: 'Jedi Master Mace Windu',
         others: 'Jocasta Nu, Kelleran Beq, Depa Billaba (omicron), Temple Guard',
         notes: 'auto, may want to focus down mara wave 2',
@@ -265,7 +265,7 @@ export const lsRightP3: dataType[] = [
     // },
 
     {
-        lead: 'Jedi Master Mace Windu', gameId: 'JEDIMASTERMACEWINDU',
+        lead: 'Jedi Master Mace Windu', gameId: 'JEDIMASTERMACEWINDU, DEPABILLABA',
         others: 'Depa Bilaba, Temple Guard, Jocasta Nu, Aayla Secura',
         notes: 'Auto, no omis required',
         videos: [],

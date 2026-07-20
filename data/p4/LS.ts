@@ -131,7 +131,7 @@ export const lsGenericP4: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Kelleran Beq', gameId: 'KELLERANBEQ',
+        lead: 'Kelleran Beq', gameId: 'KELLERANBEQ, DEPABILLABA',
         leadFull: 'Kelleran Beq',
         others: 'Jocasta Nu, Shaak Ti, Depa Billaba (omicron), Temple Guard',
         notes: 'auto, dont need platoons, very fast',
@@ -144,7 +144,7 @@ export const lsGenericP4: dataType[] = [
     }
     ,
     {
-        lead: 'Jedi Master Mace Windu', gameId: 'JEDIMASTERMACEWINDU',
+        lead: 'Jedi Master Mace Windu', gameId: 'JEDIMASTERMACEWINDU, DEPABILLABA',
         leadFull: 'Jedi Master Mace Windu',
         others: 'Jocasta Nu, Shaak Ti, Depa Billaba (omicron), Temple Guard',
         notes: 'auto, dont need platoons, very fast',
@@ -272,7 +272,7 @@ export const jediLSP4: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Kelleran Beq', gameId: 'KELLERANBEQ',
+        lead: 'Kelleran Beq', gameId: 'KELLERANBEQ, DEPABILLABA',
         leadFull: 'Kelleran Beq',
         others: 'Jocasta Nu, Shaak Ti, Aayla, Temple Guard',
         notes: 'auto, all platoons required, Temple Guard required, 100% consistent with Mace lead',
@@ -283,7 +283,7 @@ export const jediLSP4: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU',
+        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU, DEPABILLABA',
         leadFull: 'Jedi Master Mace Windu',
         others: 'Jocasta Nu, Shaak Ti, Depa Billaba (omicron), Temple Guard',
         notes: 'auto, dont need platoons, very fast',
@@ -319,7 +319,7 @@ export const jediLSP4: dataType[] = [
     }
     ,
     {
-        lead: 'Jedi Master Mace Windu', gameId: 'JEDIMASTERMACEWINDU',
+        lead: 'Jedi Master Mace Windu', gameId: 'JEDIMASTERMACEWINDU, DEPABILLABA',
         others: 'Depa (Omni), Temple Guardian, Plo Koon, any 5th',
         notes: 'Easy Auto',
         videos: [],

@@ -9,7 +9,7 @@ export const shipsLSP2: dataType[] = [
         videos: [{ url: 'https://youtu.be/CkHBVQJmZtk' }],
         icon: '/icons/ships/tex.charui_profundity.png',
         difficulty: difficulty.CAUTION,
-        successRate: successRate.USUALLY,
+        successRate: successRate.FIFTY_FIFTY,
         interactionType: [interactionType.TARGET_START],
         targeted: true
     },
@@ -20,7 +20,7 @@ export const shipsLSP2: dataType[] = [
         videos: [{ url: 'https://youtu.be/dD9Eey116EY' }],
         icon: '/icons/ships/tex.charui_profundity.png',
         difficulty: difficulty.EASY,
-        successRate: successRate.CONSISTENT,
+        successRate: successRate.USUALLY,
         interactionType: [interactionType.TARGET_START],
         targeted: true
     },
@@ -97,7 +97,7 @@ export const jediLSP2: dataType[] = [
     //     omi: true,
     // },
     {
-        lead: 'Kelleran Beq', gameId: 'KELLERANBEQ',
+        lead: 'Kelleran Beq', gameId: 'KELLERANBEQ, DEPABILLABA',
         leadFull: 'Kelleran Beq',
         others: 'Jocasta Nu, Shaak Ti, Temple Guard, Depa Billaba (omicron)',
         notes: 'auto',
@@ -109,7 +109,7 @@ export const jediLSP2: dataType[] = [
         omi: true
     },
     {
-        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU',
+        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU, DEPABILLABA',
         leadFull: 'Jedi Master Mace Windu',
         others: 'Jocasta Nu, Shaak Ti, Temple Guard, Depa Billaba (omicron)',
         notes: 'auto',
@@ -133,7 +133,7 @@ export const jediLSP2: dataType[] = [
     }
     ,
     {
-        lead: 'Jedi Master Mace Windu', gameId: 'JEDIMASTERMACEWINDU',
+        lead: 'Jedi Master Mace Windu', gameId: 'JEDIMASTERMACEWINDU, DEPABILLABA',
         others: 'Depa Bilaba, Temple Guard, Jocasta Nu, Aayla Secura',
         notes: 'Full Auto, no omi required',
         videos: [],
@@ -258,7 +258,7 @@ export const leftLSP2: dataType[] = [
         omi: true
     },
     {
-        lead: 'Kelleran Beq', gameId: 'KELLERANBEQ',
+        lead: 'Kelleran Beq', gameId: 'KELLERANBEQ, DEPABILLABA',
         leadFull: 'Kelleran Beq',
         others: 'Jocasta Nu, Shaak Ti, Temple Guard, Depa Billaba (omicron)',
         notes: 'auto',
@@ -270,7 +270,7 @@ export const leftLSP2: dataType[] = [
         omi: true
     },
     {
-        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU',
+        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU, DEPABILLABA',
         leadFull: 'Jedi Master Mace Windu',
         others: 'Jocasta Nu, Shaak Ti, Temple Guard, Depa Billaba (omicron)',
         notes: 'auto',
@@ -409,7 +409,7 @@ export const rightLSP2: dataType[] = [
         targeted: true
     },
     {
-        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU',
+        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU, DEPABILLABA',
         leadFull: 'Jedi Master Mace Windu',
         others: 'Jocasta Nu, Kelleran Beq, Temple Guard, Depa Billaba (omicron)',
         notes: 'auto',

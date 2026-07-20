@@ -154,17 +154,17 @@ export const mandaloreGeneric: dataType[] = [
         interactionType: [interactionType.PAUSE_WAVE2],
         omi: true,
     },
-    {
-        lead: 'JMK (Ezra)', gameId: 'JEDIMASTERKENOBI',
-        leadFull: 'Jedi Master Kenobi with Ezra Exile',
-        others: 'Padme, CAT, Ezra Exile, GK',
-        notes: 'auto',
-        videos: [{ url: 'https://youtu.be/UaOt-HO-smQ' }],
-        icon: '/icons/characters/tex.charui_globiwan.png',
-        difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
-        interactionType: [interactionType.AUTO]
-    },
+    // {
+    //     lead: 'JMK (Ezra)', gameId: 'JEDIMASTERKENOBI',
+    //     leadFull: 'Jedi Master Kenobi with Ezra Exile',
+    //     others: 'Padme, CAT, Ezra Exile, GK',
+    //     notes: 'auto',
+    //     videos: [{ url: 'https://youtu.be/UaOt-HO-smQ' }],
+    //     icon: '/icons/characters/tex.charui_globiwan.png',
+    //     difficulty: difficulty.EASY,
+    //     successRate: successRate.USUALLY,
+    //     interactionType: [interactionType.AUTO]
+    // },
     {
         lead: 'Pirate King Hondo', gameId: 'GLHONDO',
         leadFull: 'Pirate King Hondo Onaka',
@@ -189,7 +189,7 @@ export const mandaloreGeneric: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU',
+        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU, DEPABILLABA',
         leadFull: 'Jedi Master Mace Windu',
         others: 'Jocasta Nu, Kelleran Beq, Depa Billaba (omicron), Temple Guard',
         notes: 'auto with all platoons',

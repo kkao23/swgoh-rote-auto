@@ -51,8 +51,8 @@ export const zeffoFleets: dataType[] = [
 
 export const zeffoJedi: dataType[] = [
     {
-        lead: 'JKCK (JMK Ezra)', gameId: 'JEDIKNIGHTCAL, JEDIMASTERKENOBI',
-        others: 'JMK, Jedi Knight Luke, Ezra Exile, Kyle',
+        lead: 'JKCK (JMK)', gameId: 'JEDIKNIGHTCAL, JEDIMASTERKENOBI',
+        others: 'JMK, Jedi Knight Luke, Kyle',
         notes: 'Omi Kyle, auto',
         videos: [{ url: 'https://youtu.be/bBgHB0q5hmo' }],
         icon: '/icons/characters/tex.charui_calkestis.png',
@@ -72,8 +72,8 @@ export const zeffoJedi: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'JKCK (JML Ezra)', gameId: 'JEDIKNIGHTCAL, GRANDMASTERLUKE',
-        others: 'JML, Ezra Exile, JKL, Shaak',
+        lead: 'JKCK (JML)', gameId: 'JEDIKNIGHTCAL, GRANDMASTERLUKE',
+        others: 'JML, JKL, Shaak',
         notes: 'auto, target purge trooper wave 1 then 2S wave 2',
         videos: [{ url: 'https://youtu.be/LqJsWBb5S88' }],
         icon: '/icons/characters/tex.charui_calkestis.png',
@@ -83,8 +83,8 @@ export const zeffoJedi: dataType[] = [
         targeted: true
     },
     {
-        lead: 'JKCK (Rey Ezra)', gameId: 'JEDIKNIGHTCAL, GLREY',
-        others: 'Rey, Ezra Exile, JKL, Kyle (omi)',
+        lead: 'JKCK (Rey)', gameId: 'JEDIKNIGHTCAL, GLREY',
+        others: 'Rey, JKL, Kyle (omi)',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/ixnkyhqL5G0' }],
         icon: '/icons/characters/tex.charui_calkestis.png',
@@ -117,7 +117,7 @@ export const zeffoJedi: dataType[] = [
         omi: true
     },
     {
-        lead: 'JKCK (Lead Omi, JML no Ezra)', gameId: 'JEDIKNIGHTCAL, GRANDMASTERLUKE',
+        lead: 'JKCK (Lead Omi, JML)', gameId: 'JEDIKNIGHTCAL, GRANDMASTERLUKE',
         leadFull: 'Jedi Knight Cal Kestis with Jedi Master Luke',
         others: 'JML, GMY, JKL, Shaak ti',
         notes: 'auto, lead omi mandatory, probably want whirlwind slam as well',
@@ -244,7 +244,7 @@ export const zeffoCombat: dataType[] = [
         interactionType: [interactionType.MANUAL]
     },
     {
-        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU',
+        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU, DEPABILLABA',
         leadFull: 'Jedi Master Master Windu',
         others: 'Jocasta Nu, Kelleran Beq, Depa Billaba (omicron), Temple Guard',
         notes: 'auto, deselect reticule to speed things up',

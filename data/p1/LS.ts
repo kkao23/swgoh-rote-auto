@@ -72,7 +72,7 @@ export const jediP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU',
+        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU, DEPABILLABA',
         leadFull: 'Jedi Master Mace Windu',
         others: 'Temple Guard, Aayla, Depa, Jocasta',
         notes: 'Full auto',
@@ -119,7 +119,7 @@ export const jediP1: dataType[] = [
         omi: true,
     },
     {
-        lead: 'Kelleran Beq', gameId: 'KELLERANBEQ',
+        lead: 'Kelleran Beq', gameId: 'KELLERANBEQ, DEPABILLABA',
         leadFull: 'Kelleran Beq',
         icon: '/icons/characters/tex.charui_kelleranbeq.png',
         others: 'Jocasta Nu, Shaak Ti, Aayla, Temple Guard',

@@ -68,7 +68,7 @@ export const lsTopMidP5: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU',
+        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU, DEPABILLABA',
         leadFull: 'Jedi Master Mace Windu',
         others: 'Jocasta, Depa, Aayla, Temple Guard',
         notes: 'Depa omi - full auto',

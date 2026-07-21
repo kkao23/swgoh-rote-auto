@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { useMediaQuery } from '@vueuse/core';
 import { PHASE_ORDER, type SolveResult, isTeamEligible, getFlatMissions, teamScore } from '~/util/plannerHelpers';
+import { interactionBadges } from '~/util/missionHelpers';
 import type { data as TeamData } from '~/models/data';
 
 const isSmallScreen = useMediaQuery('(max-width: 640px)');
@@ -296,7 +297,8 @@ function teamOptionLabel(t: TeamData): string {
             <th class="pb-2 font-medium">Assigned Team</th>
             <th class="pb-2 font-medium hidden sm:table-cell">Squad</th>
             <th class="pb-2 font-medium text-center">Success</th>
-            <th class="pb-2 font-medium text-right">Score</th>
+            <th class="pb-2 font-medium text-center">Int</th>
+            <th class="pb-2 font-medium text-right hidden sm:table-cell">Score</th>
           </tr>
         </thead>
         <tbody class="divide-y divide-slate-800">
@@ -386,12 +388,25 @@ function teamOptionLabel(t: TeamData): string {
                 >{{ successLabel(getEffectiveTeam(row)!.successRate) }}</span>
                 <span v-else class="text-slate-600 text-xs">—</span>
               </td>
-              <td class="py-2 text-right font-mono" :class="getEffectiveTeam(row) ? 'text-slate-300' : 'text-slate-600'">
+              <td class="py-2 text-center">
+                <div v-if="getEffectiveTeam(row)?.interactionType" class="flex items-center justify-center gap-0.5">
+                  <UIcon
+                    v-for="badge in interactionBadges(getEffectiveTeam(row)!.interactionType)"
+                    :key="badge.icon"
+                    :name="badge.icon"
+                    :class="badge.color"
+                    class="w-4 h-4"
+                    :title="badge.tooltip"
+                  />
+                </div>
+                <span v-else class="text-slate-600 text-xs">—</span>
+              </td>
+              <td class="py-2 text-right font-mono hidden sm:table-cell" :class="getEffectiveTeam(row) ? 'text-slate-300' : 'text-slate-600'">
                 {{ getEffectiveTeam(row) ? teamScore(getEffectiveTeam(row)!) : '—' }}
               </td>
             </tr>
             <tr v-if="row.kind === 'assigned' && expandedResult === row.missionId" class="bg-slate-800/50">
-              <td :colspan="6" class="px-4 py-3">
+              <td :colspan="7" class="px-4 py-3">
                 <div class="text-sm space-y-2">
                   <div v-if="getEffectiveTeam(row)?.notes">
                     <strong class="text-slate-300">Notes:</strong>

@@ -303,6 +303,17 @@ export const leftLSP2: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
     },
+    {
+        lead: 'Satele Shan', gameId: 'SATELESHAN',
+        leadFull: 'Satele Shan',
+        others: 'Jedi Knight Revan, Bastila Shan, Jolee Bindo, Juhani',
+        notes: 'full auto',
+        videos: [{ url: 'https://youtu.be/FKN5VLxN2UE' }],
+        icon: '/icons/characters/tex.charui_sateleshan.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+    }
 ]
 
 export const rightLSP2: dataType[] = [
@@ -392,6 +403,17 @@ export const rightLSP2: dataType[] = [
         icon: '/icons/characters/tex.charui_omegas3.png',
         difficulty: difficulty.HARD,
         successRate: successRate.FIFTY_FIFTY,
+        interactionType: [interactionType.AUTO]
+    },
+    {
+        lead: 'Cobb Vanth', gameId: 'COBBVANTH',
+        leadFull: 'Cobb Vanth',
+        others: 'CUP, Nebit, Jawa Scavenger, Cara Dune. Potency on Cara recommended',
+        notes: 'auto, no omicron needed',
+        videos: [{ url: 'https://youtu.be/mo_cpIrl3aA' }],
+        icon: '/icons/characters/tex.charui_cobbvanth.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO]
     },
     {

@@ -209,6 +209,17 @@ export const mixedP1: dataType[] = [
         omi: true
     },
     {
+        lead: 'Cobb Vanth', gameId: 'COBBVANTH',
+        leadFull: 'Cobb Vanth',
+        others: 'CUP, Nebit, Jawa Scavenger, Cara Dune',
+        notes: 'auto, no omicron needed',
+        videos: [{ url: 'https://youtu.be/GvGv0JmHNn4' }],
+        icon: '/icons/characters/tex.charui_cobbvanth.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
+    },
+    {
         lead: 'Rey', gameId: 'GLREY',
         others: 'JTR, BB8, Han, Chewbacca',
         notes: 'easy auto',

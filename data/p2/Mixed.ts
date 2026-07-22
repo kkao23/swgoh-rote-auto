@@ -375,7 +375,7 @@ export const mixedP2: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Cobb Vanth', gameId: 'COBBVANTH',
+        lead: 'Cobb Vanth', gameId: 'COBBVANTH, JAWASCAVENGER',
         leadFull: 'Cobb Vanth',
         others: 'CUP, Nebit, Jawa Scavenger, +1 Constable',
         notes: 'auto, no omicron needed',

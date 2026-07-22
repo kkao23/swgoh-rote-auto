@@ -385,8 +385,20 @@ export const mixedTopLeftP3: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'Kelleran Beq or JMMW', gameId: 'KELLERANBEQ, DEPABILLABA',
-        leadFull: 'Kelleran Beq or Jedi Master Mace Windu',
+        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU, DEPABILLABA',
+        leadFull: 'Jedi Master Mace Windu',
+        others: 'Jocasta Nu, Temple Guard, Depa Billaba (omicron), +1 JV',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/sqGLakqZ0gc' }],
+        icon: '/icons/characters/tex.charui_jedimastermacewindu.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        omi: true
+    },
+    {
+        lead: 'Kelleran Beq', gameId: 'KELLERANBEQ, DEPABILLABA',
+        leadFull: 'Kelleran Beq',
         others: 'Jocasta Nu, Shaak Ti, Temple Guard, Depa Billaba (omicron)',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/sqGLakqZ0gc' }],

@@ -209,7 +209,7 @@ export const mixedP1: dataType[] = [
         omi: true
     },
     {
-        lead: 'Cobb Vanth', gameId: 'COBBVANTH',
+        lead: 'Cobb Vanth', gameId: 'COBBVANTH, JAWASCAVENGER',
         leadFull: 'Cobb Vanth',
         others: 'CUP, Nebit, Jawa Scavenger, Cara Dune',
         notes: 'auto, no omicron needed',

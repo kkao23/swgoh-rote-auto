@@ -293,7 +293,7 @@ export const leftLSP2: dataType[] = [
         omi: true
     },
     {
-        lead: 'Cobb Vanth', gameId: 'COBBVANTH',
+        lead: 'Cobb Vanth', gameId: 'COBBVANTH, JAWASCAVENGER',
         leadFull: 'Cobb Vanth',
         others: 'CUP, Nebit, Jawa Scavenger, Cara Dune',
         notes: 'auto, no omicron needed',
@@ -406,7 +406,7 @@ export const rightLSP2: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Cobb Vanth', gameId: 'COBBVANTH',
+        lead: 'Cobb Vanth', gameId: 'COBBVANTH, JAWASCAVENGER',
         leadFull: 'Cobb Vanth',
         others: 'CUP, Nebit, Jawa Scavenger, Cara Dune. Potency on Cara recommended',
         notes: 'auto, no omicron needed',

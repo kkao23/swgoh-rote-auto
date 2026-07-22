@@ -43,7 +43,7 @@ export const lsLeftP3: dataType[] = [
         videos: [{ url: 'https://youtu.be/rahjtupSkX0' }],
         icon: '/icons/characters/tex.charui_bossnass.png',
         difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
+        successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO],
         omi: true,
     },
@@ -100,6 +100,18 @@ export const lsLeftP3: dataType[] = [
         omi: true,
     },
     {
+        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU, DEPABILLABA',
+        leadFull: 'Jedi Master Mace Windu',
+        others: 'Jocasta Nu, Temple Guard, Depa Billaba (omicron), +1 JV',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/Ez1HYwJ8aZY' }],
+        icon: '/icons/characters/tex.charui_jedimastermacewindu.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        omi: true
+    },
+    {
         lead: 'Kelleran Beq', gameId: 'KELLERANBEQ, DEPABILLABA',
         leadFull: 'Kelleran Beq',
         others: 'Jocasta Nu, Shaak Ti, Temple Guard, Depa Billaba (omicron)',
@@ -146,7 +158,7 @@ export const lsLeftP3: dataType[] = [
         creator: 'Windaar'
     },
     {
-        lead: 'Cobb Vanth', gameId: 'COBBVANTH',
+        lead: 'Cobb Vanth', gameId: 'COBBVANTH, JAWASCAVENGER',
         leadFull: 'Cobb Vanth',
         others: 'CUP, Nebit, Jawa Scavenger, Cara Dune',
         notes: 'auto, no omicron needed',
@@ -186,7 +198,7 @@ export const lsRightP3: dataType[] = [
         videos: [{ url: 'https://youtu.be/fO_7TdAxH6U' }],
         icon: '/icons/characters/tex.charui_bossnass.png',
         difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
+        successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO],
         omi: true
     },

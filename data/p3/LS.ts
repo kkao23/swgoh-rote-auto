@@ -298,7 +298,18 @@ export const lsRightP3: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         creator: 'anonymous'
-    }
+    },
+    {
+        lead: 'Cobb Vanth', gameId: 'COBBVANTH, JAWASCAVENGER',
+        leadFull: 'Cobb Vanth',
+        others: 'CUP, Nebit, Jawa Scavenger, Cara Dune',
+        notes: 'auto, no omicron needed, can get unlucky if they focus cobb or cara',
+        videos: [{ url: 'https://youtu.be/7IjHqql1jOI' }],
+        icon: '/icons/characters/tex.charui_cobbvanth.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.NINETY_PERCENT,
+        interactionType: [interactionType.AUTO]
+    },
 ]
 
 export const sawP3: dataType[] = [

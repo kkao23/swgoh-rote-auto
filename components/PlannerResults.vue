@@ -2,6 +2,7 @@
 import { useMediaQuery } from '@vueuse/core';
 import { PHASE_ORDER, type SolveResult, isTeamEligible, getFlatMissions, teamScore } from '~/util/plannerHelpers';
 import { interactionBadges } from '~/util/missionHelpers';
+import { buildRedditTable, copyToClipboard } from '~/util/plannerExport';
 import type { data as TeamData } from '~/models/data';
 
 const isSmallScreen = useMediaQuery('(max-width: 640px)');
@@ -254,6 +255,13 @@ function teamOptionLabel(t: TeamData): string {
   const pct = successLabel(t.successRate);
   return `${name} (${pct})`;
 }
+
+// ── Export to Reddit-friendly markdown ─────────────────────────
+async function copyExport() {
+  const rows = unifiedRows.value;
+  const text = buildRedditTable(rows, getEffectiveTeam);
+  await copyToClipboard(text);
+}
 </script>
 
 <template>
@@ -262,12 +270,21 @@ function teamOptionLabel(t: TeamData): string {
       <h2 class="text-lg font-semibold text-white">
         {{ dayLabel }} Results
       </h2>
-      <div class="text-sm text-slate-400">
-        Score:
-        <span class="text-white font-semibold">{{ result.totalScore }}</span>
-        <span class="text-slate-500">
-          / {{ result.maxPossibleScore }}
-        </span>
+      <div class="flex items-center gap-3">
+        <div class="text-sm text-slate-400">
+          Score:
+          <span class="text-white font-semibold">{{ result.totalScore }}</span>
+          <span class="text-slate-500">
+            / {{ result.maxPossibleScore }}
+          </span>
+        </div>
+        <button
+          type="button"
+          class="px-3 py-1 text-xs font-medium rounded bg-slate-700 text-slate-300 hover:bg-slate-600 hover:text-white transition-colors"
+          @click.stop="copyExport"
+        >
+          Export
+        </button>
       </div>
     </div>
 

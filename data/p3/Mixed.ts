@@ -452,7 +452,18 @@ export const mixedTopLeftP3: dataType[] = [
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
-    }
+    },
+    {
+        lead: 'Cobb Vanth', gameId: 'COBBVANTH, JAWASCAVENGER',
+        leadFull: 'Cobb Vanth',
+        others: 'CUP, Nebit, Jawa Scavenger, +1',
+        notes: 'auto, no omicron needed, Lobot is probably best for 5th',
+        videos: [{ url: 'https://youtu.be/c45_GwEofdo' }],
+        icon: '/icons/characters/tex.charui_cobbvanth.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
+    },
 ]
 
 export const mixedP3Ships: dataType[] = [

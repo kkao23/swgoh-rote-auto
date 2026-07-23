@@ -296,14 +296,13 @@ export const jediLSP4: dataType[] = [
     {
         lead: 'GAS', gameId: 'GENERALSKYWALKER',
         leadFull: 'General Anakin Skywalker',
-        others: 'Snips, POW, MQG, GMY',
-        notes: 'Auto - only have to defeat enemy toons once each because of GAS revive prevention. Fast and easy.',
-        videos: [],
+        others: 'Snips, GMY, Shaak Ti, Kelleran Beq',
+        notes: 'Auto - only have to defeat enemy toons once each because of GAS revive prevention. Can look a bit dicey at the beginning. KB and GMY recommended for foresight, or use POW and MQG',
+        videos: [{ url: 'https://youtu.be/BYE49yblTTs'}],
         icon: '/icons/characters/tex.charui_generalanakin.png',
         difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO],
-        creator: 'Mark Green',
     },
     {
         lead: 'Satele Shan', gameId: 'SATELESHAN',

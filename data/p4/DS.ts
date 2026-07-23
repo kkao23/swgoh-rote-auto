@@ -158,17 +158,15 @@ export const dsMidRightP4: dataType[] = [
         successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO]
     },
-
     {
         lead: 'Great Mothers', gameId: 'GREATMOTHERS',
         others: 'Morgan, Spirit, NT, DTP',
-        notes: 'Auto',
-        videos: [],
+        notes: 'Auto. Full Platoons required.',
+        videos: [{ url: 'https://youtu.be/ePQiFXMWUlk' }],
         icon: '/icons/characters/tex.charui_greatmothers.png',
         difficulty: difficulty.EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
-        creator: 'anonymous'
     },
     {
         lead: 'Aphra', gameId: 'DOCTORAPHRA',
@@ -191,7 +189,17 @@ export const dsMidRightP4: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         omi: true
-    }
+    },
+    {
+        lead: 'Maul', gameId: 'MAULS7',
+        others: 'Jango, ISC, Gar Saxon, Canderous',
+        notes: 'dicey on full auto',
+        videos: [{ url: 'https://youtu.be/s-7CVU43DiQ' }],
+        icon: '/icons/characters/tex.charui_maul.png',
+        difficulty: difficulty.HARD,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.AUTO],
+    },
 ]
 
 export const dsSortie: dataType[] = [

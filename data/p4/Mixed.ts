@@ -350,6 +350,16 @@ export const mixedGenericP4: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         creator: 'anonymous'
+    },
+    {
+        lead: 'Rey', gameId: 'GLREY',
+        others: 'Ben, random LS',
+        notes: '1/2 on auto',
+        videos: [{ url: 'https://youtu.be/6t3vMFIIBWE' }],
+        icon: '/icons/characters/tex.charui_rey_tros.png',
+        difficulty: difficulty.NO_AUTO,
+        successRate: successRate.UNRELIABLE,
+        interactionType: [interactionType.AUTO],
     }
 ]
 

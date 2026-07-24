@@ -360,7 +360,27 @@ export const mixedGenericP4: dataType[] = [
         difficulty: difficulty.NO_AUTO,
         successRate: successRate.UNRELIABLE,
         interactionType: [interactionType.AUTO],
-    }
+    },
+    {
+        lead: 'Maul', gameId: 'MAULS7',
+        others: 'Jango, ISC, Gar Saxon, Canderous',
+        notes: '1/2 on full auto',
+        videos: [{ url: 'https://youtu.be/sQUT3r7Z434' }],
+        icon: '/icons/characters/tex.charui_maul.png',
+        difficulty: difficulty.HARD,
+        successRate: successRate.UNRELIABLE,
+        interactionType: [interactionType.AUTO],
+    },
+    {
+        lead: 'Great Mothers', gameId: 'GREATMOTHERS',
+        others: 'Morgan, Spirit, NT, DTP',
+        notes: 'Auto. Platoons optional.',
+        videos: [{ url: 'https://youtu.be/sQUT3r7Z434' }],
+        icon: '/icons/characters/tex.charui_greatmothers.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+    },
 ]
 
 export const jabbaP4: dataType[] = [

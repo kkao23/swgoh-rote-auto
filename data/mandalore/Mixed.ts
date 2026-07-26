@@ -270,7 +270,19 @@ export const mandaloreGeneric: dataType[] = [
     successRate: successRate.CONSISTENT,
     interactionType: [interactionType.AUTO],
     creator: 'anonymous'
-}
+},
+    {
+        lead: 'Satele Shan', gameId: 'SATELESHAN',
+        leadFull: 'Satele Shan',
+        others: 'Jedi Knight Revan, Bastila Shan, Jolee Bindo, Canderous',
+        notes: 'Can\'t auto, focus down Veers wave 1 and Gideon wave 2',
+        videos: [{ url: 'https://youtu.be/cvxMB7pW36A' }],
+        icon: '/icons/characters/tex.charui_sateleshan.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.NINETY_PERCENT,
+        interactionType: [interactionType.MANUAL],
+    }
+    ,
 ]
 
 export const mandaloreDTMG: dataType[] = [

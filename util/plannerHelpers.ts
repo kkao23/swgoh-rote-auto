@@ -131,7 +131,7 @@ export function canonicalLeadKey(team: TeamData): string {
 
   // 3. Match against leads.ts
   const match = leadByName.get(stripped);
-  if (match) return match.id;
+  if (match) return match.id.toLowerCase();
 
   // 4. Last resort: the stripped text
   return stripped;

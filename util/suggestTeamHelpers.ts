@@ -8,11 +8,10 @@ type LeadDef = (typeof leads)[number];
 export function buildLeadToGameId(leadDefs: LeadDef[]): Map<string, string> {
   const map = new Map<string, string>();
   for (const l of leadDefs) {
-    const id = l.id.toUpperCase();
-    map.set(l.fullName.toLowerCase(), id);
-    map.set(l.id.toLowerCase(), id);
+    map.set(l.fullName.toLowerCase(), l.id);
+    map.set(l.id.toLowerCase(), l.id);
     for (const alias of l.aliases) {
-      map.set(alias.toLowerCase(), id);
+      map.set(alias.toLowerCase(), l.id);
     }
   }
   return map;

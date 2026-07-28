@@ -9,9 +9,9 @@ import {
 // ── Minimal test data ────────────────────────────────────────────
 
 const SAMPLE_LEADS = [
-  { id: 'supremeleaderkyloren', fullName: 'Supreme Leader Kylo Ren', aliases: ['SLKR'] },
-  { id: 'lordvader', fullName: 'Lord Vader', aliases: ['LV'] },
-  { id: 'glleia', fullName: 'Leia Organa', aliases: ['Leia'] },
+  { id: 'SUPREMELEADERKYLOREN', fullName: 'Supreme Leader Kylo Ren', aliases: ['SLKR'] },
+  { id: 'LORDVADER', fullName: 'Lord Vader', aliases: ['LV'] },
+  { id: 'GLLEIA', fullName: 'Leia Organa', aliases: ['Leia'] },
 ];
 
 const SAMPLE_DATA = {

@@ -138,6 +138,29 @@ export const zeffoJedi: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         creator: 'BailWritte'
+    },
+    {
+    lead: 'JKCK (JML no Omi)',
+    gameId: 'JEDIKNIGHTCAL, GRANDMASTERLUKE',
+    icon: '/icons/characters/tex.charui_calkestis.png',
+    others: 'JML,SHAKK,JKL,JKR',
+    notes: 'Manual,no omis req.And no platoons filled,when they are,then all toons survive.',
+    videos: [
+        { url: 'https://youtu.be/penn1gPYbtQ' },
+    ],
+    difficulty: difficulty.EASY,
+    creator: 'Anonymous'
+    },
+    {
+    lead: 'JKCK (All Omi)',
+        gameId: 'JEDIKNIGHTCAL, GRANDMASTERLUKE',
+        icon: '/icons/characters/tex.charui_calkestis.png',
+    others: 'JML, JKL, Bastila Shan, JKA',
+    notes: 'JKCK all omi. Auto, no targeting necessary',
+    videos: [],
+    difficulty: difficulty.EASY,
+    omi: true,
+    creator: 'Anonymous',
     }
 ]
 
@@ -333,5 +356,14 @@ export const zeffoCombat: dataType[] = [
         successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO],
         creator: 'Brink'
-}
+    },
+    {
+    lead: 'Satele Shan',
+    gameId: 'SATELESHAN',
+    others: 'OR Jedi / 5ort',
+    notes: 'Keep the droids\' cooldowns permanently increased, direct all assists to JKR and spam mark on them, and make sure to keep Satele taunting. Very easy on manual, but don\'t think it\'s autoable and likely requires good survivability modding on JKR and high relics',
+    videos: [],
+    difficulty: difficulty.EASY,
+    creator: 'Anonymous',
+    }
 ]

@@ -283,6 +283,38 @@ export const mandaloreGeneric: dataType[] = [
         interactionType: [interactionType.MANUAL],
     }
     ,
+    {
+    lead: 'JML',
+    leadFull: 'Jedi Master Luke',
+    gameId: 'GRANDMASTERLUKE',
+    others: 'JKLS, JKCK, JKR, GAS',
+    notes: 'I have only done it on manual.',
+    videos: [],
+    difficulty: difficulty.EASY,
+    creator: 'Anonymous',
+    },
+    {
+    lead: 'Cobb Vanth',
+    gameId: 'COBBVANTH, JAWASCAVENGER',
+    icon: '/icons/characters/tex.charui_cobbvanth.png',
+    others: 'Lobot, CUP, Nebit, Scav',
+    notes: 'omi on Cobb, 1/2 without platoons, they all blow up eventually',
+    videos: [],
+    difficulty: difficulty.EASY,
+    creator: 'acidf',
+    omi: true
+    },
+    {
+    lead: 'ROLO',
+    gameId: 'HOTHLEIA, GLLEIA',
+    icon: '/icons/characters/tex.charui_leiahoth.png',
+    others: 'Omi on ROLO, Han Solo, GL Leia, R2-D2, AdRad',
+    notes: 'Autoplay, no platoons needed.',
+    videos: [],
+    difficulty: difficulty.EASY,
+    creator: 'Justpure CR',
+    omi: true
+    }
 ]
 
 export const mandaloreDTMG: dataType[] = [

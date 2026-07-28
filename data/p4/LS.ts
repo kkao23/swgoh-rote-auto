@@ -179,7 +179,7 @@ export const lsGenericP4: dataType[] = [
         omi: true
     },
     {
-        lead: 'Rey', gameId: 'GLREY',
+        lead: 'Rey (BAM)', gameId: 'GLREY',
         others: 'BAM, Yoda, Han Solo, GK',
         notes: 'No Auto,Kills with Rey and BAM(20 Whistling Birds)',
         videos: [],
@@ -200,6 +200,15 @@ export const lsGenericP4: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         creator: 'anonymous'
+    },
+    {
+    lead: 'Rey (501st)',
+    gameId: 'GLREY',
+    others: '501. ( Fives, Echo, Rex, Arc Soldier )',
+    notes: 'Full Autoplay, no Platoons needed',
+    videos: [],
+    difficulty: difficulty.EASY,
+    creator: 'Justpure CR',
     }
 ]
 

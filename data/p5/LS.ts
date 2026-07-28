@@ -65,6 +65,15 @@ export const lsTopLeftP5: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         omi: true
+    },
+    {
+    lead: 'Padme Amidala',
+    icon: '/icons/characters/tex.charui_padme_geonosis.png',
+    others: 'General Kenobi, general Skywalker, ahsoka (snips), Commander Ahsoka Tano',
+    notes: 'This is the Kafrene easiest vs Mob Enforce lead. I\'ve been able to consistently be successful with this team even without having platoons',
+    videos: [],
+    difficulty: difficulty.EASY,
+    creator: 'Anonymous',
     }
 ]
 
@@ -253,8 +262,8 @@ export const lsShipsP5: dataType[] = [
     },
     {
         lead: 'Home One (B wing)', gameId: 'CAPITALMONCALAMARICRUISER, BWINGREBEL',
-        others: 'Ghost, Cassian, Ravens claw, B wing in reinforcements',
-        notes: 'can\'t auto. Go after Scythe first. Bistan special then basics (guaranteed crits). Cassian should do Tenacity down then call Bistan if stealthed, B Wing if not',
+        others: 'Bistan, Cassian, Ravens claw, B wing in reinforcements',
+        notes: 'can\'t auto. Go after Scythe first. Bistan special then basics (guaranteed crits). Cassian should do Tenacity down then call Bistan if stealthed, B Wing if not. Alternatively call B Wing with all assists',
         videos: [{ url: 'https://youtu.be/kLN6a-_1yO4' }],
         icon: '/icons/ships/tex.charui_moncalamarilibertycruiser.png',
         difficulty: difficulty.EASY,

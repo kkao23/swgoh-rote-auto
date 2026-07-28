@@ -168,6 +168,15 @@ export const lsLeftP3: dataType[] = [
         successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO]
     },
+    {
+    lead: 'JKL',
+    gameId: 'JEDIKNIGHTLUKE',
+    others: 'JML, GAS, GMY, GK',
+    notes: 'Played on Manual took some time but seemed pretty easy. Get luke a turn ASAP and spam repulse',
+    videos: [],
+    difficulty: difficulty.EASY,
+    creator: 'Anonymous',
+    }
 ]
 
 export const lsRightP3: dataType[] = [
@@ -310,6 +319,16 @@ export const lsRightP3: dataType[] = [
         successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO]
     },
+    {
+    lead: 'JML',
+    leadFull: 'Jedi Master Luke',
+    gameId: 'GRANDMASTERLUKE',
+    others: 'JKL, Jolee, JKCK, Kyle',
+    notes: 'Easy',
+    videos: [],
+    difficulty: difficulty.EASY,
+    creator: 'Nocebo',
+    }
 ]
 
 export const sawP3: dataType[] = [

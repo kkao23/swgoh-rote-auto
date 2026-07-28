@@ -193,13 +193,33 @@ export const dsMidRightP4: dataType[] = [
     {
         lead: 'Maul', gameId: 'MAULS7',
         others: 'Jango, ISC, Gar Saxon, Canderous',
-        notes: 'dicey on full auto',
+        notes: 'dicey on full auto. should be safe on manual',
         videos: [{ url: 'https://youtu.be/s-7CVU43DiQ' }],
         icon: '/icons/characters/tex.charui_maul.png',
         difficulty: difficulty.HARD,
         successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO],
     },
+    {
+        lead: 'Bane',
+        gameId: 'DARTHBANE',
+        others: 'Malak,see,Drevan+1',
+        notes: 'works best with platoons complete',
+        videos: [],
+        difficulty: difficulty.EASY,
+        creator: 'Anonymous',
+    },
+    {
+    lead: 'Captain Ithano',
+    gameId: 'ITHANO',
+    icon: '/icons/characters/tex.charui_ithano.png',
+    others: 'SM 33; Quigold (Omicron needed), leftover DS',
+    notes: 'Manually played spare Capt. Ithanos mass dmg when everybody has Retribution.',
+    videos: [],
+    difficulty: difficulty.EASY,
+    omi: true,
+    creator: 'roehri79',
+    }
 ]
 
 export const dsSortie: dataType[] = [

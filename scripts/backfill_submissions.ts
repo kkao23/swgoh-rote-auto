@@ -37,6 +37,8 @@ interface ParsedSubmission {
   notes: string;
   submittedBy: string;
   name: string;
+  hasOmi: boolean;
+  videoUrls: string[];
 }
 
 function parseBlock(block: string): ParsedSubmission | null {
@@ -47,7 +49,6 @@ function parseBlock(block: string): ParsedSubmission | null {
 
   const submittedMatch = block.match(/Submitted by: (.+)/);
   const submittedBy = submittedMatch ? submittedMatch[1].trim() : '';
-  // Extract just the name (before the email in parens)
   const nameMatch = submittedBy.match(/^([^(]+)/);
   const name = nameMatch ? nameMatch[1].trim() : submittedBy;
 
@@ -58,8 +59,18 @@ function parseBlock(block: string): ParsedSubmission | null {
   const others = get('Others');
   const notes = get('Notes');
 
+  const hasOmi = /omi/i.test(block);
+
+  // Extract YouTube URLs
+  const videoUrls: string[] = [];
+  const ytRegex = /https?:\/\/(?:www\.)?(?:youtube\.com\/watch\?v=|youtu\.be\/)([\w-]+)/gi;
+  let match: RegExpExecArray | null;
+  while ((match = ytRegex.exec(block)) !== null) {
+    videoUrls.push(match[0]);
+  }
+
   if (!phase || !lead || !others || !notes) return null;
-  return { phase, alignment, position, lead, others, notes, submittedBy, name };
+  return { phase, alignment, position, lead, others, notes, submittedBy, name, hasOmi, videoUrls };
 }
 
 // ── Format as TypeScript object literal ──────────────────────────
@@ -72,8 +83,17 @@ function formatTeamData(parsed: ParsedSubmission, gameId: string | undefined): s
   if (gameId) lines.push(`  gameId: '${gameId}',`);
   lines.push(`  others: '${esc(parsed.others)}',`);
   lines.push(`  notes: '${esc(parsed.notes)}',`);
-  lines.push(`  videos: [],`);
+  if (parsed.videoUrls.length > 0) {
+    lines.push('  videos: [');
+    for (const url of parsed.videoUrls) {
+      lines.push(`    { url: '${esc(url)}' },`);
+    }
+    lines.push('  ],');
+  } else {
+    lines.push('  videos: [],');
+  }
   lines.push(`  difficulty: difficulty.EASY,`);
+  if (parsed.hasOmi) lines.push(`  omi: true,`);
   lines.push(`  creator: '${esc(creator)}',`);
   lines.push(`}`);
   return lines.join('\n');

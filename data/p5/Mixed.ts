@@ -154,6 +154,17 @@ export const mixedCombatTopRightP5: dataType[] = [
         successRate: successRate.UNRELIABLE,
         interactionType: [interactionType.AUTO]
     },
+    {
+    lead: 'Maz Kanata',
+    gameId: 'MAZKANATA',
+    icon: '/icons/characters/tex.charui_mazkanata.png',
+    others: 'CPT. Ithano, Hondo,Quiggold,Kix',
+    notes: 'Quiggold Omicron, Hold Maz\'s Spec 2 for the 2nd wave if you are in the finish in the 1st one.',
+    videos: [],
+    difficulty: difficulty.EASY,
+    omi: true,
+    creator: 'SpyRush',
+    }
 ]
 
 export const mixedCombatBottomLeftP5: dataType[] = [
@@ -301,6 +312,26 @@ export const mixedCombatBottomLeftP5: dataType[] = [
         interactionType: [interactionType.AUTO],
         creator: 'anonymous',
         omi: true
+    },
+    {
+    lead: 'Ahsoka Tano (CAT)',
+    gameId: 'AHSOKATANO, COMMANDERAHSOKATANO',
+    others: 'Exile Ezra, padawan sabine, gen syndulla, CAT',
+    notes: 'Keep CAT alive until force leap',
+    videos: [],
+    difficulty: difficulty.EASY,
+    creator: 'Anonymous',
+    },
+    {
+    lead: 'Cobb Vanth',
+    icon: '/icons/characters/tex.charui_cobbvanth.png',
+    gameId: 'COBBVANTH',
+    others: 'lobot, CUP, any jawa + tusken',
+    notes: 'tusken probably needed for anti DOT.  Not sure if omicron is required',
+    videos: [],
+    difficulty: difficulty.EASY,
+    omi: true,
+    creator: 'Anonymous',
     }
 ];
 

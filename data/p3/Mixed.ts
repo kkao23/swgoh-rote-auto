@@ -72,7 +72,6 @@ export const fennecP3: dataType[] = [
         others: 'Fennec, any 3 resistance',
         notes: 'easy auto',
         videos: [{ url: 'https://youtu.be/ydm8T8Jvpyc' }],
-        icon: '/icons/characters/tex.charui_rey_tlj.png',
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
@@ -206,6 +205,15 @@ export const fennecP3: dataType[] = [
         "successRate": successRate.USUALLY,
         "interactionType": [interactionType.AUTO],
         "creator": "Kino Apparition"
+    },
+    {
+        lead: 'BK Mandalore', gameId: 'MANDALORBOKATAN',
+        leadFull: 'Bo Katan Mandalore',
+        others: 'Ig-12, Pqz, BAM',
+        notes: 'Make sure to use BAM\'s wonders of the force strategically especially in the second wave.',
+        videos: [],
+        difficulty: difficulty.EASY,
+        creator: 'LookScanShoot',
     }
 ]
 
@@ -473,6 +481,25 @@ export const mixedTopLeftP3: dataType[] = [
     difficulty: difficulty.EASY,
     successRate: successRate.CONSISTENT,
     interactionType: [interactionType.AUTO]
+    },
+    {
+        lead: 'BK Mandalore', gameId: 'MANDALORBOKATAN',
+        leadFull: 'Bo Katan Mandalore',
+        icon: '/icons/characters/tex.charui_mandalorbokatan.png',
+        others: 'BAM, IG-12 & Grogu, Paz Vizsla, Bo-Katan Kryze',
+        notes: 'Easy auto, can use when P3 has been done in previous round (eg preload)',
+        videos: [],
+        difficulty: difficulty.EASY,
+        creator: 'Wesley',
+    },
+    {
+    lead: 'JMK',
+    leadFull: 'Jedi Master Kenobi',
+    gameId: 'JEDIMASTERKENOBI',
+    others: 'Snips, GK, Padme, GMY',
+    notes: 'Full Auto',
+    videos: [],
+    difficulty: difficulty.EASY,
     }
 ]
 

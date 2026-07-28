@@ -154,6 +154,16 @@ export const dsGenericP3: dataType[] = [
         "successRate": successRate.USUALLY,
         "interactionType": [interactionType.AUTO],
         "creator": "BailWritte"
+    },
+    {
+    lead: 'Kylo Ren Unmasked',
+    gameId: 'KYLORENUNMASKED',
+    icon: '/icons/characters/tex.charui_kylo_unmasked.png',
+    others: 'Slkr, drey, sith trooper +1',
+    notes: 'Get to ult once, after that slkr has 100% tm after every aoe (might not even need drey), a lot more stable than slkr lead, probably works without kru lead zeta as well',
+    videos: [],
+    difficulty: difficulty.EASY,
+    creator: 'Anonymous',
     }
 ]
 

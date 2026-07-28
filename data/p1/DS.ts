@@ -117,6 +117,26 @@ export const leftDSP1: dataType[] = [{
     interactionType: [interactionType.AUTO],
     creator: 'Parableman'
 },
+{
+  lead: 'Grand Moff Tarkin',
+  gameId: 'GRANDMOFFTARKIN',
+  others: 'CX2, Disguised Clone Trooper, Appo, Scorch',
+  notes: 'Full auto 2/2 easy',
+  videos: [],
+  difficulty: difficulty.EASY,
+  creator: 'Anonymous',
+},
+    {
+        lead: 'Jabba', gameId: 'JABBATHEHUTT',
+        others: 'Booush +3',
+        notes: 'Auto',
+        videos: [],
+        icon: '/icons/characters/tex.charui_jabbathehutt.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'Anonymous'
+    }
 ];
 
 export const bottomDSP1: dataType[] = [{
@@ -321,7 +341,7 @@ export const topDSP1: dataType[] = [
     {
         lead: 'Reva', gameId: 'THIRDSISTER',
         others: 'GI, 7S, 2S, 8B',
-        notes: 'Target B2, hit auto',
+        notes: 'Target B2, hit auto. Or easy auto with Marrok omi',
         videos: [{ url: 'https://youtu.be/V75J-k6i40s?si=uX_YUqMZEuQr7VIN&t=145', creator: 'pico' }],
         icon: '/icons/characters/tex.charui_thirdsister.png',
         difficulty: difficulty.EASY,
@@ -382,6 +402,15 @@ export const topDSP1: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         creator: 'Teg bashar'
+    },
+    {
+    lead: 'Grand Moff Tarkin',
+    gameId: 'GRANDMOFFTARKIN',
+    others: 'CX2, Disguised Clone Trooper, Appo, Scorch',
+    notes: 'Full auto 2/2 easy',
+    videos: [],
+    difficulty: difficulty.EASY,
+    creator: 'Anonymous',
     }
 ];
 

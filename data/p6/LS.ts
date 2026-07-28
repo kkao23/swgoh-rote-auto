@@ -17,16 +17,38 @@ export const lsShipsP6: dataType[] = [
 
 export const genericLSP6: dataType[] = [
 
-{
-    lead: 'JMK', gameId: 'JEDIMASTERKENOBI',
-    others: 'CAT, GK, GAS, Snips',
-    notes: 'Does not work on auto. Manual play 1/2 possible. The damage every 10 waves will wipe the Team.',
-    videos: [],
-    difficulty: difficulty.CAUTION,
-    successRate: successRate.FIFTY_FIFTY,
-    interactionType: [interactionType.AUTO],
-    creator: 'anonymous'
-}
+    {
+        lead: 'JMK', gameId: 'JEDIMASTERKENOBI',
+        others: 'CAT, GK, GAS, Snips',
+        notes: 'Does not work on auto. Manual play 1/2 possible. The damage every 10 waves will wipe the Team.',
+        videos: [],
+        difficulty: difficulty.CAUTION,
+        successRate: successRate.FIFTY_FIFTY,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous'
+    },
+    {
+    lead: 'Omega (Fugitive)',
+    gameId: 'OMEGAS3',
+    others: 'Hunter (merc), Wrecker (merc), Crosshair, Batcher',
+    notes: 'Auto',
+    videos: [
+        { url: 'https://youtu.be/7vfe8pUY49M' },
+    ],
+    difficulty: difficulty.EASY,
+    creator: 'Mar Trepodi',
+    },
+    {
+    lead: 'Jedi Master Mace Windu',
+    gameId: 'JEDIMASTERMACEWINDU',
+    others: 'Depa Billaba, Temple Guard, Jocasta Nu, Aayla Secura',
+    notes: 'Auto',
+    videos: [
+        { url: 'https://youtu.be/pHrl4505LTI' },
+    ],
+    difficulty: difficulty.EASY,
+    creator: 'Mar Trepodi',
+    }
 ]
 
 export const cassianLSP6: dataType[] = [
@@ -40,6 +62,37 @@ export const cassianLSP6: dataType[] = [
     successRate: successRate.CONSISTENT,
     interactionType: [interactionType.AUTO],
     creator: 'anonymous'
+},
+{
+  lead: 'Leia',
+  gameId: 'GLLEIA',
+  others: 'R2-D2',
+  notes: 'Auto',
+  videos: [
+    { url: 'https://youtu.be/AZcGvhvRnPw' },
+  ],
+  difficulty: difficulty.EASY,
+  creator: 'Mar Trepodi',
+},
+{
+  lead: 'JKCK',
+  gameId: 'JEDIKNIGHTCAL',
+  others: 'oKyle Katarn',
+  notes: 'Auto',
+  videos: [
+    { url: 'https://youtu.be/e5WnNFbiot8' },
+  ],
+  difficulty: difficulty.EASY,
+  creator: 'Mar Trepodi',
+},
+{
+  lead: 'Leia',
+  gameId: 'GLLEIA',
+  others: 'R2, Drogan, AdRad, Fulcrum',
+  notes: 'Manual play: 2/2 doable. R2 stunned the Purge Troopers to control the fight.',
+  videos: [],
+  difficulty: difficulty.EASY,
+  creator: 'Anonymous',
 }
 ]
 

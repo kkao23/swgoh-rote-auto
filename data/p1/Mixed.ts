@@ -307,6 +307,38 @@ export const mixedP1: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
     },
+    {
+        lead: 'Leia Organa', gameId: 'GLLEIA',
+        others: 'R2-D2, Captain Drogan, +2 Rebels',
+        notes: 'Full Auto',
+        videos: [],
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+    },
+    {
+        lead: 'LV', gameId: 'LORDVADER, APPO',
+        leadFull: 'Lord Vader',
+        others: 'DS Clones',
+        notes: 'Easy full auto',
+        videos: [],
+        icon: '/icons/characters/tex.charui_lordvader.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
+    },
+    {
+        lead: "Maz Kanata", gameId: "MAZKANATA",
+        leadFull: "Maz Kanata",
+        others: "Quiggold, Ithano, Kix, +1 Pirate",
+        notes: "Auto, If Hondo (OG) must play it manual not to lose Hondo",
+        videos: [],
+        icon: "/icons/characters/tex.charui_mazkanata.png",
+        difficulty: difficulty.EASY,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.AUTO],
+        creator: "roehri79"
+    },
 ]
 
 export const jabbaP1: dataType[] = [
@@ -372,7 +404,17 @@ export const drAphraP1: dataType[] = [
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
-}
+    },
+    {
+        lead: 'Aphra (Hondo)', gameId: 'DOCTORAPHRA, GLHONDO',
+        others: 'Hondo, SM-33, Vane, Silvo',
+        notes: 'auto',
+        videos: [],
+        icon: '/icons/characters/tex.charui_glhondo.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
+    }
 ]
 
 export const shipsP1: dataType[] = [

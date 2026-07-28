@@ -1,4 +1,8 @@
 <script setup lang="ts">
+import { leads } from '~/data/leads';
+import { data } from '~/data/data';
+import { buildLeadToGameId, matchGameId, checkDuplicateLead } from '~/util/suggestTeamHelpers';
+
 const isOpen = ref(false);
 const isSubmitting = ref(false);
 const submitSuccess = ref(false);
@@ -47,6 +51,9 @@ const hideButton = () => {
   isHidden.value = true;
 };
 
+// Lead → gameId lookup (built once from leads.ts)
+const leadToGameId = buildLeadToGameId(leads);
+
 const submitSuggestion = async () => {
   // Validation
   if (!formData.value.lead || !formData.value.others || !formData.value.notes || 
@@ -59,12 +66,24 @@ const submitSuggestion = async () => {
   errorMessage.value = '';
 
   try {
+    const gameId = matchGameId(leadToGameId, formData.value.lead);
+    const duplicateLead = checkDuplicateLead(
+      data,
+      formData.value.phase,
+      formData.value.alignment,
+      formData.value.position,
+      formData.value.lead,
+    );
     const response = await fetch(API_ENDPOINT, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(formData.value)
+      body: JSON.stringify({
+        ...formData.value,
+        ...(gameId && { gameId }),
+        duplicateLead,
+      }),
     });
 
     const data = await response.json();

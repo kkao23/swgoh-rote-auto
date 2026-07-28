@@ -1,5 +1,6 @@
 import type { data as TeamData } from '~/models/data';
 import { successRateValue, interactionComplexity } from '~/util/missionHelpers';
+import { getCharacterIcon } from '~/data/displayNames';
 
 export interface AccordionItem {
   label: string;
@@ -88,7 +89,7 @@ export function buildVerifiedAccordion(opts: AccordionOptions): AccordionItem[] 
       targeted: d.targeted,
       successRate: d.successRate,
       interactionType: d.interactionType,
-      icon: d.icon,
+      icon: d.icon || getCharacterIcon(d.gameId),
       lead: d.lead,
       gameId: d.gameId,
       owned: opts.isUnitOwned(d.gameId),
@@ -126,7 +127,7 @@ export function buildCommunityAccordion(opts: AccordionOptions): AccordionItem[]
       targeted: d.targeted,
       successRate: d.successRate,
       interactionType: d.interactionType,
-      icon: d.icon,
+      icon: d.icon || getCharacterIcon(d.gameId),
       creator: d.creator,
       lead: d.lead,
       gameId: d.gameId,

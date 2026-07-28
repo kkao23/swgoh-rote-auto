@@ -337,6 +337,15 @@ export const jediLSP4: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         creator: 'anonymous'
+    },
+    {
+    lead: 'Jedi Knight Luke Skywalker',
+    gameId: 'JEDIKNIGHTLUKE, GRANDMASTERLUKE',
+    others: 'Jedi Master Luke Skywalker, 3 other jedi',
+    notes: 'Mostly auto, be careful',
+    videos: [],
+    difficulty: difficulty.EASY,
+    creator: 'Andriu',
     }
 ]
 

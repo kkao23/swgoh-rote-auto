@@ -36,6 +36,7 @@ interface ParsedSubmission {
   others: string;
   notes: string;
   submittedBy: string;
+  name: string;
 }
 
 function parseBlock(block: string): ParsedSubmission | null {
@@ -46,6 +47,9 @@ function parseBlock(block: string): ParsedSubmission | null {
 
   const submittedMatch = block.match(/Submitted by: (.+)/);
   const submittedBy = submittedMatch ? submittedMatch[1].trim() : '';
+  // Extract just the name (before the email in parens)
+  const nameMatch = submittedBy.match(/^([^(]+)/);
+  const name = nameMatch ? nameMatch[1].trim() : submittedBy;
 
   const phase = get('Phase');
   const alignment = get('Alignment');
@@ -55,14 +59,30 @@ function parseBlock(block: string): ParsedSubmission | null {
   const notes = get('Notes');
 
   if (!phase || !lead || !others || !notes) return null;
-  return { phase, alignment, position, lead, others, notes, submittedBy };
+  return { phase, alignment, position, lead, others, notes, submittedBy, name };
+}
+
+// ── Format as TypeScript object literal ──────────────────────────
+
+function formatTeamData(parsed: ParsedSubmission, gameId: string | undefined): string {
+  const esc = (s: string) => s.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
+  const creator = parsed.name || 'Anonymous';
+  const lines: string[] = ['{'];
+  lines.push(`  lead: '${esc(parsed.lead)}',`);
+  if (gameId) lines.push(`  gameId: '${gameId}',`);
+  lines.push(`  others: '${esc(parsed.others)}',`);
+  lines.push(`  notes: '${esc(parsed.notes)}',`);
+  lines.push(`  videos: [],`);
+  lines.push(`  difficulty: difficulty.EASY,`);
+  lines.push(`  creator: '${esc(creator)}',`);
+  lines.push(`}`);
+  return lines.join('\n');
 }
 
 // ── Main ─────────────────────────────────────────────────────────
 
 const raw = fs.readFileSync('submission.txt', 'utf-8');
 
-// Split on the header line, keep the content after it
 const blocks = raw
   .split(/New Team Suggestion Received!/)
   .map(b => b.trim())
@@ -80,20 +100,10 @@ for (const block of blocks) {
 
   const gameId = matchGameId(parsed.lead);
 
-  // Build the `data`-type JSON
-  const teamData: Record<string, unknown> = {
-    lead: parsed.lead,
-    others: parsed.others,
-    notes: parsed.notes,
-    videos: [],
-    difficulty: 'EASY', // verify before committing
-  };
-  if (gameId) teamData.gameId = gameId;
-
   results.push(
     [
       `// ── ${parsed.phase} ${parsed.alignment} ${parsed.position} ── ${parsed.submittedBy}`,
-      JSON.stringify(teamData, null, 2),
+      formatTeamData(parsed, gameId),
     ].join('\n'),
   );
 }

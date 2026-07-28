@@ -464,6 +464,16 @@ export const mixedTopLeftP3: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
     },
+    {
+    lead: 'Leia Organa',
+    gameId: 'GLLEIA',
+    others: 'R2-D2, Captain Drogan, +2 Rebels',
+    notes: 'Full Auto',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO]
+    }
 ]
 
 export const mixedP3Ships: dataType[] = [

@@ -52,6 +52,7 @@ export const CHARACTER_ICONS: Record<string, string> = {
   supremeleaderkyloren: '/icons/characters/tex.charui_kyloren_tros.png',
   grandmasterluke: '/icons/characters/tex.charui_luke_jml.png',
   jediknightlukeskywalker: '/icons/characters/tex.charui_luke_jediknight.png',
+  jediknightluke: '/icons/characters/tex.charui_luke_jediknight.png',
   jediknightcalkestis: '/icons/characters/tex.charui_calkestis.png',
   commanderlukeskywalker: '/icons/characters/tex.charui_luke_ep4.png',
   generalskywalker: '/icons/characters/tex.charui_generalanakin.png',

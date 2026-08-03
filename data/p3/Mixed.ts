@@ -72,7 +72,6 @@ export const fennecP3: dataType[] = [
         others: 'Fennec, any 3 resistance',
         notes: 'easy auto',
         videos: [{ url: 'https://youtu.be/ydm8T8Jvpyc' }],
-        icon: '/icons/characters/tex.charui_rey_tlj.png',
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
@@ -206,6 +205,15 @@ export const fennecP3: dataType[] = [
         "successRate": successRate.USUALLY,
         "interactionType": [interactionType.AUTO],
         "creator": "Kino Apparition"
+    },
+    {
+        lead: 'BK Mandalore', gameId: 'MANDALORBOKATAN',
+        leadFull: 'Bo Katan Mandalore',
+        others: 'Ig-12, Pqz, BAM',
+        notes: 'Make sure to use BAM\'s wonders of the force strategically especially in the second wave.',
+        videos: [],
+        difficulty: difficulty.EASY,
+        creator: 'LookScanShoot',
     }
 ]
 
@@ -342,7 +350,7 @@ export const mixedTopLeftP3: dataType[] = [
         omi: true
     },
     {
-        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN',
+        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN, APPO, SCORCH, DISGUISEDCLONETROOPER',
         leadFull: 'Grand Moff Tarkin',
         others: 'Appo (omicron), CX, Disguised Clone Trooper, Scorch',
         notes: 'Looked a bit dicey but super quick',
@@ -385,8 +393,20 @@ export const mixedTopLeftP3: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'Kelleran Beq or JMMW', gameId: 'KELLERANBEQ',
-        leadFull: 'Kelleran Beq or Jedi Master Mace Windu',
+        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU, DEPABILLABA',
+        leadFull: 'Jedi Master Mace Windu',
+        others: 'Jocasta Nu, Temple Guard, Depa Billaba (omicron), +1 JV',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/sqGLakqZ0gc' }],
+        icon: '/icons/characters/tex.charui_jedimastermacewindu.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        omi: true
+    },
+    {
+        lead: 'Kelleran Beq', gameId: 'KELLERANBEQ, DEPABILLABA',
+        leadFull: 'Kelleran Beq',
         others: 'Jocasta Nu, Shaak Ti, Temple Guard, Depa Billaba (omicron)',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/sqGLakqZ0gc' }],
@@ -429,6 +449,57 @@ export const mixedTopLeftP3: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         creator: 'Qwaze'
+    },
+    {
+        lead: 'Satele Shan', gameId: 'SATELESHAN',
+        leadFull: 'Satele Shan',
+        others: 'Jedi Knight Revan, Bastila Shan, Jolee Bindo, Juhani',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/U3ABJ7SboYg' }],
+        icon: '/icons/characters/tex.charui_sateleshan.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+    },
+    {
+        lead: 'Cobb Vanth', gameId: 'COBBVANTH, JAWASCAVENGER',
+        leadFull: 'Cobb Vanth',
+        others: 'CUP, Nebit, Jawa Scavenger, +1',
+        notes: 'auto, no omicron needed, Lobot is probably best for 5th',
+        videos: [{ url: 'https://youtu.be/c45_GwEofdo' }],
+        icon: '/icons/characters/tex.charui_cobbvanth.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
+    },
+    {
+    lead: 'Leia Organa',
+    gameId: 'GLLEIA',
+    others: 'R2-D2, Captain Drogan, +2 Rebels',
+    notes: 'Full Auto',
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.CONSISTENT,
+    interactionType: [interactionType.AUTO]
+    },
+    {
+        lead: 'BK Mandalore', gameId: 'MANDALORBOKATAN',
+        leadFull: 'Bo Katan Mandalore',
+        icon: '/icons/characters/tex.charui_mandalorbokatan.png',
+        others: 'BAM, IG-12 & Grogu, Paz Vizsla, Bo-Katan Kryze',
+        notes: 'Easy auto, can use when P3 has been done in previous round (eg preload)',
+        videos: [],
+        difficulty: difficulty.EASY,
+        creator: 'Wesley',
+    },
+    {
+    lead: 'JMK',
+    leadFull: 'Jedi Master Kenobi',
+    gameId: 'JEDIMASTERKENOBI',
+    others: 'Snips, GK, Padme, GMY',
+    notes: 'Full Auto',
+    videos: [],
+    difficulty: difficulty.EASY,
     }
 ]
 

@@ -3,7 +3,7 @@ import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const mixedQiraP4: dataType[] = [
     {
-        lead: 'Leia', gameId: 'GLLEIA',
+        lead: 'Leia', gameId: 'GLLEIA, QIRA, L3_37',
         others: 'R2, Drogan, Qira, L3',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/rnj73wSUTrE' }],
@@ -13,7 +13,7 @@ export const mixedQiraP4: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Baylan', gameId: 'BAYLANSKOLL',
+        lead: 'Baylan', gameId: 'BAYLANSKOLL, QIRA, L3_37',
         others: 'Shin, Marrok (omi), Qira, L3',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/nBP08l-0Lj4' }],
@@ -24,7 +24,7 @@ export const mixedQiraP4: dataType[] = [
         omi: true
     },
     {
-        lead: 'SLKR', gameId: 'SUPREMELEADERKYLOREN',
+        lead: 'SLKR', gameId: 'SUPREMELEADERKYLOREN, QIRA, L3_37',
         leadFull: 'Supreme Leader Kylo Ren',
         others: 'DRey, Malak, Qira, L3',
         notes: 'poke, auto',
@@ -35,7 +35,7 @@ export const mixedQiraP4: dataType[] = [
         interactionType: [interactionType.TARGET_START]
     },
     {
-        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO',
+        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO, QIRA, L3_37',
         others: 'Fulcrum, any 5th',
         notes: 'easy auto',
         videos: [{ url: 'https://youtu.be/Rmd5Ppxxyfs' }],
@@ -45,7 +45,7 @@ export const mixedQiraP4: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'JMK', gameId: 'JEDIMASTERKENOBI',
+        lead: 'JMK', gameId: 'JEDIMASTERKENOBI, QIRA, L3_37',
         leadFull: 'Jedi Master Kenobi',
         others: 'Snips, CAT',
         notes: 'Wave 2 was a bit dicey, still won on full auto though. May require R9?',
@@ -56,7 +56,7 @@ export const mixedQiraP4: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'Pirate King Hondo', gameId: 'GLHONDO',
+        lead: 'Pirate King Hondo', gameId: 'GLHONDO, QIRA, L3_37',
         leadFull: 'Pirate King Hondo Onaka',
         others: 'Hondo, Vane',
         notes: 'easy full auto',
@@ -67,7 +67,7 @@ export const mixedQiraP4: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'SEE', gameId: 'SITHPALPATINE',
+        lead: 'SEE', gameId: 'SITHPALPATINE, QIRA, L3_37',
         leadFull: 'Sith Eternal Emperor',
         others: 'Malak, Darth Revan',
         notes: 'auto',
@@ -78,7 +78,7 @@ export const mixedQiraP4: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Rey', gameId: 'GLREY',
+        lead: 'Rey', gameId: 'GLREY, QIRA, L3_37',
         leadFull: 'Rey with Resistance',
         others: 'Ben, Scavenger Rey',
         notes: 'auto',
@@ -124,7 +124,7 @@ export const mixedGenericP4: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO',
+        lead: 'Ahsoka Tano', gameId: 'GLAHSOKATANO',
         others: 'Fulcrum +3',
         notes: 'auto, Ezra or spectre speeds things up',
         videos: [{ url: 'https://youtu.be/t6bxMOvhWdY' }],
@@ -181,7 +181,7 @@ export const mixedGenericP4: dataType[] = [
         videos: [{ url: 'https://youtu.be/TpgdflmfBxo' }],
         icon: '/icons/characters/tex.charui_lordvader.png',
         difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
+        successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO],
     },
     {
@@ -227,7 +227,7 @@ export const mixedGenericP4: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN',
+        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN, APPO, SCORCH, DISGUISEDCLONETROOPER',
         leadFull: 'Grand Moff Tarkin',
         others: 'Appo (omicron), CX, Disguised Clone Trooper, Scorch',
         notes: 'You do want the full complement of clones here',
@@ -261,7 +261,7 @@ export const mixedGenericP4: dataType[] = [
         omi: true,
     },
     {
-        lead: 'Kelleran Beq', gameId: 'KELLERANBEQ',
+        lead: 'Kelleran Beq', gameId: 'KELLERANBEQ, DEPABILLABA',
         leadFull: 'Kelleran Beq',
         others: 'Jocasta Nu, Shaak Ti, Depa Billaba (omicron), Temple Guard',
         notes: 'auto',
@@ -320,7 +320,7 @@ export const mixedGenericP4: dataType[] = [
     }
     ,
     {
-        lead: 'Lord Vader', gameId: 'LORDVADER',
+        lead: 'Lord Vader (Clones)', gameId: 'LORDVADER',
         others: 'DS clones',
         notes: 'Auto',
         videos: [],
@@ -328,10 +328,9 @@ export const mixedGenericP4: dataType[] = [
         difficulty: difficulty.EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
-        creator: 'anonymous'
     },
     {
-        lead: 'GM', gameId: 'GREATMOTHERS',
+        lead: 'Great Mothers', gameId: 'GREATMOTHERS',
         others: 'Morgan, Spirit, NT, DTP',
         notes: 'Auto',
         videos: [],
@@ -351,12 +350,42 @@ export const mixedGenericP4: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         creator: 'anonymous'
-    }
+    },
+    {
+        lead: 'Rey', gameId: 'GLREY',
+        others: 'Ben, random LS',
+        notes: '1/2 on auto',
+        videos: [{ url: 'https://youtu.be/6t3vMFIIBWE' }],
+        icon: '/icons/characters/tex.charui_rey_tros.png',
+        difficulty: difficulty.NO_AUTO,
+        successRate: successRate.UNRELIABLE,
+        interactionType: [interactionType.AUTO],
+    },
+    {
+        lead: 'Maul', gameId: 'MAULS7',
+        others: 'Jango, ISC, Gar Saxon, Canderous',
+        notes: '1/2 on full auto',
+        videos: [{ url: 'https://youtu.be/sQUT3r7Z434' }],
+        icon: '/icons/characters/tex.charui_maul.png',
+        difficulty: difficulty.HARD,
+        successRate: successRate.UNRELIABLE,
+        interactionType: [interactionType.AUTO],
+    },
+    {
+        lead: 'Great Mothers', gameId: 'GREATMOTHERS',
+        others: 'Morgan, Spirit, NT, DTP',
+        notes: 'Auto. Platoons optional.',
+        videos: [{ url: 'https://youtu.be/sQUT3r7Z434' }],
+        icon: '/icons/characters/tex.charui_greatmothers.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+    },
 ]
 
 export const jabbaP4: dataType[] = [
     {
-        lead: 'Jabba', gameId: 'JABBATHEHUTT',
+        lead: 'Jabba', gameId: 'JABBATHEHUTT, KRRSANTAN',
         others: 'Boba, Krrsantan, +2',
         notes: 'Need Krrsantan, the more Hutt Cartel the better. Auto',
         videos: [{ url: 'https://youtu.be/pljI9oJdJEo' }],
@@ -391,22 +420,21 @@ export const mixedFleetP4: dataType[] = [
     {
         lead: 'Profundity (Rogue One)', gameId: 'CAPITALPROFUNDITY, ROGUEONESHIP',
         others: 'Outrider, Ghost, Y wing starting, Rogue one, Phantom in reinforcements. Millennium Falcon is good if you have it',
-        notes: 'auto',
+        notes: 'Play manually until you ult then auto',
         videos: [{ url: 'https://youtu.be/czrI8wjl3UY' }],
         icon: '/icons/ships/tex.charui_profundity.png',
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO]
+        interactionType: [interactionType.MANUAL]
     },
     {
         lead: 'Executor', gameId: 'CAPITALEXECUTOR',
         others: 'Hound\'s Tooth, Razor Crest, Ghost, Xanadu Blood, Punishing One, Slave I, IG-2000',
-        notes: '- Use only basics\n- 1st Executor turn use Heal on HT to get taunt (every time that you have that ability available, use it on HT to keep the taunt)\n- reinforcements call order: XB, Slave I, P1, IG-2000',
+        notes: '- Use only basics\n- 1st Executor turn use Heal on HT to get taunt (every time that you have that ability available, use it on HT to keep the taunt)\n- reinforcements call order: XB, Slave I, P1, IG-2000. Suggested by Artha Dragon',
         videos: [],
         icon: '/icons/ships/tex.charui_executor.png',
         difficulty: difficulty.NO_AUTO,
-        successRate: successRate.UNRELIABLE,
+        successRate: successRate.USUALLY,
         interactionType: [interactionType.MANUAL],
-        creator: 'Artha Dragon',
     },
 ]

@@ -33,6 +33,7 @@ import { shipsDSP2 } from "./p2/DS";
 import { nexuDSP2 } from "./p2/DS";
 import { reekDSP2 } from "./p2/DS";
 import { acklayDSP2 } from "./p2/DS";
+import { geosDSP2 } from "./p2/DS";
 
 // P3
 import { boKatanP3 } from "./p3/Mixed";
@@ -57,6 +58,7 @@ import { shipsLSP3 } from "./p3/LS";
 import { lsShipsP4 } from "./p4/LS";
 import { lsGenericP4 } from "./p4/LS";
 import { jediLSP4 } from "./p4/LS";
+import { phoenixLSP4 } from "./p4/LS";
 
 import { mixedFleetP4 } from "./p4/Mixed";
 import { jabbaP4 } from "./p4/Mixed";
@@ -79,10 +81,12 @@ import { lsBottomP5 } from "./p5/LS";
 import { lsTopLeftP5 } from "./p5/LS";
 import { lsTopMidP5 } from "./p5/LS";
 import { lsShipsP5 } from "./p5/LS";
+import { lsCassianP5 } from "./p5/LS";
 
 import { dsBottomRightP5 } from "./p5/DS";
 import { dsTopMidP5 } from "./p5/DS";
 import { dsLeftP5 } from "./p5/DS";
+import { dsInqsP5 } from "./p5/DS";
 
 // P6
 import { jabbaP6 } from "./p6/Mixed";
@@ -109,6 +113,7 @@ import { clonesSM } from "./zeffo/LS";
 import { mandaloreDTMG } from "./mandalore/Mixed";
 import { mandaloreFleets } from "./mandalore/Mixed";
 import { mandaloreGeneric } from "./mandalore/Mixed";
+import { mandaloreBoKatan } from "./mandalore/Mixed";
 
 import type { DataType } from "~/models/data";
 
@@ -141,6 +146,7 @@ export const data: DataType = {
             reek: reekDSP2,
             nexu: nexuDSP2,
             ships: shipsDSP2,
+            geos: geosDSP2,
         },
         mixed: {
             hondo: hondoMixedP2,
@@ -203,11 +209,13 @@ export const data: DataType = {
             ships: lsShipsP4,
             generic: lsGenericP4,
             jedi: jediLSP4,
+            phoenix: phoenixLSP4,
         },
         mandalore: {
             fleets: mandaloreFleets,
             generic: mandaloreGeneric,
             dtmg: mandaloreDTMG,
+            boKatan: mandaloreBoKatan,
         }
     },
     phase5: {
@@ -223,11 +231,13 @@ export const data: DataType = {
             bottom: lsBottomP5,
             topMid: lsTopMidP5,
             ships: lsShipsP5,
+            cassian: lsCassianP5,
         },
         ds: {
             bottomRight: dsBottomRightP5,
             topMid: dsTopMidP5,
             left: dsLeftP5,
+            inqs: dsInqsP5,
         },
     },
     phase6: {

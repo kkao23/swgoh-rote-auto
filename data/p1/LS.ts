@@ -3,7 +3,7 @@ import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const maceKitP1 = [
     {
-        lead: 'Mace (JMK)', gameId: 'MACEWINDU',
+        lead: 'Mace (JMK)', gameId: 'MACEWINDU, KITFISTO, JEDIMASTERKENOBI',
         others: 'JMK, GAS, Ahsoka, Kit',
         notes: 'Full auto',
         videos: [{ url: 'https://youtu.be/sC8Srr7-ziM' }],
@@ -13,7 +13,7 @@ export const maceKitP1 = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Mace (Boys)', gameId: 'MACEWINDU, KITFISTO',
+        lead: 'Mace (Boys)', gameId: 'MACEWINDU, KITFISTO, PADAWANOBIWAN, MASTERQUIGON',
         leadFull: 'Mace with Padawan Obi Wan and Master Qui Gon',
         others: 'Padawan Obi Wan, Master Qui Gon, KAM',
         notes: 'not sure if KAM is necessary. auto. can get unlucky when taunt drops',
@@ -24,7 +24,7 @@ export const maceKitP1 = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Mace (JKCK)', gameId: 'MACEWINDU, KITFISTO',
+        lead: 'Mace (JKCK)', gameId: 'MACEWINDU, KITFISTO, JEDIKNIGHTCAL',
         leadFull: 'Mace with Jedi Knight Cal Kestis',
         others: 'JKCK, GAS, Ahsoka, Kit',
         notes: 'Only 1/2 on auto',
@@ -35,7 +35,7 @@ export const maceKitP1 = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Mace (JML)', gameId: 'MACEWINDU',
+        lead: 'Mace (JML)', gameId: 'MACEWINDU, GRANDMASTERLUKE',
         leadFull: 'Mace with Jedi Master Luke',
         others: 'JML, JKCK, Kyle, Kit',
         notes: 'Two non lead omis on Cal, omi on Kyle',
@@ -46,7 +46,7 @@ export const maceKitP1 = [
         omi: true
     },
     {
-        lead: 'Mace (Depa Omi)', gameId: 'MACEWINDU, KITFISTO',
+        lead: 'Mace (Depa Omi)', gameId: 'MACEWINDU, KITFISTO, DEPABILLABA',
         leadFull: 'Mace with Depa Billaba Omicron',
         others: 'Depa Billaba (omi), Temple Guard, Kelleran Beq, Kit',
         notes: 'Omicron on Depa, full auto',
@@ -72,29 +72,29 @@ export const jediP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU',
+        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU, DEPABILLABA',
         leadFull: 'Jedi Master Mace Windu',
         others: 'Temple Guard, Aayla, Depa, Jocasta',
         notes: 'Full auto',
         videos: [],
         icon: '/icons/characters/tex.charui_jedimastermacewindu.png',
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
+        successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         omi: true,
-        creator: 'anonymous',
     },
+    // {
+    //     lead: 'JKL (Ezra)', gameId: 'JEDIKNIGHTLUKE',
+    //     leadFull: 'Jedi Knight Luke with Ezra Exile',
+    //     others: 'Ezra GMY Hyoda Bastila',
+    //     notes: 'auto, if no JML',
+    //     videos: [{ url: 'https://youtu.be/N3weS_bW_Js' }],
+    //     icon: '/icons/characters/tex.charui_luke_jediknight.png',
+    //     difficulty: difficulty.EASY,
+    //     successRate: successRate.NINETY_PERCENT,
+    //     interactionType: [interactionType.AUTO]
+    // }, 
     {
-        lead: 'JKL (Ezra)', gameId: 'JEDIKNIGHTLUKE',
-        leadFull: 'Jedi Knight Luke with Ezra Exile',
-        others: 'Ezra GMY Hyoda Bastila',
-        notes: 'auto, if no JML',
-        videos: [{ url: 'https://youtu.be/N3weS_bW_Js' }],
-        icon: '/icons/characters/tex.charui_luke_jediknight.png',
-        difficulty: difficulty.EASY,
-        successRate: successRate.NINETY_PERCENT,
-        interactionType: [interactionType.AUTO]
-    }, {
         lead: 'JMK', gameId: 'JEDIMASTERKENOBI',
         leadFull: 'Jedi Master Kenobi',
         others: 'Snips, GK, Shaak Ti, +1 GR',
@@ -109,8 +109,8 @@ export const jediP1: dataType[] = [
         lead: 'JKCK (Lead Omi)', gameId: 'JEDIKNIGHTCAL',
         leadFull: 'Jedi Knight Cal Kestis (Lead Omi)',
         others: 'any 4 Jedi',
-        notes: 'auto',
-        videos: [{ url: 'https://www.youtube.com/watch?v=KorRjRRh6k0', creator: 'egnards' }],
+        notes: 'auto suggested by egnards',
+        videos: [{ url: 'https://www.youtube.com/watch?v=KorRjRRh6k0' }],
         icon: '/icons/characters/tex.charui_calkestis.png',
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
@@ -118,7 +118,7 @@ export const jediP1: dataType[] = [
         omi: true,
     },
     {
-        lead: 'Kelleran Beq', gameId: 'KELLERANBEQ',
+        lead: 'Kelleran Beq', gameId: 'KELLERANBEQ, DEPABILLABA',
         leadFull: 'Kelleran Beq',
         icon: '/icons/characters/tex.charui_kelleranbeq.png',
         others: 'Jocasta Nu, Shaak Ti, Aayla, Temple Guard',
@@ -220,7 +220,7 @@ export const shipsLSP1: dataType[] = [
 
 export const genericLSP1: dataType[] = [
     {
-        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO',
+        lead: 'Ahsoka Tano', gameId: 'GLAHSOKATANO',
         others: 'Any spectre',
         notes: 'auto, dont need ezra',
         videos: [{ url: 'https://youtu.be/lGY7TLSTCMA' }],
@@ -380,7 +380,7 @@ export const genericLSP1: dataType[] = [
         interactionType: [interactionType.TARGET_START, interactionType.PAUSE_WAVE2],
     },
     {
-        "lead": "Rex", "gameId": "REX",
+        "lead": "Rex", "gameId": "CT7567",
         "leadFull": "Rex",
         "others": "501st + Crex",
         "notes": "Stall till Rex insta kill on medic on phase 2 stun one and finish the other having the insta kill off cooldown entering p2",
@@ -393,15 +393,14 @@ export const genericLSP1: dataType[] = [
     }
     ,
     {
-        lead: 'Satele Shan', gameId: 'SATELESHAN',
-        others: 'Jedi Knight Reva, Bastilla Shan, Jolee Bindo, Mission Vao',
-        notes: 'Auto',
+        lead: 'Satele Shan', gameId: 'SATELESHAN, JEDIKNIGHTREVAN',
+        others: 'Jedi Knight Revan, Bastilla Shan, Jolee Bindo, +1 Old Republic',
+        notes: 'Auto, suggested by pshea07',
         videos: [],
         icon: '/icons/characters/tex.charui_sateleshan.png',
         difficulty: difficulty.EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
-        creator: 'pshea07'
     },
     {
         lead: 'Rey', gameId: 'GLREY',

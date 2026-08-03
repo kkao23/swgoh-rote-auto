@@ -84,25 +84,31 @@ export const hondoMixedP2: dataType[] = [
     {
         lead: 'Jedi Master Kenobi', gameId: 'JEDIMASTERKENOBI',
         others: 'CAT, Padme, General Kenobi, Hondo',
-        notes: 'Auto',
+        notes: 'Auto. Suggested by Pym. Maybe save instakill for tarkin wave 2?',
         videos: [],
         icon: '/icons/characters/tex.charui_globiwan.png',
         difficulty: difficulty.EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO],
-        creator: 'Pym'
-    }
-    ,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.PAUSE_WAVE2],
+    },
     {
         lead: 'SEE', gameId: 'SITHPALPATINE',
         others: 'Wat, malak, hondo, sith maurauder',
-        notes: '1/2',
+        notes: '1/2 on auto. Suggested by Lune',
         videos: [],
         icon: '/icons/characters/tex.charui_espalpatine_pre.png',
         difficulty: difficulty.EASY,
         successRate: successRate.FIFTY_FIFTY,
         interactionType: [interactionType.AUTO],
-        creator: 'Lune'
+    },
+    {
+        lead: 'SEE',
+        gameId: 'SITHPALPATINE',
+        others: 'Malak, Malgus, Bane, Hondo',
+        notes: '2/2 on manual. Enter 2nd wave with SEE in ult, Malgus 3rd ability ready, Hondo 2nd ready. With SEE link Tarkin and anybody, if turn order is not perfect for you you will be able to increase Tarkin cooldowns with Malgus\'s 3rd, Bane\'s 3rd or captivate him with Hondo\'s 2nd. Once you kill Tarkin with SEE\'s 2nd it\'s easy to finish',
+        videos: [],
+        difficulty: difficulty.EASY,
+        creator: 'NicolozZ',
     }
 ]
 
@@ -188,7 +194,7 @@ export const mixedP2: dataType[] = [
         videos: [{ url: 'https://www.youtube.com/watch?v=Hf_-_PGj3rk', creator: 'egnards' }],
         icon: '/icons/characters/tex.charui_hera_s3.png',
         difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
+        successRate: successRate.FIFTY_FIFTY,
         interactionType: [interactionType.AUTO]
     },
     {
@@ -247,7 +253,7 @@ export const mixedP2: dataType[] = [
         omi: true
     },
     {
-        lead: 'Kelleran Beq', gameId: 'KELLERANBEQ',
+        lead: 'Kelleran Beq', gameId: 'KELLERANBEQ, DEPABILLABA',
         leadFull: 'Kelleran Beq',
         others: 'Jocasta Nu, Shaak Ti, Aayla, Temple Guard',
         notes: 'auto, prob need R8+ on Temple Guard',
@@ -269,7 +275,7 @@ export const mixedP2: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN',
+        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN, APPO, SCORCH, DISGUISEDCLONETROOPER',
         leadFull: 'Grand Moff Tarkin',
         others: 'Appo, CX, Disguised Clone Trooper, Scorch',
         notes: 'auto',
@@ -368,7 +374,7 @@ export const mixedP2: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'Mother Talzin', gameId: 'MOTHERTALZIN',
+        lead: 'Mother Talzin', gameId: 'MOTHERTALZIN, MERRIN',
         others: 'Merrin, Spirit, Daka, Zombie',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/wRwmwC33zVk' }],
@@ -378,7 +384,7 @@ export const mixedP2: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Cobb Vanth', gameId: 'COBBVANTH',
+        lead: 'Cobb Vanth', gameId: 'COBBVANTH, JAWASCAVENGER',
         leadFull: 'Cobb Vanth',
         others: 'CUP, Nebit, Jawa Scavenger, +1 Constable',
         notes: 'auto, no omicron needed',
@@ -388,6 +394,25 @@ export const mixedP2: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
     },
+    {
+    lead: 'Satele Shan',
+    gameId: 'SATELESHAN',
+    others: 'Jedi Knight Revan, Bastila Shan, Jolee Bindo, Juhani',
+    notes: 'Special 1 on Shatele\'s first turn, then full auto',
+    videos: [],
+    difficulty: difficulty.EASY,
+    creator: 'Andriu',
+    },
+    {
+    lead: 'Admiral Raddus',
+    gameId: 'ADMIRALRADDUS',
+    others: 'Cassian Andor (omicron), Jyn Erso, K2-SO, any RO',
+    notes: 'omicron',
+    videos: [],
+    difficulty: difficulty.EASY,
+    creator: 'Anonymous',
+    omi: true,
+    }
 ]
 
 export const jabbaP2: dataType[] = [
@@ -405,7 +430,7 @@ export const jabbaP2: dataType[] = [
 
 export const youngLandoP2: dataType[] = [
     {
-        lead: 'Rey', gameId: 'GLREY',
+        lead: 'Rey', gameId: 'GLREY, YOUNGLANDO',
         others: 'Ben, JTR, BB8',
         notes: 'only 1/2 on auto',
         videos: [{ url: 'https://youtu.be/_nNRPjVgX9U' }],
@@ -414,7 +439,7 @@ export const youngLandoP2: dataType[] = [
         successRate: successRate.UNRELIABLE,
         interactionType: [interactionType.AUTO]
     }, {
-        lead: 'Baylan', gameId: 'BAYLANSKOLL',
+        lead: 'Baylan', gameId: 'BAYLANSKOLL, YOUNGLANDO',
         others: 'Shin, Marrok, +1 Merc',
         notes: '2nd wave very hard, only 1/2 on auto',
         videos: [{ url: 'https://youtu.be/pfpK6MA_uRM' }],
@@ -425,7 +450,7 @@ export const youngLandoP2: dataType[] = [
         omi: true
     },
     {
-        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO',
+        lead: 'Ahsoka Tano', gameId: 'GLAHSOKATANO, YOUNGLANDO',
         others: 'Ezra Exile, Hera, Sabine',
         notes: 'Auto',
         videos: [{ url: 'https://youtu.be/WnBhCQ580s0' }],
@@ -435,7 +460,7 @@ export const youngLandoP2: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Leia', gameId: 'GLLEIA',
+        lead: 'Leia', gameId: 'GLLEIA, YOUNGLANDO',
         others: 'Drogan, R2, Admiral Raddus',
         notes: 'only 1/2 on auto',
         videos: [{ url: 'https://youtu.be/hbifGXqcEB0' }],
@@ -445,7 +470,7 @@ export const youngLandoP2: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Reva', gameId: 'THIRDSISTER',
+        lead: 'Reva', gameId: 'THIRDSISTER, YOUNGLANDO',
         others: 'Marrok (omi), GI, 7S',
         notes: 'only 1/2 on auto',
         videos: [{ url: 'https://youtu.be/78qD1ZKy2BQ' }],
@@ -456,7 +481,7 @@ export const youngLandoP2: dataType[] = [
         omi: true,
     },
     {
-        lead: 'Baylan (Kyle & Marrok omis)', gameId: 'BAYLANSKOLL',
+        lead: 'Baylan (Kyle & Marrok omis)', gameId: 'BAYLANSKOLL, YOUNGLANDO',
         others: 'Shin, Marrok, Kyle, Young Lando',
         notes: 'auto, pause at the end of wave 1, target iden wave 2 and auto. hope they don\'t target Marrok',
         videos: [{ url: 'https://youtu.be/qy4IhX1vf7s' }],
@@ -467,7 +492,7 @@ export const youngLandoP2: dataType[] = [
         omi: true
     },
     {
-        lead: 'Lord Vader', gameId: 'LORDVADER',
+        lead: 'Lord Vader', gameId: 'LORDVADER, YOUNGLANDO',
         others: 'Appo (omicron), CX, Scorch',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/IkwUfwpgJnc' }],
@@ -478,7 +503,7 @@ export const youngLandoP2: dataType[] = [
         omi: true
     },
     {
-        lead: 'Pirate King Hondo', gameId: 'GLHONDO',
+        lead: 'Pirate King Hondo', gameId: 'GLHONDO, YOUNGLANDO',
         leadFull: 'Pirate King Hondo Onaka',
         others: 'Young Lando, Brutus, Vane, Silvo',
         notes: '1/2 on auto',
@@ -487,5 +512,15 @@ export const youngLandoP2: dataType[] = [
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.UNRELIABLE,
         interactionType: [interactionType.AUTO],
+    },
+    {
+        lead: 'Jedi Master Kenobi', gameId: 'JEDIMASTERKENOBI, COMMANDERAHSOKATANO, YOUNGLANDO',
+        others: 'CAT, Padme, General Kenobi',
+        notes: 'Save instakill for Wave 2',
+        videos: [],
+        icon: '/icons/characters/tex.charui_globiwan.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.PAUSE_WAVE2],
     },
 ]

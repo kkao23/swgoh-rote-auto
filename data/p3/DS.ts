@@ -97,7 +97,7 @@ export const dsGenericP3: dataType[] = [
         omi: true,
     },
     {
-        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN',
+        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN, APPO, SCORCH, DISGUISEDCLONETROOPER',
         leadFull: 'Grand Moff Tarkin',
         others: 'Appo (omicron), CX, Disguised Clone Trooper',
         notes: 'Scorch makes this easier but Thrawn works in his place',
@@ -154,6 +154,16 @@ export const dsGenericP3: dataType[] = [
         "successRate": successRate.USUALLY,
         "interactionType": [interactionType.AUTO],
         "creator": "BailWritte"
+    },
+    {
+    lead: 'Kylo Ren Unmasked',
+    gameId: 'KYLORENUNMASKED',
+    icon: '/icons/characters/tex.charui_kylo_unmasked.png',
+    others: 'Slkr, drey, sith trooper +1',
+    notes: 'Get to ult once, after that slkr has 100% tm after every aoe (might not even need drey), a lot more stable than slkr lead, probably works without kru lead zeta as well',
+    videos: [],
+    difficulty: difficulty.EASY,
+    creator: 'Anonymous',
     }
 ]
 
@@ -179,7 +189,7 @@ export const dsEmpireP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN',
+        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN, APPO, SCORCH, DISGUISEDCLONETROOPER',
         leadFull: 'Grand Moff Tarkin',
         others: 'Appo (omicron), CX, Disguised Clone Trooper, +1',
         notes: 'I had Piett as 5th but Scorch is ideal',
@@ -225,7 +235,7 @@ export const drAphraP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Aphra (Droids)', gameId: 'DOCTORAPHRA',
+        lead: 'Aphra (Droids)', gameId: 'DOCTORAPHRA, BT1',
         others: 'BT1, GG, HK47, Darth Vader',
         notes: 'auto, Use 0-0-0 if you have him, can occasionally 1/2',
         videos: [{ url: 'https://youtu.be/_cLW8lg0kB4' }],
@@ -235,7 +245,7 @@ export const drAphraP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Aphra (Sith)', gameId: 'DOCTORAPHRA',
+        lead: 'Aphra (Sith)', gameId: 'DOCTORAPHRA, DARTHMALAK',
         others: 'Darth Vader, Malak, Bane, Malgus',
         notes: 'if no droids, auto, can occasionally 1/2',
         videos: [{ url: 'https://youtu.be/IsnUq7nxcBU' }],

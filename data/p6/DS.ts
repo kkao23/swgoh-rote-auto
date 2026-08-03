@@ -14,6 +14,15 @@ export const dsGenericLeftP6: dataType[] = [
         interactionType: [interactionType.MANUAL],
     },
     {
+    lead: 'SLKR (Stranger)',
+    gameId: 'SUPREMELEADERKYLOREN',
+    others: 'Dark rey, stranger, malak, spider-maul',
+    notes: 'Auto',
+    videos: [],
+    difficulty: difficulty.EASY,
+    creator: 'Anonymous',
+    },
+    {
         lead: 'Pirate King Hondo', gameId: 'GLHONDO',
         leadFull: 'Pirate King Hondo Onaka',
         others: 'SM-33, Vane, Hondo, Brutus',
@@ -35,6 +44,15 @@ export const dsGenericLeftP6: dataType[] = [
     successRate: successRate.CONSISTENT,
     interactionType: [interactionType.AUTO],
     creator: 'anonymous'
+},
+{
+  lead: 'Maul',
+  gameId: 'MAULS7',
+  others: 'Mauldalorians',
+  notes: 'Easy auto with good mods',
+  videos: [],
+  difficulty: difficulty.EASY,
+  creator: 'Anonymous',
 }
 ]
 

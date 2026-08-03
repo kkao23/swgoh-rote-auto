@@ -9,12 +9,12 @@ export const mixedFleetP5: dataType[] = [
         videos: [{ url: 'https://youtu.be/thD2kZHHTOs' }],
         icon: '/icons/ships/tex.charui_leviathan.png',
         difficulty: difficulty.CAUTION,
-        successRate: successRate.NINETY_PERCENT,
+        successRate: successRate.USUALLY,
         interactionType: [interactionType.PAUSE_WAVE2],
         targeted: true
     },
     {
-        lead: 'Executor', gameId: 'CAPITALEXECUTOR',
+        lead: 'Executor', gameId: 'CAPITALEXECUTOR, RAZORCREST',
         others: 'HT, RC, Punishing One, XB, Slave 1, IG2000',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/7cTPzAAqRa4' }],
@@ -35,7 +35,7 @@ export const mixedFleetP5: dataType[] = [
         targeted: true
     },
     {
-        lead: 'Profundity', gameId: 'CAPITALPROFUNDITY',
+        lead: 'Profundity', gameId: 'CAPITALPROFUNDITY, MILLENNIUMFALCON',
         others: 'MF, Outrider, Y wing start, Phantom, Ghost, Biggs, Wedge Reinf',
         notes: 'cant auto until you ult',
         videos: [{ url: 'https://youtu.be/LqmP7WGf1m0' }],
@@ -45,7 +45,7 @@ export const mixedFleetP5: dataType[] = [
         interactionType: [interactionType.MANUAL]
     },
     {
-        lead: 'Profundity (Rogue One)', gameId: 'CAPITALPROFUNDITY',
+        lead: 'Profundity (Rogue One)', gameId: 'CAPITALPROFUNDITY, ROGUEONESHIP, MILLENNIUMFALCON',
         others: 'MF, Outrider, Y Wing, Rogue One, Phantom, Ghost',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/IHphO3ub9QU' }],
@@ -55,7 +55,7 @@ export const mixedFleetP5: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Profundity (R1 no MF)', gameId: 'CAPITALPROFUNDITY',
+        lead: 'Profundity (R1 no MF)', gameId: 'CAPITALPROFUNDITY, ROGUEONESHIP',
         others: 'Outrider, Y Wing, Ghost, Rogue One, Biggs, Phantom',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/j0PmTp3VExM' }],
@@ -68,7 +68,7 @@ export const mixedFleetP5: dataType[] = [
 
 export const mixedCombatTopRightP5: dataType[] = [
     {
-        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO',
+        lead: 'Ahsoka Tano', gameId: 'GLAHSOKATANO',
         others: 'Any R9s, Fulcrum and Ezra really speed this up',
         notes: 'Auto, target TFP then Stormtrooper Commander, leave Range Troopers for last to speed things up',
         videos: [{ url: 'https://youtu.be/OCGLZm1SJiM' }],
@@ -154,6 +154,17 @@ export const mixedCombatTopRightP5: dataType[] = [
         successRate: successRate.UNRELIABLE,
         interactionType: [interactionType.AUTO]
     },
+    {
+    lead: 'Maz Kanata',
+    gameId: 'MAZKANATA',
+    icon: '/icons/characters/tex.charui_mazkanata.png',
+    others: 'CPT. Ithano, Hondo,Quiggold,Kix',
+    notes: 'Quiggold Omicron, Hold Maz\'s Spec 2 for the 2nd wave if you are in the finish in the 1st one.',
+    videos: [],
+    difficulty: difficulty.EASY,
+    omi: true,
+    creator: 'SpyRush',
+    }
 ]
 
 export const mixedCombatBottomLeftP5: dataType[] = [
@@ -235,7 +246,7 @@ export const mixedCombatBottomLeftP5: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO',
+        lead: 'Ahsoka Tano', gameId: 'GLAHSOKATANO',
         others: 'Any R9s',
         notes: 'Auto, consistent 1/2 but can\'t beat nest in Wave 2. Any teammates work',
         videos: [{ url: 'https://youtu.be/j9Q3uxdmvv4' }],
@@ -245,7 +256,7 @@ export const mixedCombatBottomLeftP5: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU',
+        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU, DEPABILLABA',
         leadFull: 'Jedi Master Mace Windu',
         others: 'Depa Billaba (omni), Temple Guard, Jocasta Nu, Shaak Ti',
         notes: 'All r9 is required. Target cargo to dispell DoTs. Hope your team survive. Very hard but doable.',
@@ -301,6 +312,26 @@ export const mixedCombatBottomLeftP5: dataType[] = [
         interactionType: [interactionType.AUTO],
         creator: 'anonymous',
         omi: true
+    },
+    {
+    lead: 'Ahsoka Tano (CAT)',
+    gameId: 'AHSOKATANO, COMMANDERAHSOKATANO',
+    others: 'Exile Ezra, padawan sabine, gen syndulla, CAT',
+    notes: 'Keep CAT alive until force leap',
+    videos: [],
+    difficulty: difficulty.EASY,
+    creator: 'Anonymous',
+    },
+    {
+    lead: 'Cobb Vanth',
+    icon: '/icons/characters/tex.charui_cobbvanth.png',
+    gameId: 'COBBVANTH',
+    others: 'lobot, CUP, any jawa + tusken',
+    notes: 'tusken probably needed for anti DOT.  Not sure if omicron is required',
+    videos: [],
+    difficulty: difficulty.EASY,
+    omi: true,
+    creator: 'Anonymous',
     }
 ];
 

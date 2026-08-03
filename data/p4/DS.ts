@@ -59,7 +59,7 @@ export const dsMidRightP4: dataType[] = [
         omi: true
     },
     {
-        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN',
+        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN, APPO, SCORCH, DISGUISEDCLONETROOPER',
         leadFull: 'Grand Moff Tarkin',
         others: 'Appo, CX, Disguised Clone Trooper',
         notes: 'Scorch makes this easier but Piett works in his place. Need full platoons',
@@ -158,28 +158,15 @@ export const dsMidRightP4: dataType[] = [
         successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO]
     },
-
     {
-        lead: 'GM', gameId: 'GREATMOTHERS',
+        lead: 'Great Mothers', gameId: 'GREATMOTHERS',
         others: 'Morgan, Spirit, NT, DTP',
-        notes: 'Auto',
-        videos: [],
+        notes: 'Auto. Full Platoons required.',
+        videos: [{ url: 'https://youtu.be/ePQiFXMWUlk' }],
         icon: '/icons/characters/tex.charui_greatmothers.png',
         difficulty: difficulty.EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
-        creator: 'anonymous'
-    },
-    {
-        lead: 'The Stranger', gameId: 'STRANGER',
-        others: 'Starkiller, Baylan, Plo Koon, Scav Rey',
-        notes: 'Baylan instead of Malicos, ahould be fully autoable',
-        videos: [],
-        icon: '/icons/characters/tex.charui_stranger.png',
-        difficulty: difficulty.EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO],
-        creator: 'anonymous'
     },
     {
         lead: 'Aphra', gameId: 'DOCTORAPHRA',
@@ -193,27 +180,45 @@ export const dsMidRightP4: dataType[] = [
         creator: 'anonymous'
     },
     {
-        lead: 'Zuckuss', gameId: 'ZUCKUSS',
-        others: '4Lom, Bossk, Dengar, Boba',
-        notes: 'Om on Zuckuss, R9s on Zuck, 4Lom, Bossk & Boba. Taunt on Bossk as soon as. Foresight on all as soon as',
-        videos: [],
-        icon: '/icons/characters/tex.charui_zuckuss.png',
-        difficulty: difficulty.EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO],
-        creator: 'anonymous'
-    }
-    ,
-    {
         lead: 'Lord Vader', gameId: 'LORDVADER',
         others: 'DS Clones',
-        notes: 'Auto with tb omi',
+        notes: 'Auto with Appo omi',
         videos: [],
         icon: '/icons/characters/tex.charui_lordvader.png',
         difficulty: difficulty.EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
-        creator: 'anonymous'
+        omi: true
+    },
+    {
+        lead: 'Maul', gameId: 'MAULS7',
+        others: 'Jango, ISC, Gar Saxon, Canderous',
+        notes: 'dicey on full auto. should be safe on manual',
+        videos: [{ url: 'https://youtu.be/s-7CVU43DiQ' }],
+        icon: '/icons/characters/tex.charui_maul.png',
+        difficulty: difficulty.HARD,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.AUTO],
+    },
+    {
+        lead: 'Bane',
+        gameId: 'DARTHBANE',
+        others: 'Malak,see,Drevan+1',
+        notes: 'works best with platoons complete',
+        videos: [],
+        difficulty: difficulty.EASY,
+        creator: 'Anonymous',
+    },
+    {
+    lead: 'Captain Ithano',
+    gameId: 'ITHANO',
+    icon: '/icons/characters/tex.charui_ithano.png',
+    others: 'SM 33; Quigold (Omicron needed), leftover DS',
+    notes: 'Manually played spare Capt. Ithanos mass dmg when everybody has Retribution.',
+    videos: [],
+    difficulty: difficulty.EASY,
+    omi: true,
+    creator: 'roehri79',
     }
 ]
 

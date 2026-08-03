@@ -3,7 +3,7 @@ import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const topWampaP6: dataType[] = [
     {
-        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO',
+        lead: 'Ahsoka Tano', gameId: 'GLAHSOKATANO',
         others: 'Ezra Exile, Padawan Sabine, Huyang (omicron), Hera',
         notes: 'Full auto',
         videos: [{ url: 'https://youtu.be/AFC74G68bu8', creator: 'Mar Trepodi' }],
@@ -24,6 +24,15 @@ export const topWampaP6: dataType[] = [
         interactionType: [interactionType.AUTO],
         creator: 'Boston B',
     },
+    {
+    lead: 'Satele Shan',
+    gameId: 'SATELESHAN',
+    others: 'Bastilla, Juhani, JKR, Jolee',
+    notes: 'Auto',
+    videos: [],
+    difficulty: difficulty.EASY,
+    creator: 'Anonymous',
+    }
 ]
 
 export const bottomLeftMixedP6: dataType[] = [
@@ -51,7 +60,7 @@ export const bottomLeftMixedP6: dataType[] = [
         creator: 'anonymous'
     },
     {
-        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU',
+        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU, DEPABILLABA',
         others: 'TG, Depa, JN and KB',
         notes: 'Easy win',
         videos: [],
@@ -60,6 +69,26 @@ export const bottomLeftMixedP6: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         creator: 'anonymous'
+    },
+    {
+    lead: 'Satele',
+    gameId: 'SATELESHAN',
+    others: 'Revan, Jolee, Mission, Zalbaar',
+    notes: 'Auto',
+    videos: [
+        { url: 'https://youtu.be/yBqyl8Bft9w' },
+    ],
+    difficulty: difficulty.EASY,
+    creator: 'Mar Trepodi',
+    },
+    {
+    lead: 'Pirate King Hondo Ohnaka',
+    gameId: 'GLHONDO',
+    others: 'I had Vane, Brutus, Silvo and CWC. Would work even better with other pirate',
+    notes: 'Event special good for brutus, silvo and vane irrelevant for pkho.',
+    videos: [],
+    difficulty: difficulty.EASY,
+    creator: 'Karus',
     }
 ]
 
@@ -90,4 +119,14 @@ export const jabbaP6: dataType[] = [
         interactionType: [interactionType.AUTO],
         creator: 'Mar Trepodi',
     },
+    {
+        lead: 'Jabba (GG Omi)',
+        gameId: 'JABBATHEHUTT, GAMORREANGUARD',
+        others: 'Krrsantan, Boushh, Skiff, Gam Guard',
+        notes: 'Auto',
+        videos: [{ url: 'https://youtu.be/hsEJuIzbms8?is=xXkBYmtomCxqHzR4', creator: 'Dominus' }],
+        difficulty: difficulty.EASY,
+        creator: 'Dominus',
+        omi: true
+    }
 ]

@@ -59,13 +59,12 @@ export const mandaloreGeneric: dataType[] = [
     {
         lead: 'Lord Vader', gameId: 'LORDVADER',
         others: 'Appo, CX2, Scorch, DCT',
-        notes: 'nil Omicron on Appo, full auto, did select Gideon phase 2 to be sure. I have recorded the battle as evidence',
+        notes: 'Omi on appo helps. full auto, target Gideon phase 2 to be sure. suggested by aFERALPLATYPUS',
         videos: [],
         icon: '/icons/characters/tex.charui_lordvader.png',
         difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
-        interactionType: [interactionType.AUTO],
-        creator: 'aFERALPLATYPUS',
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.PAUSE_WAVE2],
     },
     {
         lead: 'Reva', gameId: 'THIRDSISTER',
@@ -115,15 +114,15 @@ export const mandaloreGeneric: dataType[] = [
         lead: 'JMK', gameId: 'JEDIMASTERKENOBI',
         leadFull: 'Jedi Master Kenobi',
         others: 'CAT, Snips, GK, Padme',
-        notes: '1/2 on auto',
+        notes: '1/2 on auto. Better if you pause to kill Gideon Wave 2.',
         videos: [{ url: 'https://youtu.be/oMmbs2FA16Y' }],
         icon: '/icons/characters/tex.charui_globiwan.png',
         difficulty: difficulty.HARD,
-        successRate: successRate.FIFTY_FIFTY,
-        interactionType: [interactionType.AUTO]
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.PAUSE_WAVE2]
     },
     {
-        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO',
+        lead: 'Ahsoka Tano', gameId: 'GLAHSOKATANO',
         others: 'Ezra Exile, +3',
         notes: 'auto, use spectre if possible, ezra required',
         videos: [{ url: 'https://youtu.be/G8X9wesq-xg' }],
@@ -147,24 +146,24 @@ export const mandaloreGeneric: dataType[] = [
         lead: 'Omega', gameId: 'OMEGAS3',
         others: 'Bad Batch Mercenaries',
         notes: 'auto',
-        videos: [{ url: 'https://youtu.be/oXkwJiE_EGg' }, { url: 'https://youtu.be/JuEnsbbFuT4?si=W7cLID0-I95kNy8h', creator: 'egnards' }],
+        videos: [{ url: 'https://youtu.be/oXkwJiE_EGg' }],
         icon: '/icons/characters/tex.charui_omegas3.png',
         difficulty: difficulty.EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.PAUSE_WAVE2],
         omi: true,
     },
-    {
-        lead: 'JMK (Ezra)', gameId: 'JEDIMASTERKENOBI',
-        leadFull: 'Jedi Master Kenobi with Ezra Exile',
-        others: 'Padme, CAT, Ezra Exile, GK',
-        notes: 'auto',
-        videos: [{ url: 'https://youtu.be/UaOt-HO-smQ' }],
-        icon: '/icons/characters/tex.charui_globiwan.png',
-        difficulty: difficulty.EASY,
-        successRate: successRate.USUALLY,
-        interactionType: [interactionType.AUTO]
-    },
+    // {
+    //     lead: 'JMK (Ezra)', gameId: 'JEDIMASTERKENOBI',
+    //     leadFull: 'Jedi Master Kenobi with Ezra Exile',
+    //     others: 'Padme, CAT, Ezra Exile, GK',
+    //     notes: 'auto',
+    //     videos: [{ url: 'https://youtu.be/UaOt-HO-smQ' }],
+    //     icon: '/icons/characters/tex.charui_globiwan.png',
+    //     difficulty: difficulty.EASY,
+    //     successRate: successRate.USUALLY,
+    //     interactionType: [interactionType.AUTO]
+    // },
     {
         lead: 'Pirate King Hondo', gameId: 'GLHONDO',
         leadFull: 'Pirate King Hondo Onaka',
@@ -189,7 +188,7 @@ export const mandaloreGeneric: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU',
+        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU, DEPABILLABA',
         leadFull: 'Jedi Master Mace Windu',
         others: 'Jocasta Nu, Kelleran Beq, Depa Billaba (omicron), Temple Guard',
         notes: 'auto with all platoons',
@@ -250,7 +249,7 @@ export const mandaloreGeneric: dataType[] = [
     },
 
 {
-    lead: 'Ahsoka Tano (full spectre)', gameId: 'AHSOKATANO',
+    lead: 'Ahsoka Tano (full spectre)', gameId: 'GLAHSOKATANO',
     others: 'Full spectre',
     notes: 'Easy',
     videos: [],
@@ -271,7 +270,51 @@ export const mandaloreGeneric: dataType[] = [
     successRate: successRate.CONSISTENT,
     interactionType: [interactionType.AUTO],
     creator: 'anonymous'
-}
+},
+    {
+        lead: 'Satele Shan', gameId: 'SATELESHAN',
+        leadFull: 'Satele Shan',
+        others: 'Jedi Knight Revan, Bastila Shan, Jolee Bindo, Canderous',
+        notes: 'Can\'t auto, focus down Veers wave 1 and Gideon wave 2',
+        videos: [{ url: 'https://youtu.be/cvxMB7pW36A' }],
+        icon: '/icons/characters/tex.charui_sateleshan.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.NINETY_PERCENT,
+        interactionType: [interactionType.MANUAL],
+    }
+    ,
+    {
+    lead: 'JML',
+    leadFull: 'Jedi Master Luke',
+    gameId: 'GRANDMASTERLUKE',
+    others: 'JKLS, JKCK, JKR, GAS',
+    notes: 'I have only done it on manual.',
+    videos: [],
+    difficulty: difficulty.EASY,
+    creator: 'Anonymous',
+    },
+    {
+    lead: 'Cobb Vanth',
+    gameId: 'COBBVANTH, JAWASCAVENGER',
+    icon: '/icons/characters/tex.charui_cobbvanth.png',
+    others: 'Lobot, CUP, Nebit, Scav',
+    notes: 'omi on Cobb, 1/2 without platoons, they all blow up eventually',
+    videos: [],
+    difficulty: difficulty.EASY,
+    creator: 'acidf',
+    omi: true
+    },
+    {
+    lead: 'ROLO',
+    gameId: 'HOTHLEIA, GLLEIA',
+    icon: '/icons/characters/tex.charui_leiahoth.png',
+    others: 'Omi on ROLO, Han Solo, GL Leia, R2-D2, AdRad',
+    notes: 'Autoplay, no platoons needed.',
+    videos: [],
+    difficulty: difficulty.EASY,
+    creator: 'Justpure CR',
+    omi: true
+    }
 ]
 
 export const mandaloreDTMG: dataType[] = [
@@ -299,4 +342,18 @@ export const mandaloreDTMG: dataType[] = [
     interactionType: [interactionType.AUTO],
     creator: 'anonymous'
 }
+]
+
+export const mandaloreBoKatan: dataType[] = [
+    {
+        lead: 'BKM', gameId: 'MANDALORBOKATAN',
+        leadFull: 'Bo-Katan Mandalore',
+        others: 'Paz Vizsla, Mandalorian (Beskar Armor), IG-12 & Grogu, Bo-Katan',
+        notes: 'Not an easy mission, can\'t auto',
+        videos: [{ url: 'https://youtu.be/PtJTcb0_uNs?si=UpQUnQRDbkN9KvhJ', creator: 'Elnur Rustam' }],
+        icon: '/icons/characters/tex.charui_mandalorbokatan.png',
+        difficulty: difficulty.HARD,
+        successRate: successRate.UNRELIABLE,
+        interactionType: [interactionType.MANUAL],
+    }
 ]

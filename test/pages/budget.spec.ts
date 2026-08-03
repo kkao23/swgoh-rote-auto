@@ -385,14 +385,14 @@ describe('Budget Calculations', () => {
     })
 
     it('should return correct tier monthly crystal values (duelTierOptions)', () => {
-      expect(calcPerideaMonthlyIncome('yes', 't3')).toBe(100)
-      expect(calcPerideaMonthlyIncome('yes', 't4')).toBe(200)
-      expect(calcPerideaMonthlyIncome('yes', 't5')).toBe(300)
-      expect(calcPerideaMonthlyIncome('yes', 't6')).toBe(400)
+      expect(calcPerideaMonthlyIncome('yes', 't3')).toBe(0)
+      expect(calcPerideaMonthlyIncome('yes', 't4')).toBe(100)
+      expect(calcPerideaMonthlyIncome('yes', 't5')).toBe(200)
+      expect(calcPerideaMonthlyIncome('yes', 't6')).toBe(300)
     })
 
     it('daily income should be monthly / DAYS_PER_MONTH', () => {
-      expect(calcPerideaDailyIncome('yes', 't5')).toBe(300 / DAYS_PER_MONTH)
+      expect(calcPerideaDailyIncome('yes', 't5')).toBe(200 / DAYS_PER_MONTH)
     })
 
     it('all duel tiers should have non-negative monthly crystals', () => {
@@ -423,15 +423,15 @@ describe('Budget Calculations', () => {
     })
 
     it('should return correct tier monthly crystal values', () => {
-      expect(calcDuelMonthlyIncome('yes', 't3')).toBe(100)
-      expect(calcDuelMonthlyIncome('yes', 't4')).toBe(200)
-      expect(calcDuelMonthlyIncome('yes', 't5')).toBe(300)
-      expect(calcDuelMonthlyIncome('yes', 't6')).toBe(400)
+      expect(calcDuelMonthlyIncome('yes', 't3')).toBe(0)
+      expect(calcDuelMonthlyIncome('yes', 't4')).toBe(100)
+      expect(calcDuelMonthlyIncome('yes', 't5')).toBe(200)
+      expect(calcDuelMonthlyIncome('yes', 't6')).toBe(300)
     })
 
     it('daily income should be monthly / DAYS_PER_MONTH', () => {
-      expect(calcDuelDailyIncome('yes', 't5')).toBe(300 / DAYS_PER_MONTH)
-      expect(calcDuelDailyIncome('yes', 't6')).toBe(400 / DAYS_PER_MONTH)
+      expect(calcDuelDailyIncome('yes', 't5')).toBe(200 / DAYS_PER_MONTH)
+      expect(calcDuelDailyIncome('yes', 't6')).toBe(300 / DAYS_PER_MONTH)
     })
   })
 
@@ -445,44 +445,44 @@ describe('Budget Calculations', () => {
       return 't3'
     }
 
-    it('API relic 0-6 → t3 "Tier 3 or below" (100 crystals)', () => {
+    it('API relic 0-6 → t3 "Tier 3 or below" (0 crystals)', () => {
       for (const relic of [0, 1, 5, 6]) {
         expect(mapApiRelicToTier(relic)).toBe('t3')
       }
-      expect(duelTierOptions.find(t => t.value === 't3')!.monthlyCrystals).toBe(100)
+      expect(duelTierOptions.find(t => t.value === 't3')!.monthlyCrystals).toBe(0)
     })
 
-    it('API relic 7-8 → t4 "Tier 4 [Relic 5]" (200 crystals)', () => {
+    it('API relic 7-8 → t4 "Tier 4 [Relic 5]" (100 crystals)', () => {
       for (const relic of [7, 8]) {
         expect(mapApiRelicToTier(relic)).toBe('t4')
       }
-      expect(duelTierOptions.find(t => t.value === 't4')!.monthlyCrystals).toBe(200)
+      expect(duelTierOptions.find(t => t.value === 't4')!.monthlyCrystals).toBe(100)
     })
 
-    it('API relic 9-10 → t5 "Tier 5 [Relic 7]" (300 crystals)', () => {
+    it('API relic 9-10 → t5 "Tier 5 [Relic 7]" (200 crystals)', () => {
       for (const relic of [9, 10]) {
         expect(mapApiRelicToTier(relic)).toBe('t5')
       }
-      expect(duelTierOptions.find(t => t.value === 't5')!.monthlyCrystals).toBe(300)
+      expect(duelTierOptions.find(t => t.value === 't5')!.monthlyCrystals).toBe(200)
     })
 
-    it('API relic 11+ → t6 "Tier 6 [Relic 9]" (400 crystals)', () => {
+    it('API relic 11+ → t6 "Tier 6 [Relic 9]" (300 crystals)', () => {
       for (const relic of [11, 12, 15, 20]) {
         expect(mapApiRelicToTier(relic)).toBe('t6')
       }
-      expect(duelTierOptions.find(t => t.value === 't6')!.monthlyCrystals).toBe(400)
+      expect(duelTierOptions.find(t => t.value === 't6')!.monthlyCrystals).toBe(300)
     })
 
     // Regression: player 186973717 has API relic 9 (in-game relic 7) → t5
-    it('player 186973717 (API relic 9) → t5, 300 crystals', () => {
+    it('player 186973717 (API relic 9) → t5, 200 crystals', () => {
       expect(mapApiRelicToTier(9)).toBe('t5')
-      expect(calcDuelMonthlyIncome('yes', 't5')).toBe(300)
+      expect(calcDuelMonthlyIncome('yes', 't5')).toBe(200)
     })
 
     // Regression: player 761355883 has API relic 11 (in-game relic 9) → t6
-    it('player 761355883 (API relic 11) → t6, 400 crystals', () => {
+    it('player 761355883 (API relic 11) → t6, 300 crystals', () => {
       expect(mapApiRelicToTier(11)).toBe('t6')
-      expect(calcDuelMonthlyIncome('yes', 't6')).toBe(400)
+      expect(calcDuelMonthlyIncome('yes', 't6')).toBe(300)
     })
   })
 

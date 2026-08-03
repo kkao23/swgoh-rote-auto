@@ -24,7 +24,7 @@ export const acklayDSP2: dataType[] = [
     },
     {
         lead: 'Great Mothers', gameId: 'GREATMOTHERS',
-        others: 'Morgan, Merrin, Night Trooper, Death Trooper',
+        others: 'Morgan, Night Trooper, Death Trooper, +1 NS',
         notes: 'bless morgan, easy auto',
         videos: [{ url: 'https://youtu.be/EssSASzT2qo' }],
         icon: '/icons/characters/tex.charui_greatmothers.png',
@@ -88,7 +88,7 @@ export const acklayDSP2: dataType[] = [
         omi: true,
     },
     {
-        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN',
+        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN, APPO, SCORCH, DISGUISEDCLONETROOPER',
         leadFull: 'Grand Moff Tarkin',
         others: 'Appo, CX, Disguised Clone Trooper, Scorch',
         notes: 'Easy auto',
@@ -139,7 +139,7 @@ export const reekDSP2: dataType[] = [
     },
     {
         lead: 'Great Mothers', gameId: 'GREATMOTHERS',
-        others: 'Morgan, Merrin, Night Trooper, Death Trooper',
+        others: 'Morgan, Night Trooper, Death Trooper, +1 NS',
         notes: 'easy auto',
         videos: [{ url: 'https://youtu.be/H4r1Qyq-cr0' }],
         icon: '/icons/characters/tex.charui_greatmothers.png',
@@ -232,7 +232,7 @@ export const reekDSP2: dataType[] = [
         omi: true,
     },
     {
-        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN',
+        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN, APPO, SCORCH, DISGUISEDCLONETROOPER',
         leadFull: 'Grand Moff Tarkin',
         others: 'Appo, CX, Disguised Clone Trooper, Scorch',
         notes: 'easy auto',
@@ -312,7 +312,7 @@ export const nexuDSP2: dataType[] = [
     },
     {
         lead: 'Great Mothers', gameId: 'GREATMOTHERS',
-        others: 'Morgan, Merrin, Night Trooper, Death Trooper',
+        others: 'Morgan, Night Trooper, Death Trooper, +1 NS',
         notes: 'bless morgan, auto',
         videos: [{ url: 'https://youtu.be/HjoqwXNWFNw' }],
         icon: '/icons/characters/tex.charui_greatmothers.png',
@@ -332,7 +332,7 @@ export const nexuDSP2: dataType[] = [
         omi: true
     },
     {
-        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN',
+        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN, APPO, SCORCH, DISGUISEDCLONETROOPER',
         leadFull: 'Grand Moff Tarkin',
         others: 'Appo, CX, Disguised Clone Trooper, +1',
         notes: 'I had Thrawn as 5th but Scorch is ideal. Not sure if I got lucky with them targeting Nightfall first',
@@ -376,6 +376,28 @@ export const shipsDSP2: dataType[] = [
         notes: 'this is super hard, watch the video',
         videos: [{ url: 'https://www.youtube.com/watch?v=4uXzIQqyh1A', creator: 'kahzgul' }],
         icon: '/icons/ships/tex.charui_stardestroyer.png',
+        difficulty: difficulty.NO_AUTO,
+        successRate: successRate.UNRELIABLE
+    },
+    {
+        lead: 'Leviathan', gameId: 'CAPITALLEVIATHAN',
+        others: 'Sith Fighter, FCI, Sith Bomber, MKVI Interceptor, Tie Dagger, Scimitar, Emp Shuttle',
+        notes: 'this is super hard, watch the video',
+        videos: [{ url: 'https://www.youtube.com/watch?v=v5AJ8YN5E1o&pp=ygUbc3dnb2ggcm90ZSBnZW9ub3NpcyBtaXNzaW9u', creator: 'BitDynasty' }],
+        icon: '/icons/ships/tex.charui_leviathan.png',
+        difficulty: difficulty.NO_AUTO,
+        successRate: successRate.UNRELIABLE
+    },
+]
+
+export const geosDSP2: dataType[] = [
+    {
+        lead: 'GBA', gameId: 'GEONOSIANBROODALPHA, SUNFAC, GEONOSIANSOLDIER, GEONOSIANSPY, POGGLETHELESSER',
+        leadFull: 'Geonosian Brood Alpha',
+        others: 'The other geos',
+        notes: 'can\'t auto. Difficult mission. Not really worth it',
+        videos: [{ url: 'https://www.youtube.com/watch?v=8aX_N2-5T6Y&pp=ygUnc3dnb2ggcm90ZSBnZW9ub3NpcyBtaXNzaW9uIGJyb29kIGFscGhh', creator: 'PotatoGnarly' }],
+        icon: '/icons/characters/tex.charui_geonosian_broodalpha.png',
         difficulty: difficulty.NO_AUTO,
         successRate: successRate.UNRELIABLE
     },

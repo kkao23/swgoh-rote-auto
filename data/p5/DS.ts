@@ -3,7 +3,7 @@ import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const dsBottomRightP5: dataType[] = [
     {
-        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN',
+        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN, APPO, SCORCH, DISGUISEDCLONETROOPER',
         leadFull: 'Grand Moff Tarkin',
         others: 'Appo (omicron), CX, Disguised Clone Trooper, Scorch',
         notes: '1/2 on auto',
@@ -74,7 +74,7 @@ export const dsBottomRightP5: dataType[] = [
 
 export const dsTopMidP5: dataType[] = [
     {
-        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN',
+        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN, APPO, SCORCH, DISGUISEDCLONETROOPER',
         leadFull: 'Grand Moff Tarkin',
         others: 'Appo (omicron), CX, Disguised Clone Trooper, Scorch',
         notes: 'auto, may want to target Sabine wave 2',
@@ -132,7 +132,7 @@ export const dsTopMidP5: dataType[] = [
     },
 
     {
-        lead: 'GM', gameId: 'GREATMOTHERS',
+        lead: 'Great Mothers', gameId: 'GREATMOTHERS',
         others: 'Morgan, Spirit, NT, DTP',
         notes: 'Auto',
         videos: [],
@@ -157,7 +157,7 @@ export const dsLeftP5: dataType[] = [
         interactionType: [interactionType.PAUSE_WAVE2],
     },
     {
-        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN',
+        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN, APPO, SCORCH, DISGUISEDCLONETROOPER',
         leadFull: 'Grand Moff Tarkin',
         others: 'Appo, CX, Disguised Clone Trooper, Scorch',
         notes: '1/2 on auto',
@@ -200,5 +200,20 @@ export const dsLeftP5: dataType[] = [
         difficulty: difficulty.EASY,
         successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.MANUAL]
+    },
+]
+
+export const dsInqsP5: dataType[] = [
+    {
+        lead: 'Fifth Brother', gameId: 'FIFTHBROTHER, EIGHTHBROTHER, SEVENTHSISTER',
+        leadFull: 'Fifth Brother',
+        others: '8th and 7th are mandatory, Third and GI or omi Marrok are the best others',
+        notes: 'auto with Marrok omi, not sure without',
+        videos: [{ url: 'https://youtu.be/vZ5koSc2xhU?si=hSQ2hrjGGRShDwzM', creator: 'General Skaar'}],
+        icon: '/icons/characters/tex.charui_fifthbrother.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        omi: true
     },
 ]

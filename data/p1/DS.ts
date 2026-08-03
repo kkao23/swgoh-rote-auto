@@ -45,7 +45,7 @@ export const leftDSP1: dataType[] = [{
 },
 {
     lead: 'Great Mothers', gameId: 'GREATMOTHERS',
-    others: 'Morgan, Night Trooper, Death Trooper, Merrin',
+    others: 'Morgan, Night Trooper, Death Trooper, +1 NS',
     notes: 'Auto, can bless morgan manually if you want to be totally safe',
     videos: [{ url: 'https://youtu.be/YUMJjeD6k5A' }],
     icon: '/icons/characters/tex.charui_greatmothers.png',
@@ -104,7 +104,6 @@ export const leftDSP1: dataType[] = [{
     difficulty: difficulty.EASY,
     successRate: successRate.CONSISTENT,
     interactionType: [interactionType.AUTO],
-    creator: 'anonymous'
 }
 ,
 {
@@ -118,11 +117,31 @@ export const leftDSP1: dataType[] = [{
     interactionType: [interactionType.AUTO],
     creator: 'Parableman'
 },
+{
+  lead: 'Grand Moff Tarkin',
+  gameId: 'GRANDMOFFTARKIN',
+  others: 'CX2, Disguised Clone Trooper, Appo, Scorch',
+  notes: 'Full auto 2/2 easy',
+  videos: [],
+  difficulty: difficulty.EASY,
+  creator: 'Anonymous',
+},
+    {
+        lead: 'Jabba', gameId: 'JABBATHEHUTT',
+        others: 'Booush +3',
+        notes: 'Auto',
+        videos: [],
+        icon: '/icons/characters/tex.charui_jabbathehutt.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'Anonymous'
+    }
 ];
 
 export const bottomDSP1: dataType[] = [{
     lead: 'Great Mothers', gameId: 'GREATMOTHERS',
-    others: 'Morgan, Night Trooper, Death Trooper, Merrin',
+    others: 'Morgan, Night Trooper, Death Trooper, +1 NS',
     notes: 'Doom droideka, bless Morgan, hit auto',
     videos: [{ url: 'https://youtu.be/dVJSaQ_Pwmo' }],
     icon: '/icons/characters/tex.charui_greatmothers.png',
@@ -228,7 +247,7 @@ export const bottomDSP1: dataType[] = [{
     interactionType: [interactionType.AUTO],
 },
 {
-    lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN',
+    lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN, APPO, SCORCH, DISGUISEDCLONETROOPER',
     leadFull: 'Tarkin (Clones)',
     others: 'DS Clones (Appo Omi)',
     notes: 'Auto',
@@ -243,14 +262,13 @@ export const bottomDSP1: dataType[] = [{
 {
     lead: 'Pirate King Hondo', gameId: 'GLHONDO',
     leadFull: 'Pirate King Hondo Onaka',
-    others: 'Smee, vane, any',
-    notes: 'Do not use baylan mercs on auto',
+    others: 'SM33, Vane, any',
+    notes: 'easy auto',
     videos: [],
     icon: '/icons/characters/tex.charui_glhondo.png',
     difficulty: difficulty.VERY_EASY,
     successRate: successRate.CONSISTENT,
     interactionType: [interactionType.AUTO],
-    creator: 'anonymous',
 },
 
 {
@@ -312,7 +330,7 @@ export const topDSP1: dataType[] = [
         omi: true,
     }, {
         lead: 'Great Mothers', gameId: 'GREATMOTHERS',
-        others: 'Morgan, Night Trooper, Death Trooper, Merrin',
+        others: 'Morgan, Night Trooper, Death Trooper, +1 NS',
         notes: 'Doom droideka, bless Morgan, hit auto',
         videos: [{ url: 'https://youtu.be/zjxxsvQos5Y' }],
         icon: '/icons/characters/tex.charui_greatmothers.png',
@@ -323,7 +341,7 @@ export const topDSP1: dataType[] = [
     {
         lead: 'Reva', gameId: 'THIRDSISTER',
         others: 'GI, 7S, 2S, 8B',
-        notes: 'Target B2, hit auto',
+        notes: 'Target B2, hit auto. Or easy auto with Marrok omi',
         videos: [{ url: 'https://youtu.be/V75J-k6i40s?si=uX_YUqMZEuQr7VIN&t=145', creator: 'pico' }],
         icon: '/icons/characters/tex.charui_thirdsister.png',
         difficulty: difficulty.EASY,
@@ -364,7 +382,16 @@ export const topDSP1: dataType[] = [
         interactionType: [interactionType.AUTO],
         omi: true,
     },
-
+    {
+        lead: 'PKHO', gameId: 'GLHONDO',
+        others: 'Silvo, Ithano, Vane, Brutus',
+        notes: 'Easy Auto',
+        videos: [],
+        icon: '/icons/characters/tex.charui_glhondo.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+    },
     {
         lead: 'Admiral Trench', gameId: 'TRENCH',
         others: 'Wat, Jango Fett, Nute Gunray, Count Dooku',
@@ -375,6 +402,15 @@ export const topDSP1: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         creator: 'Teg bashar'
+    },
+    {
+    lead: 'Grand Moff Tarkin',
+    gameId: 'GRANDMOFFTARKIN',
+    others: 'CX2, Disguised Clone Trooper, Appo, Scorch',
+    notes: 'Full auto 2/2 easy',
+    videos: [],
+    difficulty: difficulty.EASY,
+    creator: 'Anonymous',
     }
 ];
 
@@ -394,7 +430,7 @@ export const lvP1: dataType[] = [
 
 export const shipsDSP1 = [
     {
-        lead: 'Leviathan', gameId: 'CAPITALLEVIATHAN',
+        lead: 'Leviathan', gameId: 'CAPITALLEVIATHAN, SCYTHE',
         others: 'Sith Bomber, MK6 Interceptor, Sith Fighter, Tie Adv, Scimitar',
         notes: 'Not consistent',
         videos: [{ url: 'https://youtu.be/xCuGwcVtd98' },
@@ -404,7 +440,7 @@ export const shipsDSP1 = [
         successRate: successRate.FIFTY_FIFTY
     },
     {
-        lead: 'Chimera', gameId: 'CAPITALCHIMAERA',
+        lead: 'Chimera', gameId: 'CAPITALCHIMAERA, SCYTHE',
         others: 'Scythe, Mk6, Tie Adv, Defender, Interceptor, Sith Fighter, TIE Fighter',
         notes: 'cant auto',
         videos: [
@@ -417,7 +453,7 @@ export const shipsDSP1 = [
     }
     ,
     {
-        lead: 'Executrix', gameId: 'CAPITALSTARDESTROYER',
+        lead: 'Executrix', gameId: 'CAPITALSTARDESTROYER, SCYTHE',
         others: 'Mark VI, Scythe, Tie x1, Defender, Inceptor, Sith Fighter, Imperi=',
         notes: 'Executrix gets two extra TIEs to start with. Eliminate all the oth=',
         videos: [],

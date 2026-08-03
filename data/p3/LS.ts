@@ -14,14 +14,14 @@ export const lsLeftP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'JML (Ezra)', gameId: 'GRANDMASTERLUKE',
-        leadFull: 'Jedi Master Luke with Ezra Exile',
-        others: 'Ezra Exile, JKL, +2 Jedi',
-        notes: 'auto, JKCK is good if available, Ezra mandatory',
+        lead: 'JML', gameId: 'GRANDMASTERLUKE',
+        leadFull: 'Jedi Master Luke',
+        others: 'JKL, +2 Jedi',
+        notes: 'hard on auto after ezra nerf. More consistent on manual',
         videos: [{ url: 'https://youtu.be/R_3rOQK49XQ' }],
         icon: '/icons/characters/tex.charui_luke_jml.png',
         difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
+        successRate: successRate.UNRELIABLE,
         interactionType: [interactionType.AUTO]
     },
     {
@@ -43,7 +43,7 @@ export const lsLeftP3: dataType[] = [
         videos: [{ url: 'https://youtu.be/rahjtupSkX0' }],
         icon: '/icons/characters/tex.charui_bossnass.png',
         difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
+        successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO],
         omi: true,
     },
@@ -58,7 +58,7 @@ export const lsLeftP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO',
+        lead: 'Ahsoka Tano', gameId: 'GLAHSOKATANO',
         others: 'Padawan Sabine, Huyang, Fulcrum, Hera',
         notes: 'auto, can save Ezra for somewher else',
         videos: [{ url: 'https://youtu.be/SWi--w5QKws' }],
@@ -100,7 +100,19 @@ export const lsLeftP3: dataType[] = [
         omi: true,
     },
     {
-        lead: 'Kelleran Beq', gameId: 'KELLERANBEQ',
+        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU, DEPABILLABA',
+        leadFull: 'Jedi Master Mace Windu',
+        others: 'Jocasta Nu, Temple Guard, Depa Billaba (omicron), +1 JV',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/Ez1HYwJ8aZY' }],
+        icon: '/icons/characters/tex.charui_jedimastermacewindu.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        omi: true
+    },
+    {
+        lead: 'Kelleran Beq', gameId: 'KELLERANBEQ, DEPABILLABA',
         leadFull: 'Kelleran Beq',
         others: 'Jocasta Nu, Shaak Ti, Temple Guard, Depa Billaba (omicron)',
         notes: 'auto',
@@ -146,7 +158,7 @@ export const lsLeftP3: dataType[] = [
         creator: 'Windaar'
     },
     {
-        lead: 'Cobb Vanth', gameId: 'COBBVANTH',
+        lead: 'Cobb Vanth', gameId: 'COBBVANTH, JAWASCAVENGER',
         leadFull: 'Cobb Vanth',
         others: 'CUP, Nebit, Jawa Scavenger, Cara Dune',
         notes: 'auto, no omicron needed',
@@ -156,6 +168,15 @@ export const lsLeftP3: dataType[] = [
         successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO]
     },
+    {
+    lead: 'JKL',
+    gameId: 'JEDIKNIGHTLUKE',
+    others: 'JML, GAS, GMY, GK',
+    notes: 'Played on Manual took some time but seemed pretty easy. Get luke a turn ASAP and spam repulse',
+    videos: [],
+    difficulty: difficulty.EASY,
+    creator: 'Anonymous',
+    }
 ]
 
 export const lsRightP3: dataType[] = [
@@ -170,7 +191,7 @@ export const lsRightP3: dataType[] = [
         interactionType: [interactionType.PAUSE_WAVE2]
     },
     {
-        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO',
+        lead: 'Ahsoka Tano', gameId: 'GLAHSOKATANO',
         others: 'Padawan Sabine, Huyang, Fulcrum, +1',
         notes: 'auto, use Ezra and Hera if available',
         videos: [{ url: 'https://youtu.be/3T8M7wuyTuI' }],
@@ -186,7 +207,7 @@ export const lsRightP3: dataType[] = [
         videos: [{ url: 'https://youtu.be/fO_7TdAxH6U' }],
         icon: '/icons/characters/tex.charui_bossnass.png',
         difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
+        successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO],
         omi: true
     },
@@ -213,14 +234,14 @@ export const lsRightP3: dataType[] = [
         interactionType: [interactionType.AUTO, interactionType.PAUSE_WAVE2]
     },
     {
-        lead: 'JML (Ezra)', gameId: 'GRANDMASTERLUKE',
-        leadFull: 'Jedi Master Luke with Ezra Exile',
-        others: 'Ezra Exile, JKL, +2 Jedi',
-        notes: 'auto, JKCK is good if available, Ezra mandatory. Target Mara wave 2',
+        lead: 'JML', gameId: 'GRANDMASTERLUKE',
+        leadFull: 'Jedi Master Luke',
+        others: 'JKL, +2 Jedi',
+        notes: 'hard on auto after ezra nerf. Target Mara wave 2',
         videos: [{ url: 'https://youtu.be/6LCLkhSg5AY' }],
         icon: '/icons/characters/tex.charui_luke_jml.png',
         difficulty: difficulty.EASY,
-        successRate: successRate.NINETY_PERCENT,
+        successRate: successRate.UNRELIABLE,
         interactionType: [interactionType.PAUSE_WAVE2]
     },
     {
@@ -245,7 +266,7 @@ export const lsRightP3: dataType[] = [
         omi: true,
     },
     {
-        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU',
+        lead: 'JMMW', gameId: 'JEDIMASTERMACEWINDU, DEPABILLABA',
         leadFull: 'Jedi Master Mace Windu',
         others: 'Jocasta Nu, Kelleran Beq, Depa Billaba (omicron), Temple Guard',
         notes: 'auto, may want to focus down mara wave 2',
@@ -265,7 +286,7 @@ export const lsRightP3: dataType[] = [
     // },
 
     {
-        lead: 'Jedi Master Mace Windu', gameId: 'JEDIMASTERMACEWINDU',
+        lead: 'Jedi Master Mace Windu', gameId: 'JEDIMASTERMACEWINDU, DEPABILLABA',
         others: 'Depa Bilaba, Temple Guard, Jocasta Nu, Aayla Secura',
         notes: 'Auto, no omis required',
         videos: [],
@@ -286,12 +307,33 @@ export const lsRightP3: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         creator: 'anonymous'
+    },
+    {
+        lead: 'Cobb Vanth', gameId: 'COBBVANTH, JAWASCAVENGER',
+        leadFull: 'Cobb Vanth',
+        others: 'CUP, Nebit, Jawa Scavenger, Cara Dune',
+        notes: 'auto, no omicron needed, can get unlucky if they focus cobb or cara',
+        videos: [{ url: 'https://youtu.be/7IjHqql1jOI' }],
+        icon: '/icons/characters/tex.charui_cobbvanth.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.NINETY_PERCENT,
+        interactionType: [interactionType.AUTO]
+    },
+    {
+    lead: 'JML',
+    leadFull: 'Jedi Master Luke',
+    gameId: 'GRANDMASTERLUKE',
+    others: 'JKL, Jolee, JKCK, Kyle',
+    notes: 'Easy',
+    videos: [],
+    difficulty: difficulty.EASY,
+    creator: 'Nocebo',
     }
 ]
 
 export const sawP3: dataType[] = [
     {
-        lead: 'Saw (Drogan and Kyle)', gameId: 'SAWGERRERA',
+        lead: 'Saw (Drogan and Kyle)', gameId: 'SAWGERRERA, CAPTAINDROGAN, KYLEKATARN, CAPTAINREX, LUTHENRAEL',
         leadFull: 'Saw with Drogan and Kyle',
         others: 'Capt Rex, Luthen, Drogan, Kyle',
         notes: 'auto, deselect targeting reticule at the beginning',
@@ -304,7 +346,7 @@ export const sawP3: dataType[] = [
         omi: true
     },
     {
-        lead: 'Saw (Drogan)', gameId: 'SAWGERRERA',
+        lead: 'Saw (Drogan)', gameId: 'SAWGERRERA, CAPTAINDROGAN, CAPTAINREX, LUTHENRAEL',
         leadFull: 'Saw with Drogan',
         others: 'Capt Rex, Luthen, Cassian, Drogan',
         notes: 'auto, target purge troopers',
@@ -316,7 +358,7 @@ export const sawP3: dataType[] = [
         targeted: true
     },
     {
-        lead: 'Saw (Kyle)', gameId: 'SAWGERRERA',
+        lead: 'Saw (Kyle)', gameId: 'SAWGERRERA, KYLEKATARN, CAPTAINREX, LUTHENRAEL',
         leadFull: 'Saw with Kyle Katarn',
         others: 'Capt Rex, Luthen, Cassian, Kyle (o)',
         notes: 'auto, target purge troopers',
@@ -342,7 +384,7 @@ export const sawP3: dataType[] = [
     }
     ,
     {
-        lead: 'Saw (Kleya)', gameId: 'SAWGERRERA, KLEYA',
+        lead: 'Saw (Kleya)', gameId: 'SAWGERRERA, KLEYA, LUTHENRAEL',
         others: 'Luthen, Kleya, SRP, Kyle',
         notes: 'Make sure keen stays on SRP. Reapply it each time he revives and don\'t use it otherwise. Easy',
         videos: [],
@@ -399,7 +441,7 @@ export const wookies: dataType[] = [
 
 export const shipsLSP3: dataType[] = [
     {
-        lead: 'Profundity (no MF, Rogue One)', gameId: 'CAPITALPROFUNDITY',
+        lead: 'Profundity (no MF, Rogue One)', gameId: 'CAPITALPROFUNDITY, ROGUEONESHIP',
         others: 'Outrider, Y wing, Ghost, Rogue One, Biggs, Phantom, Wedge',
         notes: 'If you have to platoon MF. Targeted auto. Keep reticule on Scythe. Biggs should be 2nd reinforcement',
         videos: [{ url: 'https://youtu.be/mpUiTI-GfP0' }],

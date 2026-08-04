@@ -86,7 +86,7 @@ const submitSuggestion = async () => {
       }),
     });
 
-    const data = await response.json();
+    const result = await response.json();
 
     if (response.ok) {
       submitSuccess.value = true;
@@ -94,7 +94,7 @@ const submitSuggestion = async () => {
         closeModal();
       }, 2000);
     } else {
-      errorMessage.value = data.error || 'Failed to submit suggestion';
+      errorMessage.value = result.error || 'Failed to submit suggestion';
     }
   } catch (error) {
     console.error('Submission error:', error);

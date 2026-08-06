@@ -437,7 +437,7 @@ export const shipsDSP1 = [
         ],
         icon: '/icons/ships/tex.charui_leviathan.png',
         difficulty: difficulty.HARD,
-        successRate: successRate.FIFTY_FIFTY
+        successRate: successRate.UNRELIABLE
     },
     {
         lead: 'Chimera', gameId: 'CAPITALCHIMAERA, SCYTHE',

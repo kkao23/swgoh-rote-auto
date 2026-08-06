@@ -164,7 +164,17 @@ export const dsGenericP3: dataType[] = [
     videos: [],
     difficulty: difficulty.EASY,
     creator: 'Anonymous',
-    }
+    },
+    {
+        lead: 'Maul', gameId: 'MAULS7',
+        others: 'Jango, ISC, Gar Saxon, Canderous',
+        notes: 'only 1/2 on auto',
+        videos: [{ url: 'https://youtu.be/o0qNvzhcMCE' }],
+        icon: '/icons/characters/tex.charui_maul.png',
+        difficulty: difficulty.HARD,
+        successRate: successRate.UNRELIABLE,
+        interactionType: [interactionType.AUTO],
+    },
 ]
 
 export const dsEmpireP3: dataType[] = [

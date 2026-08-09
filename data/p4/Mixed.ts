@@ -35,7 +35,7 @@ export const mixedQiraP4: dataType[] = [
         interactionType: [interactionType.TARGET_START]
     },
     {
-        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO, QIRA, L3_37',
+        lead: 'Ahsoka Tano', gameId: 'GLAHSOKATANO, QIRA, L3_37',
         others: 'Fulcrum, any 5th',
         notes: 'easy auto',
         videos: [{ url: 'https://youtu.be/Rmd5Ppxxyfs' }],

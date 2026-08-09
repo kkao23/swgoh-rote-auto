@@ -54,7 +54,7 @@ export const qiraMixedP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Qira (Ahsoka Tano)', gameId: 'QIRA, AHSOKATANO',
+        lead: 'Qira (Ahsoka Tano)', gameId: 'QIRA, GLAHSOKATANO',
         others: 'Ahsoka Tano, Padawan Sabine, Ezra Exile',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/_9kN1TSqgB0' }],
@@ -396,7 +396,7 @@ export const drAphraP1: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Aphra (Ahsoka Tano)', gameId: 'DOCTORAPHRA, AHSOKATANO',
+        lead: 'Aphra (Ahsoka Tano)', gameId: 'DOCTORAPHRA, GLAHSOKATANO',
         others: 'Hera, Sabine, Huyang',
         notes: 'auto, dont need ezra here',
         videos: [{ url: 'https://youtu.be/phkCY2ikmtI' }],

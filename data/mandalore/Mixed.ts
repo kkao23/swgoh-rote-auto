@@ -240,7 +240,7 @@ export const mandaloreGeneric: dataType[] = [
         lead: 'Emp Palpatine (DVDE)', gameId: 'EMPERORPALPATINE, VADERDUELSEND',
         leadFull: 'Emperor Palpatine',
         others: 'Emperor Palpatine, Darth Vader Duel\'s End, Admiral Piett, Gar Saxon, Imperial Super Commando',
-        notes: 'auto, platoons likely required, may be some luck involved',
+        notes: 'auto, platoons required, may be some luck involved',
         videos: [{ url: 'https://youtu.be/hV0tpUjM1uE' }],
         icon: '/icons/characters/tex.charui_palpatineemperor.png',
         difficulty: difficulty.EASY,

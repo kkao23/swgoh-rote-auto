@@ -315,7 +315,7 @@ export const mixedCombatBottomLeftP5: dataType[] = [
     },
     {
     lead: 'Ahsoka Tano (CAT)',
-    gameId: 'AHSOKATANO, COMMANDERAHSOKATANO',
+    gameId: 'GLAHSOKATANO, COMMANDERAHSOKATANO',
     others: 'Exile Ezra, padawan sabine, gen syndulla, CAT',
     notes: 'Keep CAT alive until force leap',
     videos: [],
@@ -373,7 +373,7 @@ export const jabbaP5: dataType[] = [
 
 export const youngHanP5: dataType[] = [
     {
-        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO, YOUNGHAN',
+        lead: 'Ahsoka Tano', gameId: 'GLAHSOKATANO, YOUNGHAN',
         leadFull: 'Ahsoka Tano',
         others: 'Fulcrum, GAS, Young Han, Vandor',
         notes: 'Get exile off fulcrum asap, keep Han and chewie alive with the box. The Ashokas and Gas will take care of the enemies.',
@@ -386,7 +386,7 @@ export const youngHanP5: dataType[] = [
     },
 
     {
-        lead: 'Glat', gameId: 'AHSOKATANO, YOUNGHAN',
+        lead: 'Glat', gameId: 'GLAHSOKATANO, YOUNGHAN',
         others: 'Fulcrum, gas, young Han, vandor.',
         notes: 'Get exile off fulcrum asap, keep Han and chewie alive with the box. The Ashokas and Gas will take care of the enemies.',
         videos: [],

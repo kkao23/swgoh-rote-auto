@@ -184,20 +184,11 @@ function onTeamChange(row: UnifiedRow, event: Event) {
     manualTeamIdx.value = nextIdx;
     customTeamText.value = { ...customTeamText.value, [row.missionId]: '' };
   } else {
-    const eligibleIdx = parseInt(val, 10);
-    const eligible = eligibleTeams(row.missionId);
-    const team = eligible[eligibleIdx];
+    const idx = parseInt(val, 10);
     const nextCustom = { ...customTeamText.value };
     delete nextCustom[row.missionId];
     customTeamText.value = nextCustom;
-    // Convert eligible-array index to raw-array index
-    const rawIdx = findTeamIndex(
-      missionTeamsMap.value.get(row.missionId) ?? [],
-      team.gameId,
-      team.lead,
-      team.others,
-    );
-    manualTeamIdx.value = { ...manualTeamIdx.value, [row.missionId]: rawIdx };
+    manualTeamIdx.value = { ...manualTeamIdx.value, [row.missionId]: idx };
   }
 }
 
@@ -366,21 +357,34 @@ async function copyExport() {
                 </div>
                 <!-- Dropdown (with custom option) -->
                 <select
-                  v-else-if="row.kind !== 'unavailable' && eligibleTeams(row.missionId).length > 0"
+                  v-else-if="row.kind !== 'unavailable' && (missionTeamsMap.get(row.missionId)?.length ?? 0) > 0"
                   class="bg-slate-800 border rounded text-sm text-white px-2 py-1 w-full max-w-[220px] focus:outline-none focus:border-cyan-500"
                   :class="conflictMissions.has(row.missionId) ? 'border-red-500 ring-1 ring-red-500/50' : 'border-slate-600'"
-                  :value="getEffectiveTeam(row) ? eligibleTeams(row.missionId).findIndex(t => t.gameId === getEffectiveTeam(row)!.gameId) : ''"
+                  :value="manualTeamIdx[row.missionId] ?? ''"
                   @change="onTeamChange(row, $event)"
                   @click.stop
                 >
-                  <option value="" disabled v-if="!getEffectiveTeam(row)">— Select a team —</option>
-                  <option
-                    v-for="(t, ti) in eligibleTeams(row.missionId)"
-                    :key="ti"
-                    :value="ti"
-                  >
-                    {{ teamOptionLabel(t) }}
-                  </option>
+                  <option value="" disabled v-if="manualTeamIdx[row.missionId] === undefined">— Select a team —</option>
+                  <template v-for="(t, ti) in missionTeamsMap.get(row.missionId) ?? []" :key="ti">
+                    <option
+                      v-if="!t.creator"
+                      :value="ti"
+                      :disabled="!isTeamEligible(t, excludedLeads, rosterUnitMap)"
+                    >
+                      {{ teamOptionLabel(t) }}
+                    </option>
+                  </template>
+                  <option v-if="(missionTeamsMap.get(row.missionId) ?? []).some(t => t.creator)" disabled>──────────</option>
+                  <optgroup v-if="(missionTeamsMap.get(row.missionId) ?? []).some(t => t.creator)" label="Community">
+                    <option
+                      v-for="(t, ti) in missionTeamsMap.get(row.missionId) ?? []"
+                      v-show="t.creator"
+                      :key="'c' + ti"
+                      :value="ti"
+                    >
+                      {{ t.leadFull || t.lead }}
+                    </option>
+                  </optgroup>
                   <option disabled>──────────────</option>
                   <option value="__custom__">✏️ Custom entry…</option>
                 </select>

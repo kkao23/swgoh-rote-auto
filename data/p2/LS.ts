@@ -472,6 +472,16 @@ export const rightLSP2: dataType[] = [
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO],
+    },
+    {
+    lead: "JMLS",
+    others: "JKLS, Hyoda, JKCK, GAS",
+    notes: "Auto",
+    videos: [],
+    difficulty: difficulty.EASY,
+    gameId: "GRANDMASTERLUKE, JEDIKNIGHTCAL, JEDIKNIGHTLUKE, GENERALSKYWALKER",
+    omi: false,
+    creator: "anonymous"
     }
 ]
 

@@ -355,6 +355,15 @@ export const jediLSP4: dataType[] = [
     videos: [],
     difficulty: difficulty.EASY,
     creator: 'Andriu',
+    },
+    {
+    lead: "JMK (JKL)",
+    others: "JKL, GK, Snips, GMY",
+    notes: "Full auto worked like a charm.",
+    videos: [],
+    difficulty: difficulty.EASY,
+    gameId: "JEDIMASTERKENOBI, JEDIKNIGHTLUKE",
+    creator: "anonymous"
     }
 ]
 

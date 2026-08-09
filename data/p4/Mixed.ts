@@ -381,6 +381,26 @@ export const mixedGenericP4: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
     },
+    {
+    lead: "Cobb Vanth",
+    others: "Cara Dune, CUP, Lobot, Chief Nebit",
+    notes: "I had omi on Cobb",
+    videos: [],
+    difficulty: difficulty.EASY,
+    gameId: "COBBVANTH",
+    creator: "anonymous",
+    omi: true
+    },
+    {
+        lead: "Major Partagaz",
+        others: "ISB",
+        notes: "Auto, oIPD",
+        videos: [],
+        difficulty: difficulty.EASY,
+        creator: "Vecchetti",
+        omi: true,
+        gameId: "MAJORPARTAGAZ",
+    }
 ]
 
 export const jabbaP4: dataType[] = [

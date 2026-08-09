@@ -2,6 +2,15 @@ import { type data as dataType } from "~/models/data";
 import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const lsShipsP6: dataType[] = [
+      {
+        lead: 'Profundity', 
+    others: "Y-Wing, HMF, Outrider, Rogue One, Cassian's U-Wing, Ghost, Phantom",
+    notes: "Easy Autoplay",
+    videos: [],
+    difficulty: difficulty.EASY,
+    gameId: "CAPITALPROFUNDITY",
+    creator: 'Justpure CR'
+  },
     {
         lead: 'Profundity', gameId: 'CAPITALPROFUNDITY',
         others: 'MF, Outrider, Y Wing, Phantom, Cassian, Biggs, Bistan',
@@ -13,6 +22,7 @@ export const lsShipsP6: dataType[] = [
         interactionType: [interactionType.TARGET_START],
         targeted: true
     },
+
 ]
 
 export const genericLSP6: dataType[] = [
@@ -48,7 +58,25 @@ export const genericLSP6: dataType[] = [
     ],
     difficulty: difficulty.EASY,
     creator: 'Mar Trepodi',
-    }
+    },
+    {
+      lead: 'Jedi Master Mace Windu',
+    gameId: 'JEDIMASTERMACEWINDU',
+    others: "Depa ( Omicron ), Jocasta, Tempelguard + Kelleran Beq",
+    notes: "Autoplay, Depa with Omicron , no Platoons needed",
+    videos: [],
+    difficulty: difficulty.EASY,
+    creator: "Justpure CR"
+},
+{
+  lead: 'Ahsoka Tano',
+  others: "Ezra, Syndulla, Huyang ( Omicron ) + 1 ( Fulcrum )",
+  notes: "Autoplay, Huyang Omicron needed, no Platoons needed",
+  videos: [],
+  difficulty: difficulty.EASY,
+  gameId: "GLAHSOKATANO",
+  creator: "Justpure CR"
+}
 ]
 
 export const cassianLSP6: dataType[] = [

@@ -514,7 +514,7 @@ export const youngLandoP2: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'Jedi Master Kenobi', gameId: 'JEDIMASTERKENOBI, COMMANDERAHSOKATANO, YOUNGLANDO',
+        lead: 'Jedi Master Kenobi', gameId: 'JEDIMASTERKENOBI, COMMANDERAHSOKA, YOUNGLANDO',
         others: 'CAT, Padme, General Kenobi',
         notes: 'Save instakill for Wave 2',
         videos: [],

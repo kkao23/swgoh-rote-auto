@@ -339,6 +339,16 @@ export const mixedP1: dataType[] = [
         interactionType: [interactionType.AUTO],
         creator: "roehri79"
     },
+    {
+        lead: "SLKR",
+        others: "General hux, Kylo Ren, Kylo Ren unmasked, First order officer ",
+        notes: "Target leader",
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: "SUPREMELEADERKYLOREN, GENERALHUX, KYLORENUNMASKED",
+        omi: false,
+        creator: "anonymous"
+    }
 ]
 
 export const jabbaP1: dataType[] = [

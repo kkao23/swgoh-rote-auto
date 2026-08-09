@@ -154,6 +154,24 @@ export const lsTopMidP5: dataType[] = [
         interactionType: [interactionType.AUTO],
         creator: 'zeratul021',
         omi: true
+    },
+    {
+    lead: "BKM",
+    others: "Paz, BAM, IG12, Bo-Kryze",
+    notes: "Auto. No omicron. Full OPs.",
+    videos: [],
+    difficulty: difficulty.EASY,
+    gameId: "MANDALORBOKATAN",
+    creator: "anonymous"
+    },
+    {
+    lead: "Satele Shan",
+    others: "JKR, Bastila, Jolee, Juhani",
+    notes: "Auto with full platoons. Do not use team if platoons are not full. Good mods on the trio recommended.",
+    videos: [],
+    difficulty: difficulty.EASY,
+    gameId: "SATELESHAN",
+    creator: "GalacticLegendRevan"
     }
 ]
 
@@ -225,17 +243,6 @@ export const lsBottomP5: dataType[] = [
         creator: 'anonymous'
     }
     ,
-    {
-        lead: 'JKCK (omi)', gameId: 'JEDIKNIGHTCAL',
-        others: 'Okk, K2, cassian, (Jml/jkl/gmy as 5th)',
-        notes: 'Full auto',
-        videos: [],
-        icon: '/icons/characters/tex.charui_calkestis.png',
-        difficulty: difficulty.EASY,
-        successRate: successRate.CONSISTENT,
-        interactionType: [interactionType.AUTO],
-        creator: 'anonymous'
-    }
 ]
 
 export const lsShipsP5: dataType[] = [
@@ -273,6 +280,26 @@ export const lsShipsP5: dataType[] = [
 ]
 
 export const lsCassianP5: dataType[] = [
+        {
+        lead: 'JKCK (omi) JML', gameId: 'JEDIKNIGHTCAL, GRANDMASTERLUKE',
+        others: 'Okk, K2, cassian, (Jml/jkl/gmy as 5th)',
+        notes: 'Full auto',
+        videos: [],
+        icon: '/icons/characters/tex.charui_calkestis.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous',
+        omi: true
+    },
+    {
+    lead: 'JKCK (omi) Rey', gameId: 'JEDIKNIGHTCAL, GLREY',
+    others: "Cassian, K2SO, Rey, {+1, attacker makes it quicker but really anything}",
+    notes: "(No remod, jkck omis required, cassian omi not required)",
+    videos: [{ url: 'https://youtu.be/BokM9NxDhFo' }],
+    difficulty: difficulty.EASY,
+    creator: "anonymous"
+    },
     {
         lead: 'Admiral Raddus', gameId: 'ADMIRALRADDUS, K2SO, CASSIANANDOR',
         others: 'Jyn Erso, +1 Rogue One',

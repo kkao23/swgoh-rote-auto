@@ -315,7 +315,7 @@ export const mixedCombatBottomLeftP5: dataType[] = [
     },
     {
     lead: 'Ahsoka Tano (CAT)',
-    gameId: 'GLAHSOKATANO, COMMANDERAHSOKATANO',
+    gameId: 'GLAHSOKATANO, COMMANDERAHSOKA',
     others: 'Exile Ezra, padawan sabine, gen syndulla, CAT',
     notes: 'Keep CAT alive until force leap',
     videos: [],

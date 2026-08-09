@@ -5,6 +5,7 @@ import { PHASE_RELIC_REQUIREMENTS } from '~/util/rosterUtils';
 import { leads } from '~/data/leads';
 import { GAME_ID_DISPLAY_NAMES, formatGameIdForDisplay, getCharacterIcon, SHIP_GAME_IDS } from '~/data/displayNames';
 import { MISSION_MULTIPLIERS } from '~/data/missionMultipliers';
+import { MISSION_RELIC_OVERRIDES } from '~/data/missionRelicOverrides';
 import { hungarian } from '~/util/solver';
 
 // ── Feature toggles ────────────────────────────────────────────────
@@ -170,9 +171,9 @@ function getCharKeys(team: TeamData): string[] {
 
 // ── Score mapping ────────────────────────────────────────────────────
 
-/** Check that all characters in a team's gameId meet the relic requirement for a phase. Ships are skipped. */
-function meetsRelicReq(team: TeamData, phase: string, relicTierMap: Map<string, number>): boolean {
-  const required = PHASE_RELIC_REQUIREMENTS[phase];
+/** Check that all characters in a team's gameId meet the relic requirement for a phase/mission. Ships are skipped. */
+function meetsRelicReq(team: TeamData, phase: string, missionId: string, relicTierMap: Map<string, number>): boolean {
+  const required = MISSION_RELIC_OVERRIDES[missionId] ?? PHASE_RELIC_REQUIREMENTS[phase];
   if (required === undefined) return true;
   const ids = team.gameId?.split(',').map(s => s.trim().toLowerCase()).filter(Boolean) ?? [];
   if (ids.length === 0) return true;
@@ -409,7 +410,7 @@ export function solveDay(
     for (const team of mission.teams) {
       if (!isTeamEligible(team, excludedLeads, rosterUnitMap)) continue;
       // Relic check: all required characters must meet the phase's relic requirement
-      if (relicTierMap && relicTierMap.size > 0 && !meetsRelicReq(team, mission.phase, relicTierMap)) continue;
+      if (relicTierMap && relicTierMap.size > 0 && !meetsRelicReq(team, mission.phase, mission.id, relicTierMap)) continue;
       const keys = team.gameId
         ? team.gameId.split(',').map(s => s.trim().toLowerCase()).filter(Boolean)
         : [canonicalLeadKey(team)];

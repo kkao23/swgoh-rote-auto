@@ -29,6 +29,8 @@ const missionTeamsMap = computed(() => {
 const manualTeamIdx = ref<Record<string, number>>({});
 // ── Freeform custom team text (clears team assignment) ──────────
 const customTeamText = ref<Record<string, string>>({});
+// ── Checked missions (strikethrough toggle) ─────────────────────
+const checkedMissions = ref<Record<string, boolean>>({});
 
 // ── Sorted solver assignments ────────────────────────────────────
 const sortedAssignments = computed(() => {
@@ -300,6 +302,7 @@ async function copyExport() {
       <table class="w-full text-sm">
         <thead>
           <tr class="text-left text-slate-400 border-b border-slate-700">
+            <th class="pb-2 font-medium w-6 hidden sm:table-cell"></th>
             <th class="pb-2 font-medium">Mission</th>
             <th class="pb-2 font-medium hidden sm:table-cell">Planet</th>
             <th class="pb-2 font-medium">Assigned Team</th>
@@ -320,9 +323,18 @@ async function copyExport() {
                 row.kind === 'assigned'
                   ? 'text-white cursor-pointer hover:bg-slate-800/50'
                   : 'text-slate-500',
+                checkedMissions[row.missionId] ? 'line-through text-slate-600' : '',
               ]"
               @click="row.kind === 'assigned' && (expandedResult = expandedResult === row.missionId ? null : row.missionId)"
             >
+              <td class="py-2 w-6 hidden sm:table-cell" @click.stop>
+                <input
+                  type="checkbox"
+                  class="w-3.5 h-3.5 rounded border-slate-500 bg-slate-800 text-cyan-500 focus:ring-cyan-500"
+                  :checked="checkedMissions[row.missionId] ?? false"
+                  @change="checkedMissions = { ...checkedMissions, [row.missionId]: ($event.target as HTMLInputElement).checked }"
+                />
+              </td>
               <td class="py-2 pr-2">
                 <div class="flex items-center gap-1">
                   <UIcon
@@ -427,7 +439,7 @@ async function copyExport() {
               </td>
             </tr>
             <tr v-if="row.kind === 'assigned' && expandedResult === row.missionId" class="bg-slate-800/50">
-              <td :colspan="7" class="px-4 py-3">
+              <td :colspan="8" class="px-4 py-3">
                 <div class="text-sm space-y-2">
                   <div v-if="getEffectiveTeam(row)?.notes">
                     <strong class="text-slate-300">Notes:</strong>

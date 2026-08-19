@@ -412,5 +412,15 @@ export const genericLSP1: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         creator: 'anonymous'
-}
+    },
+    {
+        lead: 'Cassian (Undercover)', gameId: 'CASSIANUNDERCOVER',
+        others: 'Vel, Kleya, Cinta, OG Cassian',
+        notes: 'Auto. Not super smooth',
+        videos: [],
+        icon: '/icons/characters/tex.charui_cassian.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.AUTO],
+    },
 ]

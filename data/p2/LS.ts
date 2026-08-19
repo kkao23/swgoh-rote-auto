@@ -472,7 +472,17 @@ export const rightLSP2: dataType[] = [
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO],
-    }
+    },
+    {
+        lead: 'Cassian (Undercover)', gameId: 'CASSIANUNDERCOVER',
+        others: 'Vel, Kleya, Cinta, Luthen',
+        notes: 'Auto. Lost Vel at the end. Might need good mods',
+        videos: [{ url: 'https://youtu.be/uwQ7W7qVyPQ?si=4LLMMoJLUS2NIUxA' }],
+        icon: '/icons/characters/tex.charui_cassian.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.AUTO],
+    },
 ]
 
 export const zeffoUnlock: dataType[] = [

@@ -318,12 +318,12 @@ const activeDayExcludedLeads = computed(() =>
                         v-if="planetSelectionCount(activeDay, getPlanetInColumn(planets, col)!.id).selected > 0 && playerDataFetched"
                       >
                         <div
-                          v-if="getPlanetAvailability(activeDay, getPlanetInColumn(planets, col)!.id, rosterUnitMap)?.hasIssues"
+                          v-if="getPlanetAvailability(activeDay, getPlanetInColumn(planets, col)!.id, rosterUnitMap, relicTierMap)?.hasIssues"
                           class="flex items-center gap-1 text-amber-400 text-xs"
-                          :title="getPlanetAvailability(activeDay, getPlanetInColumn(planets, col)!.id, rosterUnitMap)!.unavailableMissions.map(m => m.label).join(', ') + ' unavailable'"
+                          :title="getPlanetAvailability(activeDay, getPlanetInColumn(planets, col)!.id, rosterUnitMap, relicTierMap)!.unavailableMissions.map(m => m.label).join(', ') + ' unavailable'"
                         >
                           <UIcon name="i-heroicons-exclamation-triangle" class="w-3.5 h-3.5" />
-                          {{ getPlanetAvailability(activeDay, getPlanetInColumn(planets, col)!.id, rosterUnitMap)!.unavailableMissions.length }}
+                          {{ getPlanetAvailability(activeDay, getPlanetInColumn(planets, col)!.id, rosterUnitMap, relicTierMap)!.unavailableMissions.length }}
                         </div>
                       </div>
 
@@ -366,7 +366,7 @@ const activeDayExcludedLeads = computed(() =>
                     <span class="text-slate-600">({{ mission.teams.length }} teams)</span>
                     <!-- Unavailable indicator -->
                     <UIcon
-                      v-if="playerDataFetched && getPlanetAvailability(activeDay, getPlanetInColumn(planets, col)!.id, rosterUnitMap)?.unavailableMissions.some(m => m.id === mission.id)"
+                      v-if="playerDataFetched && getPlanetAvailability(activeDay, getPlanetInColumn(planets, col)!.id, rosterUnitMap, relicTierMap)?.unavailableMissions.some(m => m.id === mission.id)"
                       name="i-heroicons-x-circle"
                       class="w-3.5 h-3.5 text-red-400 ml-auto"
                       title="No valid teams — will be skipped by solver"
@@ -423,6 +423,7 @@ const activeDayExcludedLeads = computed(() =>
         :day-label="dayLabels[activeDay]"
         :excluded-leads="activeDayExcludedLeads"
         :roster-unit-map="rosterUnitMap"
+        :relic-tier-map="relicTierMap"
       />
 
       <!-- Clear All -->

@@ -369,7 +369,7 @@ export const jediLSP4: dataType[] = [
 
 export const phoenixLSP4: dataType[] = [
     {
-        lead: 'Hera Syndulla', gameId: 'HERASYNDULLAS3, CAPTAINREX, CHOPPER',
+        lead: 'Hera Syndulla', gameId: 'HERASYNDULLAS3, CAPTAINREX, CHOPPERS3',
         leadFull: 'Phoenix',
         others: 'Have seen different combos. Chopper and Rex most likely mandatory',
         notes: 'Possibly autoable? not sure if that\'s consistent',

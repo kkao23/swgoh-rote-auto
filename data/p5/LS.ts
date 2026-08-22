@@ -67,7 +67,7 @@ export const lsTopLeftP5: dataType[] = [
         omi: true
     },
     {
-    lead: 'Padme Amidala',
+    lead: 'Padme Amidala', gameId: 'PADMEAMIDALA',
     icon: '/icons/characters/tex.charui_padme_geonosis.png',
     others: 'General Kenobi, general Skywalker, ahsoka (snips), Commander Ahsoka Tano',
     notes: 'This is the Kafrene easiest vs Mob Enforce lead. I\'ve been able to consistently be successful with this team even without having platoons',

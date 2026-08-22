@@ -172,7 +172,12 @@ function getCharKeys(team: TeamData): string[] {
 // ── Score mapping ────────────────────────────────────────────────────
 
 /** Check that all characters in a team's gameId meet the relic requirement for a phase/mission. Ships are skipped. */
-function meetsRelicReq(team: TeamData, phase: string, missionId: string, relicTierMap: Map<string, number>): boolean {
+export function teamMeetsMissionRelicReq(
+  team: TeamData,
+  phase: string,
+  missionId: string,
+  relicTierMap: Map<string, number>,
+): boolean {
   const required = MISSION_RELIC_OVERRIDES[missionId] ?? PHASE_RELIC_REQUIREMENTS[phase];
   if (required === undefined) return true;
   const ids = team.gameId?.split(',').map(s => s.trim().toLowerCase()).filter(Boolean) ?? [];
@@ -293,7 +298,12 @@ function formatPositionLabel(key: string): string {
 
 // ── Team eligibility ─────────────────────────────────────────────────
 
-export function isTeamEligible(
+/**
+ * Base eligibility: excluded-character check + 7★ roster ownership check.
+ * Does NOT apply the community-team toggle, so fallback logic can opt
+ * community teams back in when no non-community team is usable.
+ */
+export function isTeamEligibleBase(
   team: TeamData,
   excludedLeads: Set<string>,
   rosterUnitMap?: Set<string> | null,
@@ -308,6 +318,16 @@ export function isTeamEligible(
     if (!ids.every(id => rosterUnitMap.has(id))) return false;
   }
 
+  return true;
+}
+
+export function isTeamEligible(
+  team: TeamData,
+  excludedLeads: Set<string>,
+  rosterUnitMap?: Set<string> | null,
+): boolean {
+  if (!isTeamEligibleBase(team, excludedLeads, rosterUnitMap)) return false;
+
   // Exclude community-submitted teams when toggle is on
   if (EXCLUDE_COMMUNITY_TEAMS && team.creator) return false;
 
@@ -320,15 +340,13 @@ export function checkPlanetAvailability(
   planet: FlatPlanet,
   excludedLeads: Set<string>,
   rosterUnitMap?: Set<string> | null,
+  relicTierMap?: Map<string, number> | null,
 ): PlanetAvailability {
   const available: FlatMission[] = [];
   const unavailable: FlatMission[] = [];
 
   for (const mission of planet.missions) {
-    const hasValidTeam = mission.teams.some(t =>
-      isTeamEligible(t, excludedLeads, rosterUnitMap),
-    );
-    if (hasValidTeam) {
+    if (missionHasAvailableTeam(mission, excludedLeads, rosterUnitMap, relicTierMap)) {
       available.push(mission);
     } else {
       unavailable.push(mission);
@@ -341,6 +359,55 @@ export function checkPlanetAvailability(
     totalCount: planet.missions.length,
     hasIssues: unavailable.length > 0,
   };
+}
+
+/**
+ * A mission counts as available if at least one non-community team is eligible.
+ * When no non-community team can be used and a roster is loaded, community teams
+ * act as a fallback — but only if they meet the phase/mission relic requirement.
+ */
+function missionHasAvailableTeam(
+  mission: FlatMission,
+  excludedLeads: Set<string>,
+  rosterUnitMap?: Set<string> | null,
+  relicTierMap?: Map<string, number> | null,
+): boolean {
+  if (mission.teams.some(t => isTeamEligible(t, excludedLeads, rosterUnitMap))) return true;
+
+  if (!relicTierMap || relicTierMap.size === 0) return false;
+
+  return mission.teams.some(t =>
+    t.creator &&
+    isTeamEligibleBase(t, excludedLeads, rosterUnitMap) &&
+    teamMeetsMissionRelicReq(t, mission.phase, mission.id, relicTierMap),
+  );
+}
+
+/**
+ * Candidate teams for a mission, preferring non-community teams. Community teams
+ * are only considered when no non-community candidate exists and relic data is loaded.
+ */
+function missionCandidateTeams(
+  mission: FlatMission,
+  excludedLeads: Set<string>,
+  rosterUnitMap?: Set<string> | null,
+  relicTierMap?: Map<string, number> | null,
+): TeamData[] {
+  const hasRelicMap = !!relicTierMap && relicTierMap.size > 0;
+
+  const verified = mission.teams.filter(t =>
+    !t.creator &&
+    isTeamEligibleBase(t, excludedLeads, rosterUnitMap) &&
+    (!hasRelicMap || teamMeetsMissionRelicReq(t, mission.phase, mission.id, relicTierMap!)),
+  );
+
+  if (verified.length > 0 || !hasRelicMap) return verified;
+
+  return mission.teams.filter(t =>
+    t.creator &&
+    isTeamEligibleBase(t, excludedLeads, rosterUnitMap) &&
+    teamMeetsMissionRelicReq(t, mission.phase, mission.id, relicTierMap!),
+  );
 }
 
 // ── Solver ───────────────────────────────────────────────────────────
@@ -384,8 +451,7 @@ export function solveDay(
     const m = missionMap.get(id);
     if (!m) continue;
 
-    const hasValid = m.teams.some(t => isTeamEligible(t, excludedLeads, rosterUnitMap));
-    if (hasValid) {
+    if (missionHasAvailableTeam(m, excludedLeads, rosterUnitMap, relicTierMap)) {
       available.push(m);
     } else {
       unavailable.push(m);
@@ -407,10 +473,8 @@ export function solveDay(
   }[] = [];
 
   available.forEach((mission, mi) => {
-    for (const team of mission.teams) {
-      if (!isTeamEligible(team, excludedLeads, rosterUnitMap)) continue;
-      // Relic check: all required characters must meet the phase's relic requirement
-      if (relicTierMap && relicTierMap.size > 0 && !meetsRelicReq(team, mission.phase, mission.id, relicTierMap)) continue;
+    const candidates = missionCandidateTeams(mission, excludedLeads, rosterUnitMap, relicTierMap);
+    for (const team of candidates) {
       const keys = team.gameId
         ? team.gameId.split(',').map(s => s.trim().toLowerCase()).filter(Boolean)
         : [canonicalLeadKey(team)];

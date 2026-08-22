@@ -133,10 +133,15 @@ export function usePlanner() {
     return new Set(dayStates.value[dayIndex]?.excludedLeads ?? []);
   }
 
-  function getPlanetAvailability(dayIndex: number, planetId: string, rosterUnitMap?: Set<string> | null) {
+  function getPlanetAvailability(
+    dayIndex: number,
+    planetId: string,
+    rosterUnitMap?: Set<string> | null,
+    relicTierMap?: Map<string, number> | null,
+  ) {
     const planet = planetMap.value.get(planetId);
     if (!planet) return null;
-    return checkPlanetAvailability(planet, getDayExcludedSet(dayIndex), rosterUnitMap);
+    return checkPlanetAvailability(planet, getDayExcludedSet(dayIndex), rosterUnitMap, relicTierMap);
   }
 
   function solve(dayIndex: number, rosterUnitMap?: Set<string> | null, relicTierMap?: Map<string, number> | null) {

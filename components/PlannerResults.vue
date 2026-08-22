@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useMediaQuery } from '@vueuse/core';
-import { PHASE_ORDER, type SolveResult, isTeamEligible, getFlatMissions, teamScore } from '~/util/plannerHelpers';
+import { PHASE_ORDER, type SolveResult, isTeamEligible, isTeamEligibleBase, teamMeetsMissionRelicReq, getFlatMissions, teamScore } from '~/util/plannerHelpers';
 import { interactionBadges } from '~/util/missionHelpers';
 import { buildRedditTable, copyToClipboard } from '~/util/plannerExport';
 import type { data as TeamData } from '~/models/data';
@@ -12,6 +12,7 @@ const props = defineProps<{
   dayLabel: string;
   excludedLeads: Set<string>;
   rosterUnitMap: Set<string> | null;
+  relicTierMap?: Map<string, number> | null;
 }>();
 
 const expandedResult = ref<string | null>(null);
@@ -78,6 +79,13 @@ interface UnifiedRow {
   solverIcon: string | undefined;
   solverNotes: string;
   solverVideos: { url: string; creator?: string }[];
+}
+
+// ── Community fallback eligibility for the dropdown ──────────────
+function isCommunityTeamSelectable(team: TeamData, row: UnifiedRow): boolean {
+  if (!isTeamEligibleBase(team, props.excludedLeads, props.rosterUnitMap)) return false;
+  if (!props.relicTierMap || props.relicTierMap.size === 0) return true;
+  return teamMeetsMissionRelicReq(team, row.phase, row.missionId, props.relicTierMap);
 }
 
 const unifiedRows = computed<UnifiedRow[]>(() => {
@@ -393,6 +401,7 @@ async function copyExport() {
                       v-show="t.creator"
                       :key="'c' + ti"
                       :value="ti"
+                      :disabled="!isCommunityTeamSelectable(t, row)"
                     >
                       {{ t.leadFull || t.lead }}
                     </option>

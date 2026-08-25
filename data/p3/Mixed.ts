@@ -39,18 +39,17 @@ export const revaP3: dataType[] = [
         interactionType: [interactionType.AUTO],
         omi: true
     },
-
-{
-    lead: 'GI (Inq Bariss)', gameId: 'GRANDINQUISITOR, INQUISITORBARRISS',
-    others: 'Inquisitor Bariss, 3rd Sister (Reva), 7th Sister, 5th Brother',
-    notes: 'Full Auto - target scavenger when you can',
-    videos: [{ url: 'https://youtu.be/ta2eAsy0xJw' }],
-    icon: '/icons/characters/tex.charui_grandinquisitor.png',
-    difficulty: difficulty.EASY,
-    successRate: successRate.CONSISTENT,
-    interactionType: [interactionType.AUTO],
-    creator: 'ALKABOURAS'
-},
+    {
+        lead: 'GI (Inq Bariss)', gameId: 'GRANDINQUISITOR, INQUISITORBARRISS',
+        others: 'Inquisitor Bariss, 3rd Sister (Reva), 7th Sister, 5th Brother',
+        notes: 'Full Auto - target scavenger when you can',
+        videos: [{ url: 'https://youtu.be/ta2eAsy0xJw' }],
+        icon: '/icons/characters/tex.charui_grandinquisitor.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'ALKABOURAS'
+    },
 ]
 
 export const jabbaP3: dataType[] = [
@@ -473,14 +472,14 @@ export const mixedTopLeftP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-    lead: 'Leia Organa',
-    gameId: 'GLLEIA',
-    others: 'R2-D2, Captain Drogan, +2 Rebels',
-    notes: 'Full Auto',
-    videos: [],
-    difficulty: difficulty.EASY,
-    successRate: successRate.CONSISTENT,
-    interactionType: [interactionType.AUTO]
+        lead: 'Leia Organa',
+        gameId: 'GLLEIA',
+        others: 'R2-D2, Captain Drogan, +2 Rebels',
+        notes: 'Full Auto',
+        videos: [],
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
     },
     {
         lead: 'BK Mandalore', gameId: 'MANDALORBOKATAN',
@@ -493,13 +492,22 @@ export const mixedTopLeftP3: dataType[] = [
         creator: 'Wesley',
     },
     {
-    lead: 'JMK',
-    leadFull: 'Jedi Master Kenobi',
-    gameId: 'JEDIMASTERKENOBI',
-    others: 'Snips, GK, Padme, GMY',
-    notes: 'Full Auto',
-    videos: [],
-    difficulty: difficulty.EASY,
+        lead: 'JMK',
+        leadFull: 'Jedi Master Kenobi',
+        gameId: 'JEDIMASTERKENOBI',
+        others: 'Snips, GK, Padme, GMY',
+        notes: 'Full Auto',
+        videos: [],
+        difficulty: difficulty.EASY,
+    },
+    {
+        lead: "Bossk",
+        others: "The Mandalorian, Greef Karga, Jango Fett, any other BH",
+        notes: "Use mando Special (disintegrate) for the bosses ",
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: "BOSSK",
+        creator: "AdoMatOx"
     }
 ]
 

@@ -364,6 +364,17 @@ export const jediLSP4: dataType[] = [
     difficulty: difficulty.EASY,
     gameId: "JEDIMASTERKENOBI, JEDIKNIGHTLUKE",
     creator: "anonymous"
+    },
+    {
+        lead: "General Kenobi",
+        gameId: "GENERALKENOBI, PADAWANOBIWAN, MASTERQUIGON",
+        others: "GMY, POW, MQG, Snips",
+        notes: "Auto, may be inconsistent, need high relics",
+        videos: [],
+        difficulty: difficulty.EASY,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.AUTO],
+        creator: "Kino Apparition"
     }
 ]
 

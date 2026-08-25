@@ -3,7 +3,7 @@ import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const hondoMixedP2: dataType[] = [
     {
-        lead: 'Baylan', gameId: 'BAYLANSKOLL',
+        lead: 'Baylan', gameId: 'HONDO, BAYLANSKOLL',
         others: 'Hondo, Shin, Marrok (omicron), L3',
         notes: 'Need to pause and target Tarkin wave 2',
         videos: [{ url: 'https://youtu.be/U09oOAmFQRQ' }],
@@ -15,7 +15,7 @@ export const hondoMixedP2: dataType[] = [
         omi: true
     },
     {
-        lead: 'Boss Nass', gameId: 'BOSSNASS',
+        lead: 'Boss Nass', gameId: 'HONDO, BOSSNASS',
         others: 'Tarpals (omi), Phalanx, Jar Jar',
         notes: 'post tarkin buff, auto, target range trooper first in both waves, leave Tarkin for last. I had R8 gungans',
         videos: [{ url: 'https://youtu.be/wnXeT0sUQdA' }],
@@ -26,7 +26,7 @@ export const hondoMixedP2: dataType[] = [
         omi: true,
     },
     {
-        lead: 'Omega', gameId: 'OMEGAS3',
+        lead: 'Omega', gameId: 'HONDO, OMEGAS3',
         leadFull: 'Omega with Bad Batch Mercenaries',
         others: 'Crosshair, Wrecker, Hunter',
         notes: 'easy full auto with Wrecker Omi, leave Batcher out, R7+ Recommended',
@@ -38,7 +38,7 @@ export const hondoMixedP2: dataType[] = [
         omi: true,
     },
     {
-        lead: 'Pirate King Hondo', gameId: 'GLHONDO',
+        lead: 'Pirate King Hondo', gameId: 'HONDO, GLHONDO',
         leadFull: 'Pirate King Hondo Onaka',
         others: 'Hondo, Brutus, Vane, Silvo',
         notes: 'easy full auto, R7+ Recommended',
@@ -49,7 +49,7 @@ export const hondoMixedP2: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'Reva', gameId: 'THIRDSISTER',
+        lead: 'Reva', gameId: 'HONDO, THIRDSISTER',
         others: 'Marrok (omi), GI, 7S',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/hrLU_z9clf8' }],
@@ -60,7 +60,7 @@ export const hondoMixedP2: dataType[] = [
         omi: true,
     },
     {
-        lead: 'Maz Kanata', gameId: 'MAZKANATA',
+        lead: 'Maz Kanata', gameId: 'HONDO, MAZKANATA',
         others: 'Ithano, Quiggold, Kix, Hondo',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/vyb1K4RqGwc' }],
@@ -70,7 +70,7 @@ export const hondoMixedP2: dataType[] = [
         interactionType: [interactionType.TARGET_START]
     },
     {
-        lead: 'Lord Vader', gameId: 'LORDVADER',
+        lead: 'Lord Vader', gameId: 'HONDO, LORDVADER',
         others: 'Appo (omicron), CX, Scorch',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/MK9erlIFC3c' }],
@@ -82,7 +82,7 @@ export const hondoMixedP2: dataType[] = [
     },
 
     {
-        lead: 'Jedi Master Kenobi', gameId: 'JEDIMASTERKENOBI',
+        lead: 'Jedi Master Kenobi', gameId: 'HONDO, JEDIMASTERKENOBI',
         others: 'CAT, Padme, General Kenobi, Hondo',
         notes: 'Auto. Suggested by Pym. Maybe save instakill for tarkin wave 2?',
         videos: [],
@@ -92,7 +92,7 @@ export const hondoMixedP2: dataType[] = [
         interactionType: [interactionType.PAUSE_WAVE2],
     },
     {
-        lead: 'SEE', gameId: 'SITHPALPATINE',
+        lead: 'SEE', gameId: 'HONDO, SITHPALPATINE',
         others: 'Wat, malak, hondo, sith maurauder',
         notes: '1/2 on auto. Suggested by Lune',
         videos: [],
@@ -103,12 +103,20 @@ export const hondoMixedP2: dataType[] = [
     },
     {
         lead: 'SEE',
-        gameId: 'SITHPALPATINE',
+        gameId: 'HONDO, SITHPALPATINE',
         others: 'Malak, Malgus, Bane, Hondo',
         notes: '2/2 on manual. Enter 2nd wave with SEE in ult, Malgus 3rd ability ready, Hondo 2nd ready. With SEE link Tarkin and anybody, if turn order is not perfect for you you will be able to increase Tarkin cooldowns with Malgus\'s 3rd, Bane\'s 3rd or captivate him with Hondo\'s 2nd. Once you kill Tarkin with SEE\'s 2nd it\'s easy to finish',
         videos: [],
         difficulty: difficulty.EASY,
         creator: 'NicolozZ',
+    },
+    {
+        lead: "Emperor Palpatine",
+        others: "SEE, Malak, Wat, Hondo",
+        notes: "Tank tech to Malak\nHealth tech to EP\nSpeed tech to SEE\nAuto but watch targeting on occasion.",
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: "HONDO, EMPERORPALPATINE, SITHPALPATINE"
     }
 ]
 
@@ -395,23 +403,32 @@ export const mixedP2: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-    lead: 'Satele Shan',
-    gameId: 'SATELESHAN',
-    others: 'Jedi Knight Revan, Bastila Shan, Jolee Bindo, Juhani',
-    notes: 'Special 1 on Shatele\'s first turn, then full auto',
-    videos: [],
-    difficulty: difficulty.EASY,
-    creator: 'Andriu',
+        lead: 'Satele Shan',
+        gameId: 'SATELESHAN',
+        others: 'Jedi Knight Revan, Bastila Shan, Jolee Bindo, Juhani',
+        notes: 'Special 1 on Shatele\'s first turn, then full auto',
+        videos: [],
+        difficulty: difficulty.EASY,
+        creator: 'Andriu',
     },
     {
-    lead: 'Admiral Raddus',
-    gameId: 'ADMIRALRADDUS',
-    others: 'Cassian Andor (omicron), Jyn Erso, K2-SO, any RO',
-    notes: 'omicron',
-    videos: [],
-    difficulty: difficulty.EASY,
-    creator: 'Anonymous',
-    omi: true,
+        lead: 'Admiral Raddus',
+        gameId: 'ADMIRALRADDUS',
+        others: 'Cassian Andor (omicron), Jyn Erso, K2-SO, any RO',
+        notes: 'omicron',
+        videos: [],
+        difficulty: difficulty.EASY,
+        creator: 'Anonymous',
+        omi: true,
+    },
+    {
+        lead: "Bossk ",
+        others: "The Mandalorian, Greef K, Jango , any BH",
+        notes: "Contract On, Mando desintregrator to Pirate on 2nd Wave , if all above R7 then is auto.",
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: "BOSSK",
+        creator: "AdoMatOx"
     }
 ]
 

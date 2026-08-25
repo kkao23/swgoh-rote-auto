@@ -258,4 +258,13 @@ export const dsSortie: dataType[] = [
         interactionType: [interactionType.AUTO],
         omi: true,
     },
+    {
+        lead: "PKHO (Quiggold)",
+        others: "Hondo, Quiggold (i have omi, but don't think it matters as it's mostly for non-GL lead) , Vane, Brutus",
+        notes: "Middle ability w/ PKHO on 50R-T (inc cooldwns); Captive on BT-1; target 50R-T; AUTO;\nP2 target 50R-T; AUTO\n**my SM-33 and Silvo aren't R8, so maybe this helps those in similar position**",
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: "GLHONDO, QUIGGOLD",
+        omi: true
+    }
 ]

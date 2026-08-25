@@ -313,6 +313,15 @@ export const leftLSP2: dataType[] = [
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
+    },
+    {
+        lead: "JKL",
+        others: "JKL, JKCK, JKA, GMY",
+        notes: "JKA gets bonus turn, triggers Leadership special. Loop with JKL's stuns. ",
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: "JEDIKNIGHTLUKE, JEDIKNIGHTCAL, ANAKINKNIGHT",
+        creator: "anonymous"
     }
 ]
 
@@ -484,15 +493,15 @@ export const rightLSP2: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-    lead: "JMLS",
-    others: "JKLS, Hyoda, JKCK, GAS",
-    notes: "Auto",
-    videos: [],
-    difficulty: difficulty.EASY,
-    gameId: "GRANDMASTERLUKE, JEDIKNIGHTCAL, JEDIKNIGHTLUKE, GENERALSKYWALKER",
-    omi: false,
-    creator: "anonymous"
-    }
+        lead: "JMLS",
+        others: "JKLS, Hyoda, JKCK, GAS",
+        notes: "Auto",
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: "GRANDMASTERLUKE, JEDIKNIGHTCAL, JEDIKNIGHTLUKE, GENERALSKYWALKER",
+        omi: false,
+        creator: "anonymous"
+    },
 ]
 
 export const zeffoUnlock: dataType[] = [

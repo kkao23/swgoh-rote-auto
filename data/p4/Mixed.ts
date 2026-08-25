@@ -451,7 +451,7 @@ export const mixedFleetP4: dataType[] = [
         lead: 'Executor', gameId: 'CAPITALEXECUTOR',
         others: 'Hound\'s Tooth, Razor Crest, Ghost, Xanadu Blood, Punishing One, Slave I, IG-2000',
         notes: '- Use only basics\n- 1st Executor turn use Heal on HT to get taunt (every time that you have that ability available, use it on HT to keep the taunt)\n- reinforcements call order: XB, Slave I, P1, IG-2000. Suggested by Artha Dragon',
-        videos: [],
+        videos: [{url: 'https://www.youtube.com/watch?v=erAjlQcXKsQ'}],
         icon: '/icons/ships/tex.charui_executor.png',
         difficulty: difficulty.NO_AUTO,
         successRate: successRate.USUALLY,

@@ -58,14 +58,32 @@ export const maceKitP1 = [
         omi: true
     },
     {
-    lead: "Mace (GAS)",
-    others: "GAS, ShaakTi, Jolee",
-    notes: "Focus lead, optionally healers.",
-    videos: [],
-    difficulty: difficulty.EASY,
-    gameId: "MACEWINDU, KITFISTO, GENERALSKYWALKER, SHAAKTI",
-    omi: false,
-    creator: "Nocebo"
+        lead: "Mace (GAS)",
+        others: "GAS, ShaakTi, Jolee",
+        notes: "Focus lead, optionally healers.",
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: "MACEWINDU, KITFISTO, GENERALSKYWALKER, SHAAKTI",
+        omi: false,
+        creator: "Nocebo"
+    },
+    {
+        lead: "Mace (KAM)",
+        others: "Kit Fisto (required), Jedi Knight Anakin, Kelleran Beq, Ki Adi Mundi",
+        notes: "Auto",
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: "MACEWINDU, KITFISTO, KIADIMUNDI, KELLERANBEQ",
+        creator: "Tony"
+    },
+    {
+        lead: "Mace (JKCK Manual)",
+        others: "JKCK,Kit,GAS,Shaak",
+        notes: "Auto wave 1, target JKA and use event special to keep Sidious stunned.",
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: "MACEWINDU, KITFISTO, JEDIKNIGHTCAL",
+        creator: "anonymous"
     }
 ]
 
@@ -433,4 +451,14 @@ export const genericLSP1: dataType[] = [
         successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO],
     },
+    {
+        lead: "JKCK",
+        others: "JML, Shaak Ti, GMY, Leftover Jedi",
+        notes: "for leftover Jedi: The higher the relic-delta the better.\n",
+        videos: [],
+        difficulty: difficulty.EASY,
+        creator: "roehri",
+        gameId: "JEDIKNIGHTCAL, GRANDMASTERYODA, GRANDMASTERLUKE",
+        omi: true
+    }
 ]

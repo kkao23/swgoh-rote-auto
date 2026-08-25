@@ -74,19 +74,27 @@ export const qiraMixedP1: dataType[] = [
         successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO],
         creator: "anonymous"
-    }
-,
-{
-    lead: 'Qira (Hondo)', gameId: 'QIRA, GLHONDO',
-    others: 'PKHO, Brutus, Vane',
-    notes: 'Full auto and simple',
-    videos: [],
-    icon: '/icons/characters/tex.charui_glhondo.png',
-    difficulty: difficulty.EASY,
-    successRate: successRate.CONSISTENT,
-    interactionType: [interactionType.AUTO],
-}
-,
+    },
+    {
+        lead: 'Qira (Hondo)', gameId: 'QIRA, GLHONDO',
+        others: 'PKHO, Brutus, Vane',
+        notes: 'Full auto and simple',
+        videos: [],
+        icon: '/icons/characters/tex.charui_glhondo.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+    },
+    {
+        lead: "Qira (Rey/CAT/L3)", gameId: 'QIRA, L3_37, COMMANDERAHSOKA, GLREY',
+        others: "Rey, L3-37, CAT, Yolo",
+        notes: "can auto, uber reliable.  use lifeblood on L3 to start, spread lifeblood as needed",
+        videos: [],
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: "anonymous"
+    },
 ]
 
 export const mixedP1: dataType[] = [
@@ -348,6 +356,15 @@ export const mixedP1: dataType[] = [
         gameId: "SUPREMELEADERKYLOREN, GENERALHUX, KYLORENUNMASKED",
         omi: false,
         creator: "anonymous"
+    },
+    {
+        lead: "Stranger",
+        others: "Spider Maul, Starkiller, Visas, Bariss",
+        notes: "easy auto",
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: "STRANGER, MAULHATEFUELED, STARKILLER",
+        creator: "anonymous"
     }
 ]
 
@@ -424,6 +441,17 @@ export const drAphraP1: dataType[] = [
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
+    },
+    {
+        lead: 'Aphra (Magna)', gameId: 'DOCTORAPHRA, MAGNAGUARD',
+        others: 'Magnaguard, BT-1, 000, B1',
+        notes: 'auto',
+        videos: [],
+        icon: '/icons/characters/tex.charui_magnaguard.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: "anonymous"
     }
 ]
 

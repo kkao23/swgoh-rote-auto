@@ -69,6 +69,16 @@ export const dsBottomRightP5: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         creator: 'anonymous'
+    },
+    {
+        lead: "PK Hondo (Vane Omi)",
+        others: "oVane, SM, Brutus, ogHondo",
+        notes: "Auto",
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: "GLHONDO, VANE",
+        omi: true,
+        creator: "anonymous"
     }
 ]
 

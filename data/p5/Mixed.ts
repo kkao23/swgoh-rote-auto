@@ -315,7 +315,7 @@ export const mixedCombatBottomLeftP5: dataType[] = [
     },
     {
     lead: 'Ahsoka Tano (CAT)',
-    gameId: 'AHSOKATANO, COMMANDERAHSOKATANO',
+    gameId: 'GLAHSOKATANO, COMMANDERAHSOKA',
     others: 'Exile Ezra, padawan sabine, gen syndulla, CAT',
     notes: 'Keep CAT alive until force leap',
     videos: [],
@@ -373,7 +373,7 @@ export const jabbaP5: dataType[] = [
 
 export const youngHanP5: dataType[] = [
     {
-        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO, YOUNGHAN',
+        lead: 'Ahsoka Tano', gameId: 'YOUNGHAN, GLAHSOKATANO',
         leadFull: 'Ahsoka Tano',
         others: 'Fulcrum, GAS, Young Han, Vandor',
         notes: 'Get exile off fulcrum asap, keep Han and chewie alive with the box. The Ashokas and Gas will take care of the enemies.',
@@ -386,11 +386,22 @@ export const youngHanP5: dataType[] = [
     },
 
     {
-        lead: 'Glat', gameId: 'AHSOKATANO, YOUNGHAN',
+        lead: 'Glat', gameId: 'YOUNGHAN, GLAHSOKATANO',
         others: 'Fulcrum, gas, young Han, vandor.',
         notes: 'Get exile off fulcrum asap, keep Han and chewie alive with the box. The Ashokas and Gas will take care of the enemies.',
         videos: [],
         icon: '/icons/characters/tex.charui_ahsokatanogray.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous'
+    },
+    {
+        lead: 'Placeholder', gameId: 'YOUNGHAN',
+        others: '?',
+        notes: 'Placeholder for young han special mission',
+        videos: [],
+        icon: '/icons/characters/tex.charui_han_young.png',
         difficulty: difficulty.EASY,
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],

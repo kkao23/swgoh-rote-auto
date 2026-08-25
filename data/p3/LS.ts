@@ -320,14 +320,33 @@ export const lsRightP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-    lead: 'JML',
+    lead: 'JML (JKCK)',
     leadFull: 'Jedi Master Luke',
-    gameId: 'GRANDMASTERLUKE',
+    gameId: 'GRANDMASTERLUKE, JEDIKNIGHTLUKE',
     others: 'JKL, Jolee, JKCK, Kyle',
     notes: 'Easy',
     videos: [],
     difficulty: difficulty.EASY,
     creator: 'Nocebo',
+    },
+    {
+    lead: "Finn",
+    others: "zorri, poe, bb8, res trooper ",
+    notes: "oFinn Zorri and Trooper do a lot of damage",
+    videos: [],
+    difficulty: difficulty.EASY,
+    gameId: "FINN",
+    omi: true
+    },
+    {
+    lead: "JML (Kyle, JKL)",
+    others: "GAS, JKL, kyle, Yoda Hermitaño",
+    notes: "Quickly charge JML's ultimate, giving the assists to Yoda Hermitaño. Kyle's Omicron necessary. In the second wave mark Mara.",
+    videos: [],
+    difficulty: difficulty.EASY,
+    gameId: "GRANDMASTERLUKE, KYLEKATARN",
+    creator: "anonymous",
+    omi: true
     }
 ]
 
@@ -392,7 +411,36 @@ export const sawP3: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         creator: 'anonymous'
-}
+    },
+    {
+    lead: "Saw (Vel)",
+    others: "KK(omi), Vel(omi), Chirrut, Baze",
+    notes: "Full Auto",
+    videos: [],
+    difficulty: difficulty.EASY,
+    gameId: "SAWGERRERA, VEL",
+    omi: true,
+    creator: "anonymous"
+    },
+    {
+    lead: "Saw (Cassian)",
+    others: "oVel, Kleya, Luthen, CAUC",
+    notes: "Auto, needs Vel omi",
+    videos: [],
+    difficulty: difficulty.EASY,
+    gameId: "SAWGERRERA, VEL, KLEYA, LUTHENRAEL, CASSIANUNDERCOVER",
+    omi: true,
+    creator: "anonymous"
+    },
+    {
+    lead: "Saw (Jyn)",
+    others: "Rael, Jyn",
+    notes: "+2. Can auto, but might lose a toon. Jyn can revive.",
+    videos: [],
+    difficulty: difficulty.EASY,
+    gameId: "SAWGERRERA, LUTHENRAEL, JYNERSO",
+    creator: "anonymous"
+    }
 ]
 
 export const wookies: dataType[] = [

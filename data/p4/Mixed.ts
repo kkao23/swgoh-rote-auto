@@ -35,7 +35,7 @@ export const mixedQiraP4: dataType[] = [
         interactionType: [interactionType.TARGET_START]
     },
     {
-        lead: 'Ahsoka Tano', gameId: 'AHSOKATANO, QIRA, L3_37',
+        lead: 'Ahsoka Tano', gameId: 'GLAHSOKATANO, QIRA, L3_37',
         others: 'Fulcrum, any 5th',
         notes: 'easy auto',
         videos: [{ url: 'https://youtu.be/Rmd5Ppxxyfs' }],
@@ -381,6 +381,26 @@ export const mixedGenericP4: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
     },
+    {
+    lead: "Cobb Vanth",
+    others: "Cara Dune, CUP, Lobot, Chief Nebit",
+    notes: "I had omi on Cobb",
+    videos: [],
+    difficulty: difficulty.EASY,
+    gameId: "COBBVANTH",
+    creator: "anonymous",
+    omi: true
+    },
+    {
+        lead: "Major Partagaz",
+        others: "ISB",
+        notes: "Auto, oIPD",
+        videos: [],
+        difficulty: difficulty.EASY,
+        creator: "Vecchetti",
+        omi: true,
+        gameId: "MAJORPARTAGAZ",
+    }
 ]
 
 export const jabbaP4: dataType[] = [

@@ -190,6 +190,36 @@ describe('solveDay', () => {
     expect(result.unassigned.length).toBe(1);
     expect(result.infeasible).toBe(false);
   });
+
+  it('falls back to community teams when no non-community team exists and relic passes', () => {
+    const m = allMissions.find(m => m.id === 'phase5:mixed:youngHan')!;
+    expect(m.teams.every(t => t.creator)).toBe(true);
+
+    const roster = new Set<string>(['glahsokatano', 'younghan']);
+    const relicMap = new Map<string, number>([['glahsokatano', 9], ['younghan', 9]]);
+
+    const result = solveDay([m.id], new Set(), allMissions, roster, relicMap);
+    expect(result.unavailableMissions).toHaveLength(0);
+    expect(result.assignments).toHaveLength(1);
+    expect(result.assignments[0].lead.toLowerCase()).toBe('glat');
+  });
+
+  it('keeps community-only mission unavailable when relic requirement is not met', () => {
+    const m = allMissions.find(m => m.id === 'phase5:mixed:youngHan')!;
+    const roster = new Set<string>(['glahsokatano', 'younghan']);
+    // P5 requires R9 — both characters at R8 means every community team fails.
+    const relicMap = new Map<string, number>([['glahsokatano', 8], ['younghan', 8]]);
+
+    const result = solveDay([m.id], new Set(), allMissions, roster, relicMap);
+    expect(result.unavailableMissions).toHaveLength(1);
+    expect(result.unavailableMissions[0].id).toBe(m.id);
+  });
+
+  it('keeps community-only mission unavailable when relic data is not loaded', () => {
+    const m = allMissions.find(m => m.id === 'phase5:mixed:youngHan')!;
+    const result = solveDay([m.id], new Set(), allMissions, null, null);
+    expect(result.unavailableMissions).toHaveLength(1);
+  });
 });
 
 describe('solveDayForPlanets', () => {
@@ -254,5 +284,15 @@ describe('checkPlanetAvailability', () => {
     const roster = new Set<string>(['nobody']);
     const avail = checkPlanetAvailability(p, new Set(), roster);
     expect(avail.unavailableMissions.some(m => m.id === jabbaMission.id)).toBe(true);
+  });
+
+  it('community fallback makes a mission available when relic passes', () => {
+    const p = planets.find(p => p.id === 'phase5:mixed')!;
+    const youngHanMission = p.missions.find(m => m.id === 'phase5:mixed:youngHan')!;
+    const roster = new Set<string>(['glahsokatano', 'younghan']);
+    const relicMap = new Map<string, number>([['glahsokatano', 9], ['younghan', 9]]);
+
+    const avail = checkPlanetAvailability(p, new Set(), roster, relicMap);
+    expect(avail.unavailableMissions.some(m => m.id === youngHanMission.id)).toBe(false);
   });
 });

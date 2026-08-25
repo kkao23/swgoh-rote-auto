@@ -56,6 +56,16 @@ export const maceKitP1 = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         omi: true
+    },
+    {
+    lead: "Mace (GAS)",
+    others: "GAS, ShaakTi, Jolee",
+    notes: "Focus lead, optionally healers.",
+    videos: [],
+    difficulty: difficulty.EASY,
+    gameId: "MACEWINDU, KITFISTO, GENERALSKYWALKER, SHAAKTI",
+    omi: false,
+    creator: "Nocebo"
     }
 ]
 

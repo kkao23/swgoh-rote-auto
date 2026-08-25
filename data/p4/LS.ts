@@ -355,12 +355,21 @@ export const jediLSP4: dataType[] = [
     videos: [],
     difficulty: difficulty.EASY,
     creator: 'Andriu',
+    },
+    {
+    lead: "JMK (JKL)",
+    others: "JKL, GK, Snips, GMY",
+    notes: "Full auto worked like a charm.",
+    videos: [],
+    difficulty: difficulty.EASY,
+    gameId: "JEDIMASTERKENOBI, JEDIKNIGHTLUKE",
+    creator: "anonymous"
     }
 ]
 
 export const phoenixLSP4: dataType[] = [
     {
-        lead: 'Hera Syndulla', gameId: 'HERASYNDULLAS3, CAPTAINREX, CHOPPER',
+        lead: 'Hera Syndulla', gameId: 'HERASYNDULLAS3, CAPTAINREX, CHOPPERS3',
         leadFull: 'Phoenix',
         others: 'Have seen different combos. Chopper and Rex most likely mandatory',
         notes: 'Possibly autoable? not sure if that\'s consistent',

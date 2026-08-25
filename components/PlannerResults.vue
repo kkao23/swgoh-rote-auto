@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { useMediaQuery } from '@vueuse/core';
-import { PHASE_ORDER, type SolveResult, isTeamEligible, getFlatMissions, teamScore } from '~/util/plannerHelpers';
+import { PHASE_ORDER, type SolveResult, isTeamEligible, isTeamEligibleBase, teamMeetsMissionRelicReq, getFlatMissions, teamScore } from '~/util/plannerHelpers';
 import { interactionBadges } from '~/util/missionHelpers';
 import { buildRedditTable, copyToClipboard } from '~/util/plannerExport';
 import type { data as TeamData } from '~/models/data';
@@ -12,6 +12,7 @@ const props = defineProps<{
   dayLabel: string;
   excludedLeads: Set<string>;
   rosterUnitMap: Set<string> | null;
+  relicTierMap?: Map<string, number> | null;
 }>();
 
 const expandedResult = ref<string | null>(null);
@@ -29,6 +30,8 @@ const missionTeamsMap = computed(() => {
 const manualTeamIdx = ref<Record<string, number>>({});
 // ── Freeform custom team text (clears team assignment) ──────────
 const customTeamText = ref<Record<string, string>>({});
+// ── Checked missions (strikethrough toggle) ─────────────────────
+const checkedMissions = ref<Record<string, boolean>>({});
 
 // ── Sorted solver assignments ────────────────────────────────────
 const sortedAssignments = computed(() => {
@@ -76,6 +79,13 @@ interface UnifiedRow {
   solverIcon: string | undefined;
   solverNotes: string;
   solverVideos: { url: string; creator?: string }[];
+}
+
+// ── Community fallback eligibility for the dropdown ──────────────
+function isCommunityTeamSelectable(team: TeamData, row: UnifiedRow): boolean {
+  if (!isTeamEligibleBase(team, props.excludedLeads, props.rosterUnitMap)) return false;
+  if (!props.relicTierMap || props.relicTierMap.size === 0) return true;
+  return teamMeetsMissionRelicReq(team, row.phase, row.missionId, props.relicTierMap);
 }
 
 const unifiedRows = computed<UnifiedRow[]>(() => {
@@ -184,20 +194,11 @@ function onTeamChange(row: UnifiedRow, event: Event) {
     manualTeamIdx.value = nextIdx;
     customTeamText.value = { ...customTeamText.value, [row.missionId]: '' };
   } else {
-    const eligibleIdx = parseInt(val, 10);
-    const eligible = eligibleTeams(row.missionId);
-    const team = eligible[eligibleIdx];
+    const idx = parseInt(val, 10);
     const nextCustom = { ...customTeamText.value };
     delete nextCustom[row.missionId];
     customTeamText.value = nextCustom;
-    // Convert eligible-array index to raw-array index
-    const rawIdx = findTeamIndex(
-      missionTeamsMap.value.get(row.missionId) ?? [],
-      team.gameId,
-      team.lead,
-      team.others,
-    );
-    manualTeamIdx.value = { ...manualTeamIdx.value, [row.missionId]: rawIdx };
+    manualTeamIdx.value = { ...manualTeamIdx.value, [row.missionId]: idx };
   }
 }
 
@@ -309,6 +310,7 @@ async function copyExport() {
       <table class="w-full text-sm">
         <thead>
           <tr class="text-left text-slate-400 border-b border-slate-700">
+            <th class="pb-2 font-medium w-6 hidden sm:table-cell"></th>
             <th class="pb-2 font-medium">Mission</th>
             <th class="pb-2 font-medium hidden sm:table-cell">Planet</th>
             <th class="pb-2 font-medium">Assigned Team</th>
@@ -329,9 +331,18 @@ async function copyExport() {
                 row.kind === 'assigned'
                   ? 'text-white cursor-pointer hover:bg-slate-800/50'
                   : 'text-slate-500',
+                checkedMissions[row.missionId] ? 'line-through text-slate-600' : '',
               ]"
               @click="row.kind === 'assigned' && (expandedResult = expandedResult === row.missionId ? null : row.missionId)"
             >
+              <td class="py-2 w-6 hidden sm:table-cell" @click.stop>
+                <input
+                  type="checkbox"
+                  class="w-3.5 h-3.5 rounded border-slate-500 bg-slate-800 text-cyan-500 focus:ring-cyan-500"
+                  :checked="checkedMissions[row.missionId] ?? false"
+                  @change="checkedMissions = { ...checkedMissions, [row.missionId]: ($event.target as HTMLInputElement).checked }"
+                />
+              </td>
               <td class="py-2 pr-2">
                 <div class="flex items-center gap-1">
                   <UIcon
@@ -366,21 +377,35 @@ async function copyExport() {
                 </div>
                 <!-- Dropdown (with custom option) -->
                 <select
-                  v-else-if="row.kind !== 'unavailable' && eligibleTeams(row.missionId).length > 0"
+                  v-else-if="row.kind !== 'unavailable' && (missionTeamsMap.get(row.missionId)?.length ?? 0) > 0"
                   class="bg-slate-800 border rounded text-sm text-white px-2 py-1 w-full max-w-[220px] focus:outline-none focus:border-cyan-500"
                   :class="conflictMissions.has(row.missionId) ? 'border-red-500 ring-1 ring-red-500/50' : 'border-slate-600'"
-                  :value="getEffectiveTeam(row) ? eligibleTeams(row.missionId).findIndex(t => t.gameId === getEffectiveTeam(row)!.gameId) : ''"
+                  :value="manualTeamIdx[row.missionId] ?? ''"
                   @change="onTeamChange(row, $event)"
                   @click.stop
                 >
-                  <option value="" disabled v-if="!getEffectiveTeam(row)">— Select a team —</option>
-                  <option
-                    v-for="(t, ti) in eligibleTeams(row.missionId)"
-                    :key="ti"
-                    :value="ti"
-                  >
-                    {{ teamOptionLabel(t) }}
-                  </option>
+                  <option value="" disabled v-if="manualTeamIdx[row.missionId] === undefined">— Select a team —</option>
+                  <template v-for="(t, ti) in missionTeamsMap.get(row.missionId) ?? []" :key="ti">
+                    <option
+                      v-if="!t.creator"
+                      :value="ti"
+                      :disabled="!isTeamEligible(t, excludedLeads, rosterUnitMap)"
+                    >
+                      {{ teamOptionLabel(t) }}
+                    </option>
+                  </template>
+                  <option v-if="(missionTeamsMap.get(row.missionId) ?? []).some(t => t.creator)" disabled>──────────</option>
+                  <optgroup v-if="(missionTeamsMap.get(row.missionId) ?? []).some(t => t.creator)" label="Community">
+                    <option
+                      v-for="(t, ti) in missionTeamsMap.get(row.missionId) ?? []"
+                      v-show="t.creator"
+                      :key="'c' + ti"
+                      :value="ti"
+                      :disabled="!isCommunityTeamSelectable(t, row)"
+                    >
+                      {{ t.leadFull || t.lead }}
+                    </option>
+                  </optgroup>
                   <option disabled>──────────────</option>
                   <option value="__custom__">✏️ Custom entry…</option>
                 </select>
@@ -423,7 +448,7 @@ async function copyExport() {
               </td>
             </tr>
             <tr v-if="row.kind === 'assigned' && expandedResult === row.missionId" class="bg-slate-800/50">
-              <td :colspan="7" class="px-4 py-3">
+              <td :colspan="8" class="px-4 py-3">
                 <div class="text-sm space-y-2">
                   <div v-if="getEffectiveTeam(row)?.notes">
                     <strong class="text-slate-300">Notes:</strong>

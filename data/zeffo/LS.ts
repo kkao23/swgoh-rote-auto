@@ -62,7 +62,7 @@ export const zeffoJedi: dataType[] = [
         omi: true
     },
     {
-        lead: 'JKCK (GLAT)', gameId: 'JEDIKNIGHTCAL, AHSOKATANO',
+        lead: 'JKCK (GLAT)', gameId: 'JEDIKNIGHTCAL, GLAHSOKATANO',
         others: 'GLAT, Sabine, Hera, Huyang',
         notes: 'Use ezra if possible, auto',
         videos: [{ url: 'https://youtu.be/V_u2XK-W8mA' }],
@@ -176,7 +176,7 @@ export const zeffoUFU: dataType[] = [
         interactionType: [interactionType.TARGET_START]
     },
     {
-        lead: 'Ahsoka Tano (No CAT)', gameId: 'AHSOKATANO, COMMANDERAHSOKA',
+        lead: 'Ahsoka Tano (No CAT)', gameId: 'GLAHSOKATANO, COMMANDERAHSOKA',
         others: 'Cere, Padawan Sabine, Fulcrum +1',
         notes: 'auto, only 1/2. Need CAT for 2/2',
         videos: [{ url: 'https://youtu.be/H4xzXPPNV8Y' }],

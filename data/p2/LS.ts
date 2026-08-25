@@ -483,6 +483,16 @@ export const rightLSP2: dataType[] = [
         successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO],
     },
+    {
+    lead: "JMLS",
+    others: "JKLS, Hyoda, JKCK, GAS",
+    notes: "Auto",
+    videos: [],
+    difficulty: difficulty.EASY,
+    gameId: "GRANDMASTERLUKE, JEDIKNIGHTCAL, JEDIKNIGHTLUKE, GENERALSKYWALKER",
+    omi: false,
+    creator: "anonymous"
+    }
 ]
 
 export const zeffoUnlock: dataType[] = [

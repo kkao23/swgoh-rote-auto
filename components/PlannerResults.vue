@@ -1,19 +1,27 @@
 <script setup lang="ts">
 import { useMediaQuery } from '@vueuse/core';
-import { PHASE_ORDER, type SolveResult, isTeamEligible, isTeamEligibleBase, teamMeetsMissionRelicReq, getFlatMissions, teamScore } from '~/util/plannerHelpers';
+import { PHASE_ORDER, type SolveResult, type FlatPlanet, isTeamEligible, isTeamEligibleBase, teamMeetsMissionRelicReq, getFlatMissions, teamScore } from '~/util/plannerHelpers';
 import { interactionBadges } from '~/util/missionHelpers';
-import { buildRedditTable, copyToClipboard } from '~/util/plannerExport';
+import { buildDayPlanText, buildRedditTable, buildSpreadsheetText, copyToClipboard, parseDayPlanText, readFromClipboard } from '~/util/plannerExport';
 import type { data as TeamData } from '~/models/data';
 
 const isSmallScreen = useMediaQuery('(max-width: 640px)');
 
 const props = defineProps<{
-  result: SolveResult;
+  result: SolveResult | null;
   dayLabel: string;
   excludedLeads: Set<string>;
   rosterUnitMap: Set<string> | null;
   relicTierMap?: Map<string, number> | null;
+  selectedMissions: string[];
+  planets: FlatPlanet[];
 }>();
+
+const emit = defineEmits<{
+  'apply-plan': [payload: { dayIndex: number | null; selectedMissionIds: string[] }];
+}>();
+
+const toast = useToast();
 
 const expandedResult = ref<string | null>(null);
 
@@ -174,7 +182,7 @@ watch(() => props.result, (r) => {
 }, { immediate: true });
 
 // ── Effective team for a row (manual override or solver seed) ────
-function getEffectiveTeam(row: UnifiedRow): TeamData | null {
+function getEffectiveTeam(row: { missionId: string }): TeamData | null {
   const teams = missionTeamsMap.value.get(row.missionId);
   if (!teams) return null;
 
@@ -257,40 +265,109 @@ function teamOptionLabel(t: TeamData): string {
   return `${name} (${pct})`;
 }
 
-// ── Export to Reddit-friendly markdown ─────────────────────────
-async function copyExport() {
+// ── Export results to Markdown / spreadsheet ────────────────────
+async function exportMd() {
   const rows = unifiedRows.value;
   const text = buildRedditTable(rows, getEffectiveTeam);
   await copyToClipboard(text);
+  toast.add({ title: 'Markdown table copied to clipboard.' });
+}
+
+async function exportXls() {
+  const rows = unifiedRows.value;
+  const text = buildSpreadsheetText(rows, getEffectiveTeam);
+  await copyToClipboard(text);
+  toast.add({ title: 'Spreadsheet data copied — paste into Excel or Google Sheets.' });
+}
+
+// ── Share / import the raw day plan (mission selection) ────────
+async function copyDayPlan() {
+  if (props.selectedMissions.length === 0) {
+    toast.add({ title: 'Nothing to copy — select missions for this day first.', color: 'amber' });
+    return;
+  }
+  const text = buildDayPlanText(props.dayLabel, props.planets, new Set(props.selectedMissions));
+  await copyToClipboard(text);
+  toast.add({ title: 'Day plan copied to clipboard.' });
+}
+
+async function importDayPlan() {
+  const text = await readFromClipboard();
+  if (!text.trim()) {
+    toast.add({ title: 'Clipboard is empty. Copy a day plan first.', color: 'amber' });
+    return;
+  }
+
+  const parsed = parseDayPlanText(text, props.planets);
+  if (parsed.selectedMissionIds.length === 0) {
+    toast.add({
+      title: parsed.errors.length ? parsed.errors[0] : 'No missions found in the clipboard text.',
+      color: 'red',
+    });
+    return;
+  }
+
+  emit('apply-plan', {
+    dayIndex: parsed.dayIndex,
+    selectedMissionIds: parsed.selectedMissionIds,
+  });
+
+  const target = parsed.dayIndex !== null ? `Day ${parsed.dayIndex + 1}` : props.dayLabel;
+  toast.add({ title: `Imported ${parsed.selectedMissionIds.length} mission(s) into ${target}.` });
 }
 </script>
 
 <template>
   <div class="bg-slate-900/70 border border-slate-700 rounded-xl p-5">
-    <div class="flex items-center justify-between mb-4">
+    <!-- Share / import this day's plan -->
+    <div class="flex flex-wrap items-center gap-2 mb-4">
+      <span class="text-xs text-slate-400 mr-1">Share day plan:</span>
+      <button
+        type="button"
+        class="px-3 py-1 text-xs font-medium rounded bg-slate-700 text-slate-300 hover:bg-slate-600 hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+        :disabled="selectedMissions.length === 0"
+        @click.stop="copyDayPlan"
+      >
+        Copy Plan
+      </button>
+      <button
+        type="button"
+        class="px-3 py-1 text-xs font-medium rounded bg-slate-700 text-slate-300 hover:bg-slate-600 hover:text-white transition-colors"
+        @click.stop="importDayPlan"
+      >
+        Import Plan
+      </button>
+      <span class="text-xs text-slate-500 hidden sm:inline">Copy shares the mission list; Import reads a plan back from your clipboard.</span>
+    </div>
+
+    <div class="flex flex-wrap items-center justify-between gap-2 mb-4">
       <h2 class="text-lg font-semibold text-white">
         {{ dayLabel }} Results
       </h2>
-      <div class="flex items-center gap-3">
-        <div class="text-sm text-slate-400">
-          Score:
-          <span class="text-white font-semibold">{{ result.totalScore }}</span>
-          <span class="text-slate-500">
-            / {{ result.maxPossibleScore }}
-          </span>
-        </div>
+      <div v-if="result" class="flex items-center gap-2">
         <button
           type="button"
           class="px-3 py-1 text-xs font-medium rounded bg-slate-700 text-slate-300 hover:bg-slate-600 hover:text-white transition-colors"
-          @click.stop="copyExport"
+          @click.stop="exportMd"
         >
-          Export
+          Export MD
+        </button>
+        <button
+          type="button"
+          class="px-3 py-1 text-xs font-medium rounded bg-slate-700 text-slate-300 hover:bg-slate-600 hover:text-white transition-colors"
+          @click.stop="exportXls"
+        >
+          Export XLS
         </button>
       </div>
     </div>
 
+    <p v-if="!result" class="text-sm text-slate-500 mb-4">
+      No results yet. Select missions above and hit Solve, or import a plan from your clipboard.
+    </p>
+
     <div
-      v-if="result.infeasible"
+      v-if="result && result.infeasible"
       class="rounded-lg bg-red-900/30 border border-red-700 p-3 text-sm text-red-300 mb-4"
     >
       Not enough unique teams available. You need at least one distinct team per mission.
@@ -298,7 +375,7 @@ async function copyExport() {
     </div>
 
     <div
-      v-if="result.unavailableMissions.length > 0"
+      v-if="result && result.unavailableMissions.length > 0"
       class="rounded-lg bg-amber-900/30 border border-amber-700 p-3 text-sm text-amber-300 mb-4"
     >
       <strong>{{ result.unavailableMissions.length }} mission(s)</strong>
@@ -306,7 +383,7 @@ async function copyExport() {
       {{ result.unavailableMissions.map(m => m.label).join(', ') }}
     </div>
 
-    <div v-if="unifiedRows.length > 0" class="overflow-x-auto">
+    <div v-if="result && unifiedRows.length > 0" class="overflow-x-auto">
       <table class="w-full text-sm">
         <thead>
           <tr class="text-left text-slate-400 border-b border-slate-700">
@@ -483,7 +560,7 @@ async function copyExport() {
     </div>
 
     <div
-      v-if="result.unassigned.length > 0"
+      v-if="result && result.unassigned.length > 0"
       class="mt-4 text-sm text-amber-400"
     >
       <span class="font-medium">Unassigned missions:</span>

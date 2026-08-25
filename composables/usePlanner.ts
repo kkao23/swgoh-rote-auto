@@ -178,6 +178,14 @@ export function usePlanner() {
     dayStates.value = [...dayStates.value];
   }
 
+  function setDayPlan(dayIndex: number, missionIds: string[]) {
+    const state = dayStates.value[dayIndex];
+    if (!state) return;
+    state.selectedMissions = [...new Set(missionIds)];
+    state.result = null;
+    dayStates.value = [...dayStates.value];
+  }
+
   function clearAll() {
     for (let i = 0; i < DAYS; i++) {
       dayStates.value[i] = emptyDay();
@@ -203,5 +211,6 @@ export function usePlanner() {
     solveAll,
     clearDay,
     clearAll,
+    setDayPlan,
   };
 }

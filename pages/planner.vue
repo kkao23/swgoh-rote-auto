@@ -51,6 +51,7 @@ const {
   solveAll,
   clearDay,
   clearAll,
+  setDayPlan,
 } = usePlanner();
 
 const activeDay = ref(0);
@@ -78,18 +79,25 @@ const planetsByPhase = computed(() => {
 });
 
 // ── Actions ────────────────────────────────────────────────────
-const resultsEl = ref<HTMLElement | null>(null);
+const resultsEl = ref<{ $el?: HTMLElement | null } | null>(null);
 
 async function solveCurrentDay() {
   solve(activeDay.value, rosterUnitMap.value, relicTierMap.value);
   await nextTick();
-  resultsEl.value?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  resultsEl.value?.$el?.scrollIntoView?.({ behavior: 'smooth', block: 'start' });
 }
 
 async function solveAllDays() {
   solveAll(rosterUnitMap.value, relicTierMap.value);
   await nextTick();
-  resultsEl.value?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  resultsEl.value?.$el?.scrollIntoView?.({ behavior: 'smooth', block: 'start' });
+}
+
+function handleApplyPlan(payload: { dayIndex: number | null; selectedMissionIds: string[] }) {
+  const targetDay = payload.dayIndex ?? activeDay.value;
+  if (targetDay < 0 || targetDay >= DAYS) return;
+  if (targetDay !== activeDay.value) activeDay.value = targetDay;
+  setDayPlan(targetDay, payload.selectedMissionIds);
 }
 
 function togglePlanetDetails(planetId: string) {
@@ -224,7 +232,7 @@ const activeDayExcludedLeads = computed(() =>
       />
 
       <!-- Solve Buttons (top) -->
-      <div class="flex gap-3 mb-5">
+      <div class="flex flex-wrap gap-3 mb-5">
         <button
           type="button"
           :disabled="!dayStates[activeDay]?.selectedMissions.length"
@@ -388,7 +396,7 @@ const activeDayExcludedLeads = computed(() =>
           </div>
 
           <!-- Solve Buttons -->
-          <div class="mt-4 flex gap-3">
+          <div class="mt-4 flex flex-wrap gap-3">
             <button
               type="button"
               :disabled="!dayStates[activeDay]?.selectedMissions.length"
@@ -418,12 +426,14 @@ const activeDayExcludedLeads = computed(() =>
       <!-- Results -->
       <PlannerResults
         ref="resultsEl"
-        v-if="dayStates[activeDay]?.result"
-        :result="dayStates[activeDay]!.result"
+        :result="dayStates[activeDay]?.result ?? null"
         :day-label="dayLabels[activeDay]"
         :excluded-leads="activeDayExcludedLeads"
         :roster-unit-map="rosterUnitMap"
         :relic-tier-map="relicTierMap"
+        :selected-missions="dayStates[activeDay]?.selectedMissions ?? []"
+        :planets="allPlanets"
+        @apply-plan="handleApplyPlan"
       />
 
       <!-- Clear All -->

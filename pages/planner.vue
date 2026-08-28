@@ -59,6 +59,15 @@ const expandedPlanet = ref<string | null>(null);
 
 const dayLabels = ['Day 1', 'Day 2', 'Day 3', 'Day 4', 'Day 5', 'Day 6'];
 
+// All days' selections, passed to PlannerResults for multi-day share/import.
+const allDayPlans = computed(() =>
+  dayStates.value.map((state, i) => ({
+    dayIndex: i,
+    dayLabel: dayLabels[i],
+    selectedMissions: state?.selectedMissions ?? [],
+  })),
+);
+
 // ── Group planets by phase ─────────────────────────────────────
 const planetsByPhase = computed(() => {
   const map = new Map<string, typeof allPlanets.value>();
@@ -93,11 +102,15 @@ async function solveAllDays() {
   resultsEl.value?.$el?.scrollIntoView?.({ behavior: 'smooth', block: 'start' });
 }
 
-function handleApplyPlan(payload: { dayIndex: number | null; selectedMissionIds: string[] }) {
-  const targetDay = payload.dayIndex ?? activeDay.value;
-  if (targetDay < 0 || targetDay >= DAYS) return;
-  if (targetDay !== activeDay.value) activeDay.value = targetDay;
-  setDayPlan(targetDay, payload.selectedMissionIds);
+function handleApplyPlans(payload: { days: { dayIndex: number | null; selectedMissionIds: string[] }[] }) {
+  let firstImportedDay: number | null = null;
+  for (const day of payload.days) {
+    const targetDay = day.dayIndex ?? activeDay.value;
+    if (targetDay < 0 || targetDay >= DAYS) continue;
+    setDayPlan(targetDay, day.selectedMissionIds);
+    if (firstImportedDay === null) firstImportedDay = targetDay;
+  }
+  if (firstImportedDay !== null) activeDay.value = firstImportedDay;
 }
 
 function togglePlanetDetails(planetId: string) {
@@ -431,9 +444,9 @@ const activeDayExcludedLeads = computed(() =>
         :excluded-leads="activeDayExcludedLeads"
         :roster-unit-map="rosterUnitMap"
         :relic-tier-map="relicTierMap"
-        :selected-missions="dayStates[activeDay]?.selectedMissions ?? []"
+        :day-plans="allDayPlans"
         :planets="allPlanets"
-        @apply-plan="handleApplyPlan"
+        @apply-plans="handleApplyPlans"
       />
 
       <!-- Clear All -->

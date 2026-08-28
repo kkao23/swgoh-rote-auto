@@ -2,7 +2,7 @@
 import { useMediaQuery } from '@vueuse/core';
 import { PHASE_ORDER, type SolveResult, type FlatPlanet, isTeamEligible, isTeamEligibleBase, teamMeetsMissionRelicReq, getFlatMissions, teamScore } from '~/util/plannerHelpers';
 import { interactionBadges } from '~/util/missionHelpers';
-import { buildDayPlanText, buildRedditTable, buildSpreadsheetText, copyToClipboard, parseDayPlanText, readFromClipboard } from '~/util/plannerExport';
+import { buildDayPlanFile, buildRedditTable, buildSpreadsheetText, copyToClipboard, parseDayPlanFile } from '~/util/plannerExport';
 import type { data as TeamData } from '~/models/data';
 
 const isSmallScreen = useMediaQuery('(max-width: 640px)');
@@ -13,17 +13,25 @@ const props = defineProps<{
   excludedLeads: Set<string>;
   rosterUnitMap: Set<string> | null;
   relicTierMap?: Map<string, number> | null;
-  selectedMissions: string[];
   planets: FlatPlanet[];
+  dayPlans: { dayIndex: number; dayLabel: string; selectedMissions: string[] }[];
 }>();
 
 const emit = defineEmits<{
-  'apply-plan': [payload: { dayIndex: number | null; selectedMissionIds: string[] }];
+  'apply-plans': [payload: { days: { dayIndex: number | null; selectedMissionIds: string[] }[] }];
 }>();
 
 const toast = useToast();
 
 const expandedResult = ref<string | null>(null);
+
+// ── Days that have at least one selected mission (shareable) ─────
+const shareableDays = computed(() =>
+  props.dayPlans.filter(d => d.selectedMissions.length > 0),
+);
+
+// ── File input for importing a saved plan ────────────────────────
+const planFileInput = ref<HTMLInputElement | null>(null);
 
 // ── Mission teams lookup (all teams for every mission) ──────────
 const missionTeamsMap = computed(() => {
@@ -280,55 +288,95 @@ async function exportXls() {
   toast.add({ title: 'Spreadsheet data copied — paste into Excel or Google Sheets.' });
 }
 
-// ── Share / import the raw day plan (mission selection) ────────
-async function copyDayPlan() {
-  if (props.selectedMissions.length === 0) {
-    toast.add({ title: 'Nothing to copy — select missions for this day first.', color: 'amber' });
+// ── Export / import the raw day plans (mission selection) ───────
+function exportDayPlan() {
+  const days = shareableDays.value;
+  if (days.length === 0) {
+    toast.add({ title: 'Nothing to export — select missions for at least one day first.', color: 'amber' });
     return;
   }
-  const text = buildDayPlanText(props.dayLabel, props.planets, new Set(props.selectedMissions));
-  await copyToClipboard(text);
-  toast.add({ title: 'Day plan copied to clipboard.' });
+
+  const text = buildDayPlanFile(
+    days.map(d => ({
+      dayLabel: d.dayLabel,
+      dayIndex: d.dayIndex,
+      selectedMissionIds: d.selectedMissions,
+    })),
+    props.planets,
+  );
+
+  const blob = new Blob([text], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const anchor = document.createElement('a');
+  anchor.href = url;
+  anchor.download = 'swgoh-rote-day-plans.json';
+  document.body.appendChild(anchor);
+  anchor.click();
+  document.body.removeChild(anchor);
+  URL.revokeObjectURL(url);
+
+  toast.add({ title: `Exported ${days.length} day plan(s) to JSON file.` });
 }
 
-async function importDayPlan() {
-  const text = await readFromClipboard();
+function importDayPlan() {
+  planFileInput.value?.click();
+}
+
+function onImportFileSelected(event: Event) {
+  const input = event.target as HTMLInputElement;
+  const file = input.files?.[0];
+  if (!file) return;
+
+  const reader = new FileReader();
+  reader.onload = () => {
+    importDayPlanText(typeof reader.result === 'string' ? reader.result : '');
+  };
+  reader.readAsText(file);
+
+  // Allow re-selecting the same file later.
+  input.value = '';
+}
+
+function importDayPlanText(text: string) {
   if (!text.trim()) {
-    toast.add({ title: 'Clipboard is empty. Copy a day plan first.', color: 'amber' });
+    toast.add({ title: 'The selected file is empty.', color: 'amber' });
     return;
   }
 
-  const parsed = parseDayPlanText(text, props.planets);
-  if (parsed.selectedMissionIds.length === 0) {
+  const parsed = parseDayPlanFile(text, props.planets);
+  const days = parsed.days.filter(d => d.selectedMissionIds.length > 0);
+  if (days.length === 0) {
     toast.add({
-      title: parsed.errors.length ? parsed.errors[0] : 'No missions found in the clipboard text.',
+      title: parsed.errors.length ? parsed.errors[0] : 'No missions found in the selected file.',
       color: 'red',
     });
     return;
   }
 
-  emit('apply-plan', {
-    dayIndex: parsed.dayIndex,
-    selectedMissionIds: parsed.selectedMissionIds,
+  emit('apply-plans', {
+    days: days.map(d => ({
+      dayIndex: d.dayIndex,
+      selectedMissionIds: d.selectedMissionIds,
+    })),
   });
 
-  const target = parsed.dayIndex !== null ? `Day ${parsed.dayIndex + 1}` : props.dayLabel;
-  toast.add({ title: `Imported ${parsed.selectedMissionIds.length} mission(s) into ${target}.` });
+  const totalMissions = days.reduce((sum, d) => sum + d.selectedMissionIds.length, 0);
+  toast.add({ title: `Imported ${totalMissions} mission(s) across ${days.length} day(s).` });
 }
 </script>
 
 <template>
   <div class="bg-slate-900/70 border border-slate-700 rounded-xl p-5">
-    <!-- Share / import this day's plan -->
+    <!-- Export / import saved day plans -->
     <div class="flex flex-wrap items-center gap-2 mb-4">
-      <span class="text-xs text-slate-400 mr-1">Share day plan:</span>
+      <span class="text-xs text-slate-400 mr-1">Day plans:</span>
       <button
         type="button"
         class="px-3 py-1 text-xs font-medium rounded bg-slate-700 text-slate-300 hover:bg-slate-600 hover:text-white transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
-        :disabled="selectedMissions.length === 0"
-        @click.stop="copyDayPlan"
+        :disabled="shareableDays.length === 0"
+        @click.stop="exportDayPlan"
       >
-        Copy Plan
+        Export Plan
       </button>
       <button
         type="button"
@@ -337,7 +385,14 @@ async function importDayPlan() {
       >
         Import Plan
       </button>
-      <span class="text-xs text-slate-500 hidden sm:inline">Copy shares the mission list; Import reads a plan back from your clipboard.</span>
+      <input
+        ref="planFileInput"
+        type="file"
+        accept=".json,.txt,application/json,text/plain"
+        class="hidden"
+        @change="onImportFileSelected"
+      />
+      <span class="text-xs text-slate-500 hidden sm:inline">Export saves every day with selected missions as a JSON file; Import reads a JSON (or legacy text) file back.</span>
     </div>
 
     <div class="flex flex-wrap items-center justify-between gap-2 mb-4">

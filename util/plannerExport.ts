@@ -1,5 +1,5 @@
 import type { data as TeamData } from '~/models/data';
-import { teamScore, type FlatPlanet } from '~/util/plannerHelpers';
+import { teamScore, type FlatPlanet, type FlatMission } from '~/util/plannerHelpers';
 import { interactionBadges } from '~/util/missionHelpers';
 
 // ── Minimal row contract (subset of PlannerResults' UnifiedRow) ──
@@ -140,11 +140,45 @@ export async function copyToClipboard(text: string): Promise<void> {
 
 // ── Day plan (mission selection) share/import ─────────────────────
 
-export interface DayPlanParseResult {
+export interface DayPlanParseDay {
   dayIndex: number | null;
   dayLabel: string | null;
   selectedMissionIds: string[];
+}
+
+export interface DayPlanParseResult {
+  days: DayPlanParseDay[];
   errors: string[];
+}
+
+// ── Standardized day plan file format (JSON) ─────────────────────
+
+export const DAY_PLAN_FORMAT = 'swgoh-rote-day-plan';
+export const DAY_PLAN_VERSION = 2;
+
+export interface DayPlanFileMission {
+  id: string;
+  label: string;
+  planet: string;
+  phase: string;
+}
+
+export interface DayPlanFileDay {
+  dayLabel: string;
+  dayIndex: number | null;
+  selectedMissions: DayPlanFileMission[];
+}
+
+export interface DayPlanFile {
+  format: typeof DAY_PLAN_FORMAT;
+  version: number;
+  days: DayPlanFileDay[];
+}
+
+export interface DayPlanFileDayInput {
+  dayLabel: string;
+  dayIndex?: number | null;
+  selectedMissionIds: string[] | Set<string>;
 }
 
 /**
@@ -244,11 +278,190 @@ export function parseDayPlanText(text: string, planets: FlatPlanet[]): DayPlanPa
   }
 
   return {
-    dayIndex,
-    dayLabel,
-    selectedMissionIds: [...selected],
+    days: [
+      {
+        dayIndex,
+        dayLabel,
+        selectedMissionIds: [...selected],
+      },
+    ],
     errors,
   };
+}
+
+// ── Standardized JSON day plan build/parse ───────────────────────
+
+function dayIndexFromLabel(dayLabel: string): number | null {
+  const n = parseInt(dayLabel.match(/\d+/)?.[0] ?? '', 10);
+  return Number.isNaN(n) || n < 1 || n > 6 ? null : n - 1;
+}
+
+/**
+ * Builds a standardized, versioned JSON representation of one or more day
+ * plans. Days with no selected missions are skipped. Re-importable via
+ * parseDayPlanFile.
+ */
+export function buildDayPlanFile(
+  dayPlans: DayPlanFileDayInput[],
+  planets: FlatPlanet[],
+): string {
+  const days: DayPlanFileDay[] = [];
+
+  for (const plan of dayPlans) {
+    const selectedSet = new Set(plan.selectedMissionIds);
+    if (selectedSet.size === 0) continue;
+
+    const selectedMissions: DayPlanFileMission[] = [];
+    for (const planet of planets) {
+      for (const mission of planet.missions) {
+        if (!selectedSet.has(mission.id)) continue;
+        selectedMissions.push({
+          id: mission.id,
+          label: mission.label,
+          planet: planet.planet,
+          phase: planet.phase,
+        });
+      }
+    }
+
+    if (selectedMissions.length === 0) continue;
+
+    days.push({
+      dayLabel: plan.dayLabel,
+      dayIndex: plan.dayIndex !== undefined ? plan.dayIndex : dayIndexFromLabel(plan.dayLabel),
+      selectedMissions,
+    });
+  }
+
+  const file: DayPlanFile = {
+    format: DAY_PLAN_FORMAT,
+    version: DAY_PLAN_VERSION,
+    days,
+  };
+
+  return JSON.stringify(file, null, 2);
+}
+
+/**
+ * Parses either a standardized JSON day plan (produced by buildDayPlanFile)
+ * or a legacy human-readable plan (produced by buildDayPlanText) back into
+ * mission ids per day.
+ */
+export function parseDayPlanFile(text: string, planets: FlatPlanet[]): DayPlanParseResult {
+  const trimmed = text.replace(/^\uFEFF/, '').trim();
+  if (!trimmed) {
+    return { days: [], errors: [] };
+  }
+
+  if (trimmed.startsWith('{')) {
+    return parseDayPlanJson(trimmed, planets);
+  }
+
+  // Backwards compatibility with the old human-readable clipboard format.
+  return parseDayPlanText(trimmed, planets);
+}
+
+function parseDayPlanJson(text: string, planets: FlatPlanet[]): DayPlanParseResult {
+  const errors: string[] = [];
+
+  let data: unknown;
+  try {
+    data = JSON.parse(text);
+  } catch {
+    return {
+      days: [],
+      errors: ['Clipboard text is not valid JSON.'],
+    };
+  }
+
+  const plan = data as Partial<DayPlanFile> | null;
+  if (!plan || typeof plan !== 'object' || plan.format !== DAY_PLAN_FORMAT) {
+    return {
+      days: [],
+      errors: [`Unrecognized plan format. Expected "${DAY_PLAN_FORMAT}".`],
+    };
+  }
+
+  const missionById = new Map<string, FlatMission>();
+  for (const planet of planets) {
+    for (const mission of planet.missions) {
+      missionById.set(mission.id, mission);
+    }
+  }
+
+  // v1 was a single-day object: { dayLabel, dayIndex, selectedMissions }.
+  if (plan.version === 1) {
+    const day = parseDayPlanJsonDay(plan, missionById, errors);
+    return { days: day ? [day] : [], errors };
+  }
+
+  if (plan.version !== DAY_PLAN_VERSION) {
+    return {
+      days: [],
+      errors: [`Unsupported plan version: ${String(plan.version)}. Expected version ${DAY_PLAN_VERSION}.`],
+    };
+  }
+
+  if (!Array.isArray(plan.days)) {
+    return {
+      days: [],
+      errors: ['Plan has no "days" array.'],
+    };
+  }
+
+  const days: DayPlanParseDay[] = [];
+  for (const entry of plan.days) {
+    const day = parseDayPlanJsonDay(entry, missionById, errors);
+    if (day) days.push(day);
+  }
+
+  return { days, errors };
+}
+
+function parseDayPlanJsonDay(
+  entry: unknown,
+  missionById: Map<string, FlatMission>,
+  errors: string[],
+): DayPlanParseDay | null {
+  if (!entry || typeof entry !== 'object') {
+    errors.push('Skipped a day entry that is not an object.');
+    return null;
+  }
+
+  const day = entry as Partial<DayPlanFileDay>;
+  const dayLabel = typeof day.dayLabel === 'string' ? day.dayLabel.trim() || null : null;
+  const rawDayIndex = day.dayIndex;
+  const dayIndex = Number.isInteger(rawDayIndex)
+    && (rawDayIndex as number) >= 0
+    && (rawDayIndex as number) <= 5
+    ? (rawDayIndex as number)
+    : dayLabel
+      ? dayIndexFromLabel(dayLabel)
+      : null;
+
+  const selected = new Set<string>();
+  const missions = Array.isArray(day.selectedMissions) ? day.selectedMissions : [];
+
+  if (!Array.isArray(day.selectedMissions)) {
+    errors.push(`Day "${dayLabel ?? 'unknown'}" has no "selectedMissions" array.`);
+  }
+
+  for (const missionEntry of missions) {
+    const id = missionEntry && typeof missionEntry === 'object' && typeof (missionEntry as DayPlanFileMission).id === 'string'
+      ? (missionEntry as DayPlanFileMission).id
+      : '';
+    if (!id) {
+      errors.push('Skipped a mission entry with no id.');
+      continue;
+    }
+    if (missionById.has(id)) {
+      selected.add(id);
+    } else {
+      errors.push(`Unknown mission id: ${id}`);
+    }
+  }
+
+  return { dayIndex, dayLabel, selectedMissionIds: [...selected] };
 }
 
 // ── Clipboard read helper ─────────────────────────────────────────
@@ -258,6 +471,6 @@ export async function readFromClipboard(): Promise<string> {
     return await navigator.clipboard.readText();
   } catch {
     // Fallback for browsers that block clipboard reads
-    return window.prompt('Paste the day plan text below:') ?? '';
+    return window.prompt('Paste the day plan (JSON or legacy text) below:') ?? '';
   }
 }

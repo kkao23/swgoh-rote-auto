@@ -3,7 +3,8 @@ import type { data as TeamData, DataType } from '~/models/data';
 import { successRate } from '~/models/data';
 import { PHASE_RELIC_REQUIREMENTS } from '~/util/rosterUtils';
 import { leads } from '~/data/leads';
-import { GAME_ID_DISPLAY_NAMES, formatGameIdForDisplay, getCharacterIcon, SHIP_GAME_IDS } from '~/data/displayNames';
+import { formatGameIdForDisplay, getCharacterIcon, SHIP_GAME_IDS } from '~/data/displayNames';
+import { getUnitName } from '~/data/units';
 import { MISSION_MULTIPLIERS } from '~/data/missionMultipliers';
 import { MISSION_RELIC_OVERRIDES } from '~/data/missionRelicOverrides';
 import { hungarian } from '~/util/solver';
@@ -140,24 +141,18 @@ export function canonicalLeadKey(team: TeamData): string {
 
 /**
  * Best display name for a canonical lead key.
- * Tries: leads.ts → strip "capital" prefix & try again → known overrides → smart format.
+ * Tries: data/units.ts → leads.ts aliases → smart format fallback.
  */
 export function canonicalLeadDisplay(key: string): string {
-  // 1. Exact match in leads.ts
+  // 1. Canonical name from data/units.ts (single source of truth)
+  const unitName = getUnitName(key);
+  if (unitName) return unitName;
+
+  // 2. Lead aliases from leads.ts (in case the key is an alias, e.g. "slkr")
   const match = leadByName.get(key);
   if (match) return match.fullName;
 
-  // 2. Strip "capital" prefix (for ship capitals) and try again
-  if (key.startsWith('capital')) {
-    const stripped = key.slice('capital'.length);
-    const strippedMatch = leadByName.get(stripped);
-    if (strippedMatch) return strippedMatch.fullName;
-  }
-
-  // 3. Known display overrides for gameIds not in leads.ts
-  if (GAME_ID_DISPLAY_NAMES[key]) return GAME_ID_DISPLAY_NAMES[key];
-
-  // 4. Smart formatting: split camelCase/ALL_CAPS into Title Case
+  // 3. Smart formatting: split camelCase/ALL_CAPS into Title Case
   return formatGameIdForDisplay(key);
 }
 

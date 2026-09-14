@@ -77,7 +77,7 @@ export const jediLSP2: dataType[] = [
         lead: 'JML', gameId: 'GRANDMASTERLUKE',
         leadFull: 'Jedi Master Luke',
         others: 'JKL, other Jedi',
-        notes: 'auto, not super consistent',
+        notes: 'auto, not super consistent, GAS might make this easier',
         videos: [{ url: 'https://youtu.be/d5uJfXLjlvc' }],
         icon: '/icons/characters/tex.charui_luke_jml.png',
         difficulty: difficulty.EASY,
@@ -322,6 +322,15 @@ export const leftLSP2: dataType[] = [
         difficulty: difficulty.EASY,
         gameId: "JEDIKNIGHTLUKE, JEDIKNIGHTCAL, ANAKINKNIGHT",
         creator: "anonymous"
+    },
+    {
+        lead: "Carson Teva (omi)",
+        gameId: "CARSONTEVA",
+        others: "Colonel Ward, R5-D, Geogu & Anzelans, Zeb Orrelios (New republic pilot)\n",
+        notes: "Auto",
+        videos: [{ url: 'https://youtu.be/fa3yMKjca6s?t=243', creator: 'BitDynasty' }],
+        difficulty: difficulty.EASY,
+        omi: true,
     }
 ]
 

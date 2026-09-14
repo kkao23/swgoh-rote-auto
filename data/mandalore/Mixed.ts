@@ -42,6 +42,15 @@ export const mandaloreFleets: dataType[] = [
         successRate: successRate.FIFTY_FIFTY,
         interactionType: [interactionType.MANUAL]
     },
+    {
+        lead: "Executor",
+        others: "Gauntlet (required), Hound's Tooth, Punishing One. Reinforce Xanadu then Slave One.",
+        notes: "Manual. I focus btl-b out then Anakin then Marauder, from there it's auto. I do basic on Punishing's first turn and the heal on gauntlet if it isn't ability blocked, otherwise play as you normally would for Executor fleet. ",
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: "CAPITALEXECUTOR",
+        creator: "Anonymous"
+    }
 ]
 
 export const mandaloreGeneric: dataType[] = [
@@ -247,30 +256,28 @@ export const mandaloreGeneric: dataType[] = [
         successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO]
     },
-
-{
-    lead: 'Ahsoka Tano (full spectre)', gameId: 'GLAHSOKATANO',
-    others: 'Full spectre',
-    notes: 'Easy',
-    videos: [],
-    icon: '/icons/characters/tex.charui_ahsokatanogray.png',
-    difficulty: difficulty.EASY,
-    successRate: successRate.CONSISTENT,
-    interactionType: [interactionType.AUTO],
-    creator: 'anonymous'
-}
-,
-{
-    lead: 'Bo-Katan (Mand\'alor)',
-    others: 'Paz Vizsla, Mandalorian (Beskar Armor), IG-12 & Grogu, Bo-Katan',
-    notes: 'This mission is missed on the webpage so far',
-    videos: [],
-    icon: '/icons/characters/tex.charui_mandalorbokatan.png',
-    difficulty: difficulty.EASY,
-    successRate: successRate.CONSISTENT,
-    interactionType: [interactionType.AUTO],
-    creator: 'anonymous'
-},
+    {
+        lead: 'Ahsoka Tano (full spectre)', gameId: 'GLAHSOKATANO',
+        others: 'Full spectre',
+        notes: 'Easy',
+        videos: [],
+        icon: '/icons/characters/tex.charui_ahsokatanogray.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous'
+    },
+    {
+        lead: 'Bo-Katan (Mand\'alor)',
+        others: 'Paz Vizsla, Mandalorian (Beskar Armor), IG-12 & Grogu, Bo-Katan',
+        notes: 'This mission is missed on the webpage so far',
+        videos: [],
+        icon: '/icons/characters/tex.charui_mandalorbokatan.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous'
+    },
     {
         lead: 'Satele Shan', gameId: 'SATELESHAN',
         leadFull: 'Satele Shan',
@@ -281,39 +288,45 @@ export const mandaloreGeneric: dataType[] = [
         difficulty: difficulty.VERY_EASY,
         successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.MANUAL],
-    }
-    ,
-    {
-    lead: 'JML',
-    leadFull: 'Jedi Master Luke',
-    gameId: 'GRANDMASTERLUKE',
-    others: 'JKLS, JKCK, JKR, GAS',
-    notes: 'I have only done it on manual.',
-    videos: [],
-    difficulty: difficulty.EASY,
-    creator: 'Anonymous',
     },
     {
-    lead: 'Cobb Vanth',
-    gameId: 'COBBVANTH, JAWASCAVENGER',
-    icon: '/icons/characters/tex.charui_cobbvanth.png',
-    others: 'Lobot, CUP, Nebit, Scav',
-    notes: 'omi on Cobb, 1/2 without platoons, they all blow up eventually',
-    videos: [],
-    difficulty: difficulty.EASY,
-    creator: 'acidf',
-    omi: true
+        lead: 'JML',
+        leadFull: 'Jedi Master Luke',
+        gameId: 'GRANDMASTERLUKE',
+        others: 'JKLS, JKCK, JKR, GAS',
+        notes: 'I have only done it on manual.',
+        videos: [],
+        difficulty: difficulty.EASY,
+        creator: 'Anonymous',
+    },{
+        lead: 'Cobb Vanth',
+        gameId: 'COBBVANTH, JAWASCAVENGER',
+        icon: '/icons/characters/tex.charui_cobbvanth.png',
+        others: 'Lobot, CUP, Nebit, Scav',
+        notes: 'omi on Cobb, 1/2 without platoons, they all blow up eventually',
+        videos: [],
+        difficulty: difficulty.EASY,
+        creator: 'acidf',
+        omi: true
+    },{
+        lead: 'ROLO',
+        gameId: 'HOTHLEIA, GLLEIA',
+        icon: '/icons/characters/tex.charui_leiahoth.png',
+        others: 'Omi on ROLO, Han Solo, GL Leia, R2-D2, AdRad',
+        notes: 'Autoplay, no platoons needed.',
+        videos: [],
+        difficulty: difficulty.EASY,
+        creator: 'Justpure CR',
+        omi: true
     },
     {
-    lead: 'ROLO',
-    gameId: 'HOTHLEIA, GLLEIA',
-    icon: '/icons/characters/tex.charui_leiahoth.png',
-    others: 'Omi on ROLO, Han Solo, GL Leia, R2-D2, AdRad',
-    notes: 'Autoplay, no platoons needed.',
-    videos: [],
-    difficulty: difficulty.EASY,
-    creator: 'Justpure CR',
-    omi: true
+        lead: "Carson Teva (omi)",
+        gameId: "CARSONTEVA",
+        others: "Colonel Ward, R5-D, Geogu & Anzelans, Zeb Orrelios (New republic pilot)\n",
+        notes: "Auto",
+        videos: [{ url: 'https://youtu.be/fa3yMKjca6s?t=343', creator: 'BitDynasty' }],
+        difficulty: difficulty.EASY,
+        omi: true,
     }
 ]
 

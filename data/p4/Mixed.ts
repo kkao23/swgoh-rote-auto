@@ -400,6 +400,15 @@ export const mixedGenericP4: dataType[] = [
         creator: "Vecchetti",
         omi: true,
         gameId: "MAJORPARTAGAZ",
+    },
+    {
+        lead: "Carson Teva (omi)",
+        gameId: "CARSONTEVA",
+        others: "Colonel Ward, R5-D, Geogu & Anzelans, Zeb Orrelios (New republic pilot)\n",
+        notes: "Auto",
+        videos: [{ url: 'https://youtu.be/fa3yMKjca6s?t=432', creator: 'BitDynasty' }],
+        difficulty: difficulty.EASY,
+        omi: true,
     }
 ]
 

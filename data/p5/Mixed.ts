@@ -155,15 +155,24 @@ export const mixedCombatTopRightP5: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-    lead: 'Maz Kanata',
-    gameId: 'MAZKANATA',
-    icon: '/icons/characters/tex.charui_mazkanata.png',
-    others: 'CPT. Ithano, Hondo,Quiggold,Kix',
-    notes: 'Quiggold Omicron, Hold Maz\'s Spec 2 for the 2nd wave if you are in the finish in the 1st one.',
-    videos: [],
-    difficulty: difficulty.EASY,
-    omi: true,
-    creator: 'SpyRush',
+        lead: 'Maz Kanata',
+        gameId: 'MAZKANATA',
+        icon: '/icons/characters/tex.charui_mazkanata.png',
+        others: 'CPT. Ithano, Hondo,Quiggold,Kix',
+        notes: 'Quiggold Omicron, Hold Maz\'s Spec 2 for the 2nd wave if you are in the finish in the 1st one.',
+        videos: [],
+        difficulty: difficulty.EASY,
+        omi: true,
+        creator: 'SpyRush',
+    },
+    {
+        lead: "Carson Teva (omi)",
+        gameId: "CARSONTEVA",
+        others: "Colonel Ward, R5-D, Geogu & Anzelans, Zeb Orrelios (New republic pilot)\n",
+        notes: "Manual",
+        videos: [{ url: 'https://youtu.be/fa3yMKjca6s?t=482', creator: 'BitDynasty' }],
+        difficulty: difficulty.EASY,
+        omi: true,
     }
 ]
 

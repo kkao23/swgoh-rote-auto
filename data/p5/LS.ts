@@ -74,6 +74,16 @@ export const lsTopLeftP5: dataType[] = [
     videos: [],
     difficulty: difficulty.EASY,
     creator: 'Anonymous',
+    },
+    {
+    lead: "Queen Amidala (Manual)", gameId: 'QUEENAMIDALA',
+    others: "Master Qui Gon, Padawan Obi, GAS, General Kenobi",
+    notes: "Focused on AOE's first but counter did most of the damage",
+    videos: [],
+    difficulty: difficulty.EASY,
+    successRate: successRate.USUALLY,
+    interactionType: [interactionType.AUTO],
+    creator: 'Anonymous'
     }
 ]
 
@@ -156,22 +166,31 @@ export const lsTopMidP5: dataType[] = [
         omi: true
     },
     {
-    lead: "BKM",
-    others: "Paz, BAM, IG12, Bo-Kryze",
-    notes: "Auto. No omicron. Full OPs.",
-    videos: [],
-    difficulty: difficulty.EASY,
-    gameId: "MANDALORBOKATAN",
-    creator: "anonymous"
+        lead: "BKM",
+        others: "Paz, BAM, IG12, Bo-Kryze",
+        notes: "Auto. No omicron. Full OPs.",
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: "MANDALORBOKATAN",
+        creator: "anonymous"
     },
     {
-    lead: "Satele Shan",
-    others: "JKR, Bastila, Jolee, Juhani",
-    notes: "Auto with full platoons. Do not use team if platoons are not full. Good mods on the trio recommended.",
-    videos: [],
-    difficulty: difficulty.EASY,
-    gameId: "SATELESHAN",
-    creator: "GalacticLegendRevan"
+        lead: "Satele Shan",
+        others: "JKR, Bastila, Jolee, Juhani",
+        notes: "Auto with full platoons. Do not use team if platoons are not full. Good mods on the trio recommended.",
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: "SATELESHAN",
+        creator: "GalacticLegendRevan"
+    },
+    {
+        lead: "Carson Teva (omi)",
+        gameId: "CARSONTEVA",
+        others: "Colonel Ward, R5-D, Geogu & Anzelans, Zeb Orrelios (New republic pilot)\n",
+        notes: "Auto",
+        videos: [{ url: 'https://youtu.be/fa3yMKjca6s?t=432', creator: 'BitDynasty' }],
+        difficulty: difficulty.EASY,
+        omi: true,
     }
 ]
 

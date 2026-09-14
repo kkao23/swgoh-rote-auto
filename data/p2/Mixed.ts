@@ -429,6 +429,16 @@ export const mixedP2: dataType[] = [
         difficulty: difficulty.EASY,
         gameId: "BOSSK",
         creator: "AdoMatOx"
+    },
+    {
+        lead: "Finn",
+        others: "RHF, RHP, Zorii, Rose",
+        notes: "Very fast and easy AUTO (have R7)",
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: "FINN",
+        omi: true,
+        creator: "Anonymous"
     }
 ]
 

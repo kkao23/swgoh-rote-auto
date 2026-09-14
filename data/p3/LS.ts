@@ -169,13 +169,22 @@ export const lsLeftP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-    lead: 'JKL',
-    gameId: 'JEDIKNIGHTLUKE',
-    others: 'JML, GAS, GMY, GK',
-    notes: 'Played on Manual took some time but seemed pretty easy. Get luke a turn ASAP and spam repulse',
-    videos: [],
-    difficulty: difficulty.EASY,
-    creator: 'Anonymous',
+        lead: 'JKL',
+        gameId: 'JEDIKNIGHTLUKE',
+        others: 'JML, GAS, GMY, GK',
+        notes: 'Played on Manual took some time but seemed pretty easy. Get luke a turn ASAP and spam repulse',
+        videos: [],
+        difficulty: difficulty.EASY,
+        creator: 'Anonymous',
+    },
+    {
+        lead: "Carson Teva (omi)",
+        gameId: "CARSONTEVA",
+        others: "Colonel Ward, R5-D, Geogu & Anzelans, Zeb Orrelios (New republic pilot)\n",
+        notes: "Auto",
+        videos: [{ url: 'https://youtu.be/fa3yMKjca6s?t=291', creator: 'BitDynasty' }],
+        difficulty: difficulty.EASY,
+        omi: true,
     }
 ]
 

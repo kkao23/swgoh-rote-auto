@@ -460,5 +460,14 @@ export const genericLSP1: dataType[] = [
         creator: "roehri",
         gameId: "JEDIKNIGHTCAL, GRANDMASTERYODA, GRANDMASTERLUKE",
         omi: true
+    },
+    {
+        lead: "Carson Teva (omi)",
+        gameId: "CARSONTEVA",
+        others: "Colonel Ward, R5-D, Geogu & Anzelans, Zeb Orrelios (New republic pilot)\n",
+        notes: "Auto",
+        videos: [{ url: 'https://youtu.be/fa3yMKjca6s', creator: 'BitDynasty' }],
+        difficulty: difficulty.EASY,
+        omi: true,
     }
 ]

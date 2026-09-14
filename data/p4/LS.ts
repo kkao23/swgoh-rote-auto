@@ -375,6 +375,15 @@ export const jediLSP4: dataType[] = [
         successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO],
         creator: "Kino Apparition"
+    },
+    {
+    lead: "JMK (JKCK)",
+    others: "JKCK, GAS, GK, GMY",
+    notes: "Full auto",
+    videos: [],
+    difficulty: difficulty.EASY,
+    gameId: "JEDIMASTERKENOBI, JEDIKNIGHTCAL",
+    creator: "Anonymous"
     }
 ]
 

@@ -415,13 +415,21 @@ export const topDSP1: dataType[] = [
         creator: 'Teg bashar'
     },
     {
-    lead: 'Grand Moff Tarkin',
-    gameId: 'GRANDMOFFTARKIN',
-    others: 'CX2, Disguised Clone Trooper, Appo, Scorch',
-    notes: 'Full auto 2/2 easy',
-    videos: [],
-    difficulty: difficulty.EASY,
-    creator: 'Anonymous',
+        lead: 'Grand Moff Tarkin',
+        gameId: 'GRANDMOFFTARKIN',
+        others: 'CX2, Disguised Clone Trooper, Appo, Scorch',
+        notes: 'Full auto 2/2 easy',
+        videos: [],
+        difficulty: difficulty.EASY,
+        creator: 'Anonymous',
+    },
+    {
+        lead: "Emperor Palpatine",
+        gameId: "EMPERORPALPATINE",
+        others: "Mara Jade, Admiral Piett, Grand Admiral Thrawn, Darth Vader",
+        notes: "Manual",
+        videos: [],
+        difficulty: difficulty.EASY,
     }
 ];
 
@@ -473,5 +481,13 @@ export const shipsDSP1 = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         creator: 'anonymous'
+    },
+    {
+    lead: "Executor", gameId: "CAPITALEXECUTOR, SCYTHE",
+    others: "Scythe, Punishing 1, Hound's Tooth, (Reinforcements): Xanadu Blood, Slave 1",
+    notes: "Scythe fleet mission. No auto, manual target selection. \nStarting lineup: Scythe (mission requirement), Hound's Tooth, Punishing 1.\n\nTry to survive the opening onslaught (Okay to lose Scythe, does nothing for this battle), then focus down hyena bomber. \n\nReinforcement priority (Very important): Xanadu Blood first as it gives counterattack on all BH ships. Enemies will all target taunting Hounds tooth, and when Hound's tooth counters with basic, self cleanses buzz droids each time. \n\nSlave 1 cleanup afterwards. Battle can be done with 2 ship reinforcements only (XB & Slave 1",
+    videos: [],
+    difficulty: difficulty.EASY,
+    creator: 'anonymous'
     }
 ]

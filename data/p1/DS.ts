@@ -304,7 +304,18 @@ export const bottomDSP1: dataType[] = [{
     successRate: successRate.CONSISTENT,
     interactionType: [interactionType.AUTO],
     creator: 'Parableman'
-}
+},
+    {
+        lead: "Major Partagaz",
+        others: "ISB",
+        notes: "Auto, no omicron, lost Dedra, might not be totally consistent",
+        videos: [{ url: 'https://youtu.be/8mTIwqTrvKM' }],
+        difficulty: difficulty.EASY,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.AUTO],
+        omi: false,
+        gameId: "MAJORPARTAGAZ",
+    }
 ];
 
 export const topDSP1: dataType[] = [

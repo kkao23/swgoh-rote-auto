@@ -3,7 +3,7 @@ import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const dsGenericP3: dataType[] = [
     {
-        lead: 'Baylan', gameId: 'BAYLANSKOLL',
+    lead: 'Baylan', gameId: 'BAYLANSKOLL',
         others: 'Marrok, Shin, Jango, Zam',
         notes: 'omi Marrok, auto, last two are flexible. can get unlucky if they focus Marrok wave 1 at the start',
         videos: [{ url: 'https://youtu.be/WcYP7j8ooos' }],
@@ -45,7 +45,7 @@ export const dsGenericP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Darth Revan', gameId: 'DARTHREVAN',
+        lead: 'Darth Revan', gameId: 'DARTHREVAN, SITHPALPATINE',
         others: 'SEE, Malak, Bane, Malgus',
         notes: 'auto, use tanky sith',
         videos: [{ url: 'https://youtu.be/E3O_nxMHj8A' }],
@@ -157,10 +157,10 @@ export const dsGenericP3: dataType[] = [
     },
     {
     lead: 'Kylo Ren Unmasked',
-    gameId: 'KYLORENUNMASKED',
+    gameId: 'KYLORENUNMASKED, DARKREY, SUPREMELEADERKYLOREN',
     icon: '/icons/characters/tex.charui_kylo_unmasked.png',
     others: 'Slkr, drey, sith trooper +1',
-    notes: 'Get to ult once, after that slkr has 100% tm after every aoe (might not even need drey), a lot more stable than slkr lead, probably works without kru lead zeta as well',
+    notes: 'auto',
     videos: [],
     difficulty: difficulty.EASY,
     creator: 'Anonymous',
@@ -230,6 +230,15 @@ export const dsEmpireP3: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         creator: 'anonymous'
+    },
+    {
+        lead: "Reva (Manual)",
+        others: "7 GQ 8 5",
+        notes: "Kill zombie 3x.  Get all to yellow.  AOE ",
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: "THIRDSISTER",
+        creator: "anonymous"
     }
 ]
 
@@ -322,6 +331,15 @@ export const drAphraP3: dataType[] = [
         creator: 'Artha Dragon',
         omi: true
     },
+    {
+        lead: "Aphra (SEE)",
+        others: "SEE, Revan, Malak, Malgus",
+        notes: "Full auto no targeting",
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: "DOCTORAPHRA, SITHPALPATINE",
+        creator: "Anonymous"
+    }
 ]
 
 export const merrinP3: dataType[] = [

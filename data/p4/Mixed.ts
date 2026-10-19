@@ -382,14 +382,14 @@ export const mixedGenericP4: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-    lead: "Cobb Vanth",
-    others: "Cara Dune, CUP, Lobot, Chief Nebit",
-    notes: "I had omi on Cobb",
-    videos: [],
-    difficulty: difficulty.EASY,
-    gameId: "COBBVANTH",
-    creator: "anonymous",
-    omi: true
+        lead: "Cobb Vanth",
+        others: "Cara Dune, CUP, Lobot, Chief Nebit",
+        notes: "I had omi on Cobb",
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: "COBBVANTH",
+        creator: "anonymous",
+        omi: true
     },
     {
         lead: "Major Partagaz",
@@ -409,6 +409,33 @@ export const mixedGenericP4: dataType[] = [
         videos: [{ url: 'https://youtu.be/fa3yMKjca6s?t=432', creator: 'BitDynasty' }],
         difficulty: difficulty.EASY,
         omi: true,
+    },
+    {
+        lead: "Cere (UFUs)",
+        others: "Rey, CAT, OG Cal, 9S",
+        notes: "Auto",
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: "CEREJUNDA"
+    },
+    {
+        lead: "Jedi Master Luke",
+        others: "Jedi Training Leia, JKL, GAS, Jedi Knight Revan",
+        notes: "Auto",
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: "GRANDMASTERLUKE, JEDITRAININGLEIA",
+        creator: "Anonymous"
+    },
+    {
+        lead: "Maz",
+        others: "Cap Ithano, Kix, Quiggold(omicron), Emfys ",
+        notes: "Auto",
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: "MAZKANATA, KIX, ITHANO, QUIGGOLD",
+        creator: "anonymous",
+        omi: true
     }
 ]
 

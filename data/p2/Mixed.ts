@@ -117,6 +117,15 @@ export const hondoMixedP2: dataType[] = [
         videos: [],
         difficulty: difficulty.EASY,
         gameId: "HONDO, EMPERORPALPATINE, SITHPALPATINE"
+    },
+    {
+        lead: "JML",
+        others: "JTL, JKCK, Hermit Yoda, Hondo",
+        notes: "Easy win, Have not tried on auto yet ",
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: "GRANDMASTERLUKE, HONDO, LEIAJEDITRAINING",
+        creator: "Anonymous"
     }
 ]
 
@@ -170,6 +179,15 @@ export const shipsMixedP2: dataType[] = [
         successRate: successRate.UNRELIABLE,
         interactionType: [interactionType.MANUAL]
     },
+    {
+        lead: "Negotiator",
+        others: "JKA, Y-WING, MARAUDER, SNIPS, FIVES",
+        notes: "Full Auto ",
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: "CAPITALNEGOTIATOR",
+        creator: "Krawalli"
+    }
 ]
 
 export const mixedP2: dataType[] = [
@@ -439,6 +457,15 @@ export const mixedP2: dataType[] = [
         gameId: "FINN",
         omi: true,
         creator: "Anonymous"
+    },
+    {
+        lead: "Rex",
+        others: "Fives, Echo, ARC, Cpt Rex",
+        notes: "Mostly Auto",
+        videos: [],
+        difficulty: difficulty.EASY,
+        creator: "Anonymous",
+        gameId: "CT7567, CT5555, CT210408, ARCTROOPER501ST, CAPTAINREX"
     }
 ]
 
@@ -478,12 +505,12 @@ export const youngLandoP2: dataType[] = [
     },
     {
         lead: 'Ahsoka Tano', gameId: 'GLAHSOKATANO, YOUNGLANDO',
-        others: 'Ezra Exile, Hera, Sabine',
+        others: 'Ezra Exile, Hera, Sabine. Huyang auto makes it an easy auto if you have it',
         notes: 'Auto',
         videos: [{ url: 'https://youtu.be/WnBhCQ580s0' }],
         icon: '/icons/characters/tex.charui_ahsokatanogray.png',
         difficulty: difficulty.VERY_EASY,
-        successRate: successRate.CONSISTENT,
+        successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO]
     },
     {
@@ -549,5 +576,14 @@ export const youngLandoP2: dataType[] = [
         difficulty: difficulty.EASY,
         successRate: successRate.USUALLY,
         interactionType: [interactionType.PAUSE_WAVE2],
+    },
+    {
+        lead: 'Ahsoka Tano',
+        others: 'PadaWren, GenSyn, Wat',
+        notes: 'Weapon Tech on Sabine, then hit auto',
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: 'AHSOKATANO, WATTAMBOR',
+        creator: 'Arcky, Snifex',
     },
 ]

@@ -84,6 +84,17 @@ export const jediLSP2: dataType[] = [
         successRate: successRate.USUALLY,
         interactionType: [interactionType.AUTO],
     },
+    {
+        lead: 'JML (JTL)', gameId: 'GRANDMASTERLUKE, LEIAJEDITRAINING',
+        leadFull: 'Jedi Master Luke',
+        others: 'Jedi Training Leia, 3 other Jedi',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/8xWzSDchwy0?si=V7e66hIdL3IU4SvA' }],
+        icon: '/icons/characters/tex.charui_luke_jml.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+    },
     // {
     //     lead: 'JKL (Ezra)', gameId: 'JEDIKNIGHTLUKE',
     //     leadFull: 'Jedi Master Luke with Ezra',
@@ -511,6 +522,15 @@ export const rightLSP2: dataType[] = [
         omi: false,
         creator: "anonymous"
     },
+    {
+        lead: "CLS",
+        others: "Han, Chewie, CP3O, CP30&Chewie (Classic CLS)",
+        notes: "Nothing special just go for the weakest trooper",
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: "COMMANDERLUKESKYWALKER, HANSOLO, C3POCHEWBACCA, C3POLEGENDARY, CHEWBACCALEGENDARY",
+        creator: "Anonymous"
+    }
 ]
 
 export const zeffoUnlock: dataType[] = [

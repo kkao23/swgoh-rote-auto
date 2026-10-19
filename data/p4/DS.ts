@@ -210,15 +210,24 @@ export const dsMidRightP4: dataType[] = [
         creator: 'Anonymous',
     },
     {
-    lead: 'Captain Ithano',
-    gameId: 'ITHANO',
-    icon: '/icons/characters/tex.charui_ithano.png',
-    others: 'SM 33; Quigold (Omicron needed), leftover DS',
-    notes: 'Manually played spare Capt. Ithanos mass dmg when everybody has Retribution.',
-    videos: [],
-    difficulty: difficulty.EASY,
-    omi: true,
-    creator: 'roehri79',
+        lead: 'Captain Ithano',
+        gameId: 'ITHANO',
+        icon: '/icons/characters/tex.charui_ithano.png',
+        others: 'SM 33; Quigold (Omicron needed), leftover DS',
+        notes: 'Manually played spare Capt. Ithanos mass dmg when everybody has Retribution.',
+        videos: [],
+        difficulty: difficulty.EASY,
+        omi: true,
+        creator: 'roehri79',
+    },
+    {
+        lead: 'Stranger',
+        others: 'Malgus, Marauder, Maul (hate fueled), Starkiller',
+        notes: 'Can’t auto, must manually play, but good if your scraping for characters to get points. (Need to micromanage Maul so he doesn’t die, save starkiller’s “pull it out of the sky” until 2nd wave)  ',
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: 'STRANGER',
+        creator: 'Dewannawanga (CAW 2 INSANITY)'
     }
 ]
 

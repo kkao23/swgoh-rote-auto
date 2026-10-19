@@ -170,7 +170,7 @@ export const reekDSP2: dataType[] = [
     {
         lead: 'Lord Vader', gameId: 'LORDVADER',
         others: 'Shoretrooper, Piett, Thrawn',
-        notes: 'auto, any empire works',
+        notes: 'auto, any empire works, clones are great here too',
         videos: [{ url: 'https://youtu.be/1qQIxB3OQPs' }],
         icon: '/icons/characters/tex.charui_lordvader.png',
         difficulty: difficulty.EASY,
@@ -254,18 +254,25 @@ export const reekDSP2: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
     },
-
-{
-    lead: 'Doctor Aphra (IG90)', gameId: 'DOCTORAPHRA',
-    others: 'IG-90, BT-1, 0-0-0 +1',
-    notes: 'Super easy. Any 5th works, I usually use Sm33 or Grievous. Probably dont need 000',
-    videos: [],
-    icon: '/icons/characters/tex.charui_doctoraphra.png',
-    difficulty: difficulty.EASY,
-    successRate: successRate.USUALLY,
-    interactionType: [interactionType.AUTO],
-    creator: 'anonymous'
-}
+    {
+        lead: 'Doctor Aphra (IG90)', gameId: 'DOCTORAPHRA',
+        others: 'IG-90, BT-1, 0-0-0 +1',
+        notes: 'Super easy. Any 5th works, I usually use Sm33 or Grievous. Probably dont need 000',
+        videos: [],
+        icon: '/icons/characters/tex.charui_doctoraphra.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.USUALLY,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous'
+    },
+    {
+        lead: "Darth Vader",
+        others: "Sith Emp Trooper, GA Trawn, +2 sith or empire",
+        notes: "Use Vader's gainin turns passes to clean reek's debuffs on SET and anyone low hp. Other than that focus first alpha and then reek.",
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: "VADER"
+    }
 ]
 
 export const nexuDSP2: dataType[] = [
@@ -367,6 +374,15 @@ export const nexuDSP2: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
     },
+    {
+        lead: "Palp",
+        others: "Darth Vader, Mara, Thrawn, Piett",
+        notes: "Normal TM train",
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: "EMPERORPALPATINE, MARAJADE",
+        creator: "anonymous"
+    }
 ]
 
 export const shipsDSP2: dataType[] = [

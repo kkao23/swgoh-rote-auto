@@ -356,6 +356,15 @@ export const jabbaP5: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
+        lead: "Jabba (Full BH)",
+        others: "Boushh, krr, dengar, bossk",
+        notes: "With those 4 it is always full auto. ",
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: "JABBATHEHUTT",
+        creator: 'Anonymous',
+    },
+    {
         lead: 'Jabba', gameId: 'JABBATHEHUTT',
         others: 'Boosh, Krrsantan, Gam Guard (omi), Bossk',
         notes: 'auto, replace Bossk with Hutt Cartel if possible',
@@ -367,7 +376,7 @@ export const jabbaP5: dataType[] = [
         omi: true,
     },
     {
-        lead: 'Jabba (Remnant', gameId: 'JABBATHEHUTT',
+        lead: 'Jabba (Remnant)', gameId: 'JABBATHEHUTT',
         others: 'Captain Enoch (Omi), Night Trooper, Scout Trooper, DT Peridea',
         notes: 'auto',
         videos: [],
@@ -378,6 +387,14 @@ export const jabbaP5: dataType[] = [
         omi: true,
         creator: 'BailWritte',
     },
+    {
+        lead: "Jabba (Manual Auto Basic)",
+        others: "Any R9s",
+        notes: "Auto Basic till ult and finish with thermals in both waves.",
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: "JABBATHEHUTT"
+    }
 ]
 
 export const youngHanP5: dataType[] = [

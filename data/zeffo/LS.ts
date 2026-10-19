@@ -161,6 +161,15 @@ export const zeffoJedi: dataType[] = [
     difficulty: difficulty.EASY,
     omi: true,
     creator: 'Anonymous',
+    },
+    {
+        lead: "JKCK (JML JTL)",
+        others: "JML, Leia (Jedi Training), JKL, GMY (All Relic 9).",
+        notes: "Always call Leia to assist unless you need to dispel a taunt (then call JKL). Focus down 2nd Sister first in Phase 2 then hit auto. ",
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: "JEDIKNIGHTCAL, GRANDMASTERLUKE, JEDITRAININGLEIA, JEDIKNIGHTLUKE",
+        creator: "Rhaegar Targaryen"
     }
 ]
 

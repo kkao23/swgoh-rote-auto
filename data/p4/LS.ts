@@ -193,7 +193,7 @@ export const lsGenericP4: dataType[] = [
     {
         lead: 'Padme Amidala', gameId: 'PADMEAMIDALA',
         others: 'CAT, Snips, R2, ARC-Trooper',
-        notes: 'Good leftover team for smaller rosters.',
+        notes: 'Good leftover team for smaller rosters. Other comps seem to work too (Pad Obi, MQG, GK, R2)',
         icon: '/icons/characters/tex.charui_padme_geonosis.png',
         videos: [],
         difficulty: difficulty.EASY,
@@ -202,13 +202,22 @@ export const lsGenericP4: dataType[] = [
         creator: 'anonymous'
     },
     {
-    lead: 'Rey (501st)',
-    gameId: 'GLREY',
-    others: '501. ( Fives, Echo, Rex, Arc Soldier )',
-    notes: 'Full Autoplay, no Platoons needed',
-    videos: [],
-    difficulty: difficulty.EASY,
-    creator: 'Justpure CR',
+        lead: 'Rey (501st)',
+        gameId: 'GLREY',
+        others: '501. ( Fives, Echo, Rex, Arc Soldier )',
+        notes: 'Full Autoplay, no Platoons needed',
+        videos: [],
+        difficulty: difficulty.EASY,
+        creator: 'Justpure CR',
+    },
+    {
+        lead: "Cobb Vanth",
+        others: "CUP, Lobot, Jawa Scavenger, Chief Nebit",
+        notes: "Full auto",
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: "COBBVANTH, LOBOT, JAWASCAVENGER, CHIEFNEBIT, CORUSCANTUNDERWORLDPOLICE",
+        creator: "Anonymous"
     }
 ]
 

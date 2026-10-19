@@ -185,6 +185,16 @@ export const lsLeftP3: dataType[] = [
         videos: [{ url: 'https://youtu.be/fa3yMKjca6s?t=291', creator: 'BitDynasty' }],
         difficulty: difficulty.EASY,
         omi: true,
+    },
+    {
+        lead: "Cassian UC",
+        others: "Vel, Kleya, Cinta, Luthen",
+        notes: "Full Auto. Vel omicron",
+        videos: [],
+        difficulty: difficulty.EASY,
+        omi: true,
+        gameId: "CASSIANUNDERCOVER, VEL, CINTA, KLEYA, LUTHENRAEL",
+        creator: "anonymous"
     }
 ]
 
@@ -439,7 +449,6 @@ export const sawP3: dataType[] = [
         difficulty: difficulty.EASY,
         gameId: "SAWGERRERA, VEL, KLEYA, LUTHENRAEL, CASSIANUNDERCOVER",
         omi: true,
-        creator: "anonymous"
     },
     {
         lead: "Saw (Jyn)",

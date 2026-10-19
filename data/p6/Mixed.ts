@@ -25,13 +25,21 @@ export const topWampaP6: dataType[] = [
         creator: 'Boston B',
     },
     {
-    lead: 'Satele Shan',
-    gameId: 'SATELESHAN',
-    others: 'Bastilla, Juhani, JKR, Jolee',
-    notes: 'Auto',
-    videos: [],
-    difficulty: difficulty.EASY,
-    creator: 'Anonymous',
+        lead: 'Satele Shan',
+        gameId: 'SATELESHAN',
+        others: 'Bastilla, Juhani, JKR, Jolee',
+        notes: 'Auto',
+        videos: [],
+        difficulty: difficulty.EASY,
+        creator: 'Anonymous',
+    },
+    {
+        lead: "Bo-Katan (Mand'alore)",
+        others: "Paz Vizsla, Mandalorian (Beskar Armor), IG-12 & Grogu, Bo-Katan",
+        notes: "Full Auto",
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: "MANDALORBOKATAN, THEMANDALORIANBESKARARMOR, PAZVIZSLA, IG12, BOKATAN",
     }
 ]
 
@@ -104,6 +112,17 @@ export const mixedFleetP6: dataType[] = [
         successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.AUTO],
         creator: 'Mar Trepodi',
+    },
+    {
+        lead: "Executor without Punnishing One",
+        others: "Start: HT, RC, XB\nNext: IG2000, Slave, Tie Advanced, ITB",
+        notes: "Auto",
+        videos: [{
+            url: 'https://www.youtube.com/watch?v=MU6Xa_L49fI',
+            creator: 'BailWritte',
+        }],
+        difficulty: difficulty.EASY,
+        creator: 'BailWritte',
     },
 ]
 

@@ -298,7 +298,17 @@ export const mandaloreGeneric: dataType[] = [
         videos: [],
         difficulty: difficulty.EASY,
         creator: 'Anonymous',
-    },{
+    },
+    {
+        lead: "Jedi Master Luke Skywalker",
+        others: "JK Luke, JK Cal K, Hermit Yoda, Yoda",
+        notes: "Manual, First down Dark/Death Troopers",
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: "GRANDMASTERLUKE, JEDIKNIGHTCAL",
+        creator: "anonymous"
+    },
+    {
         lead: 'Cobb Vanth',
         gameId: 'COBBVANTH, JAWASCAVENGER',
         icon: '/icons/characters/tex.charui_cobbvanth.png',

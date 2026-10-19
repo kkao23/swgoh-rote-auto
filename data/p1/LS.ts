@@ -84,10 +84,30 @@ export const maceKitP1 = [
         difficulty: difficulty.EASY,
         gameId: "MACEWINDU, KITFISTO, JEDIKNIGHTCAL",
         creator: "anonymous"
-    }
+    },
+    {
+        lead: "Mace Windu",
+        others: "Kit, JML, LJT (Leia Jedi Training), JKCK",
+        notes: "Auto",
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: "JEDIMASTERMACEWINDU, KITFISTO, GRANDMASTERLUKE, LEIAJEDITRAINING, JEDIKNIGHTCAL",
+        creator: "anonymous"
+    },
 ]
 
 export const jediP1: dataType[] = [
+    {
+        lead: 'JML (JTL)', gameId: 'GRANDMASTERLUKE, JEDITRAININGLEIA',
+        leadFull: 'Jedi Master Luke',
+        others: 'Jedi Luke, Jedi Training Leia, +3 other jedi',
+        notes: 'auto, Almost any other jedi work',
+        videos: [{ url: 'https://youtu.be/KPF0D7qpOHM?si=Pcx_gm7mQaTpD1ga' }],
+        icon: '/icons/characters/tex.charui_luke_jml.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
+    },
     {
         lead: 'JML', gameId: 'GRANDMASTERLUKE',
         leadFull: 'Jedi Master Luke',
@@ -167,30 +187,30 @@ export const jediP1: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
     }
-,
-{
-    lead: 'Jedi Knight Cal kestis', gameId: 'JEDIKNIGHTCAL',
-    others: 'JML, JKL, Jedi Revan, any jedi',
-    notes: 'Keep swapping cal stances',
-    videos: [],
-    difficulty: difficulty.EASY,
-    successRate: successRate.CONSISTENT,
-    interactionType: [interactionType.AUTO],
-    creator: 'anonymous',
-    icon: '/icons/characters/tex.charui_calkestis.png',
-}
-,
-{
-    lead: 'Jedi Knight Revan', gameId: 'JEDIKNIGHTREVAN',
-    others: 'Jedi Knight Cal Kestis, Kyle Katarn, Jolee Bindo, Hermit Yoda',
-    notes: 'auto, able to do wave 1 easily, not so well with wave 2',
-    videos: [],
-    difficulty: difficulty.EASY,
-    successRate: successRate.CONSISTENT,
-    interactionType: [interactionType.AUTO],
-    creator: 'Parableman',
-    icon: '/icons/characters/tex.charui_jedirevan.png',
-}
+    ,
+    {
+        lead: 'Jedi Knight Cal kestis', gameId: 'JEDIKNIGHTCAL',
+        others: 'JML, JKL, Jedi Revan, any jedi',
+        notes: 'Keep swapping cal stances',
+        videos: [],
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'anonymous',
+        icon: '/icons/characters/tex.charui_calkestis.png',
+    }
+    ,
+    {
+        lead: 'Jedi Knight Revan', gameId: 'JEDIKNIGHTREVAN',
+        others: 'Jedi Knight Cal Kestis, Kyle Katarn, Jolee Bindo, Hermit Yoda',
+        notes: 'auto, able to do wave 1 easily, not so well with wave 2',
+        videos: [],
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        creator: 'Parableman',
+        icon: '/icons/characters/tex.charui_jedirevan.png',
+    }
 ]
 
 export const shipsLSP1: dataType[] = [
@@ -469,5 +489,23 @@ export const genericLSP1: dataType[] = [
         videos: [{ url: 'https://youtu.be/fa3yMKjca6s', creator: 'BitDynasty' }],
         difficulty: difficulty.EASY,
         omi: true,
+    },
+    {
+        lead: "General Syndulla",
+        others: "Exile Ezra, Huyang, Fulcrum, Padawan Sabine",
+        notes: "Zeta/Omicrons helpful but can get by with a couple characters lacking  their full set. As always, kill the medics first.",
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: "GENERALSYNDULLA, EZRAEXILE",
+        creator: "anonymous"
+    },
+    {
+        lead: "Commander Luke Skywalker",
+        others: "3PO, Han Solo, Chewbacca, Threepio & Chewie",
+        notes: "Auto, Phase 2 pause and target medics first",
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: "COMMANDERLUKESKYWALKER",
+        creator: "Devon"
     }
 ]

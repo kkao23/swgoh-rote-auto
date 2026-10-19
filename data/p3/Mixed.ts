@@ -3,7 +3,7 @@ import { difficulty, successRate, interactionType } from "~/models/data";
 
 export const boKatanP3: dataType[] = [
     {
-        lead: 'BK Mandalore', gameId: 'MANDALORBOKATAN',
+        lead: 'BK Mandalore', gameId: 'MANDALORBOKATAN, IG12, THEMANDALORIANBESKARARMOR',
         leadFull: 'Bo Katan Mandalore',
         others: 'IG12',
         notes: 'IG call bo to assist, don\'t use Birds with BAM. Ballista if someone gets eaten.',
@@ -13,6 +13,15 @@ export const boKatanP3: dataType[] = [
         successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.MANUAL],
         targeted: true
+    },
+    {
+        lead: "BKM (semi auto)",
+        others: "IG-12",
+        notes: "Auto turn-by-turn until someone gets eaten by the enemy, then on your next turn if the revive is still pending (i.e. the enemy has not yet taken a turn since eating) AND mission-granted global special \"Ballista\" is available - manually activate it\n\nNB1. \"Swift Takedown\" now revives the toon just as \"Ballista\" does, but unlike \"Ballista\" - this one will in fact get activated by Auto logic when a revival is pending, so you no longer have to activate it manually or completely avoid using \"Disciplined Set Up\" (but may want to keep it in a sleeve until Ballista is on cooldown - yet this risks your toons getting worn down by the enemy/sandstorm, as \"Swift Takedown\" deals massive damage to the enemy)\n\nNB2. No need to wait for Ops to complete, because any Ops still incomplete when this mission becomes available provide no benefit for it. Best to do this mission first before filling any Ops, other missions or deployments",
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: "MANDALORBOKATAN, IG12, THEMANDALORIANBESKARARMOR",
+        creator: "Traj"
     }
 ]
 
@@ -67,7 +76,7 @@ export const jabbaP3: dataType[] = [
 
 export const fennecP3: dataType[] = [
     {
-        lead: 'Rey', gameId: 'GLREY',
+        lead: 'Rey', gameId: 'GLREY, FENNECSHAND',
         others: 'Fennec, any 3 resistance',
         notes: 'easy auto',
         videos: [{ url: 'https://youtu.be/ydm8T8Jvpyc' }],
@@ -76,7 +85,7 @@ export const fennecP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'JMK', gameId: 'JEDIMASTERKENOBI',
+        lead: 'JMK', gameId: 'JEDIMASTERKENOBI, FENNECSHAND',
         leadFull: 'Jedi Master Kenobi',
         others: 'GK, Shaak Ti, Padme',
         notes: 'easy auto',
@@ -87,7 +96,7 @@ export const fennecP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Bossk', gameId: 'BOSSK',
+        lead: 'Bossk', gameId: 'BOSSK, FENNECSHAND',
         others: 'Boba, Greef, Mando',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/R7zqN2V0kQo?si=JDJovWknr8nAx7_t&t=267', creator: 'pico' }],
@@ -97,7 +106,7 @@ export const fennecP3: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'SEE', gameId: 'SITHPALPATINE',
+        lead: 'SEE', gameId: 'SITHPALPATINE, FENNECSHAND',
         leadFull: 'Sith Eternal Emperor',
         others: 'leftover sith',
         notes: 'I had Darth maul, Darth sidious and sith marauder. full auto',
@@ -108,7 +117,7 @@ export const fennecP3: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'Bane', gameId: 'DARTHBANE',
+        lead: 'Bane', gameId: 'DARTHBANE, FENNECSHAND',
         leadFull: 'Darth Bane',
         others: 'leftover sith',
         notes: 'I had Darth maul, Darth sidious and sith empire trooper. can be dicey, add malak for guarantee win',
@@ -118,7 +127,7 @@ export const fennecP3: dataType[] = [
         successRate: successRate.USUALLY,
     },
     {
-        lead: 'SLKR', gameId: 'SUPREMELEADERKYLOREN',
+        lead: 'SLKR', gameId: 'SUPREMELEADERKYLOREN, FENNECSHAND',
         others: 'DRey, KRU, Sith Trooper',
         notes: 'easy full auto',
         videos: [{ url: 'https://youtu.be/qtWOgArbEX0' }],
@@ -128,7 +137,7 @@ export const fennecP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Omega', gameId: 'OMEGAS3',
+        lead: 'Omega', gameId: 'OMEGAS3, FENNECSHAND',
         others: 'Wrecker (omicron), Hunter, Crosshair, Fennec',
         notes: 'easy auto with omi',
         videos: [{ url: 'https://youtu.be/Sv1SbpTmcWI' }],
@@ -139,7 +148,7 @@ export const fennecP3: dataType[] = [
         omi: true,
     },
     {
-        lead: 'DTMG', gameId: 'MOFFGIDEONS3',
+        lead: 'DTMG', gameId: 'MOFFGIDEONS3, FENNECSHAND',
         leadFull: 'Dark Trooper Moff Gideon',
         others: 'Scout Trooper, Death Trooper, Moff Gideon, Fennec',
         notes: 'auto. Enoch omi makes it easier but not required',
@@ -151,7 +160,7 @@ export const fennecP3: dataType[] = [
         omi: true,
     },
     {
-        lead: 'Pirate King Hondo', gameId: 'GLHONDO',
+        lead: 'Pirate King Hondo', gameId: 'GLHONDO, FENNECSHAND',
         leadFull: 'Pirate King Hondo Onaka',
         others: 'Silvo, Hondo, Vane',
         notes: 'easy full auto',
@@ -162,7 +171,7 @@ export const fennecP3: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-        lead: 'Maz Kanata', gameId: 'MAZKANATA',
+        lead: 'Maz Kanata', gameId: 'MAZKANATA, FENNECSHAND',
         others: 'Ithano, Quiggold, Kix',
         notes: 'auto',
         videos: [{ url: 'https://youtu.be/KdRAXLcA0vY' }],
@@ -172,7 +181,7 @@ export const fennecP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'JML', gameId: 'GRANDMASTERLUKE',
+        lead: 'JML', gameId: 'GRANDMASTERLUKE, FENNECSHAND',
         leadFull: 'Jedi Master Luke',
         others: 'JKL, Shaak Ti, GMY',
         notes: 'auto',
@@ -183,7 +192,7 @@ export const fennecP3: dataType[] = [
         interactionType: [interactionType.AUTO]
     },
     {
-        lead: 'Boba Fett Scion of Jango', gameId: 'BOBAFETTSCION, ASAJJDARKDISCIPLE',
+        lead: 'Boba Fett Scion of Jango', gameId: 'BOBAFETTSCION, ASAJJDARKDISCIPLE, FENNECSHAND',
         leadFull: 'Boba Fett Scion of Jango',
         others: 'Asajj Dark Disciple, Fennec, Greef, Mando',
         notes: 'auto',
@@ -194,7 +203,7 @@ export const fennecP3: dataType[] = [
         interactionType: [interactionType.AUTO],
     },
     {
-        "lead": "Darth Malgus", "gameId": "DARTHMALGUS",
+        "lead": "Darth Malgus", "gameId": "DARTHMALGUS, FENNECSHAND",
         "leadFull": "Darth Malgus",
         "others": "Malak, Fennec +2 others",
         "notes": "Full auto",
@@ -206,13 +215,32 @@ export const fennecP3: dataType[] = [
         "creator": "Kino Apparition"
     },
     {
-        lead: 'BK Mandalore', gameId: 'MANDALORBOKATAN',
+        lead: 'BK Mandalore', gameId: 'MANDALORBOKATAN, FENNECSHAND',
         leadFull: 'Bo Katan Mandalore',
         others: 'Ig-12, Pqz, BAM',
         notes: 'Make sure to use BAM\'s wonders of the force strategically especially in the second wave.',
         videos: [],
         difficulty: difficulty.EASY,
         creator: 'LookScanShoot',
+    },
+    {
+        lead: 'Ahsoka Tano',
+        others: 'Any',
+        notes: 'Auto',
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: 'GLAHSOKATANO, FENNECSHAND',
+        interactionType: [interactionType.AUTO],
+        successRate: successRate.CONSISTENT,
+    },
+    {
+        lead: "Baylan",
+        others: "Shin, Marrok, any 5th",
+        notes: "Fast easy auto",
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: "BAYLANSKOLL, FENNECSHAND",
+        creator: "Traj"
     }
 ]
 
@@ -508,6 +536,16 @@ export const mixedTopLeftP3: dataType[] = [
         difficulty: difficulty.EASY,
         gameId: "BOSSK",
         creator: "AdoMatOx"
+    },
+    {
+        lead: "Darth Traya",
+        gameId: "DARTHTRAYA, DARTHNIHILUS, DARTHMALAK",
+        others: "Darth Nihilus, Darth Malak, Count Dooku, Sith Fighter",
+        notes: "Auto",
+        videos: [{ url: 'https://youtu.be/7f88gIAkCxQ?is=AgASs_uAXlp2dpNy', creator: 'Ever' }],
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
     }
 ]
 

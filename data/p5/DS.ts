@@ -151,6 +151,15 @@ export const dsTopMidP5: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         creator: 'anonymous'
+    },
+    {
+        lead: 'Zuckuss',
+        others: '4Lom, AVDD, Bossk, +1 BH',
+        notes: 'At the start of each wave, put AVDDs "Disciple," from her middle ability on 4Lom, then auto',
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: 'ZUCKUSS, ASAJJDARKDISCIPLE, 4LOM, BOSSK',
+        creator: 'anonymous'
     }
 ]
 
@@ -211,6 +220,15 @@ export const dsLeftP5: dataType[] = [
         successRate: successRate.NINETY_PERCENT,
         interactionType: [interactionType.MANUAL]
     },
+    {
+        lead: "Aphra",
+        others: "BT-1, 0-0-0, IG-90, another droid",
+        notes: "2/2 Manual",
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: "DOCTORAPHRA",
+        creator: "Anonymous"
+    }
 ]
 
 export const dsInqsP5: dataType[] = [

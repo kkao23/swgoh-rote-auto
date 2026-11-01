@@ -38,14 +38,31 @@ export const handler = async (event) => {
 
     const sourceIp = event.requestContext?.http?.sourceIp || "unknown";
 
+    // Extract YouTube links from the notes into the videos array
+    const youtubeRegex =
+      /https?:\/\/(?:www\.|m\.)?(?:youtube\.com\/(?:watch\?v=|shorts\/|live\/)|youtu\.be\/)[\w\-?=&.]+/gi;
+    const videoUrls = [...new Set(notes.match(youtubeRegex) ?? [])];
+    const cleanedNotes = notes
+      .replace(youtubeRegex, "")
+      .replace(/\s{2,}/g, " ")
+      .trim()
+      .replace(/[\s,;]+$/, "");
+
+    const videos = videoUrls.map((url) => ({ url }));
+    const creator = userEmail ? userName || userEmail : "anonymous";
+
     // Copy-pasteable snippet matching models/data.ts `data` type usage in
     // the data/<phase>/<Side>.ts files (single-quoted TS, difficulty enum)
+    const videosSnippet = videos.length
+      ? `[\n        { url: '${escapeTs(videos[0].url)}' },\n    ]`
+      : "[]";
     const teamSnippet = `{
     lead: '${escapeTs(lead)}',
     others: '${escapeTs(others)}',
-    notes: '${escapeTs(notes)}',
-    videos: [],
+    notes: '${escapeTs(cleanedNotes)}',
+    videos: ${videosSnippet},
     difficulty: difficulty.EASY,${gameId ? `\n    gameId: '${escapeTs(gameId)}',` : ""}
+    creator: '${escapeTs(creator)}',
 }`;
 
     const emailParams = {

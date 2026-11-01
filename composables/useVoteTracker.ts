@@ -22,6 +22,25 @@ export function _resetVoteSummariesForTests(): void {
   summariesPromise = null;
 }
 
+/**
+ * a.json() fields can come back as a plain object, a JSON string, or
+ * (for rows written as raw strings) a double-encoded JSON string.
+ * Parse until we reach an object.
+ */
+function normalizeCounts(value: unknown): Record<string, unknown> | null {
+  let current: unknown = value;
+  for (let i = 0; i < 3 && typeof current === "string"; i++) {
+    try {
+      current = JSON.parse(current);
+    } catch {
+      return null;
+    }
+  }
+  return current && typeof current === "object"
+    ? (current as Record<string, unknown>)
+    : null;
+}
+
 export function useVoteTracker() {
   const client = generateClient<Schema>();
 
@@ -76,12 +95,8 @@ export function useVoteTracker() {
         }
 
         for (const item of result.data) {
-          // a.json() comes back as a serialized JSON string
-          const parsed =
-            typeof item.counts === "string"
-              ? JSON.parse(item.counts)
-              : item.counts;
-          if (!parsed || typeof parsed !== "object") continue;
+          const parsed = normalizeCounts(item.counts);
+          if (!parsed) continue;
           for (const [lead, votes] of Object.entries(parsed)) {
             counts[`${item.summaryKey}|${lead}`] = Number(votes) || 0;
           }

@@ -275,6 +275,19 @@ describe("useVoteTracker", () => {
       expect(tracker.voteCounts.value).toEqual({ "P2|LS|Mid|JMK": 10 });
     });
 
+    it("unwraps double-encoded JSON strings (a.json read quirk)", async () => {
+      mockSummaries([
+        {
+          summaryKey: "P1|DS|Top",
+          counts: JSON.stringify(JSON.stringify({ Rey: 5 })),
+        },
+      ]);
+
+      await tracker.fetchVotes("P1", "DS", "Top");
+
+      expect(tracker.voteCounts.value).toEqual({ "P1|DS|Top|Rey": 5 });
+    });
+
     it("merges with existing vote counts", async () => {
       tracker.voteCounts.value = { "P1|DS|Top|Rey": 2 };
 

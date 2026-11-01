@@ -55,7 +55,9 @@ export const handler: Handler = async () => {
     exclusiveStartKey = result.LastEvaluatedKey;
   } while (exclusiveStartKey);
 
-  // Upsert one summary row per prefix
+  // Upsert one summary row per prefix.  createdAt/updatedAt are required
+  // by the Amplify-generated GraphQL schema (non-nullable AWSDateTime).
+  const now = new Date().toISOString();
   const summaryKeys = Object.keys(totals);
   for (const summaryKey of summaryKeys) {
     await ddb.send(
@@ -64,8 +66,12 @@ export const handler: Handler = async () => {
         Item: {
           id: summaryKey,
           summaryKey,
-          // a.json() is stored as a serialized JSON string
-          counts: JSON.stringify(totals[summaryKey]),
+          // Stored as a DynamoDB map — AppSync's a.json() resolver
+          // serializes it to a JSON string exactly once on read
+          counts: totals[summaryKey],
+          createdAt: now,
+          updatedAt: now,
+          __typename: "VoteSummary",
         },
       })
     );

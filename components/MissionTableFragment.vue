@@ -6,7 +6,7 @@ import { creatorMap } from '~/models/creators';
 import { getCharacterIcon } from '~/data/displayNames';
 import { buildVerifiedAccordion, buildCommunityAccordion } from '~/util/accordionHelpers';
 import { useRouter, useRoute } from 'vue-router';
-import { nextTick, watch, computed, inject, type Ref } from 'vue';
+import { nextTick, watch, computed, inject, onMounted, type Ref } from 'vue';
 import { trackEvent } from '~/util/analytics';
 import {
     difficultyColor,
@@ -64,7 +64,14 @@ const globalToggleModal = () => modalStore.toggleModal();
 const localIsModalOpen = ref(false);
 const isHelpModalOpen = ref(false);
 
-// Fetch vote counts when the accordion modal opens
+// Load vote summaries once on page load so opening a modal is instant
+onMounted(() => {
+    if (props.phase && props.alignment && props.position) {
+        fetchVotes(props.phase, props.alignment, props.position);
+    }
+});
+
+// Fetch vote counts when the accordion modal opens (no-op after first load)
 watch(localIsModalOpen, (isOpen) => {
     if (isOpen && props.phase && props.alignment && props.position) {
         fetchVotes(props.phase, props.alignment, props.position);
@@ -189,6 +196,10 @@ async function showToast(itemIndex: number) {
                 </template>
                 
                 <MissionModalFooter></MissionModalFooter>
+
+                <p class="text-xs text-gray-400 text-right mb-2">
+                    Vote totals update nightly
+                </p>
 
                 <!-- Coming soon message when data is empty -->
                 <div v-if="!data || data.length === 0" class="py-8 text-center">

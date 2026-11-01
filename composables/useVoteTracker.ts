@@ -13,6 +13,15 @@ import type { Schema } from "../amplify/data/resource";
 const voteCounts = ref<Record<string, number>>({});
 const isLoading = ref(false);
 
+// Vote summaries are loaded once per session; subsequent fetchVotes
+// calls are no-ops.  Counts refresh nightly (see vote-aggregator).
+let summariesPromise: Promise<void> | null = null;
+
+/** Test-only: reset the once-per-session summary fetch state. */
+export function _resetVoteSummariesForTests(): void {
+  summariesPromise = null;
+}
+
 export function useVoteTracker() {
   const client = generateClient<Schema>();
 
@@ -40,43 +49,52 @@ export function useVoteTracker() {
   }
 
   async function fetchVotes(
-    phase: string,
-    alignment: string,
-    position: string
+    _phase?: string,
+    _alignment?: string,
+    _position?: string
   ): Promise<void> {
+    if (!summariesPromise) {
+      summariesPromise = loadSummaries().then((ok) => {
+        // Allow a retry if the load failed
+        if (!ok) summariesPromise = null;
+      });
+    }
+    return summariesPromise;
+  }
+
+  async function loadSummaries(): Promise<boolean> {
     isLoading.value = true;
     try {
-      const prefix = `${phase}|${alignment}|${position}|`;
-
-      // Paginate through all DynamoDB records (AppSync list() only returns
-      // one page by default, ~100 items; we have 1400+)
-      let allItems: Awaited<ReturnType<typeof client.models.TeamVote.list>>['data'] = [];
+      const counts: Record<string, number> = {};
       let nextToken: string | null = null;
       do {
-        const result = await client.models.TeamVote.list({
-          limit: 1000,
-          nextToken,
-        });
+        const result = await client.models.VoteSummary.list({ nextToken });
 
         if (result.errors) {
-          console.error("Failed to fetch vote counts:", result.errors);
-          return;
+          console.error("Failed to fetch vote summaries:", result.errors);
+          return false;
         }
 
-        allItems = allItems.concat(result.data);
+        for (const item of result.data) {
+          // a.json() comes back as a serialized JSON string
+          const parsed =
+            typeof item.counts === "string"
+              ? JSON.parse(item.counts)
+              : item.counts;
+          if (!parsed || typeof parsed !== "object") continue;
+          for (const [lead, votes] of Object.entries(parsed)) {
+            counts[`${item.summaryKey}|${lead}`] = Number(votes) || 0;
+          }
+        }
+
         nextToken = result.nextToken ?? null;
       } while (nextToken);
 
-      const counts: Record<string, number> = {};
-      for (const item of allItems) {
-        if (item.teamKey?.startsWith(prefix)) {
-          counts[item.teamKey] = item.votes ?? 0;
-        }
-      }
-
       voteCounts.value = { ...voteCounts.value, ...counts };
+      return true;
     } catch (err) {
-      console.error("useVoteTracker: fetchVotes failed", err);
+      console.error("useVoteTracker: loadSummaries failed", err);
+      return false;
     } finally {
       isLoading.value = false;
     }

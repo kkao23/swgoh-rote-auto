@@ -27,6 +27,19 @@ const schema = a.schema({
    * Deduplication log: prevents the same IP from voting twice on
    * the same team. Keyed by a salted SHA-256 hash of (IP + teamKey).
    */
+  /**
+   * Nightly aggregate of TeamVote counts, keyed by a prefix of teamKey
+   * ("P1|DS|Top" → { "Rey": 5, ... }).  Written by the vote-aggregator
+   * scheduled Lambda so the frontend can load all counts with a single
+   * small query instead of paginating the full TeamVote table.
+   */
+  VoteSummary: a
+    .model({
+      summaryKey: a.string().required(),
+      counts: a.json(),
+    })
+    .authorization((allow) => [allow.publicApiKey()]),
+
   VoteLog: a
     .model({
       ipHash_teamKey: a.string().required(),

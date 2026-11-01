@@ -12,6 +12,7 @@ vi.mock("@vueuse/core", () => ({
 const mockList = vi.fn();
 const mockUpdate = vi.fn();
 const mockCreate = vi.fn();
+const mockSummaryList = vi.fn();
 
 vi.mock("aws-amplify/data", () => ({
   generateClient: () => ({
@@ -21,11 +22,14 @@ vi.mock("aws-amplify/data", () => ({
         update: mockUpdate,
         create: mockCreate,
       },
+      VoteSummary: {
+        list: mockSummaryList,
+      },
     },
   }),
 }));
 
-import { useVoteTracker } from "~/composables/useVoteTracker";
+import { useVoteTracker, _resetVoteSummariesForTests } from "~/composables/useVoteTracker";
 
 // ── Helpers ────────────────────────────────────────────────────
 function mockListReturns(items: Array<{ id: string; teamKey: string; votes: number }>) {
@@ -44,8 +48,11 @@ describe("useVoteTracker", () => {
     tracker = useVoteTracker();
     // Reset singleton state
     tracker.voteCounts.value = {};
-    // Default: list returns empty (no existing votes) — tests override as needed
+    // Reset module-level "loaded once" state between tests
+    _resetVoteSummariesForTests();
+    // Default: lists return empty — tests override as needed
     mockList.mockResolvedValue({ data: [], errors: null });
+    mockSummaryList.mockResolvedValue({ data: [], errors: null });
   });
 
   // ──────────────────────────────────────────────────────────────
@@ -234,15 +241,20 @@ describe("useVoteTracker", () => {
   });
 
   // ──────────────────────────────────────────────────────────────
-  // fetchVotes
+  // fetchVotes (loads VoteSummary rows once per session)
   // ──────────────────────────────────────────────────────────────
   describe("fetchVotes", () => {
-    it("fetches all TeamVotes and filters by prefix", async () => {
-      mockListReturns([
-        { id: "1", teamKey: "P1|DS|Top|Rey", votes: 5 },
-        { id: "2", teamKey: "P1|DS|Top|SLKR", votes: 3 },
-        { id: "3", teamKey: "P1|DS|Bottom|LV", votes: 7 },
-        { id: "4", teamKey: "P2|LS|Mid|JMK", votes: 10 },
+    function mockSummaries(items: Array<{ summaryKey: string; counts: any }>) {
+      mockSummaryList.mockResolvedValue({ data: items, errors: null });
+    }
+
+    it("flattens VoteSummary counts into teamKeys", async () => {
+      mockSummaries([
+        {
+          summaryKey: "P1|DS|Top",
+          counts: JSON.stringify({ Rey: 5, SLKR: 3 }),
+        },
+        { summaryKey: "P1|DS|Bottom", counts: JSON.stringify({ LV: 7 }) },
       ]);
 
       await tracker.fetchVotes("P1", "DS", "Top");
@@ -250,14 +262,24 @@ describe("useVoteTracker", () => {
       expect(tracker.voteCounts.value).toEqual({
         "P1|DS|Top|Rey": 5,
         "P1|DS|Top|SLKR": 3,
+        "P1|DS|Bottom|LV": 7,
       });
+      expect(mockSummaryList).toHaveBeenCalledTimes(1);
+    });
+
+    it("accepts already-parsed counts objects as well as JSON strings", async () => {
+      mockSummaries([{ summaryKey: "P2|LS|Mid", counts: { JMK: 10 } }]);
+
+      await tracker.fetchVotes("P2", "LS", "Mid");
+
+      expect(tracker.voteCounts.value).toEqual({ "P2|LS|Mid|JMK": 10 });
     });
 
     it("merges with existing vote counts", async () => {
       tracker.voteCounts.value = { "P1|DS|Top|Rey": 2 };
 
-      mockListReturns([
-        { id: "1", teamKey: "P1|DS|Top|SLKR", votes: 8 },
+      mockSummaries([
+        { summaryKey: "P1|DS|Top", counts: JSON.stringify({ SLKR: 8 }) },
       ]);
 
       await tracker.fetchVotes("P1", "DS", "Top");
@@ -268,8 +290,19 @@ describe("useVoteTracker", () => {
       });
     });
 
+    it("only fetches once per session (subsequent calls are no-ops)", async () => {
+      mockSummaries([
+        { summaryKey: "P1|DS|Top", counts: JSON.stringify({ Rey: 5 }) },
+      ]);
+
+      await tracker.fetchVotes("P1", "DS", "Top");
+      await tracker.fetchVotes("P1", "DS", "Bottom");
+
+      expect(mockSummaryList).toHaveBeenCalledTimes(1);
+    });
+
     it("survives empty results", async () => {
-      mockListReturns([]);
+      mockSummaries([]);
       tracker.voteCounts.value = { existing: 1 };
 
       await tracker.fetchVotes("P1", "DS", "Top");
@@ -277,9 +310,20 @@ describe("useVoteTracker", () => {
       expect(tracker.voteCounts.value).toEqual({ existing: 1 });
     });
 
+    it("skips malformed summary rows without throwing", async () => {
+      mockSummaries([
+        { summaryKey: "P1|DS|Top", counts: "not-json{" },
+        { summaryKey: "P1|DS|Bottom", counts: null },
+      ]);
+
+      await tracker.fetchVotes("P1", "DS", "Top");
+
+      expect(tracker.voteCounts.value).toEqual({});
+    });
+
     it("sets isLoading during fetch", async () => {
       let resolveList: (value: any) => void;
-      mockList.mockReturnValue(
+      mockSummaryList.mockReturnValue(
         new Promise((resolve) => {
           resolveList = resolve;
         })
@@ -291,6 +335,21 @@ describe("useVoteTracker", () => {
       resolveList!({ data: [], errors: null });
       await promise;
       expect(tracker.isLoading.value).toBe(false);
+    });
+
+    it("allows a retry after a failed fetch", async () => {
+      mockSummaryList
+        .mockResolvedValueOnce({ data: [], errors: [{ message: "boom" }] })
+        .mockResolvedValueOnce({
+          data: [{ summaryKey: "P1|DS|Top", counts: JSON.stringify({ Rey: 5 }) }],
+          errors: null,
+        });
+
+      await tracker.fetchVotes("P1", "DS", "Top");
+      await tracker.fetchVotes("P1", "DS", "Top");
+
+      expect(mockSummaryList).toHaveBeenCalledTimes(2);
+      expect(tracker.voteCounts.value).toEqual({ "P1|DS|Top|Rey": 5 });
     });
   });
 

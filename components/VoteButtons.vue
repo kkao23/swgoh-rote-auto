@@ -18,7 +18,9 @@ const teamKey = computed(() =>
   <span class="text-xs text-gray-400 min-w-[22px] text-center tabular-nums mr-1">
     {{ voteCounts[teamKey] ?? 0 }}
   </span>
+  <!-- Vote totals update nightly via a scheduled aggregation job -->
   <button
+    title="Vote totals update nightly"
     class="rounded-full p-0.5"
     :class="
       hasVoted(phase, alignment, position, lead) &&
@@ -30,7 +32,9 @@ const teamKey = computed(() =>
   >
     <UIcon name="i-heroicons-hand-thumb-up-solid" class="w-4 h-4" />
   </button>
+  <!-- Vote totals update nightly via a scheduled aggregation job -->
   <button
+    title="Vote totals update nightly"
     class="rounded-full p-0.5"
     :class="
       hasVoted(phase, alignment, position, lead) &&

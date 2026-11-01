@@ -466,7 +466,16 @@ export const mixedP2: dataType[] = [
         difficulty: difficulty.EASY,
         creator: "Anonymous",
         gameId: "CT7567, CT5555, CT210408, ARCTROOPER501ST, CAPTAINREX"
-    }
+    },
+    {
+        lead: 'Rey',
+        others: 'Finn, RH Finn, JTR, BB8',
+        notes: 'Ben was assigned to a platoon, but this comp worked on Auto - Rey R7.',
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: 'GLREY',
+        creator: 'Tinnia',
+    },
 ]
 
 export const jabbaP2: dataType[] = [
@@ -583,7 +592,17 @@ export const youngLandoP2: dataType[] = [
         notes: 'Weapon Tech on Sabine, then hit auto',
         videos: [],
         difficulty: difficulty.EASY,
-        gameId: 'AHSOKATANO, WATTAMBOR',
+        gameId: 'AHSOKATANO, WATTAMBOR, YOUNGLANDO',
         creator: 'Arcky, Snifex',
+    },
+    {
+        lead: 'JMMW',
+        others: 'Depa Bilaba (omi), Jedi Temple Guard, and +1 Jedi Vanguard.',
+        notes: 'there is nothing in the Depa omicron that stipulates having to have a full team of Jedi Vanguard for the anti-revive mechanics her omi provides, to work as indicated. this should shut down that extra hard Iden mission the omi grants 200% extra offense & max health, 50% h&p recovery and damage immunity plus speed up when an enemy is killed, plus the TM removal and TM gains. should make this mission a breeze now.',
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: 'JEDIMASTERMACEWINDU, DEPABILLABA, YOUNGLANDO',
+        creator: 'anonymous',
+        omi: true
     },
 ]

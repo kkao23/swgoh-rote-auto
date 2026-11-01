@@ -507,5 +507,14 @@ export const genericLSP1: dataType[] = [
         difficulty: difficulty.EASY,
         gameId: "COMMANDERLUKESKYWALKER",
         creator: "Devon"
-    }
+    },
+    {
+        lead: 'Jedi Master Mace Windu',
+        others: 'Jocasta, Depa Billaba, Aayla Secura, Guard of the Temple',
+        notes: 'No need to target medic troopers.\nNo auto mode.\nNo omicron.\nFocus event capacity when you can.\nTarget ARC Trooper and Sniper Clone Trooper.',
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: 'JEDIMASTERMACEWINDU',
+        creator: 'anonymous',
+    },
 ]

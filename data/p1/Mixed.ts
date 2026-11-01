@@ -365,7 +365,16 @@ export const mixedP1: dataType[] = [
         difficulty: difficulty.EASY,
         gameId: "STRANGER, MAULHATEFUELED, STARKILLER",
         creator: "anonymous"
-    }
+    },
+    {
+        lead: 'Raddus',
+        others: 'Jyn, Cassian, K-2SO, Bistan',
+        notes: 'Easy',
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: 'ADMIRALRADDUS',
+        creator: 'Nocebo',
+    },
 ]
 
 export const jabbaP1: dataType[] = [

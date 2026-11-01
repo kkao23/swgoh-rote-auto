@@ -432,5 +432,17 @@ export const youngHanP5: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         creator: 'anonymous'
-    }
+    },
+    {
+        lead: 'Dash',
+        others: 'oJaxxon, Qi\'ra',
+        notes: 'Auto (may have to manually target if stuck on event box)',
+        videos: [
+            { url: 'https://youtu.be/lKnnP9t7VCo' },
+        ],
+        difficulty: difficulty.EASY,
+        creator: 'Mar Trepodi',
+        omi: true,
+        gameId: 'YOUNGHAN, JAXXON'
+    },
 ]

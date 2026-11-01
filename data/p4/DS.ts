@@ -228,7 +228,27 @@ export const dsMidRightP4: dataType[] = [
         difficulty: difficulty.EASY,
         gameId: 'STRANGER',
         creator: 'Dewannawanga (CAW 2 INSANITY)'
-    }
+    },
+    {
+        lead: 'Darth Jar Jar',
+        others: 'DS Yoda(o), Ronin, Darth Maul, Darth Sideous',
+        notes: 'Auto, haven\'t tried without omi',
+        videos: [],
+        difficulty: difficulty.EASY,
+        creator: 'anonymous',
+        gameId: 'DARTHJARJAR',
+        omi: true
+    },
+    {
+        lead: 'Darth jar jar',
+        others: 'ODark side yoda, ronin, bane and stranger',
+        notes: 'Full auto, no platoons required',
+        videos: [],
+        difficulty: difficulty.EASY,
+        creator: 'DarthSand',
+        omi: true,
+        gameId: 'DARTHJARJAR',
+    },
 ]
 
 export const dsSortie: dataType[] = [
@@ -275,5 +295,14 @@ export const dsSortie: dataType[] = [
         difficulty: difficulty.EASY,
         gameId: "GLHONDO, QUIGGOLD",
         omi: true
-    }
+    },
+    {
+        lead: 'Darth Jar Jar',
+        others: 'Ronin, Soda, Malak, SEE',
+        notes: 'R9 DJJ & Malak; R8 for other 3; all Zetas (no Soda omi); 6-Dot mods\nLinked & focused on 50R-T & BT-1 (both phases); stalled end of P1 w/ basics & mission special to have specials off cooldown & remove brain worms\nAll 5 survived (Malak hit red twice but life suck carried); GGs before ult activated',
+        videos: [],
+        difficulty: difficulty.EASY,
+        creator: 'anonymous',
+        gameId: 'DARTHJARJAR',
+    },
 ]

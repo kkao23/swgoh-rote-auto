@@ -122,7 +122,16 @@ export const acklayDSP2: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         creator: 'Darth Speedy'
-    }
+    },
+    {
+        lead: 'Darth Jar Jar',
+        others: 'Ronin, Dark side Yoda, Traya, Savage',
+        notes: 'I have r9 on DJJ and r6 on the others. Auto',
+        videos: [],
+        difficulty: difficulty.EASY,
+        creator: 'anonymous',
+        gameId: 'DARTHJARJAR',
+    },
 ]
 
 export const reekDSP2: dataType[] = [

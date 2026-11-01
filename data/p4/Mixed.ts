@@ -88,6 +88,18 @@ export const mixedQiraP4: dataType[] = [
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO]
     },
+    {
+        lead: 'Dash',
+        others: 'oJaxxon, Vandor Chewie, Qi\'ra, L3',
+        notes: 'Auto. Jaxxon omicron',
+        videos: [
+            { url: 'https://youtu.be/kkRYUvrOMyM' },
+        ],
+        difficulty: difficulty.EASY,
+        creator: 'Mar Trepodi',
+        gameId: 'DASHRENDAR, JAXXON, QIRA, L3_37',
+        omi: true
+    },
 ]
 
 export const mixedGenericP4: dataType[] = [

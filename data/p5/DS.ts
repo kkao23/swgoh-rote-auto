@@ -79,7 +79,16 @@ export const dsBottomRightP5: dataType[] = [
         gameId: "GLHONDO, VANE",
         omi: true,
         creator: "anonymous"
-    }
+    },
+    {
+        lead: 'Darth Jar Jar',
+        others: 'Ronin, SODA, Malak, SEE',
+        notes: 'DJJ R10, SODA-Ronin-Malak R9, SEE R8. easy full auto - I deselected the reticule but you can leave it on',
+        videos: [],
+        difficulty: difficulty.EASY,
+        creator: 'Rezzy',
+        gameId: 'DARTHJARJAR'
+    },
 ]
 
 export const dsTopMidP5: dataType[] = [
@@ -228,7 +237,17 @@ export const dsLeftP5: dataType[] = [
         difficulty: difficulty.EASY,
         gameId: "DOCTORAPHRA",
         creator: "Anonymous"
-    }
+    },
+    {
+        lead: 'Darth Jar Jar',
+        others: 'Yoda (DSV), Ronin, Traya, Savage',
+        notes: 'Auto',
+        videos: [
+            { url: 'https://youtu.be/k-E9W7VUzys' },
+        ],
+        difficulty: difficulty.EASY,
+        creator: 'Mar Trepodi',
+    },
 ]
 
 export const dsInqsP5: dataType[] = [

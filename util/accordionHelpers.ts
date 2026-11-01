@@ -37,6 +37,12 @@ export interface AccordionOptions {
   initialIndex: number | null;
 }
 
+/**
+ * Teams whose |upvotes - downvotes| reaches this threshold are sorted
+ * above teams below it (which fall through to ownership/success-rate order).
+ */
+export const VOTE_SORT_THRESHOLD = 20;
+
 /** Build the verified (non-community) accordion items. */
 export function buildVerifiedAccordion(opts: AccordionOptions): AccordionItem[] {
   const verified = opts.data.filter(d => !d.videos?.some(v => v.creator) && !d.creator);
@@ -52,8 +58,8 @@ export function buildVerifiedAccordion(opts: AccordionOptions): AccordionItem[] 
     const bKey = opts.getTeamKey(opts.phase, opts.alignment, opts.position, b.lead);
     const aVotes = opts.voteCounts[aKey] ?? 0;
     const bVotes = opts.voteCounts[bKey] ?? 0;
-    const aHas = Math.abs(aVotes) >= 50;
-    const bHas = Math.abs(bVotes) >= 50;
+    const aHas = Math.abs(aVotes) >= VOTE_SORT_THRESHOLD;
+    const bHas = Math.abs(bVotes) >= VOTE_SORT_THRESHOLD;
     if (aHas || bHas) {
       if (aHas && !bHas) return -1;
       if (!aHas && bHas) return 1;

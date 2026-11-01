@@ -116,6 +116,12 @@ export function useVoteTracker() {
   }
 
   async function submitVote(teamKey: string, delta: number): Promise<void> {
+    // Display should move relative to the loaded total (sum of all rows
+    // for this key), not the single row found below — duplicate rows are
+    // common and the filter lookup only scans the first page.
+    const displayedTotal = voteCounts.value[teamKey] ?? 0;
+    voteCounts.value[teamKey] = displayedTotal + delta;
+
     const { data: existing } = await client.models.TeamVote.list({
       filter: { teamKey: { eq: teamKey } },
     });
@@ -125,15 +131,14 @@ export function useVoteTracker() {
     if (record) {
       const newVotes = (record.votes ?? 0) + delta;
       await client.models.TeamVote.update({ id: record.id, votes: newVotes });
-      voteCounts.value[teamKey] = newVotes;
     } else {
-      const newVotes = delta;
       const result = await client.models.TeamVote.create({
         teamKey,
-        votes: newVotes,
+        votes: delta,
       });
-      if (result.data) {
-        voteCounts.value[teamKey] = newVotes;
+      if (!result.data) {
+        // Roll back the optimistic update if the write failed
+        voteCounts.value[teamKey] = displayedTotal;
       }
     }
   }

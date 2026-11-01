@@ -41,10 +41,10 @@ const missions: MissionRegion[] = [
 <template>
   <PlanetMap
     planet-name="Malachor"
-    image-src="/images/map_view/malachor.png"
+    image-src="/images/map_view/malachor.webp"
     :image-width="1362"
     :image-height="802"
-    platoons-src="/images/map_view/malachor platoons.png"
+    platoons-src="/images/map_view/malachor platoons.webp"
     :missions="missions"
   />
 </template>

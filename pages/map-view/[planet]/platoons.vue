@@ -55,7 +55,7 @@ function goBackToMap() {
     <div class="max-w-4xl mx-auto">
       <div class="relative rounded-lg overflow-hidden shadow-lg">
         <img 
-          :src="`/images/map_view/${planetSlug} platoons.png`" 
+          :src="`/images/map_view/${planetSlug} platoons.webp`" 
           :alt="`${planetName} Platoons`"
           class="w-full h-auto"
         />

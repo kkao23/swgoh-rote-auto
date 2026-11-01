@@ -57,10 +57,10 @@ const missions: MissionRegion[] = [
 <template>
   <PlanetMap
     planet-name="Hoth"
-    image-src="/images/map_view/hoth.png"
+    image-src="/images/map_view/hoth.webp"
     :image-width="1362"
     :image-height="802"
-    platoons-src="/images/map_view/hoth platoons.png"
+    platoons-src="/images/map_view/hoth platoons.webp"
     :missions="missions"
   />
 </template>

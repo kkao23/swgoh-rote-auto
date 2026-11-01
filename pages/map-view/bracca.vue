@@ -57,10 +57,10 @@ const missions: MissionRegion[] = [
 <template>
   <PlanetMap
     planet-name="Bracca"
-    image-src="/images/map_view/bracca.png"
+    image-src="/images/map_view/bracca.webp"
     :image-width="1362"
     :image-height="802"
-    platoons-src="/images/map_view/bracca platoons.png"
+    platoons-src="/images/map_view/bracca platoons.webp"
     :missions="missions"
   />
 </template>

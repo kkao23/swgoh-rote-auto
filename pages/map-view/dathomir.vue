@@ -57,10 +57,10 @@ const missions: MissionRegion[] = [
 <template>
   <PlanetMap
     planet-name="Dathomir"
-    image-src="/images/map_view/dathomir.png"
+    image-src="/images/map_view/dathomir.webp"
     :image-width="1362"
     :image-height="802"
-    platoons-src="/images/map_view/dathomir platoons.png"
+    platoons-src="/images/map_view/dathomir platoons.webp"
     :missions="missions"
   />
 </template>

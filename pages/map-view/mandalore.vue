@@ -41,10 +41,10 @@ const missions: MissionRegion[] = [
 <template>
   <PlanetMap
     planet-name="Mandalore"
-    image-src="/images/map_view/mandalore.png"
+    image-src="/images/map_view/mandalore.webp"
     :image-width="1362"
     :image-height="802"
-    platoons-src="/images/map_view/mandalore platoons.png"
+    platoons-src="/images/map_view/mandalore platoons.webp"
     :missions="missions"
   />
 </template>

@@ -57,10 +57,10 @@ const missions: MissionRegion[] = [
 <template>
   <PlanetMap
     planet-name="Coruscant"
-    image-src="/images/map_view/coruscant.png"
+    image-src="/images/map_view/coruscant.webp"
     :image-width="1362"
     :image-height="802"
-    platoons-src="/images/map_view/coruscant platoons.png"
+    platoons-src="/images/map_view/coruscant platoons.webp"
     :missions="missions"
   />
 </template>

@@ -57,10 +57,10 @@ const missions: MissionRegion[] = [
 <template>
   <PlanetMap
     planet-name="Scarif"
-    image-src="/images/map_view/scarif.png"
+    image-src="/images/map_view/scarif.webp"
     :image-width="1362"
     :image-height="802"
-    platoons-src="/images/map_view/scarif platoons.png"
+    platoons-src="/images/map_view/scarif platoons.webp"
     :missions="missions"
   />
 </template>

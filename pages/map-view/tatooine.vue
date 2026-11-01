@@ -65,10 +65,10 @@ const missions: MissionRegion[] = [
 <template>
   <PlanetMap
     planet-name="Tatooine"
-    image-src="/images/map_view/tatooine.png"
+    image-src="/images/map_view/tatooine.webp"
     :image-width="1362"
     :image-height="802"
-    platoons-src="/images/map_view/tatooine platoons.png"
+    platoons-src="/images/map_view/tatooine platoons.webp"
     :missions="missions"
   />
 </template>

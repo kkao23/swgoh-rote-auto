@@ -2,7 +2,7 @@
 import { ref, computed } from 'vue'
 
 // Change this to match your current background image
-const imageUrl = '/images/map_view/scarif.png'
+const imageUrl = '/images/map_view/scarif.webp'
 const viewBox = '0 0 1362 802' // Match your real viewBox
 
 const points = ref<string[]>([])

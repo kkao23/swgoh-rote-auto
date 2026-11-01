@@ -38,7 +38,7 @@ onMounted(() => {
         <!-- Tier List Image -->
         <div class="flex justify-center">
           <img 
-            src="/images/tier-list.png" 
+            src="/images/tier-list.webp" 
             alt="Omicron Tier List" 
             class="max-w-full h-auto rounded-lg shadow-lg"
           />

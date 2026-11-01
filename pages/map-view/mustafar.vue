@@ -57,10 +57,10 @@ const missions: MissionRegion[] = [
 <template>
   <PlanetMap
     planet-name="Mustafar"
-    image-src="/images/map_view/mustafar.png"
+    image-src="/images/map_view/mustafar.webp"
     :image-width="1362"
     :image-height="802"
-    platoons-src="/images/map_view/mustafar platoons.png"
+    platoons-src="/images/map_view/mustafar platoons.webp"
     :missions="missions"
   />
 </template>

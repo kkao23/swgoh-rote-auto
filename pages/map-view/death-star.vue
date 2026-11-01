@@ -57,10 +57,10 @@ const missions: MissionRegion[] = [
 <template>
   <PlanetMap
     planet-name="Death Star"
-    image-src="/images/map_view/death star.png"
+    image-src="/images/map_view/death star.webp"
     :image-width="1362"
     :image-height="802"
-    platoons-src="/images/map_view/death star platoons.png"
+    platoons-src="/images/map_view/death star platoons.webp"
     :missions="missions"
   />
 </template>

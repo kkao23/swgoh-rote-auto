@@ -49,10 +49,10 @@ const missions: MissionRegion[] = [
 <template>
   <PlanetMap
     planet-name="Kafrene"
-    image-src="/images/map_view/kafrene.png"
+    image-src="/images/map_view/kafrene.webp"
     :image-width="1362"
     :image-height="802"
-    platoons-src="/images/map_view/kafrene platoons.png"
+    platoons-src="/images/map_view/kafrene platoons.webp"
     :missions="missions"
   />
 </template>

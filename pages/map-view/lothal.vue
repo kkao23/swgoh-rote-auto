@@ -41,10 +41,10 @@ const missions: MissionRegion[] = [
 <template>
   <PlanetMap
     planet-name="Lothal"
-    image-src="/images/map_view/lothal.png"
+    image-src="/images/map_view/lothal.webp"
     :image-width="1362"
     :image-height="802"
-    platoons-src="/images/map_view/lothal platoons.png"
+    platoons-src="/images/map_view/lothal platoons.webp"
     :missions="missions"
   />
 </template>

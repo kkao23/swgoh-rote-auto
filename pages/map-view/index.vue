@@ -75,7 +75,7 @@ function navigateToPlanet(slug: string) {
     
     <div class="relative w-full max-w-4xl mx-auto">
       <img 
-        src="/images/map_view/world map.png" 
+        src="/images/map_view/world map.webp" 
         alt="Galaxy Map" 
         class="w-full h-auto rounded-lg shadow-lg"
       />

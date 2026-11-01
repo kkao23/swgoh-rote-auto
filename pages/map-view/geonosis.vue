@@ -49,10 +49,10 @@ const missions: MissionRegion[] = [
 <template>
   <PlanetMap
     planet-name="Geonosis"
-    image-src="/images/map_view/geonosis.png"
+    image-src="/images/map_view/geonosis.webp"
     :image-width="1362"
     :image-height="802"
-    platoons-src="/images/map_view/geonosis platoons.png"
+    platoons-src="/images/map_view/geonosis platoons.webp"
     :missions="missions"
   />
 </template>

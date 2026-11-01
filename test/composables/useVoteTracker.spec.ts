@@ -112,7 +112,7 @@ describe("useVoteTracker", () => {
     it("returns false after an upvote is undone", async () => {
       mockCreateReturns("id-1");
       await tracker.upvote("P1", "DS", "Top", "Rey");
-      mockListReturns([{ id: "id-1", teamKey: "P1|DS|Top|Rey", votes: 1 }]);
+      mockCreateReturns("id-2");
       await tracker.upvote("P1", "DS", "Top", "Rey"); // undo
       expect(tracker.hasVoted("P1", "DS", "Top", "Rey")).toBe(false);
     });
@@ -132,46 +132,67 @@ describe("useVoteTracker", () => {
       });
     });
 
-    it("updates vote count to 2 when upvoting an existing entry", async () => {
-      mockListReturns([{ id: "existing", teamKey: "P1|DS|Top|Rey", votes: 1 }]);
+    it("always creates a new delta row (append-only), even when rows exist", async () => {
+      mockCreateReturns("id-1");
       await tracker.upvote("P1", "DS", "Top", "Rey");
 
-      expect(mockUpdate).toHaveBeenCalledWith({
-        id: "existing",
-        votes: 2,
+      // Another vote for the same team appends another delta row
+      mockCreateReturns("id-2");
+      await tracker.upvote("P1", "DS", "Top", "Rey");
+
+      expect(mockCreate).toHaveBeenLastCalledWith({
+        teamKey: "P1|DS|Top|Rey",
+        votes: -1,
       });
+      expect(mockUpdate).not.toHaveBeenCalled();
     });
 
-    it("undoes the upvote when clicked again (removes from localStorage, subtracts 1)", async () => {
+    it("shows the optimistic total (loaded + delta), not just the delta", async () => {
+      tracker.voteCounts.value = { "P1|DS|Top|Rey": 22 };
+
+      mockCreateReturns("id-1");
+      await tracker.upvote("P1", "DS", "Top", "Rey");
+
+      expect(tracker.voteCounts.value["P1|DS|Top|Rey"]).toBe(23);
+    });
+
+    it("rolls back the optimistic total when the create fails", async () => {
+      tracker.voteCounts.value = { "P1|DS|Top|Rey": 22 };
+      mockCreate.mockResolvedValue({ data: null });
+
+      await tracker.upvote("P1", "DS", "Top", "Rey");
+
+      expect(tracker.voteCounts.value["P1|DS|Top|Rey"]).toBe(22);
+    });
+
+    it("undoes the upvote when clicked again (appends -1 delta)", async () => {
       // First upvote
       mockCreateReturns("id-1");
       await tracker.upvote("P1", "DS", "Top", "Rey");
 
       // Second click = undo
-      mockListReturns([{ id: "existing", teamKey: "P1|DS|Top|Rey", votes: 1 }]);
+      mockCreateReturns("id-2");
       await tracker.upvote("P1", "DS", "Top", "Rey");
 
-      expect(mockUpdate).toHaveBeenCalledWith({
-        id: "existing",
-        votes: 0,
+      expect(mockCreate).toHaveBeenLastCalledWith({
+        teamKey: "P1|DS|Top|Rey",
+        votes: -1,
       });
       expect(tracker.hasVoted("P1", "DS", "Top", "Rey")).toBe(false);
     });
 
-    it("switches downvote to upvote (delta +2)", async () => {
+    it("switches downvote to upvote (appends +2 delta)", async () => {
       // First downvote
       mockCreateReturns("id-d");
       await tracker.downvote("P1", "DS", "Top", "Rey");
 
       // Then upvote = switch
-      mockListReturns([
-        { id: "existing", teamKey: "P1|DS|Top|Rey", votes: -1 },
-      ]);
+      mockCreateReturns("id-u");
       await tracker.upvote("P1", "DS", "Top", "Rey");
 
-      expect(mockUpdate).toHaveBeenCalledWith({
-        id: "existing",
-        votes: 1,
+      expect(mockCreate).toHaveBeenLastCalledWith({
+        teamKey: "P1|DS|Top|Rey",
+        votes: 2,
       });
       expect(tracker.votedTeams.value["P1|DS|Top|Rey"]).toBe("up");
     });
@@ -191,50 +212,34 @@ describe("useVoteTracker", () => {
       });
     });
 
-    it("updates vote count to -2 when downvoting an existing entry", async () => {
-      mockListReturns([
-        { id: "existing", teamKey: "P1|DS|Top|Rey", votes: -1 },
-      ]);
-      await tracker.downvote("P1", "DS", "Top", "Rey");
-
-      expect(mockUpdate).toHaveBeenCalledWith({
-        id: "existing",
-        votes: -2,
-      });
-    });
-
-    it("undoes the downvote when clicked again (adds 1)", async () => {
+    it("undoes the downvote when clicked again (appends +1)", async () => {
       // First downvote
       mockCreateReturns("id-1");
       await tracker.downvote("P1", "DS", "Top", "Rey");
 
       // Second click = undo
-      mockListReturns([
-        { id: "existing", teamKey: "P1|DS|Top|Rey", votes: -1 },
-      ]);
+      mockCreateReturns("id-2");
       await tracker.downvote("P1", "DS", "Top", "Rey");
 
-      expect(mockUpdate).toHaveBeenCalledWith({
-        id: "existing",
-        votes: 0,
+      expect(mockCreate).toHaveBeenLastCalledWith({
+        teamKey: "P1|DS|Top|Rey",
+        votes: 1,
       });
       expect(tracker.hasVoted("P1", "DS", "Top", "Rey")).toBe(false);
     });
 
-    it("switches upvote to downvote (delta -2)", async () => {
+    it("switches upvote to downvote (appends -2)", async () => {
       // First upvote
       mockCreateReturns("id-u");
       await tracker.upvote("P1", "DS", "Top", "Rey");
 
       // Then downvote = switch
-      mockListReturns([
-        { id: "existing", teamKey: "P1|DS|Top|Rey", votes: 1 },
-      ]);
+      mockCreateReturns("id-d");
       await tracker.downvote("P1", "DS", "Top", "Rey");
 
-      expect(mockUpdate).toHaveBeenCalledWith({
-        id: "existing",
-        votes: -1,
+      expect(mockCreate).toHaveBeenLastCalledWith({
+        teamKey: "P1|DS|Top|Rey",
+        votes: -2,
       });
       expect(tracker.votedTeams.value["P1|DS|Top|Rey"]).toBe("down");
     });

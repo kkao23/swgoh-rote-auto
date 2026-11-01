@@ -115,31 +115,24 @@ export function useVoteTracker() {
     }
   }
 
+  /**
+   * Append a vote delta as a new TeamVote row.  Rows are treated as
+   * append-only events; the nightly vote-aggregator sums them into
+   * VoteSummary, which is the read-side source of truth.  (Updating an
+   * "existing" row isn't reliable: teamKey isn't unique, so a filter
+   * lookup only sees the first scan page.)
+   */
   async function submitVote(teamKey: string, delta: number): Promise<void> {
-    // Display should move relative to the loaded total (sum of all rows
-    // for this key), not the single row found below — duplicate rows are
-    // common and the filter lookup only scans the first page.
     const displayedTotal = voteCounts.value[teamKey] ?? 0;
     voteCounts.value[teamKey] = displayedTotal + delta;
 
-    const { data: existing } = await client.models.TeamVote.list({
-      filter: { teamKey: { eq: teamKey } },
+    const result = await client.models.TeamVote.create({
+      teamKey,
+      votes: delta,
     });
-
-    const record = existing?.[0];
-
-    if (record) {
-      const newVotes = (record.votes ?? 0) + delta;
-      await client.models.TeamVote.update({ id: record.id, votes: newVotes });
-    } else {
-      const result = await client.models.TeamVote.create({
-        teamKey,
-        votes: delta,
-      });
-      if (!result.data) {
-        // Roll back the optimistic update if the write failed
-        voteCounts.value[teamKey] = displayedTotal;
-      }
+    if (!result.data) {
+      // Roll back the optimistic update if the write failed
+      voteCounts.value[teamKey] = displayedTotal;
     }
   }
 

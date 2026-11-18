@@ -448,7 +448,18 @@ export const mixedGenericP4: dataType[] = [
         gameId: "MAZKANATA, KIX, ITHANO, QUIGGOLD",
         creator: "anonymous",
         omi: true
-    }
+    },
+    {
+        lead: 'JML (JTL)', gameId: 'GRANDMASTERLUKE, LEIAJEDITRAINING',
+        leadFull: 'Jedi Master Luke',
+        others: 'Jedi Training Leia, 3 other Jedi',
+        notes: 'auto',
+        videos: [{ url: 'https://youtu.be/HrXcwYDxR1M?si=FskUlRAZr0DU4eFU' }],
+        icon: '/icons/characters/tex.charui_luke_jml.png',
+        difficulty: difficulty.EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+    },
 ]
 
 export const jabbaP4: dataType[] = [

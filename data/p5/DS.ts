@@ -169,6 +169,15 @@ export const dsTopMidP5: dataType[] = [
         difficulty: difficulty.EASY,
         gameId: 'ZUCKUSS, ASAJJDARKDISCIPLE, 4LOM, BOSSK',
         creator: 'anonymous'
+    },
+    {
+        lead: 'LV Clones',
+        others: 'DS Clones (omi NOT required)',
+        notes: 'AOEs made clearing quick and easy. Try to save single target specials for P2 to focus down Sabine asap then auto. Quick 2/2.',
+        videos: [],
+        difficulty: difficulty.EASY,
+        creator: 'anonymous',
+        gameId: 'LORDVADER',
     }
 ]
 

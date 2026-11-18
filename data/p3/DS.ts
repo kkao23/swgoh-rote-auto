@@ -175,6 +175,33 @@ export const dsGenericP3: dataType[] = [
         successRate: successRate.UNRELIABLE,
         interactionType: [interactionType.AUTO],
     },
+    {
+        lead: 'Enoch',
+        others: 'Night Trooper, DTP, Scout Trooper, Stormtooper',
+        notes: 'Full auto',
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: 'CAPTAINENOCH',
+        creator: 'MagNasty',
+    },
+    {
+        lead: 'Major Partagaz',
+        others: 'full ISB',
+        notes: 'auto',
+        videos: [],
+        difficulty: difficulty.EASY,
+        creator: 'espo',
+        gameId: 'MAJORPARTAGAZ',
+    },
+    {
+        lead: 'General Grievous',
+        others: 'SEE, Wat, Jango, Nute',
+        notes: 'Health tech on SEE, weapon tech on GG, then auto. Battle can take several minutes. Manual re-application of techs when characters die can make this more efficient, but should work on auto at a decently high rate.',
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: 'GRIEVOUS',
+        creator: 'anonymous',
+    }
 ]
 
 export const dsEmpireP3: dataType[] = [
@@ -239,6 +266,15 @@ export const dsEmpireP3: dataType[] = [
         difficulty: difficulty.EASY,
         gameId: "THIRDSISTER",
         creator: "anonymous"
+    },
+    {
+        lead: 'Palpatine',
+        others: 'Tarkin, Scorch, Piett, Thrawn',
+        notes: '(For those who have R7+ Tarkin & Scorch, but not the other clones yet.) I haven’t tried on auto. Focus zombie first, kill 3x. Scorch Entrenched (2nd special), then Piett Imperial Ambition (1st special) on Scorch. Wait with Tarkin’s specials until he has some stacks of triangles, then use his 2nd special, immediately followed by AOE (1st special). Thrawn’s 2nd special to help survive by recovering protection - mostly on Scorch if he needs it. Usually can finish at least 1 wave. My Tarkin & Scorch are R9, Piett is R8.',
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: 'EMPERORPALPATINE',
+        creator: 'DGrass639',
     }
 ]
 

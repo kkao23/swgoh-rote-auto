@@ -136,6 +136,15 @@ export const leftDSP1: dataType[] = [{
         successRate: successRate.CONSISTENT,
         interactionType: [interactionType.AUTO],
         creator: 'Anonymous'
+    },
+    {
+        lead: 'Baylan',
+        others: 'shin hati, marrok, jango fett, dengar',
+        notes: 'Auto',
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: 'BAYLANSKOLL',
+        creator: 'anonymous',
     }
 ];
 

@@ -53,7 +53,19 @@ export const dsGenericLeftP6: dataType[] = [
   videos: [],
   difficulty: difficulty.EASY,
   creator: 'Anonymous',
-}
+},
+    {
+        lead: 'Tarkin', gameId: 'GRANDMOFFTARKIN, APPO, SCORCH, DISGUISEDCLONETROOPER',
+        leadFull: 'Grand Moff Tarkin',
+        others: 'Appo, CX, Disguised Clone Trooper, Scorch',
+        notes: 'Easy auto',
+        videos: [{ url: 'https://youtu.be/sSf8n8M6NT0?si=ALh_qy8BJnKiGAm1', }],
+        icon: '/icons/characters/tex.charui_tarkinadmiral.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO],
+        omi: true
+    },
 ]
 
 export const dsGenericRightP6: dataType[] = [

@@ -84,6 +84,15 @@ export const lsTopLeftP5: dataType[] = [
     successRate: successRate.USUALLY,
     interactionType: [interactionType.AUTO],
     creator: 'Anonymous'
+    },
+    {
+        lead: 'Jedi Master Luke',
+        others: 'Jedi Training Leia, JKCK, and filler have used Poncho boys and others',
+        notes: 'Auto',
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: 'GRANDMASTERLUKE, LEIAJEDITRAINING, JEDIKNIGHTCAL',
+        creator: 'anonymous',
     }
 ]
 
@@ -260,8 +269,17 @@ export const lsBottomP5: dataType[] = [
         successRate: successRate.FIFTY_FIFTY,
         interactionType: [interactionType.AUTO],
         creator: 'anonymous'
-    }
-    ,
+    },
+    {
+        lead: 'JKCK with JMMW',
+        others: 'oJKCK, JML, JMMW, oDepa, TG',
+        notes: 'JKCK omi only lead, with full platoons auto',
+        videos: [],
+        difficulty: difficulty.EASY,
+        creator: 'BailWritte',
+        omi: true,
+        gameId: 'JEDIKNIGHTCAL, JEDIMASTERMACEWINDU, DEPABILLABA',
+    }   
 ]
 
 export const lsShipsP5: dataType[] = [

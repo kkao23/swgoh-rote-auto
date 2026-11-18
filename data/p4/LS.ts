@@ -393,6 +393,15 @@ export const jediLSP4: dataType[] = [
     difficulty: difficulty.EASY,
     gameId: "JEDIMASTERKENOBI, JEDIKNIGHTCAL",
     creator: "Anonymous"
+    },
+    {
+        lead: 'Jedi Knight Cal Kestis',
+        others: 'GAS, JKLS, GMY, SNIPS',
+        notes: 'Auto',
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: 'JEDIKNIGHTCAL',
+        creator: 'anonymous',
     }
 ]
 

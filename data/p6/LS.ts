@@ -76,6 +76,26 @@ export const genericLSP6: dataType[] = [
   difficulty: difficulty.EASY,
   gameId: "GLAHSOKATANO",
   creator: "Justpure CR"
+},
+{
+    lead: 'Carson Teva',
+    others: 'Zeb Orrelios (New Republic Pilot), Colonel Ward, R5-D4, Grogu & Anzellans',
+    notes: 'oTeva',
+    videos: [],
+    difficulty: difficulty.EASY,
+    creator: 'anonymous',
+    omi: true,
+    gameId: 'CARSONTEVA',
+},
+{
+    lead: 'Cassian Andor (Undercover)',
+    others: 'Cinta, oVel, Kleya, Luthen',
+    notes: 'Auto',
+    videos: [],
+    difficulty: difficulty.EASY,
+    gameId: 'CASSIANUNDERCOVER',
+    creator: 'anonymous',
+    omi: true
 }
 ]
 

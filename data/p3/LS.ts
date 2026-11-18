@@ -195,6 +195,24 @@ export const lsLeftP3: dataType[] = [
         omi: true,
         gameId: "CASSIANUNDERCOVER, VEL, CINTA, KLEYA, LUTHENRAEL",
         creator: "anonymous"
+    },
+    {
+        lead: 'Jedi Master Luke',
+        others: 'JKL, Hermit Yoda, Jedi Cal, Jedi Leia',
+        notes: 'Auto',
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: 'GRANDMASTERLUKE, LEIAJEDITRAINING, JEDIKNIGHTCAL',
+        creator: 'anonymous',
+    },
+    {
+        lead: 'GL Mando',
+        others: 'Grogu&Anzellans, Zeb (Pilot), Colonel Ward, R5-D4',
+        notes: 'Auto',
+        videos: [],
+        difficulty: difficulty.EASY,
+        creator: 'anonymous',
+        gameId: 'GLMANDOGROGU',
     }
 ]
 

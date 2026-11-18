@@ -91,9 +91,28 @@ export const maceKitP1 = [
         notes: "Auto",
         videos: [],
         difficulty: difficulty.EASY,
-        gameId: "JEDIMASTERMACEWINDU, KITFISTO, GRANDMASTERLUKE, LEIAJEDITRAINING, JEDIKNIGHTCAL",
+        gameId: "MACEWINDU, KITFISTO, GRANDMASTERLUKE, LEIAJEDITRAINING, JEDIKNIGHTCAL",
         creator: "anonymous"
     },
+    {
+        lead: 'Jedi Knight Luke',
+        others: 'Jedi Knight Luke R8, Mara Jade Skywalker R8',
+        notes: 'Assist with Mara Jade. No real issues',
+        videos: [],
+        difficulty: difficulty.EASY,
+        gameId: 'JEDIKNIGHTLUKE, MARAJADESKYWALKER, KITFISTO, MACEWINDU',
+        creator: 'anonymous',
+    },
+    {
+    lead: 'Mace',
+    others: 'JML, JKCK (omi on Windmill defense), Leia (Jedi training)',
+    notes: 'Full auto',
+    videos: [],
+    difficulty: difficulty.EASY,
+    creator: 'Lestat',
+    omi: true,
+    gameId: 'MACEWINDU, KITFISTO, GRANDMASTERLUKE, LEIAJEDITRAINING, JEDIKNIGHTCAL',
+    }
 ]
 
 export const jediP1: dataType[] = [
@@ -210,7 +229,18 @@ export const jediP1: dataType[] = [
         interactionType: [interactionType.AUTO],
         creator: 'Parableman',
         icon: '/icons/characters/tex.charui_jedirevan.png',
-    }
+    },
+    {
+        lead: 'JKL Mara', gameId: 'JEDIKNIGHTLUKE, MARAJADESKYWALKER',
+        leadFull: 'Jedi Knight Luke',
+        others: 'Mara Jade Skywalker, +3 Jedi',
+        notes: 'auto, Almost any other jedi work',
+        videos: [{ url: 'https://youtu.be/cqekBvAEn2o?si=Jtpp6LTfXQWM6RgD' }],
+        icon: '/icons/characters/tex.charui_luke_jediknight.png',
+        difficulty: difficulty.VERY_EASY,
+        successRate: successRate.CONSISTENT,
+        interactionType: [interactionType.AUTO]
+    },
 ]
 
 export const shipsLSP1: dataType[] = [
@@ -517,4 +547,13 @@ export const genericLSP1: dataType[] = [
         gameId: 'JEDIMASTERMACEWINDU',
         creator: 'anonymous',
     },
+    {
+        lead: 'The Mandalorian and Grogu',
+        others: 'Pilot Zeb, Col. Ward, Cara Dune, Grogu and the Anzellans',
+        notes: 'Auto',
+        videos: [],
+        difficulty: difficulty.EASY,
+        creator: 'Jim',
+        gameId: 'GLMANDOGROGU',
+    }
 ]

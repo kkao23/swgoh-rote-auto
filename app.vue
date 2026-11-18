@@ -11,6 +11,7 @@ const isMobile = useMediaQuery('(max-width: 768px)')
 const isAlertOpen = ref(false)
 const isNoticeHidden = ref(false)
 const isRosterBannerHidden = useLocalStorage('swgoh-rote-planner-banner-hidden', false)
+const isMaintainerBannerHidden = useLocalStorage('swgoh-rote-maintainer-banner-hidden', false)
 
 const isSupportOpen = ref(false)
 
@@ -153,6 +154,20 @@ const navigationLinks = [
         </UAlert>
         <button @click="isRosterBannerHidden = true"
           class="absolute top-1.5 right-2 w-5 h-5 flex items-center justify-center rounded-full bg-cyan-100 border border-cyan-400 text-cyan-600 hover:bg-cyan-200 hover:text-cyan-700 transition-colors z-10"
+          title="Dismiss notice">
+          <UIcon name="i-heroicons-x-mark" class="w-3 h-3" />
+        </button>
+      </div>
+      <div v-if="!isMaintainerBannerHidden" class="mx-4 mb-4 relative">
+        <UAlert icon="i-heroicons-user-plus" color="violet" variant="soft" title="We're looking for a new maintainer"
+          :ui="{ title: 'text-violet-100 font-bold', description: 'text-violet-100' }">
+          <template #description>
+            This site needs a new steward to keep team data and the backend going —
+            <NuxtLink to="/join" class="underline font-semibold hover:text-white">apply to take it over</NuxtLink>
+          </template>
+        </UAlert>
+        <button @click="isMaintainerBannerHidden = true"
+          class="absolute top-1.5 right-2 w-5 h-5 flex items-center justify-center rounded-full bg-violet-100 border border-violet-400 text-violet-600 hover:bg-violet-200 hover:text-violet-700 transition-colors z-10"
           title="Dismiss notice">
           <UIcon name="i-heroicons-x-mark" class="w-3 h-3" />
         </button>

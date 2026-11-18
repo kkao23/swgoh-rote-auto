@@ -144,6 +144,7 @@ const navigationLinks = [
             and tips.</p>
         </div>
       </div>
+      <!-- Commented out for reuse: Squad Planner launch banner (restyle + point at the next feature when it ships)
       <div v-if="!isRosterBannerHidden" class="mx-4 mb-4 relative">
         <UAlert icon="i-heroicons-clipboard-document-list" color="cyan" variant="soft" title="New: Squad Planner"
           :ui="{ title: 'text-cyan-100 font-bold', description: 'text-cyan-100' }">
@@ -158,6 +159,7 @@ const navigationLinks = [
           <UIcon name="i-heroicons-x-mark" class="w-3 h-3" />
         </button>
       </div>
+      -->
       <div v-if="!isMaintainerBannerHidden" class="mx-4 mb-4 relative">
         <UAlert icon="i-heroicons-user-plus" color="violet" variant="soft" title="We're looking for a new maintainer"
           :ui="{ title: 'text-violet-100 font-bold', description: 'text-violet-100' }">

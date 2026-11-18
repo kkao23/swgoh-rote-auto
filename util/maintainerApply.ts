@@ -5,10 +5,9 @@
 
 export interface MaintainerApplication {
   name: string
+  /** Best way to reach the applicant (Discord, reddit, email, etc). */
   discord: string
   allyCode: string
-  guild: string
-  availability: string
   why: string
   userEmail: string
   /** Honeypot — hidden from humans, filled by bots. */
@@ -19,8 +18,6 @@ const MAX = {
   name: 60,
   discord: 60,
   allyCode: 12,
-  guild: 60,
-  availability: 500,
   why: 2000,
   userEmail: 100,
 } as const
@@ -30,14 +27,11 @@ export function validateApplication(form: MaintainerApplication): string[] {
   const name = form.name?.trim() ?? ''
   const discord = form.discord?.trim() ?? ''
   const allyCode = form.allyCode?.trim() ?? ''
-  const guild = form.guild?.trim() ?? ''
-  const availability = form.availability?.trim() ?? ''
   const why = form.why?.trim() ?? ''
   const email = form.userEmail?.trim() ?? ''
 
   if (name.length < 2) errors.push('Please enter your name')
-  if (discord.length < 2) errors.push('Please enter your Discord handle')
-  if (availability.length < 5) errors.push('Please tell us your availability')
+  if (discord.length < 2) errors.push('Please tell us the best way to reach you')
   if (why.length < 20) {
     errors.push('Please tell us a bit more about why you are interested (at least 20 characters)')
   }
@@ -52,8 +46,6 @@ export function validateApplication(form: MaintainerApplication): string[] {
     ['name', name],
     ['discord', discord],
     ['allyCode', allyCode],
-    ['guild', guild],
-    ['availability', availability],
     ['why', why],
     ['userEmail', email],
   ]

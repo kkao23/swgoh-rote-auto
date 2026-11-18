@@ -11,8 +11,6 @@ const formData = ref({
   name: '',
   discord: '',
   allyCode: '',
-  guild: '',
-  availability: '',
   why: '',
   userEmail: '',
   website: ''
@@ -98,28 +96,10 @@ const submitApplication = async () => {
               <UInput v-model="formData.name" placeholder="Who are you?" />
             </UFormGroup>
 
-            <UFormGroup label="Discord Handle" required>
-              <UInput v-model="formData.discord" placeholder="e.g. username#1234" />
+            <UFormGroup label="Best Way to Reach You (Discord, reddit, email etc)" required>
+              <UInput v-model="formData.discord" placeholder="e.g. @username on Discord" />
             </UFormGroup>
           </div>
-
-          <div class="grid sm:grid-cols-2 gap-4">
-            <UFormGroup label="SWGOH Ally Code">
-              <UInput v-model="formData.allyCode" placeholder="123456789 (optional)" />
-            </UFormGroup>
-
-            <UFormGroup label="Guild">
-              <UInput v-model="formData.guild" placeholder="optional" />
-            </UFormGroup>
-          </div>
-
-          <UFormGroup label="Time You Can Commit" required>
-            <UTextarea
-              v-model="formData.availability"
-              placeholder="e.g. ~15 min/day, more on TB launch days"
-              :rows="2"
-            />
-          </UFormGroup>
 
           <UFormGroup label="Why Are You Interested? / Relevant Experience" required>
             <UTextarea
@@ -129,16 +109,22 @@ const submitApplication = async () => {
             />
           </UFormGroup>
 
+          <div class="grid sm:grid-cols-2 gap-4">
+            <UFormGroup label="SWGOH Ally Code">
+              <UInput v-model="formData.allyCode" placeholder="123456789 (optional)" />
+            </UFormGroup>
+
+            <UFormGroup label="Your Email (optional)">
+              <UInput v-model="formData.userEmail" type="email" placeholder="so we can reply to you" />
+            </UFormGroup>
+          </div>
+
           <!-- Honeypot field — hidden from humans, catches bots -->
           <div class="sr-only" aria-hidden="true">
             <UFormGroup label="Website">
               <UInput v-model="formData.website" tabindex="-1" autocomplete="off" />
             </UFormGroup>
           </div>
-
-          <UFormGroup label="Your Email (optional)">
-            <UInput v-model="formData.userEmail" type="email" placeholder="so we can reply to you" />
-          </UFormGroup>
 
           <UAlert
             v-if="errorMessage"

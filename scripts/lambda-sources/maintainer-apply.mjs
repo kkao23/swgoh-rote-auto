@@ -39,7 +39,7 @@ export const handler = async (event) => {
 
   try {
     const body = JSON.parse(event.body || "{}");
-    const { name, discord, allyCode, guild, availability, why, userEmail, website } = body;
+    const { name, discord, allyCode, why, userEmail, website } = body;
 
     // Honeypot: bots fill the hidden "website" field; humans never see it.
     // Pretend success so bots don't learn anything.
@@ -51,7 +51,7 @@ export const handler = async (event) => {
       };
     }
 
-    if (!name || !discord || !availability || !why) {
+    if (!name || !discord || !why) {
       return {
         statusCode: 400,
         headers,
@@ -75,13 +75,9 @@ export const handler = async (event) => {
 New Maintainer Application Received!
 -------------------------------------
 Name:         ${name}
-Discord:      ${discord}
+Best contact: ${discord}
 Ally Code:    ${allyCode || "(not provided)"}
-Guild:        ${guild || "(not provided)"}
 Email:        ${userEmail || "(not provided)"}
-
-Availability:
-${availability}
 
 Why they're interested / relevant experience:
 ${why}

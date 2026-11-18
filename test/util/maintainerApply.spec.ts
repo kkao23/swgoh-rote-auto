@@ -5,8 +5,6 @@ const validForm: MaintainerApplication = {
   name: 'Test User',
   discord: 'tester#1234',
   allyCode: '',
-  guild: 'Some Guild',
-  availability: 'about 10 minutes a day',
   why: 'I love this site and want to keep it going for the guild.',
   userEmail: '',
   website: '',
@@ -18,7 +16,7 @@ describe('validateApplication', () => {
   })
 
   it('accepts an application with only the required fields', () => {
-    const minimal = { ...validForm, guild: '', userEmail: '', allyCode: '' } as any
+    const minimal = { ...validForm, userEmail: '', allyCode: '' } as any
     expect(validateApplication(minimal)).toEqual([])
   })
 
@@ -27,12 +25,10 @@ describe('validateApplication', () => {
       ...validForm,
       name: '',
       discord: '',
-      availability: '',
       why: '',
     } as any)
     expect(errors.join(' ')).toContain('name')
-    expect(errors.join(' ')).toContain('Discord')
-    expect(errors.join(' ')).toContain('availability')
+    expect(errors.join(' ')).toContain('reach you')
     expect(errors.join(' ')).toContain('interested')
   })
 
@@ -64,6 +60,6 @@ describe('validateApplication', () => {
     const sloppy = { ...validForm, name: '  ', discord: ' xyz ', why: '  ' + validForm.why + '  ' } as any
     const errors = validateApplication(sloppy)
     expect(errors.some((e) => e.includes('name'))).toBe(true)
-    expect(errors.some((e) => e.includes('Discord'))).toBe(false)
+    expect(errors.some((e) => e.includes('reach you'))).toBe(false)
   })
 })

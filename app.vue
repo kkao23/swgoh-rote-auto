@@ -161,11 +161,12 @@ const navigationLinks = [
       </div>
       -->
       <div v-if="!isMaintainerBannerHidden" class="mx-4 mb-4 relative">
-        <UAlert icon="i-heroicons-user-plus" color="violet" variant="soft" title="We're looking for a new maintainer"
+        <UAlert icon="i-heroicons-user-plus" color="violet" variant="soft" title="I'm looking for a new maintainer"
           :ui="{ title: 'text-violet-100 font-bold', description: 'text-violet-100' }">
           <template #description>
             This site needs a new steward to keep team data and the backend going —
             <NuxtLink to="/join" class="underline font-semibold hover:text-white">apply to take it over</NuxtLink>
+            If no successor or financial backer is found by the end of 2026, swgohrote.com will cease operations.
           </template>
         </UAlert>
         <button @click="isMaintainerBannerHidden = true"

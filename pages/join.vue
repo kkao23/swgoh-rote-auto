@@ -76,17 +76,17 @@ const submitApplication = async () => {
       <template v-else>
         <div class="space-y-3 text-sm text-gray-600 dark:text-gray-400 mb-6">
           <p>
-            The current maintainer is stepping back and looking for someone to take over.
+            I am retiring from the game and looking for someone to take over.
             The site is a Nuxt 3 app with an AWS Amplify backend — team data curation,
             occasional deploys (push to main = auto-deploy), and a bit of AWS housekeeping.
           </p>
           <ul class="list-disc pl-5 space-y-1">
             <li>Typical upkeep is light: review suggestion emails, curate team data, merge PRs</li>
-            <li>Everything is documented (<code class="text-xs">SUCCESSION.md</code>, <code class="text-xs">AGENTS.md</code> in the repo)</li>
-            <li>No cost to you unless you want it — the handoff plan moves the backend to your own AWS account (free tier friendly)</li>
+            <li>Everything is documented (<code class="text-xs">SUCCESSION.md</code>, <code class="text-xs">AGENTS.md</code> in <a href="https://github.com/kkao23/swgoh-rote-auto" target="_blank" rel="noopener" class="underline hover:text-white">the repo</a>)</li>
+            <li>You will run the backend on your own AWS account (free tier friendly)</li>
           </ul>
           <p class="text-xs text-gray-500 dark:text-gray-500">
-            Applications go straight to the maintainer's inbox.
+            Applications go straight to my inbox.
           </p>
         </div>
 
@@ -104,7 +104,7 @@ const submitApplication = async () => {
           <UFormGroup label="Why Are You Interested? / Relevant Experience" required>
             <UTextarea
               v-model="formData.why"
-              placeholder="Tell us about yourself — have you worked with Vue/TypeScript/AWS? Do you run a guild?"
+              placeholder="Tell us about yourself — have you worked with Vue/TypeScript/AWS?"
               :rows="5"
             />
           </UFormGroup>
